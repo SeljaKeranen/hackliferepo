@@ -1,0 +1,18 @@
+node_modules/
+dist/
+coverage/
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+
+# Local datasets, model weights, generated outputs, keys
+data/
+models/
+outputs/
+secrets/

@@ -200,12 +200,73 @@ Each URL below was fetched successfully during the audit unless marked otherwise
 | --- | --- | --- | --- | --- | --- | --- |
 | 143 | [UK Biobank](https://www.ukbiobank.ac.uk/) | Data | Biomarkers, clinical, imaging, omics | Human | Restricted (application and fee; anti-bot blocked scripts at audit) | The reference prospective cohort behind most ageing-biomarker papers. Listed so Friday planning does not assume weekend access; use NHANES (95) and g2aging (97) instead. |
 
-## Link audit, 8 September 2026
+## Third extension round, verified live 9 September 2026
+
+### Ageing biology and brain
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 144 | [GenDR](https://genomics.senescence.info/diet/) | Data | Omics, perturbations | Model organisms, human homologs | Open | HAGR's dietary-restriction gene database: DR-essential genes plus a conserved mammalian DR expression signature; TSV and Excel downloads. Completes the HAGR set (with 31, 37, 39, 40, 82). |
+| 145 | [SASP Atlas](https://saspatlas.herokuapp.com/) | Data | Proteomics, biomarkers | Human | Open (CC0 on MassIVE MSV000083468) | Proteomic secretomes of senescent cells by inducer and cell type, soluble and exosomal; the reference for SASP composition and senescence biomarker candidates. |
+| 146 | [HuBMAP portal](https://portal.hubmapconsortium.org/) | Data | Single-cell, spatial, tissue | Human | Open | NIH Human BioMolecular Atlas Program; spatial reference maps and an open API. SenNet's (88) sibling program, same portal technology. |
+| 147 | [Allen Aging, Dementia and TBI study](https://aging.brain-map.org/) | Data | Omics, clinical, pathology | Human | Open (raw reads controlled via NIAGADS) | RNA-seq plus neuropathology from 107 aged brains (ACT cohort, median age at death 90); processed data download directly, no approval needed. |
+| 148 | [AD Knowledge Portal](https://adknowledgeportal.synapse.org/) | Data | Omics, clinical | Human | Open with free Synapse registration | ROSMAP and related aging-brain multi-omics (WGS, RNA-seq, proteomics, methylation); the main open route to that cohort. |
+| 149 | [Dog Aging Project](https://data.dogagingproject.org/) | Data | Clinical, biomarkers | Dog | Application plus data-use agreement, via Terra | Tens of thousands of companion dogs with annual curated releases; the leading comparative-geroscience cohort. Codebooks open on GitHub without an application. |
+
+### Microbiome and meta-search
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 150 | [MGnify](https://www.ebi.ac.uk/metagenomics) | Data, tool | Microbiome | Multiple | Open | EBI's microbiome analysis platform; larger raw-coverage complement to the curated sets (116, 117). |
+| 151 | [OmicsDI](https://www.omicsdi.org/) | Tool | Omics (all) | Multiple | Open | Cross-repository omics dataset search index with an API; the fastest way to find a dataset that no named library lists. |
+
+### Models
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 152 | [scFoundation](https://github.com/biomap-research/scFoundation) | Model | Omics, single-cell | Human | Open weights; check repo licence | 50M-cell foundation model; complements scGPT (109) and Geneformer (108). |
+| 153 | [Evo 2](https://github.com/ArcInstitute/evo2) | Model | Omics (DNA) | Multiple | Open (Apache 2.0) | Genome-scale DNA foundation model; the engine inside BioReason (52), usable standalone. |
+| 154 | [Boltz](https://github.com/jwohlwend/boltz) | Model | Structural, drugs | Multiple | Open (MIT) | Open structure and binding-affinity prediction; the practical substitute when the AlphaFold 3 server (4) is rate-limited. |
+| 155 | [AlphaMissense](https://console.cloud.google.com/storage/browser/dm_alphamissense) | Data | Omics, variants | Human | Open for non-commercial use (CC BY-NC-SA 4.0) | Precomputed pathogenicity scores for all ~71M possible missense variants; pairs with ClinVar (120) and gnomAD (121). Mind the non-commercial licence. |
+
+### Reference and pharmacogenomics
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 156 | [Cellosaurus](https://www.cellosaurus.org/) | Data | Cell lines | Multiple | Open (CC BY 4.0) | The reference for cell-line identity, provenance and contamination flags; use before proposing any validation experiment. |
+| 157 | [Orphanet](https://www.orpha.net/) | Data | Clinical, omics | Human | Free academic registration | Rare-disease reference including progeroid syndromes; gene-disease mappings with ORPHA codes. |
+| 158 | [PharmacoDB](https://pharmaco.ca/) | Data, tool | Drugs, omics | Human cell lines | Open | Unified access to GDSC, CCLE, gCSI and PRISM drug-sensitivity datasets with one API; less wrangling than pulling each separately. |
+
+### Literature and citations (Track 3)
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 159 | [Wikidata](https://www.wikidata.org/) | Knowledge base | Mixed | n/a | Open (CC0) | General structured backbone (genes, drugs, politicians, institutions) with SPARQL; useful glue for the political-mapping brief. |
+| 160 | [OpenCitations](https://opencitations.net/) | Data | Citations | n/a | Open (CC0) | Open citation graph with API and dumps; pairs with OpenAlex (115). |
+| 161 | [iCite](https://icite.od.nih.gov/) | Tool | Citations | n/a | Open | NIH citation-metrics API (Relative Citation Ratio); quick influence scores for the claim-audit evidence ladder. |
+
+### Cancer and sleep (age-adjacent)
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 162 | [HTAN](https://humantumoratlas.org/) | Data | Omics, single-cell, imaging | Human | Open via Synapse | Human Tumor Atlas Network; spatial and single-cell tumor atlases for the age-related-cancer angle. |
+| 163 | [NSRR (sleepdata.org)](https://sleepdata.org/) | Data | Clinical, signals | Human | Free with data-use agreement | Sleep polysomnography cohorts across ages; sleep is an underused healthspan readout. |
+| 164 | [clue.io](https://clue.io/) | Tool | Drugs, omics, perturbations | Human cell lines | Free academic registration | The Broad's own Connectivity Map platform; the interactive counterpart to programmatic L1000CDS2 (94). |
+
+Checked and excluded this round: SIDER (host offline; openFDA 133 covers adverse events),
+Cochrane Library (bot-blocked and mostly paywalled; Europe PMC 114 covers systematic
+reviews), LINCS Data Portal at lincsportal.ccs.miami.edu (unreachable; see entry 16 note).
+
+## Link audit, 8 September 2026 (round 3 checked 9 September 2026)
 
 All 146 unique URLs across both data docs were fetched programmatically (parallel GET,
 browser user agent, 25 s timeout), with failures retried by curl. A first pass covered the
 117 library plus first-extension entries; a consolidated second pass the same day covered
-the full 146 including the second extension round, with identical results.
+the full 146 including the second extension round, with identical results. On 9 September
+the 24 third-round candidate URLs were checked the same way before inclusion: 20 returned
+200, AlphaMissense's landing page had moved (fixed to the live data bucket), and three
+candidates were excluded as a result (SIDER offline, Cochrane bot-blocked, LINCS Data
+Portal unreachable).
 
 Result: 127 return HTTP 200, 6 return 202 (Figshare, Dataverse and Shinyapps answer
 asynchronously; fine in a browser), 1 returns 203 (PubMed to scripted clients; fine in a
@@ -224,7 +285,7 @@ Problems worth acting on:
 | 46 | ClockBase | host unreachable (port 3838 Shiny server) | Treat as unavailable; Biolearn (38) covers the same clocks |
 | 59 | TxGNN | HTTP 503 | Site down; model and data live at [github.com/mims-harvard/TxGNN](https://github.com/mims-harvard/TxGNN) |
 | 13 | ENCODE | HTTP 502 at both audits today | Degraded all day on 8 Sep; retry on the day, and mirror via its AWS Open Data bucket if it stays down |
-| 16 | LINCS | lincsproject.org root 404s for some clients | Works in a browser; gene-level data via iLINCS metadata API plus L1000CDS2 (94) |
+| 16 | LINCS | lincsproject.org root 404s for some clients; lincsportal.ccs.miami.edu unreachable on 9 Sep | Works in a browser; gene-level data via iLINCS metadata API, L1000CDS2 (94) and clue.io (164) |
 | 32, 79 | Geroprotectors.org, EUbOPEN | reachable but JavaScript-only | No bulk download or public API found; scrape or query interactively |
 | 44 | SenOmic | reachable | Bulk files are Google Drive links needing a confirm-token download flow |
 | 17 | Tahoe-100M | reachable | 3,388 parquet shards; subset before committing |
@@ -241,18 +302,20 @@ bulk-restricted KEGG (7); Biolearn (38) covers the down ClockBase (46).
 ## Which additions matter per track
 
 - Track 1 (longevity biology): 82, 87 and 88 give benchmark genes, gold-standard
-  intervention labels and senescence maps; 89 to 94 fix compound identity, potency and
-  purchasability; 118 and 119 add the human-genetics evidence layer, 121 the
-  target-safety filter, 133 and 134 the safety screens, and 135 the name normalization
-  that joins labels to chemistry. 108 to 110 are the ready-made perturbation models,
-  with 111 as the honesty citation.
+  intervention labels and senescence maps; 144 and 145 complete the HAGR set and the
+  SASP reference; 89 to 94 fix compound identity, potency and purchasability; 118 and
+  119 add the human-genetics evidence layer, 121 and 155 the variant-safety filters,
+  133 and 134 the safety screens, and 135 the name normalization that joins labels to
+  chemistry. 108 to 110 and 152 to 154 are the ready-made models, with 111 as the
+  honesty citation; 156 keeps the validation experiment's cell lines honest.
 - Track 3 (communication, trust, policy): 112 to 115 and 138 to 142 are the working
-  stack for claim audits, funding analysis and political mapping, and they are all free
-  to query this week.
+  stack for claim audits, funding analysis and political mapping; 159 to 161 add a
+  structured-knowledge backbone and two open citation graphs. All free to query this week.
 - Track 4 (clinical translation): 95 plus 99 make a blood-panel biological-age demo
   computable offline; 96 and 97 supply the outcome references to validate it against,
-  and 133 adds label and adverse-event checks. 143 is the flagship everyone cites but
-  nobody can touch in a weekend.
+  133 adds label and adverse-event checks, and 147, 148 and 163 open up brain-aging,
+  dementia and sleep readouts. 143 is the flagship everyone cites but nobody can touch
+  in a weekend.
 
 ## Suggested next step
 

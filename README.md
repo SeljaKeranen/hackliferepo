@@ -4,7 +4,7 @@ Team repo for the Stockholm Longevity x AI Hackathon, 11 to 13 September 2026 at
 
 **Status: track and challenge decided. Nothing is built yet.**
 
-We take Track 3 (Communication, Trust & Policy), challenge 1: [map the politics of longevity](docs/challenge.md) — an AI research agent that produces a cited, time-stamped global map of political engagement with longevity. Full brief and plan in [docs/challenge.md](docs/challenge.md).
+We take Track 3 (Communication, Trust & Policy), challenge 1: [map the politics of longevity](docs/challenge.md) — an AI research agent that produces a cited, time-stamped map of political engagement with longevity, covering EU countries first. Full brief and plan in [docs/challenge.md](docs/challenge.md).
 
 ## What we know
 

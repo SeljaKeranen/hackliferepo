@@ -15,6 +15,15 @@ We build an AI research agent that searches public sources and produces a cited,
 
 Evaluation: accuracy on a small human-verified benchmark matters more than map coverage. The bar is at least 90% of sampled findings verified correct by a human reviewer, with every finding carrying a dated source — including the honest "nothing reliable found" results.
 
+## Geographic scope
+
+Decided 11 September 2026: we cover the 27 EU member states first, with country-level findings. Anything beyond the EU is a stretch goal only if time allows.
+
+This scope buys two things:
+
+- With only 27 countries, the human-verified benchmark can cover every country instead of a sample: a gold set of expected findings plus honest "nothing reliable found" entries for the quiet member states.
+- Primary sources concentrate on EU institutions: CORDIS for funding, EUR-Lex and national parliament portals for legislation, European Commission and WHO-Europe strategy documents for policy.
+
 ## Initial goal
 
 1. Lock the data schema for a finding first: country/region, classification, claim, source URL, source date, confidence.

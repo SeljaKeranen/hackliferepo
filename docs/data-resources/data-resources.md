@@ -89,3 +89,26 @@ Two links in the library carried `utm_source=chatgpt.com` parameters; they are s
 | 79 | [EUbOPEN Gateway](https://gateway.eubopen.org/) | Data | Drugs | Human | Open |
 | 80 | [JUMP Cell Painting](https://broadinstitute.github.io/jump_hub/) | Data | Drugs, imaging, perturbations | Human | Open |
 | 81 | [Tabula Muris Senis](https://tabula-muris-senis.sf.czbiohub.org/) | Data | Omics, single-cell | Mouse | Open |
+
+## Recapture, 11 September 2026
+
+The organizers' live library (the Notion database this table condenses) was re-exported in
+full on 11 September 2026. The dataset set is unchanged since 7 September: the same 81
+entries, no additions or removals (one non-dataset row, a link to the Hack Playbook, was
+excluded). What the live database adds is per-entry metadata this table does not carry:
+a reference paper link for 71 entries, practical access notes ("More info") for 43, and
+separate Data Availability and Data License fields. The full export, mapped to the entry
+numbers above, is in [official-library-full-2026-09-11.json](official-library-full-2026-09-11.json).
+
+Licence and access nuances from the organizers' own notes, worth knowing before use:
+
+- 15 RxRx: CC BY-NC-SA 4.0 (non-commercial) despite the Open flag in this table.
+- 23 Parse PBMC atlas: CC BY-NC 4.0, non-commercial; commercial licensing from Parse.
+- 24 Human Protein Atlas: data CC BY-SA 4.0; antibody images carry separate terms.
+- 27 voyAGEr and 28 SINGULAR: GUI only; bulk data by emailing the authors.
+- 33 GTEx: two tiers; summary statistics open, individual-level data via dbGaP.
+- 34 Human Cell Atlas: CC licence varies by dataset; check per download.
+- 60 C2S-Scale: still listed as unavailable, release terms to be decided.
+
+Access flags in the table matched the database's availability and licence fields on all
+cleanly matched entries (63 of 81; the rest differ only by entry naming).

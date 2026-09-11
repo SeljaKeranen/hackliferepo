@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Findings review</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #1b2430; --muted: #5b6675;
+    --line: #dde2e9; --accent: #14532d; --pass: #157f3c; --fail: #b42318;
+    --pending: #8a94a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  header {
+    position: sticky; top: 0; z-index: 5; background: var(--card);
+    border-bottom: 1px solid var(--line); padding: 12px 20px;
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+  }
+  header h1 { font-size: 17px; margin: 0; }
+  .stats { display: flex; gap: 18px; margin-left: auto; align-items: center; }
+  .stat { text-align: center; }
+  .stat b { display: block; font-size: 19px; }
+  .stat span { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .stat .ok { color: var(--pass); }
+  #reviewer { border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font: inherit; width: 130px; }
+  main { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 14px;
+  }
+  .card.correct { border-left: 4px solid var(--pass); }
+  .card.incorrect { border-left: 4px solid var(--fail); }
+  .top { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .id { font-family: ui-monospace, monospace; color: var(--muted); font-size: 13px; }
+  .badge {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+    padding: 2px 8px; border-radius: 999px; background: #e8f0eb; color: var(--accent);
+  }
+  .conf { font-size: 12px; color: var(--muted); }
+  .verdict-label { margin-left: auto; font-size: 12px; font-weight: 600; }
+  .verdict-label.correct { color: var(--pass); }
+  .verdict-label.incorrect { color: var(--fail); }
+  .verdict-label.pending { color: var(--pending); font-weight: 400; }
+  .claim { margin: 10px 0 8px; }
+  .srcline { font-size: 13px; color: var(--muted); word-break: break-all; }
+  .srcline a { color: #0b57d0; }
+  details { margin-top: 8px; font-size: 13px; color: var(--muted); }
+  details summary { cursor: pointer; user-select: none; }
+  .checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px; margin-top: 12px; }
+  .check {
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  }
+  .check span { font-size: 13px; }
+  .pf { display: flex; gap: 4px; }
+  .pf button {
+    border: 1px solid var(--line); background: #fff; border-radius: 6px;
+    padding: 3px 10px; font: inherit; font-size: 13px; cursor: pointer; color: var(--muted);
+  }
+  .pf button.on-pass { background: var(--pass); border-color: var(--pass); color: #fff; }
+  .pf button.on-fail { background: var(--fail); border-color: var(--fail); color: #fff; }
+  .noteline { margin-top: 10px; display: flex; gap: 8px; }
+  .noteline input { flex: 1; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font: inherit; font-size: 13px; }
+  .saved { font-size: 12px; color: var(--pass); align-self: center; min-width: 46px; }
+  .rubric { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Findings review — <span id="country"></span></h1>
+  <input id="reviewer" placeholder="reviewer name">
+  <div class="stats">
+    <div class="stat"><b id="s-total">–</b><span>findings</span></div>
+    <div class="stat"><b id="s-reviewed">–</b><span>reviewed</span></div>
+    <div class="stat"><b id="s-correct" class="ok">–</b><span>correct</span></div>
+    <div class="stat"><b id="s-acc">–</b><span>accuracy</span></div>
+  </div>
+</header>
+<main>
+  <p class="rubric">A finding counts as <b>correct only if all four checks pass</b>:
+  the source URL resolves, the source date is right, the classification is right,
+  and the claim is supported by the source. Click the source link, read, then mark each check.
+  Verdicts save automatically to <code>eval/verdicts/</code>.</p>
+  <div id="list"></div>
+</main>
+<script>
+const CHECKS = [
+  ["source_resolves", "Source resolves"],
+  ["date_correct", "Date correct"],
+  ["classification_correct", "Classification correct"],
+  ["claim_supported", "Claim supported"],
+];
+let findings = [], verdicts = {};
+
+const reviewerInput = document.getElementById("reviewer");
+reviewerInput.value = localStorage.getItem("reviewer") || "";
+reviewerInput.addEventListener("input", () => localStorage.setItem("reviewer", reviewerInput.value));
+
+async function boot() {
+  const fRes = await fetch("/api/findings").then(r => r.json());
+  document.getElementById("country").textContent = fRes.country;
+  findings = fRes.findings;
+  verdicts = await fetch("/api/verdicts").then(r => r.json());
+  render();
+}
+
+function verdictState(v) {
+  if (!v || !v.reviewed) return "pending";
+  return v.correct ? "correct" : "incorrect";
+}
+
+function render() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  for (const f of findings) {
+    const v = verdicts[f.id];
+    const state = verdictState(v);
+    const card = document.createElement("div");
+    card.className = "card " + (state !== "pending" ? state : "");
+    const isFinding = f.type === "finding";
+    card.innerHTML = `
+      <div class="top">
+        <span class="id">${f.id}</span>
+        <span class="badge">${isFinding ? f.classification : "nothing reliable found"}</span>
+        ${f.region ? `<span class="conf">region: ${esc(f.region)}</span>` : ""}
+        ${isFinding ? `<span class="conf">confidence: ${f.confidence}</span>` : ""}
+        <span class="verdict-label ${state}">${
+          state === "correct" ? "✓ correct" : state === "incorrect" ? "✗ incorrect" : "not reviewed"}</span>
+      </div>
+      <p class="claim">${esc(isFinding ? f.claim : f.search_note)}</p>
+      ${isFinding ? `<div class="srcline">
+        <a href="${encodeURI(f.source_url)}" target="_blank" rel="noopener noreferrer">${esc(f.source_url)}</a>
+        &nbsp;· source date ${esc(f.source_date)} · retrieved ${esc(f.retrieved_at.slice(0, 10))}
+      </div>` : ""}
+      ${f.source_note ? `<details><summary>source note</summary>${esc(f.source_note)}</details>` : ""}
+      <div class="checks">${CHECKS.map(([key, label]) => `
+        <div class="check"><span>${label}</span>
+          <div class="pf" data-check="${key}">
+            <button data-val="pass" class="${v && v.checks[key] === true ? "on-pass" : ""}">pass</button>
+            <button data-val="fail" class="${v && v.checks[key] === false ? "on-fail" : ""}">fail</button>
+          </div>
+        </div>`).join("")}
+      </div>
+      <div class="noteline">
+        <input class="note" placeholder="note (optional, e.g. why a check failed)"
+               value="${v ? esc(v.note) : ""}">
+        <span class="saved"></span>
+      </div>`;
+    card.querySelectorAll(".pf button").forEach(btn => {
+      btn.addEventListener("click", () => toggleCheck(f.id, btn));
+    });
+    card.querySelector(".note").addEventListener("change", () => save(f.id, card));
+    card.dataset.id = f.id;
+    list.appendChild(card);
+  }
+  renderStats();
+}
+
+function toggleCheck(id, btn) {
+  const group = btn.parentElement;
+  const already = btn.classList.contains("on-pass") || btn.classList.contains("on-fail");
+  group.querySelectorAll("button").forEach(b => b.classList.remove("on-pass", "on-fail"));
+  if (!already) btn.classList.add(btn.dataset.val === "pass" ? "on-pass" : "on-fail");
+  save(id, group.closest(".card"));
+}
+
+async function save(id, card) {
+  const checks = {};
+  card.querySelectorAll(".pf").forEach(group => {
+    const pass = group.querySelector(".on-pass");
+    const fail = group.querySelector(".on-fail");
+    checks[group.dataset.check] = pass ? true : fail ? false : null;
+  });
+  const body = {
+    finding_id: id,
+    checks,
+    reviewer: reviewerInput.value,
+    note: card.querySelector(".note").value,
+    reviewed_at: new Date().toISOString(),
+  };
+  const res = await fetch("/api/verdict", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  }).then(r => r.json());
+  if (res.ok) {
+    verdicts[id] = res.verdict;
+    const state = verdictState(res.verdict);
+    card.classList.remove("correct", "incorrect");
+    if (state !== "pending") card.classList.add(state);
+    const label = card.querySelector(".verdict-label");
+    label.className = "verdict-label " + state;
+    label.textContent = state === "correct" ? "✓ correct" : state === "incorrect" ? "✗ incorrect" : "not reviewed";
+    const saved = card.querySelector(".saved");
+    saved.textContent = "saved";
+    setTimeout(() => { saved.textContent = ""; }, 1200);
+    renderStats();
+  }
+}
+
+function renderStats() {
+  const reviewed = findings.filter(f => verdicts[f.id] && verdicts[f.id].reviewed);
+  const correct = reviewed.filter(f => verdicts[f.id].correct);
+  document.getElementById("s-total").textContent = findings.length;
+  document.getElementById("s-reviewed").textContent = reviewed.length;
+  document.getElementById("s-correct").textContent = correct.length;
+  document.getElementById("s-acc").textContent =
+    reviewed.length ? Math.round(100 * correct.length / reviewed.length) + "%" : "–";
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+boot();
+</script>
+</body>
+</html>

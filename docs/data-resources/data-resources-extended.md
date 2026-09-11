@@ -257,7 +257,72 @@ Checked and excluded this round: SIDER (host offline; openFDA 133 covers adverse
 Cochrane Library (bot-blocked and mostly paywalled; Europe PMC 114 covers systematic
 reviews), LINCS Data Portal at lincsportal.ccs.miami.edu (unreachable; see entry 16 note).
 
-## Link audit, 8 September 2026 (round 3 checked 9 September 2026)
+## Fourth extension round, verified live 10 September 2026
+
+Checked for overlap against the library (1-81), rounds 1-3 here (82-164), the eldercare
+supplement's 13 entries, and the team-fit guide's S1-S19 before inclusion.
+
+### Exercise and reprocessed expression at scale
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 165 | [MoTrPAC Data Hub](https://motrpac-data.org/) | Data | Omics, perturbations | Rat, human | Public data without an account; restricted files need registration | NIH molecular maps of exercise across tissues and timepoints; the omics of the best-established healthspan intervention. |
+| 166 | [ARCHS4](https://maayanlab.cloud/archs4/) | Data | Omics | Human, mouse | Open | Uniformly reprocessed RNA-seq from most of GEO; the practical route to "all public expression data" without reprocessing. |
+| 167 | [recount3](https://rna.recount.bio/) | Data | Omics | Multiple | Open | Uniformly reprocessed RNA-seq across GEO, SRA, GTEx and TCGA; overlaps 166 with different pipelines, useful for robustness checks. |
+| 168 | [Expression Atlas](https://www.ebi.ac.uk/gxa/) | Data | Omics | Multiple | Open | EBI's curated expression experiments, including ageing studies; complements raw GEO (5) with consistent analysis. |
+
+### Metabolomics, proteomics and glycobiology
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 169 | [MetaboLights](https://www.ebi.ac.uk/metabolights/) | Data | Metabolomics | Multiple | Open | EBI's metabolomics repository; the European counterpart to Metabolomics Workbench (103). |
+| 170 | [MassIVE](https://massive.ucsd.edu/) | Data | Proteomics, metabolomics | Multiple | Open (CC0 common) | The UCSD mass-spec repository where, for example, the SASP Atlas (145) raw data lives; pairs with PRIDE (102). |
+| 171 | [GNPS](https://gnps.ucsd.edu/) | Data, tool | Metabolomics | Multiple | Open | Molecular networking and spectral libraries for metabolomics analysis. |
+| 172 | [GlyGen](https://www.glygen.org/) | Data | Glycobiology, omics | Human, model organisms | Open | NIH glycoscience portal; covers the glycan species behind IgG glycosylation ageing markers that the library otherwise lacks. |
+| 173 | [LipidMaps](https://www.lipidmaps.org/) | Data | Lipidomics | Multiple | Open | Reference lipid structures, classes and measurements; lipid metabolism is central to ageing and absent from the library. |
+
+### Interactions, abundance and regulation
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 174 | [IntAct](https://www.ebi.ac.uk/intact/) | Data | Pathways, interactions | Multiple | Open (CC BY 4.0) | EBI's curated molecular-interaction database; complements STRING (101) with experiment-level evidence. |
+| 175 | [PaxDb](https://pax-db.org/) | Data | Proteomics | Multiple | Open | Integrated protein-abundance estimates across organisms and tissues; a quick reality check on whether a target is expressed at meaningful levels. |
+| 176 | [ChIP-Atlas](https://chip-atlas.org/) | Data | Omics, regulation | Human, mouse | Open | Uniformly reprocessed public ChIP-seq and ATAC-seq; TF-target evidence for mechanism hypotheses. |
+
+### Patents
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 177 | [SureChEMBL 2.0](https://www.surechembl.org/) | Data | Drugs, patents | n/a | Open | Compound-patent mappings from EMBL-EBI; the 2.0 relaunch ships biweekly Parquet bulk files (legacy MAP files deprecated). Freedom-to-operate signals for repurposing candidates. |
+
+### Nordic statistics and dementia (supports the eldercare project docs)
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 178 | [SCB Statistikdatabasen](https://www.statistikdatabasen.scb.se/) | Data | Demographics, care, mortality | Human (Sweden) | Open (PxWeb API, attribution) | Statistics Sweden's official database; the population and mortality denominators behind any Swedish care indicator. |
+| 179 | [NHWStat (NOMESCO/NOSOSCO)](https://nhwstat.org/) | Data | Health, welfare, expenditure | Human (Nordics) | Open (PxWeb API) | Nordic-comparable health and social statistics from the Nordic Council of Ministers' committees; the cross-country layer above the national portals. |
+| 180 | [WHO Global Dementia Observatory](https://www.who.int/data/gho/data/themes/global-dementia-observatory-gdo/) | Data | Clinical, policy | Human (62+ countries) | Open (GHO OData API and bulk zips) | 35 standardised dementia indicators per country: diagnosis, care facilities, carer support, policy. Directly serves the ageing-and-dementia project docs. |
+| 181 | [OpenNeuro](https://openneuro.org/) | Data | Imaging, EEG | Human | Open (mostly CC0 datasets) | The platform behind the eldercare supplement's ds004504; hundreds more MRI/EEG/iEEG datasets for dementia-adjacent work. |
+
+### Policy, trials and communication
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 182 | [Our World in Data](https://ourworldindata.org/) | Data, tool | Demographics, health | n/a | Open (CC BY 4.0) | Life expectancy and ageing charts with an open data API; the fastest credible visual for Track 3 communication. |
+| 183 | [UN World Population Prospects](https://population.un.org/wpp/) | Data | Demographics | n/a | Open (attribution) | Official UN population projections to 2100; the denominator for every "ageing society" claim. |
+| 184 | [WHO ICTRP](https://trialsearch.who.int/) | Data | Clinical trials | Human | Open | Meta-search across 20+ national trial registries; catches trials that ClinicalTrials.gov (112) and AACT (113) miss. |
+| 185 | [EU Clinical Trials Register](https://www.clinicaltrialsregister.eu/) | Data | Clinical trials | Human | Open | EU trial registrations and results; the European complement for claim audits. |
+
+### Flagship cohort (planning note)
+
+| # | Resource | Type | Data types | Species | Access | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 186 | [All of Us](https://allofus.nih.gov/) | Data | Biomarkers, clinical, omics, wearables | Human (US) | Restricted (registration, training, workspace compute fees; anti-bot blocked scripts at audit) | The US counterpart to UK Biobank (143) with strong wearable and diversity coverage. Listed for planning only; not weekend-usable. |
+
+Checked and excluded this round: DeepBlue (deepblue.mpi-inf.mpg.de unreachable on
+10 Sep 2026; ChIP-Atlas 176 and ENCODE 13 cover the regulatory-epigenomics use case).
+
+## Link audit, 8 September 2026 (rounds 3 and 4 checked 9 and 10 September 2026)
 
 All 146 unique URLs across both data docs were fetched programmatically (parallel GET,
 browser user agent, 25 s timeout), with failures retried by curl. A first pass covered the
@@ -266,7 +331,9 @@ the full 146 including the second extension round, with identical results. On 9 
 the 24 third-round candidate URLs were checked the same way before inclusion: 20 returned
 200, AlphaMissense's landing page had moved (fixed to the live data bucket), and three
 candidates were excluded as a result (SIDER offline, Cochrane bot-blocked, LINCS Data
-Portal unreachable).
+Portal unreachable). On 10 September the 23 fourth-round candidates were checked: 21
+returned 200, All of Us (186) is anti-bot blocked to scripts (restricted by design
+anyway), and DeepBlue was unreachable and excluded.
 
 Result: 127 return HTTP 200, 6 return 202 (Figshare, Dataverse and Shinyapps answer
 asynchronously; fine in a browser), 1 returns 203 (PubMed to scripted clients; fine in a
@@ -314,8 +381,11 @@ bulk-restricted KEGG (7); Biolearn (38) covers the down ClockBase (46).
 - Track 4 (clinical translation): 95 plus 99 make a blood-panel biological-age demo
   computable offline; 96 and 97 supply the outcome references to validate it against,
   133 adds label and adverse-event checks, and 147, 148 and 163 open up brain-aging,
-  dementia and sleep readouts. 143 is the flagship everyone cites but nobody can touch
-  in a weekend.
+  dementia and sleep readouts. 143 and 186 are the flagships everyone cites but nobody
+  can touch in a weekend.
+- Eldercare and dementia direction (the team's supplement): 178 and 179 add the missing
+  Swedish and Nordic-comparable statistical layers, 180 the WHO dementia indicators, and
+  181 the broader EEG/MRI platform behind the supplement's single dataset.
 
 ## Suggested next step
 

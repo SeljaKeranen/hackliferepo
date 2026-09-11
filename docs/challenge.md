@@ -30,6 +30,16 @@ This scope buys two things:
 2. Build the research agent plus a roughly 30–50 finding human-verified benchmark on Saturday; report accuracy against it.
 3. Keep the map UI simple.
 
+## Evaluation loop
+
+Built 11 September 2026 as a Sweden-first pilot: the finding schema lives in
+[`schema/finding.schema.json`](../schema/finding.schema.json), 14 human-gathered
+findings from Swedish primary sources in
+[`eval/findings/sweden.json`](../eval/findings/sweden.json), and a localhost
+review screen (`python3 eval/server.py`) where the team marks each finding
+against a four-check rubric; verdicts persist to `eval/verdicts/` and the screen
+shows running accuracy. See [`eval/README.md`](../eval/README.md).
+
 ## What this means in practice
 
 Coverage explicitly matters less than accuracy. A modest map where nearly every finding survives human verification beats a dense map with unverified claims, so the benchmark and the honest "nothing reliable found" handling are first-class deliverables, not polish.

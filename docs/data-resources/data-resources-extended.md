@@ -322,7 +322,22 @@ supplement's 13 entries, and the team-fit guide's S1-S19 before inclusion.
 Checked and excluded this round: DeepBlue (deepblue.mpi-inf.mpg.de unreachable on
 10 Sep 2026; ChIP-Atlas 176 and ENCODE 13 cover the regulatory-epigenomics use case).
 
-## Link audit, 8 September 2026 (rounds 3 and 4 checked 9 and 10 September 2026)
+## Link audit, 8 September 2026 (corpus-wide recheck 10 September 2026)
+
+Corpus-wide pass on 10 September 2026: all 261 unique URLs across the four data documents
+(library, this file, the eldercare supplement, and the team-fit guide's S1-S19) were
+fetched programmatically (parallel GET, browser user agent, 25 s timeout), failures
+retried with curl. Result: 227 return 200; 6 return 202 (Figshare/Dataverse/Shinyapps
+async); 4 return 203 (NCBI/PubMed to scripted clients); 15 return 403 to scripts but open
+in a browser (cdc.gov, oecd.org, doi.org/MDPI, hmdb.ca, openalex.org, ukbiobank.ac.uk,
+allofus.nih.gov, wormbase.org, hrs.isr.umich.edu, zenodo.org). The team-fit guide's 20
+URLs all pass. Remaining failures below.
+
+Earlier passes on 8 September covered the 117 library plus first-extension entries and a
+consolidated recheck of all 146 URLs then present; on 9 September the 24 third-round
+candidates were checked before inclusion (20 OK, AlphaMissense URL fixed, SIDER/Cochrane/
+LINCS Data Portal excluded); on 10 September the 23 fourth-round candidates were checked
+(21 OK, All of Us anti-bot blocked, DeepBlue unreachable and excluded).
 
 All 146 unique URLs across both data docs were fetched programmatically (parallel GET,
 browser user agent, 25 s timeout), with failures retried by curl. A first pass covered the
@@ -358,6 +373,14 @@ Problems worth acting on:
 | 17 | Tahoe-100M | reachable | 3,388 parquet shards; subset before committing |
 | 60 | Cell2Sentence-Scale | no link in library, marked unavailable | Skip |
 | 1, 2, 23, 36, 41, 49, 57 | BLSA, GNPC, Parse PBMC, Oh 2023, Mammalian Methylation, AI-READI, Natural Cycles | restricted or on request | Will not arrive over a weekend; exclude from Friday plans |
+
+Found in the eldercare supplement during the corpus-wide pass (for its author to fix):
+
+| Document | Link | Status 10 Sep 2026 | Note |
+| --- | --- | --- | --- |
+| data-resources-extended-eldercare.md | dst.dk quality-statement PDF (GetArchiveFile.aspx?ext=kvaldel...) | HTTP 404, confirmed with curl | Dead link; use the StatBank documentation page instead |
+| data-resources-extended-eldercare.md | nhats.org NHATSCogstateUserGuideR11-13_Oct2024.pdf | HTTP 404, confirmed with curl | Moved; current guide via nhats.org researcher documentation |
+| data-resources-extended-eldercare.md | cdc.gov BRFSS pages (6 links) | 403 to scripts | Bot protection; fine in a browser |
 
 Overlap check, library vs additions: no unintended duplicates. Deliberate complements are
 cross-referenced in their Notes columns: L1000CDS2 (94) is the working data route for

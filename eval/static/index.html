@@ -66,6 +66,7 @@
   .noteline { margin-top: 10px; display: flex; gap: 8px; }
   .noteline input { flex: 1; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font: inherit; font-size: 13px; }
   .saved { font-size: 12px; color: var(--pass); align-self: center; min-width: 46px; }
+  .saved.err { color: var(--fail); font-weight: 600; }
   .rubric { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
 </style>
 </head>
@@ -113,6 +114,11 @@ function verdictState(v) {
   return v.correct ? "correct" : "incorrect";
 }
 
+function verdictLabel(state) {
+  return state === "correct" ? "✓ correct"
+    : state === "incorrect" ? "✗ incorrect" : "not reviewed";
+}
+
 function render() {
   const list = document.getElementById("list");
   list.innerHTML = "";
@@ -124,16 +130,17 @@ function render() {
     const isFinding = f.type === "finding";
     card.innerHTML = `
       <div class="top">
-        <span class="id">${f.id}</span>
-        <span class="badge">${isFinding ? f.classification : "nothing reliable found"}</span>
+        <span class="id">${esc(f.id)}</span>
+        <span class="badge">${isFinding ? esc(f.classification) : "nothing reliable found"}</span>
         ${f.region ? `<span class="conf">region: ${esc(f.region)}</span>` : ""}
-        ${isFinding ? `<span class="conf">confidence: ${f.confidence}</span>` : ""}
-        <span class="verdict-label ${state}">${
-          state === "correct" ? "✓ correct" : state === "incorrect" ? "✗ incorrect" : "not reviewed"}</span>
+        ${isFinding ? `<span class="conf">confidence: ${esc(f.confidence)}</span>` : ""}
+        <span class="verdict-label ${state}">${verdictLabel(state)}</span>
       </div>
       <p class="claim">${esc(isFinding ? f.claim : f.search_note)}</p>
       ${isFinding ? `<div class="srcline">
-        <a href="${encodeURI(f.source_url)}" target="_blank" rel="noopener noreferrer">${esc(f.source_url)}</a>
+        ${/^https:\/\//.test(f.source_url)
+          ? `<a href="${encodeURI(f.source_url)}" target="_blank" rel="noopener noreferrer">${esc(f.source_url)}</a>`
+          : `${esc(f.source_url)} (not https — mark "source resolves" fail)`}
         &nbsp;· source date ${esc(f.source_date)} · retrieved ${esc(f.retrieved_at.slice(0, 10))}
       </div>` : ""}
       ${f.source_note ? `<details><summary>source note</summary>${esc(f.source_note)}</details>` : ""}
@@ -153,7 +160,13 @@ function render() {
     card.querySelectorAll(".pf button").forEach(btn => {
       btn.addEventListener("click", () => toggleCheck(f.id, btn));
     });
-    card.querySelector(".note").addEventListener("change", () => save(f.id, card));
+    const note = card.querySelector(".note");
+    note.addEventListener("change", () => save(f.id, card));
+    let noteTimer;
+    note.addEventListener("input", () => {
+      clearTimeout(noteTimer);
+      noteTimer = setTimeout(() => save(f.id, card), 800);
+    });
     card.dataset.id = f.id;
     list.appendChild(card);
   }
@@ -182,23 +195,31 @@ async function save(id, card) {
     note: card.querySelector(".note").value,
     reviewed_at: new Date().toISOString(),
   };
-  const res = await fetch("/api/verdict", {
-    method: "POST", headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  }).then(r => r.json());
-  if (res.ok) {
-    verdicts[id] = res.verdict;
-    const state = verdictState(res.verdict);
-    card.classList.remove("correct", "incorrect");
-    if (state !== "pending") card.classList.add(state);
-    const label = card.querySelector(".verdict-label");
-    label.className = "verdict-label " + state;
-    label.textContent = state === "correct" ? "✓ correct" : state === "incorrect" ? "✗ incorrect" : "not reviewed";
-    const saved = card.querySelector(".saved");
-    saved.textContent = "saved";
-    setTimeout(() => { saved.textContent = ""; }, 1200);
-    renderStats();
+  const saved = card.querySelector(".saved");
+  let res;
+  try {
+    const r = await fetch("/api/verdict", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    res = await r.json();
+    if (!r.ok || !res.ok) throw new Error(res.error || "HTTP " + r.status);
+  } catch (e) {
+    saved.textContent = "SAVE FAILED";
+    saved.classList.add("err");
+    return;
   }
+  saved.classList.remove("err");
+  verdicts[id] = res.verdict;
+  const state = verdictState(res.verdict);
+  card.classList.remove("correct", "incorrect");
+  if (state !== "pending") card.classList.add(state);
+  const label = card.querySelector(".verdict-label");
+  label.className = "verdict-label " + state;
+  label.textContent = verdictLabel(state);
+  saved.textContent = "saved";
+  setTimeout(() => { if (saved.textContent === "saved") saved.textContent = ""; }, 1200);
+  renderStats();
 }
 
 function renderStats() {

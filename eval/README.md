@@ -42,6 +42,16 @@ running accuracy = correct / reviewed.
   click. Committed: the verdicts are the evidence for the accuracy claim, so
   commit them after a review session.
 
+## Limitations (by design, for the pilot)
+
+- One review session at a time per country: verdicts are last-write-wins with
+  no locking, so don't review the same country from two tabs or machines at
+  once. Merge parallel review sessions by hand if it ever comes to that.
+- The page loads existing verdicts once at startup; reload to see verdicts
+  written by a previous session.
+- Clicking an already-selected pass/fail button clears that check back to
+  "not answered" (that's the intended way to undo a click).
+
 ## Validate the data
 
 ```sh

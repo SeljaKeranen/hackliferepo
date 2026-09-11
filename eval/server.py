@@ -10,6 +10,7 @@ verdicts to eval/verdicts/<country>.verdicts.json.
 import argparse
 import json
 import os
+import re
 import tempfile
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import urlparse
@@ -26,7 +27,7 @@ def load_json(path, default):
     try:
         with open(path, encoding="utf-8") as f:
             return json.load(f)
-    except FileNotFoundError:
+    except (OSError, ValueError):
         return default
 
 
@@ -77,11 +78,20 @@ class Handler(SimpleHTTPRequestHandler):
         path = urlparse(self.path).path
         if path != "/api/verdict":
             return self.send_json({"error": "not found"}, 404)
+        # Verdicts are evidence: refuse writes from other origins (a hostile web
+        # page in another tab can POST to localhost without a CORS preflight).
+        origin = self.headers.get("Origin")
+        if origin is not None and urlparse(origin).netloc != self.headers.get("Host", ""):
+            return self.send_json({"error": "cross-origin writes not allowed"}, 403)
         try:
-            length = int(self.headers.get("Content-Length", 0))
+            length = int(self.headers.get("Content-Length", "0"))
+            if not 0 <= length <= 1_000_000:
+                return self.send_json({"error": "bad Content-Length"}, 400)
             payload = json.loads(self.rfile.read(length))
-        except (ValueError, json.JSONDecodeError):
+        except ValueError:
             return self.send_json({"error": "invalid JSON body"}, 400)
+        if not isinstance(payload, dict):
+            return self.send_json({"error": "body must be a JSON object"}, 400)
 
         finding_id = payload.get("finding_id")
         checks = payload.get("checks")
@@ -90,7 +100,7 @@ class Handler(SimpleHTTPRequestHandler):
         clean_checks = {}
         for key in CHECKS:
             val = checks.get(key)
-            if val not in (True, False, None):
+            if not (val is True or val is False or val is None):
                 return self.send_json({"error": f"check {key} must be true/false/null"}, 400)
             clean_checks[key] = val
 
@@ -104,6 +114,8 @@ class Handler(SimpleHTTPRequestHandler):
             "note": str(payload.get("note") or ""),
             "reviewed_at": str(payload.get("reviewed_at") or ""),
         }
+        # Safe read-modify-write only because HTTPServer serializes requests;
+        # switching to ThreadingHTTPServer would need a lock around this block.
         verdicts = load_json(self.verdicts_path, {})
         verdicts[finding_id] = verdict
         atomic_write_json(self.verdicts_path, verdicts)
@@ -118,6 +130,8 @@ def main():
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--country", default="sweden")
     args = parser.parse_args()
+    if not re.fullmatch(r"[a-z][a-z0-9_-]*", args.country):
+        parser.error("--country must be a plain lowercase name (it becomes a filename)")
     Handler.country = args.country
     server = HTTPServer(("127.0.0.1", args.port), Handler)
     print(f"Reviewing {args.country} findings at http://localhost:{args.port}")

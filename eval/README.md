@@ -46,8 +46,9 @@ running accuracy = correct / reviewed.
 - `verdicts/<country>.verdicts.json` — verdicts, written by the server on every
   click. Committed: the verdicts are the evidence for the accuracy claim, so
   commit them after a review session. Each verdict stores a fingerprint of the
-  finding content it attests to; if a finding is edited after review,
-  `test_findings.py` flags the verdict as stale and it must be re-reviewed.
+  finding content it attests to; if a finding is edited after review, the
+  review screen shows the verdict as "stale — re-review" and drops it from the
+  accuracy counts, and `test_findings.py` fails until it is re-reviewed.
   The server refuses to save over a verdicts file it cannot parse (fix the
   file by hand first) so evidence is never silently clobbered.
 

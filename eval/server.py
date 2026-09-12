@@ -45,7 +45,8 @@ def finding_fingerprint(rec):
     eval/test_findings.py cross-checks it against the current findings file."""
     core = json.dumps(
         [rec.get(k) for k in
-         ("claim", "search_note", "source_url", "source_date", "classification")],
+         ("claim", "search_note", "source_url", "source_date", "classification",
+          "source_note")],
         ensure_ascii=False)
     return hashlib.sha256(core.encode("utf-8")).hexdigest()[:16]
 
@@ -101,6 +102,16 @@ class Handler(SimpleHTTPRequestHandler):
                 if not isinstance(verdicts, dict):
                     errors.append(f"verdicts file {name}.verdicts.json is unreadable")
                     verdicts = {}
+                # Flag verdicts whose finding changed since review (or vanished)
+                # so the UI can demand a re-review instead of showing stale
+                # green checkmarks. Served only, never written back.
+                by_id = {r.get("id"): r for r in findings if isinstance(r, dict)}
+                for fid, v in verdicts.items():
+                    if isinstance(v, dict):
+                        rec = by_id.get(fid)
+                        v["stale"] = (rec is None
+                                      or v.get("finding_fingerprint")
+                                      != finding_fingerprint(rec))
                 entry = {"findings": findings, "verdicts": verdicts}
                 if errors:
                     entry["error"] = "; ".join(errors)

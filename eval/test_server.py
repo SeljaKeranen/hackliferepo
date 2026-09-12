@@ -89,6 +89,18 @@ def main():
     status, _ = request(port, "/api/verdict", {**verdict, "finding_id": "xx-999"})
     expect(status == 400, "verdict for a nonexistent finding must be rejected")
 
+    findings_path = os.path.join(server.FINDINGS_DIR, "testland.json")
+    with open(findings_path, "w", encoding="utf-8") as f:
+        json.dump([{**FINDING, "claim": FINDING["claim"] + " Edited after review."}], f)
+    status, data = request(port, "/api/data")
+    expect(data["countries"]["testland"]["verdicts"]["xx-001"].get("stale") is True,
+           "editing a reviewed finding must mark its served verdict stale")
+    with open(findings_path, "w", encoding="utf-8") as f:
+        json.dump([FINDING], f)
+    status, data = request(port, "/api/data")
+    expect(data["countries"]["testland"]["verdicts"]["xx-001"].get("stale") is False,
+           "restoring the reviewed content must clear the stale flag")
+
     with open(os.path.join(server.VERDICTS_DIR, "testland.verdicts.json"),
               "a", encoding="utf-8") as f:
         f.write("<<<<<<< merge conflict")

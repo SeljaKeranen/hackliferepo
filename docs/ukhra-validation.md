@@ -112,6 +112,59 @@ prevention/consequences split needs to tell labellers what to do with a
 mechanism study that names no disease and proposes no intervention.
 Otherwise the disagreement rate on the biggest category will be noise.
 
+## Negative control: the ageing classifier over UKHRA
+
+`ukhra/negative_control.py` runs `ratio/classify.py` across the same 11,664
+awards. UKHRA is general UK health research, not selected by any ageing
+keyword search, so it is close to a null sample: confident ageing labels here
+are candidate relevance-gate leaks, findable without a single new human label.
+
+This makes no accuracy claim. HRCS has no ageing category, so there is nothing
+to be right or wrong against. It surfaces labels worth a human look, and says
+which keywords drove them.
+
+| label | awards |
+| --- | ---: |
+| not_relevant | 6,203 |
+| age_related_disease | 4,531 |
+| ambiguous | 411 |
+| care | 257 |
+| fundamental_aging | 207 |
+| intervention | 41 |
+| social_population_aging | 14 |
+
+**The denominator is the thing to look at.** 38.8% of all UK health research
+lands in `age_related_disease`, driven by bare disease names: `cancer` alone
+accounts for 1,933 of those 4,531, then `stroke` (353), `dementia*` (333),
+`cardiovascular disease` (324), `obesity` (304), `heart failure` (293). Since
+the funding-gap ratio divides by all substantive categories, a boundary that
+catches a large share of general biomedicine on a disease mention inflates the
+denominator and shrinks the ratio.
+
+That is the same "fighting the consequences has no ceiling" problem the
+Research Activity table above shows from the human side, arriving from the
+classifier side.
+
+**Ratio read on a corpus with no ageing focus: 0.062.** Not a target and not
+an error rate. It is the floor the instrument reads on general health research,
+and the per-region ratios reported elsewhere should be read against it.
+
+**51 numerator labels landed on human Health Categories with no plausible
+ageing framing** (Infection, Reproductive Health and Childbirth, Oral and
+Gastrointestinal, Renal and Urogenital, Congenital Disorders). Three worth
+fixing first:
+
+- `rapamycin` → `intervention` on a *Plasmodium falciparum* malaria study.
+  Rapamycin is a reagent there, not a geroprotector.
+- `malnutrition` → `intervention` on environmental enteric dysfunction, a
+  childhood gut disease.
+- `dna methylation` → `fundamental_aging` on a reproductive health biobank.
+  Generic molecular biology, not an epigenetic clock.
+
+These are the same shape as the gate leaks already fixed by hand elsewhere
+(battery "cell", NMR "mouse", antifouling). The difference is that this finds
+them at 11,664-record scale instead of by mining examples.
+
 ## Reproduce
 
 The dataset is not committed (`AGENTS.md`: do not commit raw datasets).
@@ -120,12 +173,15 @@ The dataset is not committed (`AGENTS.md`: do not commit raw datasets).
 curl -sL -o /tmp/UKHRA2022.xlsx \
   https://hrcsonline.net/wp-content/uploads/2024/01/UKHRA2022_HRCS_public_dataset_v1-2_30Jan2024.xlsx
 python3 -m ukhra.benchmark --xlsx /tmp/UKHRA2022.xlsx --out ukhra/results.json
-python3 -m unittest ukhra.test_benchmark
+python3 -m ukhra.negative_control --xlsx /tmp/UKHRA2022.xlsx \
+  --out ukhra/negative_control_results.json
+python3 -m unittest discover -s ukhra -t . -p "test_*.py"
 ```
 
 `ukhra/xlsx.py` is a minimal stdlib XLSX reader written for this, since
 openpyxl is not available and the repo stays stdlib-only. `ukhra/results.json`
-is the committed output of the run above.
+and `ukhra/negative_control_results.json` are the committed outputs of the
+runs above.
 
 ## Source and licence
 

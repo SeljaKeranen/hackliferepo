@@ -153,11 +153,14 @@ def wilson_interval(k, n, z=1.96):
 
 def effective_verdicts(verdicts_by_reviewer):
     """record_id -> {reviewer: verdict} keeping only well-formed, current
-    verdicts. Malformed or stale entries count as unreviewed."""
+    verdicts. Malformed or stale entries count as unreviewed. Requires the
+    caller to have run mark_stale first: an entry without an explicit
+    `stale: False` is excluded, so forgetting the staleness pass yields a
+    loud zero instead of silently-fresh verdicts."""
     per_record = {}
     for reviewer, verdicts in sorted(verdicts_by_reviewer.items()):
         for rid, v in verdicts.items():
-            if (isinstance(v, dict) and not v.get("stale")
+            if (isinstance(v, dict) and v.get("stale") is False
                     and v.get("verdict") in ("agree", "disagree")
                     and v.get("label") in LABELS):
                 per_record.setdefault(rid, {})[reviewer] = v
@@ -177,8 +180,12 @@ def summarize(records, verdicts_by_reviewer, judgments):
         rid for rid in reviewed
         if len({v["label"] for v in per_record[rid].values()}) > 1)
     consensus = [rid for rid in reviewed if rid not in conflicts]
+    # agreement is label equality, not the stored verdict word: a hand-
+    # edited "agree" carrying a different label counts as the disagreement
+    # it actually expresses
     agreed = [rid for rid in consensus
-              if next(iter(per_record[rid].values()))["verdict"] == "agree"]
+              if next(iter(per_record[rid].values()))["label"]
+              == by_id[rid].get("label")]
     ambiguous = [rid for rid in consensus
                  if by_id[rid].get("label") == "ambiguous"]
     ambiguous_confirmed = [rid for rid in ambiguous if rid in agreed]
@@ -223,11 +230,26 @@ def summarize(records, verdicts_by_reviewer, judgments):
 
 
 def list_verdict_files():
-    return sorted(
-        (name, p) for p in glob.glob(
-            os.path.join(VERDICTS_DIR, "*.verdicts.json"))
-        if REVIEWER_SLUG_RE.fullmatch(
-            name := os.path.basename(p)[:-len(".verdicts.json")]))
+    """(files, rejected): valid (slug, path) pairs plus the basenames of
+    files in the verdicts directory that look like verdicts but carry an
+    unusable name. Rejected names must be surfaced, never silently
+    dropped - a whole reviewer's evidence can hide behind a stray capital
+    letter or backup suffix."""
+    files, rejected = [], []
+    try:
+        entries = sorted(os.listdir(VERDICTS_DIR))
+    except OSError:
+        return [], []
+    for entry in entries:
+        if not entry.endswith(".verdicts.json"):
+            rejected.append(entry)
+            continue
+        name = entry[:-len(".verdicts.json")]
+        if REVIEWER_SLUG_RE.fullmatch(name):
+            files.append((name, os.path.join(VERDICTS_DIR, entry)))
+        else:
+            rejected.append(entry)
+    return files, rejected
 
 
 def load_state():
@@ -241,10 +263,24 @@ def load_state():
         errors.append(f"sample file {SAMPLE_PATH} is unreadable "
                       "(run eval-classifier/sample.py)")
         sample, records = {}, []
-    by_id = {r.get("record_id"): r for r in records if isinstance(r, dict)}
+    well_formed = [r for r in records
+                   if isinstance(r, dict)
+                   and isinstance(r.get("record_id"), str)]
+    if len(well_formed) != len(records):
+        # a malformed record must surface loudly, not crash the metrics or
+        # silently shrink the sample
+        errors.append(f"sample file has {len(records) - len(well_formed)} "
+                      "malformed record(s); fix sample.json")
+    records = well_formed
+    by_id = {r["record_id"]: r for r in records}
 
     verdicts_by_reviewer = {}
-    for reviewer, path in list_verdict_files():
+    files, rejected = list_verdict_files()
+    for entry in rejected:
+        errors.append(f"file {entry!r} in verdicts/ is not a valid "
+                      "<reviewer-slug>.verdicts.json name and is IGNORED - "
+                      "rename it or its verdicts will not count")
+    for reviewer, path in files:
         verdicts = load_json(path, None)
         if not isinstance(verdicts, dict):
             errors.append(f"verdicts file {os.path.basename(path)} is "
@@ -304,7 +340,13 @@ class Handler(SimpleHTTPRequestHandler):
             return self.send_json({"error": "not found"}, 404)
         # Verdicts are evidence: refuse writes from other origins (a hostile
         # web page in another tab can POST to localhost without a CORS
-        # preflight).
+        # preflight). Pinning Host to loopback names also closes the DNS
+        # rebinding variant, where an attacker domain resolves to 127.0.0.1
+        # and Origin "matches" its own Host header.
+        host = (self.headers.get("Host") or "").rsplit(":", 1)[0]
+        if host not in ("127.0.0.1", "localhost", "[::1]"):
+            return self.send_json(
+                {"error": "writes accepted from localhost only"}, 403)
         origin = self.headers.get("Origin")
         if (origin is not None
                 and urlparse(origin).netloc != self.headers.get("Host", "")):

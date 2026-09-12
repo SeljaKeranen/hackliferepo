@@ -50,6 +50,9 @@ BENCHMARK_KEY = "data/Track3_C2/benchmark/benchmark_30_key.json"
 OLD_SUBSTANTIVE = ("fundamental_aging", "intervention", "age_related_disease",
                    "care")
 SUBSTANTIVE = OLD_SUBSTANTIVE + ("social_population_aging",)
+# the full output vocabulary of ratio/classify.py; test_gate.py asserts it
+# matches the review server's LABELS, so the two lists cannot drift apart
+ALL_LABELS = SUBSTANTIVE + ("ambiguous", "not_relevant")
 # A substantive label whose winning precision margin is below this is a
 # decision boundary worth oversampling: ratio/classify.py sends margins
 # below 0.3 to ambiguous, so the band just above that floor is where forced
@@ -124,6 +127,10 @@ def load_labels(path):
                           "llm_category"):
                 if field not in rec:
                     sys.exit(f"{path}:{n}: record missing {field!r}")
+            if rec["label"] not in ALL_LABELS:
+                sys.exit(f"{path}:{n}: unknown label {rec['label']!r} - "
+                         "the pipeline vocabulary changed; update "
+                         "eval-classifier before sampling")
             records.append(rec)
     if not records:
         sys.exit(f"{path}: no records")
@@ -266,6 +273,11 @@ def main():
     ap.add_argument("--target", type=int, default=DEFAULT_TARGET)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     args = ap.parse_args()
+    if args.seed != DEFAULT_SEED:
+        print(f"WARNING: seed {args.seed} != default {DEFAULT_SEED}. The "
+              "tuning/holdout split follows the seed, so this RESHUFFLES "
+              "which records are sealed holdout and invalidates any "
+              "baseline comparison against a previous sample.")
     if not args.labels.is_file():
         sys.exit(f"labels file not found: {args.labels}\n"
                  "Run the ratio pipeline first (python3 ratio/classify.py "

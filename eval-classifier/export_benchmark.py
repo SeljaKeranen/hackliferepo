@@ -36,9 +36,15 @@ HUMAN_COLUMNS = ("human_category", "human_confidence", "human_notes")
 
 def _load_module(name, filename):
     # Unique module names: a bare `import server` would collide with
-    # eval/server.py if both suites ever share one interpreter.
+    # eval/server.py if both suites ever share one interpreter. Registered
+    # in sys.modules so every loader in the process shares ONE instance -
+    # tests that patch server globals must see the same module this file
+    # uses.
+    if name in sys.modules:
+        return sys.modules[name]
     spec = importlib.util.spec_from_file_location(name, GATE_DIR / filename)
     mod = importlib.util.module_from_spec(spec)
+    sys.modules[name] = mod
     spec.loader.exec_module(mod)
     return mod
 
@@ -46,9 +52,13 @@ def _load_module(name, filename):
 server = _load_module("eval_classifier_server", "server.py")
 sampler = _load_module("eval_classifier_sample", "sample.py")
 
-# labels the annotation guide postdates; everything else in server.LABELS is
-# guide vocabulary and passes through untouched
-NEW_LABELS = ("not_relevant", "social_population_aging")
+# the annotation guide's own vocabulary; every OTHER server label postdates
+# the guide and gets the legacy_equiv marker. Derived, so a future label
+# added to server.LABELS is automatically marked rather than silently
+# passed off as guide vocabulary.
+GUIDE_LABELS = ("fundamental_aging", "intervention", "age_related_disease",
+                "care", "ambiguous")
+NEW_LABELS = tuple(l for l in server.LABELS if l not in GUIDE_LABELS)
 
 
 def load_consensus(sample_path):
@@ -57,8 +67,12 @@ def load_consensus(sample_path):
     calibration data, not exportable evidence)."""
     sample = json.loads(sample_path.read_text(encoding="utf-8"))
     records = {r["record_id"]: r for r in sample["records"]}
+    files, rejected = server.list_verdict_files()
+    for entry in rejected:
+        print(f"warning: verdicts/{entry} has an invalid name and is "
+              "IGNORED", file=sys.stderr)
     verdicts_by_reviewer = {}
-    for reviewer, path in server.list_verdict_files():
+    for reviewer, path in files:
         verdicts = json.loads(Path(path).read_text(encoding="utf-8"))
         server.mark_stale(verdicts, records)
         verdicts_by_reviewer[reviewer] = verdicts
@@ -94,7 +108,11 @@ def fill_rows(bench_rows, key, consensus):
             notes.append("legacy_equiv=ambiguous")
         if v.get("note"):
             notes.append(v["note"])
-        row["human_notes"] = "; ".join(notes)
+        joined = "; ".join(notes)
+        # spreadsheet formula-injection guard for the free-text note cell
+        if joined[:1] in ("=", "+", "-", "@"):
+            joined = "'" + joined
+        row["human_notes"] = joined
         filled += 1
     return bench_rows, filled
 

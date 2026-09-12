@@ -54,6 +54,12 @@ combined. The discipline:
 - **Low-confidence expert verdicts and inter-reviewer overlap records are
   measurement-only**: they inform the reliability numbers, never tuning
   inputs.
+- **The holdout comparison uses a frozen sample.** When checking a
+  classifier change, keep the committed `sample.json` fixed: which records
+  the sampler picks depends on the pipeline's labels, so re-running
+  `sample.py` against new labels changes the holdout *membership* (the
+  per-record hash only keeps a given record's half stable). Regenerate the
+  sample only as a deliberate, separate step that starts a new baseline.
 
 The comments on PRs #11 and #12 carry the captain's baseline-and-holdout
 direction that this scheme implements.
@@ -62,7 +68,12 @@ direction that this scheme implements.
 
 Verdicts are per-reviewer files: the server writes only
 `verdicts/<reviewer>.verdicts.json`, with the reviewer slug taken from
-`--reviewer`, else `git config user.name`, else `$USER`. Two people on
+`--reviewer`, else `git config user.name`, else `$USER`. On a shared
+machine or account, ALWAYS pass `--reviewer <your-name>` — two people
+falling back to the same identity would silently overwrite each other's
+verdicts instead of surfacing their disagreements. The server prints the
+identity it resolved at startup and the UI header shows it; check it before
+reviewing. Two people on
 different machines can review simultaneously and both commit — the files
 never collide, and the metric merges every verdict file at read time:
 

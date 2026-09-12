@@ -166,10 +166,15 @@ function hashId(s) {
   for (let i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0;
   return h;
 }
-const assignMatch = /^([0-9]+)of([0-9]+)$/.exec(
-  new URLSearchParams(location.search).get("assign") || "");
+const assignRaw = new URLSearchParams(location.search).get("assign") || "";
+const assignMatch = /^([0-9]+)of([0-9]+)$/.exec(assignRaw);
+// K must be 1..N: an out-of-range slice (0of2, 3of2, 1of0) would silently
+// show ZERO records, indistinguishable from "review done"
 const assign = assignMatch
+  && +assignMatch[2] >= 1 && +assignMatch[1] >= 1
+  && +assignMatch[1] <= +assignMatch[2]
   ? { k: +assignMatch[1] - 1, n: +assignMatch[2] } : null;
+const assignInvalid = assignRaw && !assign;
 
 function myVerdicts() { return verdictsByReviewer[me] || {}; }
 
@@ -189,8 +194,18 @@ async function boot() {
   labels = res.labels || [];
   me = res.reviewer;
   document.getElementById("whoami").textContent = me || "unknown";
-  if (assign) document.getElementById("assign").textContent =
-    ` · slice ${assign.k + 1} of ${assign.n}`;
+  if (assignInvalid) {
+    const err = document.getElementById("error");
+    err.textContent = `Invalid ?assign=${assignRaw} (use 1of2 … NofN; ` +
+      "slices are 1-based). Showing ALL records instead.";
+    err.hidden = false;
+  }
+  if (assign) {
+    const mine = records.filter(r =>
+      hashId(r.record_id) % assign.n === assign.k).length;
+    document.getElementById("assign").textContent =
+      ` · slice ${assign.k + 1} of ${assign.n} (${mine} of ${records.length} records)`;
+  }
   for (const [id, key] of [["f-label", "label"], ["f-source", "source"]]) {
     const sel = document.getElementById(id);
     const values = [...new Set(records.map(r => r[key]))].sort();

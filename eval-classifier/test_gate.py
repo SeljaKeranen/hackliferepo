@@ -22,10 +22,15 @@ GATE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def _load_module(name, filename):
     # unique module names: a bare `import server` would collide with
-    # eval/server.py if both suites ever share one interpreter
+    # eval/server.py if both suites ever share one interpreter; sys.modules
+    # registration makes every loader share one instance, so patching
+    # server globals here also steers export_benchmark's server
+    if name in sys.modules:
+        return sys.modules[name]
     spec = importlib.util.spec_from_file_location(
         name, os.path.join(GATE_DIR, filename))
     mod = importlib.util.module_from_spec(spec)
+    sys.modules[name] = mod
     spec.loader.exec_module(mod)
     return mod
 
@@ -109,13 +114,27 @@ def test_summarize():
            f"Wilson interval must bracket the point estimate: {ci}")
 
     # per-split reporting: records carry sampling.split; the halves'
-    # consensus counts must add up to the combined count
+    # counts must partition the combined numbers AND each half's agreement
+    # must be exactly its own records' value (a bucket-assignment bug that
+    # preserves grand totals must still fail here).
+    # State at this point: r0 agree (a+b concur), r1 disagree(a),
+    # r2 unreviewed, r3 agree(a, ambiguous), r4 conflict(a/b).
     for i, r in enumerate(recs):
         r["sampling"]["split"] = "tuning" if i % 2 == 0 else "holdout"
     s = server.summarize(recs, {"a": a, "b": b}, {})
     sp = s["splits"]
-    expect(sp["tuning"]["total"] + sp["holdout"]["total"] == s["total"],
-           "split totals must partition the sample")
+    expect(sp["tuning"]["total"] == 3 and sp["holdout"]["total"] == 2,
+           f"split totals must partition the sample: {sp}")
+    # tuning (r0 agreed, r2 unreviewed, r4 conflict): 1 consensus, 1 agreed
+    expect(sp["tuning"]["consensus_reviewed"] == 1
+           and sp["tuning"]["agreed"] == 1
+           and sp["tuning"]["agreement"] == 1.0,
+           f"tuning half must be exactly its own records: {sp['tuning']}")
+    # holdout (r1 disagree, r3 agree): 2 consensus, 1 agreed
+    expect(sp["holdout"]["consensus_reviewed"] == 2
+           and sp["holdout"]["agreed"] == 1
+           and sp["holdout"]["agreement"] == 0.5,
+           f"holdout half must be exactly its own records: {sp['holdout']}")
     expect(sp["tuning"]["consensus_reviewed"]
            + sp["holdout"]["consensus_reviewed"] == s["consensus_reviewed"],
            "split consensus counts must partition the combined count")
@@ -140,18 +159,54 @@ def test_summarize():
     expect(s["reviewed"] == 0,
            "a verdict entry without a verdict must not count as reviewed")
 
-    # Wilson interval sanity on known values
+    # a hand-edited "agree" carrying a different label is the disagreement
+    # it actually expresses, never counted as agreement
+    inconsistent = verdict_for(recs[2], "agree", reviewer="a")
+    inconsistent["label"] = "not_relevant"
+    marked = {"r2": inconsistent}
+    server.mark_stale(marked, by_id)
+    s = server.summarize(recs, {"a": marked}, {})
+    expect(s["reviewed"] == 1 and s["agreed"] == 0,
+           "agreement must come from label equality, not the verdict word")
+
+    # effective_verdicts refuses verdicts that never went through
+    # mark_stale (no explicit stale: False) - forgetting the staleness
+    # pass must yield a loud zero, not silently-fresh verdicts
+    expect(server.effective_verdicts(
+               {"a": {"r2": verdict_for(recs[2], reviewer="a")}}) == {},
+           "unmarked verdicts must be excluded, not assumed fresh")
+
+    # a verdict whose record vanished from the sample is stale
+    ghost = {"gone": verdict_for(make_record("gone"), reviewer="a")}
+    server.mark_stale(ghost, by_id)
+    expect(ghost["gone"]["stale"] is True,
+           "a verdict for a vanished record must be marked stale")
+    expect(server.effective_verdicts({"a": ghost}) == {},
+           "stale ghost verdicts must not count")
+
+    # Wilson interval sanity on known values and boundaries
     expect(server.wilson_interval(0, 0) is None,
            "Wilson interval is undefined for n=0")
     lo, hi = server.wilson_interval(85, 100)
     expect(0.76 < lo < 0.85 < hi < 0.91,
            f"Wilson 85/100 should be about [0.77, 0.90], got [{lo}, {hi}]")
+    lo, hi = server.wilson_interval(0, 10)
+    expect(lo == 0.0 and 0 < hi < 0.35,
+           f"Wilson 0/10 must clamp at 0: [{lo}, {hi}]")
+    lo, hi = server.wilson_interval(10, 10)
+    expect(0.65 < lo < 1 and hi == 1.0,
+           f"Wilson 10/10 must clamp at 1: [{lo}, {hi}]")
 
-    # the label vocabularies of the sibling modules stay inside the server's
+    # the label vocabularies of the sibling modules stay consistent with
+    # the server's - equality, not just subset, so a new label cannot
+    # silently miss a list
+    expect(set(sample_mod.ALL_LABELS) == set(server.LABELS),
+           "sample.ALL_LABELS must equal server.LABELS")
     expect(set(sample_mod.SUBSTANTIVE) < set(server.LABELS),
            "sample.SUBSTANTIVE must be a subset of server.LABELS")
-    expect(set(export_benchmark.NEW_LABELS) < set(server.LABELS),
-           "export_benchmark.NEW_LABELS must be a subset of server.LABELS")
+    expect(set(export_benchmark.NEW_LABELS)
+           == set(server.LABELS) - set(export_benchmark.GUIDE_LABELS),
+           "NEW_LABELS must be exactly the post-guide server labels")
 
 
 def test_judge_flagged():
@@ -284,6 +339,15 @@ def test_http(tmp):
                          "record_fingerprint": fp},
                         headers={"Origin": "https://evil.example"})
     expect(status == 403, "cross-origin verdict write must be rejected")
+    # DNS rebinding: an attacker domain resolving to 127.0.0.1 sends its
+    # own name as Host (and a matching Origin); only loopback names may
+    # write
+    status, _ = request(port, "/api/verdict",
+                        {"record_id": "swecris:T1", "verdict": "agree",
+                         "record_fingerprint": fp},
+                        headers={"Host": "evil.example:80",
+                                 "Origin": "http://evil.example:80"})
+    expect(status == 403, "a non-loopback Host header must be rejected")
 
     # a verdict against a version the reviewer never saw is refused
     status, _ = request(port, "/api/verdict",
@@ -337,6 +401,39 @@ def test_http(tmp):
     expect("smoke.verdicts.json" in (data.get("error") or ""),
            "corrupt verdicts file must surface an error on /api/data")
 
+    # a malformed record in the sample surfaces an error instead of
+    # crashing the metrics
+    with open(server.SAMPLE_PATH, "w", encoding="utf-8") as f:
+        json.dump({"meta": {}, "records": [rec, None, {"title": "no id"}]},
+                  f)
+    status, data = request(port, "/api/data")
+    expect(status == 200 and "malformed record" in (data.get("error") or ""),
+           "malformed sample records must surface an error")
+    expect(len(data["records"]) == 1 and data["summary"]["total"] == 1,
+           "malformed sample records must be excluded, not crash summarize")
+
+    # a badly named verdicts file is ignored BUT loudly reported
+    stray = os.path.join(server.VERDICTS_DIR, "Bad Name.verdicts.json")
+    with open(stray, "w", encoding="utf-8") as f:
+        json.dump({}, f)
+    status, data = request(port, "/api/data")
+    expect("Bad Name.verdicts.json" in (data.get("error") or ""),
+           "an invalid verdicts filename must surface an error, its "
+           "evidence must never vanish silently")
+    expect("Bad Name" not in data["verdicts"],
+           "an invalid verdicts filename must not be loaded")
+    os.unlink(stray)
+
+    # a corrupt sample file refuses verdict writes with 500, not a
+    # client-error 400 that would mask a broken evidence store
+    with open(server.SAMPLE_PATH, "w", encoding="utf-8") as f:
+        f.write("{not json")
+    status, _ = request(port, "/api/verdict",
+                        {"record_id": "swecris:T1", "verdict": "agree",
+                         "record_fingerprint": fp})
+    expect(status == 500,
+           "a corrupt sample must fail verdict writes with 500")
+
     httpd.shutdown()
 
 
@@ -349,6 +446,29 @@ def test_reviewer_identity():
            "an unusable name yields None, not a bad filename")
     expect(server.detect_reviewer("Smoke Tester") == "smoke-tester",
            "--reviewer wins over every fallback")
+
+    # the fallback chain: git config user.name, then $USER, then None;
+    # an unusable earlier candidate falls through instead of stopping
+    real_git, real_user = server._git_user_name, os.environ.get("USER")
+    try:
+        server._git_user_name = lambda: "Git Name"
+        os.environ["USER"] = "envuser"
+        expect(server.detect_reviewer(None) == "git-name",
+               "git user.name is the first fallback")
+        expect(server.detect_reviewer("!!!") == "git-name",
+               "an unusable --reviewer falls through to git user.name")
+        server._git_user_name = lambda: ""
+        expect(server.detect_reviewer(None) == "envuser",
+               "$USER is the last fallback")
+        os.environ["USER"] = "***"
+        expect(server.detect_reviewer(None) is None,
+               "no usable candidate yields None, never a junk slug")
+    finally:
+        server._git_user_name = real_git
+        if real_user is None:
+            os.environ.pop("USER", None)
+        else:
+            os.environ["USER"] = real_user
 
 
 def test_export():

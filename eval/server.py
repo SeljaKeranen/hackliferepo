@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """Localhost human-eval server for longevity politics findings.
 
-Run: python3 eval/server.py [--port 8000] [--country sweden]
+Run: python3 eval/server.py [--port 8000]
 Then open http://localhost:8000
 
-Stdlib only. Serves the review UI, the findings file, and reads/writes
-verdicts to eval/verdicts/<country>.verdicts.json.
+Stdlib only. Serves the review UI and every findings file under
+eval/findings/*.json (one country per file); reads/writes verdicts to
+eval/verdicts/<country>.verdicts.json.
 """
 import argparse
+import glob
+import hashlib
 import json
 import os
 import re
@@ -21,6 +24,31 @@ FINDINGS_DIR = os.path.join(EVAL_DIR, "findings")
 VERDICTS_DIR = os.path.join(EVAL_DIR, "verdicts")
 
 CHECKS = ("source_resolves", "date_correct", "classification_correct", "claim_supported")
+# Country slugs are findings FILENAMES ("sweden", "us"), not the two-letter
+# ISO codes inside the records ("SE", "US"); keep them boring so they can't
+# traverse paths.
+COUNTRY_SLUG_RE = re.compile(r"[a-z][a-z0-9_-]*")
+
+
+def list_countries():
+    # Filter by the slug pattern so the read path serves exactly the names
+    # the write path in do_POST will accept.
+    return sorted(
+        name for p in glob.glob(os.path.join(FINDINGS_DIR, "*.json"))
+        if COUNTRY_SLUG_RE.fullmatch(name := os.path.splitext(os.path.basename(p))[0])
+    )
+
+
+def finding_fingerprint(rec):
+    """Hash of the content a reviewer attests to. Stored with each verdict so
+    a later edit to the finding invalidates the verdict loudly —
+    eval/test_findings.py cross-checks it against the current findings file."""
+    core = json.dumps(
+        [rec.get(k) for k in
+         ("claim", "search_note", "source_url", "source_date", "classification",
+          "source_note")],
+        ensure_ascii=False)
+    return hashlib.sha256(core.encode("utf-8")).hexdigest()[:16]
 
 
 def load_json(path, default):
@@ -45,14 +73,8 @@ def atomic_write_json(path, data):
 
 
 class Handler(SimpleHTTPRequestHandler):
-    country = "sweden"
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=STATIC_DIR, **kwargs)
-
-    @property
-    def verdicts_path(self):
-        return os.path.join(VERDICTS_DIR, f"{self.country}.verdicts.json")
 
     def send_json(self, obj, status=200):
         body = json.dumps(obj, ensure_ascii=False).encode("utf-8")
@@ -64,14 +86,40 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         path = urlparse(self.path).path
-        if path == "/api/findings":
-            findings_path = os.path.join(FINDINGS_DIR, f"{self.country}.json")
-            findings = load_json(findings_path, None)
-            if findings is None:
-                return self.send_json({"error": f"no findings file: {findings_path}"}, 404)
-            return self.send_json({"country": self.country, "findings": findings})
-        if path == "/api/verdicts":
-            return self.send_json(load_json(self.verdicts_path, {}))
+        if path == "/api/data":
+            countries = {}
+            for name in list_countries():
+                findings = load_json(os.path.join(FINDINGS_DIR, f"{name}.json"), None)
+                verdicts_path = os.path.join(VERDICTS_DIR, f"{name}.verdicts.json")
+                verdicts = (load_json(verdicts_path, None)
+                            if os.path.exists(verdicts_path) else {})
+                # Don't let a corrupted file masquerade as a clean "0 findings"
+                # or "not reviewed" country — the UI shows this error instead.
+                errors = []
+                if not isinstance(findings, list):
+                    errors.append(f"findings file {name}.json is unreadable")
+                    findings = []
+                if not isinstance(verdicts, dict):
+                    errors.append(f"verdicts file {name}.verdicts.json is unreadable")
+                    verdicts = {}
+                # Flag verdicts whose finding changed since review (or vanished)
+                # so the UI can demand a re-review instead of showing stale
+                # green checkmarks. Served only, never written back.
+                by_id = {r.get("id"): r for r in findings if isinstance(r, dict)}
+                for fid, v in verdicts.items():
+                    if isinstance(v, dict):
+                        rec = by_id.get(fid)
+                        v["stale"] = (rec is None
+                                      or v.get("finding_fingerprint")
+                                      != finding_fingerprint(rec))
+                entry = {"findings": findings, "verdicts": verdicts}
+                if errors:
+                    entry["error"] = "; ".join(errors)
+                countries[name] = entry
+            if not countries:
+                return self.send_json(
+                    {"error": f"no findings files in {FINDINGS_DIR}"}, 404)
+            return self.send_json({"countries": countries})
         return super().do_GET()
 
     def do_POST(self):
@@ -93,10 +141,23 @@ class Handler(SimpleHTTPRequestHandler):
         if not isinstance(payload, dict):
             return self.send_json({"error": "body must be a JSON object"}, 400)
 
+        country = payload.get("country")
+        if (not isinstance(country, str) or not COUNTRY_SLUG_RE.fullmatch(country)
+                or country not in list_countries()):
+            return self.send_json({"error": f"unknown country {country!r}"}, 400)
         finding_id = payload.get("finding_id")
         checks = payload.get("checks")
         if not isinstance(finding_id, str) or not isinstance(checks, dict):
             return self.send_json({"error": "need finding_id (str) and checks (object)"}, 400)
+        findings = load_json(os.path.join(FINDINGS_DIR, f"{country}.json"), None)
+        if not isinstance(findings, list):
+            return self.send_json(
+                {"error": f"findings file for {country} is unreadable"}, 500)
+        rec = next((r for r in findings
+                    if isinstance(r, dict) and r.get("id") == finding_id), None)
+        if rec is None:
+            return self.send_json(
+                {"error": f"unknown finding {finding_id!r} in {country}"}, 400)
         clean_checks = {}
         for key in CHECKS:
             val = checks.get(key)
@@ -107,6 +168,7 @@ class Handler(SimpleHTTPRequestHandler):
         reviewed = all(clean_checks[k] is not None for k in CHECKS)
         verdict = {
             "finding_id": finding_id,
+            "finding_fingerprint": finding_fingerprint(rec),
             "checks": clean_checks,
             "reviewed": reviewed,
             "correct": reviewed and all(clean_checks[k] is True for k in CHECKS),
@@ -116,9 +178,19 @@ class Handler(SimpleHTTPRequestHandler):
         }
         # Safe read-modify-write only because HTTPServer serializes requests;
         # switching to ThreadingHTTPServer would need a lock around this block.
-        verdicts = load_json(self.verdicts_path, {})
+        verdicts_path = os.path.join(VERDICTS_DIR, f"{country}.verdicts.json")
+        if os.path.exists(verdicts_path):
+            verdicts = load_json(verdicts_path, None)
+            if not isinstance(verdicts, dict):
+                # Verdicts are committed review evidence: never let an
+                # unreadable file silently degrade to {} and get overwritten.
+                return self.send_json(
+                    {"error": f"verdicts file for {country} is unreadable; "
+                              "fix it by hand before saving new verdicts"}, 500)
+        else:
+            verdicts = {}
         verdicts[finding_id] = verdict
-        atomic_write_json(self.verdicts_path, verdicts)
+        atomic_write_json(verdicts_path, verdicts)
         return self.send_json({"ok": True, "verdict": verdict})
 
     def log_message(self, fmt, *args):
@@ -128,14 +200,12 @@ class Handler(SimpleHTTPRequestHandler):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", type=int, default=8000)
-    parser.add_argument("--country", default="sweden")
     args = parser.parse_args()
-    if not re.fullmatch(r"[a-z][a-z0-9_-]*", args.country):
-        parser.error("--country must be a plain lowercase name (it becomes a filename)")
-    Handler.country = args.country
+    countries = list_countries()
     server = HTTPServer(("127.0.0.1", args.port), Handler)
-    print(f"Reviewing {args.country} findings at http://localhost:{args.port}")
-    print(f"Verdicts persist to {os.path.join(VERDICTS_DIR, args.country + '.verdicts.json')}")
+    print(f"Reviewing findings ({', '.join(countries) or 'none found'}) "
+          f"at http://localhost:{args.port}")
+    print(f"Verdicts persist to {VERDICTS_DIR}/<country>.verdicts.json")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

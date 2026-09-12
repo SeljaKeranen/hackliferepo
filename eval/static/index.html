@@ -8,7 +8,7 @@
   :root {
     --bg: #f6f7f9; --card: #ffffff; --ink: #1b2430; --muted: #5b6675;
     --line: #dde2e9; --accent: #14532d; --pass: #157f3c; --fail: #b42318;
-    --pending: #8a94a3;
+    --pending: #8a94a3; --stale: #b45309;
   }
   * { box-sizing: border-box; }
   body {
@@ -21,6 +21,7 @@
     display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
   }
   header h1 { font-size: 17px; margin: 0; }
+  #country { border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font: inherit; background: #fff; }
   .stats { display: flex; gap: 18px; margin-left: auto; align-items: center; }
   .stat { text-align: center; }
   .stat b { display: block; font-size: 19px; }
@@ -34,6 +35,7 @@
   }
   .card.correct { border-left: 4px solid var(--pass); }
   .card.incorrect { border-left: 4px solid var(--fail); }
+  .card.stale { border-left: 4px solid var(--stale); }
   .top { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
   .id { font-family: ui-monospace, monospace; color: var(--muted); font-size: 13px; }
   .badge {
@@ -44,6 +46,7 @@
   .verdict-label { margin-left: auto; font-size: 12px; font-weight: 600; }
   .verdict-label.correct { color: var(--pass); }
   .verdict-label.incorrect { color: var(--fail); }
+  .verdict-label.stale { color: var(--stale); }
   .verdict-label.pending { color: var(--pending); font-weight: 400; }
   .claim { margin: 10px 0 8px; }
   .srcline { font-size: 13px; color: var(--muted); word-break: break-all; }
@@ -72,13 +75,15 @@
 </head>
 <body>
 <header>
-  <h1>Findings review — <span id="country"></span></h1>
+  <h1>Findings review</h1>
+  <select id="country"></select>
   <input id="reviewer" placeholder="reviewer name">
   <div class="stats">
     <div class="stat"><b id="s-total">–</b><span>findings</span></div>
     <div class="stat"><b id="s-reviewed">–</b><span>reviewed</span></div>
     <div class="stat"><b id="s-correct" class="ok">–</b><span>correct</span></div>
     <div class="stat"><b id="s-acc">–</b><span>accuracy</span></div>
+    <div class="stat"><b id="s-overall">–</b><span>overall</span></div>
   </div>
 </header>
 <main>
@@ -95,33 +100,65 @@ const CHECKS = [
   ["classification_correct", "Classification correct"],
   ["claim_supported", "Claim supported"],
 ];
-let findings = [], verdicts = {};
+let data = {}, country = "", findings = [], verdicts = {};
 
 const reviewerInput = document.getElementById("reviewer");
 reviewerInput.value = localStorage.getItem("reviewer") || "";
 reviewerInput.addEventListener("input", () => localStorage.setItem("reviewer", reviewerInput.value));
 
 async function boot() {
-  const fRes = await fetch("/api/findings").then(r => r.json());
-  document.getElementById("country").textContent = fRes.country;
-  findings = fRes.findings;
-  verdicts = await fetch("/api/verdicts").then(r => r.json());
+  const res = await fetch("/api/data").then(r => r.json());
+  if (!res.countries) {
+    document.getElementById("list").textContent =
+      "Server error: " + (res.error || "no data");
+    return;
+  }
+  data = res.countries;
+  const names = Object.keys(data).sort();
+  const sel = document.getElementById("country");
+  sel.innerHTML = names.map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join("");
+  const remembered = localStorage.getItem("country");
+  country = names.includes(remembered) ? remembered : (names[0] || "");
+  sel.value = country;
+  sel.addEventListener("change", () => {
+    country = sel.value;
+    localStorage.setItem("country", country);
+    selectCountry();
+  });
+  selectCountry();
+}
+
+function selectCountry() {
+  // Same object references as `data`, so verdict saves update overall stats too.
+  findings = (data[country] || {}).findings || [];
+  verdicts = (data[country] || {}).verdicts || {};
   render();
 }
 
 function verdictState(v) {
   if (!v || !v.reviewed) return "pending";
+  if (v.stale) return "stale";
   return v.correct ? "correct" : "incorrect";
 }
 
 function verdictLabel(state) {
   return state === "correct" ? "✓ correct"
-    : state === "incorrect" ? "✗ incorrect" : "not reviewed";
+    : state === "incorrect" ? "✗ incorrect"
+    : state === "stale" ? "⚠ stale — finding changed, re-review"
+    : "not reviewed";
 }
 
 function render() {
   const list = document.getElementById("list");
   list.innerHTML = "";
+  const err = (data[country] || {}).error;
+  if (err) {
+    const p = document.createElement("p");
+    p.className = "rubric";
+    p.style.color = "var(--fail)";
+    p.textContent = "Server error for this country: " + err;
+    list.appendChild(p);
+  }
   for (const f of findings) {
     const v = verdicts[f.id];
     const state = verdictState(v);
@@ -189,6 +226,7 @@ async function save(id, card) {
     checks[group.dataset.check] = pass ? true : fail ? false : null;
   });
   const body = {
+    country,
     finding_id: id,
     checks,
     reviewer: reviewerInput.value,
@@ -223,13 +261,24 @@ async function save(id, card) {
 }
 
 function renderStats() {
-  const reviewed = findings.filter(f => verdicts[f.id] && verdicts[f.id].reviewed);
+  // Stale verdicts (finding edited since review) don't count as reviewed.
+  const reviewed = findings.filter(f =>
+    verdicts[f.id] && verdicts[f.id].reviewed && !verdicts[f.id].stale);
   const correct = reviewed.filter(f => verdicts[f.id].correct);
   document.getElementById("s-total").textContent = findings.length;
   document.getElementById("s-reviewed").textContent = reviewed.length;
   document.getElementById("s-correct").textContent = correct.length;
   document.getElementById("s-acc").textContent =
     reviewed.length ? Math.round(100 * correct.length / reviewed.length) + "%" : "–";
+  let allReviewed = 0, allCorrect = 0;
+  for (const c of Object.values(data)) {
+    for (const f of c.findings || []) {
+      const v = (c.verdicts || {})[f.id];
+      if (v && v.reviewed && !v.stale) { allReviewed++; if (v.correct) allCorrect++; }
+    }
+  }
+  document.getElementById("s-overall").textContent =
+    allReviewed ? Math.round(100 * allCorrect / allReviewed) + "%" : "–";
 }
 
 function esc(s) {

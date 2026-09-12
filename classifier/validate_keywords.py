@@ -31,6 +31,10 @@ characters, including hyphens, match literally.
 Precision proxy: the share of a keyword's matching records whose llm_category
 equals the keyword's category. The LLM labels are unverified, so this is a
 proxy, not ground truth; the 30-record human benchmark remains the real test.
+
+The social_population_aging category postdates the atlas's LLM label
+vocabulary: its records were folded into 'ambiguous' (see KEYWORDS.md), so
+that label is the precision/coverage proxy for the category (PROXY_LABEL).
 """
 
 import argparse
@@ -48,7 +52,10 @@ ATLAS_FILES = ["swecris.csv", "cordis.csv", "nih_reporter.csv"]
 ATLAS_PREFIX = "data/Track3_C2/output/"
 EXPECTED_RECORDS = 2944
 REQUIRED_COLUMNS = {"record_id", "source", "llm_category", "title", "llm_quote"}
-CATEGORIES = ["fundamental_aging", "intervention", "age_related_disease", "care"]
+CATEGORIES = ["fundamental_aging", "intervention", "age_related_disease", "care",
+              "social_population_aging"]
+# categories whose precision/coverage proxy is a different llm_category label
+PROXY_LABEL = {"social_population_aging": "ambiguous"}
 LOW_EVIDENCE_HITS = 5   # below this, a kept keyword is flagged low_evidence
 MAX_TERM_LENGTH = 60
 MAX_WILDCARDS = 3
@@ -226,6 +233,7 @@ def main() -> int:
                             f"computed {fresh} (run --update)")
 
     for cat, block in categories.items():
+        proxy = PROXY_LABEL.get(cat, cat)
         for lang in ("en", "sv"):
             kept_terms = {e["term"] for e in block.get(lang, [])
                           if "variant_of" not in e}
@@ -235,10 +243,10 @@ def main() -> int:
                 if err:
                     failures.append(f"malformed term {label}: {err}")
                     continue
-                fresh = term_stats(entry["term"], cat, rows)
+                fresh = term_stats(entry["term"], proxy, rows)
                 check(entry, fresh, label)
                 # thresholds compare the exact ratio, not the rounded stat
-                exact_precision = (fresh["by_category"].get(cat, 0) / fresh["hits"]
+                exact_precision = (fresh["by_category"].get(proxy, 0) / fresh["hits"]
                                    if fresh["hits"] else 0.0)
                 th = thresholds[lang]
                 if "variant_of" in entry:
@@ -280,7 +288,7 @@ def main() -> int:
             if err:
                 failures.append(f"malformed term {label}: {err}")
                 continue
-            fresh = term_stats(entry["term"], cat, rows, examples=3)
+            fresh = term_stats(entry["term"], proxy, rows, examples=3)
             check(entry, fresh, label)
 
     for lang in ("en", "sv"):
@@ -308,7 +316,7 @@ def main() -> int:
         block = categories[cat]
         kws = [k for k in block.get("en", []) + block.get("sv", [])
                if term_error(k["term"]) is None]
-        cov = coverage(kws, cat, rows)
+        cov = coverage(kws, PROXY_LABEL.get(cat, cat), rows)
         check(block, {"coverage": cov}, f"{cat}/coverage")
         print(f"{cat:22s} {len(block.get('en', [])):3d} "
               f"{len(block.get('sv', [])):3d} {cov:9.3f}")

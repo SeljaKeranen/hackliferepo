@@ -7,10 +7,15 @@
         "intervention",
         "age_related_disease",
         "care",
+        "social_population_aging",
         "ambiguous",
         "not_relevant"
       ],
-      "note": "classification output vocabulary, not keyword lists: step 0 of the rubric is a relevance gate - records matching the broad net but concerning material/component/infrastructure ageing or other non-ageing uses of matched terms get 'not_relevant'; 'ambiguous' is reserved for on-topic but undecidable records. See KEYWORDS.md."
+      "note": "classification output vocabulary, not keyword lists: step 0 of the rubric is a relevance gate - records matching the broad net but concerning material/component/infrastructure ageing or other non-ageing uses of matched terms get 'not_relevant'; 'ambiguous' is reserved for on-topic but undecidable records. social_population_aging (social, behavioral and population-ageing research; Jan's other_aging_research in funding/classify.py on codex/ageing-funding-gap) counts only in the funding-ratio denominator, never the numerator. See KEYWORDS.md."
+    },
+    "proxy_labels": {
+      "social_population_aging": "ambiguous",
+      "note": "the atlas's LLM label vocabulary predates this category and folded its records into 'ambiguous', so that label is the precision/coverage proxy for it; 'ambiguous' also holds the not_relevant engineering pool, so every admitted keyword's hits were additionally spot-checked by title (see KEYWORDS.md)"
     },
     "recovery_command": "atlas lives at data/Track3_C2/output/ (byte-identical to the 2e59b27 blobs; 4061bff deleted only a duplicate top-level Track3_C2/ copy); history fallback: git show 2e59b27:data/Track3_C2/output/{swecris,cordis,nih_reporter}.csv",
     "corpus_records": 2944,
@@ -840,6 +845,7 @@
         {
           "term": "healthy aging",
           "why": "policy/marketing phrase spanning every category",
+          "note": "re-evaluated against social_population_aging (proxy 'ambiguous'): 8/41 = 0.195, still spills; stays trapped",
           "hits": 41,
           "by_category": {
             "fundamental_aging": 17,
@@ -1274,6 +1280,7 @@
         {
           "term": "senolytic*",
           "why": "senolytics research spans mechanism (fundamental_aging), therapy (intervention) and disease application about equally",
+          "note": "stays a trap for keyword matching; the rubric's mechanism-vs-intervention rule (KEYWORDS.md) decides these records: developing/testing a senolytic is intervention, studying how senolysis works is fundamental_aging",
           "hits": 19,
           "by_category": {
             "intervention": 9,
@@ -1331,6 +1338,7 @@
         {
           "term": "dietary restriction",
           "why": "just below threshold: mechanistic dietary-restriction studies are labeled fundamental_aging",
+          "note": "stays a trap for keyword matching; the rubric's mechanism-vs-intervention rule (KEYWORDS.md) decides these records: testing dietary restriction as a treatment is intervention, studying its mechanism is fundamental_aging",
           "hits": 12,
           "by_category": {
             "intervention": 7,
@@ -1380,6 +1388,7 @@
         {
           "term": "lifespan extension",
           "why": "both corpus hits are fundamental_aging mechanism studies",
+          "note": "stays a trap for keyword matching; the rubric's mechanism-vs-intervention rule (KEYWORDS.md) decides these records: both corpus hits study lifespan-extension mechanisms, hence fundamental_aging",
           "hits": 2,
           "by_category": {
             "fundamental_aging": 2
@@ -1401,6 +1410,7 @@
         {
           "term": "extend healthspan",
           "why": "50/50 between fundamental_aging and intervention",
+          "note": "stays a trap for keyword matching; the rubric's mechanism-vs-intervention rule (KEYWORDS.md) decides these records: the 50/50 split is exactly the mechanism-vs-intervention boundary",
           "hits": 6,
           "by_category": {
             "fundamental_aging": 3,
@@ -2098,6 +2108,7 @@
         {
           "term": "cognitive decline",
           "why": "splits with fundamental_aging (normal cognitive aging mechanisms)",
+          "note": "re-evaluated against social_population_aging (proxy 'ambiguous'): 2/39 = 0.051, still spills; stays trapped",
           "hits": 39,
           "by_category": {
             "age_related_disease": 20,
@@ -2529,33 +2540,6 @@
           ]
         },
         {
-          "term": "population aging",
-          "why": "demography, no care hits in corpus",
-          "hits": 3,
-          "by_category": {
-            "ambiguous": 2,
-            "age_related_disease": 1
-          },
-          "precision": 0.0,
-          "example_false_hits": [
-            {
-              "record_id": "swecris:2018-02077_VR",
-              "llm_category": "age_related_disease",
-              "title": "Why do some people become frail as they age while others do not? A life course approach to identifying genetic"
-            },
-            {
-              "record_id": "cordis:656787",
-              "llm_category": "ambiguous",
-              "title": "Ethics and Ageing"
-            },
-            {
-              "record_id": "reporter:5R01AG017644-24",
-              "llm_category": "ambiguous",
-              "title": "English Longitudinal Study of Ageing: Renewal 2020"
-            }
-          ]
-        },
-        {
           "term": "geriatric*",
           "why": "conference/specialty term, spreads across categories",
           "hits": 7,
@@ -2616,6 +2600,7 @@
         {
           "term": "healthy ageing",
           "why": "policy phrase spanning every category",
+          "note": "re-evaluated against social_population_aging (proxy 'ambiguous'): 3/25 = 0.12, still spills; stays trapped",
           "hits": 25,
           "by_category": {
             "fundamental_aging": 9,
@@ -2690,6 +2675,335 @@
         }
       ],
       "coverage": 0.624
+    },
+    "social_population_aging": {
+      "note": "social, behavioral and population-ageing research (Jan's other_aging_research in funding/classify.py on codex/ageing-funding-gap); precision and coverage are measured against llm_category 'ambiguous' per meta.proxy_labels, and coverage understates because 'ambiguous' also holds the not_relevant engineering pool; funding-ratio denominator only, never numerator",
+      "en": [
+        {
+          "term": "retirement",
+          "hits": 13,
+          "by_category": {
+            "ambiguous": 11,
+            "care": 2
+          },
+          "precision": 0.846
+        },
+        {
+          "term": "pension*",
+          "note": "the stem also matches Swedish pension vocabulary (pensionssystem, pensionsålder) in live SweCRIS text",
+          "hits": 3,
+          "by_category": {
+            "ambiguous": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "working life",
+          "hits": 18,
+          "by_category": {
+            "ambiguous": 17,
+            "care": 1
+          },
+          "precision": 0.944
+        },
+        {
+          "term": "older workers",
+          "hits": 4,
+          "by_category": {
+            "ambiguous": 3,
+            "care": 1
+          },
+          "precision": 0.75,
+          "low_evidence": true
+        },
+        {
+          "term": "labor market",
+          "hits": 4,
+          "by_category": {
+            "ambiguous": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "labour market",
+          "variant_of": "labor market",
+          "hits": 4,
+          "by_category": {
+            "ambiguous": 3,
+            "care": 1
+          },
+          "precision": 0.75,
+          "low_evidence": true
+        },
+        {
+          "term": "living conditions",
+          "hits": 7,
+          "by_category": {
+            "ambiguous": 5,
+            "care": 2
+          },
+          "precision": 0.714
+        },
+        {
+          "term": "population aging",
+          "note": "moved from care's trap_terms (precision 0.0 for care): its ambiguous hits are social/population-ageing research, its home under this category",
+          "hits": 3,
+          "by_category": {
+            "ambiguous": 2,
+            "age_related_disease": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "aging societ*",
+          "hits": 4,
+          "by_category": {
+            "ambiguous": 3,
+            "age_related_disease": 1
+          },
+          "precision": 0.75,
+          "low_evidence": true
+        },
+        {
+          "term": "ageing societ*",
+          "variant_of": "aging societ*",
+          "hits": 3,
+          "by_category": {
+            "ambiguous": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "social relations",
+          "hits": 3,
+          "by_category": {
+            "ambiguous": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        }
+      ],
+      "sv": [
+        {
+          "term": "socioekonomisk*",
+          "hits": 1,
+          "by_category": {
+            "ambiguous": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        }
+      ],
+      "trap_terms": [
+        {
+          "term": "loneliness",
+          "why": "the corpus's loneliness records are mostly care interventions and disease studies, not social research; care wins the term",
+          "hits": 8,
+          "by_category": {
+            "care": 4,
+            "ambiguous": 2,
+            "age_related_disease": 2
+          },
+          "precision": 0.25,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2023-00164_Forte",
+              "llm_category": "care",
+              "title": "Research programme on Ageing, Loneliness, and Mental health: understanding the connections and enabling change"
+            },
+            {
+              "record_id": "swecris:2022-00342_Forte",
+              "llm_category": "care",
+              "title": "Social prescribing in Sweden - a person-centred model to reduce loneliness, improve health and well-being amon"
+            },
+            {
+              "record_id": "swecris:2017-02301_Forte",
+              "llm_category": "care",
+              "title": "Being Connected at Home - Making use of digital devices in later life"
+            }
+          ]
+        },
+        {
+          "term": "social isolation",
+          "why": "same split as loneliness: care and disease records dominate",
+          "hits": 5,
+          "by_category": {
+            "care": 2,
+            "ambiguous": 2,
+            "age_related_disease": 1
+          },
+          "precision": 0.4,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2023-02315_Formas",
+              "llm_category": "care",
+              "title": "Planning and development of Collaborative Housing and Shared Housing as Intermediate Forms of Housing for prom"
+            },
+            {
+              "record_id": "swecris:2017-02301_Forte",
+              "llm_category": "care",
+              "title": "Being Connected at Home - Making use of digital devices in later life"
+            },
+            {
+              "record_id": "reporter:5R01AG079282-02",
+              "llm_category": "age_related_disease",
+              "title": "Identifying ADRD intervention targets by characterizing neurobiological mechanisms of social isolation, loneli"
+            }
+          ]
+        },
+        {
+          "term": "ageing population",
+          "why": "clears the proxy threshold at 0.643 but fails spot-check: several ambiguous hits are biomedical grants using 'our ageing population' as motivation boilerplate (polypharmacy imaging, DNase antivirals, muscle biology), the same live-flood class as healthy aging",
+          "hits": 14,
+          "by_category": {
+            "ambiguous": 9,
+            "care": 2,
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.643,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2024-00673_Vinnova",
+              "llm_category": "care",
+              "title": "Welcome to your own table!"
+            },
+            {
+              "record_id": "swecris:2017-00751_Forte",
+              "llm_category": "age_related_disease",
+              "title": "Fall injuries related to use of CNS-active and antihypertensive drugs; impact on risk by concomitant use of me"
+            },
+            {
+              "record_id": "swecris:2014-02715_VR",
+              "llm_category": "care",
+              "title": "Health-Promoting Living Conditions and Person-centred Care for an Ageing Population: Exploring effects of Inno"
+            }
+          ]
+        },
+        {
+          "term": "aging research",
+          "why": "clears the proxy threshold at 0.643 but its ambiguous hits are research-infrastructure, training and journal records (NEAR, R25/T32 programs, Äldre i Centrum), not social research; live text floods with center and program names",
+          "hits": 28,
+          "by_category": {
+            "ambiguous": 18,
+            "fundamental_aging": 9,
+            "intervention": 1
+          },
+          "precision": 0.643,
+          "example_false_hits": [
+            {
+              "record_id": "cordis:101098074",
+              "llm_category": "fundamental_aging",
+              "title": "CHARTING THE TOKEN OF TIME: YAP/TAZ TRANSCRIPTIONAL REGULATORS AT THE ROOTS OF AGING"
+            },
+            {
+              "record_id": "cordis:101159920",
+              "llm_category": "fundamental_aging",
+              "title": "Building Excellence in Systems Immunology and Healthy Aging Research"
+            },
+            {
+              "record_id": "reporter:1R13AG089747-01",
+              "llm_category": "fundamental_aging",
+              "title": "CSHL Mechanisms of Aging Conference (2024 - 2028)"
+            }
+          ]
+        },
+        {
+          "term": "participation",
+          "why": "clears the proxy threshold at 0.778 but bare 'participation' floods live grant text (patient participation, trial participation); corpus evidence is too generic to trust the word alone",
+          "hits": 9,
+          "by_category": {
+            "ambiguous": 7,
+            "care": 2
+          },
+          "precision": 0.778,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2023-00406_Forte",
+              "llm_category": "care",
+              "title": "Development of narrative-based practices for increased dignity and participation in elderly care"
+            },
+            {
+              "record_id": "swecris:2023-00185_Forte",
+              "llm_category": "care",
+              "title": "Promoting active ageing and participation using technology among older adults and people with Parkinson´s dise"
+            }
+          ]
+        },
+        {
+          "term": "social network*",
+          "why": "clears the proxy threshold at 0.667 (n=3) but fails spot-check completely: the ambiguous hits are wild-bird social networks and protein 'social network' dynamics, not human social-ageing research",
+          "hits": 3,
+          "by_category": {
+            "ambiguous": 2,
+            "age_related_disease": 1
+          },
+          "precision": 0.667,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:1R01AG057739-01A1",
+              "llm_category": "age_related_disease",
+              "title": "Leveraging Neuroimaging Biomarkers to Understand the Role of Social Networks in Alzheimer's Disease"
+            }
+          ]
+        },
+        {
+          "term": "older age",
+          "why": "scrapes the threshold at exactly 0.6 on 5 hits but is a bare population descriptor, the same class as the older adults trap",
+          "hits": 5,
+          "by_category": {
+            "ambiguous": 3,
+            "care": 1,
+            "age_related_disease": 1
+          },
+          "precision": 0.6,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2018-05196_VR",
+              "llm_category": "care",
+              "title": "Mitigating poverty and disablement in older age: Understanding the complex interactions of factors influencing"
+            },
+            {
+              "record_id": "reporter:7R01HL173487-02",
+              "llm_category": "age_related_disease",
+              "title": "Artificial Intelligence Imaging Biomarkers of Longitudinal Cardiovascular Stress"
+            }
+          ]
+        },
+        {
+          "term": "digital*",
+          "why": "clears the proxy threshold at 0.613 only because 'ambiguous' holds the engineering pool: hits include digital twins for wastewater plants and OCR of early printed books; a pure live-flood term",
+          "hits": 31,
+          "by_category": {
+            "ambiguous": 19,
+            "care": 8,
+            "age_related_disease": 4
+          },
+          "precision": 0.613,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2021-04992_Vinnova",
+              "llm_category": "care",
+              "title": "Designing self-care for increased health of older people in the digital age"
+            },
+            {
+              "record_id": "swecris:2018-04233_Vinnova",
+              "llm_category": "care",
+              "title": "Digital-enabled solutions to address demographic ageing - Sweden as a leading country within health and care 2"
+            },
+            {
+              "record_id": "swecris:2017-02304_Forte",
+              "llm_category": "care",
+              "title": "HARVEST: eHealth and Ageing in Rural Areas: Transforming Everyday Life, Digital Competences, and Technology"
+            }
+          ]
+        }
+      ],
+      "coverage": 0.048
     }
   }
 }

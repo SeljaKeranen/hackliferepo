@@ -67,7 +67,10 @@ Built 12 September 2026: a validated search-keyword lexicon for the funding
 classifier - per-category English and Swedish keywords, trap terms, and
 per-source query guidance, derived from and validated against the 2,944-record
 Aging Funding Atlas (commit `2e59b27`). See
-[`classifier/KEYWORDS.md`](../classifier/KEYWORDS.md).
+[`classifier/KEYWORDS.md`](../classifier/KEYWORDS.md). Extended 12 September
+2026: the category scheme is now five substantive categories - adding
+`social_population_aging` - plus `not_relevant`/`ambiguous`; the funding ratio
+is unchanged (numerator `fundamental_aging` + `intervention`).
 
 ## What this means in practice
 

@@ -1,0 +1,2334 @@
+{
+ "meta": {
+  "benchmark_records": 30,
+  "label_counts": {
+   "age_related_disease": 12,
+   "ambiguous": 19,
+   "care": 6,
+   "fundamental_aging": 13,
+   "intervention": 8,
+   "not_relevant": 10,
+   "social_population_aging": 4
+  },
+  "labels_file": "labels.snapshot.jsonl",
+  "labels_records": 2944,
+  "labels_sha256": "3ce090c00475943f792772fb6c8e8356711353eae2c4595247501658cf6a6427",
+  "sampled": 72,
+  "seed": 20260912,
+  "split_counts": {
+   "holdout": 31,
+   "tuning": 41
+  },
+  "target": 72,
+  "why_counts": {
+   "benchmark": 30,
+   "fill": 13,
+   "llm_disagree": 10,
+   "low_margin": 10,
+   "stratum_min": 9
+  }
+ },
+ "records": [
+  {
+   "amount_eur": 1440500.0,
+   "anchor_terms": [
+    "older people"
+   ],
+   "confidence": 1.334,
+   "funder": "European Commission",
+   "label": "care",
+   "llm_category": "care",
+   "matched_keywords": {
+    "care": [
+     "older people",
+     "end-of-life"
+    ]
+   },
+   "quote": "end-of-life trajectories of older people with serious chronic illness",
+   "reason": "Lexicon keywords for care decide the record (matched: older people, end-of-life).",
+   "record_id": "cordis:101077555",
+   "region": "EU",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "care|cordis",
+    "why": [
+     "stratum_min"
+    ]
+   },
+   "source": "cordis",
+   "title": "Uncovering commonalities and differences: Towards a novel framework for identifying end-of-life trajectories of older people with serious chronic illness",
+   "url": "https://cordis.europa.eu/project/id/101077555",
+   "year": "2023"
+  },
+  {
+   "amount_eur": 1458000.0,
+   "anchor_terms": [
+    "ageing"
+   ],
+   "confidence": null,
+   "funder": "European Commission",
+   "label": "ambiguous",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {},
+   "quote": "Major underlying risk factors of chronic muscle force loss are ageing, inactive lifestyles, and unbalanced nutrition.",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "cordis:645648",
+   "region": "EU",
+   "sampling": {
+    "benchmark_id": "B20",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|cordis",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "cordis",
+   "title": "Muscle Stress Relief: An integrated research program linking together basic research on secondary myopathies in stress states to innovative translation in applied myology.",
+   "url": "https://cordis.europa.eu/project/id/645648",
+   "year": "2016"
+  },
+  {
+   "amount_eur": 159460.8,
+   "anchor_terms": [
+    "aging",
+    "longevity"
+   ],
+   "confidence": null,
+   "funder": "European Commission",
+   "label": "ambiguous",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {},
+   "quote": "I propose to systematically investigate the role of ncRNAs in translation and longevity.",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "cordis:655623",
+   "region": "EU",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "ambiguous|cordis",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "cordis",
+   "title": "Functions of non-coding RNAs in protein synthesis and homeostasis during aging",
+   "url": "https://cordis.europa.eu/project/id/655623",
+   "year": "2015"
+  },
+  {
+   "amount_eur": 170121.6,
+   "anchor_terms": [
+    "aging",
+    "ageing"
+   ],
+   "confidence": 0.667,
+   "funder": "European Commission",
+   "label": "social_population_aging",
+   "llm_category": "ambiguous",
+   "matched_keywords": {
+    "social_population_aging": [
+     "population aging"
+    ]
+   },
+   "quote": "This research project proposes a comprehensive analysis of the ethical challenge posed by population aging.",
+   "reason": "Lexicon keywords for social_population_aging decide the record (matched: population aging).",
+   "record_id": "cordis:656787",
+   "region": "EU",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "social_population_aging|cordis",
+    "why": [
+     "stratum_min"
+    ]
+   },
+   "source": "cordis",
+   "title": "Ethics and Ageing",
+   "url": "https://cordis.europa.eu/project/id/656787",
+   "year": "2015"
+  },
+  {
+   "amount_eur": 183454.8,
+   "anchor_terms": [
+    "ageing"
+   ],
+   "confidence": 1.414,
+   "funder": "European Commission",
+   "label": "fundamental_aging",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "telomere*",
+     "oxidative stress"
+    ]
+   },
+   "quote": "targeting parameters related to the ageing process (mitochondrial functioning, oxidative stress, telomere erosion and cellular stress resistance)",
+   "reason": "Lexicon keywords for fundamental_aging decide the record (matched: telomere*, oxidative stress).",
+   "record_id": "cordis:658085",
+   "region": "EU",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "fundamental_aging|cordis",
+    "why": [
+     "stratum_min"
+    ]
+   },
+   "source": "cordis",
+   "title": "An avian model for understanding and preventing the negative effects of poor developmental conditions on subsequent health state, fertility and ageing rate",
+   "url": "https://cordis.europa.eu/project/id/658085",
+   "year": "2016"
+  },
+  {
+   "amount_eur": 172800.0,
+   "anchor_terms": [
+    "ageing",
+    "healthy ageing"
+   ],
+   "confidence": null,
+   "funder": "European Commission",
+   "label": "ambiguous",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {},
+   "quote": "cognitive function and movement control, both of which decline in healthy ageing",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "cordis:702784",
+   "region": "EU",
+   "sampling": {
+    "benchmark_id": "B21",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|cordis",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "cordis",
+   "title": "Addressing Neural Declines to Promote Healthy Ageing",
+   "url": "https://cordis.europa.eu/project/id/702784",
+   "year": "2017"
+  },
+  {
+   "amount_eur": 2499949.0,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": null,
+   "funder": "European Commission",
+   "label": "ambiguous",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {},
+   "quote": "The basic mechanisms of stem cell malfunction during aging are poorly understood",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "cordis:741966",
+   "region": "EU",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|cordis",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "cordis",
+   "title": "Tissue regeneration and aging: the decisive quiescent stem-cell state",
+   "url": "https://cordis.europa.eu/project/id/741966",
+   "year": "2017"
+  },
+  {
+   "amount_eur": 5040000.0,
+   "anchor_terms": [],
+   "confidence": 0.613,
+   "funder": "European Commission",
+   "label": "age_related_disease",
+   "llm_category": "care",
+   "matched_keywords": {
+    "age_related_disease": [
+     "frailty"
+    ]
+   },
+   "quote": "Digital solutions supporting continuum of care for frailty prevention in old adults",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: frailty).",
+   "record_id": "cordis:856960",
+   "region": "EU",
+   "sampling": {
+    "benchmark_id": "B16",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "age_related_disease|cordis",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "cordis",
+   "title": "Digital solutions supporting continuum of care for frailty prevention in old adults",
+   "url": "https://cordis.europa.eu/project/id/856960",
+   "year": "2019"
+  },
+  {
+   "amount_eur": 150000.0,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "European Commission",
+   "label": "not_relevant",
+   "llm_category": "ambiguous",
+   "matched_keywords": {},
+   "quote": "An exosome-based therapeutic approach against chronic inflammation",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "cordis:874456",
+   "region": "EU",
+   "sampling": {
+    "benchmark_id": "B11",
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "not_relevant|cordis",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "cordis",
+   "title": "An exosome-based therapeutic approach against chronic inflammation",
+   "url": "https://cordis.europa.eu/project/id/874456",
+   "year": "2021"
+  },
+  {
+   "amount_eur": 160932.48,
+   "anchor_terms": [
+    "ageing"
+   ],
+   "confidence": 0.4,
+   "funder": "European Commission",
+   "label": "fundamental_aging",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {
+    "age_related_disease": [
+     "obesity"
+    ],
+    "fundamental_aging": [
+     "cellular ageing"
+    ]
+   },
+   "quote": "investigate cell decline linked to obesity and ageing through the lenses of RNA modifications",
+   "reason": "Lexicon keywords for fundamental_aging decide the record (matched: cellular ageing).",
+   "record_id": "cordis:895984",
+   "region": "EU",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin"
+    ],
+    "split": "tuning",
+    "stratum": "fundamental_aging|cordis",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "cordis",
+   "title": "Epitranscriptomics at the crossroads of metabolism and cellular ageing",
+   "url": "https://cordis.europa.eu/project/id/895984",
+   "year": "2020"
+  },
+  {
+   "amount_eur": 6293854.82,
+   "anchor_terms": [],
+   "confidence": 0.016,
+   "funder": "European Commission",
+   "label": "intervention",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "cancer"
+    ],
+    "intervention": [
+     "exercise intervention*"
+    ]
+   },
+   "quote": "exercise intervention for children and adolescents undergoing anti-cancer treatment",
+   "reason": "The text describes developing or testing an intervention against ageing (matched: exercise intervention*).",
+   "record_id": "cordis:945153",
+   "region": "EU",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin",
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "intervention|cordis",
+    "why": [
+     "stratum_min"
+    ]
+   },
+   "source": "cordis",
+   "title": "Get strong to fight childhood cancer: an exercise intervention for children and adolescents undergoing anti-cancer treatment",
+   "url": "https://cordis.europa.eu/project/id/945153",
+   "year": "2021"
+  },
+  {
+   "amount_eur": 1818637.0,
+   "anchor_terms": [
+    "senescence"
+   ],
+   "confidence": 0.123,
+   "funder": "European Commission",
+   "label": "ambiguous",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "age_related_disease": [
+     "cancer",
+     "tumor*"
+    ],
+    "fundamental_aging": [
+     "senescen*",
+     "senescent cell*"
+    ]
+   },
+   "quote": "develop CAR T cells targeting senescent cells as a novel therapeutic concept for cancer and senescence-associated diseases",
+   "reason": "Keyword evidence for fundamental_aging (1.519) and age_related_disease (1.396) is too close to call (margin 0.123 < 0.3).",
+   "record_id": "cordis:949667",
+   "region": "EU",
+   "sampling": {
+    "benchmark_id": "B09",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "ambiguous|cordis",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "cordis",
+   "title": "Senolytic CAR T cells as novel therapeutic concept for solid tumors and senescence-associated diseases.",
+   "url": "https://cordis.europa.eu/project/id/949667",
+   "year": "2022"
+  },
+  {
+   "amount_eur": 24606.63,
+   "anchor_terms": [
+    "longevity",
+    "healthspan"
+   ],
+   "confidence": null,
+   "funder": "National Institute on Aging",
+   "label": "ambiguous",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {},
+   "quote": "Conserved role of uric acid and purine metabolites in longevity and healthspan",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "reporter:1F31AG062112-01",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "reporter",
+   "title": "Conserved role of uric acid and purine metabolites in longevity and healthspan",
+   "url": "https://reporter.nih.gov/project-details/1F31AG062112-01",
+   "year": "2018"
+  },
+  {
+   "amount_eur": 27695.82,
+   "anchor_terms": [
+    "lifespan",
+    "healthspan"
+   ],
+   "confidence": 0.358,
+   "funder": "National Institute on Aging",
+   "label": "fundamental_aging",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "lifespan"
+    ],
+    "intervention": [
+     "calorie restriction"
+    ]
+   },
+   "quote": "calorie restriction (CR), an intervention which improves both lifespan and healthspan in wide range of model organisms",
+   "reason": "Intervention vocabulary appears without developing/testing language, so the rubric's mechanism rule assigns the study of ageing biology (matched: lifespan).",
+   "record_id": "reporter:1F31AG066311-01",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin",
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "reporter",
+   "title": "Distinct roles for calories, fasting, and mTOR in a calorie restricted diet",
+   "url": "https://reporter.nih.gov/project-details/1F31AG066311-01",
+   "year": "2019"
+  },
+  {
+   "amount_eur": null,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "Veterans Affairs",
+   "label": "not_relevant",
+   "llm_category": "ambiguous",
+   "matched_keywords": {},
+   "quote": "ShEEP Request for a Multimodal Plate Reader",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "reporter:1IS1BX006337-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B22",
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "not_relevant|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "ShEEP Request for a Multimodal Plate Reader",
+   "url": "https://reporter.nih.gov/project-details/1IS1BX006337-01",
+   "year": "2023"
+  },
+  {
+   "amount_eur": 547644.93,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": 1.0,
+   "funder": "National Institute on Alcohol Abuse and Alcoholism",
+   "label": "intervention",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "intervention": [
+     "geroprotect*"
+    ]
+   },
+   "quote": "validate efficacious therapies for precocious aging in PWH with a significant history of alcohol use",
+   "reason": "The text describes developing or testing an intervention against ageing (matched: geroprotect*).",
+   "record_id": "reporter:1R01AA032764-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B26",
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "intervention|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Geroprotective Precision Medicine Strategies in PWH that Use Alcohol",
+   "url": "https://reporter.nih.gov/project-details/1R01AA032764-01",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 634081.26,
+   "anchor_terms": [],
+   "confidence": 2.522,
+   "funder": "National Institute on Aging",
+   "label": "age_related_disease",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "alzheimer*",
+     "mild cognitive impairment",
+     "alzheimer disease"
+    ]
+   },
+   "quote": "understand the role of personal social network dynamics in the etiology and clinical progression of mild cognitive impairment (MCI) and Alzheimer disease (AD)",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*, mild cognitive impairment, alzheimer disease).",
+   "record_id": "reporter:1R01AG057739-01A1",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "reporter",
+   "title": "Leveraging Neuroimaging Biomarkers to Understand the Role of Social Networks in Alzheimer's Disease",
+   "url": "https://reporter.nih.gov/project-details/1R01AG057739-01A1",
+   "year": "2018"
+  },
+  {
+   "amount_eur": 472872.67,
+   "anchor_terms": [
+    "age-related"
+   ],
+   "confidence": 0.929,
+   "funder": "National Institute on Aging",
+   "label": "fundamental_aging",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "inflammaging"
+    ]
+   },
+   "quote": "age-related inflammation mediated by the vWAT contributes to risk of sepsis",
+   "reason": "Lexicon keywords for fundamental_aging decide the record (matched: inflammaging).",
+   "record_id": "reporter:1R01AG079913-01",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "reporter",
+   "title": "Role of adipose tissue inflammaging and metabolic dysfunction during sepsis",
+   "url": "https://reporter.nih.gov/project-details/1R01AG079913-01",
+   "year": "2023"
+  },
+  {
+   "amount_eur": 268113.35,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "National Institute of Diabetes and Digestive and Kidney Diseases",
+   "label": "not_relevant",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {},
+   "quote": "The role of DNA damage response in chronic kidney disease",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "reporter:1R01DK115403-01A1",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "not_relevant|reporter",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "reporter",
+   "title": "The role of DNA damage response in chronic kidney disease",
+   "url": "https://reporter.nih.gov/project-details/1R01DK115403-01A1",
+   "year": "2018"
+  },
+  {
+   "amount_eur": 641411.32,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": null,
+   "funder": "National Human Genome Research Institute",
+   "label": "ambiguous",
+   "llm_category": "ambiguous",
+   "matched_keywords": {},
+   "quote": "The diversity of cell states observed across development, aging, and disease is regulated by the epigenome",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "reporter:1R01HG013679-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B01",
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Expansion genomics for high-resolution single-cell and spatial epigenomics",
+   "url": "https://reporter.nih.gov/project-details/1R01HG013679-01",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 83678.4,
+   "anchor_terms": [
+    "aging",
+    "lifespan",
+    "healthspan"
+   ],
+   "confidence": 0.642,
+   "funder": "National Institute on Aging",
+   "label": "fundamental_aging",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "lifespan"
+    ]
+   },
+   "quote": "One of the main goals of aging research is to discover interventions that can prolong lifespan and healthspan",
+   "reason": "Lexicon keywords for fundamental_aging decide the record (matched: lifespan).",
+   "record_id": "reporter:1R03AG056938-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B19",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Screening potassium and phosphate binder drugs for lifespan and healthspan effects in invertebrates",
+   "url": "https://reporter.nih.gov/project-details/1R03AG056938-01",
+   "year": "2017"
+  },
+  {
+   "amount_eur": 43133.2,
+   "anchor_terms": [
+    "aging",
+    "gerontolog*"
+   ],
+   "confidence": null,
+   "funder": "National Institute on Aging",
+   "label": "ambiguous",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {},
+   "quote": "highlight the highest-quality research with translational potential in the biology of aging",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "reporter:1R13AG055294-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B07",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Biological Sciences Program at the Gerontological Society of America's Annual Scientific Meeting",
+   "url": "https://reporter.nih.gov/project-details/1R13AG055294-01",
+   "year": "2016"
+  },
+  {
+   "amount_eur": 384221.88,
+   "anchor_terms": [
+    "lifespan",
+    "healthspan"
+   ],
+   "confidence": 0.058,
+   "funder": "National Institute on Aging",
+   "label": "fundamental_aging",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "lifespan"
+    ],
+    "intervention": [
+     "malnutrition"
+    ]
+   },
+   "quote": "Dietary Restriction (DR), where caloric or diet intake is reduced but not to the point of malnutrition, extends lifespan and healthspan in model organisms",
+   "reason": "Intervention vocabulary appears without developing/testing language, so the rubric's mechanism rule assigns the study of ageing biology (matched: lifespan).",
+   "record_id": "reporter:1R15AG074538-01A1",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin",
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "reporter",
+   "title": "Genetic Mechanisms of Circadian Clock-Mediated Dietary Restriction in Drosophila",
+   "url": "https://reporter.nih.gov/project-details/1R15AG074538-01A1",
+   "year": "2023"
+  },
+  {
+   "amount_eur": 400923.05,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": null,
+   "funder": "National Institute on Aging",
+   "label": "ambiguous",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {},
+   "quote": "Molecular mechanisms associated with pathological tissue aging can be learned by comparing the differential gene regulations between the two major subgroups.",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "reporter:1R21AG085140-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B29",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Molecular mechanisms of pathological aging of human brain and adipose and their inter-organ communication",
+   "url": "https://reporter.nih.gov/project-details/1R21AG085140-01",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 367458.59,
+   "anchor_terms": [
+    "aging",
+    "longevity"
+   ],
+   "confidence": 2.367,
+   "funder": "National Institute on Aging",
+   "label": "intervention",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "intervention": [
+     "calorie restriction",
+     "delay aging",
+     "malnutrition"
+    ]
+   },
+   "quote": "Calorie restriction (CR), without malnutrition, is the most robust non-genetic intervention to promote longevity through metabolic improvements that delay aging",
+   "reason": "The text describes developing or testing an intervention against ageing (matched: calorie restriction, delay aging, malnutrition).",
+   "record_id": "reporter:1R21AG086805-01A1",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B25",
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "intervention|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Serum markers of glucagon sensitivity in calorie restricted humans",
+   "url": "https://reporter.nih.gov/project-details/1R21AG086805-01A1",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 133784.51,
+   "anchor_terms": [
+    "senescence"
+   ],
+   "confidence": 1.622,
+   "funder": "National Institute of Allergy and Infectious Diseases",
+   "label": "fundamental_aging",
+   "llm_category": "ambiguous",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "senescen*",
+     "cellular senescence"
+    ]
+   },
+   "quote": "limit cellular senescence markers",
+   "reason": "Lexicon keywords for fundamental_aging decide the record (matched: senescen*, cellular senescence).",
+   "record_id": "reporter:1R21AI193785-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B10",
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Gas Marble Therapeutics for the Mitigation of Cutaneous Injury Post-Radiation Exposure",
+   "url": "https://reporter.nih.gov/project-details/1R21AI193785-01",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 314487.58,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "NIH Office of the Director",
+   "label": "not_relevant",
+   "llm_category": "ambiguous",
+   "matched_keywords": {},
+   "quote": "This is a proposal to modernize mouse Animal Biosafety Level 2 (ABSL2) facilities at the Salk Institute for Biological Studies",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "reporter:1R24OD033730-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B14",
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "not_relevant|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Modernization of Salk's ABSL2 Facilities Through the Incorporation of Ventilated Caging",
+   "url": "https://reporter.nih.gov/project-details/1R24OD033730-01",
+   "year": "2022"
+  },
+  {
+   "amount_eur": 258799.17,
+   "anchor_terms": [],
+   "confidence": 1.526,
+   "funder": "National Cancer Institute",
+   "label": "age_related_disease",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "cancer",
+     "prostate cancer"
+    ]
+   },
+   "quote": "DNA Quadruplex Control of hTERT Transcription: A New Therapy for Taxotere Resistant Prostate Cancer",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: cancer, prostate cancer).",
+   "record_id": "reporter:1R41CA224497-01A1",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B08",
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "DNA Quadruplex Control of hTERT Transcription: A New Therapy for Taxotere Resistant Prostate Cancer",
+   "url": "https://reporter.nih.gov/project-details/1R41CA224497-01A1",
+   "year": "2018"
+  },
+  {
+   "amount_eur": 339853.35,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": 0.818,
+   "funder": "National Institute on Aging",
+   "label": "intervention",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "intervention": [
+     "metformin"
+    ]
+   },
+   "quote": "Metformin is one such drug, tested in clinical trials and are propagated to fulfill one or even all of the promises of anti-aging drugs.",
+   "reason": "The text describes developing or testing an intervention against ageing (matched: metformin).",
+   "record_id": "reporter:1R56AG069689-01",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "intervention|reporter",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "reporter",
+   "title": "The host-microbe-metformin interplay in the aged gut",
+   "url": "https://reporter.nih.gov/project-details/1R56AG069689-01",
+   "year": "2020"
+  },
+  {
+   "amount_eur": 1974230.5,
+   "anchor_terms": [],
+   "confidence": 2.505,
+   "funder": "National Institute on Aging",
+   "label": "age_related_disease",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "alzheimer*",
+     "dementia*",
+     "mild cognitive impairment"
+    ]
+   },
+   "quote": "Mild Cognitive Impairment and Alzheimer's Disease and Related Dementias: Cross-national longitudinal prognosis and risk factors",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*, dementia*, mild cognitive impairment).",
+   "record_id": "reporter:1RF1AG088009-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B27",
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Mild Cognitive Impairment and Alzheimer's Disease and Related Dementias: Cross-national longitudinal prognosis and risk factors",
+   "url": "https://reporter.nih.gov/project-details/1RF1AG088009-01",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 232412.01,
+   "anchor_terms": [
+    "aging",
+    "senescence"
+   ],
+   "confidence": 0.145,
+   "funder": "National Institute on Aging",
+   "label": "ambiguous",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "age_related_disease": [
+     "frailty"
+    ],
+    "fundamental_aging": [
+     "senescen*"
+    ]
+   },
+   "quote": "test the beneficial effects of PBM on (1) mouse health span and life span; (2) mouse cardiac frailty; (3) mouse chronic inflammation; and (4) senescence",
+   "reason": "Keyword evidence for fundamental_aging (0.758) and age_related_disease (0.613) is too close to call (margin 0.145 < 0.3).",
+   "record_id": "reporter:1ZIAAG000594-01",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B02",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Effect of Long-term Photobiological Modulation Therapy on Aging",
+   "url": "https://reporter.nih.gov/project-details/1ZIAAG000594-01",
+   "year": "2021"
+  },
+  {
+   "amount_eur": 1221642.51,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "National Institute of Neurological Disorders and Stroke",
+   "label": "not_relevant",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {},
+   "quote": "Roles of Cdk5 in neurodevelopment and neurodegeneration",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "reporter:1ZIANS003106-17",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "not_relevant|reporter",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "reporter",
+   "title": "Roles of Cdk5 in neurodevelopment and neurodegeneration",
+   "url": "https://reporter.nih.gov/project-details/1ZIANS003106-17",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 43133.2,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": 2.576,
+   "funder": "National Institute on Aging",
+   "label": "age_related_disease",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "alzheimer*",
+     "adrd",
+     "dementia*"
+    ]
+   },
+   "quote": "address the profound effects of Alzheimer’s Disease, and Alzheimer’s Disease and Related Dementias (AD/ADRD) on families and society",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*, adrd, dementia*).",
+   "record_id": "reporter:2R13AG071313-04",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B18",
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Black Men's Brain Health and Aging, Alzheimer's Disease and Related Dementias: Life Course Perspectives",
+   "url": "https://reporter.nih.gov/project-details/2R13AG071313-04",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 91208.59,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
+   "label": "not_relevant",
+   "llm_category": "ambiguous",
+   "matched_keywords": {},
+   "quote": "Spontaneous pregnancy loss is the most common early obstetric complication",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "reporter:3R00HD101653-05S1",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "not_relevant|reporter",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "reporter",
+   "title": "Mechanisms of Endometrial Innate Immune Responses to Infection and Impact on Placental Interactions",
+   "url": "https://reporter.nih.gov/project-details/3R00HD101653-05S1",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 251669.25,
+   "anchor_terms": [
+    "aging",
+    "longevity",
+    "healthy aging"
+   ],
+   "confidence": 1.0,
+   "funder": "National Institute on Aging",
+   "label": "intervention",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "intervention": [
+     "pharmacological intervention*"
+    ]
+   },
+   "quote": "test pharmacological interventions for their ability to extend healthy aging and promote longevity in nematodes",
+   "reason": "The text describes developing or testing an intervention against ageing (matched: pharmacological intervention*).",
+   "record_id": "reporter:3U01AG045844-08S1",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "intervention|reporter",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "reporter",
+   "title": "Caenorhabditis Intervention Testing Program - Buck Institute Compound Testing",
+   "url": "https://reporter.nih.gov/project-details/3U01AG045844-08S1",
+   "year": "2022"
+  },
+  {
+   "amount_eur": 607469.81,
+   "anchor_terms": [
+    "senescence"
+   ],
+   "confidence": 1.622,
+   "funder": "National Cancer Institute",
+   "label": "fundamental_aging",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "senescen*",
+     "cellular senescence"
+    ]
+   },
+   "quote": "nationwide, underrepresented scientific internship award program in cellular senescence",
+   "reason": "Lexicon keywords for fundamental_aging decide the record (matched: senescen*, cellular senescence).",
+   "record_id": "reporter:3U24CA268108-02S1",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "reporter",
+   "title": "SenNet Supplement CODCC",
+   "url": "https://reporter.nih.gov/project-details/3U24CA268108-02S1",
+   "year": "2022"
+  },
+  {
+   "amount_eur": 4311600.24,
+   "anchor_terms": [
+    "aging",
+    "centenarians"
+   ],
+   "confidence": null,
+   "funder": "National Institute on Aging",
+   "label": "ambiguous",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {},
+   "quote": "models of slow aging and resistance to aging related diseases can inform us about biological mechanisms",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "reporter:4UH3AG064704-03",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B24",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Identifying protective omics profiles in centenarians and translating these into preventive and therapeutic strategies",
+   "url": "https://reporter.nih.gov/project-details/4UH3AG064704-03",
+   "year": "2022"
+  },
+  {
+   "amount_eur": null,
+   "anchor_terms": [],
+   "confidence": 0.395,
+   "funder": "Veterans Affairs",
+   "label": "age_related_disease",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "frailty",
+     "obesity"
+    ],
+    "intervention": [
+     "metformin"
+    ]
+   },
+   "quote": "Lifestyle Intervention plus Metformin to Treat Frailty in Older Veterans with Obesity",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: frailty, obesity).",
+   "record_id": "reporter:5I01CX002161-03",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin"
+    ],
+    "split": "holdout",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "reporter",
+   "title": "Lifestyle Intervention plus Metformin to Treat Frailty in Older Veterans with Obesity",
+   "url": "https://reporter.nih.gov/project-details/5I01CX002161-03",
+   "year": "2023"
+  },
+  {
+   "amount_eur": 120566.77,
+   "anchor_terms": [],
+   "confidence": 1.605,
+   "funder": "National Institute on Aging",
+   "label": "age_related_disease",
+   "llm_category": "care",
+   "matched_keywords": {
+    "age_related_disease": [
+     "alzheimer*",
+     "dementia*"
+    ]
+   },
+   "quote": "Approximately 16 million Americans serve as family caregivers for a person with Alzheimer's disease and related dementias and this care can take a physical and emotional toll.",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*, dementia*).",
+   "record_id": "reporter:5K01AG081566-03",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "reporter",
+   "title": "Cognitive Health and Modifiable Factors of Daily Sleep and Activities Among Dementia Family Caregivers",
+   "url": "https://reporter.nih.gov/project-details/5K01AG081566-03",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 600000.86,
+   "anchor_terms": [
+    "aging",
+    "older adults"
+   ],
+   "confidence": 2.576,
+   "funder": "National Institute on Aging",
+   "label": "age_related_disease",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "alzheimer*",
+     "adrd",
+     "dementia*"
+    ]
+   },
+   "quote": "behavioral interventions across hospital and community settings, for racial and ethnic minority older adults with Alzheimer’s Disease and Related Disorders (ADRD)",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*, adrd, dementia*).",
+   "record_id": "reporter:5P30AG083196-02",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B15",
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Massachusetts Center for Alzheimer and dEmeNtia behaVIoral reSearch In minOrity agiNg (Mass-ENVISION)",
+   "url": "https://reporter.nih.gov/project-details/5P30AG083196-02",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 214803.31,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": 0.857,
+   "funder": "National Cancer Institute",
+   "label": "age_related_disease",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {
+    "age_related_disease": [
+     "lymphoma"
+    ]
+   },
+   "quote": "Aging-Related Biomarkers of Neurocognitive Function in Long-term Hodgkin Lymphoma Survivors",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: lymphoma).",
+   "record_id": "reporter:5R00CA256356-05",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B13",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Aging-Related Biomarkers of Neurocognitive Function in Long-term Hodgkin Lymphoma Survivors",
+   "url": "https://reporter.nih.gov/project-details/5R00CA256356-05",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 1822427.54,
+   "anchor_terms": [
+    "aging",
+    "ageing"
+   ],
+   "confidence": 0.667,
+   "funder": "National Institute on Aging",
+   "label": "social_population_aging",
+   "llm_category": "ambiguous",
+   "matched_keywords": {
+    "social_population_aging": [
+     "population aging"
+    ]
+   },
+   "quote": "key current scientific issues relevant to population aging and public policy",
+   "reason": "Lexicon keywords for social_population_aging decide the record (matched: population aging).",
+   "record_id": "reporter:5R01AG017644-24",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "social_population_aging|reporter",
+    "why": [
+     "stratum_min"
+    ]
+   },
+   "source": "reporter",
+   "title": "English Longitudinal Study of Ageing: Renewal 2020",
+   "url": "https://reporter.nih.gov/project-details/5R01AG017644-24",
+   "year": "2023"
+  },
+  {
+   "amount_eur": 512722.57,
+   "anchor_terms": [],
+   "confidence": 0.816,
+   "funder": "National Institute on Aging",
+   "label": "age_related_disease",
+   "llm_category": "care",
+   "matched_keywords": {
+    "age_related_disease": [
+     "dementia*"
+    ]
+   },
+   "quote": "Mindfulness based stress reduction for family caregivers of dementia patients",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: dementia*).",
+   "record_id": "reporter:5R01AG052495-03",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B05",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Mindfulness based stress reduction for family caregivers of dementia patients",
+   "url": "https://reporter.nih.gov/project-details/5R01AG052495-03",
+   "year": "2018"
+  },
+  {
+   "amount_eur": 501961.7,
+   "anchor_terms": [
+    "aging",
+    "geroscience"
+   ],
+   "confidence": 0.789,
+   "funder": "National Institute on Aging",
+   "label": "age_related_disease",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "age_related_disease": [
+     "alzheimer*"
+    ]
+   },
+   "quote": "Targeting Aging to prevent Alzheimer's Disease: the Geroscience Approach",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*).",
+   "record_id": "reporter:5R01AG067326-02",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "age_related_disease|reporter",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "reporter",
+   "title": "Targeting Aging to prevent Alzheimer's Disease: the Geroscience Approach",
+   "url": "https://reporter.nih.gov/project-details/5R01AG067326-02",
+   "year": "2021"
+  },
+  {
+   "amount_eur": 785867.84,
+   "anchor_terms": [
+    "aging",
+    "geroscience"
+   ],
+   "confidence": 0.211,
+   "funder": "National Institute on Aging",
+   "label": "intervention",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "age_related_disease": [
+     "alzheimer*"
+    ],
+    "intervention": [
+     "geroprotect*"
+    ]
+   },
+   "quote": "To develop geroprotectors, drugs that target aging and could be used to treat ADRDs we developed a neuro-centric geroscience platform",
+   "reason": "The text describes developing or testing an intervention against ageing (matched: geroprotect*).",
+   "record_id": "reporter:5R01AG067331-05",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin"
+    ],
+    "split": "holdout",
+    "stratum": "intervention|reporter",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "reporter",
+   "title": "Lowering Mitochondrial ATP Synthase Activity Slows Aging and Alzheimer's Disease",
+   "url": "https://reporter.nih.gov/project-details/5R01AG067331-05",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 586878.02,
+   "anchor_terms": [
+    "longevity",
+    "lifespan"
+   ],
+   "confidence": 0.358,
+   "funder": "National Institute on Aging",
+   "label": "fundamental_aging",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "lifespan"
+    ],
+    "intervention": [
+     "extend lifespan"
+    ]
+   },
+   "quote": "systematic, unbiased identification of longevity interventions in mammals",
+   "reason": "Intervention vocabulary appears without developing/testing language, so the rubric's mechanism rule assigns the study of ageing biology (matched: lifespan).",
+   "record_id": "reporter:5R01AG067782-05",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin",
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "reporter",
+   "title": "Unbiased identification of interventions that extend lifespan",
+   "url": "https://reporter.nih.gov/project-details/5R01AG067782-05",
+   "year": "2023"
+  },
+  {
+   "amount_eur": 430391.65,
+   "anchor_terms": [
+    "lifespan",
+    "healthspan"
+   ],
+   "confidence": 0.642,
+   "funder": "National Institute on Aging",
+   "label": "fundamental_aging",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "lifespan"
+    ]
+   },
+   "quote": "Strengthening gut barrier integrity with beneficial microbes to increase lifespan and healthspan",
+   "reason": "Lexicon keywords for fundamental_aging decide the record (matched: lifespan).",
+   "record_id": "reporter:5R01AG069917-05",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "reporter",
+   "title": "Strengthening gut barrier integrity with beneficial microbes to increase lifespan and healthspan",
+   "url": "https://reporter.nih.gov/project-details/5R01AG069917-05",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 568248.79,
+   "anchor_terms": [
+    "aging",
+    "lifespan"
+   ],
+   "confidence": 0.358,
+   "funder": "National Institute on Aging",
+   "label": "fundamental_aging",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "lifespan"
+    ],
+    "intervention": [
+     "caloric restriction"
+    ]
+   },
+   "quote": "caloric restriction (CR) is the most effective intervention for improving aging-related deterioration of biological functions and for extending lifespan",
+   "reason": "Intervention vocabulary appears without developing/testing language, so the rubric's mechanism rule assigns the study of ageing biology (matched: lifespan).",
+   "record_id": "reporter:5R01AG072736-02",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin",
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "reporter",
+   "title": "Circadian Rhythm and Lifespan",
+   "url": "https://reporter.nih.gov/project-details/5R01AG072736-02",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 503983.78,
+   "anchor_terms": [
+    "lifespan",
+    "healthspan"
+   ],
+   "confidence": 0.176,
+   "funder": "National Institute on Aging",
+   "label": "intervention",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "lifespan"
+    ],
+    "intervention": [
+     "metformin"
+    ]
+   },
+   "quote": "the effects of metformin on healthspan and lifespan are context specific",
+   "reason": "The text describes developing or testing an intervention against ageing (matched: metformin).",
+   "record_id": "reporter:5R01AG074502-04",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin"
+    ],
+    "split": "holdout",
+    "stratum": "intervention|reporter",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "reporter",
+   "title": "Determining the context specificity of metformin treatment on muscle mitochondria and healthspan",
+   "url": "https://reporter.nih.gov/project-details/5R01AG074502-04",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 549316.77,
+   "anchor_terms": [
+    "later life"
+   ],
+   "confidence": 0.857,
+   "funder": "National Institute on Aging",
+   "label": "care",
+   "llm_category": "care",
+   "matched_keywords": {
+    "care": [
+     "caregiv*"
+    ]
+   },
+   "quote": "This project aims to improve our ability to support the resilience of family caregivers of adults with autism and developmental disorders as the caregivers move into later life.",
+   "reason": "Lexicon keywords for care decide the record (matched: caregiv*).",
+   "record_id": "reporter:5R01AG080599-03",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B17",
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "care|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Family caregivers in later life: A longitudinal study of well-being and mental health in families of adults with autism and developmental disabilities",
+   "url": "https://reporter.nih.gov/project-details/5R01AG080599-03",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 320684.09,
+   "anchor_terms": [
+    "senescence"
+   ],
+   "confidence": 0.013,
+   "funder": "National Cancer Institute",
+   "label": "ambiguous",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "tumor*"
+    ],
+    "fundamental_aging": [
+     "senescen*"
+    ]
+   },
+   "quote": "Kaposi's Sarcoma (KS) is the most common tumor of AIDS patients... KSHV infection of primary neonatal lymphatic endothelial cells leads to bypass of senescence",
+   "reason": "Keyword evidence for fundamental_aging (0.758) and age_related_disease (0.745) is too close to call (margin 0.013 < 0.3).",
+   "record_id": "reporter:5R01CA217788-02",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "reporter",
+   "title": "KSHV immortalization of human lymphatic endothelial cells",
+   "url": "https://reporter.nih.gov/project-details/5R01CA217788-02",
+   "year": "2019"
+  },
+  {
+   "amount_eur": 394576.43,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "National Eye Institute",
+   "label": "not_relevant",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {},
+   "quote": "The role of epigenetics in RPE heterogeneity with early AMD",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "reporter:5R01EY033765-02",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "not_relevant|reporter",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "reporter",
+   "title": "The role of epigenetics in RPE heterogeneity with early AMD",
+   "url": "https://reporter.nih.gov/project-details/5R01EY033765-02",
+   "year": "2023"
+  },
+  {
+   "amount_eur": 407929.61,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": 0.414,
+   "funder": "National Heart Lung and Blood Institute",
+   "label": "fundamental_aging",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "emphysema"
+    ],
+    "fundamental_aging": [
+     "aging mechanisms",
+     "telomere*"
+    ]
+   },
+   "quote": "advance paradigms of emphysema biology in the context of aging mechanisms with the goal of identifying new understanding of disease mechanisms and novel targets for treatment.",
+   "reason": "Lexicon keywords for fundamental_aging decide the record (matched: aging mechanisms, telomere*).",
+   "record_id": "reporter:5R01HL119476-04",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin",
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "fundamental_aging|reporter",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "reporter",
+   "title": "Mechanisms of Telomere-Induced Emphysema",
+   "url": "https://reporter.nih.gov/project-details/5R01HL119476-04",
+   "year": "2017"
+  },
+  {
+   "amount_eur": 587994.31,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": null,
+   "funder": "National Heart Lung and Blood Institute",
+   "label": "ambiguous",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {},
+   "quote": "how do ethnicity and aging influence the association of variants in the VWF gene with VWF adhesive activity and the development of thrombotic diseases?",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "reporter:5R01HL125957-02",
+   "region": "US",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "llm_disagree"
+    ]
+   },
+   "source": "reporter",
+   "title": "VWF Activity: Molecular Biology, Ethnic Diversity and Disease Associations",
+   "url": "https://reporter.nih.gov/project-details/5R01HL125957-02",
+   "year": "2016"
+  },
+  {
+   "amount_eur": 123229.81,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": null,
+   "funder": "National Institute on Aging",
+   "label": "ambiguous",
+   "llm_category": "care",
+   "matched_keywords": {},
+   "quote": "integration of Epidemiological and Biostatistics methods into Health Services Research with applications in aging",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "reporter:5T32AG023482-14",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B23",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "Aging Health and Health Services Research Training",
+   "url": "https://reporter.nih.gov/project-details/5T32AG023482-14",
+   "year": "2018"
+  },
+  {
+   "amount_eur": 754282.26,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": null,
+   "funder": "National Institute on Aging",
+   "label": "ambiguous",
+   "llm_category": "care",
+   "matched_keywords": {},
+   "quote": "Management of chronic wounds are a burden in today’s aging population. Expert wound care is needed to monitor and track skin health.",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "reporter:9R44AG055320-03A1",
+   "region": "US",
+   "sampling": {
+    "benchmark_id": "B03",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "holdout",
+    "stratum": "ambiguous|reporter",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "reporter",
+   "title": "The Development of a Low-Cost, Quantitative Skin Imaging Camera",
+   "url": "https://reporter.nih.gov/project-details/9R44AG055320-03A1",
+   "year": "2017"
+  },
+  {
+   "amount_eur": 13348.4,
+   "anchor_terms": [
+    "ageing",
+    "elderly",
+    "healthy ageing"
+   ],
+   "confidence": 0.3,
+   "funder": "Forte",
+   "label": "care",
+   "llm_category": "care",
+   "matched_keywords": {
+    "care": [
+     "elderly care"
+    ],
+    "intervention": [
+     "malnutrition"
+    ]
+   },
+   "quote": "implementation of this knowledge in elderly care situations is inadequate",
+   "reason": "Lexicon keywords for care decide the record (matched: elderly care).",
+   "record_id": "swecris:2014-08008_Forte",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin"
+    ],
+    "split": "holdout",
+    "stratum": "care|swecris",
+    "why": [
+     "low_margin"
+    ]
+   },
+   "source": "swecris",
+   "title": "Healthy Ageing: Tackling malnutrition among the elderly in Europe (TIMBALE)",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2014-08008_Forte",
+   "year": "2015"
+  },
+  {
+   "amount_eur": 14683.24,
+   "anchor_terms": [
+    "ageing"
+   ],
+   "confidence": 0.944,
+   "funder": "Forte",
+   "label": "social_population_aging",
+   "llm_category": "ambiguous",
+   "matched_keywords": {
+    "social_population_aging": [
+     "working life"
+    ]
+   },
+   "quote": "study ageing and work in Sweden and Australia",
+   "reason": "Lexicon keywords for social_population_aging decide the record (matched: working life).",
+   "record_id": "swecris:2015-01383_Forte",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "social_population_aging|swecris",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "swecris",
+   "title": "Extending working life - an international perspective",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2015-01383_Forte",
+   "year": "2015"
+  },
+  {
+   "amount_eur": 5406.1,
+   "anchor_terms": [
+    "ageing"
+   ],
+   "confidence": 0.857,
+   "funder": "Forte",
+   "label": "care",
+   "llm_category": "care",
+   "matched_keywords": {
+    "care": [
+     "caregiv*"
+    ]
+   },
+   "quote": "future supply of unpaid care in the context of demographic ageing and potential conflict between extended working lives and health care policy",
+   "reason": "Lexicon keywords for care decide the record (matched: caregiv*).",
+   "record_id": "swecris:2016-00025_Forte",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "care|swecris",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "swecris",
+   "title": "Longer working lives and unpaid caregiving: gender and time allocation across Europe and North America",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2016-00025_Forte",
+   "year": "2016"
+  },
+  {
+   "amount_eur": 284765.91,
+   "anchor_terms": [],
+   "confidence": 0.814,
+   "funder": "Swedish Research Council",
+   "label": "fundamental_aging",
+   "llm_category": "ambiguous",
+   "matched_keywords": {
+    "fundamental_aging": [
+     "telomere*"
+    ]
+   },
+   "quote": "long-term effects on telomere shortening and physiology",
+   "reason": "Lexicon keywords for fundamental_aging decide the record (matched: telomere*).",
+   "record_id": "swecris:2016-04391_VR",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "fundamental_aging|swecris",
+    "why": [
+     "stratum_min"
+    ]
+   },
+   "source": "swecris",
+   "title": "Immunoecology of immune activation and mild disease: sex-specific and long-term effects on physiology and fitness-related factors",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2016-04391_VR",
+   "year": "2017"
+  },
+  {
+   "amount_eur": 142382.96,
+   "anchor_terms": [
+    "older people"
+   ],
+   "confidence": 0.667,
+   "funder": "Forte",
+   "label": "care",
+   "llm_category": "care",
+   "matched_keywords": {
+    "care": [
+     "older people"
+    ]
+   },
+   "quote": "Integrated care for older people with complex health problems. How does it affect health, health care utilization and health equity?",
+   "reason": "Lexicon keywords for care decide the record (matched: older people).",
+   "record_id": "swecris:2017-01431_Forte",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "care|swecris",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "swecris",
+   "title": "Integrated care for older people with complex health problems. How does it affect health, health care utilization and health equity?",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2017-01431_Forte",
+   "year": "2018"
+  },
+  {
+   "amount_eur": 213574.44,
+   "anchor_terms": [
+    "elderly"
+   ],
+   "confidence": null,
+   "funder": "Swedish Research Council",
+   "label": "ambiguous",
+   "llm_category": "fundamental_aging",
+   "matched_keywords": {},
+   "quote": "We aim to do a thorough investigation of predictors of olfactory memory decline in the normal elderly population.",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "swecris:2017-01759_VR",
+   "region": "SE",
+   "sampling": {
+    "benchmark_id": "B30",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|swecris",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "swecris",
+   "title": "Longitudinal trajectories of olfactory abilities: What predicts old-age olfactory memory decline?",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2017-01759_VR",
+   "year": "2018"
+  },
+  {
+   "amount_eur": 242940.92,
+   "anchor_terms": [
+    "longevity"
+   ],
+   "confidence": 0.75,
+   "funder": "Forte",
+   "label": "age_related_disease",
+   "llm_category": "age_related_disease",
+   "matched_keywords": {
+    "age_related_disease": [
+     "cardiovascular disease"
+    ]
+   },
+   "quote": "association with health, cardiovascular disease and longevity over 30 years",
+   "reason": "Lexicon keywords for age_related_disease decide the record (matched: cardiovascular disease).",
+   "record_id": "swecris:2018-00384_Forte",
+   "region": "SE",
+   "sampling": {
+    "benchmark_id": "B04",
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "age_related_disease|swecris",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "swecris",
+   "title": "Sitting and cardiorespiratory fitness in the Swedish working population – secular trends and association with health, cardiovascular disease and longevity over 30 years.",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2018-00384_Forte",
+   "year": "2019"
+  },
+  {
+   "amount_eur": 462744.61,
+   "anchor_terms": [
+    "ageing",
+    "healthy ageing"
+   ],
+   "confidence": null,
+   "funder": "Swedish Research Council",
+   "label": "ambiguous",
+   "llm_category": "care",
+   "matched_keywords": {},
+   "quote": "how these come together to affect their wellbeing, care needs and utilization",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "swecris:2018-05196_VR",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|swecris",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "swecris",
+   "title": "Mitigating poverty and disablement in older age: Understanding the complex interactions of factors influencing equitable healthy ageing in Myanmar",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2018-05196_VR",
+   "year": "2018"
+  },
+  {
+   "amount_eur": 253611.1,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "Formas",
+   "label": "not_relevant",
+   "llm_category": "ambiguous",
+   "matched_keywords": {},
+   "quote": "Fundamental research about sorption behaviours of coated wood for durable applications in outdoor use",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "swecris:2019-01667_Formas",
+   "region": "SE",
+   "sampling": {
+    "benchmark_id": "B06",
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "not_relevant|swecris",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "swecris",
+   "title": "Fundamental research about sorption behaviours of coated wood for durable applications in outdoor use",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2019-01667_Formas",
+   "year": "2020"
+  },
+  {
+   "amount_eur": 1905083.96,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "Swedish Research Council",
+   "label": "not_relevant",
+   "llm_category": "care",
+   "matched_keywords": {},
+   "quote": "Good quality, local health care (Nära vård) is a reform shifting focus from reactive to proactive health care, involving patients, municipalities and regions",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "swecris:2022-06319_VR",
+   "region": "SE",
+   "sampling": {
+    "benchmark_id": "B12",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "not_relevant|swecris",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "swecris",
+   "title": "Good quality, local health care – a graduate school for health care educators",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2022-06319_VR",
+   "year": "2022"
+  },
+  {
+   "amount_eur": 2135566.37,
+   "anchor_terms": [
+    "aging",
+    "healthy aging"
+   ],
+   "confidence": null,
+   "funder": "Forte",
+   "label": "ambiguous",
+   "llm_category": "intervention",
+   "matched_keywords": {},
+   "quote": "health promotion/early intervention are the vital components of public health efforts to achieve healthy aging",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "swecris:2023-01125_Forte",
+   "region": "SE",
+   "sampling": {
+    "benchmark_id": "B28",
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "ambiguous|swecris",
+    "why": [
+     "benchmark"
+    ]
+   },
+   "source": "swecris",
+   "title": "FINGER-Pro: Evidence-based health promotion interventions for healthy aging: adapting and implementing the FINGER multidomain model across different settings and sociocultural contexts",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2023-01125_Forte",
+   "year": "2023"
+  },
+  {
+   "amount_eur": 2135477.38,
+   "anchor_terms": [
+    "older people"
+   ],
+   "confidence": 1.667,
+   "funder": "Forte",
+   "label": "care",
+   "llm_category": "care",
+   "matched_keywords": {
+    "care": [
+     "older people",
+     "end of life"
+    ]
+   },
+   "quote": "development of homecare services through co-creation and co-research",
+   "reason": "Lexicon keywords for care decide the record (matched: older people, end of life).",
+   "record_id": "swecris:2023-01749_Forte",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "care|swecris",
+    "why": [
+     "stratum_min"
+    ]
+   },
+   "source": "swecris",
+   "title": "Homecare co-created in partnership with older people – from debut to end of life",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2023-01749_Forte",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 432488.23,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": 1.79,
+   "funder": "Forte",
+   "label": "social_population_aging",
+   "llm_category": "ambiguous",
+   "matched_keywords": {
+    "social_population_aging": [
+     "retirement",
+     "working life"
+    ]
+   },
+   "quote": "post-retirement work and senior staffing agencies has received increasing media attention and embodies the political ambitions of active aging and a longer working life",
+   "reason": "Lexicon keywords for social_population_aging decide the record (matched: retirement, working life).",
+   "record_id": "swecris:2024-00018_Forte",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "tuning",
+    "stratum": "social_population_aging|swecris",
+    "why": [
+     "stratum_min"
+    ]
+   },
+   "source": "swecris",
+   "title": "Back to work: A study of post-retirement work in the senior staffing industry",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2024-00018_Forte",
+   "year": "2024"
+  },
+  {
+   "amount_eur": 266968.04,
+   "anchor_terms": [],
+   "confidence": null,
+   "funder": "Forte",
+   "label": "not_relevant",
+   "llm_category": "care",
+   "matched_keywords": {},
+   "quote": "innovative health and care models are urgently needed. Digital self-management tools can alleviate these pressures",
+   "reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+   "record_id": "swecris:2025-01839_Forte",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [
+     "llm_disagree"
+    ],
+    "split": "tuning",
+    "stratum": "not_relevant|swecris",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "swecris",
+   "title": "Scaling Health Innovations for Future Transformative Digital Self-Management in European Primary Care",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2025-01839_Forte",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 266968.04,
+   "anchor_terms": [
+    "aging"
+   ],
+   "confidence": 0.002,
+   "funder": "Swedish Research Council",
+   "label": "intervention",
+   "llm_category": "intervention",
+   "matched_keywords": {
+    "age_related_disease": [
+     "dementia*"
+    ],
+    "intervention": [
+     "metformin"
+    ]
+   },
+   "quote": "Metformin’s role in cognitive aging—spanning cognitive decline, cognitive impairment and dementia—while exploring its mechanisms in brain aging",
+   "reason": "The text describes developing or testing an intervention against ageing (matched: metformin).",
+   "record_id": "swecris:2025-02364_VR",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [
+     "low_margin"
+    ],
+    "split": "tuning",
+    "stratum": "intervention|swecris",
+    "why": [
+     "stratum_min"
+    ]
+   },
+   "source": "swecris",
+   "title": "Unlocking Cognitive Health: How Metformin Slows Brain Aging Through Precision Medicine",
+   "url": "https://www.vr.se/english/swecris.html?searchText=2025-02364_VR",
+   "year": "2025"
+  },
+  {
+   "amount_eur": 75809.76,
+   "anchor_terms": [
+    "ageing"
+   ],
+   "confidence": null,
+   "funder": "Swedish Energy Agency",
+   "label": "ambiguous",
+   "llm_category": "ambiguous",
+   "matched_keywords": {},
+   "quote": "unravel the reaction and ageing mechanisms of ultrahigh-Ni NMC cathodes",
+   "reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+   "record_id": "swecris:P2024-01005_Energi",
+   "region": "SE",
+   "sampling": {
+    "boundary_flags": [],
+    "split": "holdout",
+    "stratum": "ambiguous|swecris",
+    "why": [
+     "fill"
+    ]
+   },
+   "source": "swecris",
+   "title": "Revealing the correlation of synthesis condition and electrochemical performance of ultrahigh-Ni cathode materials",
+   "url": "https://www.vr.se/english/swecris.html?searchText=P2024-01005_Energi",
+   "year": "2024"
+  }
+ ]
+}

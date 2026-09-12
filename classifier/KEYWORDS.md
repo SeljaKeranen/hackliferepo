@@ -30,7 +30,7 @@ on, plus Swedish equivalents). The per-category keywords then do the precise
 work locally: a downstream classifier assigns categories to whatever the broad
 net catches. Searching each database directly with narrow category keywords
 would silently drop everything the categories' vocabularies miss - the
-per-category coverage numbers below (40-68%) show how much that would lose.
+per-category coverage numbers below (41-77%) show how much that would lose.
 
 ## Classification rubric: step 0 is relevance
 

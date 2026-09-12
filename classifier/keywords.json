@@ -657,6 +657,27 @@
             "intervention": 1
           },
           "precision": 0.667
+        },
+        {
+          "term": "dna methylation",
+          "source": "longevity_keywords_ext.md",
+          "hits": 27,
+          "by_category": {
+            "fundamental_aging": 21,
+            "age_related_disease": 4,
+            "ambiguous": 2
+          },
+          "precision": 0.778
+        },
+        {
+          "term": "nutrient sensing",
+          "source": "longevity_keywords_ext.md",
+          "hits": 3,
+          "by_category": {
+            "fundamental_aging": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
         }
       ],
       "sv": [
@@ -1131,7 +1152,7 @@
           ]
         }
       ],
-      "coverage": 0.555
+      "coverage": 0.562
     },
     "intervention": {
       "en": [

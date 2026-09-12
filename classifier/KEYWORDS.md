@@ -131,13 +131,15 @@ still meet the precision threshold.
 
 | category | en keywords | sv keywords | coverage of category records |
 | --- | --- | --- | --- |
-| fundamental_aging | 37 | 1 | 0.555 |
+| fundamental_aging | 39 | 1 | 0.562 |
 | intervention | 11 | 1 | 0.414 |
 | age_related_disease | 56 | 8 | 0.770 |
 | care | 16 | 6 | 0.624 |
 
-English counts include the 33 HALD-derived keywords described below (marked
-`source: "HALD"` in the JSON); the rest are the seed lexicon.
+English counts include the 33 HALD-derived keywords and the 2
+longevity-factor terms described below (marked `source: "HALD"` and
+`source: "longevity_keywords_ext.md"` in the JSON); the rest are the seed
+lexicon.
 
 Coverage = share of the category's LLM-labelled records matched by at least
 one of its kept keywords. It is deliberately partial: these keywords are
@@ -227,6 +229,47 @@ term. The remaining gene symbols (`apoe`, `cgas`, `tfeb`) are unlikely to
 collide with non-biomedical vocabulary and are `low_evidence` at 3-5 hits
 each; `glucose` and `obesity` sit exactly at the 0.60 precision floor and
 carry warning notes.
+
+## Longevity-factor enrichment (`longevity_keywords_ext.md`)
+
+A curated external candidate list of longevity and mortality factors (social,
+behavioral, psychological, environmental, functional and biological; each row
+citing its papers) was run through the same validation pipeline. It proposes
+about 118 unique terms, and the funnel shows why it is not a category keyword
+list:
+
+- 8 terms are already covered by the lexicon (`obesity`,
+  `caloric/calorie restriction`, `biological age`, `genomic instability`,
+  `proteostasis`, `mitochondrial dysfunction`, `cellular senescence`,
+  `frailty`); `telomere attrition` sits inside `telomere*` and
+  `epigenetic clock` inside `epigenetic clock*`.
+- 2 terms were admitted to `fundamental_aging` with
+  `source: "longevity_keywords_ext.md"`: `dna methylation` (27 hits,
+  precision 0.778) and `nutrient sensing` (3 hits, 1.0, `low_evidence`).
+  Fundamental-ageing coverage rises 0.555 -> 0.562.
+- The rest fail the thresholds or have zero corpus hits: `chronic inflammation`
+  (11, 0.545), `senescent cells` (42, 0.190), `senolytics` (6, 0.500 - the
+  list proposes it as an intervention keyword, but the corpus keeps it a trap
+  term: the research splits between mechanism, therapy and disease
+  application), `epigenetic alterations` (3, 0.0), and `macroautophagy`,
+  `dysbiosis`, `pace of aging`, `dna methylation age`,
+  `homeostatic dysregulation`, `grip strength` at 1 hit each. Zero hits:
+  `stem cell exhaustion`, `intercellular communication`, `DunedinPACE`,
+  `PhenoAge`, `GrimAge`, `senescent cell clearance`, `dasatinib`,
+  `quercetin`, `walking speed`, `chair rising`, `standing balance`,
+  `physical capability`, `frailty syndrome`, `hand grip strength`,
+  `gait speed`.
+- About 80 terms are social, behavioral, environmental or lifestyle mortality
+  factors (`loneliness`, `smoking`, `alcohol consumption`, `sleep duration`,
+  `air pollution`, `green space`, `socioeconomic status`, `adverse childhood
+  experiences`, ...). They have no home among the four grant categories;
+  admitting them would drag precision below threshold and change the
+  lexicon's mission from ageing-biology funding to all-cause-mortality
+  research. British spellings from the list (`behavioural`, `neighbourhood`)
+  were not added; the corpus uses US spelling.
+
+The admitted stats come from the same unverified LLM labels as the rest of
+the lexicon; `nutrient sensing` is `low_evidence` and provisional.
 
 ## How to use this lexicon
 

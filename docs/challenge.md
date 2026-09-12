@@ -42,6 +42,25 @@ where the team marks each finding against a four-check rubric; verdicts persist
 per country to `eval/verdicts/` and the screen shows per-country and overall
 accuracy. See [`eval/README.md`](../eval/README.md).
 
+## The index map
+
+Scope: the map is a presentation-layer prototype with a placeholder v0
+activity index. After the team's pivot, the headline metric will become the
+funding-gap ratio (money going to slowing ageing versus money going to
+managing its consequences). It does not replace, modify, or compete with the
+Longview app on branch `codex/longview-demo`, which remains untouched.
+
+Built 11 September 2026: an interactive Longevity Politics Index map under
+[`map/`](../map/README.md): one 0–100 score per covered country, World
+Happiness Index style, computed client-side from `eval/findings/` and
+`eval/verdicts/` with the full composition visible per finding. Run
+`python3 -m http.server 8010` from the repo root and open `/map/`.
+
+The scoring weights are a transparent v0 chosen by hand, documented in
+[`map/README.md`](../map/README.md). Calibrating them is future work, as is
+the gold-set builder that produces the benchmark to calibrate against. Expect
+both the weights and the index formula to be tuned once the gold set exists.
+
 ## What this means in practice
 
 Coverage explicitly matters less than accuracy. A modest map where nearly every finding survives human verification beats a dense map with unverified claims, so the benchmark and the honest "nothing reliable found" handling are first-class deliverables, not polish.

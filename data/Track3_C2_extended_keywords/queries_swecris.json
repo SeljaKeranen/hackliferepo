@@ -1,0 +1,375 @@
+{
+  "source": "swecris",
+  "window": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "run_at": "2026-09-12T11:13:29+00:00",
+  "fx": {
+    "date": "2026-09-11",
+    "USD": 1.1592,
+    "SEK": 11.2373,
+    "source": "ECB eurofxref-daily",
+    "retrieved_at": "2026-09-12T11:12:33+00:00"
+  },
+  "broad_only_rule": [
+    "aging",
+    "livslängd"
+  ],
+  "records": 7152,
+  "broad_only_records": 3361,
+  "exports": [
+    {
+      "group": "T1",
+      "phrase": "senescence",
+      "rows_total": null,
+      "rows_in_window": 46,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:35+00:00",
+      "response_hash": "86b719ba4a702301630e1076de055f9d6c37e34c7667552139f616e921afb93c"
+    },
+    {
+      "group": "T1",
+      "phrase": "senolytic",
+      "rows_total": null,
+      "rows_in_window": 10,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:36+00:00",
+      "response_hash": "854fb0a048555cf3b9025e6f992be7c80854a0ba09d152c63fe9a05ffca76324"
+    },
+    {
+      "group": "T1",
+      "phrase": "senolytics",
+      "rows_total": null,
+      "rows_in_window": 3,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:37+00:00",
+      "response_hash": "7b14e3e6469c6fcbf536fefc500f3db7b9bb2f08c544b280d7fbbb3403f73193"
+    },
+    {
+      "group": "T1",
+      "phrase": "geroscience",
+      "rows_total": null,
+      "rows_in_window": 0,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:38+00:00",
+      "response_hash": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5"
+    },
+    {
+      "group": "T1",
+      "phrase": "healthspan",
+      "rows_total": null,
+      "rows_in_window": 3,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:39+00:00",
+      "response_hash": "0087f877fb79a8a9169cc587fe99f02bfa9713f44e7b180b73a8ccb0dfae4f7d"
+    },
+    {
+      "group": "T1",
+      "phrase": "inflammaging",
+      "rows_total": null,
+      "rows_in_window": 3,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:40+00:00",
+      "response_hash": "e3c4eaa2a6f8a77d02dbc76d51b5fe9c97d4c486b2510f9a2708c7da90ae707d"
+    },
+    {
+      "group": "T1",
+      "phrase": "epigenetic clock",
+      "rows_total": null,
+      "rows_in_window": 4,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:42+00:00",
+      "response_hash": "6c2b85641a85b1cae654cb60a7e5769af6b8b3a7fc8e3b2f6c02dc12cee81daa"
+    },
+    {
+      "group": "T1",
+      "phrase": "longevity",
+      "rows_total": null,
+      "rows_in_window": 101,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:43+00:00",
+      "response_hash": "ba575ad247f117045d05fe50a0c51e0c93509034d83b570dd46c14a2a17ec12b"
+    },
+    {
+      "group": "T1",
+      "phrase": "lifespan",
+      "rows_total": null,
+      "rows_in_window": 159,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:44+00:00",
+      "response_hash": "c8a594ce7ede559d71f874ca1487f4e74600835caa45c32ca605355d19193a0f"
+    },
+    {
+      "group": "T1",
+      "phrase": "senescens",
+      "rows_total": null,
+      "rows_in_window": 9,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:45+00:00",
+      "response_hash": "55d5f522a622f36c70523cdad4ce20da3f1092b1d090087f63f5ceb1590cf728"
+    },
+    {
+      "group": "T1",
+      "phrase": "livslängd",
+      "rows_total": null,
+      "rows_in_window": 872,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:48+00:00",
+      "response_hash": "e7a7072cfeeb3e115d32e9404e925ebf85c74cab7d0203d896eba9c83892c161"
+    },
+    {
+      "group": "T2",
+      "phrase": "aging",
+      "rows_total": null,
+      "rows_in_window": 3532,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:56+00:00",
+      "response_hash": "f992b8ec5afb3afb05aaa4a587d1535ac73e23bc4faaae10c101af978ff6e4ee"
+    },
+    {
+      "group": "T2",
+      "phrase": "ageing",
+      "rows_total": null,
+      "rows_in_window": 360,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:12:58+00:00",
+      "response_hash": "fa9c0cccfaac4a8546daf090ee64b20f5d91b4b6caad60202d43f900b87790a2"
+    },
+    {
+      "group": "T2",
+      "phrase": "elderly",
+      "rows_total": null,
+      "rows_in_window": 382,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:00+00:00",
+      "response_hash": "0178f502e087f9fb9fa958eff6030e0f128d15d5c23fbd43da8f770129d8b59f"
+    },
+    {
+      "group": "T2",
+      "phrase": "older adults",
+      "rows_total": null,
+      "rows_in_window": 206,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:01+00:00",
+      "response_hash": "f8854629cea2da8334837c3b531b70b2cb0e0d7fa6d4d8a06dc5b0038f4b01e2"
+    },
+    {
+      "group": "T2",
+      "phrase": "geriatric",
+      "rows_total": null,
+      "rows_in_window": 66,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:02+00:00",
+      "response_hash": "9e32db32aaa74a64e70b726efe39a228338db78b5696ceffca0b6549db3aa200"
+    },
+    {
+      "group": "T2",
+      "phrase": "gerontology",
+      "rows_total": null,
+      "rows_in_window": 27,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:03+00:00",
+      "response_hash": "ded3d21f21a32f2146cfe13d0ea00ee96c4f70a7199a123af38b344fd13af01a"
+    },
+    {
+      "group": "T2",
+      "phrase": "age-related",
+      "rows_total": null,
+      "rows_in_window": 121,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:04+00:00",
+      "response_hash": "95364bb01c6c8a531be063be8c8c15fee2fd040f982d01c94c587fae44255ab2"
+    },
+    {
+      "group": "T2",
+      "phrase": "healthy aging",
+      "rows_total": null,
+      "rows_in_window": 32,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:05+00:00",
+      "response_hash": "b03851fc738b8868221de3281697d7e08b13330614ee226bf53bb321fff73341"
+    },
+    {
+      "group": "T2",
+      "phrase": "åldrande",
+      "rows_total": null,
+      "rows_in_window": 708,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:07+00:00",
+      "response_hash": "bd5fcb2316f2a07ff220c31f241e5e8a6522d97f4722b5d02125fd4261554152"
+    },
+    {
+      "group": "T2",
+      "phrase": "äldre",
+      "rows_total": null,
+      "rows_in_window": 1394,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:11+00:00",
+      "response_hash": "cba0313c6ad0247c26393db8301eee9f822540093f49f9c66612acaff91f8e65"
+    },
+    {
+      "group": "T2",
+      "phrase": "ålderssjukdom",
+      "rows_total": null,
+      "rows_in_window": 46,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:12+00:00",
+      "response_hash": "9601b479784e2c91272418d8a1072fc7bccbde43bc6c262ecb71ec3d5b27e972"
+    },
+    {
+      "group": "T2",
+      "phrase": "äldreomsorg",
+      "rows_total": null,
+      "rows_in_window": 160,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:13+00:00",
+      "response_hash": "5a1d68267e71a880dbf59e127345f26f1239d31b04472c5bec3d409087b118b6"
+    },
+    {
+      "group": "T2",
+      "phrase": "demens",
+      "rows_total": null,
+      "rows_in_window": 385,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:14+00:00",
+      "response_hash": "0537ec7b3ec8815c320a4601a337423962f559130eb0bcaebc2571647935f42b"
+    },
+    {
+      "group": "T2",
+      "phrase": "hälsosamt åldrande",
+      "rows_total": null,
+      "rows_in_window": 59,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:15+00:00",
+      "response_hash": "ebd554346716bab9e0fb0941b2740129824a3746895133eb77e8a7fb531ddf8e"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "social isolation",
+      "rows_total": null,
+      "rows_in_window": 26,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:16+00:00",
+      "response_hash": "fcd35c38c5627f491c4d51cf3ae6e9c205a2317d2ce5b2be85b70f00776151b7"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "loneliness",
+      "rows_total": null,
+      "rows_in_window": 57,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:17+00:00",
+      "response_hash": "849153dff2fbf4c24b8c1271cf5a6e220e0904f481fb58d3033c2c4cdccec5f7"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "retirement",
+      "rows_total": null,
+      "rows_in_window": 99,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:18+00:00",
+      "response_hash": "be6c7f8560f75692b475fa3abdc9727dfbfca0e13ba024e2a4505110727a826b"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "pension",
+      "rows_total": null,
+      "rows_in_window": 281,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:19+00:00",
+      "response_hash": "462bfa29690b005ad4a9028bbe84bdf8a3ede69c09da12e0c5c44f06d2c2f44b"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "older workers",
+      "rows_total": null,
+      "rows_in_window": 19,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:20+00:00",
+      "response_hash": "4500b9aa9e3600286b845fba470f7b452cb0b6de231197c7957d6d506fa0b1dc"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "labor market",
+      "rows_total": null,
+      "rows_in_window": 346,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:21+00:00",
+      "response_hash": "f6146a7cbf769e98eacad04d26d132a62ba93a894e21630dddd433afac55d810"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "living conditions",
+      "rows_total": null,
+      "rows_in_window": 134,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:22+00:00",
+      "response_hash": "ca2c3fe2428dc8dfa0dea35b9243e22dede698ab4817407173e7a8e9d0206fd6"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "population aging",
+      "rows_total": null,
+      "rows_in_window": 11,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:23+00:00",
+      "response_hash": "da87cacde62b0eadf93169b1fa28d800ef315ab125cf5e10c52594888fbd385b"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "aging society",
+      "rows_total": null,
+      "rows_in_window": 12,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:24+00:00",
+      "response_hash": "ccb5caa91d8c65c2284ae9a6737248ab51fdcc01e6f1a519fdd63cf6ec4d5869"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "social relations",
+      "rows_total": null,
+      "rows_in_window": 62,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:25+00:00",
+      "response_hash": "8d6aa3fa9576824be5191f0c142ad93489f442eee92548ec7b20b81dddc652a6"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "social network",
+      "rows_total": null,
+      "rows_in_window": 126,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:26+00:00",
+      "response_hash": "d16e7741053039458c226a0730628b5b70d85d9d029428bedddb1f50f752b55c"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "living alone",
+      "rows_total": null,
+      "rows_in_window": 5,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:27+00:00",
+      "response_hash": "9127eb3bc512da6da25cece821b17d03038a38f488715a33ae49051385611767"
+    },
+    {
+      "group": "SOCIAL",
+      "phrase": "socioekonomisk",
+      "rows_total": null,
+      "rows_in_window": 775,
+      "origin": "live",
+      "retrieved_at": "2026-09-12T11:13:29+00:00",
+      "response_hash": "7d975cf005c48f8d20324fb2d2a30a2ac727eff90b30c37280bd2bc351f351ca"
+    }
+  ]
+}

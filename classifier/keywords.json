@@ -274,7 +274,33 @@
         },
         "ambiguous_share": 1.0
       }
-    ]
+    ],
+    "hald_enrichment": {
+      "source": "HALD, Human Aging and Longevity Dataset (CC BY 4.0), https://bis.zju.edu.cn/hald",
+      "doi": "10.6084/m9.figshare.22828196.v6",
+      "paper": "https://doi.org/10.1038/s41597-023-02781-0",
+      "files_used": [
+        "Entities.csv",
+        "Aging_Biomarkers.json",
+        "Longevity_Biomarkers.json"
+      ],
+      "funnel": {
+        "entity_names": 6922,
+        "usable_candidates": 6891,
+        "with_any_corpus_hit": 255,
+        "with_min_3_hits": 62,
+        "cleared_thresholds": 40,
+        "admitted": 35,
+        "excluded_as_live_traps": [
+          "app",
+          "clock",
+          "disease",
+          "fatigue",
+          "shock"
+        ]
+      },
+      "note": "admitted terms carry source:HALD; validation identical to the seed lexicon"
+    }
   },
   "categories": {
     "fundamental_aging": {
@@ -587,6 +613,48 @@
             "age_related_disease": 4
           },
           "precision": 0.642
+        },
+        {
+          "term": "insulin resistance",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "fundamental_aging": 3,
+            "age_related_disease": 2
+          },
+          "precision": 0.6
+        },
+        {
+          "term": "tfeb",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "fundamental_aging": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "cgas",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "fundamental_aging": 3,
+            "ambiguous": 2
+          },
+          "precision": 0.6
+        },
+        {
+          "term": "progeria",
+          "source": "HALD",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 4,
+            "age_related_disease": 1,
+            "intervention": 1
+          },
+          "precision": 0.667
         }
       ],
       "sv": [
@@ -1003,9 +1071,65 @@
               "title": "Immunoterapi mot åldrande: fokus på senescensspecifika immunkontrollpunkter i åldersrelaterad sjukdom och canc"
             }
           ]
+        },
+        {
+          "term": "shock",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: corpus hits are all heat-shock-protein contexts; bare 'shock' in live data is medical/electrical noise",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 6
+          },
+          "precision": 1.0,
+          "example_false_hits": []
+        },
+        {
+          "term": "clock",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: corpus hits are epigenetic/circadian clocks already covered by 'epigenetic clock*'; bare 'clock' in live data matches scheduling and horology",
+          "hits": 20,
+          "by_category": {
+            "fundamental_aging": 14,
+            "age_related_disease": 3,
+            "intervention": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.7,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:3R01AG065993-03S1",
+              "llm_category": "intervention",
+              "title": "Mechanisms by which time-restricted feeding (TRF) delays the onset of age-related declines in health, cognitio"
+            },
+            {
+              "record_id": "reporter:5R01CA244519-02",
+              "llm_category": "age_related_disease",
+              "title": "Circadian Clock Disruption and Colorectal Cancer"
+            },
+            {
+              "record_id": "reporter:5F31NS120654-03",
+              "llm_category": "age_related_disease",
+              "title": "Implications of Circadian Clock Control on Glioblastoma"
+            }
+          ]
+        },
+        {
+          "term": "fatigue",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: the material-fatigue engineering trap, same class as 'accelerated ageing' of components; corpus evidence is 3 hits",
+          "hits": 3,
+          "by_category": {
+            "fundamental_aging": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "example_false_hits": [
+            {
+              "record_id": "cordis:101203962",
+              "llm_category": "ambiguous",
+              "title": "Fatigue failure mechanism of marine concrete structures using multi-scale numerical modelling (FAMCON)"
+            }
+          ]
         }
       ],
-      "coverage": 0.549
+      "coverage": 0.555
     },
     "intervention": {
       "en": [
@@ -1098,6 +1222,17 @@
           },
           "precision": 0.667,
           "low_evidence": true
+        },
+        {
+          "term": "malnutrition",
+          "source": "HALD",
+          "hits": 10,
+          "by_category": {
+            "intervention": 7,
+            "age_related_disease": 2,
+            "care": 1
+          },
+          "precision": 0.7
         }
       ],
       "sv": [
@@ -1268,7 +1403,7 @@
           ]
         }
       ],
-      "coverage": 0.396
+      "coverage": 0.414
     },
     "age_related_disease": {
       "en": [
@@ -1538,6 +1673,319 @@
             "age_related_disease": 5
           },
           "precision": 1.0
+        },
+        {
+          "term": "down syndrome",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "sclerosis",
+          "source": "HALD",
+          "hits": 18,
+          "by_category": {
+            "age_related_disease": 13,
+            "ambiguous": 3,
+            "fundamental_aging": 2
+          },
+          "precision": 0.722
+        },
+        {
+          "term": "infarction",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "lymphoma",
+          "source": "HALD",
+          "hits": 7,
+          "by_category": {
+            "age_related_disease": 6,
+            "fundamental_aging": 1
+          },
+          "precision": 0.857
+        },
+        {
+          "term": "melanoma",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "age_related_disease": 4,
+            "fundamental_aging": 1
+          },
+          "precision": 0.8
+        },
+        {
+          "term": "apoe",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "tert",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "multiple myeloma",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "hypertension",
+          "source": "HALD",
+          "hits": 16,
+          "by_category": {
+            "age_related_disease": 14,
+            "ambiguous": 1,
+            "fundamental_aging": 1
+          },
+          "precision": 0.875
+        },
+        {
+          "term": "lung diseases",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "emphysema",
+          "source": "HALD",
+          "hits": 4,
+          "by_category": {
+            "age_related_disease": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "diabetes mellitus",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "leukemia",
+          "source": "HALD",
+          "hits": 7,
+          "by_category": {
+            "age_related_disease": 6,
+            "fundamental_aging": 1
+          },
+          "precision": 0.857
+        },
+        {
+          "term": "hearing loss",
+          "source": "HALD",
+          "hits": 10,
+          "by_category": {
+            "age_related_disease": 9,
+            "ambiguous": 1
+          },
+          "precision": 0.9
+        },
+        {
+          "term": "amyotrophic lateral sclerosis",
+          "source": "HALD",
+          "hits": 8,
+          "by_category": {
+            "age_related_disease": 7,
+            "ambiguous": 1
+          },
+          "precision": 0.875
+        },
+        {
+          "term": "communicable diseases",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "carcinogenesis",
+          "source": "HALD",
+          "hits": 4,
+          "by_category": {
+            "age_related_disease": 3,
+            "fundamental_aging": 1
+          },
+          "precision": 0.75,
+          "low_evidence": true
+        },
+        {
+          "term": "aortic valve stenosis",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "glucose",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "age_related_disease": 3,
+            "fundamental_aging": 2
+          },
+          "precision": 0.6
+        },
+        {
+          "term": "myocardial infarction",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "delirium",
+          "source": "HALD",
+          "hits": 4,
+          "by_category": {
+            "age_related_disease": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "obesity",
+          "source": "HALD",
+          "hits": 30,
+          "by_category": {
+            "age_related_disease": 18,
+            "fundamental_aging": 5,
+            "ambiguous": 4,
+            "intervention": 3
+          },
+          "precision": 0.6
+        },
+        {
+          "term": "disease progression",
+          "source": "HALD",
+          "hits": 8,
+          "by_category": {
+            "age_related_disease": 5,
+            "fundamental_aging": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.625
+        },
+        {
+          "term": "alzheimer disease",
+          "source": "HALD",
+          "hits": 12,
+          "by_category": {
+            "age_related_disease": 10,
+            "fundamental_aging": 2
+          },
+          "precision": 0.833
+        },
+        {
+          "term": "fatty liver",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "arthritis",
+          "source": "HALD",
+          "hits": 9,
+          "by_category": {
+            "age_related_disease": 7,
+            "ambiguous": 2
+          },
+          "precision": 0.778
+        },
+        {
+          "term": "myc",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "blindness",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "cardiovascular diseases",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "age_related_disease": 4,
+            "fundamental_aging": 1
+          },
+          "precision": 0.8
+        },
+        {
+          "term": "tauopathies",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
         }
       ],
       "sv": [
@@ -1701,9 +2149,56 @@
               "title": "Discovering and modelling inborn errors of metabolism"
             }
           ]
+        },
+        {
+          "term": "app",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: gene symbol APP clears the corpus proxy via LLM quotes, but in live grant text 'app' is overwhelmingly application/software",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:1ZIAAG000682-01",
+              "llm_category": "fundamental_aging",
+              "title": "Molecular analysis of senescent OPC clearance by senolytics in AD"
+            }
+          ]
+        },
+        {
+          "term": "disease",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: too generic: matches nearly every disease record and adds no discriminating power over the specific disease keywords",
+          "hits": 471,
+          "by_category": {
+            "age_related_disease": 300,
+            "fundamental_aging": 104,
+            "ambiguous": 54,
+            "intervention": 9,
+            "care": 4
+          },
+          "precision": 0.637,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2024-05740_VR",
+              "llm_category": "fundamental_aging",
+              "title": "CNS waste disposal - molecular mechanism for controlling AQP4 localisation"
+            },
+            {
+              "record_id": "swecris:2023-00185_Forte",
+              "llm_category": "care",
+              "title": "Promoting active ageing and participation using technology among older adults and people with Parkinson´s dise"
+            },
+            {
+              "record_id": "swecris:20220601_HLF",
+              "llm_category": "fundamental_aging",
+              "title": "The interplay between lipid handling, inflammation and autophagy: Implications for cardiovascular disease and "
+            }
+          ]
         }
       ],
-      "coverage": 0.677
+      "coverage": 0.77
     },
     "care": {
       "en": [

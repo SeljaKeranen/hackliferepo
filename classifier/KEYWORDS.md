@@ -131,10 +131,13 @@ still meet the precision threshold.
 
 | category | en keywords | sv keywords | coverage of category records |
 | --- | --- | --- | --- |
-| fundamental_aging | 33 | 1 | 0.549 |
-| intervention | 10 | 1 | 0.396 |
-| age_related_disease | 28 | 8 | 0.677 |
+| fundamental_aging | 37 | 1 | 0.555 |
+| intervention | 11 | 1 | 0.414 |
+| age_related_disease | 58 | 8 | 0.770 |
 | care | 16 | 6 | 0.624 |
+
+English counts include the 35 HALD-derived keywords described below (marked
+`source: "HALD"` in the JSON); the rest are the seed lexicon.
 
 Coverage = share of the category's LLM-labelled records matched by at least
 one of its kept keywords. It is deliberately partial: these keywords are
@@ -184,6 +187,66 @@ ambiguous) can pre-filter obvious non-biology hits before classification.
 One Swedish caveat: `ålderssjukdom*` (age-related disease) matches via the
 funder prefix "[Stiftelsen för ålderssjukdomar vid KI]" in titles rather than
 project text, but it is sound Swedish search vocabulary regardless.
+
+## HALD enrichment
+
+The lexicon was enriched from HALD, the Human Aging and Longevity Dataset
+(CC BY 4.0), a text-mined knowledge graph built from 339,918 PubMed abstracts:
+entity list plus aging/longevity biomarker files from the Figshare bulk data
+(doi:10.6084/m9.figshare.22828196.v6; paper
+[10.1038/s41597-023-02781-0](https://doi.org/10.1038/s41597-023-02781-0);
+portal https://bis.zju.edu.cn/hald). Entity names (genes, diseases,
+metabolites, biomarkers) were treated as candidate keywords and validated
+exactly like the seed terms.
+
+The funnel, recorded in `meta.hald_enrichment`: 6,922 entity names -> 6,891
+usable candidates (after dropping duplicates of existing lexicon terms, terms
+under 3 characters, and malformed terms) -> 255 with at least one corpus hit
+-> 62 with >= 3 hits -> 40 clearing the precision threshold toward one of the
+four categories -> **35 admitted** with `source: "HALD"`. Most HALD entities
+have zero grant hits, as expected: molecular-level entities rarely appear in
+grant titles and quote snippets.
+
+Five threshold-clearing terms were excluded as live-search traps and moved to
+`trap_terms` with their stats: `disease` (too generic), `app` (the gene APP
+clears the proxy, but live text says application), `shock` (heat-shock
+contexts only), `clock` (already covered by `epigenetic clock*`; bare form
+matches scheduling), `fatigue` (the material-fatigue engineering trap, same
+class as `accelerated ageing`). Some admissions overlap seed stems
+(`alzheimer disease` under `alzheimer*`, `myocardial infarction` under
+`myocardial`); they are kept because each carries its own stats and some
+plural forms (`cardiovascular diseases`) are not covered by the singular seed
+term. Gene symbols (`apoe`, `tert`, `myc`, `cgas`, `tfeb`) ride on word
+boundaries and are `low_evidence` at 3-5 hits each.
+
+## How to use this lexicon
+
+- **Broad-net search recipes.** Query each API with `meta.broad_net` terms
+  only, never category keywords: SweCRIS `searchText` once per term in both
+  languages; CORDIS bulk download filtered locally against the broad net; NIH
+  RePORTER `advanced_text_search` with the English net OR-ed in one query
+  where length limits allow. Log query strings and dates.
+- **Relevance gate, then rubric.** Classify every fetched record with step 0
+  first (`not_relevant` for material/component/infrastructure ageing and other
+  off-topic matches), then assign one of the four substantive categories or
+  `ambiguous` per the annotation guide.
+- **HALD entities as a relevance signal.** A record matching any HALD entity
+  name is evidence the text is biomedical: useful as a feature at the
+  relevance gate (a battery-ageing grant matches the broad net but no HALD
+  entity).
+- **Trap terms as negative filters.** `exclusion_markers` (battery, li-ion,
+  aging infrastructure) can auto-route obvious engineering records to
+  `not_relevant` before classification; per-category `trap_terms` tell the
+  classifier which surface matches must NOT decide a category on their own.
+- **Precision as priors.** Each keyword's precision proxy is a defensible
+  prior: a record matched only by `cancer` (0.65) deserves lower classifier
+  confidence than one matched by `epigenetic clock*` (1.0). Combining matched
+  keywords' precisions gives a transparent confidence score.
+- **Funding-ratio hookup.** The headline metric divides money as
+  numerator = `fundamental_aging` + `intervention` grants, denominator = all
+  four substantive categories; `not_relevant` records are excluded entirely
+  and `ambiguous` reported separately as an honesty band, not silently folded
+  into either side.
 
 ## Per-source query guidance
 

@@ -118,9 +118,9 @@ table.funders .mini-track { display: inline-block; width: 90px; height: 9px; bor
     <p class="tagline">Of every public euro spent on ageing research, how much
       goes to <b>slowing ageing itself</b> — the biology of ageing and
       interventions against it — rather than managing its consequences?</p>
-    <p class="method-link">Rule-based estimate over 2,944 grants; every number
-      traces to a dated grant record — click any bar.
-      <a href="README.md">Method &amp; caveats</a></p>
+    <p class="method-link">Rule-based estimate over a 13,224-grant census of
+      the ageing search nets; every number traces to a dated grant record —
+      click any bar. <a href="README.md">Method &amp; caveats</a></p>
   </header>
 
   <div class="legend">
@@ -365,11 +365,11 @@ async function boot() {
   for (const c of window.AGG.method.caveats) cv.appendChild(el("li", null, c));
   cv.appendChild(el("li", null,
     "Regions are funding jurisdictions: SweCRIS funders (SE), the European "
-    + "Commission via CORDIS (EU), NIH via RePORTER (US). Sample sizes and "
-    + "collection nets differ per source, so compare shapes, not absolutes."));
+    + "Commission via CORDIS (EU), NIH via RePORTER (US). Collection nets "
+    + "and record counts differ per source, so compare shapes, not absolutes."));
   cv.appendChild(el("li", null,
     `Data built from classifier+lexicon inputs ${window.AGG.method.inputs_hash || "?"} `
-    + `(repo state ${window.AGG.method.built_at_commit || "unknown"}) over the atlas of `
+    + `(repo state ${window.AGG.method.built_at_commit || "unknown"}) over the `
     + `${window.AGG.method.corpus || "?"}. Freshness is machine-checked: `
     + "python3 ratio/build.py --check fails if these numbers no longer match the code."));
 }

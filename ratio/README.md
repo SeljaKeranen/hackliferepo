@@ -1,4 +1,4 @@
-# The Funding-Gap Ratio (v1)
+# The Funding-Gap Ratio (v1, census corpus)
 
 Per funding jurisdiction, how much public research funding targets **slowing
 ageing** (fundamental ageing biology + interventions against ageing) as a
@@ -23,6 +23,16 @@ From the repository root:
 ```sh
 python3 ratio/build.py            # reclassify + rebuild ratio/output/ (stdlib only)
 python3 -m http.server 8010       # then open http://localhost:8010/ratio/
+```
+
+`build.py` reads the committed census under `ratio/data/` by default
+(`--corpus atlas` reruns the old 2,944-record sample instead). To re-fetch
+the census from the live sources — not needed to build or view anything:
+
+```sh
+python3 ratio/data/fetch_swecris.py    # Swecris API, public test token (~1 min)
+python3 ratio/data/fetch_reporter.py   # NIH RePORTER API v2, paged (~15 min)
+python3 ratio/data/fetch_cordis.py     # CORDIS bulk dumps (~120 MB download)
 ```
 
 The page also works served from `ratio/` itself (`cd ratio && python3 -m
@@ -53,11 +63,19 @@ Every number on the page traces back through this funnel, and every grant
 behind every bar is one click away (title, funder, amount, dated source URL,
 matched keywords, rule reason).
 
-1. **Net.** The corpus is teammate Max's Aging Funding Atlas: 2,944 grant
-   records collected through an ageing-related search net (SweCRIS 855,
-   CORDIS 558, NIH RePORTER 1,531), committed in `2e59b27` and live at
-   `data/Track3_C2/output/`. 98.7% carry an EUR-normalised amount; the 39
-   records without one count in grant counts but not in EUR sums.
+1. **Net.** The corpus is a census of the Aging Funding Atlas's per-source
+   search nets (METHODOLOGY.md in commit `2e59b27`), re-fetched 2026-09-12
+   with **no cap and no sampling**: 13,224 grant records (SweCRIS 870,
+   CORDIS 239, NIH RePORTER 12,115), committed as
+   `ratio/data/census_*.jsonl.gz` with per-source funnel numbers in
+   [`data/funnel.json`](data/funnel.json). The fetch scripts
+   (`ratio/data/fetch_*.py`, stdlib only) are re-runnable and record
+   retrieval dates; [`data/CROSSCHECK.md`](data/CROSSCHECK.md) compares the
+   census against published funder totals and documents the remaining
+   coverage gaps. 97.6% of records carry an EUR-normalised amount (fixed
+   ECB 2026-09-11 rates); the 321 without one count in grant counts but
+   not in EUR sums. The earlier atlas corpus (2,944 sampled records)
+   remains available via `python3 ratio/build.py --corpus atlas`.
 2. **Relevance gate (step 0).** Exclusion markers from the lexicon
    (`battery`, `li-ion`, `aging infrastructure`) plus a NONBIO list —
    engineering and agriculture vocabulary aligned with Jan's
@@ -84,35 +102,53 @@ matched keywords, rule reason).
    formula above.
 
 Matching semantics are imported from `classifier/validate_keywords.py` — the
-exact `compile_term` the lexicon stats were computed with — over the same
-text (lowercased title + `llm_quote`).
+exact `compile_term` the lexicon stats were computed with — over lowercased
+title + abstract (census records; the atlas sample only carried a short
+model-chosen `llm_quote` as evidence text).
 
-### v1 result (atlas corpus, rules only)
+### v1 result (census corpus, rules only)
 
 | region | ratio | ambiguous share | grants |
 | --- | --- | --- | --- |
-| SE | 20.7% | 46.3% | 855 |
-| EU | 17.7% | 36.3% | 558 |
-| US | 39.2% | 26.5% | 1,531 |
+| SE | 18.6% | 30.7% | 870 |
+| EU | 64.0% | 60.8% | 239 |
+| US | 42.8% | 18.7% | 12,115 |
 
-Label distribution: 770 ambiguous, 754 not_relevant, 711 age_related_disease,
-579 fundamental_aging, 81 care, 31 social_population_aging, 18 intervention.
+Label distribution: 4,997 fundamental_aging, 4,802 age_related_disease,
+2,866 ambiguous, 226 not_relevant, 169 care, 113 social_population_aging,
+51 intervention.
+
+Against the atlas sample (`--corpus atlas`: SE 20.1%, EU 16.4%, US 39.2%),
+re-classifying the census records that are in the sample isolates what
+changed: the US move to 42.8% is a pure sampling correction (the sample
+subset scores 39.2% on identical census text), the SE numbers barely move,
+and the EU jump comes from the net itself — the bulk-dump filter drops 323
+search-index noise records the atlas had pulled in (see
+[`data/CROSSCHECK.md`](data/CROSSCHECK.md)), and full objectives replace
+one-line quotes. The EU ratio stands on a 60.8% ambiguous share and
+€163.6M of classified money — read it as weak evidence.
 
 ## What v1 is and is not
 
 - **Rules only.** No model calls; deterministic and reproducible from the
   committed lexicon. The one-line reason and matched keywords per record are
   in `output/labels.jsonl`.
-- **An atlas sample, not a census.** The corpus is an ageing-filtered sample
-  per funder with different collection nets per source. Compare shapes across
-  regions, not absolute budgets, and do not read any number as a funder's
-  total spending.
-- **Labels not yet human-verified.** Agreement with the atlas's own
-  unverified LLM labels is 58.3% on the four categories both schemes share
-  (the atlas's lost keyword rules scored 61.8% against the same labels).
-  That figure is context, not a target: the LLM labels predate the
-  `social_population_aging` category and the `not_relevant`/`ambiguous`
-  split, and are themselves unverified.
+- **A census of the nets, not of any budget.** The corpus is the complete
+  result set of the atlas's ageing search nets, so sampling error is gone —
+  but net recall still bounds coverage (a measured example: a
+  dementia-caregiving grant with no ageing vocabulary is invisible,
+  [`data/CROSSCHECK.md`](data/CROSSCHECK.md)). Collection nets differ per
+  source, so compare shapes across regions, not absolute budgets, and do
+  not read any number as a funder's total spending. Known out-of-scope:
+  private foundations (Wallenberg, disease charities), non-NIH US federal
+  funders, EU member-state national funders.
+- **Labels not yet human-verified.** On the atlas sample, agreement with
+  the atlas's own unverified LLM labels was 58.3% on the four categories
+  both schemes share (the atlas's lost keyword rules scored 61.8% against
+  the same labels). That figure is context, not a target: the LLM labels
+  predate the `social_population_aging` category and the
+  `not_relevant`/`ambiguous` split, cover none of the census-only records,
+  and are themselves unverified.
 - **Benchmark pending.** The challenge bar is ≥85% agreement with human
   labels on a small labelled set, with ambiguous flagged rather than forced.
   The 30-record human benchmark (`data/Track3_C2/benchmark/benchmark_30.csv`
@@ -121,11 +157,11 @@ Label distribution: 770 ambiguous, 754 not_relevant, 711 age_related_disease,
   comparison can run the moment labels exist.
 - **The `intervention` label is rare and its keyword net is the weakest.**
   The lexicon's own validation gives `intervention` the lowest coverage
-  (0.414), and only 18 records get the label here. What that does to the
-  numerator cannot be established from this evidence alone: intervention
-  grants missed by the keywords may land in `fundamental_aging` (still
-  numerator), in `ambiguous`, or elsewhere. The human benchmark is the way
-  to find out.
+  (0.414), and only 51 of 13,224 records get the label here. What that
+  does to the numerator cannot be established from this evidence alone:
+  intervention grants missed by the keywords may land in
+  `fundamental_aging` (still numerator), in `ambiguous`, or elsewhere. The
+  human benchmark is the way to find out.
 
 ## Files
 
@@ -133,7 +169,18 @@ Label distribution: 770 ambiguous, 754 not_relevant, 711 age_related_disease,
   steps 0–3). Reason strings and the NONBIO idea align with Jan's
   `funding/classify.py` (`codex/ageing-funding-gap`); the lexicon, anchors,
   precisions and trap handling come from `classifier/keywords.json`.
-- [`build.py`](build.py) — corpus recovery, classification, aggregation.
+- [`build.py`](build.py) — corpus loading (census or atlas), classification,
+  aggregation.
+- [`data/census_*.jsonl.gz`](data/) — the committed census, one gzipped
+  JSONL per source with title, abstract, funder, year, native + EUR
+  amounts, matched net phrases and retrieval date per record.
+  [`data/funnel.json`](data/funnel.json) holds the per-source
+  fetched → net-matched → kept numbers plus dump URLs and checksums;
+  [`data/fetch_*.py`](data/) re-fetch it;
+  [`data/CROSSCHECK.md`](data/CROSSCHECK.md) is the external completeness
+  evidence. Licences: NIH RePORTER US-government public domain, CORDIS
+  CC BY 4.0 (© European Union), Swecris openly accessible per VR
+  (attribute Swecris); details per source in the fetch script headers.
 - [`output/labels.jsonl`](output/labels.jsonl) — one line per record:
   label, matched keywords, anchor terms, reason, confidence margin,
   provenance (funder, EUR, year, source URL), and the atlas `llm_category`

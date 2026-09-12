@@ -108,8 +108,12 @@ def term_error(term: str) -> "str | None":
     if term.count("*") > MAX_WILDCARDS:
         return f"more than {MAX_WILDCARDS} wildcards"
     for word in term.split():
-        if "*" in word[:-1]:
-            return f"'*' only allowed at the end of a word (got {word!r})"
+        if "*" not in word:
+            continue
+        if (word.count("*") > 1 or not word.endswith("*")
+                or not re.search(r"\w", word[:-1])):
+            return ("'*' only allowed once, at the end of a word with "
+                    f"content (got {word!r})")
     return None
 
 
@@ -168,6 +172,7 @@ def self_test() -> int:
         (term_error("*") is not None, "bare wildcard rejected"),
         (term_error("a*b") is not None, "mid-word wildcard rejected"),
         (term_error("a* a* a* a*") is not None, "wildcard stacking rejected"),
+        (term_error("aging *") is not None, "bare wildcard word rejected"),
         (term_error("cellulär* åldrande") is None, "valid term accepted"),
     ]
     failed = [name for ok, name in checks if not ok]
@@ -232,18 +237,27 @@ def main() -> int:
                     continue
                 fresh = term_stats(entry["term"], cat, rows)
                 check(entry, fresh, label)
+                # thresholds compare the exact ratio, not the rounded stat
+                exact_precision = (fresh["by_category"].get(cat, 0) / fresh["hits"]
+                                   if fresh["hits"] else 0.0)
                 th = thresholds[lang]
                 if "variant_of" in entry:
-                    # variants of a kept keyword skip the thresholds, but must
-                    # reference a real non-variant term and still match something
+                    # variants of a kept keyword skip only the hit-count floor;
+                    # they must reference a real non-variant term, match
+                    # something, and still meet the precision threshold
                     if entry["variant_of"] not in kept_terms:
                         failures.append(f"{label}: variant_of "
                                         f"{entry['variant_of']!r} is not a kept "
                                         f"non-variant term in {cat}/{lang}")
                     if fresh["hits"] < 1:
                         failures.append(f"{label}: variant has zero hits")
+                    elif exact_precision < th["min_precision"]:
+                        failures.append(
+                            f"below threshold: {label} hits={fresh['hits']} "
+                            f"precision={fresh['precision']} (variant)"
+                        )
                 elif (fresh["hits"] < th["min_hits"]
-                        or fresh["precision"] < th["min_precision"]):
+                        or exact_precision < th["min_precision"]):
                     failures.append(
                         f"below threshold: {label} hits={fresh['hits']} "
                         f"precision={fresh['precision']}"
@@ -254,27 +268,46 @@ def main() -> int:
                         entry["low_evidence"] = True
                     else:
                         entry.pop("low_evidence", None)
-                elif bool(entry.get("low_evidence")) != low:
-                    failures.append(f"{label}: low_evidence flag should be "
-                                    f"{low} for hits={fresh['hits']}")
+                elif low and entry.get("low_evidence") is not True:
+                    failures.append(f"{label}: low_evidence must be true "
+                                    f"for hits={fresh['hits']}")
+                elif not low and entry.get("low_evidence") is not None:
+                    failures.append(f"{label}: low_evidence must be absent "
+                                    f"for hits={fresh['hits']}")
         for entry in block.get("trap_terms", []):
+            label = f"{cat}/trap/{entry['term']}"
+            err = term_error(entry["term"])
+            if err:
+                failures.append(f"malformed term {label}: {err}")
+                continue
             fresh = term_stats(entry["term"], cat, rows, examples=3)
-            check(entry, fresh, f"{cat}/trap/{entry['term']}")
+            check(entry, fresh, label)
 
     for lang in ("en", "sv"):
         for entry in lex["meta"]["broad_net"][lang]:
+            label = f"broad_net/{lang}/{entry['term']}"
+            err = term_error(entry["term"])
+            if err:
+                failures.append(f"malformed term {label}: {err}")
+                continue
             fresh = term_stats(entry["term"], None, rows)
-            check(entry, fresh, f"broad_net/{lang}/{entry['term']}")
+            check(entry, fresh, label)
     for entry in lex["meta"]["exclusion_markers"]:
+        label = f"exclusion/{entry['term']}"
+        err = term_error(entry["term"])
+        if err:
+            failures.append(f"malformed term {label}: {err}")
+            continue
         fresh = term_stats(entry["term"], "ambiguous", rows)
         fresh["ambiguous_share"] = fresh.pop("precision")
-        check(entry, fresh, f"exclusion/{entry['term']}")
+        check(entry, fresh, label)
 
     print(f"atlas records: {len(rows)}")
     print(f"{'category':22s} {'en':>3s} {'sv':>3s} {'coverage':>9s}")
     for cat in CATEGORIES:
         block = categories[cat]
-        kws = block.get("en", []) + block.get("sv", [])
+        kws = [k for k in block.get("en", []) + block.get("sv", [])
+               if term_error(k["term"]) is None]
         cov = coverage(kws, cat, rows)
         check(block, {"coverage": cov}, f"{cat}/coverage")
         print(f"{cat:22s} {len(block.get('en', [])):3d} "

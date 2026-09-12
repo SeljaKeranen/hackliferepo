@@ -123,7 +123,9 @@ Keep a keyword if precision >= 0.60 and hits >= 3 (English) or hits >= 1
 Every kept keyword with fewer than 5 hits, in either language, carries
 `low_evidence: true`. Spelling
 variants of a kept keyword (`calorie restriction`, `hallmarks of ageing`,
-`end-of-life`) are kept regardless of hit count and marked `variant_of`.
+`end-of-life`) are marked `variant_of` and skip only the hit-count floor:
+they must reference a kept non-variant term, match at least one record, and
+still meet the precision threshold.
 
 `python3 classifier/validate_keywords.py` output on the recovered corpus:
 

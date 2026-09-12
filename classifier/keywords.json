@@ -25,8 +25,9 @@
       "sv": {
         "min_hits": 1,
         "min_precision": 0.6,
-        "note": "only 38 of 2,944 records are Swedish-language, so Swedish stats are thin; hits < 5 are flagged low_evidence"
-      }
+        "note": "only 38 of 2,944 records are Swedish-language, so Swedish stats are thin"
+      },
+      "note": "every kept keyword with fewer than 5 hits, in either language, carries low_evidence: true; spelling variants (variant_of) skip only the hit-count floor and must still meet min_precision"
     },
     "principle": "search broad (category-agnostic ageing net below), classify precise (the classifier assigns categories using the per-category keywords)",
     "broad_net": {

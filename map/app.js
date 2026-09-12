@@ -58,6 +58,7 @@ async function listFindingsFiles() {
 }
 
 async function loadCountries() {
+  loadWarnings.length = 0;
   const discovery = await listFindingsFiles();
   if (discovery.mode === "fallback") {
     loadWarnings.push(
@@ -392,6 +393,7 @@ function renderCountry(iso) {
   const name = displayName(iso);
   let html = `<button class="back-btn" id="back">Back to the ranking</button>`;
   html += `<h2 class="panel-heading">${esc(name)}</h2>`;
+  html += warningsHTML();
 
   if (c.status === "scored") {
     html += `<div class="score-hero"><b style="color:${ramp(c.index / 100)}">${c.index}</b>

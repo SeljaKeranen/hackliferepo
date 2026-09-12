@@ -32,6 +32,8 @@ assert.strictEqual(S.verifState(undefined), "pending");
 assert.strictEqual(S.verifState(verdictPartial), "pending");
 assert.strictEqual(S.verifState(verdictCorrect), "verified");
 assert.strictEqual(S.verifState(verdictFailed), "failed");
+// a malformed verdict (reviewed but no correct flag) fails closed, never credits
+assert.strictEqual(S.verifState({ finding_id: "xx-001", reviewed: true }), "failed");
 assert.strictEqual(S.scoreFinding(finding({}), verdictCorrect, NOW).points, 1.0);
 assert.strictEqual(S.scoreFinding(finding({}), undefined, NOW).points, 0.7);
 assert.strictEqual(S.scoreFinding(finding({}), verdictFailed, NOW).points, 0.0);

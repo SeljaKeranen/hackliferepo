@@ -1,0 +1,3 @@
+World Bank, World Development Indicators. CC BY 4.0. Retrieved 11 September 2026; transformed by Longview. Underlying providers and exact indicator definitions are retained in release/quantitative.json.
+World map: Natural Earth, public domain; world-atlas packaging, ISC.
+Inter: SIL Open Font License 1.1; see inter-OFL.txt.

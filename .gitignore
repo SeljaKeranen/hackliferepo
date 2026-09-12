@@ -19,3 +19,16 @@ secrets/
 
 # Local agent-system state
 .agent-system/
+
+keys
+.vercel/
+.netlify/
+test-results/
+playwright-report/
+.research-cache/
+
+*.tsbuildinfo
+
+# Local conversation transcripts and copied planning material
+DISCORD.md
+GDOCS.md

@@ -1,0 +1,30 @@
+{
+  "evidence_release": "d9261b592fe1",
+  "quantitative_release": "b89b9bf93a80",
+  "slides": 3,
+  "recording": "captioned real browser interaction; no audio",
+  "recording_verification": {
+    "duration_seconds": 100.08,
+    "bytes": 6713735,
+    "captioned": true,
+    "audio": false
+  },
+  "files": {
+    "longview-three-slides.pptx": {
+      "bytes": 207336,
+      "sha256": "115e4a7cb8a66af3690588682f122ae7be245ce609afe2dbd7fcfbf783b3e36c"
+    },
+    "longview-three-slides.pdf": {
+      "bytes": 215711,
+      "sha256": "bd3a844baeeaa37648e18f6c6626c560232993e0ab9b2b949d2d77822a832855"
+    },
+    "longview-demo.webm": {
+      "bytes": 6713735,
+      "sha256": "6c61b81bd372e389994add9df4e3a2d3e7e30d67fde0186246386593d5786762"
+    },
+    "longview-offline.zip": {
+      "bytes": 317681,
+      "sha256": "09924095493ecf02ac69739e23c764e424e096e670520a37d6a7fa3fbbf7709f"
+    }
+  }
+}

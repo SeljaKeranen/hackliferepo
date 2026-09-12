@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {ridgeDelta,predictScenario} from '../src/inference.mjs';
+const q=JSON.parse(readFileSync(new URL('../public/release/quantitative.json',import.meta.url)));
+const cases=JSON.parse(readFileSync(new URL('./inference-cases.json',import.meta.url)));
+test('Browser and fitted Python predictions agree for every demo country',()=>{for(const row of cases){const features=Object.fromEntries(q.model.features.map((f,i)=>[f,row.features[i]]));assert.ok(Math.abs(ridgeDelta(q.model,features)-row.expected_delta)<1e-10)}});
+test('Unchanged assumptions reproduce the released forecasts',()=>{for(const c of q.countries)assert.ok(Math.abs(predictScenario(q.model,c,{},5).value-c.forecast)<1e-10)});
+test('Unsupported inputs do not return a spurious scenario',()=>{assert.equal(predictScenario(q.model,q.countries[0],{gdp:-100}).available,false);assert.equal(predictScenario(q.model,q.countries[0],{health:500}).value,null);assert.throws(()=>predictScenario(q.model,q.countries[0],{},7));assert.throws(()=>ridgeDelta(q.model,{}))});
+test('Ten-year value is explicitly a second model step with fixed covariates',()=>{const c=q.countries[0];const first=predictScenario(q.model,c,{},5);const ten=predictScenario(q.model,c,{},10);assert.equal(ten.first,first.value);const f={...c.features,life_expectancy:first.value,past_change:first.value-c.latest};assert.ok(Math.abs(ten.value-first.value-ridgeDelta(q.model,f))<1e-10)});

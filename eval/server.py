@@ -12,6 +12,11 @@ import json
 import os
 import re
 import tempfile
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from pipeline.store import finding_version, connect, digest
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import urlparse
 
@@ -69,9 +74,22 @@ class Handler(SimpleHTTPRequestHandler):
             findings = load_json(findings_path, None)
             if findings is None:
                 return self.send_json({"error": f"no findings file: {findings_path}"}, 404)
-            return self.send_json({"country": self.country, "findings": findings})
+            provenance = load_json(os.path.join(EVAL_DIR, "provenance", self.country + ".json"), {})
+            return self.send_json({"country": self.country, "findings": findings, "versions": {f["id"]: finding_version(f, provenance.get(f["id"], {})) for f in findings}})
+        if path == "/api/provenance":
+            return self.send_json(load_json(os.path.join(EVAL_DIR, "provenance", self.country + ".json"), {}))
         if path == "/api/verdicts":
-            return self.send_json(load_json(self.verdicts_path, {}))
+            verdicts = load_json(self.verdicts_path, {})
+            findings = load_json(os.path.join(FINDINGS_DIR, self.country + ".json"), [])
+            provenance = load_json(os.path.join(EVAL_DIR, "provenance", self.country + ".json"), {})
+            for f in findings:
+                v = verdicts.get(f["id"])
+                if v and v.get("version_hash") != finding_version(f, provenance.get(f["id"], {})):
+                    v["reviewed"] = False
+                    v["correct"] = False
+                    v["checks"] = {c: None for c in CHECKS}
+                    v["stale"] = True
+            return self.send_json(verdicts)
         return super().do_GET()
 
     def do_POST(self):
@@ -97,6 +115,17 @@ class Handler(SimpleHTTPRequestHandler):
         checks = payload.get("checks")
         if not isinstance(finding_id, str) or not isinstance(checks, dict):
             return self.send_json({"error": "need finding_id (str) and checks (object)"}, 400)
+        findings = load_json(os.path.join(FINDINGS_DIR, self.country + ".json"), [])
+        finding = next((f for f in findings if f["id"] == finding_id), None)
+        if finding is None:
+            return self.send_json({"error": "unknown finding id"}, 404)
+        provenance = load_json(os.path.join(EVAL_DIR, "provenance", self.country + ".json"), {}).get(finding_id, {})
+        version = finding_version(finding, provenance)
+        if payload.get("version_hash") != version:
+            return self.send_json({"error": "evidence changed; reload before reviewing"}, 409)
+        reviewer = payload.get("reviewer")
+        if not isinstance(reviewer, str) or not reviewer.strip():
+            return self.send_json({"error": "enter the human reviewer's name or initials"}, 400)
         clean_checks = {}
         for key in CHECKS:
             val = checks.get(key)
@@ -110,15 +139,24 @@ class Handler(SimpleHTTPRequestHandler):
             "checks": clean_checks,
             "reviewed": reviewed,
             "correct": reviewed and all(clean_checks[k] is True for k in CHECKS),
-            "reviewer": str(payload.get("reviewer") or ""),
+            "reviewer": reviewer.strip(),
+            "version_hash": version,
             "note": str(payload.get("note") or ""),
-            "reviewed_at": str(payload.get("reviewed_at") or ""),
+            "reviewed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         }
         # Safe read-modify-write only because HTTPServer serializes requests;
         # switching to ThreadingHTTPServer would need a lock around this block.
         verdicts = load_json(self.verdicts_path, {})
         verdicts[finding_id] = verdict
         atomic_write_json(self.verdicts_path, verdicts)
+        # Append each completed review to preserve the pre-correction benchmark.
+        if reviewed:
+            history_path = os.path.join(VERDICTS_DIR, self.country + ".history.jsonl")
+            with open(history_path, "a", encoding="utf-8") as history:
+                history.write(json.dumps(verdict, ensure_ascii=False) + "\n")
+            with connect() as db:
+                if db.execute("SELECT 1 FROM findings WHERE id=?", (finding_id,)).fetchone():
+                    db.execute("INSERT INTO reviews(finding_id,version_hash,reviewer,reviewed_at,checks,correct,note) VALUES(?,?,?,?,?,?,?)", (finding_id,version,reviewer.strip(),verdict["reviewed_at"],json.dumps(clean_checks),int(verdict["correct"]),verdict["note"]))
         return self.send_json({"ok": True, "verdict": verdict})
 
     def log_message(self, fmt, *args):

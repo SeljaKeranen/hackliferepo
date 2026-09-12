@@ -1,0 +1,5 @@
+# Preserve exported Demo Day artifacts as binary files.
+*.pdf binary
+*.pptx binary
+*.webm binary
+*.zip binary

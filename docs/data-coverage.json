@@ -1,0 +1,279 @@
+{
+  "retrieved_at": "2026-09-11T18:55:46+00:00",
+  "eligible_countries": 217,
+  "series": [
+    {
+      "dataset_id": "EN.ATM.PM25.MC.M3",
+      "first_year": 1990,
+      "last_year": 2025,
+      "observed": 8262,
+      "total": 9360
+    },
+    {
+      "dataset_id": "NY.GDP.PCAP.PP.KD",
+      "first_year": 1990,
+      "last_year": 2025,
+      "observed": 8525,
+      "total": 9360
+    },
+    {
+      "dataset_id": "SH.PRV.SMOK",
+      "first_year": 1990,
+      "last_year": 2025,
+      "observed": 1872,
+      "total": 9360
+    },
+    {
+      "dataset_id": "SH.XPD.CHEX.GD.ZS",
+      "first_year": 1990,
+      "last_year": 2025,
+      "observed": 5596,
+      "total": 9360
+    },
+    {
+      "dataset_id": "SP.DYN.LE00.IN",
+      "first_year": 1990,
+      "last_year": 2025,
+      "observed": 9100,
+      "total": 9360
+    },
+    {
+      "dataset_id": "SP.POP.0004.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.0004.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.0509.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.0509.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.1014.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.1014.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.1519.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.1519.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.2024.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.2024.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.2529.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.2529.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.3034.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.3034.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.3539.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.3539.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.4044.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.4044.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.4549.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.4549.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.5054.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.5054.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.5559.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.5559.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.6064.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.6064.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.6569.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.6569.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.7074.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.7074.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.7579.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.7579.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.80UP.FE.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    },
+    {
+      "dataset_id": "SP.POP.80UP.MA.5Y",
+      "first_year": 2023,
+      "last_year": 2024,
+      "observed": 6,
+      "total": 6
+    }
+  ]
+}

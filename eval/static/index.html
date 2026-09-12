@@ -101,10 +101,13 @@ const reviewerInput = document.getElementById("reviewer");
 reviewerInput.value = localStorage.getItem("reviewer") || "";
 reviewerInput.addEventListener("input", () => localStorage.setItem("reviewer", reviewerInput.value));
 
+let provenance = {}, versions = {};
 async function boot() {
   const fRes = await fetch("/api/findings").then(r => r.json());
   document.getElementById("country").textContent = fRes.country;
   findings = fRes.findings;
+  versions = fRes.versions;
+  provenance = await fetch("/api/provenance").then(r => r.json());
   verdicts = await fetch("/api/verdicts").then(r => r.json());
   render();
 }
@@ -144,6 +147,7 @@ function render() {
         &nbsp;· source date ${esc(f.source_date)} · retrieved ${esc(f.retrieved_at.slice(0, 10))}
       </div>` : ""}
       ${f.source_note ? `<details><summary>source note</summary>${esc(f.source_note)}</details>` : ""}
+      ${provenance[f.id] ? `<details open><summary>Evidence and event dates</summary><p>${esc(provenance[f.id].supporting_passage || "")}</p><p>Publication: ${esc(provenance[f.id].publication_date || "unknown")} · Decision: ${esc(provenance[f.id].decision_date || "not established")} · Effective: ${esc(provenance[f.id].effective_date || "not established")}</p><p>${esc(provenance[f.id].date_note || "")} ${esc(provenance[f.id].relevance || "")}</p><small>Version ${esc(versions[f.id].slice(0,12))} · ${esc(provenance[f.id].passage_location || "")}</small></details>` : ""}
       <div class="checks">${CHECKS.map(([key, label]) => `
         <div class="check"><span>${label}</span>
           <div class="pf" data-check="${key}">
@@ -190,6 +194,7 @@ async function save(id, card) {
   });
   const body = {
     finding_id: id,
+    version_hash: versions[id],
     checks,
     reviewer: reviewerInput.value,
     note: card.querySelector(".note").value,
@@ -205,7 +210,7 @@ async function save(id, card) {
     res = await r.json();
     if (!r.ok || !res.ok) throw new Error(res.error || "HTTP " + r.status);
   } catch (e) {
-    saved.textContent = "SAVE FAILED";
+    saved.textContent = e.message || "SAVE FAILED";
     saved.classList.add("err");
     return;
   }

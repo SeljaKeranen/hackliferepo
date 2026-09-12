@@ -1,0 +1,180 @@
+{
+  "created_at": "2026-09-11T19:56:54+00:00",
+  "status": "human_review_pending",
+  "findings": [],
+  "countries": {
+    "SE": {
+      "name": "Sweden",
+      "candidates": 12,
+      "approved": 0,
+      "withheld": 12
+    },
+    "US": {
+      "name": "United States",
+      "candidates": 11,
+      "approved": 0,
+      "withheld": 11
+    },
+    "SG": {
+      "name": "Singapore",
+      "candidates": 13,
+      "approved": 0,
+      "withheld": 13
+    }
+  },
+  "coverage": [
+    {
+      "country": "SE",
+      "classification": "funding",
+      "status": "searched",
+      "query_count": 2,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:34+00:00"
+    },
+    {
+      "country": "SE",
+      "classification": "legislation",
+      "status": "searched",
+      "query_count": 2,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:32+00:00"
+    },
+    {
+      "country": "SE",
+      "classification": "policy",
+      "status": "searched",
+      "query_count": 1,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:30+00:00"
+    },
+    {
+      "country": "SE",
+      "classification": "political statement",
+      "status": "searched",
+      "query_count": 1,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:31+00:00"
+    },
+    {
+      "country": "SE",
+      "classification": "strategy",
+      "status": "searched",
+      "query_count": 2,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:34+00:00"
+    },
+    {
+      "country": "SG",
+      "classification": "funding",
+      "status": "searched",
+      "query_count": 1,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:38+00:00"
+    },
+    {
+      "country": "SG",
+      "classification": "legislation",
+      "status": "searched",
+      "query_count": 2,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:41+00:00"
+    },
+    {
+      "country": "SG",
+      "classification": "policy",
+      "status": "searched",
+      "query_count": 2,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:43+00:00"
+    },
+    {
+      "country": "SG",
+      "classification": "political statement",
+      "status": "searched",
+      "query_count": 1,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:41+00:00"
+    },
+    {
+      "country": "SG",
+      "classification": "strategy",
+      "status": "searched",
+      "query_count": 2,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:41+00:00"
+    },
+    {
+      "country": "US",
+      "classification": "funding",
+      "status": "searched",
+      "query_count": 1,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:35+00:00"
+    },
+    {
+      "country": "US",
+      "classification": "legislation",
+      "status": "searched",
+      "query_count": 2,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:36+00:00"
+    },
+    {
+      "country": "US",
+      "classification": "policy",
+      "status": "searched",
+      "query_count": 2,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:37+00:00"
+    },
+    {
+      "country": "US",
+      "classification": "political statement",
+      "status": "searched",
+      "query_count": 1,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:37+00:00"
+    },
+    {
+      "country": "US",
+      "classification": "strategy",
+      "status": "searched",
+      "query_count": 2,
+      "note": "Bounded discovery. Search results alone do not establish a finding or absence.",
+      "updated_at": "2026-09-11T18:54:40+00:00"
+    }
+  ],
+  "benchmark": {
+    "reviewed": 0,
+    "correct": 0,
+    "sample_size": 34,
+    "accuracy": null,
+    "complete": false,
+    "target": 0.9,
+    "method": "All initial candidates; first completed human verdict per frozen version. Failed findings remain in the denominator."
+  },
+  "research": {
+    "requests_used": 61,
+    "request_cap": 500,
+    "planning_requests": 7,
+    "primary_documents": 46,
+    "failed_provider_attempts": 2
+  },
+  "coverage_note": "A bounded national-policy search across five categories. Unsearched countries and failed retrievals never mean no policy exists. High source confidence does not mean high policy effectiveness.",
+  "funding": {
+    "status": "comparability_not_established",
+    "national_fundamental_totals": {
+      "SE": null,
+      "US": null,
+      "SG": null
+    },
+    "approved_programme_records": [],
+    "candidate_programme_counts": {
+      "SE": 0,
+      "US": 1,
+      "SG": 1
+    },
+    "note": "Programme budgets, annual outturns and multi-year commitments require matching scope and periods before comparison."
+  },
+  "release_id": "d9261b592fe1"
+}

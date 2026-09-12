@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-09-11T18:58:23+00:00",
+  "specification": "Preselected 2009 tuning origin, disjoint calibration countries; test origins 2014–2019. One-year lag for GDP, health expenditure and PM2.5. Sweden, US and Singapore excluded from all fitting, tuning and calibration.",
+  "selected_model": "ridge",
+  "alpha": 100.0,
+  "validation_mae": {
+    "ridge": 1.0990951000122884,
+    "no_change": 2.0466643569844765,
+    "trend": 1.477359201773836
+  },
+  "validation_n": 88,
+  "calibration_n": 91,
+  "interval_nominal": 0.9,
+  "interval_radius": {
+    "ridge": 1.3547361602640275,
+    "no_change": 3.2749999999999915,
+    "trend": 1.6419999999999817
+  },
+  "test": {
+    "ridge": {
+      "n": 1098,
+      "mae": 1.0975840136907564,
+      "coverage": 0.7486338797814208
+    },
+    "no_change": {
+      "n": 1098,
+      "mae": 1.2289444000177712,
+      "coverage": 0.9471766848816029
+    },
+    "trend": {
+      "n": 1098,
+      "mae": 1.2809519969789878,
+      "coverage": 0.7805100182149363
+    }
+  },
+  "country_holdout": {
+    "SGP": {
+      "ridge": {
+        "n": 6,
+        "mae": 0.5633530291804157,
+        "coverage": 1.0
+      },
+      "no_change": {
+        "n": 6,
+        "mae": 0.4658536585365975,
+        "coverage": 1.0
+      },
+      "trend": {
+        "n": 6,
+        "mae": 0.8853658536585035,
+        "coverage": 1.0
+      }
+    },
+    "SWE": {
+      "ridge": {
+        "n": 6,
+        "mae": 0.25173918725028255,
+        "coverage": 1.0
+      },
+      "no_change": {
+        "n": 6,
+        "mae": 0.684959349593484,
+        "coverage": 1.0
+      },
+      "trend": {
+        "n": 6,
+        "mae": 0.19918699186993885,
+        "coverage": 1.0
+      }
+    },
+    "USA": {
+      "ridge": {
+        "n": 6,
+        "mae": 1.9541426647240414,
+        "coverage": 0.5
+      },
+      "no_change": {
+        "n": 6,
+        "mae": 0.9056910569105483,
+        "coverage": 1.0
+      },
+      "trend": {
+        "n": 6,
+        "mae": 0.9467479674796166,
+        "coverage": 0.6666666666666666
+      }
+    }
+  },
+  "test_splits": [
+    {
+      "origin": 2014,
+      "latest_training_origin": 2009,
+      "latest_training_outcome": 2014,
+      "training_rows": 1603,
+      "test_rows": 186
+    },
+    {
+      "origin": 2015,
+      "latest_training_origin": 2010,
+      "latest_training_outcome": 2015,
+      "training_rows": 1782,
+      "test_rows": 186
+    },
+    {
+      "origin": 2016,
+      "latest_training_origin": 2011,
+      "latest_training_outcome": 2016,
+      "training_rows": 1962,
+      "test_rows": 186
+    },
+    {
+      "origin": 2017,
+      "latest_training_origin": 2012,
+      "latest_training_outcome": 2017,
+      "training_rows": 2143,
+      "test_rows": 186
+    },
+    {
+      "origin": 2018,
+      "latest_training_origin": 2013,
+      "latest_training_outcome": 2018,
+      "training_rows": 2324,
+      "test_rows": 186
+    },
+    {
+      "origin": 2019,
+      "latest_training_origin": 2014,
+      "latest_training_outcome": 2019,
+      "training_rows": 2507,
+      "test_rows": 186
+    }
+  ],
+  "training_rows": 3422,
+  "training_countries": 183,
+  "missingness": {
+    "candidate_rows": 5208,
+    "complete_rows": 4406,
+    "excluded_missing_inputs": 802,
+    "rule": "Complete cases only; no interpolation, forward fill or zero imputation."
+  },
+  "worst_errors": [
+    {
+      "country": "CAF",
+      "origin": 2017,
+      "outcome_year": 2022,
+      "model": "ridge",
+      "actual": -26.413,
+      "predicted": 2.323667983122578,
+      "radius": 1.3547361602640275,
+      "country_held_out": false
+    },
+    {
+      "country": "CAF",
+      "origin": 2019,
+      "outcome_year": 2024,
+      "model": "ridge",
+      "actual": 26.141,
+      "predicted": 3.9534900148463468,
+      "radius": 1.3547361602640275,
+      "country_held_out": false
+    },
+    {
+      "country": "CAF",
+      "origin": 2014,
+      "outcome_year": 2019,
+      "model": "ridge",
+      "actual": -8.735,
+      "predicted": 6.787841627081091,
+      "radius": 1.3547361602640275,
+      "country_held_out": false
+    },
+    {
+      "country": "CAF",
+      "origin": 2016,
+      "outcome_year": 2021,
+      "model": "ridge",
+      "actual": -10.719999999999999,
+      "predicted": 2.677123062566125,
+      "radius": 1.3547361602640275,
+      "country_held_out": false
+    },
+    {
+      "country": "PSE",
+      "origin": 2018,
+      "outcome_year": 2023,
+      "model": "ridge",
+      "actual": -10.209999999999994,
+      "predicted": 0.6984121715126149,
+      "radius": 1.3547361602640275,
+      "country_held_out": false
+    },
+    {
+      "country": "SYR",
+      "origin": 2015,
+      "outcome_year": 2020,
+      "model": "ridge",
+      "actual": 8.679000000000002,
+      "predicted": 0.8278265687554482,
+      "radius": 1.3547361602640275,
+      "country_held_out": false
+    },
+    {
+      "country": "BOL",
+      "origin": 2016,
+      "outcome_year": 2021,
+      "model": "ridge",
+      "actual": -5.964999999999996,
+      "predicted": 1.7307819803112634,
+      "radius": 1.3547361602640275,
+      "country_held_out": false
+    },
+    {
+      "country": "PSE",
+      "origin": 2019,
+      "outcome_year": 2024,
+      "model": "ridge",
+      "actual": -6.598000000000013,
+      "predicted": 0.8846807531902466,
+      "radius": 1.3547361602640275,
+      "country_held_out": false
+    }
+  ],
+  "limitations": [
+    "Current revised data vintage, not historical publication vintages. A one-year observation lag does not prove historical availability.",
+    "Overlapping five-year tests and repeated countries are dependent; nominal interval coverage has no exchangeability guarantee.",
+    "COVID-era outcomes are included. Structural breaks, omitted variables and country-specific institutions limit transfer.",
+    "GDP, spending and pollution coefficients are associations. User changes do not estimate a policy effect.",
+    "Ten-year scenarios iterate twice with fixed covariates; no ten-year validation or calibrated ten-year interval."
+  ]
+}

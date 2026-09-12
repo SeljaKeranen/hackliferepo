@@ -1,0 +1,153 @@
+[
+  {
+    "country": "SE",
+    "query": "site:riksdagen.se \"2021/22:SoU24\" \"2022-05-04\"",
+    "provider": "you.com",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:13+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/en-fast-omsorgskontakt-i-hemtjansten_h901sou24/",
+      "https://www.riksdagen.se/sv/ledamoter-och-partier/ledamot/carina-stahl-herrstedt_96fd915b-03e4-436a-9fbd-879f0737d828/?sog-c-vod-riksmote=2015/16&riksmote=2011/12,2021/22",
+      "https://www.riksdagen.se/en/members-and-parties/member/ann-christin-ahlberg_8583281e-3621-49fd-a131-661a0f432452/"
+    ]
+  },
+  {
+    "country": "SE",
+    "query": "site:regeringen.se \"143,5 miljoner\" \"2023\"",
+    "provider": "you.com",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:14+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.regeringen.se/contentassets/955eed0da22d4babacdfe8e0f7301a02/arsredovisning-for-staten-2023-skr.-202324101.pdf",
+      "https://www.regeringen.se/contentassets/e1afccd2ec7e42f6af3b651091df139c/utgiftsomrade-20-klimat-miljo-och-natur.pdf",
+      "https://www.regeringen.se/pressmeddelanden/2023/09/klimatklivet-och-andra-klimatsatsningar-starks-2024-med-4-miljarder-kronor/"
+    ]
+  },
+  {
+    "country": "SE",
+    "query": "site:regeringen.se \"demensstrategi\" \"23 januari 2025\"",
+    "provider": "tavily",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:14+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.regeringen.se/informationsmaterial/2025/01/varje-dag-raknas-nationell-demensstrategi-20252028",
+      "https://www.regeringen.se/contentassets/008a4dfedeb84ccf853bb666db3d351d/uppdrag-till-socialstyrelsen-att-betala-ut-medel-for-en-mer-kunskapsbaserad-aldreomsorg.pdf",
+      "https://www.regeringen.se/pressmeddelanden/2025/01/presstraff-om-nationell-demensstrategi"
+    ]
+  },
+  {
+    "country": "US",
+    "query": "site:fda.gov \"Sept. 30\" \"under the age of 30\" 2024",
+    "provider": "you.com",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:15+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.fda.gov/tobacco-products/retail-sales-tobacco-products/tobacco-21",
+      "https://www.fda.gov/news-events/press-announcements/fda-issues-final-rule-increasing-minimum-age-certain-restrictions-tobacco-sales"
+    ]
+  },
+  {
+    "country": "SE",
+    "query": "site:riksdagen.se \"2018/19:SoU3\" \"2018-12-12\"",
+    "provider": "tavily",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:15+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/kammarens-foredragningslista/onsdag-den-19-december-2018_h60i33",
+      "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/regeringens-skrivelse/kommitteberattelse-kommitteernas-verksamhet_h603103/html",
+      "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/infrastrukturfragor_h601tu5/html"
+    ]
+  },
+  {
+    "country": "US",
+    "query": "site:cms.gov \"November 2, 2021\" \"one year\" \"MDPP\"",
+    "provider": "you.com",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:16+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.cms.gov/newsroom/fact-sheets/final-policies-medicare-diabetes-prevention-program-mdpp-expanded-model-calendar-year-2022-medicare"
+    ]
+  },
+  {
+    "country": "US",
+    "query": "site:fda.gov \"Tobacco 21\" \"Dec. 20, 2019\"",
+    "provider": "tavily",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:16+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.fda.gov/tobacco-products/retail-sales-tobacco-products/tobacco-21",
+      "https://www.fda.gov/tobacco-products/ctp-newsroom/spotlight-science-winter-2020",
+      "https://www.fda.gov/media/150059/download"
+    ]
+  },
+  {
+    "country": "US",
+    "query": "site:nia.nih.gov \"Aging Biology\" \"350,997\"",
+    "provider": "tavily",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:16+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.nia.nih.gov/about/budget/fiscal-year-2025-budget"
+    ]
+  },
+  {
+    "country": "SG",
+    "query": "site:moh.gov.sg \"30 June 2023\" \"Nutri-Grade\"",
+    "provider": "you.com",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:17+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.moh.gov.sg/newsroom/extension-of-nutri-grade-requirements-to-freshly-prepared-beverages-from-30-december-2023/",
+      "https://www.moh.gov.sg/newsroom/effectiveness-of-nutri-grade-measures-and-advertising-restrictions/",
+      "https://www.moh.gov.sg/newsroom/implementation-of-nutri-grade-requirements-for-freshly-prepared-beverages-from-30-december-2023/"
+    ]
+  },
+  {
+    "country": "SG",
+    "query": "site:moh.gov.sg \"5 July 2023\" \"2 July 2023\"",
+    "provider": "tavily",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:18+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.moh.gov.sg/newsroom/healthier-sg-enrolment-programme-to-commence-on-5-july",
+      "https://www.moh.gov.sg/newsroom/launch-of-the-2023-national-strategy-for-palliative-care",
+      "https://www.moh.gov.sg/newsroom/speech-by-prof-kenneth-mak-director-general-of-health-ministry-of-health-at-the-opening-ceremony-of-the-asian-pacific-society-of-cardiology-congress-2023-13-july-2023-1025am-raffles-city-convention-centre"
+    ]
+  },
+  {
+    "country": "SG",
+    "query": "site:moh.gov.sg \"350 million\" \"22 May 2026\"",
+    "provider": "tavily",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:18+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.moh.gov.sg/newsroom/speech-by-mr-ong-ye-kung--minister-for-health-and-coordinating-minister-for-social-policies--at-the-national-medical-research-council-awards-ceremony-and-research-symposium-2026--22-may-2026",
+      "https://www.moh.gov.sg/newsroom/speech-by-mr-ong-ye-kung--minister-for-health-and-coordinating-minister-for-social-policies--at-the-3rd-singapore-primary-care-conference--15-may-2026-",
+      "https://www.moh.gov.sg/newsroom/speech-by-mr-ong-ye-kung-minister-for-health-at-the-ministry-of-health-committee-of-supply-debate-2024-on-wednesday-6-march-2024"
+    ]
+  },
+  {
+    "country": "SG",
+    "query": "site:moh.gov.sg \"3.5 billion\" \"6 March 2024\"",
+    "provider": "you.com",
+    "status": "results_returned",
+    "checked_at": "2026-09-11T19:36:18+00:00",
+    "interpretation": "Discovery cross-check only; not a factual or human-review verdict.",
+    "source_links": [
+      "https://www.moh.gov.sg/newsroom/speech-by-mr-ong-ye-kung--minister-for-health--at-the-ministry-of-health-committee-of-supply-debate-2025--on-friday-7-march-2025/",
+      "https://www.moh.gov.sg/newsroom/enhancing-preventive-health-and-aged-care/",
+      "https://www.moh.gov.sg/newsroom/good-progress-in-the-implementation-of-age-well-sg/"
+    ]
+  }
+]

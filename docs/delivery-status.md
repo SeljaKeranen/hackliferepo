@@ -1,0 +1,29 @@
+# Delivery status · 11 September 2026
+
+Longview's app, three-slide deck and recorded fallback are built. This advances technical execution, evidence and responsible use, novelty, track fit, and Demo Day communication. Submission remains incomplete until the team supplies human reviews, retains the hosting deployment and obtains organiser upload access. No user-adoption study has been run.
+
+The [Vercel app](https://temporary-fast-peridot-kempbnu.vercel.app) compares Sweden, the United States and Singapore. It includes country selection, historical life expectancy, age pyramids, conditional scenarios, evidence filters, source links, method tables, a visible ≥90% evidence gate, shareable URLs and a printable analyst brief. Five-year predictions have a historical evaluation; the ten-year scenario is exploratory. The fundamental-ageing funding section distinguishes programme leads from unresolved national totals.
+
+The footer provides [three-slide PDF](https://temporary-fast-peridot-kempbnu.vercel.app/downloads/longview-three-slides.pdf), [editable PPTX](https://temporary-fast-peridot-kempbnu.vercel.app/downloads/longview-three-slides.pptx), [captioned recording](https://temporary-fast-peridot-kempbnu.vercel.app/downloads/longview-demo.webm) and [offline app](https://temporary-fast-peridot-kempbnu.vercel.app/downloads/longview-offline.zip). These generated files also live in `public/downloads/`. The recording is 100.08 seconds and has captions, without audio. The offline archive includes a Python server and requires no external network for the model or bundled data; original-source links require internet. Private review material is excluded from that archive.
+
+## Verification evidence
+
+- 14 Python tests passed, covering source passages, review invalidation, schema, temporal/country holdouts, model inputs, missingness, funding scope and the provider cap. The repository's finding validator also passed for all three countries.
+- Four JavaScript inference tests passed, including Python/browser prediction agreement and rejection of unsupported inputs.
+- Thirteen browser workflows passed against the public Vercel URL, including mobile overflow, scenario/reset behaviour, deep links, print output, encrypted review unlock and export persistence after reload. No browser page errors were recorded.
+- The standalone offline app loaded a shared ten-year scenario, changed model inputs and displayed methods with external requests blocked. An occupied default port is handled by selecting a free port.
+- Both deck formats contain exactly three slides. Hosted download bytes matched their local SHA-256 checksums. The download manifest binds them to evidence release `d9261b592fe1` and model release `b89b9bf93a80`.
+- SQLite integrity returned `ok`, with zero foreign-key violations. All 34 frozen initial evidence versions remain reviewable. Automated browser reviews are isolated fixtures in ignored `outputs/`; none were imported as human verdicts.
+- The production build and credential scan passed. No provider keys, reviewer access key, raw database or plaintext review verdicts enter the public build. The reviewer packet is encrypted; public findings require a current human approval.
+
+Detailed run evidence stays in ignored `outputs/browser-checks.json`, `outputs/hosted-download-checks.json`, `outputs/offline-browser-checks.json` and `outputs/recording-verification.json`. [Reproduction commands](../README.md) regenerate the checks and deliverables.
+
+## Data and remaining limits
+
+The final research ledger records 61 of 500 authorised attempted provider requests, including seven planning requests and two failed extractions. Both You.com and Tavily were used. There are 46 retrieved primary documents and 36 candidate findings. Search and extraction results support discovery; original sources, dates, short supporting passages and fingerprints ground each candidate. [Licences and definitions](dataset-register.md), [cross-checks](source-crosschecks.json) and [national-series reconciliation](data-reconciliation.md) document the basis and remaining differences.
+
+The [model evaluation](model-evaluation.json) uses 1,098 wider country-origin test forecasts: regression MAE 1.10 years, no-change MAE 1.23, previous-trend MAE 1.28. Regression loses to the best baseline in each of the three focal countries and to both baselines in the US. Its wider nominal 90% interval covers 74.9% of outcomes. Current revised data, overlapping test origins, unverified historical publication lags and pandemic effects limit interpretation. These are population-level associations, not estimated policy effects or clinical predictions.
+
+No human verdicts have been imported: 0/34 initial records reviewed and no measured pass rate. All 36 candidates are withheld from the public policy release. `pipeline.release --strict` correctly fails in this state. A team member must check each original source in the private reviewer page and return the exported JSON for version-checked import. The two supplemental funding leads need review too; they are outside the original benchmark. Comparable national fundamental-ageing totals are not established.
+
+The Vercel deployment was restored on 12 September 2026 after its previous preview expired. The new temporary deployment reports expiry at 07:12:17 CEST on 12 September 2026. Its home page, shared route, review page, evidence release and all four download checksums were verified; see ignored `outputs/redeployment-checks.json`. The claim link was supplied privately in the project conversation and is retained in ignored `outputs/deployment.json`; account ownership has not been confirmed. The exact pitch duration remains unconfirmed. The Sunday organiser repository upload is separate from hosting and still requires team access. [Deployment handover](deployment.md) describes the release and publication steps.

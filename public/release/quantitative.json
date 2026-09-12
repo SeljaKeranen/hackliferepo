@@ -1,0 +1,1445 @@
+{
+  "release_id": "b89b9bf93a80",
+  "created_at": "2026-09-11T18:58:23+00:00",
+  "model": {
+    "features": [
+      "life_expectancy",
+      "past_change",
+      "log_gdp",
+      "health_spending",
+      "pm25"
+    ],
+    "mean": [
+      69.81500341406395,
+      1.5476618651195282,
+      9.338789280397181,
+      5.998962763021625,
+      24.565163359362952
+    ],
+    "scale": [
+      8.746600609720028,
+      1.7359823682478923,
+      1.1499982530741575,
+      2.6387935268789384,
+      15.358439065070046
+    ],
+    "coefficients": [
+      -0.9806157466784154,
+      0.16303874017068984,
+      0.36911682682735125,
+      0.07461986847645305,
+      0.10786210456808412
+    ],
+    "intercept": 1.231753417627689,
+    "bounds": {
+      "life_expectancy": [
+        14.665,
+        85.257
+      ],
+      "past_change": [
+        -33.031,
+        25.6
+      ],
+      "log_gdp": [
+        6.56804475570418,
+        11.911870136661713
+      ],
+      "health_spending": [
+        1.22260201,
+        24.45763206
+      ],
+      "pm25": [
+        3.57454119865152,
+        124.657449236908
+      ]
+    },
+    "selected": "ridge",
+    "interval_radius": {
+      "ridge": 1.3547361602640275,
+      "no_change": 3.2749999999999915,
+      "trend": 1.6419999999999817
+    },
+    "alpha": 100.0
+  },
+  "countries": [
+    {
+      "id": "SE",
+      "iso3": "SWE",
+      "slug": "sweden",
+      "name": "Sweden",
+      "origin": 2024,
+      "input_year": 2023,
+      "features": {
+        "life_expectancy": 84.0634146341463,
+        "past_change": 0.9536585365852943,
+        "log_gdp": 11.036863709398858,
+        "health_spending": 11.152915,
+        "pm25": 5.25938129137927
+      },
+      "latest": 84.0634146341463,
+      "forecast": 84.19712861833756,
+      "forecast_year": 2029,
+      "radius": 1.3547361602640275,
+      "history": [
+        {
+          "year": 1995,
+          "value": 78.7404878048781
+        },
+        {
+          "year": 1996,
+          "value": 78.9590243902439
+        },
+        {
+          "year": 1997,
+          "value": 79.1975609756098
+        },
+        {
+          "year": 1998,
+          "value": 79.3390243902439
+        },
+        {
+          "year": 1999,
+          "value": 79.4414634146342
+        },
+        {
+          "year": 2000,
+          "value": 79.6439024390244
+        },
+        {
+          "year": 2001,
+          "value": 79.7951219512195
+        },
+        {
+          "year": 2002,
+          "value": 79.8463414634146
+        },
+        {
+          "year": 2003,
+          "value": 80.0951219512195
+        },
+        {
+          "year": 2004,
+          "value": 80.4975609756098
+        },
+        {
+          "year": 2005,
+          "value": 80.5463414634146
+        },
+        {
+          "year": 2006,
+          "value": 80.7487804878049
+        },
+        {
+          "year": 2007,
+          "value": 80.9
+        },
+        {
+          "year": 2008,
+          "value": 81.1
+        },
+        {
+          "year": 2009,
+          "value": 81.3512195121951
+        },
+        {
+          "year": 2010,
+          "value": 81.4512195121951
+        },
+        {
+          "year": 2011,
+          "value": 81.8024390243903
+        },
+        {
+          "year": 2012,
+          "value": 81.7048780487805
+        },
+        {
+          "year": 2013,
+          "value": 81.9560975609756
+        },
+        {
+          "year": 2014,
+          "value": 82.2536585365854
+        },
+        {
+          "year": 2015,
+          "value": 82.2048780487805
+        },
+        {
+          "year": 2016,
+          "value": 82.3073170731707
+        },
+        {
+          "year": 2017,
+          "value": 82.409756097561
+        },
+        {
+          "year": 2018,
+          "value": 82.5585365853659
+        },
+        {
+          "year": 2019,
+          "value": 83.109756097561
+        },
+        {
+          "year": 2020,
+          "value": 82.3560975609756
+        },
+        {
+          "year": 2021,
+          "value": 83.0560975609756
+        },
+        {
+          "year": 2022,
+          "value": 83.0585365853659
+        },
+        {
+          "year": 2023,
+          "value": 83.309756097561
+        },
+        {
+          "year": 2024,
+          "value": 84.0634146341463
+        }
+      ],
+      "pyramid": [
+        {
+          "age": "0–4",
+          "male": 5.27096051119945,
+          "female": 5.06273765179395
+        },
+        {
+          "age": "5–9",
+          "male": 5.95918921258719,
+          "female": 5.70227544543937
+        },
+        {
+          "age": "10–14",
+          "male": 6.115029235798,
+          "female": 5.8560650100676
+        },
+        {
+          "age": "15–19",
+          "male": 5.98023805122758,
+          "female": 5.7147643775388
+        },
+        {
+          "age": "20–24",
+          "male": 5.81644270883298,
+          "female": 5.37989004611218
+        },
+        {
+          "age": "25–29",
+          "male": 6.17649109589201,
+          "female": 5.74562106224683
+        },
+        {
+          "age": "30–34",
+          "male": 7.45329174729227,
+          "female": 7.17828677114379
+        },
+        {
+          "age": "35–39",
+          "male": 7.00584715960008,
+          "female": 6.72881817757894
+        },
+        {
+          "age": "40–44",
+          "male": 6.34675364482308,
+          "female": 6.11686050470671
+        },
+        {
+          "age": "45–49",
+          "male": 6.1363869280067,
+          "female": 5.9967768108168
+        },
+        {
+          "age": "50–54",
+          "male": 6.32485311907007,
+          "female": 6.25725889499258
+        },
+        {
+          "age": "55–59",
+          "male": 6.45135205329128,
+          "female": 6.38401918148014
+        },
+        {
+          "age": "60–64",
+          "male": 5.65466895343097,
+          "female": 5.67036456190013
+        },
+        {
+          "age": "65–69",
+          "male": 5.09637401231203,
+          "female": 5.24786826275535
+        },
+        {
+          "age": "70–74",
+          "male": 4.68551453366621,
+          "female": 4.99658904945741
+        },
+        {
+          "age": "75–79",
+          "male": 4.53149955426815,
+          "female": 5.02527085549565
+        },
+        {
+          "age": "80+",
+          "male": 4.99510747870197,
+          "female": 6.93653333647377
+        }
+      ],
+      "pyramid_year": 2024,
+      "pyramid_unit": "% within each sex; the male and female sides each sum to 100%",
+      "tobacco": {
+        "year": 2024,
+        "value": 20.3
+      },
+      "holdout_metrics": {
+        "n": 6,
+        "mae": 0.25173918725028255,
+        "coverage": 1.0
+      }
+    },
+    {
+      "id": "US",
+      "iso3": "USA",
+      "slug": "united-states",
+      "name": "United States",
+      "origin": 2024,
+      "input_year": 2023,
+      "features": {
+        "life_expectancy": 78.890243902439,
+        "past_change": 0.10243902439019337,
+        "log_gdp": 11.216561437442397,
+        "health_spending": 16.69414902,
+        "pm25": 6.96804491055748
+      },
+      "latest": 78.890243902439,
+      "forecast": 79.75037110271138,
+      "forecast_year": 2029,
+      "radius": 1.3547361602640275,
+      "history": [
+        {
+          "year": 1995,
+          "value": 75.6219512195122
+        },
+        {
+          "year": 1996,
+          "value": 76.0268292682927
+        },
+        {
+          "year": 1997,
+          "value": 76.4292682926829
+        },
+        {
+          "year": 1998,
+          "value": 76.5804878048781
+        },
+        {
+          "year": 1999,
+          "value": 76.5829268292683
+        },
+        {
+          "year": 2000,
+          "value": 76.6365853658537
+        },
+        {
+          "year": 2001,
+          "value": 76.8365853658537
+        },
+        {
+          "year": 2002,
+          "value": 76.9365853658537
+        },
+        {
+          "year": 2003,
+          "value": 77.0365853658537
+        },
+        {
+          "year": 2004,
+          "value": 77.4878048780488
+        },
+        {
+          "year": 2005,
+          "value": 77.4878048780488
+        },
+        {
+          "year": 2006,
+          "value": 77.6878048780488
+        },
+        {
+          "year": 2007,
+          "value": 77.9878048780488
+        },
+        {
+          "year": 2008,
+          "value": 78.0390243902439
+        },
+        {
+          "year": 2009,
+          "value": 78.390243902439
+        },
+        {
+          "year": 2010,
+          "value": 78.5414634146342
+        },
+        {
+          "year": 2011,
+          "value": 78.6414634146341
+        },
+        {
+          "year": 2012,
+          "value": 78.7414634146342
+        },
+        {
+          "year": 2013,
+          "value": 78.7414634146342
+        },
+        {
+          "year": 2014,
+          "value": 78.8414634146341
+        },
+        {
+          "year": 2015,
+          "value": 78.690243902439
+        },
+        {
+          "year": 2016,
+          "value": 78.5390243902439
+        },
+        {
+          "year": 2017,
+          "value": 78.5390243902439
+        },
+        {
+          "year": 2018,
+          "value": 78.6390243902439
+        },
+        {
+          "year": 2019,
+          "value": 78.7878048780488
+        },
+        {
+          "year": 2020,
+          "value": 76.9804878048781
+        },
+        {
+          "year": 2021,
+          "value": 76.3292682926829
+        },
+        {
+          "year": 2022,
+          "value": 77.4341463414634
+        },
+        {
+          "year": 2023,
+          "value": 78.3853658536585
+        },
+        {
+          "year": 2024,
+          "value": 78.890243902439
+        }
+      ],
+      "pyramid": [
+        {
+          "age": "0–4",
+          "male": 5.46850590372507,
+          "female": 5.27036635987712
+        },
+        {
+          "age": "5–9",
+          "male": 5.93071791295734,
+          "female": 5.69676974162695
+        },
+        {
+          "age": "10–14",
+          "male": 6.2861691214045,
+          "female": 5.99310537485593
+        },
+        {
+          "age": "15–19",
+          "male": 6.75713818409676,
+          "female": 6.42373042825228
+        },
+        {
+          "age": "20–24",
+          "male": 6.73123924746568,
+          "female": 6.37680214935683
+        },
+        {
+          "age": "25–29",
+          "male": 6.73387391169425,
+          "female": 6.34638935714251
+        },
+        {
+          "age": "30–34",
+          "male": 7.25079532143788,
+          "female": 6.84272232099036
+        },
+        {
+          "age": "35–39",
+          "male": 7.09489983340798,
+          "female": 6.71693238955622
+        },
+        {
+          "age": "40–44",
+          "male": 6.83069789411879,
+          "female": 6.52352269361455
+        },
+        {
+          "age": "45–49",
+          "male": 6.19689016046514,
+          "female": 5.97260879828488
+        },
+        {
+          "age": "50–54",
+          "male": 6.10655992672424,
+          "female": 5.95758189304085
+        },
+        {
+          "age": "55–59",
+          "male": 6.04527582174486,
+          "female": 6.0139455149754
+        },
+        {
+          "age": "60–64",
+          "male": 6.20928417414616,
+          "female": 6.3506936469497
+        },
+        {
+          "age": "65–69",
+          "male": 5.50545372038127,
+          "female": 5.93118597252548
+        },
+        {
+          "age": "70–74",
+          "male": 4.35478133246272,
+          "female": 4.92153764917727
+        },
+        {
+          "age": "75–79",
+          "male": 3.20786402530472,
+          "female": 3.80421080794022
+        },
+        {
+          "age": "80+",
+          "male": 3.28985350846265,
+          "female": 4.85789490183345
+        }
+      ],
+      "pyramid_year": 2024,
+      "pyramid_unit": "% within each sex; the male and female sides each sum to 100%",
+      "tobacco": {
+        "year": 2024,
+        "value": 15.8
+      },
+      "holdout_metrics": {
+        "n": 6,
+        "mae": 1.9541426647240414,
+        "coverage": 0.5
+      }
+    },
+    {
+      "id": "SG",
+      "iso3": "SGP",
+      "slug": "singapore",
+      "name": "Singapore",
+      "origin": 2024,
+      "input_year": 2023,
+      "features": {
+        "life_expectancy": 83.3463414634146,
+        "past_change": -0.24878048780489337,
+        "log_gdp": 11.77757054017383,
+        "health_spending": 4.49163246,
+        "pm25": 15.1427300261359
+      },
+      "latest": 83.3463414634146,
+      "forecast": 83.5663081321918,
+      "forecast_year": 2029,
+      "radius": 1.3547361602640275,
+      "history": [
+        {
+          "year": 1995,
+          "value": 76.2951219512195
+        },
+        {
+          "year": 1996,
+          "value": 76.5951219512195
+        },
+        {
+          "year": 1997,
+          "value": 76.8975609756097
+        },
+        {
+          "year": 1998,
+          "value": 77.3
+        },
+        {
+          "year": 1999,
+          "value": 77.5512195121951
+        },
+        {
+          "year": 2000,
+          "value": 77.9512195121951
+        },
+        {
+          "year": 2001,
+          "value": 78.2512195121951
+        },
+        {
+          "year": 2002,
+          "value": 78.5512195121951
+        },
+        {
+          "year": 2003,
+          "value": 79.0390243902439
+        },
+        {
+          "year": 2004,
+          "value": 79.490243902439
+        },
+        {
+          "year": 2005,
+          "value": 79.990243902439
+        },
+        {
+          "year": 2006,
+          "value": 80.1414634146341
+        },
+        {
+          "year": 2007,
+          "value": 80.4414634146342
+        },
+        {
+          "year": 2008,
+          "value": 80.790243902439
+        },
+        {
+          "year": 2009,
+          "value": 81.2414634146342
+        },
+        {
+          "year": 2010,
+          "value": 81.5414634146342
+        },
+        {
+          "year": 2011,
+          "value": 81.7439024390244
+        },
+        {
+          "year": 2012,
+          "value": 81.9951219512195
+        },
+        {
+          "year": 2013,
+          "value": 82.2463414634147
+        },
+        {
+          "year": 2014,
+          "value": 82.4951219512195
+        },
+        {
+          "year": 2015,
+          "value": 82.7439024390244
+        },
+        {
+          "year": 2016,
+          "value": 82.8463414634146
+        },
+        {
+          "year": 2017,
+          "value": 83.0951219512195
+        },
+        {
+          "year": 2018,
+          "value": 83.2975609756098
+        },
+        {
+          "year": 2019,
+          "value": 83.5951219512195
+        },
+        {
+          "year": 2020,
+          "value": 83.5439024390244
+        },
+        {
+          "year": 2021,
+          "value": 83.0926829268293
+        },
+        {
+          "year": 2022,
+          "value": 82.8951219512195
+        },
+        {
+          "year": 2023,
+          "value": 83.0975609756098
+        },
+        {
+          "year": 2024,
+          "value": 83.3463414634146
+        }
+      ],
+      "pyramid": [
+        {
+          "age": "0–4",
+          "male": 3.93906611402953,
+          "female": 4.03539323231961
+        },
+        {
+          "age": "5–9",
+          "male": 3.83599419930113,
+          "female": 3.94149325441998
+        },
+        {
+          "age": "10–14",
+          "male": 3.8003371573257,
+          "female": 3.82767456190357
+        },
+        {
+          "age": "15–19",
+          "male": 5.98213663499733,
+          "female": 5.6244916116138
+        },
+        {
+          "age": "20–24",
+          "male": 9.79085294830143,
+          "female": 8.56428459178341
+        },
+        {
+          "age": "25–29",
+          "male": 11.0221740674248,
+          "female": 9.58420082321227
+        },
+        {
+          "age": "30–34",
+          "male": 10.3654307549868,
+          "female": 9.48957362599004
+        },
+        {
+          "age": "35–39",
+          "male": 8.55115267319964,
+          "female": 8.26215156882492
+        },
+        {
+          "age": "40–44",
+          "male": 7.30516388301703,
+          "female": 7.38226939963965
+        },
+        {
+          "age": "45–49",
+          "male": 6.40426358004002,
+          "female": 6.58291346764069
+        },
+        {
+          "age": "50–54",
+          "male": 5.99697022993731,
+          "female": 6.22483776801136
+        },
+        {
+          "age": "55–59",
+          "male": 5.50502251587062,
+          "female": 5.71260930904586
+        },
+        {
+          "age": "60–64",
+          "male": 5.32335245882599,
+          "female": 5.53178001650965
+        },
+        {
+          "age": "65–69",
+          "male": 4.55230418493212,
+          "female": 5.02150263377554
+        },
+        {
+          "age": "70–74",
+          "male": 3.41428206396034,
+          "female": 4.01244148101585
+        },
+        {
+          "age": "75–79",
+          "male": 2.15623060764644,
+          "female": 2.75339425184563
+        },
+        {
+          "age": "80+",
+          "male": 2.05526592620369,
+          "female": 3.44898840244814
+        }
+      ],
+      "pyramid_year": 2024,
+      "pyramid_unit": "% within each sex; the male and female sides each sum to 100%",
+      "tobacco": {
+        "year": 2024,
+        "value": 13.8
+      },
+      "holdout_metrics": {
+        "n": 6,
+        "mae": 0.5633530291804157,
+        "coverage": 1.0
+      }
+    }
+  ],
+  "evaluation": {
+    "generated_at": "2026-09-11T18:58:23+00:00",
+    "specification": "Preselected 2009 tuning origin, disjoint calibration countries; test origins 2014–2019. One-year lag for GDP, health expenditure and PM2.5. Sweden, US and Singapore excluded from all fitting, tuning and calibration.",
+    "selected_model": "ridge",
+    "alpha": 100.0,
+    "validation_mae": {
+      "ridge": 1.0990951000122884,
+      "no_change": 2.0466643569844765,
+      "trend": 1.477359201773836
+    },
+    "validation_n": 88,
+    "calibration_n": 91,
+    "interval_nominal": 0.9,
+    "interval_radius": {
+      "ridge": 1.3547361602640275,
+      "no_change": 3.2749999999999915,
+      "trend": 1.6419999999999817
+    },
+    "test": {
+      "ridge": {
+        "n": 1098,
+        "mae": 1.0975840136907564,
+        "coverage": 0.7486338797814208
+      },
+      "no_change": {
+        "n": 1098,
+        "mae": 1.2289444000177712,
+        "coverage": 0.9471766848816029
+      },
+      "trend": {
+        "n": 1098,
+        "mae": 1.2809519969789878,
+        "coverage": 0.7805100182149363
+      }
+    },
+    "country_holdout": {
+      "SGP": {
+        "ridge": {
+          "n": 6,
+          "mae": 0.5633530291804157,
+          "coverage": 1.0
+        },
+        "no_change": {
+          "n": 6,
+          "mae": 0.4658536585365975,
+          "coverage": 1.0
+        },
+        "trend": {
+          "n": 6,
+          "mae": 0.8853658536585035,
+          "coverage": 1.0
+        }
+      },
+      "SWE": {
+        "ridge": {
+          "n": 6,
+          "mae": 0.25173918725028255,
+          "coverage": 1.0
+        },
+        "no_change": {
+          "n": 6,
+          "mae": 0.684959349593484,
+          "coverage": 1.0
+        },
+        "trend": {
+          "n": 6,
+          "mae": 0.19918699186993885,
+          "coverage": 1.0
+        }
+      },
+      "USA": {
+        "ridge": {
+          "n": 6,
+          "mae": 1.9541426647240414,
+          "coverage": 0.5
+        },
+        "no_change": {
+          "n": 6,
+          "mae": 0.9056910569105483,
+          "coverage": 1.0
+        },
+        "trend": {
+          "n": 6,
+          "mae": 0.9467479674796166,
+          "coverage": 0.6666666666666666
+        }
+      }
+    },
+    "test_splits": [
+      {
+        "origin": 2014,
+        "latest_training_origin": 2009,
+        "latest_training_outcome": 2014,
+        "training_rows": 1603,
+        "test_rows": 186
+      },
+      {
+        "origin": 2015,
+        "latest_training_origin": 2010,
+        "latest_training_outcome": 2015,
+        "training_rows": 1782,
+        "test_rows": 186
+      },
+      {
+        "origin": 2016,
+        "latest_training_origin": 2011,
+        "latest_training_outcome": 2016,
+        "training_rows": 1962,
+        "test_rows": 186
+      },
+      {
+        "origin": 2017,
+        "latest_training_origin": 2012,
+        "latest_training_outcome": 2017,
+        "training_rows": 2143,
+        "test_rows": 186
+      },
+      {
+        "origin": 2018,
+        "latest_training_origin": 2013,
+        "latest_training_outcome": 2018,
+        "training_rows": 2324,
+        "test_rows": 186
+      },
+      {
+        "origin": 2019,
+        "latest_training_origin": 2014,
+        "latest_training_outcome": 2019,
+        "training_rows": 2507,
+        "test_rows": 186
+      }
+    ],
+    "training_rows": 3422,
+    "training_countries": 183,
+    "missingness": {
+      "candidate_rows": 5208,
+      "complete_rows": 4406,
+      "excluded_missing_inputs": 802,
+      "rule": "Complete cases only; no interpolation, forward fill or zero imputation."
+    },
+    "worst_errors": [
+      {
+        "country": "CAF",
+        "origin": 2017,
+        "outcome_year": 2022,
+        "model": "ridge",
+        "actual": -26.413,
+        "predicted": 2.323667983122578,
+        "radius": 1.3547361602640275,
+        "country_held_out": false
+      },
+      {
+        "country": "CAF",
+        "origin": 2019,
+        "outcome_year": 2024,
+        "model": "ridge",
+        "actual": 26.141,
+        "predicted": 3.9534900148463468,
+        "radius": 1.3547361602640275,
+        "country_held_out": false
+      },
+      {
+        "country": "CAF",
+        "origin": 2014,
+        "outcome_year": 2019,
+        "model": "ridge",
+        "actual": -8.735,
+        "predicted": 6.787841627081091,
+        "radius": 1.3547361602640275,
+        "country_held_out": false
+      },
+      {
+        "country": "CAF",
+        "origin": 2016,
+        "outcome_year": 2021,
+        "model": "ridge",
+        "actual": -10.719999999999999,
+        "predicted": 2.677123062566125,
+        "radius": 1.3547361602640275,
+        "country_held_out": false
+      },
+      {
+        "country": "PSE",
+        "origin": 2018,
+        "outcome_year": 2023,
+        "model": "ridge",
+        "actual": -10.209999999999994,
+        "predicted": 0.6984121715126149,
+        "radius": 1.3547361602640275,
+        "country_held_out": false
+      },
+      {
+        "country": "SYR",
+        "origin": 2015,
+        "outcome_year": 2020,
+        "model": "ridge",
+        "actual": 8.679000000000002,
+        "predicted": 0.8278265687554482,
+        "radius": 1.3547361602640275,
+        "country_held_out": false
+      },
+      {
+        "country": "BOL",
+        "origin": 2016,
+        "outcome_year": 2021,
+        "model": "ridge",
+        "actual": -5.964999999999996,
+        "predicted": 1.7307819803112634,
+        "radius": 1.3547361602640275,
+        "country_held_out": false
+      },
+      {
+        "country": "PSE",
+        "origin": 2019,
+        "outcome_year": 2024,
+        "model": "ridge",
+        "actual": -6.598000000000013,
+        "predicted": 0.8846807531902466,
+        "radius": 1.3547361602640275,
+        "country_held_out": false
+      }
+    ],
+    "limitations": [
+      "Current revised data vintage, not historical publication vintages. A one-year observation lag does not prove historical availability.",
+      "Overlapping five-year tests and repeated countries are dependent; nominal interval coverage has no exchangeability guarantee.",
+      "COVID-era outcomes are included. Structural breaks, omitted variables and country-specific institutions limit transfer.",
+      "GDP, spending and pollution coefficients are associations. User changes do not estimate a policy effect.",
+      "Ten-year scenarios iterate twice with fixed covariates; no ten-year validation or calibrated ten-year interval."
+    ]
+  },
+  "datasets": [
+    {
+      "id": "NY.GDP.PCAP.PP.KD",
+      "title": "GDP per capita, PPP (constant 2021 international $)",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.PP.KD?format=json&date=1990:2025&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "constant 2021 international dollars",
+      "definition": "This indicator provides values for gross domestic product (GDP) per person expressed in constant international dollars, converted by purchasing power parities (PPPs). PPPs account for the different price levels across countries and thus PPP-based comparisons of economic output are more appropriate for comparing the output of economies and the average material well-being of their inhabitants than exchange-rate based comparisons. \n\nGross domestic product is the total income earned through the production of goods and services in an economic territory during an accounting period. It can be measured in three different ways: using either the expenditure approach, the income approach, or the production approach. The core indicator has been divided by the general population to achieve a per capita estimate. This indicator is expressed in constant prices, meaning the series has been adjusted to account for price changes over time. The reference year for this adjustment is 2021. The PPP conversion factor is a currency conversion factor and a spatial price deflator. PPPs convert different currencies to a common currency and, in the process of conversion, equalize their purchasing power by eliminating the differences in price levels between countries, thereby allowing volume or output comparisons of GDP and its expenditure components. Provider: International Comparison Program (ICP), World Bank (WB), uri: https://www.worldbank.org/en/programs/icp/data, note: This information is for ICP’s PPPs utilized in WDI, publisher: International Comparison Program (ICP), date accessed: May 30, 2024, date published: May 30, 2024;\nThe Eurostat PPP Programme, Eurostat (ESTAT), uri: https://ec.europa.eu/eurostat/databrowser/explore/all/all_themes, publisher: Eurostat;\nThe OECD PPP Programme, Organisation for Economic Co-operation and Development (OECD), uri: https://data-explorer.oecd.org/, publisher: OECD;\nStaff estimates, World Bank (WB);\nNational Accounts data files, Organisation for Economic Co-operation and Development (OECD);\nWorld Economic Outlook database, International Monetary Fund (IMF)",
+      "retrieved_at": "2026-09-11T18:55:38+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "38d585d857178579c56d252d53311f0074b5c988f03070beaead7588ccde980e"
+    },
+    {
+      "id": "SP.DYN.LE00.IN",
+      "title": "Life expectancy at birth, total (years)",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json&date=1990:2025&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "years",
+      "definition": "Life expectancy at birth indicates the number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life. Provider: World Population Prospects, United Nations (UN), uri: UN Population Division;\nStatistical databases and publications from national statistical offices, National Statistical Offices (NSOs), note: Derived from male and female life expectancy at birth from sources such as statistical databases and publications from national statistical offices.;\nDemographic Statistics, Eurostat (ESTAT), note: Derived from male and female life expectancy at birth from sources such as Eurostat: Demographic Statistics.",
+      "retrieved_at": "2026-09-11T18:55:38+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "7268733411f95d4d3fb466df6026265a112e5e13436cfda3b8a1948cd300d98a"
+    },
+    {
+      "id": "SH.XPD.CHEX.GD.ZS",
+      "title": "Current health expenditure (% of GDP)",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/SH.XPD.CHEX.GD.ZS?format=json&date=1990:2025&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of GDP",
+      "definition": "Level of current health expenditure expressed as a percentage of GDP.  Estimates of current health expenditures include healthcare goods and services consumed during each year. This indicator does not include capital health expenditures such as buildings, machinery, IT and stocks of vaccines for emergency or outbreaks. Provider: Global Health Expenditure Database, updated December 12th, 2025, World Health Organization (WHO), uri: https://apps.who.int/nha/database",
+      "retrieved_at": "2026-09-11T18:55:39+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "84667570b43c6bd81b543669cd0f79f34f34dae862b5398ca66406b66471364c"
+    },
+    {
+      "id": "SH.PRV.SMOK",
+      "title": "Prevalence of current tobacco use (% of adults)",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/SH.PRV.SMOK?format=json&date=1990:2025&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% ages 15+, current tobacco use",
+      "definition": "The percentage of the population ages 15 years and over who currently use any tobacco product (smoked and/or smokeless tobacco) on a daily or non-daily basis. Tobacco products include cigarettes, pipes, cigars, cigarillos, waterpipes (hookah, shisha), bidis, kretek, heated tobacco products, and all forms of smokeless (oral and nasal) tobacco. Tobacco products exclude e-cigarettes (which do not contain tobacco), “e-cigars”, “e-hookahs”, JUUL and “e-pipes”. The rates are age-standardized to the WHO Standard Population. Provider: Global Health Observatory Data Repository, World Health Organization (WHO), uri: https://www.who.int/data/gho",
+      "retrieved_at": "2026-09-11T18:55:40+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "27c62b9bc31ccb6891babba19af1053de263bf206a2f58c93a44e6a400c57242"
+    },
+    {
+      "id": "SP.POP.0004.MA.5Y",
+      "title": "Population ages 00-04, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.0004.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 0 to 4 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:40+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "e98c5d54d38cfc9059afcde9cf4b85888d530134ff2f7ef8ede163c2d27a1033"
+    },
+    {
+      "id": "EN.ATM.PM25.MC.M3",
+      "title": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&date=1990:2025&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "micrograms per cubic metre",
+      "definition": "Population-weighted exposure to ambient PM2.5 pollution is defined as the average level of exposure of a nation's population to concentrations of suspended particles measuring less than 2.5 microns in aerodynamic diameter, which are capable of penetrating deep into the respiratory tract and causing severe health damage. Exposure is calculated by weighting mean annual concentrations of PM2.5 by population in both urban and rural areas. Provider: Global Burden of Disease Study 2023 (GBD 2023) Air Pollution Exposure Estimates and Risk Curves 1990-2023, GBD Collaborator Network, uri: https://ghdx.healthdata.org/record/ihme-data/gbd-2023-air-pollution-exposure-estimates-1990-2023, note: Need to create account to retrieve data., publisher: Institute for Health Metrics and Evaluation (IHME), date accessed: 2026-04-03, date published: 2026-01-23",
+      "retrieved_at": "2026-09-11T18:55:40+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "28083bcb191c2720d711d6ca54bc8610aa0a664d775ba0dd794de321e121aa33"
+    },
+    {
+      "id": "SP.POP.0004.FE.5Y",
+      "title": "Population ages 00-04, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.0004.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 0 to 4 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:40+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "2967e750f7d8468cbc2c18a49862c7314d3054ac44d411787e9dca0dac556450"
+    },
+    {
+      "id": "SP.POP.0509.MA.5Y",
+      "title": "Population ages 05-09, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.0509.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 5 to 9 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:40+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "2baa70302df7b0850f293476dc333edf38c64098cc9ff7adef89d8cb92385956"
+    },
+    {
+      "id": "SP.POP.0509.FE.5Y",
+      "title": "Population ages 05-09, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.0509.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 5 to 9 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:41+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "393e5fbdec189b78290b400aa51dde7f7d8ffca3685987a731a685f2738ec9f9"
+    },
+    {
+      "id": "SP.POP.1014.MA.5Y",
+      "title": "Population ages 10-14, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.1014.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 10 to 14 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:41+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "166b7768e1a45bad9e194ab06a9f883d14ecc8484322012b56e71812c9964cc2"
+    },
+    {
+      "id": "SP.POP.1519.MA.5Y",
+      "title": "Population ages 15-19, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.1519.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 15 to 19 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:41+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "3a5310cd416b65571b45498a3c90af853d6ddc326e053c782467cf2a7893ccfa"
+    },
+    {
+      "id": "SP.POP.1014.FE.5Y",
+      "title": "Population ages 10-14, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.1014.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 10 to 14 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:41+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "09a79e58630ba5b5e8a96953d26ad5c6dc6405e744b7b5711e8c08cfd484fd25"
+    },
+    {
+      "id": "SP.POP.1519.FE.5Y",
+      "title": "Population ages 15-19, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.1519.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 15 to 19 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:41+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "cf78c006493a42f50169dbeab6feef9d5632f5df502b209b4ab711e72d490110"
+    },
+    {
+      "id": "SP.POP.2024.FE.5Y",
+      "title": "Population ages 20-24, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.2024.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 20 to 24 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:42+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "611401ac8e41d48dacf3fbc93e846d3380ef0b12755f5cb738d5671a84bce35a"
+    },
+    {
+      "id": "SP.POP.2024.MA.5Y",
+      "title": "Population ages 20-24, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.2024.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 20 to 24 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:42+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "44d37e9731cef17d55a86562510fccfd8338a62e134a50c249c1b068fb10a941"
+    },
+    {
+      "id": "SP.POP.2529.MA.5Y",
+      "title": "Population ages 25-29, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.2529.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 25 to 29 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:42+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "1a0b1fbf23b2ddfc97860d821a1ab61bd203f780d9edf86ad5c297df14ef3c4c"
+    },
+    {
+      "id": "SP.POP.2529.FE.5Y",
+      "title": "Population ages 25-29, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.2529.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 25 to 29 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:42+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "7a9e9f47b236cd46ffcbc227ea3c7e03e6f7bd0309e86c9f28f9965af79f8f69"
+    },
+    {
+      "id": "SP.POP.3034.MA.5Y",
+      "title": "Population ages 30-34, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.3034.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 30 to 34 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:42+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "29790fe2c8e2969bec570da4853d74f6c6ad135a96485f43eff3423ad22f27d0"
+    },
+    {
+      "id": "SP.POP.3539.MA.5Y",
+      "title": "Population ages 35-39, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.3539.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 35 to 39 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:43+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "6a7a2975ad9890636f2f773ca55aa70fda91c1157ebc0b4c2d3cbac915f6da6a"
+    },
+    {
+      "id": "SP.POP.3034.FE.5Y",
+      "title": "Population ages 30-34, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.3034.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 30 to 34 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:43+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "b5020b4d10cd34866d55698fa6d9bd890ba503396c9200fe59d8a23076d0297a"
+    },
+    {
+      "id": "SP.POP.4044.MA.5Y",
+      "title": "Population ages 40-44, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.4044.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 40 to 44 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:43+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "a7e1b15ff714042ba5004ad1f259f4372dcf7203e51296c9aceb5db1970e3001"
+    },
+    {
+      "id": "SP.POP.3539.FE.5Y",
+      "title": "Population ages 35-39, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.3539.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 35 to 39 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:43+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "3006410f455f54ad2049bf4b5e8befe2e68989bc56cb796dd28550dd66ebc4da"
+    },
+    {
+      "id": "SP.POP.4044.FE.5Y",
+      "title": "Population ages 40-44, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.4044.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 40 to 44 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:44+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "ef7268e38ebe437323adc43d8e8334bbace78a68145dfc689ee9ed13a9f74000"
+    },
+    {
+      "id": "SP.POP.4549.FE.5Y",
+      "title": "Population ages 45-49, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.4549.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 45 to 49 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:44+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "f485c47523f62a417be2b18ed10b03ee6582bb02f88d58b5241975dec563705c"
+    },
+    {
+      "id": "SP.POP.4549.MA.5Y",
+      "title": "Population ages 45-49, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.4549.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 45 to 49 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:44+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "874ec54fa43661bb19622c06de276b60eab05e5449060ea73b7653486b00affc"
+    },
+    {
+      "id": "SP.POP.5054.MA.5Y",
+      "title": "Population ages 50-54, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.5054.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 50 to 54 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:44+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "af07e3888cc4205fac64f34193789619455b22d4168670a6275e43c5f3b2fdfe"
+    },
+    {
+      "id": "SP.POP.5559.MA.5Y",
+      "title": "Population ages 55-59, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.5559.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 55 to 59 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:44+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "4341ab19c3dbe7fac3c5a510f13e91d1b909081c43c64179bcac4a83671c3a62"
+    },
+    {
+      "id": "SP.POP.5559.FE.5Y",
+      "title": "Population ages 55-59, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.5559.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 55 to 59 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:45+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "ef444914032beb3b61f11a1d999a5e7e8901bbb8fbfb0f8f3d3948ef13994f53"
+    },
+    {
+      "id": "SP.POP.5054.FE.5Y",
+      "title": "Population ages 50-54, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.5054.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 50 to 54 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:45+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "57d4d8771e7960d40f79395a07558f0baf13d089e23fcd6768d1fe2042eb0d53"
+    },
+    {
+      "id": "SP.POP.6064.MA.5Y",
+      "title": "Population ages 60-64, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.6064.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 60 to 64 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:45+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "2664fda6f2292e2fac4e7943fbab51b0ce5593bb6ccb8a7343220afa46c8f11b"
+    },
+    {
+      "id": "SP.POP.6569.MA.5Y",
+      "title": "Population ages 65-69, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.6569.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 65 to 69 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:45+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "d608aafadc1e65e1aa76af720f031e321c3f761fdfa7718a712dc45938fb8f0c"
+    },
+    {
+      "id": "SP.POP.6569.FE.5Y",
+      "title": "Population ages 65-69, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.6569.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 65 to 69 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:45+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "19b18e07bd573e385546b815e9b6a60fbffc710d955035f46ff7c997ffed69c4"
+    },
+    {
+      "id": "SP.POP.6064.FE.5Y",
+      "title": "Population ages 60-64, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.6064.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 60 to 64 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:45+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "e8e4b8d6bb6984652a17bcc9f22252c7ae39aa7aeb7030272d0a2ecf6e258011"
+    },
+    {
+      "id": "SP.POP.7074.MA.5Y",
+      "title": "Population ages 70-74, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.7074.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 70 to 74 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:46+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "37cb277a2fd2a18e8f0f13c91412fd1ff059217dd511a29883207f8e11720dee"
+    },
+    {
+      "id": "SP.POP.7074.FE.5Y",
+      "title": "Population ages 70-74, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.7074.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 70 to 74 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:46+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "eadc59ca8e5d59235eb4d657a86ae0cc5ee5f36e28c7d0c18b018210f83d0410"
+    },
+    {
+      "id": "SP.POP.7579.MA.5Y",
+      "title": "Population ages 75-79, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.7579.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 75 to 79 as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:46+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "b94428b72fc93b3bbdd406828f274147cde0305906cd9d704682797eff8983d3"
+    },
+    {
+      "id": "SP.POP.7579.FE.5Y",
+      "title": "Population ages 75-79, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.7579.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 75 to 79 as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:46+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "d401a838279404cf69ad6ad933f87ba1c31f3043fc31b134db4a45d59d82e45d"
+    },
+    {
+      "id": "SP.POP.80UP.FE.5Y",
+      "title": "Population ages 80 and above, female (% of female population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.80UP.FE.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Female population between the ages 80 and above as a percentage of the total female population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:46+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "36f940f29ccb9b78170e8a922f079089191ab2f1ece9c7889b6223307974e566"
+    },
+    {
+      "id": "SP.POP.80UP.MA.5Y",
+      "title": "Population ages 80 and above, male (% of male population)",
+      "source_url": "https://api.worldbank.org/v2/country/SWE;USA;SGP/indicator/SP.POP.80UP.MA.5Y?format=json&date=2023:2024&per_page=20000",
+      "licence": "CC BY 4.0",
+      "units": "% of sex-specific population",
+      "definition": "Male population between the ages 80 and above as a percentage of the total male population. Provider: World Population Prospects, United Nations (UN), publisher: UN Population Division",
+      "retrieved_at": "2026-09-11T18:55:46+00:00",
+      "revision_date": "2026-07-13",
+      "content_hash": "e67360031a6f41fb6fde70f7fbe207ae769093e81f6e1be7263563d5debf1e98"
+    }
+  ],
+  "attribution": "World Bank, World Development Indicators, underlying providers as recorded. CC BY 4.0. Retrieved 11 September 2026; transformed by Longview."
+}

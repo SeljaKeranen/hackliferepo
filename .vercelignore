@@ -1,0 +1,13 @@
+keys
+data
+outputs
+eval
+.venv
+secrets
+.env*
+DISCORD.md
+GDOCS.md
+PLAYBOOK.md
+.agent-system
+.agents
+.claude

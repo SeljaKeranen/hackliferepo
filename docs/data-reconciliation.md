@@ -1,0 +1,16 @@
+# Statistical source reconciliation
+
+Checked 11 September 2026. This advances evidence quality and the model's limitations reporting. The forecast uses one documented World Bank indicator across countries. Its published values are not assumed to equal each national agency's latest headline.
+
+| Check | Evidence | Treatment |
+|---|---|---|
+| United States, 2024 | The downloaded WDI SP.DYN.LE00.IN value is 78.890243902439 years. [NCHS Data Brief 548](https://www.cdc.gov/nchs/products/databriefs/db548.htm), January 2026, reports 79.0 years. | Retain the WDI series consistently for training and display; disclose the approximately 0.11-year difference. Do not relabel the WDI value as the NCHS estimate. |
+| Singapore, 2024 | WDI gives 83.3463414634146 years. [Singapore MOH's population and vital statistics table](https://www.moh.gov.sg/others/resources-and-statistics/population-and-vital-statistics/), retrieved 11 September 2026, lists 83.5 years for 2024 and labels the series as Singapore residents. | Retain WDI; disclose the approximately 0.15-year difference. Population perimeter and revision vintage must be checked before combining the series. |
+| Sweden | [Statistics Sweden's life-expectancy page](https://www.scb.se/hitta-statistik/sverige-i-siffror/manniskorna-i-sverige/medellivslangd-i-sverige/), retrieved 11 September 2026, reports separate male and female series. | Do not take their arithmetic average as a substitute for a combined-sex life table. The demo identifies the combined-sex WDI series and its source. |
+| Age pyramids | Exact WDI indicator titles specify a percentage of the male or female population, respectively. The 17 groups sum to 100% within each sex for every displayed country. | Label each side's denominator explicitly. These are published age-distribution estimates, not demographic forecasts. |
+| Tobacco | WDI SH.PRV.SMOK is current tobacco use, ages 15+, including smokeless tobacco. [WHO's indicator definition](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/prevalence-of-current-tobacco-use-among-persons-aged-15-years-and-older-age-standardized), retrieved 11 September 2026, defines the measure. | Do not label it smoking alone. Sparse observations keep it out of the core model. |
+| Time | Current API revision is 13 July 2026; predictors are lagged one observation year. The retrospective panel is today's revised vintage. | Do not claim a real-time historical backtest. Revision history and actual publication lags are unresolved. |
+
+Automated checks validate units, unique country-year-series keys, null handling, country eligibility, lag alignment, source fingerprints, source passages and database integrity. They do not establish that a policy claim passed human review. The separate initial-finding benchmark remains pending until the team imports actual verdicts.
+
+Retrieval note: the first SingStat latest-data URL was visible in the search index but failed direct, extraction-provider and browser-tool retrieval in this environment. The replacement Ministry of Health table was retrieved directly with HTTP 200 and its source body fingerprint was saved locally. It independently confirms the 2024 resident value of 83.5. The World Bank model series is unaffected.

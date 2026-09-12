@@ -60,3 +60,13 @@ python3 eval/test_findings.py
 
 Structurally validates every `findings/*.json` against the schema constraints
 and sanity-checks any verdicts files.
+
+## Longview version-bound review
+
+The three active packets are `sweden`, `united-states` and `singapore`. The original Sweden seed is preserved in `legacy/sweden.seed.json`. Rich provenance lives beside the schema-compatible findings in `provenance/`.
+
+Each verdict now needs reviewer initials and the exact finding/provenance version hash served by `/api/findings`. Unknown IDs and stale versions are rejected. Completed reviews append to `verdicts/<country>.history.jsonl`; the first completed verdict for each frozen `benchmark.json` version determines the initial pass rate. Correcting a claim does not erase its original error.
+
+For remote machines, `node scripts/package-review.mjs` encrypts the candidates into `public/review/packet.json`. The private key stays in ignored `outputs/reviewer.key`. The hosted `/review/` page decrypts in the reviewer's browser, saves work locally and exports a verdict JSON file. Import an actual human export with `python -m pipeline.import_reviews FILE`, then rebuild with `python -m pipeline.release`. Do not import synthetic browser-test exports from `outputs/`.
+
+The initial sample is 34 records. Two supplemental research-funding leads were added after that freeze and are labelled separately. `pipeline.release --strict` requires every candidate to be currently approved and the full original sample to meet the ≥90% target. A pending release reports “not measured” until at least one initial verdict exists; it never displays a fabricated accuracy.

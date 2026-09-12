@@ -38,6 +38,8 @@ header .tagline b { color: var(--ink); font-weight: 600; }
 .scenario a + a { border-left: 1px solid var(--line); }
 .scenario a:hover { color: var(--ink); text-decoration: none; }
 .scenario a.active { background: var(--bg-hover); color: var(--ink); font-weight: 600; }
+.bench-link { margin-top: 10px; font-size: 12.5px; color: var(--faint); }
+.bench-link a { color: var(--gold); }
 
 .legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 30px 0 8px; font-size: 12.5px; color: var(--muted); }
 .legend .chip { display: inline-flex; align-items: center; gap: 7px; }
@@ -130,6 +132,8 @@ table.funders .mini-track { display: inline-block; width: 90px; height: 9px; bor
       <a id="sc-rules" href="?">Rules (v2)</a>
       <a id="sc-adj" href="?scenario=adjudicated">Adjudicated (AI)</a>
     </div>
+    <p class="bench-link">Human benchmark (30 grants, team reviewers):
+      <a href="benchmark/sheet.html" target="_blank" rel="noopener">annotate the blind sheet &rarr;</a></p>
   </header>
 
   <div class="legend">
@@ -142,7 +146,7 @@ table.funders .mini-track { display: inline-block; width: 90px; height: 9px; bor
 
   <section class="honesty">
     <h2>Read this before quoting a number</h2>
-    <ul id="caveats"></ul>
+    <ul id="caveats"><li id="bench-status"></li></ul>
   </section>
 
   <div id="error"></div>
@@ -381,6 +385,21 @@ async function boot() {
     if (window.AGG.regions[code]) box.appendChild(regionCard(code, window.AGG.regions[code]));
   }
   const cv = document.getElementById("caveats");
+  const bench = document.getElementById("bench-status");
+  try {
+    const bres = await fetch("benchmark/report.json", { cache: "no-store" });
+    if (!bres.ok) throw new Error("no report");
+    const rep = await bres.json();
+    const agree = rep.adjudicated_vs_human && rep.adjudicated_vs_human.agreement;
+    bench.innerHTML = "Human benchmark: " + rep.annotated + "/30 grants annotated, "
+      + "adjudicated-vs-human agreement "
+      + (agree == null ? "n/a" : agree.toFixed(2)) + " - "
+      + (rep.pass_085 ? "PASS" : "FAIL") + " against the 0.85 bar.";
+  } catch (err) {
+    bench.innerHTML = "Human benchmark: the 30-record blind set is ready and "
+      + "unlabelled - team reviewers can "
+      + '<a href="benchmark/sheet.html" target="_blank" rel="noopener">annotate it here</a>.';
+  }
   if (SCENARIO) cv.appendChild(el("li", null,
     "Adjudicated scenario: every ambiguous record was re-labelled by "
     + "deepseek-flash (API) with one machine-verified quote per record; "

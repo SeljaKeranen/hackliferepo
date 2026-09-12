@@ -238,10 +238,10 @@ textarea {{ width:100%; margin-top:8px; background:#0d1320; color:var(--ink);
 <body>
 <main>
 <h1>Grant benchmark annotation</h1>
-<p class="intro">30 ageing-research grants. Pick the single best category for
-each from the title and abstract, set a confidence, add notes. The rubric is
-below; the page does not show any model label. When done, enter your name and
-export — send the downloaded JSONL file back. Frozen population
+<p class="intro"><a href="../">&larr; Back to the ratio</a> &middot; team
+reviewers only: enter your real name, annotate all 30 grants, then export and
+send the JSONL file back. Pick the single best category for each grant from
+the title and abstract; the page shows no model label. Frozen population
 <code>{population}</code>; do not annotate a different set.</p>
 <details><summary>Rubric</summary>{rubric}</details>
 <div class="controls">

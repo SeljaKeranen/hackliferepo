@@ -6,6 +6,10 @@ Aging Funding Atlas (`data/Track3_C2/benchmark/benchmark_30.csv`, 20 RePORTER
 
 ## Workflow
 
+The ratio page links here: `http://localhost:8010/ratio/` has a
+"Human benchmark" entry in the header and a status line in the caveats
+section that reads `report.json` when it exists.
+
 1. Build the blind sheet (no model labels in the page):
 
    ```sh

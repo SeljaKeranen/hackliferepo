@@ -1,0 +1,2674 @@
+{
+  "meta": {
+    "derived_from_commit": "2e59b27",
+    "output_categories": {
+      "values": [
+        "fundamental_aging",
+        "intervention",
+        "age_related_disease",
+        "care",
+        "ambiguous",
+        "not_relevant"
+      ],
+      "note": "classification output vocabulary, not keyword lists: step 0 of the rubric is a relevance gate - records matching the broad net but concerning material/component/infrastructure ageing or other non-ageing uses of matched terms get 'not_relevant'; 'ambiguous' is reserved for on-topic but undecidable records. See KEYWORDS.md."
+    },
+    "recovery_command": "atlas lives at data/Track3_C2/output/ (byte-identical to the 2e59b27 blobs; 4061bff deleted only a duplicate top-level Track3_C2/ copy); history fallback: git show 2e59b27:data/Track3_C2/output/{swecris,cordis,nih_reporter}.csv",
+    "corpus_records": 2944,
+    "corpus_fields_matched": "lowercased title + llm_quote",
+    "matching": "whole word/phrase, case-insensitive; '*' in a keyword matches any word-character suffix; spaces match any whitespace",
+    "precision_proxy": "share of a keyword's matching records whose llm_category equals the keyword's category; LLM labels are unverified, so this is a proxy, not ground truth",
+    "thresholds": {
+      "en": {
+        "min_hits": 3,
+        "min_precision": 0.6
+      },
+      "sv": {
+        "min_hits": 1,
+        "min_precision": 0.6,
+        "note": "only 38 of 2,944 records are Swedish-language, so Swedish stats are thin"
+      },
+      "note": "every kept keyword with fewer than 5 hits, in either language, carries low_evidence: true; spelling variants (variant_of) skip only the hit-count floor and must still meet min_precision"
+    },
+    "principle": "search broad (category-agnostic ageing net below), classify precise (the classifier assigns categories using the per-category keywords)",
+    "broad_net": {
+      "en": [
+        {
+          "term": "aging",
+          "hits": 963,
+          "by_category": {
+            "fundamental_aging": 581,
+            "ambiguous": 187,
+            "age_related_disease": 124,
+            "intervention": 64,
+            "care": 7
+          }
+        },
+        {
+          "term": "ageing",
+          "hits": 241,
+          "by_category": {
+            "ambiguous": 107,
+            "fundamental_aging": 69,
+            "care": 37,
+            "age_related_disease": 19,
+            "intervention": 9
+          }
+        },
+        {
+          "term": "senescence",
+          "hits": 265,
+          "by_category": {
+            "fundamental_aging": 204,
+            "ambiguous": 31,
+            "age_related_disease": 24,
+            "intervention": 6
+          }
+        },
+        {
+          "term": "longevity",
+          "hits": 113,
+          "by_category": {
+            "ambiguous": 53,
+            "fundamental_aging": 42,
+            "intervention": 16,
+            "age_related_disease": 2
+          }
+        },
+        {
+          "term": "lifespan",
+          "hits": 81,
+          "by_category": {
+            "fundamental_aging": 52,
+            "intervention": 14,
+            "ambiguous": 11,
+            "age_related_disease": 4
+          }
+        },
+        {
+          "term": "healthspan",
+          "hits": 59,
+          "by_category": {
+            "fundamental_aging": 29,
+            "intervention": 26,
+            "ambiguous": 2,
+            "age_related_disease": 2
+          }
+        },
+        {
+          "term": "elderly",
+          "hits": 47,
+          "by_category": {
+            "care": 16,
+            "age_related_disease": 15,
+            "fundamental_aging": 8,
+            "ambiguous": 7,
+            "intervention": 1
+          }
+        },
+        {
+          "term": "older adults",
+          "hits": 84,
+          "by_category": {
+            "age_related_disease": 29,
+            "ambiguous": 21,
+            "care": 17,
+            "fundamental_aging": 10,
+            "intervention": 7
+          }
+        },
+        {
+          "term": "geriatric*",
+          "hits": 7,
+          "by_category": {
+            "ambiguous": 2,
+            "age_related_disease": 2,
+            "care": 1,
+            "intervention": 1,
+            "fundamental_aging": 1
+          }
+        },
+        {
+          "term": "gerontolog*",
+          "hits": 8,
+          "by_category": {
+            "fundamental_aging": 4,
+            "ambiguous": 3,
+            "care": 1
+          }
+        },
+        {
+          "term": "geroscience",
+          "hits": 23,
+          "by_category": {
+            "fundamental_aging": 9,
+            "intervention": 7,
+            "ambiguous": 4,
+            "age_related_disease": 3
+          }
+        },
+        {
+          "term": "age-related",
+          "hits": 134,
+          "by_category": {
+            "fundamental_aging": 71,
+            "age_related_disease": 40,
+            "intervention": 15,
+            "ambiguous": 8
+          }
+        },
+        {
+          "term": "healthy aging",
+          "hits": 41,
+          "by_category": {
+            "fundamental_aging": 17,
+            "intervention": 11,
+            "ambiguous": 8,
+            "age_related_disease": 4,
+            "care": 1
+          }
+        },
+        {
+          "term": "healthy ageing",
+          "hits": 25,
+          "by_category": {
+            "fundamental_aging": 9,
+            "care": 6,
+            "age_related_disease": 4,
+            "ambiguous": 3,
+            "intervention": 3
+          }
+        }
+      ],
+      "sv": [
+        {
+          "term": "åldrande",
+          "hits": 17,
+          "by_category": {
+            "age_related_disease": 5,
+            "ambiguous": 4,
+            "fundamental_aging": 4,
+            "care": 3,
+            "intervention": 1
+          }
+        },
+        {
+          "term": "äldre*",
+          "hits": 13,
+          "by_category": {
+            "ambiguous": 7,
+            "care": 5,
+            "age_related_disease": 1
+          }
+        },
+        {
+          "term": "senescens*",
+          "hits": 1,
+          "by_category": {
+            "intervention": 1
+          }
+        },
+        {
+          "term": "livslängd*",
+          "hits": 1,
+          "by_category": {
+            "age_related_disease": 1
+          }
+        },
+        {
+          "term": "ålderssjukdom*",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          }
+        },
+        {
+          "term": "äldreomsorg*",
+          "hits": 1,
+          "by_category": {
+            "care": 1
+          }
+        },
+        {
+          "term": "demens*",
+          "hits": 1,
+          "by_category": {
+            "age_related_disease": 1
+          }
+        },
+        {
+          "term": "hälsosamt åldrande",
+          "hits": 2,
+          "by_category": {
+            "care": 1,
+            "age_related_disease": 1
+          }
+        }
+      ]
+    },
+    "exclusion_markers": [
+      {
+        "term": "battery",
+        "note": "materials/engineering ageing, not biology",
+        "hits": 19,
+        "by_category": {
+          "ambiguous": 18,
+          "age_related_disease": 1
+        },
+        "ambiguous_share": 0.947
+      },
+      {
+        "term": "li-ion",
+        "note": "battery ageing studies",
+        "hits": 5,
+        "by_category": {
+          "ambiguous": 5
+        },
+        "ambiguous_share": 1.0
+      },
+      {
+        "term": "aging infrastructure",
+        "note": "civil engineering",
+        "hits": 3,
+        "by_category": {
+          "ambiguous": 3
+        },
+        "ambiguous_share": 1.0
+      }
+    ],
+    "hald_enrichment": {
+      "source": "HALD, Human Aging and Longevity Dataset (CC BY 4.0), https://bis.zju.edu.cn/hald",
+      "doi": "10.6084/m9.figshare.22828196.v6",
+      "paper": "https://doi.org/10.1038/s41597-023-02781-0",
+      "files_used": [
+        "Entities.csv",
+        "Aging_Biomarkers.json",
+        "Longevity_Biomarkers.json"
+      ],
+      "funnel": {
+        "entity_names": 6922,
+        "usable_candidates": 6891,
+        "with_any_corpus_hit": 255,
+        "with_min_3_hits": 62,
+        "cleared_thresholds": 40,
+        "admitted": 33,
+        "excluded_as_live_traps": [
+          "app",
+          "clock",
+          "disease",
+          "fatigue",
+          "myc",
+          "shock",
+          "tert"
+        ]
+      },
+      "note": "admitted terms carry source:HALD; validation identical to the seed lexicon; tert and myc excluded post-review for live-text collisions (see their trap_terms entries)"
+    }
+  },
+  "categories": {
+    "fundamental_aging": {
+      "en": [
+        {
+          "term": "senescen*",
+          "hits": 297,
+          "by_category": {
+            "fundamental_aging": 225,
+            "ambiguous": 32,
+            "age_related_disease": 27,
+            "intervention": 13
+          },
+          "precision": 0.758
+        },
+        {
+          "term": "cellular senescence",
+          "hits": 125,
+          "by_category": {
+            "fundamental_aging": 108,
+            "ambiguous": 8,
+            "age_related_disease": 8,
+            "intervention": 1
+          },
+          "precision": 0.864
+        },
+        {
+          "term": "cell senescence",
+          "hits": 18,
+          "by_category": {
+            "fundamental_aging": 18
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "senescent cell*",
+          "hits": 46,
+          "by_category": {
+            "fundamental_aging": 35,
+            "intervention": 9,
+            "age_related_disease": 2
+          },
+          "precision": 0.761
+        },
+        {
+          "term": "cellular aging",
+          "hits": 23,
+          "by_category": {
+            "fundamental_aging": 21,
+            "ambiguous": 2
+          },
+          "precision": 0.913
+        },
+        {
+          "term": "cellular ageing",
+          "variant_of": "cellular aging",
+          "hits": 4,
+          "by_category": {
+            "fundamental_aging": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "molecular aging",
+          "hits": 5,
+          "by_category": {
+            "fundamental_aging": 5
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "organismal aging",
+          "hits": 7,
+          "by_category": {
+            "fundamental_aging": 7
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "aging mechanisms",
+          "note": "exactly at threshold",
+          "hits": 10,
+          "by_category": {
+            "fundamental_aging": 6,
+            "ambiguous": 2,
+            "intervention": 1,
+            "age_related_disease": 1
+          },
+          "precision": 0.6
+        },
+        {
+          "term": "mechanisms of aging",
+          "hits": 18,
+          "by_category": {
+            "fundamental_aging": 17,
+            "intervention": 1
+          },
+          "precision": 0.944
+        },
+        {
+          "term": "aging process*",
+          "hits": 33,
+          "by_category": {
+            "fundamental_aging": 22,
+            "ambiguous": 5,
+            "intervention": 5,
+            "age_related_disease": 1
+          },
+          "precision": 0.667
+        },
+        {
+          "term": "hallmarks of aging",
+          "hits": 10,
+          "by_category": {
+            "fundamental_aging": 10
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "hallmarks of ageing",
+          "variant_of": "hallmarks of aging",
+          "hits": 1,
+          "by_category": {
+            "fundamental_aging": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "aging hallmark*",
+          "hits": 5,
+          "by_category": {
+            "fundamental_aging": 5
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "epigenetic clock*",
+          "hits": 15,
+          "by_category": {
+            "fundamental_aging": 15
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "epigenetic age*",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 5,
+            "age_related_disease": 1
+          },
+          "precision": 0.833
+        },
+        {
+          "term": "biological age",
+          "hits": 15,
+          "by_category": {
+            "fundamental_aging": 15
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "biological aging",
+          "hits": 44,
+          "by_category": {
+            "fundamental_aging": 37,
+            "age_related_disease": 4,
+            "intervention": 3
+          },
+          "precision": 0.841
+        },
+        {
+          "term": "aging biomarker*",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 6
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "proteostasis",
+          "hits": 13,
+          "by_category": {
+            "fundamental_aging": 13
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "telomere*",
+          "hits": 59,
+          "by_category": {
+            "fundamental_aging": 48,
+            "age_related_disease": 6,
+            "ambiguous": 5
+          },
+          "precision": 0.814
+        },
+        {
+          "term": "inflammaging",
+          "hits": 28,
+          "by_category": {
+            "fundamental_aging": 26,
+            "intervention": 1,
+            "ambiguous": 1
+          },
+          "precision": 0.929
+        },
+        {
+          "term": "immunosenescence",
+          "hits": 8,
+          "by_category": {
+            "fundamental_aging": 7,
+            "intervention": 1
+          },
+          "precision": 0.875
+        },
+        {
+          "term": "immune aging",
+          "hits": 3,
+          "by_category": {
+            "fundamental_aging": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "sasp",
+          "hits": 12,
+          "by_category": {
+            "fundamental_aging": 11,
+            "intervention": 1
+          },
+          "precision": 0.917
+        },
+        {
+          "term": "mitochondrial dysfunction",
+          "hits": 23,
+          "by_category": {
+            "fundamental_aging": 16,
+            "ambiguous": 4,
+            "age_related_disease": 2,
+            "intervention": 1
+          },
+          "precision": 0.696
+        },
+        {
+          "term": "mitochondrial function",
+          "hits": 7,
+          "by_category": {
+            "fundamental_aging": 5,
+            "age_related_disease": 2
+          },
+          "precision": 0.714
+        },
+        {
+          "term": "genomic instability",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 4,
+            "age_related_disease": 1,
+            "ambiguous": 1
+          },
+          "precision": 0.667
+        },
+        {
+          "term": "oxidative stress",
+          "note": "exactly at threshold",
+          "hits": 15,
+          "by_category": {
+            "fundamental_aging": 9,
+            "age_related_disease": 5,
+            "ambiguous": 1
+          },
+          "precision": 0.6
+        },
+        {
+          "term": "vascular aging",
+          "hits": 10,
+          "by_category": {
+            "fundamental_aging": 9,
+            "intervention": 1
+          },
+          "precision": 0.9
+        },
+        {
+          "term": "reproductive aging",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 6
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "ovarian aging",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 6
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "lifespan",
+          "note": "also frequent in intervention records; keep for classification, prefer more specific terms for search",
+          "hits": 81,
+          "by_category": {
+            "fundamental_aging": 52,
+            "intervention": 14,
+            "ambiguous": 11,
+            "age_related_disease": 4
+          },
+          "precision": 0.642
+        },
+        {
+          "term": "insulin resistance",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "fundamental_aging": 3,
+            "age_related_disease": 2
+          },
+          "precision": 0.6
+        },
+        {
+          "term": "tfeb",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "fundamental_aging": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "cgas",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "fundamental_aging": 3,
+            "ambiguous": 2
+          },
+          "precision": 0.6
+        },
+        {
+          "term": "progeria",
+          "source": "HALD",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 4,
+            "age_related_disease": 1,
+            "intervention": 1
+          },
+          "precision": 0.667
+        }
+      ],
+      "sv": [
+        {
+          "term": "cellulär* åldrande",
+          "hits": 2,
+          "by_category": {
+            "fundamental_aging": 2
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        }
+      ],
+      "trap_terms": [
+        {
+          "term": "aging",
+          "why": "grazes the 0.60 threshold but is a one-word flood: 187/963 hits are ambiguous (batteries, materials, infrastructure) and 124 are disease studies that merely mention aging - annotation-guide edge rule 2 says that is not fundamental_aging; use in the broad net, never as a category keyword",
+          "hits": 963,
+          "by_category": {
+            "fundamental_aging": 581,
+            "ambiguous": 187,
+            "age_related_disease": 124,
+            "intervention": 64,
+            "care": 7
+          },
+          "precision": 0.603,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:P46678-1_Energi",
+              "llm_category": "ambiguous",
+              "title": "Accelerated ageing and voltage disturbances – need, possibilities and limitations"
+            },
+            {
+              "record_id": "swecris:P2023-00983_Energi",
+              "llm_category": "ambiguous",
+              "title": "Non-destructive battery aging diagnosis"
+            },
+            {
+              "record_id": "swecris:2024-02091_Forte",
+              "llm_category": "ambiguous",
+              "title": "Sexuality and Aging – A Research Collaboration between the Brazilian Longitudinal Study of Adult Health (ELSA-"
+            }
+          ]
+        },
+        {
+          "term": "ageing",
+          "why": "British spelling skews to Swecris/CORDIS technical and social records; worse than 'aging'",
+          "hits": 241,
+          "by_category": {
+            "ambiguous": 107,
+            "fundamental_aging": 69,
+            "care": 37,
+            "age_related_disease": 19,
+            "intervention": 9
+          },
+          "precision": 0.286,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:P46678-1_Energi",
+              "llm_category": "ambiguous",
+              "title": "Accelerated ageing and voltage disturbances – need, possibilities and limitations"
+            },
+            {
+              "record_id": "swecris:P42789-1_Energi",
+              "llm_category": "ambiguous",
+              "title": "Separating the influence of temperature and current swing on the ageing of a Li-Ion battery"
+            },
+            {
+              "record_id": "swecris:P40798-1_Energi",
+              "llm_category": "ambiguous",
+              "title": "Super-Insulating Materials in Building Components & Systems: Long-term Performance, IEA-EBC Annex 65"
+            }
+          ]
+        },
+        {
+          "term": "longevity",
+          "why": "mostly non-biological: 'productive longevity' in animal breeding, battery/component longevity",
+          "hits": 113,
+          "by_category": {
+            "ambiguous": 53,
+            "fundamental_aging": 42,
+            "intervention": 16,
+            "age_related_disease": 2
+          },
+          "precision": 0.372,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2021-01566_Forte",
+              "llm_category": "ambiguous",
+              "title": "Strategies for improved work longevity from an employer- and employee perspective"
+            },
+            {
+              "record_id": "swecris:2024-01607_Vinnova",
+              "llm_category": "ambiguous",
+              "title": "Women and longevity"
+            },
+            {
+              "record_id": "swecris:P2025-03519_Energi",
+              "llm_category": "ambiguous",
+              "title": "Recycled Graphite Composites for Enhanced Cooling, Efficiency, and Longevity in Power Electronics"
+            }
+          ]
+        },
+        {
+          "term": "accelerated aging",
+          "why": "mixed: accelerated biological aging (real) vs accelerated ageing tests of components (trap)",
+          "hits": 22,
+          "by_category": {
+            "fundamental_aging": 12,
+            "ambiguous": 5,
+            "age_related_disease": 4,
+            "intervention": 1
+          },
+          "precision": 0.545,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:P46678-1_Energi",
+              "llm_category": "ambiguous",
+              "title": "Accelerated ageing and voltage disturbances – need, possibilities and limitations"
+            },
+            {
+              "record_id": "swecris:2025-02169_KI",
+              "llm_category": "intervention",
+              "title": "[Loo och Hans Ostermans stiftelse 2025] Modulating Aging and Mitochondrial Dysfunction with Bioactive Nitrogen"
+            },
+            {
+              "record_id": "swecris:2023-02639_VR",
+              "llm_category": "age_related_disease",
+              "title": "Deciphering multiple sclerosis disease processes along the disease course"
+            }
+          ]
+        },
+        {
+          "term": "accelerated ageing",
+          "why": "the 'accelerated ageing of electrical components' class of trap",
+          "hits": 4,
+          "by_category": {
+            "ambiguous": 3,
+            "fundamental_aging": 1
+          },
+          "precision": 0.25,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:P46678-1_Energi",
+              "llm_category": "ambiguous",
+              "title": "Accelerated ageing and voltage disturbances – need, possibilities and limitations"
+            },
+            {
+              "record_id": "swecris:P39649-1_Energi",
+              "llm_category": "ambiguous",
+              "title": "Service life of district heating pipes – Phase 1 degradation mechanisms and test methods"
+            },
+            {
+              "record_id": "swecris:2016-02496_Vinnova",
+              "llm_category": "ambiguous",
+              "title": "HiFi Visual Target"
+            }
+          ]
+        },
+        {
+          "term": "healthy aging",
+          "why": "policy/marketing phrase spanning every category",
+          "hits": 41,
+          "by_category": {
+            "fundamental_aging": 17,
+            "intervention": 11,
+            "ambiguous": 8,
+            "age_related_disease": 4,
+            "care": 1
+          },
+          "precision": 0.415,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2018-03714_Vinnova",
+              "llm_category": "ambiguous",
+              "title": "Test bed for Active and healthy aging"
+            },
+            {
+              "record_id": "swecris:2016-01074_Forte",
+              "llm_category": "ambiguous",
+              "title": "Impact of living conditions and health in middle age on active and healthy aging: The Silver MONICA study"
+            },
+            {
+              "record_id": "swecris:2015-01360_Forte",
+              "llm_category": "ambiguous",
+              "title": "Who lives alone during old age? Investigating the diverse conditions and prospects for healthy ageing of older"
+            }
+          ]
+        },
+        {
+          "term": "healthspan",
+          "why": "boundary term split between fundamental_aging and intervention; good broad-net term, poor discriminator",
+          "hits": 59,
+          "by_category": {
+            "fundamental_aging": 29,
+            "intervention": 26,
+            "ambiguous": 2,
+            "age_related_disease": 2
+          },
+          "precision": 0.492,
+          "example_false_hits": [
+            {
+              "record_id": "cordis:101086997",
+              "llm_category": "intervention",
+              "title": "The Glucocorticoid Receptor in Aging and Circadian Endocrinology"
+            },
+            {
+              "record_id": "reporter:5K99AG046370-02",
+              "llm_category": "intervention",
+              "title": "Mechanisms through which protein restriction extends immunological healthspan"
+            },
+            {
+              "record_id": "reporter:5R01AG069781-05",
+              "llm_category": "intervention",
+              "title": "Ketogenic oscillations and neurometabolic healthspan"
+            }
+          ]
+        },
+        {
+          "term": "geroscience",
+          "why": "field name spanning fundamental_aging and intervention; good broad-net term, poor discriminator",
+          "hits": 23,
+          "by_category": {
+            "fundamental_aging": 9,
+            "intervention": 7,
+            "ambiguous": 4,
+            "age_related_disease": 3
+          },
+          "precision": 0.391,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:5R21AG067334-02",
+              "llm_category": "age_related_disease",
+              "title": "Neural Aging and A Toxicity Assessments, a Fly Pharmacology-Molecular AD Model"
+            },
+            {
+              "record_id": "reporter:1K01AG078125-01",
+              "llm_category": "intervention",
+              "title": "Exogenous ketones target geroscience pathways and ameliorate geriatric syndromes"
+            },
+            {
+              "record_id": "reporter:3R01AG067193-02S1",
+              "llm_category": "age_related_disease",
+              "title": "A geroscience approach for investigating resilience to SARS-CoV-2 pathology in mice with Alzheimer's disease"
+            }
+          ]
+        },
+        {
+          "term": "autophagy",
+          "why": "general cell-biology mechanism, frequent in disease and ambiguous records",
+          "hits": 29,
+          "by_category": {
+            "fundamental_aging": 15,
+            "ambiguous": 8,
+            "age_related_disease": 6
+          },
+          "precision": 0.517,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2019-01565_Formas",
+              "llm_category": "ambiguous",
+              "title": "Modulating Autophagy: New Strategies Toward Improved Crop Fitness and Health"
+            },
+            {
+              "record_id": "swecris:2020-01860_VR",
+              "llm_category": "age_related_disease",
+              "title": "The interplay between lipid handling, inflammation and autophagy: Implications for cardiovascular disease and "
+            },
+            {
+              "record_id": "swecris:2017-00541_Formas",
+              "llm_category": "ambiguous",
+              "title": "Manipulating autophagy to increase plant productivity"
+            }
+          ]
+        },
+        {
+          "term": "dna damage",
+          "why": "general mechanism, frequent in cancer records",
+          "hits": 23,
+          "by_category": {
+            "fundamental_aging": 12,
+            "age_related_disease": 6,
+            "ambiguous": 4,
+            "intervention": 1
+          },
+          "precision": 0.522,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2024-01806_Formas",
+              "llm_category": "ambiguous",
+              "title": "Understanding DNA Damage Repair to Enhance Seed vigor and Germination"
+            },
+            {
+              "record_id": "swecris:2015-02723_VR",
+              "llm_category": "age_related_disease",
+              "title": "DNA damage response pathways as targets for cancer therapy"
+            },
+            {
+              "record_id": "cordis:101113229",
+              "llm_category": "intervention",
+              "title": "Targeting telomeric DNA damage response as a new strategy to fight immunosenescence and improve vaccine respon"
+            }
+          ]
+        },
+        {
+          "term": "dna repair",
+          "why": "mostly cancer research",
+          "hits": 8,
+          "by_category": {
+            "age_related_disease": 4,
+            "fundamental_aging": 2,
+            "ambiguous": 2
+          },
+          "precision": 0.25,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2021-01335_VR",
+              "llm_category": "age_related_disease",
+              "title": "Targeting non-coding RNAs as a novel method to control DNA repair and treatment response"
+            },
+            {
+              "record_id": "reporter:5K08HL135402-04",
+              "llm_category": "age_related_disease",
+              "title": "MIF and DNA repair in the emphysematous lung"
+            },
+            {
+              "record_id": "reporter:5R01GM118837-04",
+              "llm_category": "ambiguous",
+              "title": "The role of the checkpoint clamp in DNA repair"
+            }
+          ]
+        },
+        {
+          "term": "brain aging",
+          "why": "splits with age_related_disease (dementia studies)",
+          "hits": 25,
+          "by_category": {
+            "fundamental_aging": 14,
+            "age_related_disease": 10,
+            "intervention": 1
+          },
+          "precision": 0.56,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2025-02364_VR",
+              "llm_category": "intervention",
+              "title": "Unlocking Cognitive Health: How Metformin Slows Brain Aging Through Precision Medicine"
+            },
+            {
+              "record_id": "swecris:2020-01574_VR",
+              "llm_category": "age_related_disease",
+              "title": "Exploring chronic hypoxia as a possible pathway linking clinical conditions of the heart, lungs, and blood wit"
+            },
+            {
+              "record_id": "swecris:2019-01156_Forte",
+              "llm_category": "age_related_disease",
+              "title": "Stronger 60+: Personalized implementation of the FINGER multimodal lifestyle model for healthy brain aging"
+            }
+          ]
+        },
+        {
+          "term": "aging brain",
+          "why": "splits with age_related_disease",
+          "hits": 14,
+          "by_category": {
+            "fundamental_aging": 8,
+            "age_related_disease": 6
+          },
+          "precision": 0.571,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2023-02630_VR",
+              "llm_category": "age_related_disease",
+              "title": "Early synaptic endosome dysfunction in Alzheimer disease: convergence of ApoE, Aβ & tau"
+            },
+            {
+              "record_id": "swecris:2018-04251_Vinnova",
+              "llm_category": "age_related_disease",
+              "title": "Combat diseases of the aging brain"
+            },
+            {
+              "record_id": "reporter:1R01AG058533-01A1",
+              "llm_category": "age_related_disease",
+              "title": "Health and Aging Brain among Latino Elders (HABLE-AT(N)) Study"
+            }
+          ]
+        },
+        {
+          "term": "åldrande",
+          "why": "bare Swedish 'aging' spreads across all five categories including battery ageing ('åldrande i litium-jonbatterier')",
+          "hits": 17,
+          "by_category": {
+            "age_related_disease": 5,
+            "ambiguous": 4,
+            "fundamental_aging": 4,
+            "care": 3,
+            "intervention": 1
+          },
+          "precision": 0.235,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2023-00394_VR",
+              "llm_category": "ambiguous",
+              "title": "International journal of ageing and later life"
+            },
+            {
+              "record_id": "swecris:2022-01368_Forte",
+              "llm_category": "ambiguous",
+              "title": "Avslutningskonferens UserAge: Att förstå brukarinvolvering i forskning om åldrande och hälsa"
+            },
+            {
+              "record_id": "swecris:2019-02050_VR",
+              "llm_category": "intervention",
+              "title": "Immunoterapi mot åldrande: fokus på senescensspecifika immunkontrollpunkter i åldersrelaterad sjukdom och canc"
+            }
+          ]
+        },
+        {
+          "term": "shock",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: corpus hits are all heat-shock-protein contexts; bare 'shock' in live data is medical/electrical noise",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 6
+          },
+          "precision": 1.0,
+          "example_false_hits": []
+        },
+        {
+          "term": "clock",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: corpus hits are epigenetic/circadian clocks already covered by 'epigenetic clock*'; bare 'clock' in live data matches scheduling and horology",
+          "hits": 20,
+          "by_category": {
+            "fundamental_aging": 14,
+            "age_related_disease": 3,
+            "intervention": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.7,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:3R01AG065993-03S1",
+              "llm_category": "intervention",
+              "title": "Mechanisms by which time-restricted feeding (TRF) delays the onset of age-related declines in health, cognitio"
+            },
+            {
+              "record_id": "reporter:5R01CA244519-02",
+              "llm_category": "age_related_disease",
+              "title": "Circadian Clock Disruption and Colorectal Cancer"
+            },
+            {
+              "record_id": "reporter:5F31NS120654-03",
+              "llm_category": "age_related_disease",
+              "title": "Implications of Circadian Clock Control on Glioblastoma"
+            }
+          ]
+        },
+        {
+          "term": "fatigue",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: the material-fatigue engineering trap, same class as 'accelerated ageing' of components; corpus evidence is 3 hits",
+          "hits": 3,
+          "by_category": {
+            "fundamental_aging": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "example_false_hits": [
+            {
+              "record_id": "cordis:101203962",
+              "llm_category": "ambiguous",
+              "title": "Fatigue failure mechanism of marine concrete structures using multi-scale numerical modelling (FAMCON)"
+            }
+          ]
+        }
+      ],
+      "coverage": 0.555
+    },
+    "intervention": {
+      "en": [
+        {
+          "term": "senotherap*",
+          "hits": 7,
+          "by_category": {
+            "intervention": 6,
+            "fundamental_aging": 1
+          },
+          "precision": 0.857
+        },
+        {
+          "term": "geroprotect*",
+          "hits": 6,
+          "by_category": {
+            "intervention": 6
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "caloric restriction",
+          "hits": 7,
+          "by_category": {
+            "intervention": 7
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "calorie restriction",
+          "variant_of": "caloric restriction",
+          "hits": 5,
+          "by_category": {
+            "intervention": 5
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "metformin",
+          "hits": 11,
+          "by_category": {
+            "intervention": 9,
+            "age_related_disease": 2
+          },
+          "precision": 0.818
+        },
+        {
+          "term": "rapamycin",
+          "hits": 3,
+          "by_category": {
+            "intervention": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "pharmacological intervention*",
+          "hits": 6,
+          "by_category": {
+            "intervention": 6
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "exercise intervention*",
+          "hits": 3,
+          "by_category": {
+            "intervention": 2,
+            "age_related_disease": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "extend lifespan",
+          "hits": 3,
+          "by_category": {
+            "intervention": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "delay aging",
+          "hits": 3,
+          "by_category": {
+            "intervention": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "malnutrition",
+          "source": "HALD",
+          "hits": 10,
+          "by_category": {
+            "intervention": 7,
+            "age_related_disease": 2,
+            "care": 1
+          },
+          "precision": 0.7
+        }
+      ],
+      "sv": [
+        {
+          "term": "mot åldrande",
+          "note": "'against ageing' framing, e.g. immunotherapy against ageing",
+          "hits": 1,
+          "by_category": {
+            "intervention": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        }
+      ],
+      "trap_terms": [
+        {
+          "term": "senolytic*",
+          "why": "senolytics research spans mechanism (fundamental_aging), therapy (intervention) and disease application about equally",
+          "hits": 19,
+          "by_category": {
+            "intervention": 9,
+            "fundamental_aging": 4,
+            "age_related_disease": 4,
+            "ambiguous": 2
+          },
+          "precision": 0.474,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2018-02587_VR",
+              "llm_category": "fundamental_aging",
+              "title": "Impaired adipogenesis and its co-morbidities - role of endothelial cells and cell senescence"
+            },
+            {
+              "record_id": "cordis:101113154",
+              "llm_category": "ambiguous",
+              "title": "Senolytics repurposing in childhood refractory epilepsies"
+            },
+            {
+              "record_id": "cordis:101213120",
+              "llm_category": "fundamental_aging",
+              "title": "Using senolytic agents to suppress the toxicity of chemotherapy"
+            }
+          ]
+        },
+        {
+          "term": "anti-aging",
+          "why": "splits between intervention, fundamental_aging and ambiguous (cosmetics, materials)",
+          "hits": 12,
+          "by_category": {
+            "intervention": 5,
+            "fundamental_aging": 4,
+            "ambiguous": 3
+          },
+          "precision": 0.417,
+          "example_false_hits": [
+            {
+              "record_id": "cordis:101222544",
+              "llm_category": "ambiguous",
+              "title": "Rejuvenation and Anti-Aging Mechanisms for Vitalizing Next-Generation Electric Vehicle Batteries"
+            },
+            {
+              "record_id": "cordis:718569",
+              "llm_category": "ambiguous",
+              "title": "Go Fresh - Fresh and Quick Prepared, Healthy and Affordable Meal Solution"
+            },
+            {
+              "record_id": "cordis:837139",
+              "llm_category": "ambiguous",
+              "title": "Nano Diamond Powder Additive for Cosmetics"
+            }
+          ]
+        },
+        {
+          "term": "dietary restriction",
+          "why": "just below threshold: mechanistic dietary-restriction studies are labeled fundamental_aging",
+          "hits": 12,
+          "by_category": {
+            "intervention": 7,
+            "fundamental_aging": 5
+          },
+          "precision": 0.583,
+          "example_false_hits": [
+            {
+              "record_id": "cordis:864921",
+              "llm_category": "fundamental_aging",
+              "title": "Decoding protein persulfidation signaling"
+            },
+            {
+              "record_id": "reporter:5R01AG052606-06",
+              "llm_category": "fundamental_aging",
+              "title": "Effects of dietary restriction on age-related neurophysiological adaptations: frombehavior to single dopaminer"
+            },
+            {
+              "record_id": "reporter:1P01AG055369-01A1",
+              "llm_category": "fundamental_aging",
+              "title": "Role of the Mitochondrial Peptide Humanin in Regulating Aging and Healthspan"
+            }
+          ]
+        },
+        {
+          "term": "slow aging",
+          "why": "mostly mechanistic studies, not interventions",
+          "hits": 3,
+          "by_category": {
+            "fundamental_aging": 2,
+            "intervention": 1
+          },
+          "precision": 0.333,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:4UH3AG064704-03",
+              "llm_category": "fundamental_aging",
+              "title": "Identifying protective omics profiles in centenarians and translating these into preventive and therapeutic st"
+            },
+            {
+              "record_id": "reporter:4R01AG042569-04",
+              "llm_category": "fundamental_aging",
+              "title": "Translational mechanisms of mitochondrial protein synthesis"
+            }
+          ]
+        },
+        {
+          "term": "lifespan extension",
+          "why": "both corpus hits are fundamental_aging mechanism studies",
+          "hits": 2,
+          "by_category": {
+            "fundamental_aging": 2
+          },
+          "precision": 0.0,
+          "example_false_hits": [
+            {
+              "record_id": "cordis:894917",
+              "llm_category": "fundamental_aging",
+              "title": "Exploiting superlongevous model mammals to explore new links between protein and organelle homeostasis and lif"
+            },
+            {
+              "record_id": "reporter:5R21AG086734-02",
+              "llm_category": "fundamental_aging",
+              "title": "Evaluating a powerful genetic mapping framework to discover lifespan extension genes in Drosophila"
+            }
+          ]
+        },
+        {
+          "term": "extend healthspan",
+          "why": "50/50 between fundamental_aging and intervention",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 3,
+            "intervention": 3
+          },
+          "precision": 0.5,
+          "example_false_hits": [
+            {
+              "record_id": "cordis:101118919",
+              "llm_category": "fundamental_aging",
+              "title": "Learning from Bats: New Strategies to Extend Healthspan and Improve Disease Resistance"
+            },
+            {
+              "record_id": "reporter:1R01AG058742-01",
+              "llm_category": "fundamental_aging",
+              "title": "Cellular Aging and Rejuvenation: A Comprehensive Picture from a Dynamic and Network Perspective"
+            },
+            {
+              "record_id": "reporter:2U19AG056278-07A1",
+              "llm_category": "fundamental_aging",
+              "title": "Validation and characterization of the identified variants associated with human longevity in mouse models"
+            }
+          ]
+        }
+      ],
+      "coverage": 0.414
+    },
+    "age_related_disease": {
+      "en": [
+        {
+          "term": "alzheimer*",
+          "hits": 223,
+          "by_category": {
+            "age_related_disease": 176,
+            "fundamental_aging": 34,
+            "intervention": 7,
+            "ambiguous": 3,
+            "care": 3
+          },
+          "precision": 0.789
+        },
+        {
+          "term": "adrd",
+          "hits": 35,
+          "by_category": {
+            "age_related_disease": 34,
+            "care": 1
+          },
+          "precision": 0.971
+        },
+        {
+          "term": "dementia*",
+          "hits": 147,
+          "by_category": {
+            "age_related_disease": 120,
+            "care": 13,
+            "fundamental_aging": 12,
+            "intervention": 1,
+            "ambiguous": 1
+          },
+          "precision": 0.816
+        },
+        {
+          "term": "parkinson*",
+          "hits": 26,
+          "by_category": {
+            "age_related_disease": 23,
+            "fundamental_aging": 2,
+            "care": 1
+          },
+          "precision": 0.885
+        },
+        {
+          "term": "mild cognitive impairment",
+          "hits": 10,
+          "by_category": {
+            "age_related_disease": 9,
+            "fundamental_aging": 1
+          },
+          "precision": 0.9
+        },
+        {
+          "term": "tau",
+          "note": "word-boundary match; protein, not the Greek letter in formulas",
+          "hits": 14,
+          "by_category": {
+            "age_related_disease": 13,
+            "fundamental_aging": 1
+          },
+          "precision": 0.929
+        },
+        {
+          "term": "amyloid",
+          "hits": 14,
+          "by_category": {
+            "age_related_disease": 12,
+            "ambiguous": 1,
+            "fundamental_aging": 1
+          },
+          "precision": 0.857
+        },
+        {
+          "term": "cancer",
+          "note": "bulk term at 0.65: cancer-mechanism-of-aging studies land in fundamental_aging",
+          "hits": 192,
+          "by_category": {
+            "age_related_disease": 125,
+            "fundamental_aging": 37,
+            "ambiguous": 27,
+            "intervention": 3
+          },
+          "precision": 0.651
+        },
+        {
+          "term": "tumor*",
+          "hits": 55,
+          "by_category": {
+            "age_related_disease": 41,
+            "fundamental_aging": 9,
+            "ambiguous": 4,
+            "intervention": 1
+          },
+          "precision": 0.745
+        },
+        {
+          "term": "carcinoma*",
+          "hits": 5,
+          "by_category": {
+            "age_related_disease": 5
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "glioblastoma",
+          "hits": 7,
+          "by_category": {
+            "age_related_disease": 7
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "colorectal cancer",
+          "hits": 6,
+          "by_category": {
+            "age_related_disease": 6
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "prostate cancer",
+          "hits": 8,
+          "by_category": {
+            "age_related_disease": 7,
+            "fundamental_aging": 1
+          },
+          "precision": 0.875
+        },
+        {
+          "term": "breast cancer",
+          "hits": 15,
+          "by_category": {
+            "age_related_disease": 10,
+            "fundamental_aging": 5
+          },
+          "precision": 0.667
+        },
+        {
+          "term": "immunotherapy",
+          "hits": 11,
+          "by_category": {
+            "age_related_disease": 11
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "cardiovascular disease",
+          "hits": 40,
+          "by_category": {
+            "age_related_disease": 30,
+            "fundamental_aging": 7,
+            "ambiguous": 3
+          },
+          "precision": 0.75
+        },
+        {
+          "term": "atherosclerosis",
+          "hits": 13,
+          "by_category": {
+            "age_related_disease": 8,
+            "fundamental_aging": 4,
+            "ambiguous": 1
+          },
+          "precision": 0.615
+        },
+        {
+          "term": "myocardial",
+          "hits": 7,
+          "by_category": {
+            "age_related_disease": 7
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "heart failure",
+          "hits": 16,
+          "by_category": {
+            "age_related_disease": 11,
+            "ambiguous": 2,
+            "care": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.688
+        },
+        {
+          "term": "stroke",
+          "hits": 25,
+          "by_category": {
+            "age_related_disease": 22,
+            "ambiguous": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.88
+        },
+        {
+          "term": "type 2 diabetes",
+          "hits": 19,
+          "by_category": {
+            "age_related_disease": 16,
+            "fundamental_aging": 2,
+            "intervention": 1
+          },
+          "precision": 0.842
+        },
+        {
+          "term": "osteoporosis",
+          "hits": 13,
+          "by_category": {
+            "age_related_disease": 13
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "osteoarthritis",
+          "hits": 24,
+          "by_category": {
+            "age_related_disease": 21,
+            "fundamental_aging": 3
+          },
+          "precision": 0.875
+        },
+        {
+          "term": "sarcopenia",
+          "hits": 17,
+          "by_category": {
+            "age_related_disease": 14,
+            "fundamental_aging": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.824
+        },
+        {
+          "term": "frailty",
+          "note": "0.61: a quarter of hits are fundamental_aging biomarker studies",
+          "hits": 31,
+          "by_category": {
+            "age_related_disease": 19,
+            "fundamental_aging": 8,
+            "care": 2,
+            "intervention": 2
+          },
+          "precision": 0.613
+        },
+        {
+          "term": "macular degeneration",
+          "hits": 8,
+          "by_category": {
+            "age_related_disease": 8
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "glaucoma",
+          "hits": 5,
+          "by_category": {
+            "age_related_disease": 5
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "fracture risk",
+          "hits": 5,
+          "by_category": {
+            "age_related_disease": 5
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "down syndrome",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "sclerosis",
+          "source": "HALD",
+          "hits": 18,
+          "by_category": {
+            "age_related_disease": 13,
+            "ambiguous": 3,
+            "fundamental_aging": 2
+          },
+          "precision": 0.722
+        },
+        {
+          "term": "infarction",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "lymphoma",
+          "source": "HALD",
+          "hits": 7,
+          "by_category": {
+            "age_related_disease": 6,
+            "fundamental_aging": 1
+          },
+          "precision": 0.857
+        },
+        {
+          "term": "melanoma",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "age_related_disease": 4,
+            "fundamental_aging": 1
+          },
+          "precision": 0.8
+        },
+        {
+          "term": "apoe",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "multiple myeloma",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "hypertension",
+          "source": "HALD",
+          "hits": 16,
+          "by_category": {
+            "age_related_disease": 14,
+            "ambiguous": 1,
+            "fundamental_aging": 1
+          },
+          "precision": 0.875
+        },
+        {
+          "term": "lung diseases",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "emphysema",
+          "source": "HALD",
+          "hits": 4,
+          "by_category": {
+            "age_related_disease": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "diabetes mellitus",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "leukemia",
+          "source": "HALD",
+          "hits": 7,
+          "by_category": {
+            "age_related_disease": 6,
+            "fundamental_aging": 1
+          },
+          "precision": 0.857
+        },
+        {
+          "term": "hearing loss",
+          "source": "HALD",
+          "hits": 10,
+          "by_category": {
+            "age_related_disease": 9,
+            "ambiguous": 1
+          },
+          "precision": 0.9
+        },
+        {
+          "term": "amyotrophic lateral sclerosis",
+          "source": "HALD",
+          "hits": 8,
+          "by_category": {
+            "age_related_disease": 7,
+            "ambiguous": 1
+          },
+          "precision": 0.875
+        },
+        {
+          "term": "communicable diseases",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "carcinogenesis",
+          "source": "HALD",
+          "hits": 4,
+          "by_category": {
+            "age_related_disease": 3,
+            "fundamental_aging": 1
+          },
+          "precision": 0.75,
+          "low_evidence": true
+        },
+        {
+          "term": "aortic valve stenosis",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "glucose",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "age_related_disease": 3,
+            "fundamental_aging": 2
+          },
+          "precision": 0.6,
+          "note": "exactly at threshold; generic biomedical term with live-search flood potential - weight by precision, never let it decide alone"
+        },
+        {
+          "term": "myocardial infarction",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "delirium",
+          "source": "HALD",
+          "hits": 4,
+          "by_category": {
+            "age_related_disease": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "obesity",
+          "source": "HALD",
+          "hits": 30,
+          "by_category": {
+            "age_related_disease": 18,
+            "fundamental_aging": 5,
+            "ambiguous": 4,
+            "intervention": 3
+          },
+          "precision": 0.6,
+          "note": "exactly at threshold; generic biomedical term with live-search flood potential - weight by precision, never let it decide alone"
+        },
+        {
+          "term": "disease progression",
+          "source": "HALD",
+          "hits": 8,
+          "by_category": {
+            "age_related_disease": 5,
+            "fundamental_aging": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.625
+        },
+        {
+          "term": "alzheimer disease",
+          "source": "HALD",
+          "hits": 12,
+          "by_category": {
+            "age_related_disease": 10,
+            "fundamental_aging": 2
+          },
+          "precision": 0.833
+        },
+        {
+          "term": "fatty liver",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "arthritis",
+          "source": "HALD",
+          "hits": 9,
+          "by_category": {
+            "age_related_disease": 7,
+            "ambiguous": 2
+          },
+          "precision": 0.778
+        },
+        {
+          "term": "blindness",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "cardiovascular diseases",
+          "source": "HALD",
+          "hits": 5,
+          "by_category": {
+            "age_related_disease": 4,
+            "fundamental_aging": 1
+          },
+          "precision": 0.8
+        },
+        {
+          "term": "tauopathies",
+          "source": "HALD",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        }
+      ],
+      "sv": [
+        {
+          "term": "ålderssjukdom*",
+          "note": "hits come from the funder prefix '[Stiftelsen för ålderssjukdomar vid KI]' in titles, but the term itself means age-related disease and is sound Swedish search vocabulary",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 3
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "demens*",
+          "hits": 1,
+          "by_category": {
+            "age_related_disease": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "hjärtinfarkt*",
+          "hits": 2,
+          "by_category": {
+            "age_related_disease": 2
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "hjärtsvikt",
+          "hits": 1,
+          "by_category": {
+            "age_related_disease": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "kranskärlssjukdom*",
+          "hits": 2,
+          "by_category": {
+            "age_related_disease": 2
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "hjärtkärlsjukdom*",
+          "hits": 1,
+          "by_category": {
+            "age_related_disease": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "ateroskleros",
+          "hits": 1,
+          "by_category": {
+            "age_related_disease": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "fallskador",
+          "hits": 1,
+          "by_category": {
+            "age_related_disease": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        }
+      ],
+      "trap_terms": [
+        {
+          "term": "chemotherapy",
+          "why": "corpus chemotherapy hits are chemotherapy-induced senescence/aging studies, labeled fundamental_aging",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 4,
+            "ambiguous": 1,
+            "age_related_disease": 1
+          },
+          "precision": 0.167,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2017-02001_VR",
+              "llm_category": "ambiguous",
+              "title": "CHEMOTHERAPY INDUCED DISRUPTION OF B CELL MEMORY IN THE BONE MARROW STROMAL NICHE AND SECONDARY LYMPHOID ORGAN"
+            },
+            {
+              "record_id": "cordis:101213120",
+              "llm_category": "fundamental_aging",
+              "title": "Using senolytic agents to suppress the toxicity of chemotherapy"
+            },
+            {
+              "record_id": "reporter:5F32CA257210-02",
+              "llm_category": "fundamental_aging",
+              "title": "The role of cellular senescence in chemotherapy-related cognitive impairment"
+            }
+          ]
+        },
+        {
+          "term": "cognitive decline",
+          "why": "splits with fundamental_aging (normal cognitive aging mechanisms)",
+          "hits": 39,
+          "by_category": {
+            "age_related_disease": 20,
+            "fundamental_aging": 16,
+            "ambiguous": 2,
+            "intervention": 1
+          },
+          "precision": 0.513,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2020-00039_Forte",
+              "llm_category": "ambiguous",
+              "title": "The effect of exclusion from social relations on cognitive decline trajectories, productive behaviours, and in"
+            },
+            {
+              "record_id": "swecris:P20-0515_RJ",
+              "llm_category": "fundamental_aging",
+              "title": "Can reduced dopamine availability and disrupted functional brain connectome serve as biomarkers for cognitive "
+            },
+            {
+              "record_id": "swecris:2025-02364_VR",
+              "llm_category": "intervention",
+              "title": "Unlocking Cognitive Health: How Metformin Slows Brain Aging Through Precision Medicine"
+            }
+          ]
+        },
+        {
+          "term": "neurodegenerat*",
+          "why": "just below threshold: neurodegeneration-mechanism studies land in fundamental_aging or ambiguous",
+          "hits": 81,
+          "by_category": {
+            "age_related_disease": 47,
+            "fundamental_aging": 19,
+            "ambiguous": 14,
+            "intervention": 1
+          },
+          "precision": 0.58,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2024-05740_VR",
+              "llm_category": "fundamental_aging",
+              "title": "CNS waste disposal - molecular mechanism for controlling AQP4 localisation"
+            },
+            {
+              "record_id": "swecris:2023-07091_VR",
+              "llm_category": "fundamental_aging",
+              "title": "Targeting mitochondrial dysfunction"
+            },
+            {
+              "record_id": "swecris:2016-02179_VR",
+              "llm_category": "ambiguous",
+              "title": "Discovering and modelling inborn errors of metabolism"
+            }
+          ]
+        },
+        {
+          "term": "app",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: gene symbol APP clears the corpus proxy via LLM quotes, but in live grant text 'app' is overwhelmingly application/software",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:1ZIAAG000682-01",
+              "llm_category": "fundamental_aging",
+              "title": "Molecular analysis of senescent OPC clearance by senolytics in AD"
+            }
+          ]
+        },
+        {
+          "term": "disease",
+          "why": "HALD entity that clears the corpus proxy but fails as a live search keyword: too generic: matches nearly every disease record and adds no discriminating power over the specific disease keywords",
+          "hits": 471,
+          "by_category": {
+            "age_related_disease": 300,
+            "fundamental_aging": 104,
+            "ambiguous": 54,
+            "intervention": 9,
+            "care": 4
+          },
+          "precision": 0.637,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2024-05740_VR",
+              "llm_category": "fundamental_aging",
+              "title": "CNS waste disposal - molecular mechanism for controlling AQP4 localisation"
+            },
+            {
+              "record_id": "swecris:2023-00185_Forte",
+              "llm_category": "care",
+              "title": "Promoting active ageing and participation using technology among older adults and people with Parkinson´s dise"
+            },
+            {
+              "record_id": "swecris:20220601_HLF",
+              "llm_category": "fundamental_aging",
+              "title": "The interplay between lipid handling, inflammation and autophagy: Implications for cardiovascular disease and "
+            }
+          ]
+        },
+        {
+          "term": "tert",
+          "why": "HALD gene symbol TERT clears the corpus proxy, but whole-word 'tert' collides with the tert- organic-chemistry prefix (tert-butyl electrolytes and catalysts) - the exact materials/battery domain the exclusion markers filter",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:5R03AG054723-02",
+              "llm_category": "fundamental_aging",
+              "title": "Transitional Growth-Associated Skeletal Stem Cells"
+            }
+          ]
+        },
+        {
+          "term": "myc",
+          "why": "HALD oncogene symbol clears the corpus proxy at 3 hits, but c-Myc/myc-tag saturates unrelated molecular-biology methods text in live data and floods the disease bucket",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:5R01AG053269-06",
+              "llm_category": "fundamental_aging",
+              "title": "Activation of Endogenous Transposable Elements by Myc During Aging"
+            }
+          ]
+        }
+      ],
+      "coverage": 0.77
+    },
+    "care": {
+      "en": [
+        {
+          "term": "elderly care",
+          "hits": 10,
+          "by_category": {
+            "care": 10
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "eldercare",
+          "hits": 8,
+          "by_category": {
+            "care": 8
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "long-term care",
+          "hits": 4,
+          "by_category": {
+            "care": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "nursing home*",
+          "hits": 5,
+          "by_category": {
+            "care": 5
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "home care",
+          "hits": 11,
+          "by_category": {
+            "care": 11
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "caregiv*",
+          "hits": 14,
+          "by_category": {
+            "care": 12,
+            "fundamental_aging": 1,
+            "age_related_disease": 1
+          },
+          "precision": 0.857
+        },
+        {
+          "term": "informal care*",
+          "hits": 4,
+          "by_category": {
+            "care": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "care services",
+          "hits": 11,
+          "by_category": {
+            "care": 11
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "social care",
+          "hits": 7,
+          "by_category": {
+            "care": 7
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "social services",
+          "hits": 7,
+          "by_category": {
+            "care": 7
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "care of older",
+          "hits": 4,
+          "by_category": {
+            "care": 3,
+            "ambiguous": 1
+          },
+          "precision": 0.75,
+          "low_evidence": true
+        },
+        {
+          "term": "older people",
+          "note": "0.67: also used in disease and ambiguous records",
+          "hits": 39,
+          "by_category": {
+            "care": 26,
+            "ambiguous": 9,
+            "age_related_disease": 3,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667
+        },
+        {
+          "term": "ageing in place",
+          "hits": 5,
+          "by_category": {
+            "care": 5
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "welfare technology",
+          "hits": 6,
+          "by_category": {
+            "care": 6
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "end of life",
+          "hits": 4,
+          "by_category": {
+            "care": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "end-of-life",
+          "variant_of": "end of life",
+          "hits": 3,
+          "by_category": {
+            "care": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        }
+      ],
+      "sv": [
+        {
+          "term": "äldreomsorg*",
+          "hits": 1,
+          "by_category": {
+            "care": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "vård och omsorg",
+          "hits": 1,
+          "by_category": {
+            "care": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "anhörig*",
+          "hits": 1,
+          "by_category": {
+            "care": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "vårdgivare",
+          "hits": 1,
+          "by_category": {
+            "care": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "nära vård",
+          "hits": 4,
+          "by_category": {
+            "care": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "kvarboende",
+          "hits": 1,
+          "by_category": {
+            "care": 1
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        }
+      ],
+      "trap_terms": [
+        {
+          "term": "older adults",
+          "why": "population descriptor spanning every category; largest share is age_related_disease, not care",
+          "hits": 84,
+          "by_category": {
+            "age_related_disease": 29,
+            "ambiguous": 21,
+            "care": 17,
+            "fundamental_aging": 10,
+            "intervention": 7
+          },
+          "precision": 0.202,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:P19-0567:1_RJ",
+              "llm_category": "ambiguous",
+              "title": "Sleep in everyday life – relationship to mood and performance in young and older adults"
+            },
+            {
+              "record_id": "swecris:2025-02056_KI",
+              "llm_category": "age_related_disease",
+              "title": "[Stiftelsen för ålderssjukdomar vid KI 2025] Biological signatures of dietary patterns and long term multimorb"
+            },
+            {
+              "record_id": "swecris:2023-00933_Forte",
+              "llm_category": "age_related_disease",
+              "title": "Who recovers from a fall injury and why? Defining Vulnerability- and Resilience Profiles among older adults"
+            }
+          ]
+        },
+        {
+          "term": "elderly",
+          "why": "bare population descriptor, spreads across categories",
+          "hits": 47,
+          "by_category": {
+            "care": 16,
+            "age_related_disease": 15,
+            "fundamental_aging": 8,
+            "ambiguous": 7,
+            "intervention": 1
+          },
+          "precision": 0.34,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2018-00164_Forte",
+              "llm_category": "ambiguous",
+              "title": "Ageing times. Understanding generational changes in elderly’s time use with implications for health and wellbe"
+            },
+            {
+              "record_id": "swecris:2015-02830_VR",
+              "llm_category": "age_related_disease",
+              "title": "Mental and cognitive health in relation to functional ability and somatic health in the elderly. The influence"
+            },
+            {
+              "record_id": "swecris:2015-00942_Forte",
+              "llm_category": "ambiguous",
+              "title": "Social exclusion or \"successful\" ageing? Living conditions and life strategies of elderly immigrants in Sweden"
+            }
+          ]
+        },
+        {
+          "term": "aging population",
+          "why": "demography/economics framing, mostly ambiguous or disease",
+          "hits": 23,
+          "by_category": {
+            "age_related_disease": 11,
+            "ambiguous": 7,
+            "care": 4,
+            "fundamental_aging": 1
+          },
+          "precision": 0.174,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:P2018-90016_Energi",
+              "llm_category": "ambiguous",
+              "title": "Potential for energy efficient travel in an aging population"
+            },
+            {
+              "record_id": "swecris:2017-02474_Vinnova",
+              "llm_category": "ambiguous",
+              "title": "Robotdalen 2.0"
+            },
+            {
+              "record_id": "swecris:2016-00818_Forte",
+              "llm_category": "ambiguous",
+              "title": "Postponing the onset of retirement age? - An evaluation of the factors which affect the ability to work in an "
+            }
+          ]
+        },
+        {
+          "term": "population aging",
+          "why": "demography, no care hits in corpus",
+          "hits": 3,
+          "by_category": {
+            "ambiguous": 2,
+            "age_related_disease": 1
+          },
+          "precision": 0.0,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2018-02077_VR",
+              "llm_category": "age_related_disease",
+              "title": "Why do some people become frail as they age while others do not? A life course approach to identifying genetic"
+            },
+            {
+              "record_id": "cordis:656787",
+              "llm_category": "ambiguous",
+              "title": "Ethics and Ageing"
+            },
+            {
+              "record_id": "reporter:5R01AG017644-24",
+              "llm_category": "ambiguous",
+              "title": "English Longitudinal Study of Ageing: Renewal 2020"
+            }
+          ]
+        },
+        {
+          "term": "geriatric*",
+          "why": "conference/specialty term, spreads across categories",
+          "hits": 7,
+          "by_category": {
+            "ambiguous": 2,
+            "age_related_disease": 2,
+            "care": 1,
+            "intervention": 1,
+            "fundamental_aging": 1
+          },
+          "precision": 0.143,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2017-02193_Forte",
+              "llm_category": "ambiguous",
+              "title": "IAGG-ER 2019 - European Region Congress of the International Association of Gerontology and Geriatrics"
+            },
+            {
+              "record_id": "reporter:1K01AG078125-01",
+              "llm_category": "intervention",
+              "title": "Exogenous ketones target geroscience pathways and ameliorate geriatric syndromes"
+            },
+            {
+              "record_id": "reporter:5K24AG075234-02",
+              "llm_category": "age_related_disease",
+              "title": "Midcareer Development Award in Neuroaging and Geriatric Pharmacoepidemiology Research"
+            }
+          ]
+        },
+        {
+          "term": "gerontolog*",
+          "why": "field/congress term, mostly ambiguous",
+          "hits": 8,
+          "by_category": {
+            "fundamental_aging": 4,
+            "ambiguous": 3,
+            "care": 1
+          },
+          "precision": 0.125,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2023-01179_Forte",
+              "llm_category": "ambiguous",
+              "title": "27th Nordic Congress of Gerontology in Stockholm 2024"
+            },
+            {
+              "record_id": "swecris:2017-02193_Forte",
+              "llm_category": "ambiguous",
+              "title": "IAGG-ER 2019 - European Region Congress of the International Association of Gerontology and Geriatrics"
+            },
+            {
+              "record_id": "cordis:637801",
+              "llm_category": "fundamental_aging",
+              "title": "ToWards Immunisations that Last: the Immunology and Gerontology of Helper T cells"
+            }
+          ]
+        },
+        {
+          "term": "healthy ageing",
+          "why": "policy phrase spanning every category",
+          "hits": 25,
+          "by_category": {
+            "fundamental_aging": 9,
+            "care": 6,
+            "age_related_disease": 4,
+            "ambiguous": 3,
+            "intervention": 3
+          },
+          "precision": 0.24,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2023-04099_VR",
+              "llm_category": "age_related_disease",
+              "title": "Osteoarthritis and the human knee - linking structural degradation to mechanical performance"
+            },
+            {
+              "record_id": "swecris:2022-01122_Forte",
+              "llm_category": "ambiguous",
+              "title": "POST COVID-19 CONDITON AS A THREAT TO HEALTHY AGEING:  A RANDOMIZED CONTROLLED TRIAL OF YOGA TO IMPROVE QUALIT"
+            },
+            {
+              "record_id": "swecris:20200668_HLF",
+              "llm_category": "fundamental_aging",
+              "title": "Combined Hyperlipidemia: a Lense into Systemic Inflammation's Role in Accelerated Aging"
+            }
+          ]
+        },
+        {
+          "term": "äldre",
+          "why": "bare Swedish 'elderly/older' spreads across categories, incl. journals and conferences",
+          "hits": 11,
+          "by_category": {
+            "ambiguous": 7,
+            "care": 3,
+            "age_related_disease": 1
+          },
+          "precision": 0.273,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:2024-02201_Forte",
+              "llm_category": "ambiguous",
+              "title": "Äldre i Centrum – scientific supplement, journal and website"
+            },
+            {
+              "record_id": "swecris:2023-00394_VR",
+              "llm_category": "ambiguous",
+              "title": "International journal of ageing and later life"
+            },
+            {
+              "record_id": "swecris:2024-02144_Forte",
+              "llm_category": "ambiguous",
+              "title": "Äldre i Centrum – journal and website on current aging research"
+            }
+          ]
+        },
+        {
+          "term": "hälsosamt åldrande",
+          "why": "Swedish 'healthy ageing', same policy-phrase problem as the English",
+          "hits": 2,
+          "by_category": {
+            "care": 1,
+            "age_related_disease": 1
+          },
+          "precision": 0.5,
+          "example_false_hits": [
+            {
+              "record_id": "swecris:20233161_FKS",
+              "llm_category": "age_related_disease",
+              "title": "Engagerande vardagsaktiviteter, livskvalitet och hälsosamt åldrande för hela befolkningen- Stroke prevention i"
+            }
+          ]
+        }
+      ],
+      "coverage": 0.624
+    }
+  }
+}

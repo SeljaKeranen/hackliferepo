@@ -20,6 +20,11 @@ stage" below for its status.
   [`outcomes-review.jsonl`](outcomes-review.jsonl) (one line per record:
   record_id, stage, verdict concur/dissent/uncertain, corrected_label,
   reason).
+- **Expert-stage audit (phase 2).** After the senior-expert re-tag landed,
+  154 of its labels were adjudicated the same way — sampled from the
+  disagreement-heavy rules→expert strata plus every record where phase 1 and
+  the expert conflict, plus an agreement control. Same rubric, same panel
+  setup, stage `expert` in the verdicts file.
 - **Aggregate audit.** Full recomputation of every published number from
   `ratio/output/labels.jsonl`: region ratios, category EUR totals, ambiguous
   shares, missing-EUR counts, and all 43 funder rows; plus concentration,
@@ -114,44 +119,82 @@ ratio-neutral.
 |---|---|---|---|
 | published (rules) | 20.7% | 17.7% | 39.2% |
 | direct-corrected (the 64 sampled fixes only — lower bound) | 21.3% | 19.8% | 40.8% |
-| extrapolated (stratum dissent rates applied corpus-wide — upper-bound scenario) | 22.6% | 36.1% | 55.3% |
+| extrapolated (stratum dissent rates applied corpus-wide) | 22.6% | 36.1% | 55.3% |
+| senior-expert full re-tag (verified below, best available estimate) | 32.6% | 40.6% | 49.9% |
 
-The extrapolation assumes the sampled ambiguous records represent each
-region's whole ambiguous EUR pool; since sampling force-included the largest
-(most classifiable) grants, it overstates the shift and is a bound, not an
-estimate. The truth lies between the rows.
+The extrapolation row (computed before the expert layer landed) assumes the
+sampled ambiguous records represent each region's whole ambiguous EUR pool;
+since sampling force-included the largest (most classifiable) grants it is a
+rough scenario, not an estimate — yet it independently predicted both
+directions the expert layer confirmed: every ratio rises, and the EU
+overtakes Sweden.
 
 ## Fitness-for-demo verdict on the SE/EU/US ratio numbers
 
-- **Robust and defensible:** the qualitative headline — the US devotes a far
-  larger share of its ageing-research money to slowing ageing than Sweden or
-  the EU — holds in every scenario tested (US stays highest by ≥13pp,
-  including leave-one-out, infra-excluded, and both correction scenarios).
-- **Not robust:** the SE-vs-EU ordering. Published SE 21% > EU 19% (a 3pp
-  gap) flips to EU > SE in the extrapolated scenario, because the EU has the
-  largest and most resolvable ambiguous pool (36% ambiguous share, 255.8M).
-  Do not present SE vs EU as a finding.
-- **Levels carry ±several-pp uncertainty**, dominated by the ambiguous band,
-  and are biased low in all regions. Quote them as "roughly one in five
-  EUR (SE/EU), roughly two in five (US)", with the ambiguous share shown
-  beside them — the page's honesty band is the right device and should stay
-  prominent.
-- **Recommended before Demo Day**, in impact order: (1) fix the
+- **Robust and defensible:** the US devotes the largest share of its
+  ageing-research money to slowing ageing. It is highest in every scenario
+  tested — leave-one-out, infra-excluded, both correction scenarios, and the
+  verified expert re-tag (49.9% vs EU 40.6% vs SE 32.6%).
+- **The published rules numbers (SE 21% / EU 19% / US 39%) are not fit to
+  present as point estimates.** Two independent expert passes agree they are
+  biased low in every region — mostly because the rules classifier parks
+  classifiable fundamental-ageing money in the excluded ambiguous band — and
+  that the published SE-vs-EU ordering is an artifact of exactly that bias:
+  the verified expert layer puts the EU clearly above Sweden (40.6% vs
+  32.6%), reversing the published 21%-vs-19%. Do not present the SE > EU
+  ordering.
+- **What to show on Demo Day:** the expert-layer ratios (this review
+  concurs with 88% of adjudicated expert labels, EUR-weighted 87.5%, with
+  residual dissent worth at most a point or two on the EU), with the rules
+  layer kept as the transparent, reproducible first stage and the remaining
+  ambiguous shares (12.5% / 4.4% / 2.9%) shown beside the bars. If only the
+  rules layer can ship, quote ranges ("SE roughly 21–33%, EU 18–41%,
+  US 39–50%") rather than points, and drop any SE-vs-EU comparison.
+- **Cheap fixes to the rules layer**, in impact order: (1) fix the
   KEYWORDS.md-worked-example regression (Bats → fundamental_aging) and
-  re-check the ambiguous tie-margin, (2) add the sampled `not_relevant`
-  corrections (mRNA platform, floating PV) as lexicon exclusions or
-  overrides, (3) re-run `ratio/build.py`. These three are cheap and shrink
-  the dominant distortion.
+  re-check the 0.3 tie-margin that overfills the ambiguous band, (2) add the
+  sampled `not_relevant` corrections (mRNA platform, floating PV) as lexicon
+  exclusions or overrides, (3) re-run `ratio/build.py`.
 
-## Expert stage
+## Expert stage: verdicts vs the senior-expert re-tag
 
-The parallel senior-expert re-tagging task
-(`ratio/expert/expert-labels.jsonl` on branch
-`fm/hackliferepo-senior-longevity-expert-re-ae`) had not published output
-when phase 1 completed; polling continues per the task brief. If its labels
-land, the concur/dissent pass against the expert stage (stage `expert` in
-`outcomes-review.jsonl`) is run with the same rubric and this section is
-replaced with its results; otherwise this README ships phase 1 alone.
+The parallel senior-expert re-tagging
+(`ratio/expert/expert-labels.jsonl`, branch
+`fm/hackliferepo-senior-longevity-expert-re-ae`) landed mid-review and covers
+all 2,944 records. Cross-checks first: its published agreement stats
+reproduce exactly from the data (rules-vs-expert 53.3%; the ambiguous bucket
+empties 770 → 63), and its full-corpus ratios recompute to **SE 32.6%,
+EU 40.6%, US 49.9%** (ambiguous shares 12.5% / 4.4% / 2.9%).
+
+154 expert labels were adjudicated with the same rubric and panel setup,
+drawn from the disagreement-heavy rules→expert strata (top-3 EUR per cell
+force-included), all 20 records where phase 1 and the expert disagree, and a
+10-record agreement control. Verdicts (stage `expert` in
+`outcomes-review.jsonl`): **135 concur (88%), 11 dissent (7%), 8 uncertain
+(5%)**; EUR-weighted concurrence 87.5% of 279M sampled. One panel dissent was
+overridden by the lead reviewer because it contradicted a KEYWORDS.md worked
+example (the Metformin record; documented in its verdict line).
+
+The three flows that move the ratio are essentially unanimous:
+ambiguous→fundamental_aging 22/23 concur, age_related_disease→not_relevant
+22/22, ambiguous→not_relevant 14/15. Phase 1's independent corrected labels
+agree with the expert on 90.2% of the 204 decided sampled records — two
+independent passes converging on the same corrections.
+
+Residual dissent against the expert layer concentrates in two spots:
+
+1. **The expert over-assigns `intervention` to mechanism studies** (2 concur
+   / 3 dissent / 1 uncertain in the fundamental_aging→intervention cell —
+   e.g. genomic analysis of the CALERIE trial is mechanism knowledge, not a
+   tested intervention). Both labels sit in the numerator, so the ratio is
+   unaffected; the expert's intervention count (95 records) is soft.
+2. **A slightly lenient step-0 for disease grants** (14.7M sampled kept in
+   the denominator that this review reads as `not_relevant` — a 10.0M HIV
+   microbiome-stratification grant and a 4.0M cardiovascular-biomarker grant
+   with no ageing framing; plus one 6.1M vaccines-for-older-adults grant the
+   expert put in the numerator as `intervention` that the rubric places in
+   `age_related_disease`). Net direction: the expert EU ratio is a
+   percentage point or two generous, all within the uncertainty band.
 
 ## Limitations
 

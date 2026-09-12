@@ -25,6 +25,7 @@ Every brief says the same thing about scope: a narrow, well-checked result beats
 ## Submission
 
 - Deadline Sunday 12:00. One team member asks the organisers for access to upload the repo to the [hackathon repository](https://github.com/OxbridgeFrontier/Stockholm-AI-x-Longevity-Hack-2026).
+- The upload link opens Sunday 11:00 (checked in the live playbook 11 September), so the effective submission window is one hour and the repo has to be push-ready before 11:00.
 - Demo Day components to prepare: problem and intended user; what was built and why; architecture and tools; data sources, licences, and evidence; working demo plus a recorded fallback; results and success metrics; limitations, risks, and safety; team and next steps.
 - The suggested workflow is define the problem and success metric, choose and document data, build the smallest testable prototype, validate honestly including failure modes, then prepare the demo.
 - Datasets outside the library are allowed if the team has the right to use them. Document source and licence. Restricted, paid, private, or identifiable data needs explicit permission and safeguards.
@@ -32,9 +33,12 @@ Every brief says the same thing about scope: a narrow, well-checked result beats
 
 ## Judging
 
+Weights re-checked against the live playbook on 11 September 2026: impact dropped from 30% to 20% and a new "path to real-world adoption" criterion at 10% was added.
+
 | Criterion | Weight |
 | --- | --- |
-| Impact and significance | 30% |
+| Impact and significance | 20% |
+| Path to real-world adoption | 10% |
 | Technical execution | 20% |
 | Novelty and insight | 20% |
 | Evidence and responsible use | 10% |

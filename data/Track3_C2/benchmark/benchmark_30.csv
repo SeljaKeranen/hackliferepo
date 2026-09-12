@@ -1,0 +1,307 @@
+﻿input_id,source,year,country,funder,amount,currency,title,abstract,human_category,human_confidence,human_notes
+B01,reporter,2024,US,National Human Genome Research Institute,743524,USD,Expansion genomics for high-resolution single-cell and spatial epigenomics,"Project Summary
+The diversity of cell states observed across development, aging, and disease is regulated by the epigenome, an
+intricate medley of chromatin states, chemical modifications, protein interactions, and three-dimensional
+structures in the nucleus. We and others have developed techniques such as ATAC-seq, CUT&Tag, and In situ
+Genome Sequencing (IGS) that use Tn5 transposase to selectively measure different components of the
+epigenome, increasingly at single-cell resolution. However, these techniques all suffer from poor yield due to an
+inherent challenge: the amount of physical space available for enzymatic reactions in the nucleus is limited. To
+address this challenge, we propose a new platform called Expansion Genomics, which will leverage physical
+expansion of biological samples to de-crowd the nucleus, vastly increasing the resolution of single-cell and
+spatial epigenomics methods. In Aim 1, we describe Single-cell Expansion Genomics, which will combine
+expansion with modern single-cell techniques to enable high-throughput, multi-modal measurements without the
+need for specialized microfluidic devices. In Aim 2, we describe Spatial Expansion Genomics, which will integrate
+expansion with multiplexed spatial imaging approaches to reveal the organization of the epigenome at
+nanoscale. These technologies will be designed with ease and accessibility as a guiding principle to facilitate
+widespread adoption and broaden our understanding of gene regulatory mechanisms.",,,
+B02,reporter,2021,US,National Institute on Aging,269412,USD,Effect of Long-term Photobiological Modulation Therapy on Aging,"The broad objective of this program is to test the beneficial effects of PBM on (1) mouse health span and life span; (2) mouse cardiac frailty; (3) mouse chronic inflammation; and (4) senescence of human vascular smooth muscle cells, fibroblasts and skeletal muscle.
+
+1. Effects of long-term PBM on aging:
+In order to test the long-term effects of PBM in animal models, we housed a cohort of C57 mice (n=120), male & female, 18 months of age, in a similar environment with free access to food and water. Half of the subjects received light exposures at a dosage of 3J/day for 5days/week until their natural deaths. We used repeated echocardiography and treadmill test to observed cardiac and vascular physiological parameters, gait non-invasively once for every 2 months. Blood samples were collected for epigenetic clock measurements. Study is currently on-going.
+
+2. Effects of long-term PBM on cardiac frailty:
+The effects of PBM on heart rate, heart rate variability, cytoarchitecture of SAN and calcium signals within SAN in advanced age in the context of cardiac frailty currently are being analyzed in mouse models.
+
+3. Effects of long-term PBM on accelerated aging:
+Recently we reported that over-expression of AC8 in mouse heart, which significantly increased the heart rate compared to wild-type siblings, may lead to an accelerated aging phenotype. Currently, we are investigating whether PBM can alter the trajectories of cardiovascular parameters during the lifespan of AC8 transgenic mi",,,
+B03,reporter,2017,US,National Institute on Aging,874364,USD,"The Development of a Low-Cost, Quantitative Skin Imaging Camera","Abstract
+Management of chronic wounds are a burden in today’s aging population. Expert wound care is
+needed to monitor and track skin health. Advances in digital photography have made it an
+efficient and economic option for surveillance and treatment. However, even with the best of
+circumstances, photographs typically provide qualitative color information that the clinician will
+interpret to assess physiological tissue health. Recent advancements in optical imaging
+methods and devices offer the ability to perform quantitative characterization of tissue structure
+and biochemical status. Modulated Imaging (MI), also known as Spatial Frequency Domain
+Imaging (SFDI) employs multispectral, patterned illumination to non-invasively obtain
+subsurface images of biological tissue. The broad goal of this research proposal is to build and
+validate a handheld system that brings MI technology to point-of-care (PoC) applications. This
+“PoC-MI” device will dramatically simplify system complexity and size, while utilizing primarily
+off-the-shelf consumer-grade components. Based on research accomplishments in Phase I, we
+have identified hardware and algorithms that will enable us to build a PoC-MI device at lower
+cost (~10x BOM reduction), lighter weight (~10x lighter), and with faster acquisition (0.1 ms,
+~100-1000x faster) compared to previous revisions of the technology. In this Phase II proposal,
+we propose to design and fabricate a low-cost, hand-held tablet form factor, quantitative skin",,,
+B04,swecris,2019,SE,Forte,2730000.0,SEK,"Sitting and cardiorespiratory fitness in the Swedish working population – secular trends and association with health, cardiovascular disease and longevity over 30 years.","Today, 80% of the working day and 60% of leisure time may be spent sedentary. However, we know little about how occupational sitting has changed during the last decades and the association with perceived and metabolic health, cardiovascular disease (CVD) and all-cause mortality in men and women, in different age-groups, education level and occupations in Sweden. Whether a medium/high cardiorespiratory fitness may counteract negative health effects of prolonged sitting is currently unexplored. Moreover, gender- and age-specific fitness cut-offs for the prediction of disease and longevity are lacking. Previous research is predominantly based on men, and on groups with medium/high socio-economic status.A unique database is now available with more than 600,000 Health Profile Assessments (HPAs) conducted in the working population since 1987 (18-70 years, 46% women). A HPA provides information on living habits, perceived and metabolic health and fitness. The database has been linked to the National Patient and Cause of Death register.The project aims to study the change and importance of sitting at work as well as fitness for perceived and metabolic health, CVD and longevity over a 30-year period in the Swedish working population, and how this varies between gender, age, education levels and occupation. We also aim to identify gender- and age-specific cut-offs ​​for fitness.This project can generate knowledge for future health strategy decisions by employers and politicians through",,,
+B05,reporter,2018,US,National Institute on Aging,594348,USD,Mindfulness based stress reduction for family caregivers of dementia patients,"﻿   
+DESCRIPTION (provided by applicant): Influenza infection results in 41,000 deaths every year in the US and is the seventh leading cause of death. Strikingly, older adults, and especially those at risk for chronic medical disorders, account for approximately 90% of these deaths. Studies comparing influenza vaccine responses of older adults with those of young adults show that immune responses are significantly decreased in older adults. It is estimated that influenza vaccine efficacy is approximately 30-50% in older adults, compared to 70-90% in young-middle aged adults. Compounding this age-related decline in response to vaccination are findings that depression and chronic stress further impair older adults' immune responses to influenza vaccination. Caregiving for a family member with dementia is a robust stressor, and is associated with poor responses to influenza vaccination in older adults, as well as increased levels of proinflammatory biomarkers, which mediate many of the chronic diseases of aging. In this proposal, we consider the immunological consequences of the significant psychological distress experienced by older adult caregivers of family members with dementia. A wide variety of psychosocial interventions can lessen the psychological burden of family or spousal dementia caregiving; Mindfulness Based Stress Reduction (MBSR) in particular has psychological benefit for caregivers, yet its biological effects for these burdened caregivers remain unknown. Here we",,,
+B06,swecris,2020,SE,Formas,2849904.0,SEK,Fundamental research about sorption behaviours of coated wood for durable applications in outdoor use,"Wood contributes to sustainable development of the society but has challenges outdoors such as high moisture levels with risk for degradation. A coating can protect the wood. Research on coated wood have often focused on either the performance of the coating or on the performance of the wood. However, the moisture sorption of coated wood depends, not only on the initial limitations by the coating, but also in combination with the sorption properties of the wood.The aim of this project is therefore to increase the fundamental knowledge about the dynamic water sorption in coated wood with an equal focus on the wood and the coating. Focus on properties (permeability, wettability and for coatings also flexibility) rather than specific wood and coating types will give general water sorption data that can be used for other wood species and coatings. The information is needed to make a significant leap in the strategic development of new types of coated wood where wood and coatings can be individually adapted for optimal sorption performance.Variations in wood permeability will be achieved by density selection of Norway spruce and silver birch, and variation in wood wettability will be achieved by modification of extractive contents. Variation in coating permeability, flexibility and wettability will be made by carefully selected resins and formulas. Ageing occurs for outdoor coated wood. However, ageing as a parameter is excluded in order to limit the scope of this project.",,,
+B07,reporter,2016,US,National Institute on Aging,50000,USD,Biological Sciences Program at the Gerontological Society of America's Annual Scientific Meeting,"PROJECT SUMMARY
+This proposal requests funding from the National Institute on Aging for the 2016 and 2017
+Annual Meetings organized by the Biological Sciences (BS) Section of GSA. Our aim for BS
+meeting programming is to highlight the highest-quality research with translational potential in
+the biology of aging. We believe that the best work in the field of gerontology at large will
+emerge when basic biological researchers exchange information about health-related human
+aging issues with medical researchers and practitioners, psychologists and sociologists.
+Improvements in clinical care and public health, in turn, when gerontologists from diverse
+disciplines better understand basic aging mechanisms of aging and the best research with
+the promise of yielding interventions to ameliorate aging and age-related disease. We in BS
+section take very seriously our responsibility to expose our members, those of BS and GSA
+at large, to well-communicated, cutting-edge science that ultimately serves to inform and
+improve the work of all who attend. The annual GSA meeting is situated uniquely in the U.S.
+to promote an interdisciplinary effort of this scope, and the joint meeting of GSA and the
+International Association of Gerontology and Geriatrics in July 2017 will provide a pivotal
+opportunity to expand our reach internationally. Since 2010, BS Section has demonstrated
+quantifiable success in producing a scientific program of the highest possible quality, and
+providing a forum to engende",,,
+B08,reporter,2018,US,National Cancer Institute,300000,USD,DNA Quadruplex Control of hTERT Transcription: A New Therapy for Taxotere Resistant Prostate Cancer,"PROJECT SUMMARY
+ Telomerase maintains telomere length and prevents cellular senescence. It is upregulated in 90% of
+cancers, suppressed in most non-cancer tissues, and is a primary driver of tumor cell immortality. No clinical
+agent acting on telomerase has been approved for human use. A hurdle for approaches that directly inhibit the
+action of telomerase is that therapeutic effect is observed only after many population doublings—a process
+that can take months, even for rapidly dividing cells.
+ G-quadruplexes (G4s) and i-motifs (iMs) serve as master switches to control gene expression. Human
+telomerase reverse transcriptase (hTERT, the catalytic portion of the telomerase holoenzyme) transcription
+can be attenuated through the enhanced folding of the tandem G4s in the promoter region. A screen of the NCI
+diversity set resulted in identification of a family of drug-like small molecules that enhance the kinetic folding
+rate of the G4 silencer element. In vitro studies support this singular mechanism of action, resulting in reduced
+telomerase production and telomere shortening. Significantly, tumor cells treated with the identified molecules
+enter apoptosis in days, suggesting a unique downstream effect.
+ The rapid onset of hTERT down-regulators stands in contrast to the delayed action of classic telomerase
+inhibition. The explanation is that hTERT down-regulation kills cancer cells primarily through mitochondrial
+effects, not downstream telomerase deactivation. In the absence of",,,
+B09,cordis,2022,DE,European Commission,1818637,EUR,Senolytic CAR T cells as novel therapeutic concept for solid tumors and senescence-associated diseases.,"The adoptive transfer of T cells expressing CD19-directed chimeric antigen receptors (CARs) has yielded remarkable efficacy in patients with hematological B-cell malignancies. CARs are a class of synthetic receptors that reprogram T cell specificity, function and metabolism. Engineered T cells are applicable in principle to other cancers and diseases, but clinical success will critically depend on further progress to overcome current limitations such as antigenic heterogeneity or impaired T cell trafficking and function. We propose to develop CAR T cells targeting senescent cells as a novel therapeutic concept for cancer and senescence-associated diseases. Cellular senescence is a stress-response program characterized by stable cell cycle arrest that serves as a potent tumor-suppressive mechanism. Conversely, accumulation of senescent cells generates a chronic inflammatory milieu, which contributes to a plethora of pathologies, such as liver or lung fibrosis and can even promote tumor progression. 
+Our preliminary data demonstrate that CAR T cells can efficiently clear senescent cells, providing therapeutic benefit in a murine model of liver fibrosis. We thus firmly believe that senolytic CAR T cells have broad therapeutic potential. To this end, we will apply innovative engineering strategies to develop modular CAR designs tailored to senescence-specific requirements. We will determine safety and efficacy of senolytic CAR T cells in murine models of cellular senescence and s",,,
+B10,reporter,2025,US,National Institute of Allergy and Infectious Diseases,155083,USD,Gas Marble Therapeutics for the Mitigation of Cutaneous Injury Post-Radiation Exposure,"PROJECT SUMMARY
+In the event of a radiological emergency, human skin tissues will suffer significant damage by ionization resulting
+in disrupted cellular repair processes and delayed wound healing. There has been a growing interest in utilizing
+gaseous molecules (H2, CO, NO, Xe) to treat cutaneous radiation injury as they exhibit promising abilities to
+regulate oxidative stress, reduce inflammation, provide cellular protection, and limit cellular senescence markers.
+However, delivery in the medical gas therapy domain has predominantly centered around inhalation-based
+methods requiring gas cylinders, which are impractical for radiological emergency scenarios. As a result, many
+gasotransmitters, noble gases, or traditional gases have not yet been tested for their ability to mitigate radiation-
+induced injuries. Recently, gas marble technology has emerged as a stable formulation by which to capture and
+contain gaseous species. The technology is made possible by the addition of partially wetted micro/nanoparticles
+to the air-liquid interface of liquid-entrapped gas. As this fortification strengthens resistance to mechanical stress
+and provides remarkable stability it is called a gas marble. These robust preparations could serve as an effective
+means of controlled delivery, encapsulating therapeutic gases to function as medical countermeasures against
+radiation exposure. The proposed study is for the investigation of medical gases (Xenon) as MCMs to mitigate
+and/or treat injury to",,,
+B11,cordis,2021,EL,European Commission,150000,EUR,An exosome-based therapeutic approach against chronic inflammation,"DNA damage triggers the activation of innate immune signaling leading to chronic inflammation and the premature onset of e.g. rheumatoid arthritis, diabetes, metabolic diseases and neurodegenerative disorders in man. Based on our ERC consolidator program DeFiNER, we recently discovered that persistent DNA damage triggers the innate immune system stimulating broad inflammatory and antiviral immune countermeasures that lead to chronic inflammation and the premature onset of severe metabolic complications and neurodegeneration in mice. Here, we propose a sophisticated a therapeutic anti-inflammatory strategy aimed at lowering chronic inflammation in preclinical animal models with pronounced metabolic diseases or neurodegeneration. Unlike available anti-inflammatory therapies, the proposed therapeutic approach is non-immunogenic, allows the therapeutic cargo to circulate for extended periods within the body and to cross the blood brain barrier with no biocompatibility complications and minimal to no inherent toxicity issues in mice. This novel strategy provides, therefore, the means towards an innovative medicine that will effectively address real but unmet therapeutic needs for a wide range of devastating diseases associated with chronic inflammation.",,,
+B12,swecris,2022,SE,Swedish Research Council,21408000.0,SEK,"Good quality, local health care – a graduate school for health care educators","The demographic development is challenging with less people available to provide care for people who live longer and with chronic, and often avoidable, diseases. Good quality, local health care (Nära vård) is a reform shifting focus from reactive to proactive health care, involving patients, municipalities and regions and built on a multi-professional collaboration. This implies that higher education institutions must prepare their students to work in this new paradigm. Forskarskolan Nära vård will provide higher education institutions with teachers/researchers with scientific competence related to Nära vård.Forskarskolan Nära vård is a collaboration between Örebro, Dalarna, Jönköping and Linköping Universities together with partner organizations, who all have expertise in areas relevant to Nära vård. Twelve doctoral students will be recruited to the general syllabus of the respective university with additional courses and seminars in the syllabus for Forskarskolan Nära vård. Potential supervisors will apply with research programs relevant to Nära vård and the best will be selected and available for the students. The national and international networks of the steering and reference groups and supervisors will provide the students with a high-quality doctoral education with international standard.By educating teachers/researchers with expertise relevant to Nära vård, future health care students will be better prepared to work with in the health care system.",,,
+B13,reporter,2024,US,National Cancer Institute,249000,USD,Aging-Related Biomarkers of Neurocognitive Function in Long-term Hodgkin Lymphoma Survivors,"Abstract
+Emerging evidence suggests that childhood cancer survivors treated without central nervous system (CNS)
+directed therapies are at significant risk for neurocognitive impairment that is associated with decreased social
+attainment and quality of life. However, the underlying biological mechanisms of neurocognitive impairment in
+this population are poorly understood limiting our ability to prevent or alleviate these adverse outcomes. Long-
+term survivors of childhood cancer have a higher frequency of frailty and chronic health conditions than sibling
+controls suggesting cancer therapy may accelerate the physiological and biological aging process, which may
+lead to neurocognitive impairment. Studies in the general population indicate systemic inflammation and
+oxidative stress increase with age and are associated with increased morbidity, mortality, and cognitive decline.
+Inflammation and oxidative stress are also important regulators of telomere length and epigenetic changes which
+have been associated with neurocognitive impairment in aging non-cancer populations. These biomarkers have
+yet to be extensively examined in childhood cancer survivors treated without CNS directed therapies. The
+objective of this K99R00 is to identify aging-related biological predictors of neurocognitive impairment and
+subsequent decline in order to inform the design of future interventions using existing data and biospecimens
+from 300 HL survivors and 200 community controls in the St. Jude Lif",,,
+B14,reporter,2022,US,NIH Office of the Director,364554,USD,Modernization of Salk's ABSL2 Facilities Through the Incorporation of Ventilated Caging,"PROJECT SUMMARY
+This is a proposal to modernize mouse Animal Biosafety Level 2 (ABSL2) facilities at the Salk Institute for
+Biological Studies by replacing antiquated static cages with racks of individually ventilated cages (IVCs).
+Together with proposed renovations to the ABSL2 animal holding room, this will double cage capacity and
+enable operational efficiencies that reduce animal stress and improve the rigor and reproducibility of
+experimental outcomes. Within Salk’s Conventional Research Animal Facility (CRAF) is an ABSL2 suite, which
+includes a 220-ft2 animal holding room. This holding room is currently comprised of three small cubicles
+adjoined to a common space. Each cubicle holds one double-sided shelving unit capable of accommodating up
+to 112 static mouse cages, for a maximum of 336 cages in the holding room. Given the large number of labs
+who utilize this space (33 of 54 Salk faculty), this facility is often at >80% capacity and labs have had to delay
+studies until space becomes available. The proposed project removes the cubicles and installs high-density
+Allentown NexGen MAX racks. The increased useable floorspace will accommodate 3 double-sided racks (192
+cages each) and 1 single-sided rack (96 cages), doubling the capacity to 672 cages. The proposed
+modernization will also improve living conditions and reduce stress experienced by the mice, thereby helping to
+promote rigor and reproducibility of Salk research. Non-ventilated cages are associated with poor air ",,,
+B15,reporter,2024,US,National Institute on Aging,695521,USD,Massachusetts Center for Alzheimer and dEmeNtia behaVIoral reSearch In minOrity agiNg (Mass-ENVISION),"Massachusetts Center for Alzheimer and dEmeNtia behaVIoral reSearch In minOrity agiNg (Mass-ENVISION) is a
+proposed new Alzheimer's-related Resource Centers for Minority Aging Research (AD/ADRD RCMAR) that will address
+the critical need for mentored research training for underrepresented in medicine (UiM) scientists in the development,
+testing, and implementation of behavioral interventions across hospital and community settings, for racial and ethnic
+minority older adults with Alzheimer’s Disease and Related Disorders (ADRD) and their informal care partners. There is a
+dearth of evidence-based behavioral interventions to support minority older persons with ADRD, their informal care
+partners, and dyads, as well as a critical gap in the number of UiM scientists poised to mitigate this shortage. To address
+these research and resource gaps, Mass-ENVISION will identify UiM scientists who are committed to ADRD behavioral
+health and interventions research and will support training and development of independent UiM scientists poised to
+eliminate health disparities and inequities in ADRD behavioral health. Further, Mass-ENVISION would become the only
+RCMAR to serve the entire New England region, which is in critical need of this resource. Mass-ENVISION, a collaboration
+of Massachusetts General Hospital (MGH), Boston University (BU) and Cambridge Health Alliance and their medical
+school affiliations (Harvard Medical School, BU School of Medicine), university-affiliated hospitals, oth",,,
+B16,cordis,2019,IT,European Commission,5040000,EUR,Digital solutions supporting continuum of care for frailty prevention in old adults,"Longevity is one of the biggest achievements of modern societies. By 2020, a quarter of Europeans will be over 60 years of age. Combined with low birth rates, this will bring about significant changes to the structure of European society, which will impact on our economy, social security and health care systems.
+
+The most problematic expression of population ageing is the clinical condition of frailty. Frailty develops because of age-related decline in multiple physiological systems. It is estimated that a quarter to a half of people over 85 years are frail , and this is set to reach epidemic proportions over the next few decades. While frailty increases, the average amount of health spending increases as well with the frailty level  in a range from 1,500 to 5,000 €/person year, depending upon the frailty status and the setting of care. Frailty usually comes along associated with another risk facto; loneliness. 
+
+Then, ageing, frailty and loneliness constitute overlapping conditions submitted to multiple health and care interventions. 
+
+eCARE project aims to deliver disruptive digital solutions for the prevention and comprehensive management of frailty to encourage independent living, wellbeing and to relieve health and care services budget pressure, throughout the implementation of a Pre-Commercial Procurement scheme. 
+
+Solutions should improve outcomes for frailty in old adults entailing the physical and the psychosocial factors. The target group are the pre-frail/frail old",,,
+B17,reporter,2025,US,National Institute on Aging,636768,USD,Family caregivers in later life: A longitudinal study of well-being and mental health in families of adults with autism and developmental disabilities,"Project Summary/Abstract
+This project aims to improve our ability to support the resilience of family caregivers of adults with autism and
+developmental disorders as the caregivers move into later life. Based on a 30 year longitudinal study that
+prospectively followed families from when their children were referred for possible autism or developmental
+delays, we will use a social convoy model to investigate trajectories of social connectedness and isolation over
+the next five years as they affect caregivers’ mental health and well-being. This model describes changes in
+social connectedness over time that may increase vulnerability or reduce the effects of caregiver burden. We
+examine additional interacting factors specifically related to family caregiver well-being and mental health in
+families with adult children with developmental disabilities. We will use questionnaires, app-based diaries, face
+to face interviews and exploratory measures of biological and cognitive aging over the course of 5 years during
+which our sample is in their 60’s, linked to rich behavioral data from the past 20-30 years. Our objective is to
+identify life milestones, such as retirement and the adult child’s moving out, as well as caregiver coping
+strategies that allow us to support well-being and mental health in family caregivers as they age.",,,
+B18,reporter,2024,US,National Institute on Aging,50000,USD,"Black Men's Brain Health and Aging, Alzheimer's Disease and Related Dementias: Life Course Perspectives","Project Summary/Abstract: The United States has invested significant resources through innovative research to address
+the profound effects of Alzheimer’s Disease, and Alzheimer’s Disease and Related Dementias (AD/ADRD) on families and
+society, but Black men historically have not experienced the full benefits of scientific advances from that research. For
+example, non-Hispanic Black men have diminished health and increased morbidity due to preventable diseases (e.g.,
+cardiac, diabetes, high blood pressure) and shorter life expectancies than their White male counterparts Additionally, elderly
+Black men are more likely to fall and sustain a TBI than whites, which increases the subsequent vulnerability of brain health
+and risk of dementia. Similarly, Black American men might be at increased risk for later-life neurological disorders
+associated with exposure to brain injury from contact sports participation, military service, and other sources. Although the
+prevalence of AD/ADRD in Black Americans is two to three times higher than in non-Latinx White Americans, a complete
+understanding of the causes of this profound health inequality remains elusive. The lack of a highly trained, multidisciplinary
+scientific workforce that addresses the full range of biological, biomedical, behavioral, and health sciences approaches to
+AD/ADRD health inequities research hinders innovation among this population. This problem is compounded by the
+persistent under-representation of Black American mal",,,
+B19,reporter,2017,US,National Institute on Aging,97000,USD,Screening potassium and phosphate binder drugs for lifespan and healthspan effects in invertebrates,"SUMMARY
+One of the main goals of aging research is to discover interventions that can prolong lifespan and healthspan,
+the healthy years of life. In the current proposal we focus on a novel treatment toward this end: the restriction
+of phosphate and potassium in the diet. Against a backdrop of landmark studies of lifespan extension under
+restriction of carbon and sulfur, the role of dietary phosphate and potassium has been almost completely
+passed over by the aging research community. In preliminary experiments using yeast as a model system, we
+have seen that phosphate and potassium restriction extends lifespan up to 24% relative to standard conditions.
+This effect is a particularly compelling target for aging research focused on human health, since any clinical
+applications could make use of currently available drug mimetics of phosphate and potassium starvation. To
+enable any such translational undertaking, however, we must know enough about the longevity evoked by
+these regimens to design effective treatments. We propose to use invertebrate model systems for a series of
+rapid, relatively cheap, and conclusive experiments to establish which phosphate and potassium binder drugs
+extend lifespan and how. In Aim 1 we screen these drugs in yeast using a rigorous microfluidic system for
+lifespan assays, and we investigate the mechanisms by which genetic and environmental micronutrient
+starvations exert their effects. In Aim 2 we screen the most compelling drugs for effects on lif",,,
+B20,cordis,2016,US,European Commission,1458000,EUR,Muscle Stress Relief: An integrated research program linking together basic research on secondary myopathies in stress states to innovative translation in applied myology.,"A diverse variety of medical or lifestyle conditions lead to a progressive loss of muscle force by functionally impairing myofibril contractility and causing ultimately myofibril loss. Major underlying risk factors of chronic muscle force loss are ageing, inactive lifestyles, and unbalanced nutrition. Together, these factors are predicted to lead to an endemic incidence of muscle weakness both in the developed countries. Clinical research on the mechanisms involved requires a multidisciplinary approach covering aspects of ageing, metabolism, and on the humoral cross-talk of muscle with other key organs including heart, liver, kidney, and lung.  To achieve this, six European groups with complementary expertise in inter-organ-cross-talk during stress-induced secondary myopathies will team-up with three leading teams in the U.S. with expertise in myopathy animal models, myofilament proteins and translation of muscle research into therapeutic interventions, and with one team from South Africa with cutting-edge expertise in the regulation of regenerative capacities in muscle. 
+Importantly, five SMEs will participate in this RISE network that provide expertise in early muscle disease detection, monitoring, and the developing preventive strategies: Their knowledge on muscle disease detection at early stages and their monitoring during interventions will promote translational innovation. To implement innovation and our joint research program, both early stage and advanced researchers",,,
+B21,cordis,2017,BE,European Commission,172800,EUR,Addressing Neural Declines to Promote Healthy Ageing,"This multidisciplinary proposal combines behavioural science, neuroscience, and ageing research with the goal of providing an innovative, state-of-the-art approach to address age related declines in human performance.
+
+The ageing population presents unprecedented challenges for society, and developing novel approaches to understand and address age related declines is an key field for research. Response selection provides a novel and ideal model to examine the effects of ageing on behaviour. The rapid selection of appropriate responses is an essential part of our everyday lives; for example, if we see a red light while driving, it is critical that we can quickly select the correct response of braking. Such behaviour depends not only on our ability to learn to match an essentially arbitrary cue (the red light) with the required response (pushing the brake pedal), but also to automate this response through practice. Response selection thus lies at the intersection between cognitive function and movement control, both of which decline in healthy ageing; older individuals require more time to select correct movement responses even in relatively simple tasks. 
+
+This fellowship will 1) broaden the scientific understanding of response selection using a novel behavioural task, 2) improve this important function in an impaired population using non-invasive brain stimulation techniques, 3) capture the underlying neural mechanisms of both deficit and improvement using a multidisciplinary",,,
+B22,reporter,2023,US,Veterans Affairs,,USD,ShEEP Request for a Multimodal Plate Reader,"The requested instrument is a Molecular Dynamics Spectramax id5 multi-mode Microplate reader
+with dual injectors. It is used to perform assays based on spectrophotometry, fluorimetry, time-
+resolved fluorescence and luminescence. This type of instrument is widely used in biomedical
+research for measuring amounts of certain chemicals such as ATP and of biological substances such
+as hormones, antibodies and growth factors. It can also be used to test for specific types of protein-
+protein interactions. It will replace existing though aging equipment that is reaching the end of its
+service life. It will also be adding capabilities our current instrumentation lacks, such as dual injectors
+for use in flash assays such as measurement of ATP levels, and the capacity to make measurements
+using 384-well plates. Its availability will enhance ongoing VA-funded projects focused on reducing
+bone loss due to spinal cord injury, advancing understanding of the diagnosis and treatment of
+dementia, greater understanding of Gulf War syndrome and other disorders related to miliary service,
+traumatic brain injury, renal disease and blood pressure control. By doing so, the equipment will
+accelerate the pace of VA research aimed at improving health and quality of life of Veterans.",,,
+B23,reporter,2018,US,National Institute on Aging,142848,USD,Aging Health and Health Services Research Training,"PROJECT SUMMARY/ABSTRACT
+The proposed training program in “Aging Health and Health Services Research” seeks to train future
+investigators in the integration of Epidemiological and Biostatistics methods into Health Services Research with
+applications in aging. Over the last decade major advances in the knowledge base of gerontology have been
+occurring thanks to an explosion of genetic, clinical, epidemiological and health services data that have
+become available to investigators, making it possible to address research questions designed to increase our
+understanding of how people age, adjust to aging and the role that social factors and the availability of health
+services play in that process. The National Institute on Aging (NIA) has been at the forefront of making these
+kinds of data available to investigators, whenever possible, linking multiple types of data together. Researchers
+of the future must know how to maximize the use of these data sources. Thus, in the future there will be a
+premium placed on young investigators cognizant of methodological advances ranging from new strategies for
+collecting, merging and managing data sets; new and refined statistics and analytic strategies; and major new
+tools for integrating social, health and biological data.
+The proposed renewal of our training program addresses the major goals of the NIA Strategic Plan for
+research, by educating well trained researchers, with multi-disciplinary experience and a broad understanding
+of the biol",,,
+B24,reporter,2022,US,National Institute on Aging,4998007,USD,Identifying protective omics profiles in centenarians and translating these into preventive and therapeutic strategies,"PROJECT ABSTRACT. Centenarians (ages >100 yrs) and even more-so, semi-supercentenarians (ages 105-109
+yrs) and supercentenarians (110+ yrs) are outliers not only for their exceptionally long lifespans, but also for their
+longer female fertility and resistance to aging-related disability and morbidities such as Alzheimer’s disease,
+heart disease, stroke, diabetes and cancer. Their offspring also exhibit delayed morbidity and lower mortality
+compared to their birth cohort. Among non-human species, rodents including the naked mole rat have also
+gained attention for their variation in lifespan compared to other mammals with similar body mass. Proteomic
+signatures associated with extreme longevity (EL) in centenarians and integrated transcriptomic and proteomic
+data in NMRs suggest that integrated analyses of multiple omics data generated from these human and animal
+models of slow aging and resistance to aging related diseases can inform us about biological mechanisms that
+underlie these survival and health advantages and, ultimately, about potential therapeutics to prevent diseases
+such as Alzheimer’s. Two specific aims parallel the UH2 and UH3 phases of this proposal. Aim 1: In the UH2
+phase, the New England Centenarian Study and the Einstein Centenarian and Offspring studies will establish a
+standardized phenotypic data and biological sample collection protocol for in-person visits of 700 subjects from
+each study (n=1400). Detailed cognitive function testing will determine pres",,,
+B25,reporter,2025,US,National Institute on Aging,425958,USD,Serum markers of glucagon sensitivity in calorie restricted humans,"Calorie restriction (CR), without malnutrition, is the most robust non-genetic intervention to promote longevity
+through metabolic improvements that delay aging in mice, rats, and primates. Most research aimed at
+understanding the mechanism by which CR slows aging has focused on insulin and its downstream signaling
+cascades. We have shown that glucagon, the counter-regulatory hormone to insulin, is essential for CR induced
+improvements in lifespan, improved metabolic function, and the activation of healthspan and lifespan associated
+nutrient sensing proteins. This suggests that glucagon is essential for CR to extend both healthspan and lifespan.
+ Although the role of glucagon receptor signaling in aging has not been heavily investigated, the rigor of this
+work is supported by known effects of glucagon on downstream messengers that extend healthspan. Glucagon
+increases liver AMP Kinase (AMPK) activity, cyclic AMP (cAMP), and fibroblast growth factor 21 (FGF21), which
+promote healthy aging. Glucagon limits the protein kinase mechanistic target of rapamycin (mTOR) and IGF-1
+bioavailability, which accelerate aging.
+ Highlighting the significance of this proposal, Glucagon receptor agonists are entering the market for the
+treatment of diabetes and obesity and could be repurposed to promote healthy aging. To understand the potential
+impact of these agonists, we propose 2 aims using samples collected from CALERIE™ trial participants, to
+establish a key role of glucagon in CR improve",,,
+B26,reporter,2025,US,National Institute on Alcohol Abuse and Alcoholism,634830,USD,Geroprotective Precision Medicine Strategies in PWH that Use Alcohol,"ABSTRACT
+People with HIV (PWH) suffer high rates of geriatric comorbidities and frailty syndromes due, in part, to
+unhealthy behaviors including harmful alcohol use. There is a paucity of evidence guiding treatment of geriatric
+comorbidity in PWH that use alcohol. This Project addresses the critical need to validate efficacious therapies
+for precocious aging in PWH with a significant history of alcohol use. Our group has identified microbiota
+characteristics linked to clinical frailty and senescent CD8+ T cells across distinctly different populations with
+different health behaviors. However, the specific relationships between the microbiota vary between studies,
+suggesting that personalized interventions are essential to prevent the development of clinical frailty. Precision
+medicine strategies incorporating host factors, the microbiota, and the exposome hold therapeutic promise. We
+have identified changes in the microbiota associated with alcohol use in humans that mediate the prevalence
+of senescent T cells in the circulation. In preclinical models, we have identified several alcohol-induced
+microbiota characteristics that mediate T cell function. Probiotics and antioxidant foods mitigate alcohol effects
+effectively in animal models but results in humans are inconsistent, likely due to inter-individual heterogeneity.
+Thus, there is a compelling rationale and necessity to develop personalized probiotic selection strategies as
+geroprotective interventions.
+The overall objecti",,,
+B27,reporter,2024,US,National Institute on Aging,2288528,USD,Mild Cognitive Impairment and Alzheimer's Disease and Related Dementias: Cross-national longitudinal prognosis and risk factors,"Project Summary/Abstract
+Tremendous growth in the prevalence of Alzheimer’s disease and related dementias (ADRD) is expected, with
+estimates indicating that by 2050 two-thirds of adults with ADRD will reside in low- and middle-income countries
+(LMICs). There is an urgent need to identify individuals at highest risk for ADRD at its earliest stages in order to
+better target prevention and early intervention strategies. While mild cognitive impairment (MCI) is intended to
+identify cognitively symptomatic individuals who are at greatest risk of progressing to dementia, most knowledge
+regarding the measurement of MCI, its risk factors, and its prognosis comes from high-income countries. In
+addition, MCI demonstrates significant variability in its course, given that large numbers of individuals with MCI
+either revert to cognitively normal or remain with a stable MCI diagnosis over time. Differences in life-course
+environmental determinants of cognitive health, biological risk, representativeness of study populations, MCI
+criteria, and cognitive measurement methods may contribute to this variability. Moreover, little is known from a
+global perspective about MCI measurement, its risk factors, and prognosis, particularly among LMICs which are
+expected to carry the greatest future ADRD burden. The overall goal of this study is to improve the cross-national
+measurement of MCI and to characterize its longitudinal course across populations with varied social, economic,
+cultural, and healt",,,
+B28,swecris,2023,SE,Forte,23998000.0,SEK,FINGER-Pro: Evidence-based health promotion interventions for healthy aging: adapting and implementing the FINGER multidomain model across different settings and sociocultural contexts,"Research problem, specific questionsMaintaining cognitive and functional ability into late life is a lifelong process and health promotion/early intervention are the vital components of public health efforts to achieve healthy aging. The FINGER multidomain intervention trial, which integrates five healthy behaviour domains—nutrition, exercise, cognitive training, social activity, and vascular risk monitoring and management, was the first large-scale randomized controlled trial in the world showing evidence for cognitive benefit in older adults at-risk for dementia. The benefit was also extended to physical function, cardiovascular health, quality of life, and health economic aspects. Despite the compelling evidence, more questions remain to be answered: Are the findings from the FINGER trial generalizable to different settings in the Swedish context (e.g., memory clinic, primary care, and municipality)? Can the FINGER model contribute to additional parameters central for healthy aging? Is there an evidence-based need to further refine the FINGER model? How can the FINGER model be adapted and implemented across socioeconomically diverse populations? In this 6-year program, we address these questions by adapting and implementing the FINGER model in different settings and sociocultural contexts.Data and methodWe plan six interrelated work packages: a) Adapting and implementing the FINGER model across different settings in Swedish society; b) Testing the FINGER model for healthy ",,,
+B29,reporter,2024,US,National Institute on Aging,464750,USD,Molecular mechanisms of pathological aging of human brain and adipose and their inter-organ communication,"Project Summary
+Advanced age is a major risk factor for age-related diseases such as type 2 diabetes (T2D), Alzheimer’s disease
+(AD) and many others. It remains elusive what aging mechanisms, or more generally what biological
+mechanisms are responsible for promoting the development of multiple age-related diseases. To address this
+question, we believe it is essential to investigate the heterogeneity of human aging. We posit that human aging
+can be generally divided into two major subtypes, i.e., the healthy and pathological aging, and the pathological
+aging contains critical information on the link between aging and age-related diseases. Using tissues’
+transcriptomes, we can divide a cohort into two major subgroups which roughly correspond to healthy and
+pathological conditions. Molecular mechanisms associated with pathological tissue aging can be learned by
+comparing the differential gene regulations between the two major subgroups. Using this general approach, we
+will focus on studying the common pathological aging mechanisms between brain (e.g., hippocampus, and
+frontal cortex) and adipose tissues (e.g., visceral adipose tissue VAT and subcutaneous adipose tissue SAT).
+We will also examine the potential molecular mechanisms underlying the adipose-brain cross-tissue talk. We will
+perform experimental validation for the findings using mouse models.
+This proposal is innovative as to our best knowledge, the systematic study of the heterogeneity of human tissue
+aging, the class",,,
+B30,swecris,2018,SE,Swedish Research Council,2400000.0,SEK,Longitudinal trajectories of olfactory abilities: What predicts old-age olfactory memory decline?,"Olfactory deficits are common in old age and associated with adverse health outcomes. We aim to do a thorough investigation of predictors of olfactory memory decline in the normal elderly population. Predictors from the demographic, cognitive, clinical, genetic, and behavioral domains will be evaluated. For a subsample, neuroimaging and blood inflammatory markers will also be examined. An additional aim is to evaluate the uniqueness of olfactory memory relative to memory for other sensory information in aging.We will use an existing database from a large Swedish population-based cohort – SNAC-K (n=3363). Olfactory abilities, neuropsychological test performance, physical function, and medical health were repeatedly assessed across 9 years in people aged ≥ 60 years. With the large sample size and broad range of variables available, we will be able to assess predictors of incident olfactory dysfunction (i.e. performing below a clinical threshold), olfactory memory decline, and aging successfully in terms of olfactory abilities. Interaction effects between different predictors will also be examined. Previously, these questions have mainly been addressed with cross-sectional data.The results will promote the understanding of the underlying causes of old-age olfactory impairment. This will have implications for how to design interventions to maintain function into old age, which will in turn affect the quality of life for elderly people and societal costs for health care.",,,

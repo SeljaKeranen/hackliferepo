@@ -176,6 +176,7 @@ Each URL below was fetched successfully during the audit unless marked otherwise
 | 133 | [openFDA](https://open.fda.gov/) | Data, tool | Drugs, clinical | Human | Open (public domain) | Harmonized FDA drug labels and FAERS adverse-event reports over a JSON API; the quick route to safety and indication checks. |
 | 134 | [EPA CompTox Dashboard](https://comptox.epa.gov/dashboard/) | Data, tool | Drugs, toxicology | Multiple | Open | ToxCast/Tox21 in-vitro bioactivity for thousands of chemicals; batch search and downloads for safety triage. |
 | 135 | [RxNav / RxNorm API](https://lhncbc.nlm.nih.gov/RxNav/) | Tool | Drugs | n/a | Open | NLM drug-name normalization (brand, generic, ingredient, RxCUI). Solves the name-matching problem when joining DrugAge-style labels to chemistry databases. |
+| 187 | [SIDER](http://sideeffects.embl.de/) | Data | Drugs, adverse effects | Human | Open for non-commercial use (CC BY-NC-SA 3.0) | Drug side-effect database from package inserts. Offline at the 9 Sep check, back online 11 Sep; complements openFDA (133), which covers post-market reports rather than label text. |
 
 ### Model-organism reference
 
@@ -253,9 +254,10 @@ Each URL below was fetched successfully during the audit unless marked otherwise
 | 163 | [NSRR (sleepdata.org)](https://sleepdata.org/) | Data | Clinical, signals | Human | Free with data-use agreement | Sleep polysomnography cohorts across ages; sleep is an underused healthspan readout. |
 | 164 | [clue.io](https://clue.io/) | Tool | Drugs, omics, perturbations | Human cell lines | Free academic registration | The Broad's own Connectivity Map platform; the interactive counterpart to programmatic L1000CDS2 (94). |
 
-Checked and excluded this round: SIDER (host offline; openFDA 133 covers adverse events),
-Cochrane Library (bot-blocked and mostly paywalled; Europe PMC 114 covers systematic
-reviews), LINCS Data Portal at lincsportal.ccs.miami.edu (unreachable; see entry 16 note).
+Checked and excluded this round: Cochrane Library (bot-blocked and mostly paywalled;
+Europe PMC 114 covers systematic reviews), LINCS Data Portal at lincsportal.ccs.miami.edu
+(unreachable; see entry 16 note). SIDER was offline at this check and was initially
+excluded; it came back online on 11 Sep and is now entry 187.
 
 ## Fourth extension round, verified live 10 September 2026
 
@@ -322,7 +324,22 @@ supplement's 13 entries, and the team-fit guide's S1-S19 before inclusion.
 Checked and excluded this round: DeepBlue (deepblue.mpi-inf.mpg.de unreachable on
 10 Sep 2026; ChIP-Atlas 176 and ENCODE 13 cover the regulatory-epigenomics use case).
 
-## Link audit, 8 September 2026 (rounds 3 and 4 checked 9 and 10 September 2026)
+## Link audit, 8 September 2026 (corpus-wide recheck 10 September 2026)
+
+Corpus-wide pass on 10 September 2026: all 261 unique URLs across the four data documents
+(library, this file, the eldercare supplement, and the team-fit guide's S1-S19) were
+fetched programmatically (parallel GET, browser user agent, 25 s timeout), failures
+retried with curl. Result: 227 return 200; 6 return 202 (Figshare/Dataverse/Shinyapps
+async); 4 return 203 (NCBI/PubMed to scripted clients); 15 return 403 to scripts but open
+in a browser (cdc.gov, oecd.org, doi.org/MDPI, hmdb.ca, openalex.org, ukbiobank.ac.uk,
+allofus.nih.gov, wormbase.org, hrs.isr.umich.edu, zenodo.org). The team-fit guide's 20
+URLs all pass. Remaining failures below.
+
+Earlier passes on 8 September covered the 117 library plus first-extension entries and a
+consolidated recheck of all 146 URLs then present; on 9 September the 24 third-round
+candidates were checked before inclusion (20 OK, AlphaMissense URL fixed, SIDER/Cochrane/
+LINCS Data Portal excluded); on 10 September the 23 fourth-round candidates were checked
+(21 OK, All of Us anti-bot blocked, DeepBlue unreachable and excluded).
 
 All 146 unique URLs across both data docs were fetched programmatically (parallel GET,
 browser user agent, 25 s timeout), with failures retried by curl. A first pass covered the
@@ -334,6 +351,13 @@ candidates were excluded as a result (SIDER offline, Cochrane bot-blocked, LINCS
 Portal unreachable). On 10 September the 23 fourth-round candidates were checked: 21
 returned 200, All of Us (186) is anti-bot blocked to scripts (restricted by design
 anyway), and DeepBlue was unreachable and excluded.
+
+Freshness pass on 11 September (hackathon day): the organizers' library was re-exported
+and is byte-identical to the 11 Sep capture (82 rows, no additions, removals or edits).
+Known-bad URLs rechecked: SIDER recovered (added as 187); ENCODE (13) still 502 for the
+third day running, TxGNN (59) still 503, ClockBase (46), MitoAge (86), the Miami LINCS
+portal and DeepBlue still unreachable; EUbOPEN (79) reachable again (its failures are
+intermittent and client-sensitive).
 
 Result: 127 return HTTP 200, 6 return 202 (Figshare, Dataverse and Shinyapps answer
 asynchronously; fine in a browser), 1 returns 203 (PubMed to scripted clients; fine in a
@@ -358,6 +382,14 @@ Problems worth acting on:
 | 17 | Tahoe-100M | reachable | 3,388 parquet shards; subset before committing |
 | 60 | Cell2Sentence-Scale | no link in library, marked unavailable | Skip |
 | 1, 2, 23, 36, 41, 49, 57 | BLSA, GNPC, Parse PBMC, Oh 2023, Mammalian Methylation, AI-READI, Natural Cycles | restricted or on request | Will not arrive over a weekend; exclude from Friday plans |
+
+Found in the eldercare supplement during the corpus-wide pass (for its author to fix):
+
+| Document | Link | Status 10 Sep 2026 | Note |
+| --- | --- | --- | --- |
+| data-resources-extended-eldercare.md | dst.dk quality-statement PDF (GetArchiveFile.aspx?ext=kvaldel...) | HTTP 404, confirmed with curl | Dead link; use the StatBank documentation page instead |
+| data-resources-extended-eldercare.md | nhats.org NHATSCogstateUserGuideR11-13_Oct2024.pdf | HTTP 404, confirmed with curl | Moved; current guide via nhats.org researcher documentation |
+| data-resources-extended-eldercare.md | cdc.gov BRFSS pages (6 links) | 403 to scripts | Bot protection; fine in a browser |
 
 Overlap check, library vs additions: no unintended duplicates. Deliberate complements are
 cross-referenced in their Notes columns: L1000CDS2 (94) is the working data route for

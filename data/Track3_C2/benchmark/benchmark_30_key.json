@@ -1,0 +1,212 @@
+{
+ "B01": {
+  "record_id": "reporter:1R01HG013679-01",
+  "source": "reporter",
+  "llm_category": "ambiguous",
+  "llm_confidence": 0.8,
+  "rule_category": "ambiguous"
+ },
+ "B02": {
+  "record_id": "reporter:1ZIAAG000594-01",
+  "source": "reporter",
+  "llm_category": "intervention",
+  "llm_confidence": 0.9,
+  "rule_category": "fundamental_aging"
+ },
+ "B03": {
+  "record_id": "reporter:9R44AG055320-03A1",
+  "source": "reporter",
+  "llm_category": "care",
+  "llm_confidence": 0.6,
+  "rule_category": "ambiguous"
+ },
+ "B04": {
+  "record_id": "swecris:2018-00384_Forte",
+  "source": "swecris",
+  "llm_category": "age_related_disease",
+  "llm_confidence": 0.7,
+  "rule_category": "age_related_disease"
+ },
+ "B05": {
+  "record_id": "reporter:5R01AG052495-03",
+  "source": "reporter",
+  "llm_category": "care",
+  "llm_confidence": 0.9,
+  "rule_category": "care"
+ },
+ "B06": {
+  "record_id": "swecris:2019-01667_Formas",
+  "source": "swecris",
+  "llm_category": "ambiguous",
+  "llm_confidence": 0.85,
+  "rule_category": "ambiguous"
+ },
+ "B07": {
+  "record_id": "reporter:1R13AG055294-01",
+  "source": "reporter",
+  "llm_category": "fundamental_aging",
+  "llm_confidence": 0.9,
+  "rule_category": "ambiguous"
+ },
+ "B08": {
+  "record_id": "reporter:1R41CA224497-01A1",
+  "source": "reporter",
+  "llm_category": "age_related_disease",
+  "llm_confidence": 0.93,
+  "rule_category": "fundamental_aging"
+ },
+ "B09": {
+  "record_id": "cordis:949667",
+  "source": "cordis",
+  "llm_category": "intervention",
+  "llm_confidence": 0.88,
+  "rule_category": "fundamental_aging"
+ },
+ "B10": {
+  "record_id": "reporter:1R21AI193785-01",
+  "source": "reporter",
+  "llm_category": "ambiguous",
+  "llm_confidence": 0.85,
+  "rule_category": "fundamental_aging"
+ },
+ "B11": {
+  "record_id": "cordis:874456",
+  "source": "cordis",
+  "llm_category": "ambiguous",
+  "llm_confidence": 0.7,
+  "rule_category": "age_related_disease"
+ },
+ "B12": {
+  "record_id": "swecris:2022-06319_VR",
+  "source": "swecris",
+  "llm_category": "care",
+  "llm_confidence": 0.88,
+  "rule_category": "ambiguous"
+ },
+ "B13": {
+  "record_id": "reporter:5R00CA256356-05",
+  "source": "reporter",
+  "llm_category": "fundamental_aging",
+  "llm_confidence": 0.85,
+  "rule_category": "fundamental_aging"
+ },
+ "B14": {
+  "record_id": "reporter:1R24OD033730-01",
+  "source": "reporter",
+  "llm_category": "ambiguous",
+  "llm_confidence": 0.85,
+  "rule_category": "age_related_disease"
+ },
+ "B15": {
+  "record_id": "reporter:5P30AG083196-02",
+  "source": "reporter",
+  "llm_category": "age_related_disease",
+  "llm_confidence": 0.93,
+  "rule_category": "age_related_disease"
+ },
+ "B16": {
+  "record_id": "cordis:856960",
+  "source": "cordis",
+  "llm_category": "care",
+  "llm_confidence": 0.95,
+  "rule_category": "age_related_disease"
+ },
+ "B17": {
+  "record_id": "reporter:5R01AG080599-03",
+  "source": "reporter",
+  "llm_category": "care",
+  "llm_confidence": 0.95,
+  "rule_category": "care"
+ },
+ "B18": {
+  "record_id": "reporter:2R13AG071313-04",
+  "source": "reporter",
+  "llm_category": "age_related_disease",
+  "llm_confidence": 0.9,
+  "rule_category": "age_related_disease"
+ },
+ "B19": {
+  "record_id": "reporter:1R03AG056938-01",
+  "source": "reporter",
+  "llm_category": "intervention",
+  "llm_confidence": 0.95,
+  "rule_category": "fundamental_aging"
+ },
+ "B20": {
+  "record_id": "cordis:645648",
+  "source": "cordis",
+  "llm_category": "age_related_disease",
+  "llm_confidence": 0.78,
+  "rule_category": "ambiguous"
+ },
+ "B21": {
+  "record_id": "cordis:702784",
+  "source": "cordis",
+  "llm_category": "fundamental_aging",
+  "llm_confidence": 0.72,
+  "rule_category": "ambiguous"
+ },
+ "B22": {
+  "record_id": "reporter:1IS1BX006337-01",
+  "source": "reporter",
+  "llm_category": "ambiguous",
+  "llm_confidence": 0.86,
+  "rule_category": "age_related_disease"
+ },
+ "B23": {
+  "record_id": "reporter:5T32AG023482-14",
+  "source": "reporter",
+  "llm_category": "care",
+  "llm_confidence": 0.75,
+  "rule_category": "ambiguous"
+ },
+ "B24": {
+  "record_id": "reporter:4UH3AG064704-03",
+  "source": "reporter",
+  "llm_category": "fundamental_aging",
+  "llm_confidence": 0.92,
+  "rule_category": "age_related_disease"
+ },
+ "B25": {
+  "record_id": "reporter:1R21AG086805-01A1",
+  "source": "reporter",
+  "llm_category": "intervention",
+  "llm_confidence": 0.95,
+  "rule_category": "intervention"
+ },
+ "B26": {
+  "record_id": "reporter:1R01AA032764-01",
+  "source": "reporter",
+  "llm_category": "intervention",
+  "llm_confidence": 0.88,
+  "rule_category": "fundamental_aging"
+ },
+ "B27": {
+  "record_id": "reporter:1RF1AG088009-01",
+  "source": "reporter",
+  "llm_category": "age_related_disease",
+  "llm_confidence": 0.97,
+  "rule_category": "age_related_disease"
+ },
+ "B28": {
+  "record_id": "swecris:2023-01125_Forte",
+  "source": "swecris",
+  "llm_category": "intervention",
+  "llm_confidence": 0.7,
+  "rule_category": "age_related_disease"
+ },
+ "B29": {
+  "record_id": "reporter:1R21AG085140-01",
+  "source": "reporter",
+  "llm_category": "fundamental_aging",
+  "llm_confidence": 0.95,
+  "rule_category": "age_related_disease"
+ },
+ "B30": {
+  "record_id": "swecris:2017-01759_VR",
+  "source": "swecris",
+  "llm_category": "fundamental_aging",
+  "llm_confidence": 0.75,
+  "rule_category": "ambiguous"
+ }
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "finding.schema.json",
+  "title": "Longevity politics finding",
+  "description": "One record in a country findings file. Either a verified finding or an explicit 'nothing reliable found' record for a country. A findings file is a JSON array of these records.",
+  "oneOf": [
+    { "$ref": "#/$defs/finding" },
+    { "$ref": "#/$defs/nothingReliableFound" }
+  ],
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "country",
+        "classification",
+        "claim",
+        "source_url",
+        "source_date",
+        "confidence",
+        "retrieved_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z]{2}-[0-9]{3}$",
+          "description": "Stable id: lowercase ISO 3166-1 alpha-2 country code + running number, e.g. se-001."
+        },
+        "type": { "const": "finding" },
+        "country": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$",
+          "description": "ISO 3166-1 alpha-2 country code, e.g. SE."
+        },
+        "region": {
+          "type": "string",
+          "description": "Optional sub-national region the finding applies to."
+        },
+        "classification": {
+          "enum": ["policy", "legislation", "funding", "strategy", "political statement"]
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 700,
+          "description": "1-3 sentences stating what was found. Must be supported by the source."
+        },
+        "source_url": {
+          "type": "string",
+          "pattern": "^https://",
+          "description": "Public primary source URL."
+        },
+        "source_date": {
+          "type": "string",
+          "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$",
+          "description": "Date of the source document (publication or decision date). YYYY, YYYY-MM or YYYY-MM-DD."
+        },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "source_note": {
+          "type": "string",
+          "description": "How the source was found and anything a verifier should know (search trail, caveats)."
+        },
+        "retrieved_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(Z|[+-]\\d{2}:\\d{2})$",
+          "description": "When the source was last retrieved and checked, ISO 8601."
+        }
+      },
+      "additionalProperties": false
+    },
+    "nothingReliableFound": {
+      "type": "object",
+      "required": ["id", "type", "country", "search_note", "retrieved_at"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z]{2}-[0-9]{3}$" },
+        "type": { "const": "nothing_reliable_found" },
+        "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "region": { "type": "string" },
+        "search_note": {
+          "type": "string",
+          "minLength": 20,
+          "description": "What was searched (sources, queries) before concluding nothing reliable was found."
+        },
+        "retrieved_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(Z|[+-]\\d{2}:\\d{2})$"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

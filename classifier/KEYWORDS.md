@@ -126,6 +126,34 @@ Edges:
   funding-gap ratio, never the numerator. It represents money going to
   understanding ageing societies, not to slowing ageing.
 
+### Co-occurrence rule: these keywords never stand alone
+
+The category carries `requires_ageing_anchor: true` in `keywords.json`. Its
+keywords (`retirement`, `pension*`, `labor market`, `working life`,
+`living conditions`, ...) are ordinary social-science vocabulary; only the
+combination with ageing makes them this category. Two consequences:
+
+- **Live search**: query with the ageing broad net (optionally AND-ed with
+  social terms), never with social terms alone - standalone they flood results
+  with general labour-market and social research.
+- **Classification**: a social keyword counts toward
+  `social_population_aging` only when an ageing anchor - a `meta.broad_net`
+  term or an explicit older-adults reference - is also present in the record.
+
+This is the same co-occurrence Jan's classifier encodes: his SOCIAL regex
+assigns `other_aging_research` only when an AGE-net term also matches the
+record (SOCIAL && AGE in `funding/classify.py` on `codex/ageing-funding-gap`).
+
+The reason the per-keyword precision figures don't contradict this: they were
+measured inside the atlas corpus, which was itself collected through an
+ageing-related search net, so every matched record already carried an implicit
+ageing anchor. The figures say nothing about how these terms behave in open
+search (see the methodology caveat under Evidence base). A handful of `care`
+terms with the same property (`home care`, `caregiv*`, `social services`, ...)
+carry a per-term `requires_ageing_anchor: true`; age-anchored care terms
+(`elderly care`, `nursing home*`, `care of older`, `äldreomsorg*`, ...) do
+not need one.
+
 Correspondence to teammate Jan's taxonomy: Jan's branch
 (`codex/ageing-funding-gap`, `funding/classify.py`) has the equivalent
 category `other_aging_research`, assigned by a SOCIAL regex (retirement,
@@ -165,6 +193,17 @@ They agree with the lost keyword rules on only 61.8% of records, and the
 this lexicon is therefore a proxy - the share of a keyword's hits whose
 `llm_category` matches the keyword's category - not ground truth. When the
 human benchmark is labelled, re-run the validation against it.
+
+**Caveat: every precision figure was measured inside an ageing-filtered
+corpus and does not transfer to standalone open search.** The atlas was
+collected through an ageing-related search net, so every record a keyword can
+hit is already ageing-adjacent. A keyword's measured precision is conditional
+on that pool; used as a standalone query against a whole funding database, the
+same keyword can flood with unrelated research. This applies to **all**
+categories' figures, and it bites hardest where the keyword's surface meaning
+is not about ageing at all - which is why `social_population_aging` (and a few
+`care` terms) carry `requires_ageing_anchor: true` and must only be used in
+co-occurrence with the broad net.
 
 ## Method
 
@@ -473,6 +512,13 @@ vocabulary, re-run the validation with a real label.
   into either side.
 
 ## Per-source query guidance
+
+For every source, the query is built from `meta.broad_net` terms - optionally
+AND-ed with category keywords to narrow, never category keywords alone. This
+matters most for `requires_ageing_anchor` terms (`social_population_aging` and
+the flagged `care` terms): live search = (ageing broad net) AND optionally
+social terms; classification counts a social keyword only when an ageing
+anchor is present in the record.
 
 **SweCRIS** (855 corpus records). Free-text search over projects; the public
 API at `swecris-api.vr.se` takes a `searchText` parameter (the same parameter

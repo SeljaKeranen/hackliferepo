@@ -224,6 +224,17 @@ def main() -> int:
         sys.exit(f"cannot load lexicon {args.keywords}: {exc!r}")
     failures = []
 
+    def check_anchor_flag(obj: dict, label: str) -> None:
+        # requires_ageing_anchor marks terms (or a whole category) whose
+        # keywords are valid only in co-occurrence with the ageing broad net,
+        # never standalone; if present it must be literally true, optionally
+        # explained by a string note
+        if "requires_ageing_anchor" in obj and obj["requires_ageing_anchor"] is not True:
+            failures.append(f"{label}: requires_ageing_anchor must be true "
+                            f"when present, got {obj['requires_ageing_anchor']!r}")
+        if "note" in obj and not isinstance(obj["note"], str):
+            failures.append(f"{label}: note must be a string")
+
     def check(entry: dict, fresh: dict, label: str) -> None:
         stored = {k: entry.get(k) for k in fresh if k in entry}
         if args.update:
@@ -234,11 +245,13 @@ def main() -> int:
 
     for cat, block in categories.items():
         proxy = PROXY_LABEL.get(cat, cat)
+        check_anchor_flag(block, f"{cat} (category)")
         for lang in ("en", "sv"):
             kept_terms = {e["term"] for e in block.get(lang, [])
                           if "variant_of" not in e}
             for entry in block.get(lang, []):
                 label = f"{cat}/{lang}/{entry['term']}"
+                check_anchor_flag(entry, label)
                 err = term_error(entry["term"])
                 if err:
                     failures.append(f"malformed term {label}: {err}")

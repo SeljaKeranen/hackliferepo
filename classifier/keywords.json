@@ -2268,6 +2268,7 @@
         },
         {
           "term": "long-term care",
+          "requires_ageing_anchor": true,
           "hits": 4,
           "by_category": {
             "care": 4
@@ -2285,6 +2286,7 @@
         },
         {
           "term": "home care",
+          "requires_ageing_anchor": true,
           "hits": 11,
           "by_category": {
             "care": 11
@@ -2293,6 +2295,7 @@
         },
         {
           "term": "caregiv*",
+          "requires_ageing_anchor": true,
           "hits": 14,
           "by_category": {
             "care": 12,
@@ -2303,6 +2306,7 @@
         },
         {
           "term": "informal care*",
+          "requires_ageing_anchor": true,
           "hits": 4,
           "by_category": {
             "care": 4
@@ -2312,6 +2316,7 @@
         },
         {
           "term": "care services",
+          "requires_ageing_anchor": true,
           "hits": 11,
           "by_category": {
             "care": 11
@@ -2320,6 +2325,7 @@
         },
         {
           "term": "social care",
+          "requires_ageing_anchor": true,
           "hits": 7,
           "by_category": {
             "care": 7
@@ -2328,6 +2334,7 @@
         },
         {
           "term": "social services",
+          "requires_ageing_anchor": true,
           "hits": 7,
           "by_category": {
             "care": 7
@@ -2366,6 +2373,7 @@
         },
         {
           "term": "welfare technology",
+          "requires_ageing_anchor": true,
           "hits": 6,
           "by_category": {
             "care": 6
@@ -2374,6 +2382,7 @@
         },
         {
           "term": "end of life",
+          "requires_ageing_anchor": true,
           "hits": 4,
           "by_category": {
             "care": 4
@@ -2383,6 +2392,7 @@
         },
         {
           "term": "end-of-life",
+          "requires_ageing_anchor": true,
           "variant_of": "end of life",
           "hits": 3,
           "by_category": {
@@ -2405,6 +2415,7 @@
         },
         {
           "term": "vård och omsorg",
+          "requires_ageing_anchor": true,
           "hits": 1,
           "by_category": {
             "care": 1
@@ -2414,6 +2425,7 @@
         },
         {
           "term": "anhörig*",
+          "requires_ageing_anchor": true,
           "hits": 1,
           "by_category": {
             "care": 1
@@ -2423,6 +2435,7 @@
         },
         {
           "term": "vårdgivare",
+          "requires_ageing_anchor": true,
           "hits": 1,
           "by_category": {
             "care": 1
@@ -2432,6 +2445,7 @@
         },
         {
           "term": "nära vård",
+          "requires_ageing_anchor": true,
           "hits": 4,
           "by_category": {
             "care": 4
@@ -2441,6 +2455,7 @@
         },
         {
           "term": "kvarboende",
+          "requires_ageing_anchor": true,
           "hits": 1,
           "by_category": {
             "care": 1
@@ -2677,6 +2692,7 @@
       "coverage": 0.624
     },
     "social_population_aging": {
+      "requires_ageing_anchor": true,
       "note": "social, behavioral and population-ageing research (Jan's other_aging_research in funding/classify.py on codex/ageing-funding-gap); precision and coverage are measured against llm_category 'ambiguous' per meta.proxy_labels, and coverage understates because 'ambiguous' also holds the not_relevant engineering pool; funding-ratio denominator only, never numerator",
       "en": [
         {

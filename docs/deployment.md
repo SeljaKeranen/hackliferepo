@@ -1,24 +1,29 @@
-# Deployment and handover
+# Hosting and handover
 
-This advances the live Demo Day demo and its fallback. The static Vercel preview is reachable, including deep links and the encrypted team review page. Persistent account ownership and final human evidence review remain required for the submission.
+This advances the live Demo Day demo and recorded/offline fallback. The app builds as static files for Vercel or Netlify. It needs no provider credentials at runtime. Human evidence review and account-owned persistent hosting remain separate from deployment.
 
-The current site is a temporary Vercel deployment. Its claim URL and expiry are recorded in ignored `outputs/deployment.json`. The team must claim it in Vercel to keep it beyond the temporary lifetime. The private review link contains a browser-only decryption key in the URL fragment; share it only with reviewers. It is not a research-provider API key.
+The latest preview URL, claim link and expiry live in ignored `outputs/deployment.json`. Anonymous Vercel temporary deployments expire unless claimed in a real account. A team member can claim the concrete preview using that link. Do not describe a temporary URL as permanent, and do not assume a redeploy extends its lifetime.
 
-After generating the deck and recording using the README commands, build and publish only the static output:
+Build the funding report and matching delivery artifacts using the root README. After human approval, set `PUBLIC_SITE_URL` to the intended HTTPS hosting origin before running `funding.release`; approved schema-compatible findings cite the dated report permalink and its complete source ledger. A pending release needs no public origin to build.
 
 ```bash
-.venv/bin/python -m pipeline.release
-node scripts/package-review.mjs
-.venv/bin/python scripts/package-delivery.py
+.venv/bin/python -m funding.release
+node scripts/package-funding-review.mjs
+node scripts/check-funding-browser.mjs
+.venv/bin/python -m funding.deck
+node scripts/record-funding-demo.mjs
+.venv/bin/python -m funding.delivery
 npm run build
-.venv/bin/python scripts/package-delivery.py --offline
+.venv/bin/python -m funding.delivery --offline
 .venv/bin/python -m scripts.security-check
 ```
 
-For an authenticated account, `npx vercel deploy --prod` uses the root Vite configuration. Audit upload contents first with `npx vercel deploy --dry --json`; never upload `keys`, raw `data/`, review histories or `outputs/reviewer.key`. The implementation's temporary deployment uses an isolated directory containing only `dist/` and a static Vercel configuration. It can be updated using `npx vercel deploy outputs/deploy-preview --temporary --yes` until claimed; inspect the returned status and expiry each time.
+With an authenticated Vercel account, the root `vercel.json` builds Vite and publishes `dist`. Netlify uses `netlify.toml`. Audit upload contents before using a root deployment: `.vercelignore` excludes raw data, keys and local outputs. The temporary workflow instead copies only the tested `dist` contents and static routing configuration into a fresh isolated directory under `outputs/`, then deploys that directory. Its `.vercel` state stays ignored.
 
-Netlify can use `netlify.toml` with `npm run build` and publish directory `dist`. No API keys are needed by either host. The reviewer packet contains only encrypted candidate text; approved findings and derived model summaries are public JSON.
+For a known host URL, `python -m funding.host --origin https://YOUR-HOST --output outputs/YOUR-STAGING-DIRECTORY` prepares isolated static files with absolute social-image and report URLs. Offline paths remain relative.
 
-Before final publication, import team reviews, run `python -m pipeline.release --strict`, run the tests and regenerate screenshots, slides and the recording. A pending release can demonstrate the numerical model but cannot claim the evidence benchmark is complete.
+Verify `/`, `/country/sweden`, `/country/united-states`, `/sources`, `/method`, both reviewer pages, the immutable `/reports/<release>/<country>/` URLs and all four delivery downloads. The route exclusions must preserve actual static funding, report, review, asset and download files.
 
-A fresh browser should be able to select all three countries, follow a source, reset a scenario, open a shared deep link, read the 90% requirement and print a brief. Also verify the private review page's export. Keep the WebM recording and a local copy of the build for Demo Day. Organiser repository upload access is separate from hosting and must be obtained by a team member.
+The funding reviewer key is in ignored `outputs/funding-reviewer.key`; the earlier policy key is in `outputs/reviewer.key`. Use a `#key=...` fragment. The browser decrypts locally, clears the fragment and stores verdicts on that browser. Export real human JSON for the team's version-checked import. No provider API key is exposed by this workflow.
+
+Temporary link renewal, account ownership and the organiser repository upload are separate tasks. The Sunday submission window opens at 11:00 and closes at 12:00 according to the checked playbook notes; a team member needs organiser upload access. This implementation does not submit the project on the team's behalf.

@@ -1,33 +1,29 @@
-# Three-minute pitch
+# Three-slide Demo Day pitch
 
-Working duration: three minutes; the organiser's exact pitch duration has not been confirmed. Team: Selja, Max, Jan. This advances Demo Day communication, track fit and evidence reporting. Use the generated deck and measured release values; update the human-review sentence after importing actual reviews.
+Track 3: communication, trust and policy; public funding classification. The intended user is the public, with advocates sharing the report. This pitch advances the problem/user, working demo, evidence and next-steps components. It contains no verified numerical funding-gap claim yet.
 
-## Slide 1 · The analyst's question · 45 seconds
+**Slide 1: What do we fund when we fund ageing?**
 
-We built Longview for a health ministry analyst comparing prevention policies across countries. Sweden, the United States and Singapore have different life-expectancy trajectories. In the World Bank's 2024 series, the values are 84.1, 78.9 and 83.3 years respectively.
+“We want a public reader to see how research funding is divided between the biology of ageing and research into its consequences. The report uses one ratio inside a named government portfolio. It keeps the amount, funding period and original source attached. We are measuring whether there is a gap; we have not assumed the answer.”
 
-Those differences do not tell us which policy worked. An analyst first needs to establish what was proposed, what was funded and what actually entered into force. Longview puts that source record beside population context and an explicit forecast, so the assumptions behind a brief can be inspected.
+Explain the numerator and research-only denominator. Biology and interventions remain separate in the report. Care delivery and pensions are excluded.
 
-## Slide 2 · Show the working flow · 60 seconds
+**Slide 2: Two portfolios. Every award traceable.**
 
-Select a country on the map. The same published indicator appears for all three countries, with historical life expectancy and the age distribution.
+“We collected 6,623 award records: 1,281 from Swedish Research Council and Forte, and 5,342 NIA-administered US parent awards. These are 2024 source records. They are not national totals, and their award periods differ.”
 
-Open the policy record. Each released finding needs a primary source, a date, a classification and a supporting passage checked by a person. Publication, decision and effective dates are separate. Until a finding passes review, its claim stays out of the public release.
+Open Sweden. Show the named funders and multi-year commitment basis. Search the ledger for mitochondria or metabolism, inspect an award and follow its source. Open the US report and show the fiscal-year basis. Go to the method and explain the objective classifier and unresolved categories.
 
-Now change one numerical assumption. The model forecasts five-year change from current life expectancy, its previous trend, GDP, health spending and PM2.5. These are conditional associations. We do not claim that a policy causes the displayed change. The ten-year option applies the model twice and is explicitly exploratory. Reset, share the URL, or print the analyst brief.
+Architecture: official API snapshots → local Python/SQLite → versioned objective candidates → blinded human review → approved static release. React and TypeScript serve the report. You.com and Tavily support discovery and source-definition crosschecks; they do not supply human verdicts. Keys stay outside the browser build.
 
-## Slide 3 · What passed, what did not · 60 seconds
+**Slide 3: The estimate waits for human review.**
 
-We withheld Sweden, the US and Singapore from all model fitting and tuning. On the wider historical test, the regression averages 1.10 years of error across 1,098 forecasts, compared with 1.23 for no change and 1.28 for continuing the previous trend.
+“The software works, but accuracy is not yet measured. Our separate benchmark has 60 records, 30 per country. All need review, with at least 90% correct overall and in each country. We also check the ten largest awards per country and require approval of the whole report. Until then, estimates stay private.”
 
-There are material failures. The US regression loses to both baselines, and the wider interval covers only 74.9% of test outcomes despite a 90% target. We show those results in the product.
+Name the main failure modes: biology under disease labels; background words mistaken for objectives; mixed centres; large excluded awards; unresolved amounts; differing funding periods. The sensitivity range is a classification scenario for known amounts, not a confidence interval. The first verdict stays recorded even after correction.
 
-The hackathon's 90% evidence requirement is separate. Our initial 34 findings were frozen before human review. The current release has no imported human verdicts, so it does not claim the requirement is met. Two additional funding leads also await review. After team review, replace this sentence with the actual count and first-review pass rate from the page.
+Next: settle boundaries with an ageing biologist, complete human review and test the visual with five public readers. Reader understanding and adoption have not yet been measured. Team: Selja, Max and Jan.
 
-Our next analyst pilot would test source-checking time and whether users understand conditional scenarios. A second research question, suggested in the mentor discussion, is how countries fund fundamental ageing science. We have programme-level leads, but their scopes and fiscal periods differ. We have not turned them into a country ranking.
+If the live app is unavailable, play the captioned WebM in `public/downloads`. It shows the actual report, source search, method and pending gate. The same release is bundled offline; original-source links still need internet. Use the committed three-slide PDF if video playback fails.
 
-## Close · 15 seconds
-
-The result is a working country observatory with an inspectable evidence gate and a model whose failures are visible. The next step is a reviewed analyst pilot, with comparable research-funding data as a focused extension.
-
-If the network fails, play `outputs/longview-demo.webm`. It records the actual interface and its current review status. Do not describe pending claims as verified or the ten-year scenario as validated.
+Sources: [funding methodology](funding/methodology.md), [dataset/reuse register](funding/dataset-register.md), [dated provider crosschecks](funding/source-crosschecks.json), [release manifest](../public/downloads/manifest.json). Review status must be regenerated after human imports; do not describe an older recording as a newly approved result.

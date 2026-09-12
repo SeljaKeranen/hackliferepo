@@ -1,5 +1,5 @@
 {
-  "name": "longview-policy-observatory",
+  "name": "longview-funding-report",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test tests/inference.test.mjs",
-    "test:browser": "node scripts/check-browser.mjs"
+    "test:browser": "node scripts/check-funding-browser.mjs",
+    "test:browser:legacy": "node scripts/check-browser.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

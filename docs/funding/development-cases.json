@@ -1,0 +1,122 @@
+[
+  {
+    "id": "swecris:2023-00453_VR:202100-5208:2024-01-01",
+    "country": "SE",
+    "title": "A randomised controlled trial comparing metabolic surgery to optimised care in patients with severe obesity and a prior myocardial infarction (MIMS-study (Myocardial Infarction and Metabolic Surgery))",
+    "source_url": "https://www.vr.se/english/swecris.html#/project/2023-00453_VR",
+    "source_date": "2026-08-26T23:19:34.297",
+    "retrieved_at": "2026-09-12T07:09:59+00:00",
+    "candidate": "age_related_disease",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "swecris:2023-00356_VR:202100-5208:2024-01-01",
+    "country": "SE",
+    "title": "Fluid biomarkers for neurodegenerative dementias",
+    "source_url": "https://www.vr.se/english/swecris.html#/project/2023-00356_VR",
+    "source_date": "2026-02-17T17:03:52.69",
+    "retrieved_at": "2026-09-12T07:09:59+00:00",
+    "candidate": "age_related_disease",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "swecris:2023-01872_VR:202100-5208:2024-01-01",
+    "country": "SE",
+    "title": "Ovarian aging, infertility and cancer - understanding the role of mitochondria in ovarian senescence and implications in health and disease for individualized risk prediction and treatment",
+    "source_url": "https://www.vr.se/english/swecris.html#/project/2023-01872_VR",
+    "source_date": "2026-02-17T17:03:52.69",
+    "retrieved_at": "2026-09-12T07:09:59+00:00",
+    "candidate": "unresolved",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "swecris:2023-00394_VR:202100-5208:2024-01-01",
+    "country": "SE",
+    "title": "International journal of ageing and later life",
+    "source_url": "https://www.vr.se/english/swecris.html#/project/2023-00394_VR",
+    "source_date": "2026-02-17T17:03:52.69",
+    "retrieved_at": "2026-09-12T07:09:59+00:00",
+    "candidate": "unresolved",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "swecris:2024-00018_Forte:202100-5240:2024-01-01",
+    "country": "SE",
+    "title": "Back to work: A study of post-retirement work in the senior staffing industry",
+    "source_url": "https://www.vr.se/english/swecris.html#/project/2024-00018_Forte",
+    "source_date": "2026-04-13T16:47:25.37",
+    "retrieved_at": "2026-09-12T07:10:17+00:00",
+    "candidate": "other_aging_research",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "swecris:2023-00207_VR:202100-5208:2024-01-01",
+    "country": "SE",
+    "title": "Towards improved, individualized labor care with the WHO next-generation partograph: the PICRINO trial",
+    "source_url": "https://www.vr.se/english/swecris.html#/project/2023-00207_VR",
+    "source_date": "2026-02-17T17:03:52.69",
+    "retrieved_at": "2026-09-12T07:09:59+00:00",
+    "candidate": "outside_scope",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "nih:10646431",
+    "country": "US",
+    "title": "Gut microbiome, aging and cardiometabolic diseases in American Indians",
+    "source_url": "https://reporter.nih.gov/project-details/10646431",
+    "source_date": "2024-07-09T00:00:00",
+    "retrieved_at": "2026-09-12T07:09:46+00:00",
+    "candidate": "fundamental_aging",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "nih:10670952",
+    "country": "US",
+    "title": "Treating primary progressive aphasia and elucidating neurodegeneration in the language network using transcranial direct current stimulation",
+    "source_url": "https://reporter.nih.gov/project-details/10670952",
+    "source_date": "2024-07-31T00:00:00",
+    "retrieved_at": "2026-09-12T07:09:46+00:00",
+    "candidate": "age_related_disease",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "nih:10746453",
+    "country": "US",
+    "title": "Probing relationships between DNA methylation and cellular senescence with high-throughput CRISPR-based epigenetic editing",
+    "source_url": "https://reporter.nih.gov/project-details/10746453",
+    "source_date": "2023-11-22T00:00:00",
+    "retrieved_at": "2026-09-12T07:09:46+00:00",
+    "candidate": "fundamental_aging",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "nih:10370348",
+    "country": "US",
+    "title": "US POINTER Neuroimaging Ancillary Study",
+    "source_url": "https://reporter.nih.gov/project-details/10370348",
+    "source_date": "2024-04-24T00:00:00",
+    "retrieved_at": "2026-09-12T07:09:46+00:00",
+    "candidate": "age_related_disease",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "nih:10877305",
+    "country": "US",
+    "title": "Health and Retirement Study: Yrs 35-40",
+    "source_url": "https://reporter.nih.gov/project-details/10877305",
+    "source_date": "2024-05-13T00:00:00",
+    "retrieved_at": "2026-09-12T07:09:49+00:00",
+    "candidate": "other_aging_research",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  },
+  {
+    "id": "nih:10440323",
+    "country": "US",
+    "title": "Health, Wellbeing, and the Social Networks of Family Caregivers of People with Alzheimer's Disease",
+    "source_url": "https://reporter.nih.gov/project-details/10440323",
+    "source_date": "2024-06-04T00:00:00",
+    "retrieved_at": "2026-09-12T07:09:46+00:00",
+    "candidate": "care_research",
+    "status": "Assistant-selected method discussion case; not a human verdict; excluded from benchmark"
+  }
+]

@@ -1,91 +1,90 @@
-# Longview
+# Longview — where does ageing research money go?
 
-Longview is a research prototype for health ministry analysts comparing Sweden, the United States and Singapore. It combines a dated policy record, published population-health indicators and an interpretable five-year life-expectancy forecast. A ten-year view explores explicit assumptions; it has no ten-year validation.
+Longview turns public research award records into a source-linked funding report for the public and advocates. It estimates the share of a selected government portfolio's ageing research funding that targets ageing biology and interventions. Every award keeps its source, amount, date and funding basis.
 
-Team: Selja, Max, Jan. Stockholm AI × Longevity Hackathon, 11–13 September 2026. Track 3, challenge 1. The [playbook](docs/playbook.md) gives the submission requirements and judging weights. The three-country scope supersedes the earlier EU-first notes in [the original challenge plan](docs/challenge.md).
+This branch implements the funding-report pivot for **Track 3, public research funding classification**. It advances the Demo Day problem/user story, technical demo, evidence and responsible use, and communication criteria in the [playbook notes](docs/playbook.md).
 
-The implementation advances technical execution, evidence and responsible use, track fit, and the Demo Day presentation. The map, country comparisons, scenario controls, source filters, print brief and remote review workflow are built. Source-grounding and model tests use actual retrieved public data; synthetic review tests stay in ignored `outputs/` and are never imported as human approvals. Human review remains incomplete, so the public release withholds policy claims. The initial sample contains 34 candidates; two supplemental funding leads are outside that frozen benchmark.
+The app has a landing report, Sweden and US portfolio pages, a searchable source ledger, a method page, immutable report snapshots and a separate private funding reviewer workspace. **Human verification is pending: 0/60 reviewed. Numerical estimates and share cards remain withheld.** Software test fixtures are not human evidence.
 
-The model's wider historical test has 1,098 country-origin forecasts. Regression MAE is 1.10 years; no change is 1.23 and the previous trend is 1.28. The US regression performs worse than both baselines. Its wider empirical interval covers 74.9% of outcomes despite a 90% target. The [full evaluation](docs/model-evaluation.json) records the selection procedure, country results and limitations. These numbers do not establish causal policy effects or clinical performance.
+## What the snapshot covers
 
-## Open and run
+| Funding government | Selected portfolio | 2024 records |
+| --- | --- | --- |
+| Sweden | Swedish Research Council + Forte, Swecris funding year 2024 | 1,281 |
+| United States | NIA-administered FY2024 parent awards, NIH RePORTER | 5,342 |
 
-The current temporary preview is [Longview on Vercel](https://temporary-fast-peridot-kempbnu.vercel.app). Temporary hosting expires unless claimed by the team. Deployment details and the private reviewer key stay in ignored `outputs/`; never commit them. The production build contains static assets, derived numerical summaries, fitted parameters and an encrypted reviewer packet. Research keys stay on the research machine.
+The source collection contains 6,623 retained records. NIH constituent subprojects are removed to avoid duplicate totals. The Swedish collection pages both funders completely before applying the funding-year filter. These are narrower portfolios, not national totals or a country ranking. Swedish commitments can cover several years; US fiscal-year award costs also have multi-year exceptions. No annualisation or currency conversion is applied.
 
-Tested with Python 3.13 and Node 22:
+The headline is `(ageing biology + ageing interventions) / classified ageing-related research funding`, using money amounts rather than grant counts. Biology and interventions remain visible separately. Unresolved known money enters sensitivity scenarios; missing amounts remain explicit. Read the [methodology](docs/funding/methodology.md) and [dataset/reuse register](docs/funding/dataset-register.md).
+
+You.com and Tavily were both used for source-definition cross-checks. The project has used 73 combined attempted research requests out of the authorised 500; [dated query records](docs/funding/source-crosschecks.json) are committed. Award facts come from the official APIs, not search summaries. No additional paid model calls were made for this pivot.
+
+The teammate's original [dataset and methodology](data/Track3_C2/METHODOLOGY.md) are preserved. Matching earlier labels are reused only as unverified candidates. The earlier life-expectancy model, policy materials and benchmarks remain in their original files; they do not establish results for this funding report.
+
+## Run and verify
 
 ```bash
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.lock.txt
 npm ci
 npm run dev
+# Public app: / ; /country/sweden ; /country/united-states ; /sources ; /method
+# Private funding review: /review/funding/ ; earlier policy review: /review/
 ```
 
-The checked-in curated release is enough to run the app. Longview's raw source documents, API responses and SQLite database are excluded from Git. To reproduce the research and model from the documented sources:
+A remote user can use the hosted Vercel or Netlify deployment; no local browser connection is needed. See [deployment and ownership](docs/deployment.md). The public app needs no provider keys.
 
 ```bash
-.venv/bin/python -m scripts.research-discovery
-.venv/bin/python -m scripts.collect-sources
-.venv/bin/python -m scripts.extend-us
-.venv/bin/python -m pipeline.data
-.venv/bin/python -m pipeline.curate
-.venv/bin/python -m scripts.research-fundamental
-.venv/bin/python -m scripts.collect-fundamental-sources
-.venv/bin/python -m pipeline.funding
-.venv/bin/python -m pipeline.model
-.venv/bin/python -m pipeline.release
-node scripts/package-review.mjs
-npm run build
-```
-
-Discovery requires `YOU_API_KEY` / `TAVILY_API_KEY` in the environment or the existing ignored `keys` file. There is a transactional cap of 500 combined provider requests, including retries and the seven planning requests. Responses are cached locally. No credit purchases are authorised. Re-running curation changes evidence versions only when the underlying records change; existing approvals cannot silently survive edits.
-
-The supplemental [fundamental-ageing funding investigation](docs/fundamental-ageing-research.md) has a separate scope and no comparable national totals yet. Its two candidate records can be regenerated with the supplemental discovery, retrieval and `pipeline.funding` commands above. Do not substitute programme budgets for national basic-research spending.
-
-## Evidence review and the ≥90% requirement
-
-The public page displays the initial sample's review progress, pass rate and pending/passed/failed status. It passes only when the frozen sample is fully human-reviewed and at least 90% of its first completed verdicts pass all four checks. Every published finding separately needs a current all-pass human verdict. The forecast's error in years is a different metric.
-
-Remote reviewers open the private `/review/` link, enter initials, check original sources and export their verdict file. Reviews save in that browser, not on a public server. Import an actual teammate export on the research machine:
-
-```bash
-.venv/bin/python -m pipeline.import_reviews /path/to/longview-review.json
-.venv/bin/python -m pipeline.release
-```
-
-For the final evidence gate, use `python -m pipeline.release --strict`. It fails if any candidate is unapproved, the initial sample is incomplete, or its first-review accuracy is below 90%. The target cannot be achieved by removing failed records or correcting the sample after the fact. Version fingerprints bind reviews to the claim and provenance; history is append-only.
-
-Local review remains available through `python3 eval/server.py --country sweden --port 8710`, with `united-states` and `singapore` as the other country slugs. See [the review guide](eval/README.md).
-
-## Verify and produce the pitch
-
-```bash
-.venv/bin/python -m pytest tests -q
-python3 eval/test_findings.py
+.venv/bin/python -m pytest -q tests
 npm test
-npx playwright install chromium
-npm run test:browser
+node scripts/check-funding-browser.mjs
+# Optional positive-path UI fixture; never a human verdict:
+# node scripts/check-funding-approved.mjs
 npm run build
-.venv/bin/python scripts/make-deck.py
-node scripts/record-demo.mjs
-.venv/bin/python scripts/package-delivery.py
-npm run build
-.venv/bin/python scripts/package-delivery.py --offline
 .venv/bin/python -m scripts.security-check
 ```
 
-The browser checks cover desktop/mobile rendering, country selection, scenario/reset behaviour, deep links, print output and encrypted review/export. They run against `http://localhost:5173` by default; set `DEMO_URL` for a deployed check. Chromium needs its standard Linux libraries and fonts. The browser helper also recognises the temporary runtime libraries used in this remote environment.
+The funding suite checks amount weighting, zero/missing values, duplicate and mixed-currency rejection, per-country thresholds, stale-version rejection, first-verdict retention and public masking. Browser checks exercise both country reports, frozen links, source search, mobile layouts and a synthetic local review export. The synthetic export stays ignored and must never be imported.
 
-The hosted footer links to the deck, recording and offline app. [Delivery status](docs/delivery-status.md) records completed checks and the remaining submission requirements.
+## Rebuild the evidence
 
-Generated deliverables are `outputs/longview-three-slides.pptx`, `outputs/longview-three-slides.pdf`, `outputs/longview-demo.webm` and `outputs/analyst-brief.pdf`. The deck has exactly three slides, editable text and data lines, speaker notes, and a screenshot of the actual app. Generate it after refreshing the release and browser screenshots. [Pitch notes](docs/pitch-notes.md) provide a three-minute spoken version.
+Use Python dependencies from `requirements.lock.txt`. Raw responses, abstracts and the SQLite store live in ignored `data/`; provider credentials live outside the public build.
 
-## Data and deployment
+```bash
+.venv/bin/python -m funding.collect
+.venv/bin/python -m funding.classify
+.venv/bin/python -m funding.benchmark
+.venv/bin/python -m funding.review
+.venv/bin/python -m funding.release
+node scripts/package-funding-review.mjs
+```
 
-The branch also preserves the team's [Aging Funding Atlas dataset](data/Track3_C2/METHODOLOGY.md) from remote main, with its [licence and provenance notes](data/Track3_C2/output/DATA_LICENCES.md). That contribution has a separate benchmark and awaits integration into Longview. The app currently loads the frozen releases in `public/release/`.
+Official API responses are cached and hashed. The collector fails on incomplete pagination. The classifier uses local rules over the full available abstract; it is not yet human-validated. `funding.benchmark` refuses to overwrite a changed frozen population. Preserve prior benchmarks when creating a new evaluation version.
 
-[Dataset licences and definitions](docs/dataset-register.md) are recorded before use. SQLite has foreign keys and unique observation keys. Each series retains its definition, units, query, retrieval time, revision and content fingerprint. Missing values are not zero-filled. Data from the current revised vintage cannot establish historical publication availability.
+The [human review guide](eval/funding/README.md) explains the remote workflow. Open the private link containing the key from ignored `outputs/funding-reviewer.key`, review the original sources, export the JSON and import a real human file:
 
-React, TypeScript and Vite build the static UI. Python collects and validates evidence, stores it in SQLite, fits the model and exports browser parameters. The public app has no research endpoint and no credential access. Vercel and Netlify configurations are included; [deployment instructions](docs/deployment.md) explain how to publish only the build output and keep the preview.
+```bash
+.venv/bin/python -m funding.review --import-file /path/to/human-export.json
+.venv/bin/python -m funding.release
+node scripts/package-funding-review.mjs
+```
 
-The Sunday submission still requires the team's human review, a persistent hosting claim, and organiser upload access. No ministry adoption test has been run. The project cannot determine which policy caused a lifespan change, predict an individual's life, or provide a comparable fundamental-ageing funding ranking yet.
+Publication requires all 60 reviews, at least 90% overall and in each country, source/category checks for the ten largest awards per country and human approval of each report. Source and classification changes invalidate affected approvals. The frozen sample's first verdicts are retained. Human identity must be established by the team; a JSON attestation alone is not authentication.
+
+## Three slides and a working fallback
+
+The current delivery artifacts are in [public/downloads](public/downloads): [editable PowerPoint](public/downloads/longview-three-slides.pptx), [three-page PDF](public/downloads/longview-three-slides.pdf), [captioned walkthrough](public/downloads/longview-demo.webm) and [offline app](public/downloads/longview-offline.zip). They describe the pending review state, not a verified funding gap.
+
+Regenerate them from the current funding release:
+
+```bash
+node scripts/check-funding-browser.mjs
+.venv/bin/python -m funding.deck
+node scripts/record-funding-demo.mjs
+.venv/bin/python -m funding.delivery
+npm run build
+.venv/bin/python -m funding.delivery --offline
+.venv/bin/python -m scripts.security-check
+```
+
+The deck contains exactly three slides. Text, diagrams and shapes are editable; the demo screenshot is a raster capture of the app. The recording shows real browser interaction with captions and no audio. The offline archive contains no private reviewer packet. Source links require internet; the bundled public report and source ledger work offline through the included Python server.
+
+Still incomplete: real human benchmark and report reviews, Andrew's boundary-method decisions, a reader comprehension/adoption test, account-owned persistent hosting and the organiser submission. [Andrew's briefing](docs/funding/andrew-brief.md), [pitch notes](docs/pitch-notes.md), [delivery status](docs/delivery-status.md) and the [goal prompt](docs/goal-prompt.md) record the remaining work. No clinical claims, causal funding effects or lifespan forecasts are made by this report.

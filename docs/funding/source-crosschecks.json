@@ -1,0 +1,315 @@
+{
+  "checked_at": "2026-09-12T07:18:14+00:00",
+  "attempted_requests_total": 73,
+  "combined_cap": 500,
+  "checks": [
+    {
+      "country": "US",
+      "provider": "you.com",
+      "query": "site:report.nih.gov RePORTER total cost subprojects parent projects fiscal year",
+      "checked_at": "2026-09-12T07:18:08+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "Frequently Asked Questions (FAQs) | RePORT",
+          "url": "https://report.nih.gov/faqs"
+        },
+        {
+          "title": "Home | RePORT",
+          "url": "https://www.report.nih.gov/"
+        },
+        {
+          "title": "Budget and Spending | RePORT",
+          "url": "https://report.nih.gov/funding/nih-budget-and-spending-data-past-fiscal-years/budget-and-spending"
+        },
+        {
+          "title": "ExPORTER Data Dictionary | RePORT",
+          "url": "https://report.nih.gov/exporter-data-dictionary"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "US",
+      "provider": "tavily",
+      "query": "site:report.nih.gov RePORTER total cost subprojects parent projects fiscal year",
+      "checked_at": "2026-09-12T07:18:08+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "ExPORTER Data Dictionary | RePORT",
+          "url": "https://report.nih.gov/exporter-data-dictionary"
+        },
+        {
+          "title": "Frequently Asked Questions (FAQs) | RePORT",
+          "url": "https://report.nih.gov/faqs"
+        },
+        {
+          "title": "[PDF] Catalog of NIH Funded Databases, Disease Registries, and ...",
+          "url": "https://report.nih.gov/reportweb/web/displayreport?rid=630"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "US",
+      "provider": "you.com",
+      "query": "site:api.reporter.nih.gov award_amount fiscal_year AgencyIcAdmin funding",
+      "checked_at": "2026-09-12T07:18:08+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "1 Sample RePORTER API Request Matching ExPORTER Project Files",
+          "url": "https://api.reporter.nih.gov/documents/Sample%20RePORTER%20API%20Request%20Matching%20ExPORTER%20Project%20Files.pdf"
+        },
+        {
+          "title": "REPORTER API DATA ELEMENTS Page 1 of 51 Data Elements for RePORTER ...",
+          "url": "https://api.reporter.nih.gov/documents/Data%20Elements%20for%20RePORTER%20Project%20API_V2.pdf"
+        },
+        {
+          "title": "NIH RePORTER API",
+          "url": "https://api.reporter.nih.gov/"
+        },
+        {
+          "title": "OER Policy Announcement 2023-02 Updates to Funding Opportunity ...",
+          "url": "https://api.reporter.nih.gov/documents/updates-to-funding-opportunity-terminology-2023-02.pdf"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "US",
+      "provider": "tavily",
+      "query": "site:api.reporter.nih.gov award_amount fiscal_year AgencyIcAdmin funding",
+      "checked_at": "2026-09-12T07:18:09+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "1 Sample RePORTER API Request Matching ExPORTER Project Files",
+          "url": "https://api.reporter.nih.gov/documents/Sample+RePORTER+API+Request+Matching+ExPORTER+Project+Files.pdf"
+        },
+        {
+          "title": "NIH RePORTER API",
+          "url": "https://api.reporter.nih.gov"
+        },
+        {
+          "title": "REPORTER API DATA ELEMENTS Page 1 of 51 Data Elements for RePORTER Project API",
+          "url": "https://api.reporter.nih.gov/documents/Data+Elements+for+RePORTER+Project+API_V2.pdf"
+        },
+        {
+          "title": "OER Policy Announcement 2023-02 Updates to Funding Opportunity Terminology",
+          "url": "https://api.reporter.nih.gov/documents/updates-to-funding-opportunity-terminology-2023-02.pdf"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "SE",
+      "provider": "you.com",
+      "query": "site:vr.se Swecris funding year funding amount granted projects multi year",
+      "checked_at": "2026-09-12T07:18:09+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "Swecris – search for Swedish research projects",
+          "url": "https://www.vr.se/english/swecris.html"
+        },
+        {
+          "title": "Swecris - Multi-scale modelling of pathophysiological flows ...",
+          "url": "https://www.vr.se/english/swecris.html?project=2022-03032_VR"
+        },
+        {
+          "title": "Swecris – search for Swedish research projects",
+          "url": "https://vr.se/english/swecris.html?project=2023-01665_Vinnova%3D"
+        },
+        {
+          "title": "Swecris API - Swedish Research Council",
+          "url": "https://www.vr.se/english/swecris/swecris-api.html"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "SE",
+      "provider": "tavily",
+      "query": "site:vr.se Swecris funding year funding amount granted projects multi year",
+      "checked_at": "2026-09-12T07:18:11+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "Swecris - Swedish Research Council",
+          "url": "https://www.vr.se/english/swecris.html?project%3D2020-03121_Formas="
+        },
+        {
+          "title": "Swecris – search for Swedish research projects",
+          "url": "https://www.vr.se/english/swecris.html?project=2022-00775_VR"
+        },
+        {
+          "title": "Swecris – search for Swedish research projects",
+          "url": "https://www.vr.se/english/swecris.html?project%3D2024-02115_Vinnova="
+        },
+        {
+          "title": "Swecris - Swedish Research Council",
+          "url": "https://www.vr.se/english/swecris.html?project=P19-0894%3A1_RJ"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "SE",
+      "provider": "you.com",
+      "query": "site:forte.se en funding Swecris all funded projects",
+      "checked_at": "2026-09-12T07:18:09+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "Grant decisions - Forte",
+          "url": "https://forte.se/en/funding/ongoing-grants/swecris"
+        },
+        {
+          "title": "Grant decisions - Funding",
+          "url": "https://forte.se/en/funding/grant-decisions"
+        },
+        {
+          "title": "Find funded projects - Forte (English)",
+          "url": "https://forte.se/en/funding/ongoing-grants/open-access-and-swecris"
+        },
+        {
+          "title": "Funding - Forte",
+          "url": "https://forte.se/en/funding"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "SE",
+      "provider": "tavily",
+      "query": "site:forte.se en funding Swecris all funded projects",
+      "checked_at": "2026-09-12T07:18:11+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "FAQ - Forte",
+          "url": "https://forte.se/en/funding/faq"
+        },
+        {
+          "title": "Funding - Forte",
+          "url": "https://forte.se/en/funding"
+        },
+        {
+          "title": "[PDF] Information about the call \"Applied welfare research 2021\" - Forte",
+          "url": "https://forte.se/download/18.644dedc01969f3c8c224761/1746623680683/information-about-the-call-tvf-2021-tgl.pdf"
+        },
+        {
+          "title": "[PDF] Information about the call on research reviews on mental ... - Forte",
+          "url": "https://forte.se/download/18.179b45521969f7985a8139f4/1746788306755/information-about-the-call-research-reviews-2023.pdf"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "SE",
+      "provider": "you.com",
+      "query": "site:vr.se Swecris ageing metabolism neurodegeneration research",
+      "checked_at": "2026-09-12T07:18:10+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "Natural and engineering sciences - Swedish Research Council",
+          "url": "https://www.vr.se/english/mandates/funding-and-promoting-research/natural-and-engineering-sciences.html"
+        },
+        {
+          "title": "Swecris - Ageing Right Care(fully) – a system approach to ...",
+          "url": "https://www.vr.se/english/swecris.html?project=2023-01516_Forte"
+        },
+        {
+          "title": "Swecris - Mitokondriell Metabolism: en Drogbar Drivkraft ...",
+          "url": "https://www.vr.se/swecris.html?project=2022-01476_VR"
+        },
+        {
+          "title": "Swecris - integrating Metabolism ENvironment and Diet for ...",
+          "url": "https://www.vr.se/swecris.html?project=20180290_HLF"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "SE",
+      "provider": "tavily",
+      "query": "site:vr.se Swecris ageing metabolism neurodegeneration research",
+      "checked_at": "2026-09-12T07:18:12+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "Swecris – sök bland svenska forskningsprojekt",
+          "url": "https://www.vr.se/swecris.html"
+        },
+        {
+          "title": "Swecris - Computational methods for improving diagnosis and ...",
+          "url": "https://www.vr.se/swecris.html?project%3D2021-04526_Vinnova="
+        },
+        {
+          "title": "Swecris - Effektiv och Trovärdig AI för Tillverkningsindustrin (ETIAI)",
+          "url": "https://www.vr.se/swecris.html?project%3D20230040_KKS="
+        },
+        {
+          "title": "Activation of regenerative pathways in human chronic lung diseases",
+          "url": "https://www.vr.se/swecris.html?project=20180171_HLF"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "US",
+      "provider": "you.com",
+      "query": "site:nia.nih.gov research aging biology disease research geroscience funding",
+      "checked_at": "2026-09-12T07:18:12+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "Geroscience: The intersection of basic aging biology, chronic ...",
+          "url": "https://www.nia.nih.gov/research/dab/geroscience-intersection-basic-aging-biology-chronic-disease-and-health"
+        },
+        {
+          "title": "Division of Aging Biology Notices of Funding Opportunities | National ...",
+          "url": "https://www.nia.nih.gov/research/dab/division-aging-biology-notices-funding-opportunities"
+        },
+        {
+          "title": "Trans-NIH Geroscience Interest Group (GSIG) | National Institute ...",
+          "url": "https://www.nia.nih.gov/gsig"
+        },
+        {
+          "title": "Signin",
+          "url": "https://staging.nia.nih.gov/research/dab/geroscience-intersection-basic-aging-biology-chronic-disease-and-health"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    },
+    {
+      "country": "US",
+      "provider": "tavily",
+      "query": "site:nia.nih.gov research aging biology disease research geroscience funding",
+      "checked_at": "2026-09-12T07:18:14+00:00",
+      "status": "results_returned",
+      "links": [
+        {
+          "title": "Geroscience: The intersection of basic aging biology, chronic disease, and health | National Institute on Aging",
+          "url": "https://www.nia.nih.gov/research/dab/geroscience-intersection-basic-aging-biology-chronic-disease-and-health"
+        },
+        {
+          "title": "A bright future for aging biology research | National Institute on Aging",
+          "url": "https://www.nia.nih.gov/research/blog/2024/12/bright-future-aging-biology-research"
+        },
+        {
+          "title": "Trans-NIH Geroscience Interest Group (GSIG) | National Institute on Aging",
+          "url": "https://www.nia.nih.gov/gsig"
+        },
+        {
+          "title": "Where Research Comes of Age | National Institute on Aging",
+          "url": "https://www.nia.nih.gov/about/where-research-comes-age"
+        }
+      ],
+      "interpretation": "Discovery cross-check. Original source inspection and human review are separate requirements."
+    }
+  ]
+}

@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Longview · Private funding review</title>
+    <style>
+      [hidden] {
+        display: none !important;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f5f5ee;
+        color: #163c33;
+        font: 15px/1.6 system-ui;
+      }
+      header {
+        padding: 22px 4vw;
+        background: #163c33;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      main {
+        max-width: 1250px;
+        margin: 30px auto;
+        padding: 0 24px;
+      }
+      h1,
+      h2 {
+        line-height: 1.2;
+      }
+      h1 {
+        font-size: 34px;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button,
+      .button {
+        border: 1px solid #b1bcb3;
+        border-radius: 8px;
+        padding: 10px 16px;
+        background: #fff;
+        color: #163c33;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      input,
+      select,
+      textarea {
+        padding: 10px;
+        border: 1px solid #abb7ae;
+        border-radius: 7px;
+        background: #fff;
+        max-width: 100%;
+      }
+      input[type="text"] {
+        width: 280px;
+      }
+      textarea {
+        width: 100%;
+        min-height: 85px;
+      }
+      a {
+        color: inherit;
+      }
+      .box {
+        padding: 25px;
+        border: 1px solid #d3d9cf;
+        background: white;
+        border-radius: 14px;
+        margin: 20px 0;
+      }
+      .warning {
+        background: #f6e9c9;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 25px;
+      }
+      .list {
+        max-height: 620px;
+        overflow: auto;
+        display: grid;
+        gap: 8px;
+      }
+      .list button {
+        text-align: left;
+      }
+      .list .active {
+        border: 2px solid #205a44;
+        background: #e9f1df;
+      }
+      .muted {
+        color: #647468;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .tag {
+        font-size: 12px;
+        background: #e8edde;
+        padding: 3px 7px;
+        border-radius: 5px;
+      }
+      .checks {
+        display: grid;
+        gap: 13px;
+      }
+      .checks label {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+      }
+      .meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 20px 0;
+      }
+      .meta small {
+        display: block;
+        color: #657263;
+      }
+      .tabs {
+        display: flex;
+        gap: 12px;
+        margin: 20px 0;
+      }
+      code {
+        overflow-wrap: anywhere;
+        font-size: 12px;
+      }
+      #notice {
+        color: #8a3d22;
+        min-height: 24px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        text-align: left;
+        padding: 9px;
+        border-bottom: 1px solid #ddd;
+      }
+      .saved {
+        color: #277242;
+        font-weight: 600;
+      }
+      @media (max-width: 760px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        .list {
+          max-height: 180px;
+        }
+        .meta {
+          grid-template-columns: 1fr;
+        }
+        .checks label {
+          display: grid;
+          gap: 4px;
+        }
+        main {
+          padding: 0 16px;
+        }
+        header {
+          padding: 16px;
+        }
+        h1 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>LONGVIEW / FUNDING REVIEW</strong><a href="/">Public report ↗</a>
+    </header>
+    <main>
+      <h1>Check the evidence before the headline.</h1>
+      <p>
+        This workspace is for human review of the 2024 Sweden and US funding
+        portfolios. The first completed benchmark verdict is retained.
+      </p>
+      <div id="unlock" class="box">
+        <label
+          >Private review key
+          <input type="password" id="key" autocomplete="off"
+        /></label>
+        <button id="open">Unlock packet</button>
+        <p class="muted">
+          Use the private link or key from the project team. The key stays in
+          this browser; it is never sent to the server.
+        </p>
+      </div>
+      <div id="notice" role="status"></div>
+      <div id="workspace" hidden>
+        <div class="box warning">
+          <strong>Unverified estimates · private workspace</strong>
+          <p>
+            Open each original source. Judge the project's main objective,
+            amount, year and government funder. Classifier predictions are
+            hidden. No model agreement counts as human accuracy. Do not submit
+            simulated reviews.
+          </p>
+          <label
+            >Reviewer initials
+            <input type="text" id="reviewer" maxlength="60" autocomplete="off"
+          /></label>
+          <p>
+            <label
+              ><input type="checkbox" id="attest" /> I am a human reviewer and
+              will check the original sources myself.</label
+            >
+          </p>
+        </div>
+        <div class="row">
+          <strong id="progress"></strong
+          ><button id="export">Export completed reviews</button>
+        </div>
+        <p class="muted">
+          Work is saved on this browser. Export the JSON and give it to the team
+          for import and rebuild; this page does not publish or synchronise it.
+        </p>
+        <div class="tabs">
+          <button id="grants-tab">1. Blinded source review</button
+          ><button id="reports-tab">2. Report approval</button>
+        </div>
+        <div id="grants" class="layout">
+          <aside>
+            <label
+              >Review queue
+              <select id="queue">
+                <option value="all">All 80 records</option>
+                <option value="benchmark">60-record benchmark</option>
+                <option value="top">20 largest awards</option>
+                <option value="SE">Sweden</option>
+                <option value="US">United States</option>
+                <option value="pending">Unfinished</option>
+              </select></label
+            >
+            <div class="list" id="list"></div>
+          </aside>
+          <section id="record" class="box" style="margin-top: 0"></section>
+        </div>
+        <div id="reports" hidden></div>
+      </div>
+    </main>
+    <script type="module">
+      let packet, state, selected, storeKey;
+      const $ = (s) => document.querySelector(s);
+      const el = (tag, text, cls) => {
+        const n = document.createElement(tag);
+        if (text !== undefined) n.textContent = text;
+        if (cls) n.className = cls;
+        return n;
+      };
+      const checkLabels = {
+        source_resolves: "The source opens and identifies this award",
+        financial_details_correct:
+          "Amount, currency, funding year, period and source date match",
+        government_scope_correct:
+          "The government funder and portfolio scope match",
+        source_scope_correct: "Scope and exclusions are correctly described",
+        financial_basis_correct:
+          "Award basis, years and currencies are correct",
+        arithmetic_correct: "The totals, numerator and denominator are correct",
+        uncertainty_visible:
+          "Unresolved, missing and classification limits are clear",
+      };
+      const definitions = {
+        fundamental_aging:
+          "Mechanisms or biology of ageing, including defined ageing mechanisms studied across disease settings.",
+        intervention:
+          "An intervention whose stated objective targets ageing biology, senescence, healthspan or lifespan.",
+        age_related_disease:
+          "An age-related disease objective without an established ageing-biology objective.",
+        care_research:
+          "Research into care or support for older people or their carers; not delivery of care.",
+        other_aging_research:
+          "Social, behavioural, demographic or other nonbiological ageing research.",
+        outside_scope:
+          "No qualifying ageing objective; for example physical materials, childhood-specific or unrelated research.",
+        unresolved:
+          "Insufficient evidence, mixed objectives or unclear ageing relevance. Do not force a label.",
+      };
+      const money = (v, c) =>
+        v === null
+          ? "Amount unavailable"
+          : new Intl.NumberFormat("en", {
+              style: "currency",
+              currency: c,
+              maximumFractionDigits: 2,
+            }).format(v / 100);
+      const date = (x) => (x ? x.slice(0, 10) : "Not supplied");
+      const notice = (s) => {
+        $("#notice").textContent = s;
+      };
+      function persist() {
+        try {
+          localStorage.setItem(storeKey, JSON.stringify(state));
+        } catch {
+          notice(
+            "Browser storage is unavailable. Export before closing this tab.",
+          );
+        }
+      }
+      function signed() {
+        if (!$("#attest").checked || !$("#reviewer").value.trim()) {
+          notice(
+            "Enter your initials and confirm that you are the human reviewer.",
+          );
+          return false;
+        }
+        return true;
+      }
+      function header() {
+        const values = Object.keys(state.verdicts);
+        const b = packet.records.filter(
+          (r) => r.in_benchmark && values.includes(r.id),
+        ).length;
+        $("#progress").textContent =
+          `${b}/60 benchmark records completed locally · ${values.length}/${packet.records.length} source reviews · Target ≥90% overall and per country`;
+        $("#queue option[value=all]").textContent =
+          `All ${packet.records.length} records`;
+      }
+      function checks(keys, initial = {}) {
+        const div = el("div", undefined, "checks");
+        for (const k of keys) {
+          const label = el("label", checkLabels[k]);
+          const s = el("select");
+          s.dataset.check = k;
+          for (const [v, t] of [
+            ["", "Choose…"],
+            ["true", "Pass"],
+            ["false", "Fail"],
+          ]) {
+            const o = el("option", t);
+            o.value = v;
+            s.append(o);
+          }
+          s.value = initial[k] === undefined ? "" : String(initial[k]);
+          label.append(s);
+          div.append(label);
+        }
+        return div;
+      }
+      function readChecks(root) {
+        const selections = [...root.querySelectorAll("[data-check]")];
+        if (selections.some((s) => !s.value))
+          throw Error("Answer every source or report check.");
+        return Object.fromEntries(
+          selections.map((s) => [s.dataset.check, s.value === "true"]),
+        );
+      }
+      function list() {
+        const q = $("#queue").value;
+        const rows = packet.records.filter(
+          (r) =>
+            q === "all" ||
+            (q === "benchmark" && r.in_benchmark) ||
+            (q === "top" && r.top_award) ||
+            r.country === q ||
+            (q === "pending" && !state.verdicts[r.id]),
+        );
+        $("#list").replaceChildren();
+        for (const r of rows) {
+          const b = el(
+            "button",
+            `${state.verdicts[r.id] ? "✓ " : ""}${r.country} · ${r.title}`,
+            r.id === selected ? "active" : "",
+          );
+          b.onclick = () => {
+            selected = r.id;
+            list();
+            record();
+          };
+          $("#list").append(b);
+        }
+        if (!rows.length)
+          $("#list").append(el("p", "No records in this queue."));
+      }
+      function record() {
+        const r = packet.records.find((r) => r.id === selected);
+        if (!r) return;
+        const v = state.verdicts[r.id];
+        const root = $("#record");
+        root.replaceChildren();
+        root.append(
+          el(
+            "span",
+            `${r.country} · ${r.in_benchmark ? "Frozen benchmark" : "Large-award audit"}${r.top_award ? " · Top 10 amount" : ""}`,
+            "tag",
+          ),
+          el("h2", r.title),
+        );
+        const a = el("a", "Open original award and abstract ↗", "button");
+        a.href = r.source_url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        root.append(a);
+        const meta = el("div", undefined, "meta");
+        for (const [k, val] of [
+          ["Recorded award", money(r.amount_minor, r.currency)],
+          ["Funder", r.funder],
+          ["Funding year", `${r.year} · ${r.amount_basis}`],
+          [
+            "Funding period",
+            `${date(r.funding_start)} to ${date(r.funding_end)}`,
+          ],
+          ["Source date", `${date(r.source_date)} · ${r.source_date_note}`],
+          ["Retrieved", date(r.retrieved_at)],
+        ]) {
+          const d = el("div");
+          d.append(el("small", k), el("span", val));
+          meta.append(d);
+        }
+        root.append(
+          meta,
+          el("code", r.id),
+          el(
+            "p",
+            "Use the full original abstract to identify the main research objective. Training, centres and mixed portfolios need care; a disease mentioned in background is not automatically the objective.",
+            "muted",
+          ),
+        );
+        const form = el("form");
+        const label = el("label", "Research objective");
+        const select = el("select");
+        select.id = "category";
+        select.required = true;
+        const blank = el("option", "Choose a category…");
+        blank.value = "";
+        select.append(blank);
+        for (const [k, t] of Object.entries(packet.categories)) {
+          const o = el("option", t);
+          o.value = k;
+          select.append(o);
+        }
+        select.value = v?.category || "";
+        label.append(el("br"), select);
+        form.append(label);
+        const def = el(
+          "p",
+          definitions[select.value] || "The prediction remains hidden.",
+          "muted",
+        );
+        select.onchange = () => (def.textContent = definitions[select.value]);
+        form.append(def, checks(packet.source_checks, v?.checks));
+        const note = el("textarea");
+        note.placeholder =
+          "Source location and reason, especially for a failed check or unresolved objective";
+        note.value = v?.note || "";
+        form.append(el("p", "Review note"), note);
+        const save = el(
+          "button",
+          v ? "Saved · first verdict retained" : "Save human verdict",
+        );
+        save.type = "submit";
+        form.append(el("p"), save);
+        if (v) {
+          for (const x of form.querySelectorAll("input,select,textarea,button"))
+            x.disabled = true;
+          form.append(
+            el(
+              "p",
+              "This completed verdict is locked in the browser to preserve the first assessment. Export it; corrections can be recorded as a later review event by the team.",
+              "saved",
+            ),
+          );
+        }
+        form.onsubmit = (e) => {
+          e.preventDefault();
+          notice("");
+          if (!signed()) return;
+          try {
+            state.verdicts[r.id] = {
+              reviewer: $("#reviewer").value.trim(),
+              human_attested: true,
+              reviewed_at: new Date().toISOString(),
+              source_version: r.version_hash,
+              review_version: r.review_version,
+              category: select.value,
+              checks: readChecks(form),
+              note: note.value.trim(),
+            };
+            state.reviewer = $("#reviewer").value.trim();
+            persist();
+            header();
+            list();
+            record();
+            notice("Saved locally. Export completed reviews when ready.");
+          } catch (e) {
+            notice(e.message);
+          }
+        };
+        root.append(form);
+      }
+      function reports() {
+        const root = $("#reports");
+        root.replaceChildren(
+          el(
+            "p",
+            "These figures are private estimates from unverified classifications. Approval is a separate human assessment of the whole report. Passing this form alone cannot publish a ratio.",
+            "box warning",
+          ),
+        );
+        for (const [c, r] of Object.entries(packet.reports)) {
+          const box = el("section", undefined, "box");
+          const s = r.summary;
+          box.append(
+            el("h2", `${r.name} · ${r.period}`),
+            el("p", r.label),
+            el("p", r.basis),
+            el(
+              "h3",
+              s.ratio === null
+                ? "No classified denominator"
+                : `${(s.ratio * 100).toFixed(2)}% candidate share · unverified`,
+            ),
+          );
+          const table = el("table");
+          for (const [k, amount] of Object.entries(s.category_amount_minor)) {
+            const tr = el("tr");
+            tr.append(
+              el("td", packet.categories[k]),
+              el("td", money(amount, r.currency)),
+              el("td", `${s.category_counts[k]} records`),
+            );
+            table.append(tr);
+          }
+          box.append(
+            table,
+            el(
+              "p",
+              `Numerator: ${money(s.numerator_minor, r.currency)}. Classified ageing denominator: ${money(s.denominator_minor, r.currency)}. Unresolved: ${money(s.unresolved_minor, r.currency)}.`,
+            ),
+            el(
+              "p",
+              `Known-amount sensitivity: ${s.sensitivity_lower === null ? "unavailable" : (s.sensitivity_lower * 100).toFixed(2) + "–" + (s.sensitivity_upper * 100).toFixed(2) + "%"}. Missing amounts: ${s.missing_amount_records}; true zero amounts: ${s.zero_amount_records}. ${s.range_note}`,
+            ),
+            el(
+              "p",
+              "The numerator includes ageing biology and interventions targeting ageing, shown separately above. No annualisation, currency conversion or care/pension expenditure is included. These portfolios are not complete national budgets.",
+            ),
+          );
+          const v = state.reports[c];
+          const form = el("form");
+          form.append(checks(packet.report_checks, v?.checks));
+          const note = el("textarea");
+          note.placeholder =
+            "Explain the report assessment and any limitations";
+          note.value = v?.note || "";
+          form.append(el("p"), note);
+          const save = el(
+            "button",
+            v ? "Update report assessment" : "Save report assessment",
+          );
+          save.type = "submit";
+          form.append(el("p"), save);
+          form.onsubmit = (e) => {
+            e.preventDefault();
+            if (!signed()) return;
+            try {
+              state.reports[c] = {
+                reviewer: $("#reviewer").value.trim(),
+                human_attested: true,
+                reviewed_at: new Date().toISOString(),
+                version_hash: r.version_hash,
+                checks: readChecks(form),
+                note: note.value.trim(),
+              };
+              persist();
+              notice(
+                "Report assessment saved locally. Export for version-checked import.",
+              );
+            } catch (e) {
+              notice(e.message);
+            }
+          };
+          box.append(
+            form,
+            el("p", "Report version: " + r.version_hash, "muted"),
+          );
+          root.append(box);
+        }
+      }
+      async function unlock() {
+        notice("");
+        try {
+          const encoded = $("#key").value.trim();
+          const raw = Uint8Array.from(
+            atob(encoded.replaceAll("-", "+").replaceAll("_", "/")),
+            (c) => c.charCodeAt(0),
+          );
+          const key = await crypto.subtle.importKey(
+            "raw",
+            raw,
+            "AES-GCM",
+            false,
+            ["decrypt"],
+          );
+          const encrypted = await fetch("./packet.json").then((r) => {
+            if (!r.ok) throw Error("Packet unavailable");
+            return r.json();
+          });
+          const decode = (s) =>
+            Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+          const clear = await crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: decode(encrypted.iv) },
+            key,
+            decode(encrypted.ciphertext),
+          );
+          packet = JSON.parse(new TextDecoder().decode(clear));
+          storeKey = "longview-funding-review:" + packet.benchmark_version;
+          const existing = Object.fromEntries(
+            Object.entries(packet.existing_verdicts).map(([id, v]) => [
+              id,
+              v.current,
+            ]),
+          );
+          let local = {};
+          try {
+            local = JSON.parse(localStorage.getItem(storeKey) || "{}");
+          } catch {}
+          const validRecords = Object.fromEntries(
+            Object.entries({ ...existing, ...local.verdicts }).filter(
+              ([id, v]) =>
+                packet.records.some(
+                  (r) =>
+                    r.id === id &&
+                    r.version_hash === v.source_version &&
+                    r.review_version === v.review_version,
+                ),
+            ),
+          );
+          const validReports = Object.fromEntries(
+            Object.entries({
+              ...packet.existing_approvals,
+              ...local.reports,
+            }).filter(
+              ([c, v]) => packet.reports[c]?.version_hash === v.version_hash,
+            ),
+          );
+          state = {
+            verdicts: validRecords,
+            reports: validReports,
+            reviewer: local.reviewer || "",
+          };
+          selected = packet.records[0].id;
+          $("#reviewer").value = state.reviewer;
+          $("#unlock").hidden = true;
+          $("#workspace").hidden = false;
+          $("#key").value = "";
+          history.replaceState(null, "", location.pathname);
+          header();
+          list();
+          record();
+          reports();
+        } catch {
+          notice(
+            "Unable to unlock this packet. Check the private key and use the current review link.",
+          );
+        }
+      }
+      $("#open").onclick = unlock;
+      $("#queue").onchange = list;
+      $("#grants-tab").onclick = () => {
+        $("#grants").hidden = false;
+        $("#reports").hidden = true;
+      };
+      $("#reports-tab").onclick = () => {
+        $("#grants").hidden = true;
+        $("#reports").hidden = false;
+        reports();
+      };
+      $("#export").onclick = () => {
+        const body = {
+          format: packet.format,
+          benchmark_version: packet.benchmark_version,
+          exported_at: new Date().toISOString(),
+          verdicts: state.verdicts,
+          reports: state.reports,
+        };
+        const url = URL.createObjectURL(
+          new Blob([JSON.stringify(body, null, 2)], {
+            type: "application/json",
+          }),
+        );
+        const a = el("a");
+        a.href = url;
+        a.download = "longview-funding-human-reviews.json";
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        notice(
+          "Exported. The team must import and rebuild before public review progress changes.",
+        );
+      };
+      const key = new URLSearchParams(location.hash.slice(1)).get("key");
+      if (key) {
+        $("#key").value = key;
+        unlock();
+      }
+    </script>
+  </body>
+</html>

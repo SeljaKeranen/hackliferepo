@@ -4,7 +4,7 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/((?!assets/|release/|review/|downloads/|licenses/).*)",
+      "source": "/((?!assets/|release/|funding/|reports/|review/|downloads/|licenses/).*)",
       "destination": "/index.html"
     }
   ],

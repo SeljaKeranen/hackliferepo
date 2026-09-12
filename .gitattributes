@@ -3,3 +3,6 @@
 *.pptx binary
 *.webm binary
 *.zip binary
+
+# Generated public evidence ledgers remain inspectable as JSON.
+public/funding/ledgers/*.json linguist-generated=true

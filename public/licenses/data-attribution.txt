@@ -1,3 +1,11 @@
+Longview funding report (2024 award snapshot, retrieved 12 September 2026)
+
+NIH RePORTER: public federal award facts from https://api.reporter.nih.gov/ . Parent award sums exclude constituent subprojects. Full source abstracts are not redistributed.
+
+Swecris, Swedish Research Council: https://www.vr.se/english/swecris.html . The “Use of data from Swecris” section permits internal and public use and requests attribution. Government funder award facts are used here; raw abstracts and researcher details are not redistributed.
+
+Earlier project data attributions follow. Those datasets do not establish the new funding ratio.
+
 World Bank, World Development Indicators. CC BY 4.0. Retrieved 11 September 2026; transformed by Longview. Underlying providers and exact indicator definitions are retained in release/quantitative.json.
 World map: Natural Earth, public domain; world-atlas packaging, ISC.
 Inter: SIL Open Font License 1.1; see inter-OFL.txt.

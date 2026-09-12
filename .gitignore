@@ -32,3 +32,6 @@ playwright-report/
 # Local conversation transcripts and copied planning material
 DISCORD.md
 GDOCS.md
+
+# Local review import lock
+eval/funding/.review.lock

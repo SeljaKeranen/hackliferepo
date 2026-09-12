@@ -1,30 +1,37 @@
 {
-  "evidence_release": "d9261b592fe1",
-  "quantitative_release": "b89b9bf93a80",
+  "funding_release": "5377161e107b0f80",
   "slides": 3,
-  "recording": "captioned real browser interaction; no audio",
-  "recording_verification": {
-    "duration_seconds": 100.08,
-    "bytes": 6713735,
-    "captioned": true,
-    "audio": false
+  "human_reviewed": 0,
+  "recording": {
+    "funding_release": "5377161e107b0f80",
+    "recorded_at": "2026-09-12T07:49:50.349Z",
+    "interaction": "Actual browser navigation, country reports, source search/details, method and frozen link.",
+    "captions": true,
+    "audio": false,
+    "synthetic_reviews": false,
+    "cues": 12,
+    "wall_duration_seconds": 101.702,
+    "complete": true,
+    "duration_seconds": 94.92,
+    "decoded_frame_seconds": 40,
+    "frame_decode_passed": true
   },
   "files": {
     "longview-three-slides.pptx": {
-      "bytes": 207336,
-      "sha256": "115e4a7cb8a66af3690588682f122ae7be245ce609afe2dbd7fcfbf783b3e36c"
+      "bytes": 111107,
+      "sha256": "a28d20830b6dba2e8fab1ca7f9ceca276009a011614e4d94da3b71eaa19c4105"
     },
     "longview-three-slides.pdf": {
-      "bytes": 215711,
-      "sha256": "bd3a844baeeaa37648e18f6c6626c560232993e0ab9b2b949d2d77822a832855"
+      "bytes": 126554,
+      "sha256": "2e9287e83df7df6b6b6983c6a92947fda676f7d042d753d637bfec0dbc2d9bec"
     },
     "longview-demo.webm": {
-      "bytes": 6713735,
-      "sha256": "6c61b81bd372e389994add9df4e3a2d3e7e30d67fde0186246386593d5786762"
+      "bytes": 7029651,
+      "sha256": "1b941637675bfc1614adef517900bfeef7a3c2ce1ac8ead2d4963330d1938704"
     },
     "longview-offline.zip": {
-      "bytes": 317681,
-      "sha256": "09924095493ecf02ac69739e23c764e424e096e670520a37d6a7fa3fbbf7709f"
+      "bytes": 1425877,
+      "sha256": "0b2f436200c5e815448bc2531be3f2bc87516035f15ff54fad86b737fd02d848"
     }
   }
 }

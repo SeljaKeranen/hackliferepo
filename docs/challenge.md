@@ -61,6 +61,14 @@ The scoring weights are a transparent v0 chosen by hand, documented in
 the gold-set builder that produces the benchmark to calibrate against. Expect
 both the weights and the index formula to be tuned once the gold set exists.
 
+## Search-keyword lexicon
+
+Built 12 September 2026: a validated search-keyword lexicon for the funding
+classifier - per-category English and Swedish keywords, trap terms, and
+per-source query guidance, derived from and validated against the 2,944-record
+Aging Funding Atlas (commit `2e59b27`). See
+[`classifier/KEYWORDS.md`](../classifier/KEYWORDS.md).
+
 ## What this means in practice
 
 Coverage explicitly matters less than accuracy. A modest map where nearly every finding survives human verification beats a dense map with unverified claims, so the benchmark and the honest "nothing reliable found" handling are first-class deliverables, not polish.

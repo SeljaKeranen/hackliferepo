@@ -15,8 +15,12 @@ Files:
   Swedish keywords with per-keyword corpus stats, trap terms with false-hit
   examples, a category-agnostic broad search net, and exclusion markers.
 - [`validate_keywords.py`](validate_keywords.py) - stdlib script that
-  recomputes every stat from the recovered corpus and fails if the JSON has
-  drifted. Run: `python3 classifier/validate_keywords.py`.
+  recomputes every stat from the corpus and fails (exit 1) if the JSON has
+  drifted, a keyword misses its threshold, a `variant_of` reference is broken,
+  or a term is malformed - in `--update` mode too, which rewrites the stats
+  first and then still reports violations. Run:
+  `python3 classifier/validate_keywords.py`; matching unit checks:
+  `python3 classifier/validate_keywords.py --self-test`.
 
 ## The governing principle: search broad, classify precise
 
@@ -34,8 +38,11 @@ The corpus is teammate Max's Aging Funding Atlas: 2,944 grant records
 (1,531 NIH RePORTER, 855 SweCRIS, 558 CORDIS), each with a title, an LLM
 category (`llm_category`), an LLM-chosen supporting quote (`llm_quote`), and a
 rule-based category from keyword rules that were never committed. The atlas
-was added in commit `2e59b27` and deleted from main in `4061bff`; recover it
-with:
+was added in commit `2e59b27` and lives in the tree at
+`data/Track3_C2/output/` (commit `4061bff` deleted a duplicate top-level
+`Track3_C2/` copy, not this one; the live files are byte-identical to the
+`2e59b27` blobs). The validator reads the live directory by default and falls
+back to history if it disappears:
 
 ```
 git show 2e59b27:data/Track3_C2/output/swecris.csv
@@ -68,17 +75,21 @@ human benchmark is labelled, re-run the validation against it.
    proxy, per-category hit breakdown, and example false hits.
 4. **Prune** at the stated thresholds and record why notable candidates fell.
 
-Matching semantics (implemented in `validate_keywords.py`): case-insensitive
-whole-word/phrase match on title + llm_quote; `*` in a keyword matches any
-word-character suffix (`senolytic*` matches "senolytics"); spaces match any
-whitespace run. Substring matching without word boundaries was rejected
-because it inflates "aging" with "imaging", "managing" and "packaging".
+Matching semantics (implemented in `validate_keywords.py`, unit-checked by
+`--self-test`): case-insensitive whole-word/phrase match on title + llm_quote;
+`*` at the end of a word matches any word-character suffix (`senolytic*`
+matches "senolytics"); spaces match any whitespace run; everything else,
+including hyphens, matches literally (`long-term care` does not match "long
+term care" - no such variant occurs in this corpus, but expect it in live
+data). Substring matching without word boundaries was rejected because it
+inflates "aging" with "imaging", "managing" and "packaging".
 
 ## Thresholds and validation results
 
 Keep a keyword if precision >= 0.60 and hits >= 3 (English) or hits >= 1
-(Swedish - only 38 Swedish-language records exist, so Swedish stats are thin
-and every entry with fewer than 5 hits carries `low_evidence: true`). Spelling
+(Swedish - only 38 Swedish-language records exist, so Swedish stats are thin).
+Every kept keyword with fewer than 5 hits, in either language, carries
+`low_evidence: true`. Spelling
 variants of a kept keyword (`calorie restriction`, `hallmarks of ageing`,
 `end-of-life`) are kept regardless of hit count and marked `variant_of`.
 
@@ -126,8 +137,10 @@ Other pruned candidates, with their measured precision: `anti-aging` (0.42),
 `neurodegenerat*` (0.58), `healthy aging` (0.42), `healthy ageing` (0.24),
 `aging population` (0.17), `population aging` (0.00), `geriatric*` (0.14),
 `gerontolog*` (0.13). Terms with zero corpus hits were dropped rather than
-guessed at (`stem cell exhaustion`, `nad+`, `spermidine`, `assisted living`,
-`hemtjänst`, `benskörhet`).
+guessed at (`stem cell exhaustion`, `spermidine`, `assisted living`,
+`hemtjänst`, `benskörhet`). `nad+` has 5 hits but splits 3
+age_related_disease / 2 fundamental_aging, so it fails as the intervention
+keyword it is usually proposed as.
 
 The bare trap terms stay valuable as broad-net search terms - they are in
 `meta.broad_net` with their measured category spread. Three

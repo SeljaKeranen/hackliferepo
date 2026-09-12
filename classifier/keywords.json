@@ -1,7 +1,7 @@
 {
   "meta": {
     "derived_from_commit": "2e59b27",
-    "recovery_command": "git show 2e59b27:data/Track3_C2/output/{swecris,cordis,nih_reporter}.csv (deleted from main in 4061bff)",
+    "recovery_command": "atlas lives at data/Track3_C2/output/ (byte-identical to the 2e59b27 blobs; 4061bff deleted only a duplicate top-level Track3_C2/ copy); history fallback: git show 2e59b27:data/Track3_C2/output/{swecris,cordis,nih_reporter}.csv",
     "corpus_records": 2944,
     "corpus_fields_matched": "lowercased title + llm_quote",
     "matching": "whole word/phrase, case-insensitive; '*' in a keyword matches any word-character suffix; spaces match any whitespace",

@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="stage">
-  <svg id="map" role="img" aria-label="World map of the Longevity Politics Index"></svg>
+  <svg id="map" aria-label="World map of the Longevity Politics Index"></svg>
 
   <header id="masthead">
     <h1>Longevity Politics Index</h1>
@@ -25,7 +25,7 @@
 
   <div id="legend" hidden>
     <div class="legend-title">Index, 0&ndash;100</div>
-    <canvas id="ramp" width="180" height="10"></canvas>
+    <canvas id="ramp" width="180" height="10" aria-hidden="true"></canvas>
     <div class="ramp-ends"><span>0</span><span>100</span></div>
     <div class="legend-row"><span class="swatch hatch"></span>searched, nothing reliable found</div>
     <div class="legend-row"><span class="swatch empty"></span>not yet covered</div>
@@ -33,7 +33,7 @@
 
   <div id="tooltip" hidden></div>
 
-  <aside id="panel" aria-live="polite">
+  <aside id="panel">
     <div id="panel-body">
       <p class="loading">Loading findings&hellip;</p>
     </div>
@@ -44,6 +44,7 @@
   <code>/map/</code> from there.</p>
 </div>
 <script src="vendor/d3.v7.9.0.min.js"></script>
+<script src="scoring.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

@@ -22,13 +22,16 @@ needed beyond localhost: the map library, geometry and font are vendored.
 The map discovers `eval/findings/*.json` at runtime by parsing the server's
 directory listing, so new country files appear without code changes. Behind a
 server without directory listings it falls back to a fixed candidate list
-(`sweden.json`, `us.json`, `singapore.json`) and silently skips missing files.
+(`sweden.json`, `us.json`, `singapore.json`) and shows a warning in the panel
+that discovery may be incomplete; a findings or verdicts file that exists but
+fails to load is also called out in the panel rather than dropped silently.
 The eval review loop (`python3 eval/server.py`) is untouched and keeps working
 standalone; the map only reads its JSON files.
 
 ## Index methodology, v0
 
-Computed in `app.js` (the constants there are the source of truth). For each
+Computed in `scoring.js` (the constants there are the source of truth; the
+same file is loaded by the browser page and by the regression test). For each
 finding record:
 
 ```
@@ -58,6 +61,18 @@ These weights are a transparent v0, not a calibrated model. Calibrating them
 against a gold set (and the gold-set builder itself) is future work; see the
 note in [docs/challenge.md](../docs/challenge.md).
 
+## Test it
+
+```sh
+node map/test_scoring.js
+```
+
+Regression-tests the formula against fixed fixtures: every multiplier tier,
+the verified/pending/failed verdict states, the unknown-value fallbacks, the
+saturation constant, and the scored/nothing/empty country statuses. Runs on
+plain Node, no install. `python3 eval/test_findings.py` still validates the
+data files themselves.
+
 ## Vendored assets
 
 | File | Source | Version | Licence |
@@ -69,8 +84,9 @@ note in [docs/challenge.md](../docs/challenge.md).
 `vendor/world-110m.geojson` is generated: it keeps only the country name and
 ISO 3166-1 alpha-2 code and rounds coordinates. Regenerate it with
 `vendor/strip_geo.py` (instructions in its docstring) rather than editing it.
-The 1:110m geometry omits microstates (Malta, Singapore, ...); scored ones are
-drawn as circle markers from the small gazetteer in `app.js`.
+The 1:110m geometry omits microstates; the two with committed or planned
+findings (Malta, Singapore) are drawn as circle markers from the gazetteer in
+`app.js` — extend it when another microstate gains a findings file.
 
 ## Known limits
 

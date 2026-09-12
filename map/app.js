@@ -1,70 +1,12 @@
 "use strict";
 
 /* Longevity Politics Index — reads eval/findings/*.json + eval/verdicts/*.verdicts.json
-   and renders a scored world map. Methodology v0 is documented in map/README.md;
-   the constants below ARE the methodology. */
+   and renders a scored world map. The scoring methodology lives in map/scoring.js
+   (regression-tested by `node map/test_scoring.js`) and is documented in map/README.md. */
 
-/* ---------- index methodology v0 ---------- */
-
-const CLASS_WEIGHT = {
-  legislation: 1.0,
-  funding: 0.9,
-  policy: 0.8,
-  strategy: 0.7,
-  "political statement": 0.4,
-};
-const CONF_MULT = { high: 1.0, medium: 0.7, low: 0.4 };
-const VERIF_MULT = { verified: 1.0, pending: 0.7, failed: 0.0 };
-const HALFWAY = 4; // saturation constant: index = 100 * S / (S + HALFWAY)
+const { HALFWAY, scoreCountry } = window.Scoring;
 
 const NOW = new Date();
-
-function recencyMult(sourceDate) {
-  // source_date is YYYY, YYYY-MM or YYYY-MM-DD; a bare year is read as mid-year.
-  const d = new Date(sourceDate.length === 4 ? sourceDate + "-07-01" : sourceDate);
-  const years = (NOW - d) / (365.25 * 24 * 3600 * 1000);
-  if (!isFinite(years)) return 0.3;
-  if (years <= 2) return 1.0;
-  if (years <= 5) return 0.75;
-  if (years <= 10) return 0.5;
-  return 0.3;
-}
-
-function verifState(verdict) {
-  if (!verdict || !verdict.reviewed) return "pending";
-  return verdict.correct ? "verified" : "failed";
-}
-
-function scoreFinding(f, verdict) {
-  const state = verifState(verdict);
-  const parts = {
-    weight: CLASS_WEIGHT[f.classification] ?? 0.4,
-    conf: CONF_MULT[f.confidence] ?? 0.4,
-    verif: VERIF_MULT[state],
-    recency: recencyMult(f.source_date),
-    state,
-  };
-  parts.points = parts.weight * parts.conf * parts.verif * parts.recency;
-  return parts;
-}
-
-function scoreCountry(entry) {
-  const findings = entry.records.filter((r) => r.type === "finding");
-  const nothing = entry.records.filter((r) => r.type === "nothing_reliable_found");
-  const scored = findings.map((f) => ({ finding: f, ...scoreFinding(f, entry.verdicts[f.id]) }));
-  const S = scored.reduce((sum, s) => sum + s.points, 0);
-  return {
-    ...entry,
-    scored,
-    nothing,
-    S,
-    index: findings.length ? Math.round((100 * S) / (S + HALFWAY)) : null,
-    status: findings.length ? "scored" : nothing.length ? "nothing" : "empty",
-    verified: scored.filter((s) => s.state === "verified").length,
-    failed: scored.filter((s) => s.state === "failed").length,
-    pending: scored.filter((s) => s.state === "pending").length,
-  };
-}
 
 /* ---------- data loading ---------- */
 
@@ -73,26 +15,27 @@ const VERDICTS_BASE = "../eval/verdicts/";
 // Tried when the server offers no directory listing for eval/findings/.
 const FALLBACK_FILES = ["sweden.json", "us.json", "singapore.json"];
 
-// Countries whose findings may exist but that the 1:110m geometry omits;
-// rendered as circle markers at [lon, lat].
+// Countries whose findings exist or are planned but that the 1:110m geometry
+// omits; rendered as circle markers at [lon, lat].
 const MICRO = {
   SG: { name: "Singapore", coords: [103.82, 1.352] },
   MT: { name: "Malta", coords: [14.42, 35.9] },
-  HK: { name: "Hong Kong", coords: [114.17, 22.32] },
-  MC: { name: "Monaco", coords: [7.42, 43.74] },
-  AD: { name: "Andorra", coords: [1.52, 42.51] },
-  SM: { name: "San Marino", coords: [12.46, 43.94] },
-  LI: { name: "Liechtenstein", coords: [9.55, 47.16] },
-  BH: { name: "Bahrain", coords: [50.56, 26.07] },
-  MV: { name: "Maldives", coords: [73.51, 4.18] },
 };
 
+// Human-visible data-loading problems, surfaced in the ranking panel. A missing
+// verdicts file is normal (no reviews yet); a fetch/parse failure is not.
+const loadWarnings = [];
+
 async function fetchJSON(url) {
+  // Distinguishes "absent" (404, an expected state) from "broken" (network
+  // error, server error, malformed JSON) so failures can be surfaced.
   try {
     const res = await fetch(url);
-    return res.ok ? await res.json() : null;
+    if (res.status === 404) return { state: "missing", data: null };
+    if (!res.ok) return { state: "error", data: null };
+    return { state: "ok", data: await res.json() };
   } catch {
-    return null;
+    return { state: "error", data: null };
   }
 }
 
@@ -106,24 +49,45 @@ async function listFindingsFiles() {
       const html = await res.text();
       const names = [...html.matchAll(/href="([^"?]+\.json)"/g)]
         .map((m) => decodeURIComponent(m[1]).split("/").pop());
-      if (names.length) return [...new Set(names)];
+      if (names.length) return { files: [...new Set(names)], mode: "listing" };
     }
   } catch {
     /* fall through to the fixed candidate list */
   }
-  return FALLBACK_FILES;
+  return { files: FALLBACK_FILES, mode: "fallback" };
 }
 
 async function loadCountries() {
-  const files = await listFindingsFiles();
+  const discovery = await listFindingsFiles();
+  if (discovery.mode === "fallback") {
+    loadWarnings.push(
+      "No directory listing at eval/findings/; discovery fell back to a fixed " +
+        "candidate list, so country files added later may be missing here."
+    );
+  }
   const byCountry = new Map();
   await Promise.all(
-    files.map(async (file) => {
-      const records = await fetchJSON(FINDINGS_BASE + file);
-      if (!Array.isArray(records)) return;
+    discovery.files.map(async (file) => {
       const base = file.replace(/\.json$/, "");
-      const verdicts = (await fetchJSON(`${VERDICTS_BASE}${base}.verdicts.json`)) || {};
-      for (const rec of records) {
+      const [findingsRes, verdictsRes] = await Promise.all([
+        fetchJSON(FINDINGS_BASE + file),
+        fetchJSON(`${VERDICTS_BASE}${base}.verdicts.json`),
+      ]);
+      if (findingsRes.state === "error" || (findingsRes.state === "ok" && !Array.isArray(findingsRes.data))) {
+        loadWarnings.push(`Findings file ${file} failed to load and is not shown.`);
+        return;
+      }
+      if (findingsRes.state === "missing") return; // fallback candidate that doesn't exist
+      if (verdictsRes.state === "error") {
+        loadWarnings.push(
+          `Verdicts for ${base} failed to load; its findings are shown as awaiting review.`
+        );
+      }
+      const verdicts =
+        verdictsRes.state === "ok" && verdictsRes.data && typeof verdictsRes.data === "object"
+          ? verdictsRes.data
+          : {};
+      for (const rec of findingsRes.data) {
         if (!rec || typeof rec.country !== "string") continue;
         const iso = rec.country.toUpperCase();
         if (!byCountry.has(iso)) byCountry.set(iso, { iso, records: [], verdicts: {} });
@@ -132,10 +96,20 @@ async function loadCountries() {
       for (const [id, v] of Object.entries(verdicts)) {
         const iso = id.slice(0, 2).toUpperCase();
         if (byCountry.has(iso)) byCountry.get(iso).verdicts[id] = v;
+        else loadWarnings.push(`Verdict ${id} in ${base} matches no loaded finding country.`);
       }
     })
   );
-  return new Map([...byCountry].map(([iso, entry]) => [iso, scoreCountry(entry)]));
+  const scored = new Map([...byCountry].map(([iso, entry]) => [iso, scoreCountry(entry, NOW)]));
+  for (const c of scored.values()) {
+    for (const s of c.scored) {
+      if (s.unknownClassification)
+        console.warn(`Finding ${s.finding.id}: unknown classification "${s.finding.classification}" scored at 0.4`);
+      if (s.unknownConfidence)
+        console.warn(`Finding ${s.finding.id}: unknown confidence "${s.finding.confidence}" scored at 0.4`);
+    }
+  }
+  return scored;
 }
 
 /* ---------- colors ---------- */
@@ -180,6 +154,25 @@ function fitProjection() {
   );
 }
 
+function bindCountryInteractions(selection, isoOf, nameOf) {
+  selection
+    .attr("tabindex", 0)
+    .attr("role", "button")
+    .attr("aria-label", (d) => ariaFor(isoOf(d), nameOf(d)))
+    .on("mousemove", (event, d) => showTooltip(event, isoOf(d), nameOf(d)))
+    .on("mouseleave", hideTooltip)
+    .on("click", (event, d) => {
+      event.stopPropagation();
+      selectCountry(isoOf(d));
+    })
+    .on("keydown", (event, d) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        selectCountry(isoOf(d));
+      }
+    });
+}
+
 function drawMap() {
   fitProjection();
   gRoot.selectAll("*").remove();
@@ -211,53 +204,25 @@ function drawMap() {
     requestAnimationFrame(() => paths.attr("fill", (d) => countryFill(countries.get(d.properties.iso_a2))))
   );
 
-  paths
-    .filter((d) => countries.has(d.properties.iso_a2))
-    .classed("scored", true)
-    .attr("tabindex", 0)
-    .attr("role", "button")
-    .attr("aria-label", (d) => ariaFor(d.properties.iso_a2, d.properties.name))
-    .on("click", (event, d) => {
-      event.stopPropagation();
-      selectCountry(d.properties.iso_a2);
-    })
-    .on("keydown", (event, d) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        selectCountry(d.properties.iso_a2);
-      }
-    });
+  const scoredPaths = paths.filter((d) => countries.has(d.properties.iso_a2)).classed("scored", true);
+  bindCountryInteractions(scoredPaths, (d) => d.properties.iso_a2, (d) => d.properties.name);
 
   // circle markers for scored countries the 110m geometry omits
   const missing = [...countries.keys()].filter(
-    (iso) => !world.features.some((f) => f.properties.iso_a2 === iso) && MICRO[iso]
+    (iso) => !nameByIso.has(iso) && MICRO[iso]
   );
-  gRoot
+  const markers = gRoot
     .append("g")
     .selectAll("circle")
     .data(missing)
     .join("circle")
     .attr("class", "marker")
-    .attr("tabindex", 0)
-    .attr("role", "button")
-    .attr("aria-label", (iso) => ariaFor(iso, MICRO[iso].name))
     .attr("cx", (iso) => projection(MICRO[iso].coords)[0])
     .attr("cy", (iso) => projection(MICRO[iso].coords)[1])
     .attr("r", 6)
     .attr("fill", (iso) => countryFill(countries.get(iso)))
-    .style("vector-effect", "non-scaling-stroke")
-    .on("mousemove", (event, iso) => showTooltip(event, iso, MICRO[iso].name))
-    .on("mouseleave", hideTooltip)
-    .on("click", (event, iso) => {
-      event.stopPropagation();
-      selectCountry(iso);
-    })
-    .on("keydown", (event, iso) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        selectCountry(iso);
-      }
-    });
+    .style("vector-effect", "non-scaling-stroke");
+  bindCountryInteractions(markers, (iso) => iso, (iso) => MICRO[iso].name);
 
   markSelection();
 
@@ -269,6 +234,9 @@ function drawMap() {
       gRoot.selectAll(".marker").attr("r", 6 / Math.sqrt(event.transform.k));
     });
   svg.call(zoomBehavior);
+  // Sync the zoom state to the freshly fitted projection; without this a
+  // resize while zoomed leaves a stale transform on gRoot.
+  svg.call(zoomBehavior.transform, d3.zoomIdentity);
   svg.on("click", () => {
     selectedIso = null;
     markSelection();
@@ -315,20 +283,25 @@ function ariaFor(iso, fallbackName) {
   return `${name}: searched, nothing reliable found`;
 }
 
+let tooltipIso = null;
+
 function showTooltip(event, iso, name) {
-  const c = countries.get(iso);
-  let html = `<div class="tt-name">${esc(name || iso)}</div>`;
-  if (!c) {
-    html += `<div class="tt-line">Not yet covered by the research agent.</div>`;
-  } else if (c.status === "scored") {
-    html += `<div class="tt-line"><span class="tt-score">Index ${c.index}</span> from ${c.scored.length} finding${c.scored.length === 1 ? "" : "s"}</div>`;
-    html += `<div class="tt-line">${c.verified} human-verified, ${c.pending} awaiting review${c.failed ? `, ${c.failed} failed review` : ""}</div>`;
-    html += `<div class="tt-line">Click for the score breakdown.</div>`;
-  } else {
-    html += `<div class="tt-line">Searched: nothing reliable found. Click for the search notes.</div>`;
+  if (tooltip.hidden || tooltipIso !== iso) {
+    tooltipIso = iso;
+    const c = countries.get(iso);
+    let html = `<div class="tt-name">${esc(name || iso)}</div>`;
+    if (!c) {
+      html += `<div class="tt-line">Not yet covered by the research agent.</div>`;
+    } else if (c.status === "scored") {
+      html += `<div class="tt-line"><span class="tt-score">Index ${c.index}</span> from ${c.scored.length} finding${c.scored.length === 1 ? "" : "s"}</div>`;
+      html += `<div class="tt-line">${c.verified} human-verified, ${c.pending} awaiting review${c.failed ? `, ${c.failed} failed review` : ""}</div>`;
+      html += `<div class="tt-line">Click for the score breakdown.</div>`;
+    } else {
+      html += `<div class="tt-line">Searched: nothing reliable found. Click for the search notes.</div>`;
+    }
+    tooltip.innerHTML = html;
+    tooltip.hidden = false;
   }
-  tooltip.innerHTML = html;
-  tooltip.hidden = false;
   const pad = 14;
   const rect = tooltip.getBoundingClientRect();
   let left = event.clientX + pad;
@@ -341,6 +314,7 @@ function showTooltip(event, iso, name) {
 
 function hideTooltip() {
   tooltip.hidden = true;
+  tooltipIso = null;
 }
 
 /* ---------- panel ---------- */
@@ -352,6 +326,20 @@ function displayName(iso) {
   return nameByIso.get(iso) || (MICRO[iso] && MICRO[iso].name) || iso;
 }
 
+function focusPanelHeading() {
+  const heading = panelBody.querySelector(".panel-heading");
+  if (heading) {
+    heading.setAttribute("tabindex", "-1");
+    heading.focus({ preventScroll: true });
+  }
+  panelBody.parentElement.scrollTop = 0;
+}
+
+function warningsHTML() {
+  if (!loadWarnings.length) return "";
+  return `<div class="load-warnings">${loadWarnings.map((w) => `<p>${esc(w)}</p>`).join("")}</div>`;
+}
+
 function selectCountry(iso) {
   selectedIso = iso;
   markSelection();
@@ -359,7 +347,7 @@ function selectCountry(iso) {
   zoomToCountry(iso);
 }
 
-function renderRanking() {
+function renderRanking(focus = false) {
   const list = [...countries.values()].sort((a, b) => (b.index ?? -1) - (a.index ?? -1));
   const covered = list.filter((c) => c.status === "scored");
   const quiet = list.filter((c) => c.status === "nothing");
@@ -367,6 +355,7 @@ function renderRanking() {
     <p class="panel-sub">${covered.length} scored ${covered.length === 1 ? "country" : "countries"},
     ${quiet.length} searched with nothing reliable found. Click a country on the map
     or in the list for its score composition and cited findings.</p>`;
+  html += warningsHTML();
   list.forEach((c, i) => {
     const name = displayName(c.iso);
     const meta =
@@ -394,6 +383,7 @@ function renderRanking() {
   panelBody.querySelectorAll(".rank-row").forEach((row) =>
     row.addEventListener("click", () => selectCountry(row.dataset.iso))
   );
+  if (focus) focusPanelHeading();
 }
 
 function renderCountry(iso) {
@@ -432,16 +422,16 @@ function renderCountry(iso) {
 
   for (const n of c.nothing) {
     html += `<div class="nothing-card"><b>Nothing reliable found${n.region ? ` for ${esc(n.region)}` : ""}.</b>
-      ${esc(n.search_note)} <span>(checked ${esc(n.retrieved_at.slice(0, 10))})</span></div>`;
+      ${esc(n.search_note)} <span>(checked ${esc(String(n.retrieved_at).slice(0, 10))})</span></div>`;
   }
 
   panelBody.innerHTML = html;
   document.getElementById("back").addEventListener("click", () => {
     selectedIso = null;
     markSelection();
-    renderRanking();
+    renderRanking(true);
   });
-  panelBody.parentElement.scrollTop = 0;
+  focusPanelHeading();
 }
 
 function findingCard(s) {
@@ -452,12 +442,20 @@ function findingCard(s) {
       : s.state === "failed"
       ? `<span class="f-verif bad">failed review, excluded</span>`
       : `<span class="f-verif pending">awaiting human review</span>`;
-  let host = "";
-  try {
-    host = new URL(f.source_url).hostname.replace(/^www\./, "");
-  } catch {
-    host = "source";
+  // Only http(s) sources become links; anything else (schema violations,
+  // javascript:/data: schemes) renders as inert text.
+  const safeUrl = /^https?:\/\//i.test(f.source_url || "") ? f.source_url : null;
+  let host = "source";
+  if (safeUrl) {
+    try {
+      host = new URL(safeUrl).hostname.replace(/^www\./, "");
+    } catch {
+      host = "source";
+    }
   }
+  const srcLine = safeUrl
+    ? `<a href="${esc(safeUrl)}" target="_blank" rel="noopener noreferrer">${esc(host)}</a>`
+    : `<span>${esc(f.source_url || "no source URL")}</span>`;
   return `<article class="finding${s.state === "failed" ? " excluded" : ""}">
     <div class="f-top">
       <span class="f-class">${esc(f.classification)}</span>
@@ -465,8 +463,7 @@ function findingCard(s) {
       ${verif}
     </div>
     <p class="f-claim">${esc(f.claim)}</p>
-    <p class="f-src"><a href="${esc(f.source_url)}" target="_blank" rel="noopener noreferrer">${esc(host)}</a>,
-      dated ${esc(f.source_date)}</p>
+    <p class="f-src">${srcLine}, dated ${esc(f.source_date)}</p>
     <p class="f-points">${s.points.toFixed(2)} pts =
       ${s.weight.toFixed(2)} ${esc(f.classification)}
       &times; ${s.conf.toFixed(1)} ${esc(f.confidence)} confidence
@@ -496,15 +493,19 @@ function renderChrome() {
 
 /* ---------- boot ---------- */
 
+function showLoadError() {
+  document.getElementById("load-error").hidden = false;
+  panelBody.innerHTML = "";
+}
+
 async function boot() {
-  const [geo, data] = await Promise.all([fetchJSON("vendor/world-110m.geojson"), loadCountries()]);
-  if (!geo || !geo.features) {
-    document.getElementById("load-error").hidden = false;
-    panelBody.innerHTML = "";
+  const [geoRes, data] = await Promise.all([fetchJSON("vendor/world-110m.geojson"), loadCountries()]);
+  if (geoRes.state !== "ok" || !geoRes.data || !geoRes.data.features) {
+    showLoadError();
     return;
   }
-  world = geo;
-  nameByIso = new Map(geo.features.map((f) => [f.properties.iso_a2, f.properties.name]));
+  world = geoRes.data;
+  nameByIso = new Map(world.features.map((f) => [f.properties.iso_a2, f.properties.name]));
   countries = data;
   drawMap();
   renderChrome();
@@ -513,7 +514,7 @@ async function boot() {
     panelBody.innerHTML = `<h2 class="panel-heading">No findings yet</h2>
       <p class="panel-sub">No files in <code>eval/findings/</code> could be loaded.
       Serve the repository root (<code>python3 -m http.server 8010</code>) and open
-      <code>/map/</code> so the map can reach <code>../eval/findings/</code>.</p>`;
+      <code>/map/</code> so the map can reach <code>../eval/findings/</code>.</p>` + warningsHTML();
   }
 }
 
@@ -528,4 +529,7 @@ window.addEventListener("resize", () => {
   }, 150);
 });
 
-boot();
+boot().catch((err) => {
+  console.error("boot failed", err);
+  showLoadError();
+});

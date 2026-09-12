@@ -66,6 +66,9 @@ def validate_record(rec, where):
 
     check(matches(ID_RE, rec.get("id")), f"{where}: bad id {rec.get('id')!r}")
     check(matches(COUNTRY_RE, rec.get("country")), f"{where}: bad country {rec.get('country')!r}")
+    if matches(ID_RE, rec.get("id")) and matches(COUNTRY_RE, rec.get("country")):
+        check(rec["id"][:2] == rec["country"].lower(),
+              f"{where}: id prefix {rec['id'][:2]!r} does not match country {rec['country']!r}")
     check(matches(TIMESTAMP_RE, rec.get("retrieved_at")),
           f"{where}: bad retrieved_at {rec.get('retrieved_at')!r}")
 
@@ -139,6 +142,7 @@ BAD_MUTATIONS = [
     ({"id": "bad id"}, "bad id"),
     ({"id": "se-001\n"}, "bad id"),
     ({"country": "sve"}, "bad country"),
+    ({"country": "YY"}, "does not match country"),
     ({"classification": "opinion"}, "bad classification"),
     ({"confidence": "certain"}, "bad confidence"),
     ({"claim": "too short"}, "claim length"),

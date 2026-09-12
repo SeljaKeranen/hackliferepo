@@ -21,6 +21,7 @@
     display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
   }
   header h1 { font-size: 17px; margin: 0; }
+  #country { border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font: inherit; background: #fff; }
   .stats { display: flex; gap: 18px; margin-left: auto; align-items: center; }
   .stat { text-align: center; }
   .stat b { display: block; font-size: 19px; }
@@ -72,13 +73,15 @@
 </head>
 <body>
 <header>
-  <h1>Findings review — <span id="country"></span></h1>
+  <h1>Findings review</h1>
+  <select id="country"></select>
   <input id="reviewer" placeholder="reviewer name">
   <div class="stats">
     <div class="stat"><b id="s-total">–</b><span>findings</span></div>
     <div class="stat"><b id="s-reviewed">–</b><span>reviewed</span></div>
     <div class="stat"><b id="s-correct" class="ok">–</b><span>correct</span></div>
     <div class="stat"><b id="s-acc">–</b><span>accuracy</span></div>
+    <div class="stat"><b id="s-overall">–</b><span>overall</span></div>
   </div>
 </header>
 <main>
@@ -95,17 +98,33 @@ const CHECKS = [
   ["classification_correct", "Classification correct"],
   ["claim_supported", "Claim supported"],
 ];
-let findings = [], verdicts = {};
+let data = {}, country = "", findings = [], verdicts = {};
 
 const reviewerInput = document.getElementById("reviewer");
 reviewerInput.value = localStorage.getItem("reviewer") || "";
 reviewerInput.addEventListener("input", () => localStorage.setItem("reviewer", reviewerInput.value));
 
 async function boot() {
-  const fRes = await fetch("/api/findings").then(r => r.json());
-  document.getElementById("country").textContent = fRes.country;
-  findings = fRes.findings;
-  verdicts = await fetch("/api/verdicts").then(r => r.json());
+  const res = await fetch("/api/data").then(r => r.json());
+  data = res.countries || {};
+  const names = Object.keys(data).sort();
+  const sel = document.getElementById("country");
+  sel.innerHTML = names.map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join("");
+  const remembered = localStorage.getItem("country");
+  country = names.includes(remembered) ? remembered : (names[0] || "");
+  sel.value = country;
+  sel.addEventListener("change", () => {
+    country = sel.value;
+    localStorage.setItem("country", country);
+    selectCountry();
+  });
+  selectCountry();
+}
+
+function selectCountry() {
+  // Same object references as `data`, so verdict saves update overall stats too.
+  findings = (data[country] || {}).findings || [];
+  verdicts = (data[country] || {}).verdicts || {};
   render();
 }
 
@@ -189,6 +208,7 @@ async function save(id, card) {
     checks[group.dataset.check] = pass ? true : fail ? false : null;
   });
   const body = {
+    country,
     finding_id: id,
     checks,
     reviewer: reviewerInput.value,
@@ -230,6 +250,15 @@ function renderStats() {
   document.getElementById("s-correct").textContent = correct.length;
   document.getElementById("s-acc").textContent =
     reviewed.length ? Math.round(100 * correct.length / reviewed.length) + "%" : "–";
+  let allReviewed = 0, allCorrect = 0;
+  for (const c of Object.values(data)) {
+    for (const f of c.findings || []) {
+      const v = (c.verdicts || {})[f.id];
+      if (v && v.reviewed) { allReviewed++; if (v.correct) allCorrect++; }
+    }
+  }
+  document.getElementById("s-overall").textContent =
+    allReviewed ? Math.round(100 * allCorrect / allReviewed) + "%" : "–";
 }
 
 function esc(s) {

@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Localhost human-eval server for longevity politics findings.
 
-Run: python3 eval/server.py [--port 8000] [--country sweden]
+Run: python3 eval/server.py [--port 8000]
 Then open http://localhost:8000
 
-Stdlib only. Serves the review UI, the findings file, and reads/writes
-verdicts to eval/verdicts/<country>.verdicts.json.
+Stdlib only. Serves the review UI and every findings file under
+eval/findings/*.json (one country per file); reads/writes verdicts to
+eval/verdicts/<country>.verdicts.json.
 """
 import argparse
+import glob
 import json
 import os
 import re
@@ -21,6 +23,15 @@ FINDINGS_DIR = os.path.join(EVAL_DIR, "findings")
 VERDICTS_DIR = os.path.join(EVAL_DIR, "verdicts")
 
 CHECKS = ("source_resolves", "date_correct", "classification_correct", "claim_supported")
+# Country names are filenames; keep them boring so they can't traverse paths.
+COUNTRY_RE = re.compile(r"[a-z][a-z0-9_-]*")
+
+
+def list_countries():
+    return sorted(
+        os.path.splitext(os.path.basename(p))[0]
+        for p in glob.glob(os.path.join(FINDINGS_DIR, "*.json"))
+    )
 
 
 def load_json(path, default):
@@ -45,14 +56,8 @@ def atomic_write_json(path, data):
 
 
 class Handler(SimpleHTTPRequestHandler):
-    country = "sweden"
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=STATIC_DIR, **kwargs)
-
-    @property
-    def verdicts_path(self):
-        return os.path.join(VERDICTS_DIR, f"{self.country}.verdicts.json")
 
     def send_json(self, obj, status=200):
         body = json.dumps(obj, ensure_ascii=False).encode("utf-8")
@@ -64,14 +69,19 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         path = urlparse(self.path).path
-        if path == "/api/findings":
-            findings_path = os.path.join(FINDINGS_DIR, f"{self.country}.json")
-            findings = load_json(findings_path, None)
-            if findings is None:
-                return self.send_json({"error": f"no findings file: {findings_path}"}, 404)
-            return self.send_json({"country": self.country, "findings": findings})
-        if path == "/api/verdicts":
-            return self.send_json(load_json(self.verdicts_path, {}))
+        if path == "/api/data":
+            countries = {}
+            for name in list_countries():
+                countries[name] = {
+                    "findings": load_json(
+                        os.path.join(FINDINGS_DIR, f"{name}.json"), []),
+                    "verdicts": load_json(
+                        os.path.join(VERDICTS_DIR, f"{name}.verdicts.json"), {}),
+                }
+            if not countries:
+                return self.send_json(
+                    {"error": f"no findings files in {FINDINGS_DIR}"}, 404)
+            return self.send_json({"countries": countries})
         return super().do_GET()
 
     def do_POST(self):
@@ -93,6 +103,10 @@ class Handler(SimpleHTTPRequestHandler):
         if not isinstance(payload, dict):
             return self.send_json({"error": "body must be a JSON object"}, 400)
 
+        country = payload.get("country")
+        if (not isinstance(country, str) or not COUNTRY_RE.fullmatch(country)
+                or country not in list_countries()):
+            return self.send_json({"error": f"unknown country {country!r}"}, 400)
         finding_id = payload.get("finding_id")
         checks = payload.get("checks")
         if not isinstance(finding_id, str) or not isinstance(checks, dict):
@@ -116,9 +130,10 @@ class Handler(SimpleHTTPRequestHandler):
         }
         # Safe read-modify-write only because HTTPServer serializes requests;
         # switching to ThreadingHTTPServer would need a lock around this block.
-        verdicts = load_json(self.verdicts_path, {})
+        verdicts_path = os.path.join(VERDICTS_DIR, f"{country}.verdicts.json")
+        verdicts = load_json(verdicts_path, {})
         verdicts[finding_id] = verdict
-        atomic_write_json(self.verdicts_path, verdicts)
+        atomic_write_json(verdicts_path, verdicts)
         return self.send_json({"ok": True, "verdict": verdict})
 
     def log_message(self, fmt, *args):
@@ -128,14 +143,12 @@ class Handler(SimpleHTTPRequestHandler):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", type=int, default=8000)
-    parser.add_argument("--country", default="sweden")
     args = parser.parse_args()
-    if not re.fullmatch(r"[a-z][a-z0-9_-]*", args.country):
-        parser.error("--country must be a plain lowercase name (it becomes a filename)")
-    Handler.country = args.country
+    countries = list_countries()
     server = HTTPServer(("127.0.0.1", args.port), Handler)
-    print(f"Reviewing {args.country} findings at http://localhost:{args.port}")
-    print(f"Verdicts persist to {os.path.join(VERDICTS_DIR, args.country + '.verdicts.json')}")
+    print(f"Reviewing findings ({', '.join(countries) or 'none found'}) "
+          f"at http://localhost:{args.port}")
+    print(f"Verdicts persist to {VERDICTS_DIR}/<country>.verdicts.json")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

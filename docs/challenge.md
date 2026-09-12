@@ -17,12 +17,13 @@ Evaluation: accuracy on a small human-verified benchmark matters more than map c
 
 ## Geographic scope
 
-Decided 11 September 2026: we cover the 27 EU member states first, with country-level findings. Anything beyond the EU is a stretch goal only if time allows.
+Decided 11 September 2026: we cover Sweden, the United States and Singapore first. This supersedes the EU-27-first scope decided earlier the same day. The US is covered at both federal and state level — the challenge explicitly allows state-level findings, so US records use the schema's optional `region` field for states. The rest of the world comes later, only if time allows.
 
-This scope buys two things:
+This scope buys three things:
 
-- With only 27 countries, the human-verified benchmark can cover every country instead of a sample: a gold set of expected findings plus honest "nothing reliable found" entries for the quiet member states.
-- Primary sources concentrate on EU institutions: CORDIS for funding, EUR-Lex and national parliament portals for legislation, European Commission and WHO-Europe strategy documents for policy.
+- Three signal-rich countries on three continents, so the benchmark exercises different source ecosystems (regeringen.se and riksdagen.se; congress.gov, NIH and state government portals; gov.sg agencies) instead of one EU-shaped pipeline.
+- The US federal/state mix exercises the `region` field and the state-level half of the challenge's required output.
+- Small enough that the human-verified benchmark can cover every finding in every country, not a sample.
 
 ## Initial goal
 
@@ -32,13 +33,14 @@ This scope buys two things:
 
 ## Evaluation loop
 
-Built 11 September 2026 as a Sweden-first pilot: the finding schema lives in
-[`schema/finding.schema.json`](../schema/finding.schema.json), 14 human-gathered
-findings from Swedish primary sources in
-[`eval/findings/sweden.json`](../eval/findings/sweden.json), and a localhost
-review screen (`python3 eval/server.py`) where the team marks each finding
-against a four-check rubric; verdicts persist to `eval/verdicts/` and the screen
-shows running accuracy. See [`eval/README.md`](../eval/README.md).
+Built 11 September 2026 as a Sweden-first pilot, extended the same day to the
+US and Singapore: the finding schema lives in
+[`schema/finding.schema.json`](../schema/finding.schema.json), findings from
+primary sources per country in [`eval/findings/`](../eval/findings/), and a
+localhost review screen (`python3 eval/server.py`) with a country selector
+where the team marks each finding against a four-check rubric; verdicts persist
+per country to `eval/verdicts/` and the screen shows per-country and overall
+accuracy. See [`eval/README.md`](../eval/README.md).
 
 ## What this means in practice
 

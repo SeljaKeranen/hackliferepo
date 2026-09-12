@@ -1,9 +1,10 @@
 # Human eval loop
 
-Sweden-first pilot of the human verification loop for the
-[map-the-politics-of-longevity challenge](../docs/challenge.md). The challenge
-bar: at least 90% of sampled findings verified correct by a human reviewer,
-every finding carrying a dated source.
+Human verification loop for the
+[map-the-politics-of-longevity challenge](../docs/challenge.md), covering
+Sweden, the US and Singapore. The challenge bar: at least 90% of sampled
+findings verified correct by a human reviewer, every finding carrying a dated
+source.
 
 ## Run it
 
@@ -12,7 +13,10 @@ python3 eval/server.py
 ```
 
 Then open <http://localhost:8000>. No dependencies beyond Python 3 stdlib.
-`--port` and `--country` flags exist; defaults are 8000 and sweden.
+A `--port` flag exists; default 8000. The server serves every country file
+found under `findings/*.json`; pick the country from the selector in the
+header, which also shows the selected country's stats and the overall
+accuracy across all countries.
 
 ## The rubric
 
@@ -36,9 +40,10 @@ running accuracy = correct / reviewed.
 
 - `../schema/finding.schema.json` — the finding record contract, including the
   explicit `nothing_reliable_found` record shape for quiet countries.
-- `findings/sweden.json` — the findings under review (committed; `data/` stays
+- `findings/<country>.json` — the findings under review, one file per country
+  (`sweden.json`, `us.json`, `singapore.json`; committed; `data/` stays
   gitignored for local scratch).
-- `verdicts/sweden.verdicts.json` — verdicts, written by the server on every
+- `verdicts/<country>.verdicts.json` — verdicts, written by the server on every
   click. Committed: the verdicts are the evidence for the accuracy claim, so
   commit them after a review session.
 

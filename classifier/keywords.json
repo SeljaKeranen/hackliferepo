@@ -2693,7 +2693,7 @@
     },
     "social_population_aging": {
       "requires_ageing_anchor": true,
-      "note": "social, behavioral and population-ageing research (Jan's other_aging_research in funding/classify.py on codex/ageing-funding-gap); precision and coverage are measured against llm_category 'ambiguous' per meta.proxy_labels, and coverage understates because 'ambiguous' also holds the not_relevant engineering pool; funding-ratio denominator only, never numerator",
+      "note": "social, behavioral and population-ageing research (Jan's other_aging_research in funding/classify.py on codex/ageing-funding-gap); precision and coverage are measured against llm_category 'ambiguous' per meta.proxy_labels, and coverage understates because 'ambiguous' also holds the not_relevant engineering pool; funding-ratio denominator only, never numerator; requires_ageing_anchor: these keywords are classification terms valid only in co-occurrence with the ageing broad net (a meta.broad_net term or explicit older-adults reference in the record), never standalone live-search terms - precision was measured inside the ageing-filtered atlas and does not transfer to open search (Jan's SOCIAL && AGE rule)",
       "en": [
         {
           "term": "retirement",

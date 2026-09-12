@@ -26,6 +26,7 @@ Usage: python3 ratio/build.py
 Python 3 stdlib only; no model calls, no network.
 """
 
+import argparse
 import collections
 import json
 import subprocess
@@ -38,10 +39,9 @@ import classify as clf
 OUT_DIR = Path(__file__).resolve().parent / "output"
 REGION_BY_SOURCE = {"swecris": "SE", "cordis": "EU", "reporter": "US"}
 REGION_NAMES = {"SE": "Sweden", "EU": "European Union", "US": "United States"}
-NUMERATOR = set(clf.NUMERATOR)
 
 
-def blank_bucket():
+def blank_bucket() -> dict:
     return {
         "counts": collections.Counter(),
         "eur": collections.Counter(),
@@ -49,7 +49,7 @@ def blank_bucket():
     }
 
 
-def add(bucket, label, eur):
+def add(bucket: dict, label: str, eur: "float | None") -> None:
     bucket["counts"][label] += 1
     if eur is None:
         bucket["eur_missing"] += 1
@@ -57,7 +57,31 @@ def add(bucket, label, eur):
         bucket["eur"][label] += eur
 
 
-def finish(bucket):
+def parse_eur(record: dict) -> "float | None":
+    """amount_eur as float, None when absent; loud failure on malformed or
+    negative values rather than silently skewing the sums."""
+    raw = record["amount_eur"]
+    if not raw:
+        return None
+    try:
+        eur = float(raw)
+    except ValueError:
+        sys.exit(f"{record['record_id']}: unparsable amount_eur {raw!r}")
+    if eur < 0:
+        sys.exit(f"{record['record_id']}: negative amount_eur {raw!r}")
+    return eur
+
+
+def region_of(record: dict) -> str:
+    try:
+        return REGION_BY_SOURCE[record["source"]]
+    except KeyError:
+        sys.exit(f"{record['record_id']}: unknown source "
+                 f"{record['source']!r} (expected one of "
+                 f"{sorted(REGION_BY_SOURCE)})")
+
+
+def finish(bucket: dict) -> dict:
     counts = bucket["counts"]
     eur = {k: round(v, 2) for k, v in bucket["eur"].items()}
     cat_eur = {c: eur.get(c, 0.0) for c in clf.CATEGORIES}
@@ -78,7 +102,52 @@ def finish(bucket):
     }
 
 
+def self_test() -> int:
+    """Unit checks for the aggregation math; no corpus needed."""
+    b = blank_bucket()
+    add(b, "fundamental_aging", 20.0)
+    add(b, "intervention", 10.0)
+    add(b, "social_population_aging", 70.0)   # denominator-only
+    add(b, "ambiguous", 100.0)                # honesty band, neither side
+    add(b, "not_relevant", 300.0)             # excluded entirely
+    add(b, "care", None)                      # missing EUR: counted, not summed
+    f = finish(b)
+    empty = finish(blank_bucket())
+    nr_only = blank_bucket()
+    add(nr_only, "not_relevant", 5.0)
+    checks = [
+        (f["records"] == 6, "records counts every add"),
+        (f["numerator_eur"] == 30.0, "numerator = fundamental + intervention"),
+        (f["denominator_eur"] == 100.0, "denominator = five categories"),
+        (f["ratio"] == 0.3, "ratio math"),
+        (f["ambiguous_share"] == 0.5, "ambiguous share beside the ratio"),
+        (f["eur_missing_records"] == 1, "missing EUR counted separately"),
+        (f["eur"].get("care", 0.0) == 0.0, "missing EUR not summed"),
+        (empty["ratio"] is None, "empty bucket has no ratio"),
+        (empty["ambiguous_share"] is None, "empty bucket has no share"),
+        (finish(nr_only)["ratio"] is None, "not_relevant-only has no ratio"),
+        (region_of({"record_id": "x", "source": "swecris"}) == "SE",
+         "region mapping"),
+        (parse_eur({"record_id": "x", "amount_eur": ""}) is None,
+         "blank EUR is None"),
+        (parse_eur({"record_id": "x", "amount_eur": "12.5"}) == 12.5,
+         "EUR parses"),
+    ]
+    failed = [name for ok, name in checks if not ok]
+    for name in failed:
+        print(f"self-test FAILED: {name}")
+    print(f"self-test: {len(checks) - len(failed)}/{len(checks)} passed")
+    return 1 if failed else 0
+
+
 def main():
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--self-test", action="store_true",
+                    help="run aggregation unit checks and exit")
+    args = ap.parse_args()
+    if args.self_test:
+        return self_test()
+
     ruleset = clf.load_ruleset()
     rows = clf.load_corpus()
 
@@ -90,9 +159,9 @@ def main():
     with open(OUT_DIR / "labels.jsonl", "w", encoding="utf-8") as fh:
         for r in rows:
             out = clf.classify(r["title"], r["llm_quote"], ruleset)
-            region = REGION_BY_SOURCE[r["source"]]
+            region = region_of(r)
             funder = r["funder"].strip()
-            eur = float(r["amount_eur"]) if r["amount_eur"] else None
+            eur = parse_eur(r)
             add(regions[region], out["label"], eur)
             add(funders[(region, funder)], out["label"], eur)
             add(total, out["label"], eur)
@@ -121,10 +190,10 @@ def main():
         "method": {
             "description": "Deterministic rule classifier over the Aging "
                            "Funding Atlas; see ratio/README.md.",
-            "corpus": f"2,944 grant records from commit {clf._vk.ATLAS_COMMIT} "
+            "corpus": f"2,944 grant records from commit {clf.ATLAS_COMMIT} "
                       "(SweCRIS 855, CORDIS 558, NIH RePORTER 1,531)",
             "lexicon": "classifier/keywords.json",
-            "numerator": sorted(NUMERATOR),
+            "numerator": sorted(clf.NUMERATOR),
             "denominator": list(clf.CATEGORIES),
             "tie_margin": clf.TIE_MARGIN,
             "built_at_commit": git_head,

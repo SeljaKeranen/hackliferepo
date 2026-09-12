@@ -38,7 +38,6 @@ Library use: load_ruleset() once, then classify(title, quote, ruleset).
 
 import argparse
 import collections
-import importlib.util
 import json
 import re
 import sys
@@ -47,16 +46,18 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 KEYWORDS_JSON = REPO_ROOT / "classifier" / "keywords.json"
 
-# Reuse the exact matching semantics the lexicon was validated with.
-_spec = importlib.util.spec_from_file_location(
-    "validate_keywords", REPO_ROOT / "classifier" / "validate_keywords.py")
-_vk = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(_vk)
+# Reuse the exact matching semantics the lexicon was validated with (same
+# import style as eval/test_server.py and the rest of the repo).
+sys.path.insert(0, str(REPO_ROOT / "classifier"))
+import validate_keywords as _vk  # noqa: E402
+
 compile_term = _vk.compile_term
+ATLAS_COMMIT = _vk.ATLAS_COMMIT  # re-exported for build.py
 
 NUMERATOR = ("fundamental_aging", "intervention")
-CATEGORIES = ("fundamental_aging", "intervention", "age_related_disease",
-              "care", "social_population_aging")
+# Single source of truth for the category list is the validator (which in
+# turn is checked against classifier/keywords.json by load_ruleset below).
+CATEGORIES = tuple(_vk.CATEGORIES)
 
 # A voted label needs the winner to beat the runner-up by this much summed
 # precision, otherwise the record is ambiguous (or, at the
@@ -107,12 +108,25 @@ OLDER_REF = re.compile(
 DEV_CUES = re.compile(
     r"\b(develop\w*|test\w*|trial\w*|treat\w*|therap\w*|clinical|drug\w*|"
     r"dose|dosing|supplement\w*|(?:slow|slows|slowing|revers\w*|delay\w*) "
-    r"(?:\w+ )?ag(?:e|i)ng)\b")
+    r"(?:\w+ )?ag(?:e)?ing)\b")
+
+# Mechanism-study cues: "a grant studying an intervention's mechanism - how
+# it works, what pathways it engages, what it reveals about ageing biology -
+# is fundamental_aging, no matter how prominently the title names the
+# intervention" (KEYWORDS.md). Checked before DEV_CUES, so a mechanistic
+# study that also uses testing language stays fundamental_aging.
+MECH_CUES = re.compile(
+    r"\b(mechanis\w*|pathway\w*|biolog\w*|homeostasis|mode of action|"
+    r"drug action)\b")
 
 
-def load_ruleset(keywords_path=KEYWORDS_JSON):
+def load_ruleset(keywords_path=KEYWORDS_JSON) -> dict:
     """Compile the lexicon into matchable rules. Call once, reuse."""
     lex = json.loads(Path(keywords_path).read_text(encoding="utf-8"))
+    if set(lex["categories"]) != set(CATEGORIES):
+        sys.exit(f"category drift: lexicon has {sorted(lex['categories'])}, "
+                 f"this pipeline aggregates {sorted(CATEGORIES)} - update "
+                 "validate_keywords.CATEGORIES and rerun ratio/build.py")
     anchors = [(e["term"], compile_term(e["term"]))
                for lang in ("en", "sv")
                for e in lex["meta"]["broad_net"][lang]]
@@ -134,7 +148,7 @@ def load_ruleset(keywords_path=KEYWORDS_JSON):
     return {"anchors": anchors, "keywords": keywords, "nonbio": nonbio}
 
 
-def classify(title, quote, ruleset):
+def classify(title: str, quote: str, ruleset: dict) -> dict:
     """Classify one grant record from its title + supporting quote.
 
     Returns a dict with label, matched keywords per category, a one-line
@@ -192,25 +206,36 @@ def classify(title, quote, ruleset):
     second_cat, second = ranked[1] if len(ranked) > 1 else (None, 0.0)
     margin = round(top - second, 3)
 
-    # step 2: mechanism-versus-intervention rubric rule
+    # step 2: mechanism-versus-intervention rubric rule. It decides only the
+    # fundamental_aging/intervention boundary; a near-tie between
+    # intervention and any other category stays ambiguous like every other
+    # contested boundary (step 3).
     contested = {top_cat, second_cat} == {"fundamental_aging", "intervention"}
-    if (top_cat == "intervention" or (contested and margin < TIE_MARGIN)):
-        if top_cat == "intervention" or second_cat == "intervention":
-            if DEV_CUES.search(text):
-                return result(
-                    "intervention",
-                    "The text describes developing or testing an intervention "
-                    "against ageing (matched: "
-                    f"{', '.join(matched_terms.get('intervention', []))}).",
-                    margin)
-            if "fundamental_aging" in matched:
-                return result(
-                    "fundamental_aging",
-                    "Intervention vocabulary appears without developing/"
-                    "testing language, so the rubric's mechanism rule assigns "
-                    "the study of ageing biology (matched: "
-                    f"{', '.join(matched_terms['fundamental_aging'])}).",
-                    margin)
+    if top_cat == "intervention" or (contested and margin < TIE_MARGIN):
+        if second_cat is not None and not contested and margin < TIE_MARGIN:
+            pass  # falls through to the step-3 ambiguity floor
+        elif MECH_CUES.search(text):
+            return result(
+                "fundamental_aging",
+                "Intervention vocabulary appears in a mechanism study, which "
+                "the rubric assigns to ageing biology (mechanism cue: "
+                f"{MECH_CUES.search(text).group(0)}).",
+                margin)
+        elif DEV_CUES.search(text):
+            return result(
+                "intervention",
+                "The text describes developing or testing an intervention "
+                "against ageing (matched: "
+                f"{', '.join(matched_terms.get('intervention', []))}).",
+                margin)
+        elif contested or "fundamental_aging" in matched:
+            return result(
+                "fundamental_aging",
+                "Intervention vocabulary appears without developing/testing "
+                "language, so the rubric's mechanism rule assigns the study "
+                "of ageing biology.",
+                margin)
+        else:
             return result(
                 "ambiguous",
                 "Intervention vocabulary appears without developing/testing "
@@ -233,10 +258,15 @@ def classify(title, quote, ruleset):
         margin)
 
 
-def load_corpus(data_dir=None):
-    """Load the 2,944-record atlas via the validator's loader (live tree,
-    or git-show recovery from commit 2e59b27 if the tree is gone), keeping
-    the funding fields the ratio needs."""
+# the atlas columns this pipeline consumes beyond the validator's own
+# REQUIRED_COLUMNS (which cover record_id/source/llm_category/title/llm_quote)
+RATIO_COLUMNS = {"funder", "amount_eur", "year", "url"}
+
+
+def load_corpus(data_dir=None) -> list:
+    """Load the 2,944-record atlas via the validator's constants (live tree,
+    or git-show recovery from commit 2e59b27 if the tree is gone), validating
+    the extra funding columns the ratio needs."""
     import csv
     import tempfile
 
@@ -250,9 +280,14 @@ def load_corpus(data_dir=None):
             _vk.recover_atlas(Path(tmp))
             return load_corpus(tmp)
     rows = []
+    needed = _vk.REQUIRED_COLUMNS | RATIO_COLUMNS
     for name in _vk.ATLAS_FILES:
         with open(src / name, encoding="utf-8-sig", newline="") as fh:
-            rows.extend(csv.DictReader(fh))
+            reader = csv.DictReader(fh)
+            missing = needed - set(reader.fieldnames or [])
+            if missing:
+                sys.exit(f"{src / name}: missing column(s) {sorted(missing)}")
+            rows.extend(reader)
     if len(rows) != _vk.EXPECTED_RECORDS:
         sys.exit(f"expected {_vk.EXPECTED_RECORDS} records, got {len(rows)}")
     return rows
@@ -302,6 +337,23 @@ def self_test():
         # the same social keyword with no ageing anchor never fires
         ("Retirement savings behaviour", "pension fund portfolio choice",
          "not_relevant"),
+        # contested FA/INT boundary, no cues -> mechanism rule wins
+        ("Rapamycin and the lifespan of model organisms", "",
+         "fundamental_aging"),
+        # mechanism cue beats testing language (rubric's DR-as-probe rule)
+        ("Testing how metformin affects senescence mechanisms", "",
+         "fundamental_aging"),
+        # intervention keyword alone, no cues, no mechanism evidence
+        ("Rapamycin in aging", "", "ambiguous"),
+        # intervention vs a non-fundamental category near-tie stays ambiguous
+        # (real corpus record cordis:945153)
+        ("Get strong to fight childhood cancer: an exercise intervention for "
+         "children and adolescents undergoing anti-cancer treatment", "",
+         "ambiguous"),
+        # British spelling reaches the developing/testing cues
+        ("Slowing ageing with metformin", "", "intervention"),
+        # a NONBIO term with biomedical context never excludes the record
+        ("A battery of cognitive tests in aging patients", "", "ambiguous"),
     ]
     failed = 0
     for title, quote, want in cases:

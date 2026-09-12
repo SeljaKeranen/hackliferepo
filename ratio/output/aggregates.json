@@ -15,7 +15,7 @@
       "social_population_aging"
     ],
     "tie_margin": 0.3,
-    "built_at_commit": "4b8fd5d",
+    "built_at_commit": "87c7577",
     "caveats": [
       "Labels are rule-based and not yet human-verified; the 30-record human benchmark is pending.",
       "The corpus is an ageing-filtered sample per funder, not a census of any funding body's budget.",
@@ -26,26 +26,26 @@
     "records": 2944,
     "counts": {
       "not_relevant": 754,
-      "ambiguous": 768,
+      "ambiguous": 770,
       "social_population_aging": 31,
       "care": 81,
       "age_related_disease": 711,
-      "fundamental_aging": 573,
-      "intervention": 26
+      "fundamental_aging": 579,
+      "intervention": 18
     },
     "eur": {
       "not_relevant": 1062872257.23,
-      "ambiguous": 523398503.74,
+      "ambiguous": 530868159.41,
       "social_population_aging": 23384261.15,
       "care": 40454322.54,
       "age_related_disease": 682682383.51,
-      "fundamental_aging": 273331063.79,
-      "intervention": 16111838.59
+      "fundamental_aging": 274981512.37,
+      "intervention": 6991734.34
     },
-    "numerator_eur": 289442902.38,
-    "denominator_eur": 1035963869.58,
-    "ratio": 0.2794,
-    "ambiguous_share": 0.3356,
+    "numerator_eur": 281973246.71,
+    "denominator_eur": 1028494213.91,
+    "ratio": 0.2742,
+    "ambiguous_share": 0.3404,
     "eur_missing_records": 39
   },
   "regions": {
@@ -54,26 +54,24 @@
       "records": 558,
       "counts": {
         "not_relevant": 257,
-        "ambiguous": 110,
+        "ambiguous": 111,
         "fundamental_aging": 70,
         "age_related_disease": 113,
         "care": 4,
-        "social_population_aging": 3,
-        "intervention": 1
+        "social_population_aging": 3
       },
       "eur": {
         "not_relevant": 782411297.99,
-        "ambiguous": 249474890.46,
+        "ambiguous": 255768745.28,
         "fundamental_aging": 79371770.88,
         "age_related_disease": 347719827.68,
         "care": 15854966.01,
-        "social_population_aging": 5930104.1,
-        "intervention": 6293854.82
+        "social_population_aging": 5930104.1
       },
-      "numerator_eur": 85665625.7,
-      "denominator_eur": 455170523.49,
-      "ratio": 0.1882,
-      "ambiguous_share": 0.354,
+      "numerator_eur": 79371770.88,
+      "denominator_eur": 448876668.67,
+      "ratio": 0.1768,
+      "ambiguous_share": 0.363,
       "eur_missing_records": 0
     },
     "SE": {
@@ -81,53 +79,53 @@
       "records": 855,
       "counts": {
         "not_relevant": 254,
-        "ambiguous": 254,
+        "ambiguous": 255,
         "social_population_aging": 26,
         "care": 75,
         "age_related_disease": 172,
         "fundamental_aging": 70,
-        "intervention": 4
+        "intervention": 3
       },
       "eur": {
         "not_relevant": 162499295.17,
-        "ambiguous": 113478483.86,
+        "ambiguous": 113745451.9,
         "social_population_aging": 15300702.94,
         "care": 23834612.74,
         "age_related_disease": 65675501.94,
         "fundamental_aging": 26652289.83,
-        "intervention": 907691.35
+        "intervention": 640723.31
       },
-      "numerator_eur": 27559981.18,
-      "denominator_eur": 132370798.8,
-      "ratio": 0.2082,
-      "ambiguous_share": 0.4616,
+      "numerator_eur": 27293013.14,
+      "denominator_eur": 132103830.76,
+      "ratio": 0.2066,
+      "ambiguous_share": 0.4627,
       "eur_missing_records": 2
     },
     "US": {
       "name": "United States",
       "records": 1531,
       "counts": {
-        "fundamental_aging": 433,
+        "fundamental_aging": 439,
         "not_relevant": 243,
         "age_related_disease": 426,
         "ambiguous": 404,
-        "intervention": 21,
+        "intervention": 15,
         "care": 2,
         "social_population_aging": 2
       },
       "eur": {
-        "fundamental_aging": 167307003.08,
+        "fundamental_aging": 168957451.66,
         "not_relevant": 117961664.07,
         "age_related_disease": 269287053.89,
-        "ambiguous": 160445129.42,
-        "intervention": 8910292.42,
+        "ambiguous": 161353962.23,
+        "intervention": 6351011.03,
         "care": 764743.79,
         "social_population_aging": 2153454.11
       },
-      "numerator_eur": 176217295.5,
-      "denominator_eur": 448422547.29,
-      "ratio": 0.393,
-      "ambiguous_share": 0.2635,
+      "numerator_eur": 175308462.69,
+      "denominator_eur": 447513714.48,
+      "ratio": 0.3917,
+      "ambiguous_share": 0.265,
       "eur_missing_records": 37
     }
   },
@@ -138,26 +136,24 @@
       "records": 558,
       "counts": {
         "not_relevant": 257,
-        "ambiguous": 110,
+        "ambiguous": 111,
         "fundamental_aging": 70,
         "age_related_disease": 113,
         "care": 4,
-        "social_population_aging": 3,
-        "intervention": 1
+        "social_population_aging": 3
       },
       "eur": {
         "not_relevant": 782411297.99,
-        "ambiguous": 249474890.46,
+        "ambiguous": 255768745.28,
         "fundamental_aging": 79371770.88,
         "age_related_disease": 347719827.68,
         "care": 15854966.01,
-        "social_population_aging": 5930104.1,
-        "intervention": 6293854.82
+        "social_population_aging": 5930104.1
       },
-      "numerator_eur": 85665625.7,
-      "denominator_eur": 455170523.49,
-      "ratio": 0.1882,
-      "ambiguous_share": 0.354,
+      "numerator_eur": 79371770.88,
+      "denominator_eur": 448876668.67,
+      "ratio": 0.1768,
+      "ambiguous_share": 0.363,
       "eur_missing_records": 0
     },
     {
@@ -167,8 +163,8 @@
       "counts": {
         "age_related_disease": 215,
         "not_relevant": 43,
-        "fundamental_aging": 251,
-        "intervention": 20,
+        "fundamental_aging": 257,
+        "intervention": 14,
         "ambiguous": 275,
         "care": 1,
         "social_population_aging": 1
@@ -176,16 +172,16 @@
       "eur": {
         "age_related_disease": 181529354.64,
         "not_relevant": 22562458.61,
-        "fundamental_aging": 98927510.32,
-        "intervention": 8362647.49,
-        "ambiguous": 108721331.15,
+        "fundamental_aging": 100577958.9,
+        "intervention": 5803366.1,
+        "ambiguous": 109630163.96,
         "care": 549316.77,
         "social_population_aging": 1822427.54
       },
-      "numerator_eur": 107290157.81,
-      "denominator_eur": 291191256.76,
-      "ratio": 0.3685,
-      "ambiguous_share": 0.2719,
+      "numerator_eur": 106381325.0,
+      "denominator_eur": 290282423.95,
+      "ratio": 0.3665,
+      "ambiguous_share": 0.2741,
       "eur_missing_records": 0
     },
     {
@@ -194,26 +190,26 @@
       "records": 404,
       "counts": {
         "not_relevant": 103,
-        "ambiguous": 108,
+        "ambiguous": 109,
         "fundamental_aging": 54,
         "age_related_disease": 126,
         "social_population_aging": 6,
-        "intervention": 3,
+        "intervention": 2,
         "care": 4
       },
       "eur": {
         "not_relevant": 105855577.62,
-        "ambiguous": 65636171.8,
+        "ambiguous": 65903139.84,
         "fundamental_aging": 24277357.14,
         "age_related_disease": 52725109.42,
         "social_population_aging": 3149027.88,
-        "intervention": 800904.13,
+        "intervention": 533936.09,
         "care": 899304.11
       },
-      "numerator_eur": 25078261.27,
-      "denominator_eur": 81851702.68,
-      "ratio": 0.3064,
-      "ambiguous_share": 0.445,
+      "numerator_eur": 24811293.23,
+      "denominator_eur": 81584734.64,
+      "ratio": 0.3041,
+      "ambiguous_share": 0.4468,
       "eur_missing_records": 2
     },
     {

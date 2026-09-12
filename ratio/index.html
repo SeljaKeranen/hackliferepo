@@ -39,7 +39,7 @@ header .tagline b { color: var(--ink); font-weight: 600; }
 .swatch { width: 15px; height: 11px; border-radius: 3px; border: 1px solid var(--line); flex: none; }
 .swatch.gold { background: var(--gold); }
 .swatch.blue { background: var(--blue-dim); }
-.swatch.hatch { background: repeating-linear-gradient(45deg, #31425f 0 2px, #182234 2px 5px); }
+.swatch.hatch { background: repeating-linear-gradient(45deg, var(--blue-dim) 0 2px, #182234 2px 5px); }
 
 .region { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px 22px; margin-top: 18px; }
 .region-head { display: flex; align-items: baseline; gap: 22px; flex-wrap: wrap; }
@@ -54,7 +54,7 @@ header .tagline b { color: var(--ink); font-weight: 600; }
 .bar .seg:hover, .bar .seg:focus-visible { filter: brightness(1.35); outline: none; }
 .seg.numerator { background: var(--gold); }
 .seg.denominator { background: var(--blue-dim); }
-.seg.ambiguous { background: repeating-linear-gradient(45deg, #31425f 0 3px, #182234 3px 7px); }
+.seg.ambiguous, .cat-bar.amb { background: repeating-linear-gradient(45deg, var(--blue-dim) 0 3px, #182234 3px 7px); }
 .bar-caption { display: flex; justify-content: space-between; gap: 12px; margin-top: 7px; font-size: 12.5px; color: var(--faint); flex-wrap: wrap; }
 
 details.breakdown { margin-top: 16px; border-top: 1px solid var(--line); }
@@ -69,7 +69,6 @@ details.breakdown > summary:hover { color: var(--ink); }
 .cats .cat-name .tag { color: var(--faint); font-size: 11.5px; margin-left: 6px; }
 .cat-bar { height: 12px; border-radius: 3px; background: var(--blue-dim); min-width: 2px; }
 .cat-bar.num { background: var(--gold); }
-.cat-bar.amb { background: repeating-linear-gradient(45deg, #31425f 0 3px, #182234 3px 7px); }
 .cat-bar.excl { background: #223047; opacity: 0.6; }
 .cats .val { font-family: var(--mono); font-size: 12px; color: var(--muted); text-align: right; }
 .cats .n { font-size: 11.5px; color: var(--faint); text-align: right; }
@@ -213,7 +212,7 @@ function regionCard(code, d) {
   for (const [cls, eur, label, cats] of segs) {
     if (!eur) continue;
     const s = el("button", "seg " + cls);
-    s.style.flexGrow = String(eur / base * 1000);
+    s.style.flexGrow = String(eur / base);
     s.title = `${label}: ${fmtEUR(eur)} — click for the grants behind this`;
     s.setAttribute("aria-label", s.title);
     s.addEventListener("click", () => openInspector(code, d.name, cats, label, eur));
@@ -314,8 +313,9 @@ function renderMore() {
     } else t.textContent = r.title;
     g.appendChild(t);
     const meta = el("div", "meta");
-    meta.innerHTML = `<span class="amt">${fmtEUR(r.amount_eur)}</span>
-      · ${r.funder} · ${r.year} · ${r.source} · ${CAT_NAME[r.label] || r.label}`;
+    meta.appendChild(el("span", "amt", fmtEUR(r.amount_eur)));
+    meta.appendChild(document.createTextNode(
+      ` · ${r.funder} · ${r.year} · ${r.source} · ${CAT_NAME[r.label] || r.label}`));
     g.appendChild(meta);
     const why = el("div", "why", r.reason + " ");
     const kws = Object.values(r.matched_keywords || {}).flat();
@@ -367,6 +367,10 @@ async function boot() {
     "Regions are funding jurisdictions: SweCRIS funders (SE), the European "
     + "Commission via CORDIS (EU), NIH via RePORTER (US). Sample sizes and "
     + "collection nets differ per source, so compare shapes, not absolutes."));
+  cv.appendChild(el("li", null,
+    `Data built at repo commit ${window.AGG.method.built_at_commit || "unknown"} `
+    + `from the atlas of ${window.AGG.method.corpus || "?"} — if the classifier `
+    + "or lexicon changed since, rerun python3 ratio/build.py."));
 }
 boot();
 </script>

@@ -34,9 +34,15 @@ beyond localhost, no model calls.
 Checks:
 
 ```sh
-python3 ratio/classify.py --self-test    # worked examples from KEYWORDS.md
+python3 ratio/classify.py --self-test    # worked examples from KEYWORDS.md + rubric branches
+python3 ratio/build.py --self-test       # aggregation math unit checks
 python3 classifier/validate_keywords.py  # lexicon integrity (must pass)
 ```
+
+The committed outputs record the repo commit they were built at
+(`method.built_at_commit`, shown in the page footer). Any change to
+`ratio/classify.py` or `classifier/keywords.json` requires re-running
+`python3 ratio/build.py`, or the page serves numbers from the older rules.
 
 ## Method: the funnel
 
@@ -64,10 +70,12 @@ matched keywords, rule reason).
 4. **Category.** Precision-weighted keyword voting: every kept (non-trap)
    lexicon keyword that matches votes for its category with its measured
    precision as the weight. The mechanism-versus-intervention rubric rule
-   decides the `fundamental_aging`/`intervention` boundary: `intervention`
-   needs explicit developing/testing language, otherwise a mechanism study
-   goes to `fundamental_aging`. Any other contest with a winning margin
-   under 0.3 is `ambiguous` — never forced.
+   decides only the `fundamental_aging`/`intervention` boundary:
+   mechanism-study language keeps a record in `fundamental_aging` however
+   prominently it names an intervention, and the `intervention` label needs
+   explicit developing/testing language. Every other contest with a winning
+   margin under 0.3 is `ambiguous` — never forced, including near-ties
+   between `intervention` and a non-numerator category.
 5. **Ratio.** Aggregate EUR per region (SE = SweCRIS funders, EU = European
    Commission via CORDIS, US = NIH via RePORTER) and per funder, then the
    formula above.
@@ -80,12 +88,12 @@ text (lowercased title + `llm_quote`).
 
 | region | ratio | ambiguous share | grants |
 | --- | --- | --- | --- |
-| SE | 20.8% | 46.2% | 855 |
-| EU | 18.8% | 35.4% | 558 |
-| US | 39.3% | 26.4% | 1,531 |
+| SE | 20.7% | 46.3% | 855 |
+| EU | 17.7% | 36.3% | 558 |
+| US | 39.2% | 26.5% | 1,531 |
 
-Label distribution: 768 ambiguous, 754 not_relevant, 711 age_related_disease,
-573 fundamental_aging, 81 care, 31 social_population_aging, 26 intervention.
+Label distribution: 770 ambiguous, 754 not_relevant, 711 age_related_disease,
+579 fundamental_aging, 81 care, 31 social_population_aging, 18 intervention.
 
 ## What v1 is and is not
 
@@ -97,7 +105,7 @@ Label distribution: 768 ambiguous, 754 not_relevant, 711 age_related_disease,
   regions, not absolute budgets, and do not read any number as a funder's
   total spending.
 - **Labels not yet human-verified.** Agreement with the atlas's own
-  unverified LLM labels is 58.6% on the four categories both schemes share
+  unverified LLM labels is 58.3% on the four categories both schemes share
   (the atlas's lost keyword rules scored 61.8% against the same labels).
   That figure is context, not a target: the LLM labels predate the
   `social_population_aging` category and the `not_relevant`/`ambiguous`
@@ -108,10 +116,13 @@ Label distribution: 768 ambiguous, 754 not_relevant, 711 age_related_disease,
   in commit `2e59b27`) is still unlabelled; `labels.jsonl` keeps every
   record's label, reason, matched keywords and confidence margin so the
   comparison can run the moment labels exist.
-- **Interventions are under-counted.** The lexicon's own validation gives
-  `intervention` the weakest coverage (0.414), and only 26 records get the
-  label here. The true numerator is likely somewhat higher; the ambiguous
-  band is where the missing mass sits.
+- **The `intervention` label is rare and its keyword net is the weakest.**
+  The lexicon's own validation gives `intervention` the lowest coverage
+  (0.414), and only 18 records get the label here. What that does to the
+  numerator cannot be established from this evidence alone: intervention
+  grants missed by the keywords may land in `fundamental_aging` (still
+  numerator), in `ambiguous`, or elsewhere. The human benchmark is the way
+  to find out.
 
 ## Files
 

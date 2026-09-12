@@ -57,6 +57,20 @@ Worked examples from the corpus's real false hits:
 - `cordis:101000236` "GEroNIMO: Genome and Epigenome eNabled breedIng in
   MOnogastrics" - matched `longevity` via "productive longevity" in livestock
   breeding: `not_relevant`.
+- `swecris:2021-05062_VR` "How do trees survive the winter?" - matched
+  `senescen*` via "the onset of leaf senescence", is tree physiology:
+  `not_relevant`. This is the plant/agriculture/ecology trap family:
+  senescence, lifespan and longevity are everyday vocabulary in botany,
+  forestry, ecology and animal breeding, so the relevance gate must fire
+  **even when a lexicon keyword matched** - unlike the engineering arm,
+  which only inspects records with no keyword match. A human or
+  biomedical-model marker (patients, clinical, mice, `healthy ageing`,
+  diet/nutrition/supplement vocabulary, the established ageing model
+  organisms) always blocks the exclusion, so a plant-derived compound
+  tested against human ageing stays in. Known casualty, accepted: grants on
+  the evolution of senescence in wild populations (comparative
+  biogerontology, e.g. `cordis:792215` "senescence in wild insects") are
+  excluded with the rest of the ecology pool.
 - Contrast: "International journal of ageing and later life" is on-topic
   (human ageing) but the text gives no basis for a substantive category:
   `ambiguous`, not `not_relevant`.

@@ -1,0 +1,1061 @@
+{
+  "method": {
+    "description": "Deterministic rule classifier over the ageing grant corpus; see ratio/README.md.",
+    "corpus": "census of 13224 grant records - the complete result set of the atlas search nets, fetched 2026-09-12 (SweCRIS 870, CORDIS 239, NIH RePORTER 12115); funnel in ratio/data/funnel.json",
+    "corpus_mode": "census",
+    "lexicon": "classifier/keywords.json",
+    "numerator": [
+      "fundamental_aging",
+      "intervention"
+    ],
+    "denominator": [
+      "fundamental_aging",
+      "intervention",
+      "age_related_disease",
+      "care",
+      "social_population_aging"
+    ],
+    "tie_margin": 0.3,
+    "inputs_hash": "c23309b3a622",
+    "built_at_commit": "f76ae50-dirty",
+    "caveats": [
+      "Labels are rule-based and not yet human-verified; the 30-record human benchmark is pending.",
+      "The corpus is the complete result set of the ageing search nets, not any funding body's total budget; net recall bounds coverage - see ratio/data/CROSSCHECK.md for the comparison against published funder totals.",
+      "Census records are classified over title + abstract; the earlier atlas sample used title + a short model-chosen quote.",
+      "Ambiguous grants are excluded from the ratio and shown as an explicit share beside it."
+    ]
+  },
+  "total": {
+    "records": 13224,
+    "counts": {
+      "not_relevant": 226,
+      "social_population_aging": 113,
+      "age_related_disease": 4802,
+      "ambiguous": 2866,
+      "care": 169,
+      "fundamental_aging": 4997,
+      "intervention": 51
+    },
+    "eur": {
+      "not_relevant": 185596765.44,
+      "social_population_aging": 58171720.94,
+      "age_related_disease": 2949893448.67,
+      "ambiguous": 1503310814.87,
+      "care": 100923411.22,
+      "fundamental_aging": 2278764925.16,
+      "intervention": 22215774.08
+    },
+    "numerator_eur": 2300980699.24,
+    "denominator_eur": 5409969280.07,
+    "ratio": 0.4253,
+    "ambiguous_share": 0.2175,
+    "eur_missing_records": 329
+  },
+  "regions": {
+    "EU": {
+      "name": "European Union",
+      "records": 239,
+      "counts": {
+        "ambiguous": 98,
+        "age_related_disease": 22,
+        "fundamental_aging": 79,
+        "not_relevant": 32,
+        "care": 5,
+        "social_population_aging": 3
+      },
+      "eur": {
+        "ambiguous": 254067360.5,
+        "age_related_disease": 43314765.25,
+        "fundamental_aging": 104641731.03,
+        "not_relevant": 56648001.74,
+        "care": 13835541.83,
+        "social_population_aging": 1842046.6
+      },
+      "numerator_eur": 104641731.03,
+      "denominator_eur": 163634084.71,
+      "ratio": 0.6395,
+      "ambiguous_share": 0.6083,
+      "eur_missing_records": 0
+    },
+    "SE": {
+      "name": "Sweden",
+      "records": 870,
+      "counts": {
+        "not_relevant": 142,
+        "social_population_aging": 59,
+        "age_related_disease": 215,
+        "ambiguous": 246,
+        "care": 112,
+        "fundamental_aging": 93,
+        "intervention": 3
+      },
+      "eur": {
+        "not_relevant": 104184466.78,
+        "social_population_aging": 35797267.51,
+        "age_related_disease": 74789242.1,
+        "ambiguous": 93637238.07,
+        "care": 61383386.98,
+        "fundamental_aging": 38587931.35,
+        "intervention": 618475.96
+      },
+      "numerator_eur": 39206407.31,
+      "denominator_eur": 211176303.9,
+      "ratio": 0.1857,
+      "ambiguous_share": 0.3072,
+      "eur_missing_records": 2
+    },
+    "US": {
+      "name": "United States",
+      "records": 12115,
+      "counts": {
+        "age_related_disease": 4565,
+        "fundamental_aging": 4825,
+        "not_relevant": 52,
+        "ambiguous": 2522,
+        "intervention": 48,
+        "social_population_aging": 51,
+        "care": 52
+      },
+      "eur": {
+        "age_related_disease": 2831789441.32,
+        "fundamental_aging": 2135535262.78,
+        "not_relevant": 24764296.92,
+        "ambiguous": 1155606216.3,
+        "intervention": 21597298.12,
+        "social_population_aging": 20532406.83,
+        "care": 25704482.41
+      },
+      "numerator_eur": 2157132560.9,
+      "denominator_eur": 5035158891.46,
+      "ratio": 0.4284,
+      "ambiguous_share": 0.1867,
+      "eur_missing_records": 327
+    }
+  },
+  "funders": [
+    {
+      "region": "US",
+      "funder": "National Institute on Aging",
+      "records": 6499,
+      "counts": {
+        "fundamental_aging": 2801,
+        "not_relevant": 12,
+        "age_related_disease": 2366,
+        "ambiguous": 1187,
+        "intervention": 47,
+        "social_population_aging": 46,
+        "care": 40
+      },
+      "eur": {
+        "fundamental_aging": 1250166477.66,
+        "not_relevant": 6167731.19,
+        "age_related_disease": 1842775010.97,
+        "ambiguous": 586977111.06,
+        "intervention": 21301406.13,
+        "social_population_aging": 18998354.9,
+        "care": 17238423.06
+      },
+      "numerator_eur": 1271467883.79,
+      "denominator_eur": 3150479672.72,
+      "ratio": 0.4036,
+      "ambiguous_share": 0.1571,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "EU",
+      "funder": "European Commission",
+      "records": 239,
+      "counts": {
+        "ambiguous": 98,
+        "age_related_disease": 22,
+        "fundamental_aging": 79,
+        "not_relevant": 32,
+        "care": 5,
+        "social_population_aging": 3
+      },
+      "eur": {
+        "ambiguous": 254067360.5,
+        "age_related_disease": 43314765.25,
+        "fundamental_aging": 104641731.03,
+        "not_relevant": 56648001.74,
+        "care": 13835541.83,
+        "social_population_aging": 1842046.6
+      },
+      "numerator_eur": 104641731.03,
+      "denominator_eur": 163634084.71,
+      "ratio": 0.6395,
+      "ambiguous_share": 0.6083,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Cancer Institute",
+      "records": 1105,
+      "counts": {
+        "fundamental_aging": 364,
+        "age_related_disease": 526,
+        "ambiguous": 214,
+        "not_relevant": 1
+      },
+      "eur": {
+        "fundamental_aging": 157863799.2,
+        "age_related_disease": 208365551.49,
+        "ambiguous": 88412997.72,
+        "not_relevant": 12939.96
+      },
+      "numerator_eur": 157863799.2,
+      "denominator_eur": 366229350.69,
+      "ratio": 0.4311,
+      "ambiguous_share": 0.1945,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of General Medical Sciences",
+      "records": 827,
+      "counts": {
+        "ambiguous": 225,
+        "fundamental_aging": 272,
+        "age_related_disease": 329,
+        "not_relevant": 1
+      },
+      "eur": {
+        "ambiguous": 95544352.15,
+        "fundamental_aging": 106825383.87,
+        "age_related_disease": 135405735.68,
+        "not_relevant": 69013.11
+      },
+      "numerator_eur": 106825383.87,
+      "denominator_eur": 242231119.55,
+      "ratio": 0.441,
+      "ambiguous_share": 0.2829,
+      "eur_missing_records": 1
+    },
+    {
+      "region": "US",
+      "funder": "National Heart Lung and Blood Institute",
+      "records": 638,
+      "counts": {
+        "age_related_disease": 231,
+        "ambiguous": 131,
+        "fundamental_aging": 273,
+        "social_population_aging": 3
+      },
+      "eur": {
+        "age_related_disease": 157194797.98,
+        "ambiguous": 53001190.43,
+        "fundamental_aging": 111613690.36,
+        "social_population_aging": 1000009.49
+      },
+      "numerator_eur": 111613690.36,
+      "denominator_eur": 269808497.83,
+      "ratio": 0.4137,
+      "ambiguous_share": 0.1642,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Swedish Research Council",
+      "records": 414,
+      "counts": {
+        "not_relevant": 66,
+        "age_related_disease": 155,
+        "ambiguous": 103,
+        "care": 11,
+        "fundamental_aging": 66,
+        "social_population_aging": 11,
+        "intervention": 2
+      },
+      "eur": {
+        "not_relevant": 76628539.2,
+        "age_related_disease": 62530559.59,
+        "ambiguous": 43314688.15,
+        "care": 29345507.01,
+        "fundamental_aging": 28876033.53,
+        "social_population_aging": 14859136.18,
+        "intervention": 605127.56
+      },
+      "numerator_eur": 29481161.09,
+      "denominator_eur": 136216363.87,
+      "ratio": 0.2164,
+      "ambiguous_share": 0.2413,
+      "eur_missing_records": 2
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of Allergy and Infectious Diseases",
+      "records": 240,
+      "counts": {
+        "ambiguous": 53,
+        "age_related_disease": 43,
+        "fundamental_aging": 138,
+        "not_relevant": 2,
+        "care": 4
+      },
+      "eur": {
+        "ambiguous": 25040623.73,
+        "age_related_disease": 18529744.66,
+        "fundamental_aging": 124851373.39,
+        "not_relevant": 364152.0,
+        "care": 2154824.87
+      },
+      "numerator_eur": 124851373.39,
+      "denominator_eur": 145535942.92,
+      "ratio": 0.8579,
+      "ambiguous_share": 0.1468,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of Neurological Disorders and Stroke",
+      "records": 377,
+      "counts": {
+        "ambiguous": 63,
+        "age_related_disease": 219,
+        "fundamental_aging": 90,
+        "not_relevant": 3,
+        "social_population_aging": 2
+      },
+      "eur": {
+        "ambiguous": 24111880.63,
+        "age_related_disease": 106953715.5,
+        "fundamental_aging": 33470468.4,
+        "not_relevant": 1397708.76,
+        "social_population_aging": 534042.44
+      },
+      "numerator_eur": 33470468.4,
+      "denominator_eur": 140958226.34,
+      "ratio": 0.2374,
+      "ambiguous_share": 0.1461,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of Mental Health",
+      "records": 236,
+      "counts": {
+        "ambiguous": 56,
+        "fundamental_aging": 128,
+        "age_related_disease": 40,
+        "not_relevant": 11,
+        "care": 1
+      },
+      "eur": {
+        "ambiguous": 35847719.12,
+        "fundamental_aging": 74862999.42,
+        "age_related_disease": 16259767.91,
+        "not_relevant": 9730073.33,
+        "care": 1331243.96
+      },
+      "numerator_eur": 74862999.42,
+      "denominator_eur": 92454011.29,
+      "ratio": 0.8097,
+      "ambiguous_share": 0.2794,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of Diabetes and Digestive and Kidney Diseases",
+      "records": 330,
+      "counts": {
+        "fundamental_aging": 150,
+        "age_related_disease": 110,
+        "ambiguous": 67,
+        "not_relevant": 2,
+        "intervention": 1
+      },
+      "eur": {
+        "fundamental_aging": 50646475.11,
+        "age_related_disease": 56214208.94,
+        "ambiguous": 26158645.6,
+        "not_relevant": 2025748.79,
+        "intervention": 295891.99
+      },
+      "numerator_eur": 50942367.1,
+      "denominator_eur": 107156576.04,
+      "ratio": 0.4754,
+      "ambiguous_share": 0.1962,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of Environmental Health Sciences",
+      "records": 253,
+      "counts": {
+        "age_related_disease": 115,
+        "fundamental_aging": 64,
+        "ambiguous": 74
+      },
+      "eur": {
+        "age_related_disease": 59172072.9,
+        "fundamental_aging": 28154284.85,
+        "ambiguous": 34244059.73
+      },
+      "numerator_eur": 28154284.85,
+      "denominator_eur": 87326357.75,
+      "ratio": 0.3224,
+      "ambiguous_share": 0.2817,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "NIH Office of the Director",
+      "records": 126,
+      "counts": {
+        "age_related_disease": 75,
+        "fundamental_aging": 19,
+        "ambiguous": 29,
+        "not_relevant": 2,
+        "care": 1
+      },
+      "eur": {
+        "age_related_disease": 89058077.97,
+        "fundamental_aging": 7157842.46,
+        "ambiguous": 16238129.74,
+        "not_relevant": 695961.01,
+        "care": 517598.34
+      },
+      "numerator_eur": 7157842.46,
+      "denominator_eur": 96733518.77,
+      "ratio": 0.074,
+      "ambiguous_share": 0.1437,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
+      "records": 209,
+      "counts": {
+        "not_relevant": 11,
+        "ambiguous": 49,
+        "fundamental_aging": 103,
+        "age_related_disease": 41,
+        "care": 5
+      },
+      "eur": {
+        "not_relevant": 3377362.83,
+        "ambiguous": 20645984.3,
+        "fundamental_aging": 51497276.57,
+        "age_related_disease": 21485901.44,
+        "care": 2393404.08
+      },
+      "numerator_eur": 51497276.57,
+      "denominator_eur": 75376582.09,
+      "ratio": 0.6832,
+      "ambiguous_share": 0.215,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Eye Institute",
+      "records": 161,
+      "counts": {
+        "ambiguous": 58,
+        "fundamental_aging": 44,
+        "age_related_disease": 59
+      },
+      "eur": {
+        "ambiguous": 38352473.17,
+        "fundamental_aging": 28024098.53,
+        "age_related_disease": 25928171.98
+      },
+      "numerator_eur": 28024098.53,
+      "denominator_eur": 53952270.51,
+      "ratio": 0.5194,
+      "ambiguous_share": 0.4155,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Forte",
+      "records": 206,
+      "counts": {
+        "social_population_aging": 40,
+        "age_related_disease": 17,
+        "ambiguous": 52,
+        "care": 89,
+        "intervention": 1,
+        "not_relevant": 4,
+        "fundamental_aging": 3
+      },
+      "eur": {
+        "social_population_aging": 18501052.05,
+        "age_related_disease": 5071858.9,
+        "ambiguous": 23832148.27,
+        "care": 28952970.08,
+        "intervention": 13348.4,
+        "not_relevant": 2905057.26,
+        "fundamental_aging": 6922303.41
+      },
+      "numerator_eur": 6935651.81,
+      "denominator_eur": 59461532.84,
+      "ratio": 0.1166,
+      "ambiguous_share": 0.2861,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+      "records": 239,
+      "counts": {
+        "fundamental_aging": 90,
+        "ambiguous": 78,
+        "age_related_disease": 71
+      },
+      "eur": {
+        "fundamental_aging": 31794255.51,
+        "ambiguous": 20692170.4,
+        "age_related_disease": 20973163.36
+      },
+      "numerator_eur": 31794255.51,
+      "denominator_eur": 52767418.87,
+      "ratio": 0.6025,
+      "ambiguous_share": 0.2817,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute on Minority Health and Health Disparities",
+      "records": 75,
+      "counts": {
+        "age_related_disease": 23,
+        "ambiguous": 25,
+        "fundamental_aging": 27
+      },
+      "eur": {
+        "age_related_disease": 11262066.07,
+        "ambiguous": 11466719.26,
+        "fundamental_aging": 13358665.47
+      },
+      "numerator_eur": 13358665.47,
+      "denominator_eur": 24620731.54,
+      "ratio": 0.5426,
+      "ambiguous_share": 0.3177,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute on Alcohol Abuse and Alcoholism",
+      "records": 67,
+      "counts": {
+        "fundamental_aging": 26,
+        "age_related_disease": 16,
+        "ambiguous": 25
+      },
+      "eur": {
+        "fundamental_aging": 17310787.6,
+        "age_related_disease": 4500191.51,
+        "ambiguous": 12700136.31
+      },
+      "numerator_eur": 17310787.6,
+      "denominator_eur": 21810979.11,
+      "ratio": 0.7937,
+      "ambiguous_share": 0.368,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Formas",
+      "records": 87,
+      "counts": {
+        "ambiguous": 33,
+        "not_relevant": 43,
+        "social_population_aging": 3,
+        "age_related_disease": 4,
+        "care": 3,
+        "fundamental_aging": 1
+      },
+      "eur": {
+        "ambiguous": 10966793.33,
+        "not_relevant": 15892715.09,
+        "social_population_aging": 832488.94,
+        "age_related_disease": 1047432.92,
+        "care": 874711.98,
+        "fundamental_aging": 172070.87
+      },
+      "numerator_eur": 172070.87,
+      "denominator_eur": 2926704.71,
+      "ratio": 0.0588,
+      "ambiguous_share": 0.7893,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Human Genome Research Institute",
+      "records": 31,
+      "counts": {
+        "fundamental_aging": 14,
+        "age_related_disease": 3,
+        "ambiguous": 14
+      },
+      "eur": {
+        "fundamental_aging": 11099190.82,
+        "age_related_disease": 2283932.01,
+        "ambiguous": 15822865.75
+      },
+      "numerator_eur": 11099190.82,
+      "denominator_eur": 13383122.83,
+      "ratio": 0.8293,
+      "ambiguous_share": 0.5418,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute on Drug Abuse",
+      "records": 59,
+      "counts": {
+        "fundamental_aging": 18,
+        "not_relevant": 5,
+        "ambiguous": 24,
+        "age_related_disease": 12
+      },
+      "eur": {
+        "fundamental_aging": 10486931.5,
+        "not_relevant": 849886.13,
+        "ambiguous": 13097088.52,
+        "age_related_disease": 4499743.79
+      },
+      "numerator_eur": 10486931.5,
+      "denominator_eur": 14986675.29,
+      "ratio": 0.6998,
+      "ambiguous_share": 0.4664,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute on Deafness and Other Communication Disorders",
+      "records": 71,
+      "counts": {
+        "age_related_disease": 28,
+        "fundamental_aging": 11,
+        "ambiguous": 32
+      },
+      "eur": {
+        "age_related_disease": 9884388.4,
+        "fundamental_aging": 3499941.33,
+        "ambiguous": 14977600.93
+      },
+      "numerator_eur": 3499941.33,
+      "denominator_eur": 13384329.73,
+      "ratio": 0.2615,
+      "ambiguous_share": 0.5281,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of Dental and Craniofacial Research",
+      "records": 77,
+      "counts": {
+        "fundamental_aging": 41,
+        "ambiguous": 7,
+        "age_related_disease": 29
+      },
+      "eur": {
+        "fundamental_aging": 9413416.14,
+        "ambiguous": 1150475.33,
+        "age_related_disease": 11596829.69
+      },
+      "numerator_eur": 9413416.14,
+      "denominator_eur": 21010245.83,
+      "ratio": 0.448,
+      "ambiguous_share": 0.0519,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of Biomedical Imaging and Bioengineering",
+      "records": 53,
+      "counts": {
+        "age_related_disease": 24,
+        "fundamental_aging": 6,
+        "ambiguous": 23
+      },
+      "eur": {
+        "age_related_disease": 5809957.76,
+        "fundamental_aging": 1574429.79,
+        "ambiguous": 9325025.87
+      },
+      "numerator_eur": 1574429.79,
+      "denominator_eur": 7384387.55,
+      "ratio": 0.2132,
+      "ambiguous_share": 0.5581,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Swedish Energy Agency",
+      "records": 43,
+      "counts": {
+        "ambiguous": 21,
+        "care": 3,
+        "not_relevant": 14,
+        "fundamental_aging": 5
+      },
+      "eur": {
+        "ambiguous": 9059703.05,
+        "care": 841049.28,
+        "not_relevant": 5248663.01,
+        "fundamental_aging": 527074.57
+      },
+      "numerator_eur": 527074.57,
+      "denominator_eur": 1368123.85,
+      "ratio": 0.3853,
+      "ambiguous_share": 0.8688,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Center for Advancing Translational Sciences",
+      "records": 23,
+      "counts": {
+        "ambiguous": 6,
+        "fundamental_aging": 9,
+        "age_related_disease": 5,
+        "not_relevant": 2,
+        "care": 1
+      },
+      "eur": {
+        "ambiguous": 9314115.77,
+        "fundamental_aging": 2400228.61,
+        "age_related_disease": 1657506.04,
+        "not_relevant": 73719.81,
+        "care": 2068988.1
+      },
+      "numerator_eur": 2400228.61,
+      "denominator_eur": 6126722.75,
+      "ratio": 0.3918,
+      "ambiguous_share": 0.6032,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute of Nursing Research",
+      "records": 33,
+      "counts": {
+        "ambiguous": 6,
+        "fundamental_aging": 24,
+        "age_related_disease": 3
+      },
+      "eur": {
+        "ambiguous": 700251.04,
+        "fundamental_aging": 8341915.97,
+        "age_related_disease": 2588420.46
+      },
+      "numerator_eur": 8341915.97,
+      "denominator_eur": 10930336.43,
+      "ratio": 0.7632,
+      "ambiguous_share": 0.0602,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Center for Complementary and Integrative Health",
+      "records": 24,
+      "counts": {
+        "age_related_disease": 14,
+        "fundamental_aging": 4,
+        "ambiguous": 6
+      },
+      "eur": {
+        "age_related_disease": 6225273.46,
+        "fundamental_aging": 392608.69,
+        "ambiguous": 1698215.16
+      },
+      "numerator_eur": 392608.69,
+      "denominator_eur": 6617882.15,
+      "ratio": 0.0593,
+      "ambiguous_share": 0.2042,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Vinnova",
+      "records": 46,
+      "counts": {
+        "ambiguous": 24,
+        "not_relevant": 12,
+        "fundamental_aging": 1,
+        "age_related_disease": 5,
+        "care": 4
+      },
+      "eur": {
+        "ambiguous": 3769868.62,
+        "not_relevant": 2706541.33,
+        "fundamental_aging": 177978.7,
+        "age_related_disease": 1100635.74,
+        "care": 470445.3
+      },
+      "numerator_eur": 177978.7,
+      "denominator_eur": 1749059.74,
+      "ratio": 0.1018,
+      "ambiguous_share": 0.6831,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Riksbankens Jubileumsfond",
+      "records": 19,
+      "counts": {
+        "age_related_disease": 4,
+        "ambiguous": 5,
+        "care": 2,
+        "social_population_aging": 4,
+        "fundamental_aging": 3,
+        "not_relevant": 1
+      },
+      "eur": {
+        "age_related_disease": 1941480.69,
+        "ambiguous": 1876181.74,
+        "care": 898703.33,
+        "social_population_aging": 1072523.03,
+        "fundamental_aging": 833029.47,
+        "not_relevant": 223986.19
+      },
+      "numerator_eur": 833029.47,
+      "denominator_eur": 4745736.52,
+      "ratio": 0.1755,
+      "ambiguous_share": 0.2833,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "NIH Center for Information Technology",
+      "records": 3,
+      "counts": {
+        "age_related_disease": 3
+      },
+      "eur": {
+        "age_related_disease": 5689861.97
+      },
+      "numerator_eur": 0.0,
+      "denominator_eur": 5689861.97,
+      "ratio": 0.0,
+      "ambiguous_share": 0.0,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Swedish Heart-Lung Foundation",
+      "records": 35,
+      "counts": {
+        "age_related_disease": 23,
+        "ambiguous": 2,
+        "fundamental_aging": 10
+      },
+      "eur": {
+        "age_related_disease": 2978028.54,
+        "ambiguous": 409351.0,
+        "fundamental_aging": 1023377.52
+      },
+      "numerator_eur": 1023377.52,
+      "denominator_eur": 4001406.06,
+      "ratio": 0.2558,
+      "ambiguous_share": 0.0928,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "Food and Drug Administration",
+      "records": 11,
+      "counts": {
+        "age_related_disease": 5,
+        "fundamental_aging": 5,
+        "ambiguous": 1
+      },
+      "eur": {
+        "age_related_disease": 3088107.32,
+        "fundamental_aging": 107725.15,
+        "ambiguous": 8605.94
+      },
+      "numerator_eur": 107725.15,
+      "denominator_eur": 3195832.47,
+      "ratio": 0.0337,
+      "ambiguous_share": 0.0027,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Library of Medicine",
+      "records": 9,
+      "counts": {
+        "ambiguous": 2,
+        "age_related_disease": 7
+      },
+      "eur": {
+        "ambiguous": 77778.64,
+        "age_related_disease": 2591784.85
+      },
+      "numerator_eur": 0.0,
+      "denominator_eur": 2591784.85,
+      "ratio": 0.0,
+      "ambiguous_share": 0.0291,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "Agency for Healthcare Research and Quality",
+      "records": 5,
+      "counts": {
+        "age_related_disease": 5
+      },
+      "eur": {
+        "age_related_disease": 1605224.29
+      },
+      "numerator_eur": 0.0,
+      "denominator_eur": 1605224.29,
+      "ratio": 0.0,
+      "ambiguous_share": 0.0,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "John E. Fogarty International Center for Advanced Study in the Health Sciences",
+      "records": 7,
+      "counts": {
+        "age_related_disease": 2,
+        "fundamental_aging": 5
+      },
+      "eur": {
+        "age_related_disease": 190232.92,
+        "fundamental_aging": 431268.98
+      },
+      "numerator_eur": 431268.98,
+      "denominator_eur": 621501.9,
+      "ratio": 0.6939,
+      "ambiguous_share": 0.0,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Foundation for Baltic and East European Studies",
+      "records": 2,
+      "counts": {
+        "social_population_aging": 1,
+        "ambiguous": 1
+      },
+      "eur": {
+        "social_population_aging": 532067.31,
+        "ambiguous": 4271.49
+      },
+      "numerator_eur": 0.0,
+      "denominator_eur": 532067.31,
+      "ratio": 0.0,
+      "ambiguous_share": 0.008,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "The Knowledge Foundation",
+      "records": 1,
+      "counts": {
+        "ambiguous": 1
+      },
+      "eur": {
+        "ambiguous": 383515.7
+      },
+      "numerator_eur": 0.0,
+      "denominator_eur": 0.0,
+      "ratio": null,
+      "ambiguous_share": 1.0,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Swedish National Space Agency",
+      "records": 1,
+      "counts": {
+        "not_relevant": 1
+      },
+      "eur": {
+        "not_relevant": 289749.32
+      },
+      "numerator_eur": 0.0,
+      "denominator_eur": 0.0,
+      "ratio": null,
+      "ambiguous_share": null,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Naturvårdsverket",
+      "records": 1,
+      "counts": {
+        "not_relevant": 1
+      },
+      "eur": {
+        "not_relevant": 289215.38
+      },
+      "numerator_eur": 0.0,
+      "denominator_eur": 0.0,
+      "ratio": null,
+      "ambiguous_share": null,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "SE",
+      "funder": "Karolinska Institutet",
+      "records": 15,
+      "counts": {
+        "ambiguous": 4,
+        "age_related_disease": 7,
+        "fundamental_aging": 4
+      },
+      "eur": {
+        "ambiguous": 20716.72,
+        "age_related_disease": 119245.72,
+        "fundamental_aging": 56063.28
+      },
+      "numerator_eur": 56063.28,
+      "denominator_eur": 175309.0,
+      "ratio": 0.3198,
+      "ambiguous_share": 0.1057,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "National Institute for Occupational Safety and Health",
+      "records": 1,
+      "counts": {
+        "fundamental_aging": 1
+      },
+      "eur": {
+        "fundamental_aging": 189727.4
+      },
+      "numerator_eur": 189727.4,
+      "denominator_eur": 189727.4,
+      "ratio": 1.0,
+      "ambiguous_share": 0.0,
+      "eur_missing_records": 0
+    },
+    {
+      "region": "US",
+      "funder": "Veterans Affairs",
+      "records": 320,
+      "counts": {
+        "age_related_disease": 155,
+        "ambiguous": 67,
+        "fundamental_aging": 98
+      },
+      "eur": {},
+      "numerator_eur": 0.0,
+      "denominator_eur": 0.0,
+      "ratio": null,
+      "ambiguous_share": null,
+      "eur_missing_records": 320
+    },
+    {
+      "region": "US",
+      "funder": "NIH Clinical Center",
+      "records": 6,
+      "counts": {
+        "age_related_disease": 6
+      },
+      "eur": {},
+      "numerator_eur": 0.0,
+      "denominator_eur": 0.0,
+      "ratio": null,
+      "ambiguous_share": null,
+      "eur_missing_records": 6
+    }
+  ]
+}

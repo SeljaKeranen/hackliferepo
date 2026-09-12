@@ -17,5 +17,9 @@ models/
 outputs/
 secrets/
 
+# The ratio census (filtered, licence-cleared derived data) is committed
+!ratio/data/
+!ratio/data/**
+
 # Local agent-system state
 .agent-system/

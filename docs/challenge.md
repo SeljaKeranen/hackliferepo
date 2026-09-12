@@ -72,6 +72,20 @@ Aging Funding Atlas (commit `2e59b27`). See
 `social_population_aging` - plus `not_relevant`/`ambiguous`; the funding ratio
 is unchanged (numerator `fundamental_aging` + `intervention`).
 
+## The funding-gap ratio (v1)
+
+Built 12 September 2026: the first version of the pivot's headline artifact
+under [`ratio/`](../ratio/README.md) - per funding jurisdiction (SE, EU, US),
+the share of public ageing-research money that targets slowing ageing
+(`fundamental_aging` + `intervention`) rather than managing its consequences,
+computed by a deterministic rule classifier implementing the
+[lexicon rubric](../classifier/KEYWORDS.md) over the 2,944-grant atlas. One
+ratio per region with the ambiguous share shown beside it as an honesty band;
+every number drills down to the dated grant records behind it. Run
+`python3 -m http.server 8010` from the repo root and open `/ratio/`. v1 is
+rules-only and not yet human-verified; the 30-record benchmark comparison is
+wired but pending labels.
+
 ## What this means in practice
 
 Coverage explicitly matters less than accuracy. A modest map where nearly every finding survives human verification beats a dense map with unverified claims, so the benchmark and the honest "nothing reliable found" handling are first-class deliverables, not polish.

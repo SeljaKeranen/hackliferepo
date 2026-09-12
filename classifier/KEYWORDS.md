@@ -32,6 +32,38 @@ net catches. Searching each database directly with narrow category keywords
 would silently drop everything the categories' vocabularies miss - the
 per-category coverage numbers below (40-68%) show how much that would lose.
 
+## Classification rubric: step 0 is relevance
+
+Before assigning any category, the classifier or judge must first ask whether
+the record has anything to do with longevity, human ageing, or ageing biology
+at all. A record that matched the broad search net but concerns
+material/component/infrastructure ageing, a non-ageing use of a matched term,
+or an otherwise unrelated topic gets the output category `not_relevant` - it
+is never forced into a substantive category. `not_relevant` is distinct from
+`ambiguous`: `ambiguous` stays reserved for genuinely on-topic records the
+text does not let you place (the annotation guide's "insufficient or
+borderline information").
+
+Worked examples from the corpus's real false hits:
+
+- `swecris:P46678-1_Energi` "Accelerated ageing and voltage disturbances -
+  need, possibilities and limitations" - matched `ageing`, is about electrical
+  component testing: `not_relevant`.
+- `swecris:P42789-1_Energi` "Separating the influence of temperature and
+  current swing on the ageing of a Li-Ion battery" - matched `ageing`,
+  battery chemistry: `not_relevant`.
+- `cordis:101000236` "GEroNIMO: Genome and Epigenome eNabled breedIng in
+  MOnogastrics" - matched `longevity` via "productive longevity" in livestock
+  breeding: `not_relevant`.
+- Contrast: "International journal of ageing and later life" is on-topic
+  (human ageing) but the text gives no basis for a substantive category:
+  `ambiguous`, not `not_relevant`.
+
+The atlas's LLM labels predate this distinction and fold both cases into
+`ambiguous`, which is why the `exclusion_markers` and trap-term stats in
+`keywords.json` measure against `ambiguous`; a future re-labelling should
+separate the two.
+
 ## Evidence base
 
 The corpus is teammate Max's Aging Funding Atlas: 2,944 grant records

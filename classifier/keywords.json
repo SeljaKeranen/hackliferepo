@@ -1,6 +1,17 @@
 {
   "meta": {
     "derived_from_commit": "2e59b27",
+    "output_categories": {
+      "values": [
+        "fundamental_aging",
+        "intervention",
+        "age_related_disease",
+        "care",
+        "ambiguous",
+        "not_relevant"
+      ],
+      "note": "classification output vocabulary, not keyword lists: step 0 of the rubric is a relevance gate - records matching the broad net but concerning material/component/infrastructure ageing or other non-ageing uses of matched terms get 'not_relevant'; 'ambiguous' is reserved for on-topic but undecidable records. See KEYWORDS.md."
+    },
     "recovery_command": "atlas lives at data/Track3_C2/output/ (byte-identical to the 2e59b27 blobs; 4061bff deleted only a duplicate top-level Track3_C2/ copy); history fallback: git show 2e59b27:data/Track3_C2/output/{swecris,cordis,nih_reporter}.csv",
     "corpus_records": 2944,
     "corpus_fields_matched": "lowercased title + llm_quote",

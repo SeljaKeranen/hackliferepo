@@ -1,0 +1,282 @@
+{
+  "se-001": {
+    "finding_fingerprint": "4ebe5144f20ad0c1",
+    "finding_id": "se-001",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Regeringen.se press release confirms a government assignment (uppdrag) to Livsmedelsverket to compile and spread knowledge on food and meals for older people, reporting by 15 June 2026, with no money award as the focus. A commissioned agency assignment fits policy.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Regeringen.se press release (official government publisher) dated 16 May 2024 confirms the assignment to Livsmedelsverket to compile and spread knowledge on food and meals for older people, including support material for elderly care staff and decision makers, with reporting by 15 June 2026 and an Anna Tenje quote as described.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2026-06",
+          "url": "https://www.livsmedelsverket.se/om-oss/press/pressmeddelanden/bra-matvanor-kan-bidra-till-fler-friska-ar--nya-kostrad-for-personer-over-65-ar"
+        },
+        "reason": "Press release verified and accurate, but the assignment's reporting deadline (15 June 2026) has passed and the final slutredovisning could not be located; the regeringen.se assignment page still shows no delivered report. Livsmedelsverket has meanwhile published new dietary advice for people over 65 (June 2026), materially newer official output on the same subject.",
+        "verdict": "uncertain"
+      }
+    }
+  },
+  "se-002": {
+    "finding_fingerprint": "c653ccad0b30cd34",
+    "finding_id": "se-002",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "KI news page confirms Forte awarded about SEK 160 million across three programme grants and 19 project grants for 2023-2029, naming the REALM programme grant of SEK 23,819,000 to Lena Dahlberg. Money awarded is the point, so funding fits; note the canonical Forte page is 404 per the source_note and KI is a secondary source.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "KI news item (credible institutional publisher, used because Forte's own page 404s as the source_note says) confirms SEK 160 million (Forte's own page says 161, so 'about 160' holds), three programme grants and 19 project grants running 2023-2029, and the REALM details; the call name is not in the KI article but Forte's call page 'Kunskap och arbetssatt for ett mer jamlikt, delaktigt och vardigt aldrande 2023' confirms it.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "KI news item fetched and confirms the SEK 160 million Forte award, 3 programme grants plus 19 project grants for 2023-2029, and the REALM grant of SEK 23,819,000 to Lena Dahlberg. A dated funding decision; the grants run to 2029, so the source remains the adequate artifact. The original Forte URL 404s as the source_note already states.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-003": {
+    "finding_fingerprint": "b3c6f04dc0f6d8fb",
+    "finding_id": "se-003",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Forte's English news item, dated 5 June 2025, announces five Nordic-Baltic projects selected for funding out of 74 applications under the NordForsk call co-funded by Forte. A grant selection announcement is squarely funding.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Forte's official English news item dated 5 June 2025 confirms five Nordic-Baltic projects selected from 74 applications in the NordForsk call on sustainable health and care systems for the elderly, and quotes Forte's government commission to coordinate national ageing research.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Forte English news item fetched; confirms the 5 June 2025 announcement, five Nordic-Baltic projects funded out of 74 applications, and Forte's government commission to coordinate national ageing research. No newer artifact changes this dated announcement.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-004": {
+    "finding_fingerprint": "e46d34a16b2900b4",
+    "finding_id": "se-004",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "proposed_classification": "policy",
+        "reason": "The researchdata.se catalogue record describes SNAC as a longitudinal study launched in 2001 on the Swedish government's initiative to answer future care-needs questions; it mentions no grant, appropriation or amount, so money is not the point of the source. A government-initiated national programme fits policy better than funding.",
+        "verdict": "fail"
+      },
+      "credibility": {
+        "reason": "The researchdata.se national catalogue record confirms the 2001 launch on Swedish government initiative, over 8,000 participants, the four areas and the future-care-needs purpose, but the record's status field marks the study as completed while its description describes ongoing follow-ups and new cohorts; the 'still-running' assertion is therefore only partially supported by this source.",
+        "verdict": "uncertain"
+      },
+      "recency": {
+        "reason": "researchdata.se catalogue record fetched; confirms SNAC's 2001 launch on government initiative, over 8,000 participants and the four areas. The record was last updated 2026-04-15, so it is a current, maintained artifact for a still-running study.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-005": {
+    "finding_fingerprint": "0667b03db1d02fbf",
+    "finding_id": "se-005",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "CORDIS fact sheet confirms MSCA doctoral network UNION (grant 101167421), 1 Jan 2025 to 31 Dec 2028, total EU contribution EUR 3,423,240 with EUR 587,419 to Karolinska Institutet. An EU grant record is funding.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "CORDIS fact sheet (official EU registry) confirms UNION, grant 101167421, an MSCA doctoral network on understanding frailty towards healthy ageing running 1 Jan 2025 to 31 Dec 2028, total EU contribution EUR 3,423,240 and Karolinska Institutet's net EU contribution EUR 587,419.20.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "CORDIS fact sheet fetched; confirms grant 101167421 (UNION), 2025-01-01 to 2028-12-31, EUR 3,423,240 total with EUR 587,419 to Karolinska Institutet. Project is ongoing and the fact sheet is the current authoritative record.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-006": {
+    "finding_fingerprint": "6637ee6c5e722ed1",
+    "finding_id": "se-006",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Regeringen.se press release announces minister Anna Tenje's visit to South Korea and Japan from 30 September 2024 to discuss ageing, pensions and dementia, with a quoted ministerial statement about learning from each other. A ministerial statement/visit announcement fits political statement.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Regeringen.se press release confirms minister Anna Tenje's visit to South Korea and Japan from 30 September 2024 covering ageing populations, pensions, elderly care and dementia, her quote about learning from each other, and the Korea-Sweden Age Well Forum and dementia seminar in Japan.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Regeringen.se press release fetched; confirms Anna Tenje's 30 September - 4 October 2024 visit to South Korea and Japan, the listed topics, the Age Well Forum and dementia seminar, and the quoted statement. A dated historical event that does not go stale.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-007": {
+    "finding_fingerprint": "64726ecf593edbbd",
+    "finding_id": "se-007",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "proposed_classification": "legislation",
+        "reason": "The source is the regeringen.se page for government proposition Prop. 2024/25:60, a bill submitted to the Riksdag that even includes an amendment to the Higher Education Act; government bills are explicitly legislation under the rubric. Strategy is understandable given its 2025-2028 policy content, but the document form is a proposition.",
+        "verdict": "fail"
+      },
+      "credibility": {
+        "reason": "Regeringen.se proposition page confirms Prop. 2024/25:60 published 12 December 2024, a cumulative SEK 6.5 billion increase in state research funding to 2028, and health explicitly named as a societal challenge area requiring research investment.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Regeringen.se proposition page fetched; confirms Prop. 2024/25:60 published 12 December 2024, the cumulative SEK 6.5 billion increase to 2028, and health named among societal challenges. It remains the current research and innovation bill for 2025-2028; no successor bill exists yet.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-008": {
+    "finding_fingerprint": "c09fb5777301e0f4",
+    "finding_id": "se-008",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Regeringen.se press release of 18 December 2024 confirms about SEK 600 million through 2028 directed to life science and health research, with dementia research explicitly listed. The money commitment is the point, so funding fits.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Regeringen.se press release dated 18 December 2024 confirms about SEK 600 million through 2028 for life science and health research within the research and innovation bill, explicitly listing dementia research, precision medicine, mental health and women's health, issued jointly by the ministries named in the source_note.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Regeringen.se press release of 18 December 2024 fetched; confirms about SEK 600 million through 2028 for life science and health including dementia research, from the three named ministries. Still the current artifact for this funding direction within the bill period.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-009": {
+    "finding_fingerprint": "f2657a4e3c97ad3c",
+    "finding_id": "se-009",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Riksdagen page shows government bill Prop. 2025/26:60 of 20 November 2025 proposing statutory amendments including a fixed care contact in special housing for older people and strengthened carer support, in force 1 July 2026. A government bill proposing law changes is legislation.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Riksdagen.se (official parliamentary publisher) shows Prop. 2025/26:60 of 20 November 2025 with the stated title, proposing a fixed care contact (fast omsorgskontakt) in special housing for older people and strengthened municipal support for family carers, entering into force 1 July 2026.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2026-05-20",
+          "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/starkta-insatser-for-aldre-och-for-de-som-vardar_hd01sou25/"
+        },
+        "reason": "The proposition page is accurate but superseded as the current artifact: the Riksdag approved the bill on 20 May 2026 via committee report 2025/26:SoU25 and the amendments entered into force 1 July 2026, so the fixed care contact and carer support are now enacted law, not just a proposal.",
+        "verdict": "fail"
+      }
+    }
+  },
+  "se-010": {
+    "finding_fingerprint": "56596f506687128d",
+    "finding_id": "se-010",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The source is committee report (betankande) 2024/25:SoU21 on elderly care, handling about 60 motions with a chamber decision on 19 March 2025; parliamentary committee reports are explicitly within the legislation label. The source_note's caveat that no new statute results is fair but the label is the rubric's best fit.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Riksdagen.se committee report 2024/25:SoU21 on aldreomsorg, decided 19 March 2025, handled about 60 motions covering elderly care organisation, healthcare in elderly care and dementia strategy, and contains the statement that interventions shall be coordinated to promote health and prevent ill health.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Riksdagen page for betankande 2024/25:SoU21 fetched; confirms the 19 March 2025 chamber decision handling about 60 motions on elderly care, healthcare in elderly care and dementia, all rejected. A dated parliamentary decision; no newer artifact changes it.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-011": {
+    "finding_fingerprint": "8ab2d62e44865b13",
+    "finding_id": "se-011",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Riksdagen page confirms motion 2021/22:4170 by Ebba Busch and Christian Democrat colleagues proposing elderly health-promotion measures such as senior health talks and osteoporosis prevention. A party's parliamentary motion is a party position, which the rubric places under political statement.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Riksdagen.se motion 2021/22:4170 'En aldrepolitik att lita pa' by Ebba Busch (KD) explicitly states health-promoting strategies are of decisive importance for maintaining functional capacity, and proposes Seniorhalsa physical activity, structured conversations for over-80s and osteoporosis prevention; the HTML view did not display the Inlamnad date but the motion belongs to the 2021/22 general motion period consistent with 5 October 2021.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Riksdagen motion page fetched; confirms motion 2021/22:4170 by Ebba Busch (KD) with the Seniorhalsa physical activity proposal, preventive aldresamtal for over-80s, and osteoporosis prevention measures. The claim asserts a dated 2021 political statement, which the page still documents adequately.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-012": {
+    "finding_fingerprint": "38529aaa2962caad",
+    "finding_id": "se-012",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Regeringen.se press release of 21 January 2025 confirms the government presented the updated national dementia strategy 'Varje dag raknas' for 2025-2028 covering prevention through social services, with SEK 100 million for 2025-2027 for regional collaboration. A national strategy document fits strategy; the attached money is secondary.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Regeringen.se press release of 21 January 2025 confirms the developed national dementia strategy 'Varje dag raknas' for 2025-2028 covering prevention, diagnostics, healthcare, dental care and social services, with SEK 100 million for 2025-2027 to regional collaboration structures.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Regeringen.se press release fetched; confirms the 21 January 2025 presentation of the dementia strategy 'Varje dag raknas' for 2025-2028 and SEK 100 million for 2025-2027, ministers Tenje and Forssmed. The strategy covers 2025-2028 and remains current with no successor.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "se-013": {
+    "finding_fingerprint": "abee85880094310b",
+    "finding_id": "se-013",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Regeringen.se press release confirms the government assigned Folkhalsomyndigheten to map older people's mental health and wellbeing, reporting by 1 September 2025, with Jakob Forssmed quoted. A commissioned agency assignment fits policy.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Regeringen.se press release of 27 March 2024 confirms the assignment to Folkhalsomyndigheten to map older people's mental health and wellbeing with focus on their life situation to enable more targeted preventive measures, with final reporting by 1 September 2025 and the Jakob Forssmed quote.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2025-09-01",
+          "url": "https://www.folkhalsomyndigheten.se/nyheter-och-press/nyhetsarkiv/2025/september/ny-stor-kartlaggning-av-psykisk-halsa-hos-personer-over-65-ar/"
+        },
+        "reason": "The March 2024 assignment press release is accurate, but the known follow-up has since landed: Folkhalsomyndigheten published the final report 'Samma behov - andra forutsattningar' on 1 September 2025, verified via the agency's news item, so a reader should see the completed mapping rather than only the assignment.",
+        "verdict": "fail"
+      }
+    }
+  },
+  "se-014": {
+    "finding_fingerprint": "2d180bc7a3644ccf",
+    "finding_id": "se-014",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Folkhalsomyndigheten news item of 1 September 2026 confirms the agency published recommendations for organisations working with people 65+, developed on the government's assignment (pa regeringens uppdrag), covering ageism and meaningful daily life. Agency output of a commissioned assignment fits policy.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Folkhalsomyndigheten news item of 1 September 2026 (official agency publisher) confirms government-commissioned recommendations for organisations working with people 65+, aimed at promoting mental health, preventing mental ill health, strengthening resilience, countering ageism and enabling active meaningful daily lives.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Folkhalsomyndigheten news item fetched; confirms the 1 September 2026 publication of government-commissioned recommendations for organisations working with people 65+, including countering ageism and enabling meaningful engagement. Published eleven days before the judgment date; clearly current.",
+        "verdict": "pass"
+      }
+    }
+  }
+}

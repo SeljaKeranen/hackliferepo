@@ -1,0 +1,296 @@
+{
+  "sg-001": {
+    "finding_fingerprint": "de0e458afab2fd66",
+    "finding_id": "sg-001",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "MOH release of 24 February 2016 marks the publication of the full Action Plan for Successful Ageing report with 70+ initiatives across 12 areas, unveiled by Amy Khor; the S$3 billion was an earlier 2015 commitment referenced in passing. A national action plan document is squarely strategy.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOH newsroom press release dated 24 February 2016 confirms the Ministerial Committee on Ageing released the full Action Plan report that day, the S$3 billion commitment, more than 70 initiatives, and the launch by Senior Minister of State for Health Dr Amy Khor.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2023-01-30",
+          "url": "https://www.moh.gov.sg/newsroom/launch-of-the-2023-action-plan-for-successful-ageing/"
+        },
+        "reason": "Fetched the MOH release; it is live and confirms the 24 Feb 2016 report launch, S$3 billion and 70+ initiatives. The claim asserts a dated historical event and does not present the 2016 plan as current; the 2023 refresh exists and is noted for context.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-002": {
+    "finding_fingerprint": "e91ab5f757d6cfde",
+    "finding_id": "sg-002",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "MOH page of 30 January 2023 announces the launch of the refreshed 2023 Action Plan for Successful Ageing anchored on Care, Contribution and Connectedness, co-created through public engagement. A refreshed national action plan is strategy.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOH newsroom release dated 30 January 2023 confirms the Ministerial Committee on Ageing launched the refreshed 2023 Action Plan anchored on the three Cs of Care, Contribution and Connectedness, with community and ground-up initiatives to empower seniors in their ageing journeys.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the MOH release; it is live and confirms the 30 Jan 2023 launch and the Care, Contribution, Connectedness pillars. Web search found no refresh newer than 2023, so this remains the current Action Plan artifact as of 2026-09-12.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-003": {
+    "finding_fingerprint": "307c120f06e07d0a",
+    "finding_id": "sg-003",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Joint MOH/MND/MOT release of 16 November 2023 launches Age Well SG as a national programme spanning housing, transport, active ageing and care services; the ~S$800 million is the means, not the point. Programme launch fits policy.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Joint MOH/MND/MOT press release of 16 November 2023 confirms Age Well SG as a national programme to support seniors ageing well in homes and communities, and states MOH will dedicate around S$800 million from FY2024 to FY2028 to better resource Active Ageing Centres.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2024-10-12",
+          "url": "https://www.moh.gov.sg/newsroom/good-progress-in-the-implementation-of-age-well-sg/"
+        },
+        "reason": "Fetched the MOH release; it is live and confirms the 16 Nov 2023 joint announcement and the ~S$800 million FY2024-FY2028 figure as announced. The claim asserts the dated announcement; a later official progress update exists and is noted for context.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-004": {
+    "finding_fingerprint": "08806ee3f6ccb878",
+    "finding_id": "sg-004",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "PMO page is the full transcript of PM Lee's National Day Rally 2023 speech of 20 August 2023, including the super-aged society remark and the Age Well SG announcement. A rally speech is a political statement.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "PMO transcript of the 20 August 2023 National Day Rally confirms PM Lee said Singapore is an aged society that will soon be super-aged, and announced the new national programme Age Well SG to complement Healthier SG for seniors' health.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the PMO transcript; it is live and contains the super-aged society remark and the Age Well SG announcement from the 20 Aug 2023 rally. A dated speech transcript remains the adequate artifact for this claim.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-005": {
+    "finding_fingerprint": "fe7805d9f880ef48",
+    "finding_id": "sg-005",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "MOH release of 12 October 2024 confirms S$3.5 billion set aside over the next decade for Age Well SG and a further S$140 million FY2025-FY2027 for Active Ageing Centre upgrades. The source is a progress report, but the claim is about the money committed, so funding is the best fit.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOH press release of 12 October 2024 on Age Well SG progress confirms the government has set aside S$3.5 billion over the next decade and will dedicate another S$140 million from FY2025 to FY2027 for infrastructural upgrades of existing Active Ageing Centres.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2026-05-07",
+          "url": "https://www.moh.gov.sg/newsroom/three-more-age-well-neighbourhoods-to-strengthen-support-for-seniors-in-the-community/"
+        },
+        "reason": "Fetched the MOH release; it is live and confirms the S$3.5 billion over a decade and S$140 million FY2025-FY2027 figures. No newer official funding figures for Age Well SG were found; a May 2026 release gives newer programme progress (230+ Active Ageing Centres) and is noted.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-006": {
+    "finding_fingerprint": "c29b61ace46ede30",
+    "finding_id": "sg-006",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "MOH transcript of Ong Ye Kung's 12 October 2023 symposium speech contains the exact lifespan 84 / healthspan 74 / ten years of ill health statement. A ministerial speech is a political statement.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOH transcript of Ong Ye Kung's 12 October 2023 speech at the 3rd Centre for Research on Successful Ageing Symposium contains the exact statement: average lifespan about 84 years, health span 74 years, meaning the average Singaporean suffers ten years of ill health before passing away.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2026-07-25",
+          "url": "https://www.moh.gov.sg/newsroom/speech-by-mr-ong-ye-kung--minister-for-health-and-coordinating-minister-for-social-policies--at-the-business-times-longevity-forum/"
+        },
+        "reason": "Fetched the MOH transcript; it is live and confirms the 84-year lifespan, 74-year healthspan and ten-year gap statements from 12 Oct 2023. The claim asserts a dated statement; the minister's more recent remarks on the same gap (25 Jul 2026 forum speech) are noted for context.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-007": {
+    "finding_fingerprint": "e72c239bca7718a0",
+    "finding_id": "sg-007",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "MOH transcript of Ong Ye Kung's 25 July 2026 Business Times Longevity Forum speech contains the healthspan-lifespan gap KPI remark, 11-12 years in developed economies and squeezing it below 10. Speech transcript, so political statement.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOH transcript dated 25 July 2026 of Ong Ye Kung's Business Times Longevity Forum speech confirms his quote that the real KPI is the healthspan-lifespan gap, about 11 to 12 years in developed economies, and that squeezing it below 10 years would make life much better.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the MOH transcript; it is live and confirms the 25 Jul 2026 speech and the 11-12 year healthspan-lifespan gap KPI quote. Under two months old, this is the current artifact.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-008": {
+    "finding_fingerprint": "744dd47919371b2d",
+    "finding_id": "sg-008",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The 22 May 2026 NMRC awards speech states the Government has committed S$350 million under RIE2030 for the longevity Grand Challenge, naming brain health, physical function and socio-environmental research areas. The claim centres on the committed money, so funding is the best fit despite the speech vehicle.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOH transcript of the 22 May 2026 NMRC Awards Ceremony speech confirms the S$350 million RIE2030 commitment for the Grand Challenge on Maximising Healthy and Successful Longevity and names vascular dementia, sarcopenic obesity/frailty, and socio-environmental support (built environment, social systems, digital health) as research areas.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the MOH transcript; it is live and confirms the 22 May 2026 speech, the S$350 million RIE2030 Grand Challenge commitment and the three research areas. No newer figure for this commitment was found.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-009": {
+    "finding_fingerprint": "cf28860ccfe8a0b2",
+    "finding_id": "sg-009",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The file.go.gov.sg PDF is the NRF press release datelined Singapore, 5 December 2025, announcing the S$37 billion RIE2030 plan (about 1% of GDP over five years from April 2026) endorsed at the 15th RIEC meeting, with the first RIE Grand Challenge in Maximising Healthy and Successful Longevity described as claimed. A five-year national research plan is strategy.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Extracted the PDF text directly from the official file.go.gov.sg service: dateline Singapore, 5 December 2025; S$37 billion, approximately 1% of GDP over five years from April 2026, endorsed at the 15th RIEC meeting; and the first RIE Grand Challenge in Maximising Healthy and Successful Longevity addressing the rapid transition to a super-aged society by increasing understanding of the biology of ageing and the ability to intervene early and effectively. NRF (PMO) press release, all details match.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the file.go.gov.sg PDF (live, 273 KB) and extracted its text locally: dateline Singapore 5 December 2025, S$37 billion, approximately 1% of GDP over five years from April 2026, endorsed at the 15th RIEC meeting, with new RIE Grand Challenges. RIE2030 runs from April 2026, so this remains the current plan announcement.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-010": {
+    "finding_fingerprint": "d0fd963b25b95aed",
+    "finding_id": "sg-010",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "NUS News article of 20 October 2021 announces the pilot Health District @ Queenstown collaboration between HDB, NUS and NUHS, announced by Minister Desmond Lee, with promoting healthy longevity and increasing residents' health span among its stated aims. A multi-agency pilot programme fits policy.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "NUS News article of 20 October 2021 confirms HDB, NUS and NUHS announced the first-of-its-kind multi-stakeholder Health District @ Queenstown pilot, with a stated objective to promote healthy longevity by increasing residents' health span. NUS is a primary announcing partner, so the publisher is credible for this claim as the source_note explains.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2025-03-18",
+          "url": "https://fass.nus.edu.sg/news/2025/03/18/baseline-study-for-health-district-queenstown-unveils-key-insights-on-residents-well-being/"
+        },
+        "reason": "Fetched the NUS News article; it is live and confirms the 20 Oct 2021 HDB-NUS-NUHS announcement and the healthy longevity and health span aims. The claim asserts the dated announcement; newer official material now exists, including a March 2025 baseline study release and a restored HDB page, noted for context.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-011": {
+    "finding_fingerprint": "4d038541c7a89f03",
+    "finding_id": "sg-011",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The MOM COS speech of 3 March 2026 confirms the statutory retirement and re-employment ages rise to 64 and 69 on 1 July 2026, on track for 65 and 70 by 2030. The source is a speech, but the substance is a statutory age change under the Retirement and Re-employment Act, which the rubric places under legislation; the source_note flags that the gazette itself was unreachable.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOM newsroom transcript of Tan See Leng's 3 March 2026 Committee of Supply speech confirms raising retirement and re-employment ages to 64 and 69 on 1 July 2026, staying on track for 65 and 70 by 2030, framed around Singaporeans leading longer, healthier lives and the phrase career longevity. The gazetted legislation itself was not verifiable to automated fetch (sso.agc.gov.sg blocks), as the source_note discloses.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2026-07-01",
+          "url": "https://www.mom.gov.sg/employment-practices/retirement"
+        },
+        "reason": "Fetched the MOM speech; it is live and confirms the 3 Mar 2026 announcement of ages 64 and 69 from 1 July 2026, on track to 65 and 70 by 2030. The change has since taken effect: MOM's retirement page, updated 1 July 2026, confirms the minimum retirement age of 64 is now in force.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-012": {
+    "finding_fingerprint": "6d2a486752ad2913",
+    "finding_id": "sg-012",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "MOH page is a written parliamentary reply of 5 July 2021 to Dr Lim Wee Kiak describing the Ministerial Committee on Ageing, the 2015 Action Plan and the planned refresh. Parliamentary replies fall under political statement.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOH parliamentary QA page confirms a written reply of 5 July 2021 to Dr Lim Wee Kiak describing the whole-of-government approach coordinated by the Ministerial Committee on Ageing, the 2015 Action Plan for Successful Ageing, and the statement that the MCA will refresh the Action Plan to keep catering to the evolving needs of current and future seniors.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2023-01-30",
+          "url": "https://www.moh.gov.sg/newsroom/launch-of-the-2023-action-plan-for-successful-ageing/"
+        },
+        "reason": "Fetched the MOH parliamentary reply; it is live and confirms the 5 Jul 2021 reply describing the MCA approach and the intention to refresh the Action Plan. The claim presents this as a dated 2021 statement, but the promised refresh has since landed (launched 30 Jan 2023), which completes the picture.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-013": {
+    "finding_fingerprint": "60fd70448a4c4bf2",
+    "finding_id": "sg-013",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "MOH page is a parliamentary reply to NMP Neil Parekh (sitting 9 September 2024, published 10 September) on reducing the ten-year health-span gap, citing employers' role and Healthier SG. Parliamentary reply, so political statement.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOH parliamentary QA published 10 September 2024 (sitting 9 September) to NMP Neil Parekh confirms the Minister's statement that reducing the current ten-year gap between health-span and life-span is the ultimate objective of healthcare, and points to employers' role via continued employment of older workers and workplace health practices aligned with Healthier SG.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the MOH parliamentary reply; it is live and confirms the 10 Sep 2024 reply to NMP Neil Parekh on the ten-year health-span gap, employers' role and Healthier SG. The claim asserts a dated reply and remains adequate; the minister's July 2026 forum speech (sg-007 in this dataset) carries his latest framing of the gap.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "sg-014": {
+    "finding_fingerprint": "e2c937794aaa4f3f",
+    "finding_id": "sg-014",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "MOH transcript of Ong Ye Kung's 6 March 2024 Committee of Supply speech confirms the 74-year healthspan figure, the near-20% rise to 690,000 seniors, the super-aged society remark and the Age Well SG reference. Speech transcript, so political statement.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MOH transcript of Ong Ye Kung's 6 March 2024 Committee of Supply speech confirms the 74-year healthspan (one of the highest in the world), seniors up almost 20% in five years from 560,000 to 690,000, the verge of a super-aged society, and continued rollout of interventions through Age Well SG.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the MOH transcript; it is live and confirms the 6 Mar 2024 COS speech, the healthspan of 74, the 690,000 seniors figure and the Age Well SG reference. The claim asserts a dated speech, which remains the adequate artifact for these statements.",
+        "verdict": "pass"
+      }
+    }
+  }
+}

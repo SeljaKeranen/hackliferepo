@@ -52,11 +52,23 @@ def main():
     tmp = tempfile.TemporaryDirectory()
     server.FINDINGS_DIR = os.path.join(tmp.name, "findings")
     server.VERDICTS_DIR = os.path.join(tmp.name, "verdicts")
+    server.JUDGMENTS_DIR = os.path.join(tmp.name, "judgments")
     os.makedirs(server.FINDINGS_DIR)
+    os.makedirs(server.JUDGMENTS_DIR)
     with open(os.path.join(server.FINDINGS_DIR, "testland.json"), "w", encoding="utf-8") as f:
         json.dump([FINDING], f)
     with open(os.path.join(server.FINDINGS_DIR, "broken.json"), "w", encoding="utf-8") as f:
         f.write("{not json")
+    judgment = {
+        "finding_id": "xx-001",
+        "finding_fingerprint": server.finding_fingerprint(FINDING),
+        "judged_at": "2026-01-03T00:00:00Z",
+        "judges": {dim: {"verdict": "pass", "reason": "smoke"}
+                   for dim in server.JUDGE_DIMENSIONS},
+    }
+    with open(os.path.join(server.JUDGMENTS_DIR, "testland.judgments.json"),
+              "w", encoding="utf-8") as f:
+        json.dump({"xx-001": judgment}, f)
 
     httpd = HTTPServer(("127.0.0.1", 0), server.Handler)
     port = httpd.server_address[1]
@@ -72,6 +84,16 @@ def main():
            "corrupt findings file must surface an error, not pose as clean")
     expect(data["countries"]["broken"]["findings"] == [],
            "corrupt findings file should serve an empty findings list")
+    served_judgment = data["countries"]["testland"]["judgments"].get("xx-001", {})
+    expect(set(served_judgment.get("judges", {})) == set(server.JUDGE_DIMENSIONS),
+           "AI judgments should be served on /api/data")
+    expect(served_judgment.get("judges", {}).get("credibility")
+           == {"verdict": "pass", "reason": "smoke"},
+           "judge record content should round-trip unmodified")
+    expect(served_judgment.get("stale") is False,
+           "current judgment should not be marked stale")
+    expect(data["countries"]["broken"]["judgments"] == {},
+           "missing judgments file should read as empty object")
 
     verdict = {"country": "testland", "finding_id": "xx-001",
                "checks": {k: True for k in server.CHECKS}, "reviewer": "smoke"}
@@ -95,6 +117,15 @@ def main():
     status, data = request(port, "/api/data")
     expect(data["countries"]["testland"]["verdicts"]["xx-001"].get("stale") is True,
            "editing a reviewed finding must mark its served verdict stale")
+    expect(data["countries"]["testland"]["judgments"]["xx-001"].get("stale") is True,
+           "editing a judged finding must mark its served AI judgment stale")
+    with open(findings_path, "w", encoding="utf-8") as f:
+        json.dump([], f)
+    status, data = request(port, "/api/data")
+    expect(data["countries"]["testland"]["verdicts"]["xx-001"].get("stale") is True,
+           "a verdict whose finding vanished must be marked stale")
+    expect(data["countries"]["testland"]["judgments"]["xx-001"].get("stale") is True,
+           "a judgment whose finding vanished must be marked stale")
     with open(findings_path, "w", encoding="utf-8") as f:
         json.dump([FINDING], f)
     status, data = request(port, "/api/data")
@@ -115,6 +146,13 @@ def main():
     os.unlink(os.path.join(server.VERDICTS_DIR, "testland.verdicts.json"))
     status, _ = request(port, "/api/verdict", verdict)
     expect(status == 200, "missing verdicts file should start a fresh one")
+
+    with open(os.path.join(server.JUDGMENTS_DIR, "testland.judgments.json"),
+              "a", encoding="utf-8") as f:
+        f.write("<<<<<<< merge conflict")
+    status, data = request(port, "/api/data")
+    expect("judgments" in (data["countries"]["testland"].get("error") or ""),
+           "corrupt judgments file must surface an error on /api/data")
 
     for bad_country in ("../evil", "evil/../..", "nosuch", "TESTLAND", "", 7, None):
         status, _ = request(port, "/api/verdict", {**verdict, "country": bad_country})

@@ -45,7 +45,11 @@ running accuracy = correct / reviewed.
   gitignored for local scratch).
 - `verdicts/<country>.verdicts.json` — verdicts, written by the server on every
   click. Committed: the verdicts are the evidence for the accuracy claim, so
-  commit them after a review session.
+  commit them after a review session. Each verdict stores a fingerprint of the
+  finding content it attests to; if a finding is edited after review,
+  `test_findings.py` flags the verdict as stale and it must be re-reviewed.
+  The server refuses to save over a verdicts file it cannot parse (fix the
+  file by hand first) so evidence is never silently clobbered.
 
 ## Limitations (by design, for the pilot)
 
@@ -61,7 +65,10 @@ running accuracy = correct / reviewed.
 
 ```sh
 python3 eval/test_findings.py
+python3 eval/test_server.py
 ```
 
-Structurally validates every `findings/*.json` against the schema constraints
-and sanity-checks any verdicts files.
+`test_findings.py` structurally validates every `findings/*.json` against the
+schema constraints and cross-checks verdicts (ids exist, fingerprints match,
+records sit in the right country file). `test_server.py` smoke-tests the
+server's HTTP contract against a temporary data directory.

@@ -17,11 +17,17 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "eval"))
-from server import CHECKS  # single source for the rubric's check keys
+# single source for the rubric's check keys and the verdict fingerprint
+from server import CHECKS, finding_fingerprint
 
 SCHEMA_PATH = os.path.join(ROOT, "schema", "finding.schema.json")
 FINDINGS_GLOB = os.path.join(ROOT, "eval", "findings", "*.json")
 VERDICTS_GLOB = os.path.join(ROOT, "eval", "verdicts", "*.verdicts.json")
+
+# Which ISO country code each findings file must contain. Register every new
+# findings file here so a record can't be misfiled into the wrong country
+# silently (the server and UI route by filename, not by the records' fields).
+COUNTRY_CODE_BY_FILE = {"singapore": "SG", "sweden": "SE", "us": "US"}
 
 CLASSIFICATIONS = {"policy", "legislation", "funding", "strategy", "political statement"}
 CONFIDENCES = {"high", "medium", "low"}
@@ -220,8 +226,13 @@ def main():
 
     findings_files = sorted(glob.glob(FINDINGS_GLOB))
     check(bool(findings_files), f"no findings files match {FINDINGS_GLOB}")
+    recs_by_file = {}
     for path in findings_files:
         name = os.path.basename(path)
+        slug = name[:-len(".json")]
+        expected_country = COUNTRY_CODE_BY_FILE.get(slug)
+        check(expected_country is not None,
+              f"{name}: unknown findings file — add it to COUNTRY_CODE_BY_FILE")
         records = load_json_file(path)
         if records is None:
             continue
@@ -230,11 +241,19 @@ def main():
             continue
         ids = [r.get("id") for r in records if isinstance(r, dict)]
         check(len(ids) == len(set(ids)), f"{name}: duplicate ids")
+        recs_by_file[slug] = {r.get("id"): r for r in records if isinstance(r, dict)}
         for i, rec in enumerate(records):
             validate_record(rec, f"{name}[{i}]")
+            if expected_country is not None and isinstance(rec, dict):
+                check(rec.get("country") == expected_country,
+                      f"{name}[{i}]: country {rec.get('country')!r} misfiled — "
+                      f"this file holds {expected_country!r} records")
 
     for path in sorted(glob.glob(VERDICTS_GLOB)):
         name = os.path.basename(path)
+        slug = name[:-len(".verdicts.json")]
+        recs = recs_by_file.get(slug)
+        check(recs is not None, f"{name}: no matching findings file {slug}.json")
         verdicts = load_json_file(path)
         if verdicts is None:
             continue
@@ -243,6 +262,16 @@ def main():
             continue
         for fid, v in verdicts.items():
             validate_verdict(fid, v, f"{name}[{fid}]")
+            if recs is None:
+                continue
+            rec = recs.get(fid)
+            check(rec is not None,
+                  f"{name}[{fid}]: verdict references a finding id "
+                  f"not present in {slug}.json")
+            if rec is not None and isinstance(v, dict):
+                check(v.get("finding_fingerprint") == finding_fingerprint(rec),
+                      f"{name}[{fid}]: verdict is stale — the finding changed "
+                      f"since it was reviewed; re-review it")
 
     if errors:
         print(f"FAIL: {len(errors)} problem(s)")

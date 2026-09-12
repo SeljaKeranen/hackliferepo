@@ -106,7 +106,12 @@ reviewerInput.addEventListener("input", () => localStorage.setItem("reviewer", r
 
 async function boot() {
   const res = await fetch("/api/data").then(r => r.json());
-  data = res.countries || {};
+  if (!res.countries) {
+    document.getElementById("list").textContent =
+      "Server error: " + (res.error || "no data");
+    return;
+  }
+  data = res.countries;
   const names = Object.keys(data).sort();
   const sel = document.getElementById("country");
   sel.innerHTML = names.map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join("");
@@ -141,6 +146,14 @@ function verdictLabel(state) {
 function render() {
   const list = document.getElementById("list");
   list.innerHTML = "";
+  const err = (data[country] || {}).error;
+  if (err) {
+    const p = document.createElement("p");
+    p.className = "rubric";
+    p.style.color = "var(--fail)";
+    p.textContent = "Server error for this country: " + err;
+    list.appendChild(p);
+  }
   for (const f of findings) {
     const v = verdicts[f.id];
     const state = verdictState(v);

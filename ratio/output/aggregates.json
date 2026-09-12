@@ -15,7 +15,8 @@
       "social_population_aging"
     ],
     "tie_margin": 0.3,
-    "built_at_commit": "87c7577",
+    "inputs_hash": "89333139d462",
+    "built_at_commit": "0b0a32c-dirty",
     "caveats": [
       "Labels are rule-based and not yet human-verified; the 30-record human benchmark is pending.",
       "The corpus is an ageing-filtered sample per funder, not a census of any funding body's budget.",

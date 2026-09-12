@@ -368,9 +368,10 @@ async function boot() {
     + "Commission via CORDIS (EU), NIH via RePORTER (US). Sample sizes and "
     + "collection nets differ per source, so compare shapes, not absolutes."));
   cv.appendChild(el("li", null,
-    `Data built at repo commit ${window.AGG.method.built_at_commit || "unknown"} `
-    + `from the atlas of ${window.AGG.method.corpus || "?"} — if the classifier `
-    + "or lexicon changed since, rerun python3 ratio/build.py."));
+    `Data built from classifier+lexicon inputs ${window.AGG.method.inputs_hash || "?"} `
+    + `(repo state ${window.AGG.method.built_at_commit || "unknown"}) over the atlas of `
+    + `${window.AGG.method.corpus || "?"}. Freshness is machine-checked: `
+    + "python3 ratio/build.py --check fails if these numbers no longer match the code."));
 }
 boot();
 </script>

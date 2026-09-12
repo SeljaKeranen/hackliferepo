@@ -28,6 +28,7 @@ Python 3 stdlib only; no model calls, no network.
 
 import argparse
 import collections
+import hashlib
 import json
 import subprocess
 import sys
@@ -37,6 +38,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import classify as clf
 
 OUT_DIR = Path(__file__).resolve().parent / "output"
+# the files whose content determines the committed outputs; their combined
+# hash is stamped into aggregates.json and enforced by --check, so stale
+# outputs fail loudly instead of silently serving numbers from older rules
+INPUT_FILES = [Path(__file__).resolve(),
+               Path(clf.__file__).resolve(),
+               clf.KEYWORDS_JSON]
 REGION_BY_SOURCE = {"swecris": "SE", "cordis": "EU", "reporter": "US"}
 REGION_NAMES = {"SE": "Sweden", "EU": "European Union", "US": "United States"}
 
@@ -102,6 +109,31 @@ def finish(bucket: dict) -> dict:
     }
 
 
+def inputs_hash() -> str:
+    h = hashlib.sha256()
+    for path in INPUT_FILES:
+        h.update(path.read_bytes())
+    return h.hexdigest()[:12]
+
+
+def check_fresh() -> int:
+    """Exit 1 if the committed outputs were built from different inputs."""
+    agg_path = OUT_DIR / "aggregates.json"
+    if not agg_path.is_file():
+        print(f"missing {agg_path} - run python3 ratio/build.py")
+        return 1
+    stored = json.loads(agg_path.read_text(encoding="utf-8"))
+    stored_hash = stored.get("method", {}).get("inputs_hash")
+    fresh = inputs_hash()
+    if stored_hash != fresh:
+        print(f"STALE outputs: aggregates.json was built from inputs "
+              f"{stored_hash}, current inputs hash to {fresh} - "
+              "run python3 ratio/build.py")
+        return 1
+    print(f"outputs are fresh (inputs {fresh})")
+    return 0
+
+
 def self_test() -> int:
     """Unit checks for the aggregation math; no corpus needed."""
     b = blank_bucket()
@@ -144,9 +176,14 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--self-test", action="store_true",
                     help="run aggregation unit checks and exit")
+    ap.add_argument("--check", action="store_true",
+                    help="verify the committed outputs match the current "
+                         "classifier + lexicon (exit 1 on drift)")
     args = ap.parse_args()
     if args.self_test:
         return self_test()
+    if args.check:
+        return check_fresh()
 
     ruleset = clf.load_ruleset()
     rows = clf.load_corpus()
@@ -183,7 +220,7 @@ def main():
             }, ensure_ascii=False) + "\n")
 
     git_head = subprocess.run(
-        ["git", "rev-parse", "--short", "HEAD"], capture_output=True,
+        ["git", "describe", "--always", "--dirty"], capture_output=True,
         text=True, cwd=clf.REPO_ROOT).stdout.strip() or "unknown"
 
     aggregates = {
@@ -196,6 +233,7 @@ def main():
             "numerator": sorted(clf.NUMERATOR),
             "denominator": list(clf.CATEGORIES),
             "tie_margin": clf.TIE_MARGIN,
+            "inputs_hash": inputs_hash(),
             "built_at_commit": git_head,
             "caveats": [
                 "Labels are rule-based and not yet human-verified; the "

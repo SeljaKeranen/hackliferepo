@@ -36,13 +36,16 @@ Checks:
 ```sh
 python3 ratio/classify.py --self-test    # worked examples from KEYWORDS.md + rubric branches
 python3 ratio/build.py --self-test       # aggregation math unit checks
+python3 ratio/build.py --check           # committed outputs match the current code (exit 1 on drift)
 python3 classifier/validate_keywords.py  # lexicon integrity (must pass)
 ```
 
-The committed outputs record the repo commit they were built at
-(`method.built_at_commit`, shown in the page footer). Any change to
-`ratio/classify.py` or `classifier/keywords.json` requires re-running
-`python3 ratio/build.py`, or the page serves numbers from the older rules.
+The committed outputs are stamped with a content hash of their inputs
+(`method.inputs_hash` over `classify.py` + `build.py` + `keywords.json`,
+shown in the page footer). `--check` recomputes it and fails when any of
+those files changed after the last build, so a change to the classifier or
+lexicon without re-running `python3 ratio/build.py` is caught mechanically,
+not by a reader noticing a stale footer.
 
 ## Method: the funnel
 

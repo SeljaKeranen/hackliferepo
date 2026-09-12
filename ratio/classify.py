@@ -206,41 +206,42 @@ def classify(title: str, quote: str, ruleset: dict) -> dict:
     second_cat, second = ranked[1] if len(ranked) > 1 else (None, 0.0)
     margin = round(top - second, 3)
 
-    # step 2: mechanism-versus-intervention rubric rule. It decides only the
-    # fundamental_aging/intervention boundary; a near-tie between
-    # intervention and any other category stays ambiguous like every other
-    # contested boundary (step 3).
+    # step 2: mechanism-versus-intervention rubric rule. It decides ONLY the
+    # fundamental_aging/intervention boundary - entered when those two are
+    # the top-two contenders, or when intervention stands alone. A contest
+    # between intervention and any OTHER category is left to the step-3
+    # ambiguity floor (near-tie) or to the vote (decisive margin).
     contested = {top_cat, second_cat} == {"fundamental_aging", "intervention"}
-    if top_cat == "intervention" or (contested and margin < TIE_MARGIN):
-        if second_cat is not None and not contested and margin < TIE_MARGIN:
-            pass  # falls through to the step-3 ambiguity floor
-        elif MECH_CUES.search(text):
+    fa_boundary = contested or (top_cat == "intervention"
+                                and second_cat is None)
+    if fa_boundary and (top_cat == "intervention" or margin < TIE_MARGIN):
+        mech = MECH_CUES.search(text)
+        if mech:
             return result(
                 "fundamental_aging",
                 "Intervention vocabulary appears in a mechanism study, which "
                 "the rubric assigns to ageing biology (mechanism cue: "
-                f"{MECH_CUES.search(text).group(0)}).",
+                f"{mech.group(0)}).",
                 margin)
-        elif DEV_CUES.search(text):
+        if DEV_CUES.search(text):
             return result(
                 "intervention",
                 "The text describes developing or testing an intervention "
                 "against ageing (matched: "
                 f"{', '.join(matched_terms.get('intervention', []))}).",
                 margin)
-        elif contested or "fundamental_aging" in matched:
+        if contested:
             return result(
                 "fundamental_aging",
                 "Intervention vocabulary appears without developing/testing "
                 "language, so the rubric's mechanism rule assigns the study "
                 "of ageing biology.",
                 margin)
-        else:
-            return result(
-                "ambiguous",
-                "Intervention vocabulary appears without developing/testing "
-                "language or mechanism evidence, so no rule is confident.",
-                margin)
+        return result(
+            "ambiguous",
+            "Intervention vocabulary appears without developing/testing "
+            "language or mechanism evidence, so no rule is confident.",
+            margin)
 
     # step 3: ambiguity floor for every other contested boundary
     if second_cat is not None and margin < TIE_MARGIN:
@@ -354,6 +355,10 @@ def self_test():
         ("Slowing ageing with metformin", "", "intervention"),
         # a NONBIO term with biomedical context never excludes the record
         ("A battery of cognitive tests in aging patients", "", "ambiguous"),
+        # a decisive intervention win over an unrelated category stands on
+        # the vote; the rubric rule governs only the fundamental boundary
+        ("Geroprotectors and senotherapies for residents of nursing homes",
+         "", "intervention"),
     ]
     failed = 0
     for title, quote, want in cases:

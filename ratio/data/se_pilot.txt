@@ -1,0 +1,1117 @@
+=== [1] swecris:2025-07910_VR | 2025 | EUR 2.40M | Swedish Research Council
+TITLE: Safer Life Extension in Nuclear Power: Digital Twins and AI for Polymer Ageing and Non-Destructive Monitoring
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+This research environment will strengthen Sweden’s long-term competence in nuclear technology and
+safety by combining fundamental studies of polymer ageing with non-destructive condition monitoring
+and AI-enabled digital twins. Hosted at KTH in collaboration with Vattenfall (Forsmark, Ringhals),
+Westinghouse, and VTT (Finland), the program targets safety-critical polymer components—cables,
+seals, and coatings—that are essential for safe operation and life extension of existing plants.The
+work is structured around three PhD projects:Accelerated ageing and mechanisms; quantifying
+diffusion-limited oxidation, thermo-radiative effects, fire performance, and mitigation strategies
+with fillers and stabilisers.Field-ready NMR sensing; advancing a portable low-field T₂-NMR “mouse”
+into plant-deployable condition monitoring.AI and digital twins; fusing laboratory datasets with
+online plant measurements to predict remaining useful life (RUL) with calibrated uncertainty,
+supporting risk-based inspection, maintenance, and replacement.Methods include controlled ageing
+protocols, FTIR/DSC/TGA/GC-MS, mechanical testing, and portable NMR profiling combined with machine
+learning. Expected outcomes are interpretable lifetime predictions, validated non-destructive
+monitoring, and a demonstrator digital twin for critical polymer components, improving reliability,
+safety, and sustainable life extension while training a new cohort of specialists.
+
+=== [2] swecris:2018-06156_VR | 2018 | EUR 2.22M | Swedish Research Council
+TITLE: A clinical trans-omics multidisciplinary study to understand the role of antiretroviral therapy in premature ageing of the immune system in HIV-infection
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Background: In the absence of cure or vaccine, long-term HIV infection, even with successful
+treatment, is associated with an enhanced onset of aging related complications on the people who are
+living with HIV (PLHIV).Aim: The aims of the present study are to use complimentary
+multidisciplinary expertise to unravel the physiological and molecular pathways that underline the
+pre-mature aging of the immune system (immune-aging) and potentially generate novel therapeutic
+approaches for age-related diseases on PLHIV.Method: In a bedside-to-bench and back approach, we
+will first identify the patient cohort, starting with the ideal randomized trial and working back to
+what is possible from the registry using the national HIV-registry, InfCareHIV which has
+longitudinal data since 1993. We will use both clinical and advanced laboratory parameters (92
+inflamatory markers, miRNA, immune senesence marker) including the physiological measurement of age
+(i.e., Telomer length or Fraility) in a large number of patients. We will also perform multi-omics
+technologies like transcriptomics, proteomics, metabolomics, microbiome and conventional
+immunological assays in a sub-cell specific manner at a single cell resolution. Finally we will
+validate using mechanistic studies.Significance: This multidiciplinary study potentially identify a
+frame of reference for what might be required in clinical intervention strategies to delay the
+premature aging to improve the quality of life in PLHIV.
+
+=== [3] swecris:2023-01125_Forte | 2023 | EUR 2.14M | Forte
+TITLE: FINGER-Pro: Evidence-based health promotion interventions for healthy aging: adapting and implementing the FINGER multidomain model across different settings and sociocultural contexts
+RULES: Keyword evidence for care (0.857) and age_related_disease (0.816) is too close to call (margin 0.041 < 0.3; relative margin 0.048 < 0.15 or evidence floor not met).
+ABSTRACT:
+Research problem, specific questionsMaintaining cognitive and functional ability into late life is a
+lifelong process and health promotion/early intervention are the vital components of public health
+efforts to achieve healthy aging. The FINGER multidomain intervention trial, which integrates five
+healthy behaviour domains—nutrition, exercise, cognitive training, social activity, and vascular
+risk monitoring and management, was the first large-scale randomized controlled trial in the world
+showing evidence for cognitive benefit in older adults at-risk for dementia. The benefit was also
+extended to physical function, cardiovascular health, quality of life, and health economic aspects.
+Despite the compelling evidence, more questions remain to be answered: Are the findings from the
+FINGER trial generalizable to different settings in the Swedish context (e.g., memory clinic,
+primary care, and municipality)? Can the FINGER model contribute to additional parameters central
+for healthy aging? Is there an evidence-based need to further refine the FINGER model? How can the
+FINGER model be adapted and implemented across socioeconomically diverse populations? In this 6-year
+program, we address these questions by adapting and implementing the FINGER model in different
+settings and sociocultural contexts.Data and methodWe plan six interrelated work packages: a)
+Adapting and implementing the FINGER model across different settings in Swedish society; b) Testing
+the FINGER model for healthy aging; c) Refining the FINGER model with novel risk factors and sex
+differences in the response to lifestyle interventions; d) Adapting and implementing the FINGER
+model in sociocultural contexts; e) Health economic assessment, payment models and sustainment; and
+f) Knowledge dissemination, implementation of findings and public involvement. We use data from a)
+existing FINGER and FINGER-based trials in many countries (e.g., MIND-AD, MIND-China); b) ongoing
+FINGER-based implementation studies in different contexts: specialist (Brain Health Clinic), primary
+care (STRONGER), and municipality (Train your Brain); and c) pilot studies to capture younger people
+and family caregivers (Family FINGERS).Relevance and utilisationThe program will generate new
+knowledge on tailored intervention approaches at individual and population levels to support longer
+and healthier lives in different settings and sociocultural contexts. This knowledge is critical
+knowledge for the development of health policies to promote of healthy aging and equal health
+care.Plan for programme realisationThe program is carried out by an interdisciplinary team of
+experts with expertise in relevant disciplines, e.g., epidemiology, gerontology, clinical
+geriatrics, clinical trials, implementation research, psychology, health economics, biostatistics,
+and care science. The budget is used for supporting researchers to implement the study plan and
+collect new data. The applicant will coordinate all research activities.
+
+=== [4] swecris:2017-06100_VR | 2017 | EUR 1.71M | Swedish Research Council
+TITLE: Molecular profiling of the Central Swedish Cohorts & Biobank: Entering precision medicine for healthy ageing
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+In recent years, new large-scale molecular methods have been developed, potentially allowing
+identification of new early clinical biomarkers, and the possibility to unravel disease mechanisms
+and develop strategies for precision medicine. By collecting repeated data from 1987, we have formed
+a world-unique research cohort (the Central Sweden Cohorts & Biobank) consisting of 110,000 women
+and men born between 1914-1952. Diet and lifestyle information has been collected on five occasions
+and register information annually. Since 2003, sub-cohorts of the participants have undergone
+clinical examinations with sampling of biologic material (blood, urine, feces and fat biopsies). We
+are now looking for funds to use metabolomics, proteomics, genomics, and microbiota composition
+analyzed by cutting-edge technology to improve our understanding of pathological pathways of aging
+and early deaths through translational collaboration between researchers at Uppsala University,
+Chalmers University of Technology and Karolinska Institutet. Within this research program we will
+integrate data from omics, lifestyle information, data on body composition and registry information.
+We aim to provide better understanding of disease etiology and individualized prevention of
+age-related diseases, to identify new biomarkers that will improve risk assessment and prognosis in
+prevention and treatment of aging diseases and finally to use omics to improve lifestyle exposure
+assessment.
+
+=== [5] swecris:2016-07090_Forte | 2017 | EUR 1.60M | Forte
+TITLE: UserAge: Understanding User Participation in Research on Ageing and Health
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Addressing active and healthy ageing and the challenges in welfare systems demands new solutions.
+User participation in research is being advocated for as a way to improve such services. The UserAge
+research program will be implemented as a four-node endeavour with international collaboration,
+coordinated by the Forte-centre CASE at Lund University. Involving user representatives and
+international scientific experts in the development phase, the program builds upon our previous/
+ongoing research with user participation. The ultimate goals are to maximize the impact of user
+participation; enhance the execution of high quality research; increase the knowledge about what
+difference user participation can make, and evaluate the extent to which research about and with
+user participation makes an impact on practices and outcomes. We will develop a broad arsenal of
+scientific methods that lay the foundations for the development of generalizable knowledge and
+cumulative knowledge building. With the integration of researchers and different categories of users
+at the core, we will establish an empirical research module, a capacity-building module and a
+modelling module. New projects and activities cutting across the four-node research milieu will
+generate new evidence about user participation in research based on studies in Sweden and
+cross-nationally. Projects I-III are PhD student projects supervised by interdisciplinary teams.
+Project IV is a national panel study in order to provide a source for longitudinal data collection
+and participant recruitment for a range of research activities. Following and building upon
+previous/ongoing research as well as the new projects, projects V and VI are cross-cutting endeavors
+that will nurture the development and optimization of methodology, knowledge translation, theory
+modelling and impact assessment ambitions. UserAge will also produce education and training
+activities targeting users and future researchers in ageing and health.
+
+=== [6] swecris:2016-07097_Forte | 2017 | EUR 1.60M | Forte
+TITLE: Suicidal behavior in older adults and the road back to life
+RULES: Keyword evidence for care (0.667) and fundamental_aging (0.667) is too close to call (margin 0.0 < 0.3; relative margin 0.000 < 0.15 or evidence floor not met).
+ABSTRACT:
+In Sweden, as in most of the western world, high suicide rates are observed among older persons,
+especially in men. The central idea is of this research program is that suicide in late life is not
+a “normal” response to the aging process but rather a complex human behavior that can be prevented.
+Understanding suicide requires a multidisciplinary approach. The program is carried out within the
+Forte Age Cap Center for Health and Aging. We will study suicidal thoughts, attempts and death by
+suicide in later life through the lens of the Interpersonal Model of Suicide in Older People. Both
+population-based and clinical cohorts provide data for this research program, which includes high
+quality social, psychological, psychiatric, somatic, genetic and neurochemistry data for older adult
+populations, many of which are followed up prospectively. The comprehensive examinations are carried
+out by clinician interviewers, facilitating the careful characterization of participants. Data
+sources for our clinical studies include interviews with suicide attempters at three major hospitals
+in Sweden, review of medical records and utilization of national databases. Aims of the research
+program include: 1) To identify determinants of suicide-related outcomes (suicidal thoughts,
+attempts and death by suicide) in older persons 2) To compare clinical characteristics of older
+(65+) and younger suicide attempters in a multisite Swedish study, 3) to study the role of gender in
+individual interviews with persons in treatment after suicide attempts, focusing on men´s and
+women´s thoughts and attitudes about late-life suicide, and 4) to incorporate findings from 1-3
+above in the development of a person-centered care intervention, an educational package for clinical
+staff working at the Geriatric Psychiatry Department at Sahlgrenska University Hospital.
+
+=== [7] swecris:2016-07175_Forte | 2017 | EUR 1.60M | Forte
+TITLE: Aging through life: Identifying new pathways for living longer and healthier
+RULES: Keyword evidence for care (0.667) and fundamental_aging (0.642) is too close to call (margin 0.025 < 0.3; relative margin 0.037 < 0.15 or evidence floor not met).
+ABSTRACT:
+This proposal seeks to identify lifelong pathways that can help older adults live longer and
+healthier. Maintaining optimal physical and cognitive function in old age is critical to minimizing
+individual suffering and health care costs of chronic disease and disability. We will explore the
+different periods of life when various determinants may influence later health. Specifically, we aim
+to (1) verify the impact of childhood conditions on late-life health, (2) explore the influence of
+midlife factors ‒ environmental, psychosocial, and biomedical ‒ and their interactions on
+health-related outcomes in late life, (3) trace changes in those factors from mid- to late life and
+detect late-life-specific risk and protective factors for functional dependence, and (4) identify
+lifelong clusters of exposures to detect new pathways to better health in aging. To achieve these
+ambitious aims, we will rely on the expertise and experience of the applicants and the quality of
+the databases that will be used to implement the program’s five projects. The databases available at
+our Aging Research Center, are derived from three population-based longitudinal studies: SNAC-K
+(n=4430, age ≥60, 2001−2016), SWEOLD (n=4566, age ≥75, 1992−2014), and CAIDE (n= 1449, age ≥60,
+1972−2008). The three studies share basic designs and similar procedures for data collection and
+assessment of health outcomes. Combined, they provide assessments of health-related factors over the
+whole lifespan. These databases also provide sufficient information to study the dynamic interplay
+of multiple dimensions of older people’s health, including chronic morbidity and multimorbidity,
+functioning, and disability. We expect that this program will provide sufficiently strong evidence
+to support new avenues in aging research and offer recommendations for future preventive actions.
+
+=== [8] swecris:2021-00349_VR | 2022 | EUR 1.41M | Swedish Research Council
+TITLE: DAICY trial – Dual vs. Single-Antibiotic Impregnated Cement in Hemiarthroplasty for Femoral Neck Fracture: A Register-based and cluster-randomized cross-over trial
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Rational for conducting the study: The most commonly used treatment of displaced femoral neck
+fracture in the elderly is hemiarthroplasty which provides a reliable clinical result. Deep
+periprosthetic joint infection (PJI) is a severe complication associated with an increased morality
+and often leads to major and repeated reoperations. PJI has been reported to occur in 2-4% of
+hemiarthroplasties after fracture. The aim of the trial is to investigate whether the risk of PJI is
+reduced after the use of dual impregnated antibiotic laden bone cement.Study design: Register-based,
+cluster randomized controlled trial.Population: Number of patients: 7,312. Inclusion criteria:
+Patients aged ≥60 year, with a displaced femoral neck fracture and eligible for hemiarthroplasty
+according to local guidelines. Exclusion criteria: Previous inclusion of contralateral hip.
+Pathological or stress fracture of the femoral neck or fracture adjacent to a previous ipsilateral
+hip implant.Intervention: Dual-impregnated antibiotic laden bone cement.Control: Single-impregnated
+antibiotic laden bone cement.Outcome: Primary outcome variable is the incidence of PJI within one
+year. Secondary outcome variables include the occurrence of re-operations for any reason,
+mortality,and health care costs. Future benefit and clinical application: A reduction of PJI could
+decrease the morbidity and mortality of this elderly population and reduce the need for reoperations
+and antibiotic treatment.
+
+=== [9] swecris:2021-00278_VR | 2021 | EUR 1.25M | Swedish Research Council
+TITLE: Myfab – Nanofabrication Tools
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Myfab is, since 2010, the national research infrastructure for micro- and nanofabrication with open
+access cleanroom facilities at Chalmers, KTH, Lund and Uppsala. It is an excellent environment for
+micro- and nano fabrication of materials and device structures for advanced research in physics,
+materials science, nanoscience, chemistry, life sciences and nanoelectronics, with more than 800
+peer-reviewed publications and more than 50 PhD students emerging annually. The quality and
+significance are supported by the fact that Myfab’s application received exceptional top marks in
+all categories in the VR infrastructure call evaluation 2019 and was ranked the highest among the 27
+infrastructure applications. The panel concluded that the national impact of Myfab on forefront
+science and engineering is invaluable for a large number of research fields performing international
+cutting-edge research and development.In that application, we presented an urgent need for extensive
+equipment investments of 340 MSEK. This was recognised by VR, but the budget constraints at that
+time only allowed a 30% coverage (105 MSEK) of the total investment budget applied for. This has
+enabled us to start working on narrowing the gap towards having comprehensive, state-of-art
+processes at each node. Now that the VR infrastructure development program has been extended in
+2021, we can envisage Myfab moving much closer to achieving this goal.The tools motivated in this
+application will, in different ways, further strengthen the profiles of the Myfab nodes, and
+simultaneously support the whole Myfab user collective with available back-up processes or unique
+processes available only at a single node for all to use. The prioritised investments are targeted
+at developing the national infrastructure by adding completely new processes and techniques and by
+replacing ageing and outdated hardware with state-of-the-art equipment, thus enabling excellent
+science in a large number of research fields.
+
+=== [10] swecris:P40501-1_Energi | 2015 | EUR 1.19M | Swedish Energy Agency
+TITLE: Fast-Charging of Large Energy-optimised Li-ion Cells for Electrified Drivelines
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Despite rapid development of automotive batteries the cycle life is still an issue, especially when
+fast-charging is used. This is especially the case for large-format energy-optimised cells developed
+for EVs and heavy-duty PHEVs. The aim of this project is to: a) Quantify and characterise Li-ion
+battery ageing as a function of load conditions, cell design and cell chemistry. b) Develop ageing
+models for the most important ageing mechanisms and incorporate these into physical first-principles
+models for large-format energy-optimised cells c) Identify suitable battery types and establish
+recommendations for cycle life optimisation while fast-charging The project is a formed by a broad
+cooperation between all parties within the Swedish Hybrid Vehicle Center Theme 3 to ensure high
+technical and scientific level. Three post-doc’s and research efforts by senior researchers from
+industry is included as well as cycle life testing and cooperation with other national R&D projects.
+
+=== [11] swecris:2015-00158_Formas | 2015 | EUR 1.11M | Formas
+TITLE: Inquiries, Innovation and Implementation Strategies  for Resilient Residential Qualities. Situations of Dwelling, Ageing and Healthcaring in Transdisciplinary Collaboration. AIDAH Projects 2015-2017
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The project explores the crucial interrelations between different spheres of residential situations
+ranging from dwelling and ageing to care and healthcaring. Confronting the major challenges for the
+future in these respective fields the hypothesis is that a general strategy for fostering well-being
+and residential qualities in health promoting, care enabling and well adapted resilient domestic
+environments potentially reduces the need for extensive societal costs for healthcare investments.
+This applies to either to collective care for the elderly or medical care in hospitals while also
+improving conditions for personnel providing care in the home. Important societal, economic as well
+as sustainable gains and qualities of life can be achieved while implementing a strategy of
+residential primacy. The research is organised in three interrelated Work Packages. WP#1 Dwelling;
+will engage in extensive analysis of predominant features in residential production 1992-2015 with
+focus on conditions for ´staying at home´ in a longer time span to provide new knowledge for design
+and adaptations. WP#2 Ageing; will study physical preconditions for healthcare in ordinary housing
+for elderly with aim to observe obstacles and opportunities when healthcare is performed in home
+environments. WP#3 Health Architecture; will provide evidence-based knowledge on how built
+environments can support health, well-being, person-centred care, teamwork and self-management in a
+new healthcare context.
+
+=== [12] swecris:P2017-90012_Energi | 2019 | EUR 0.98M | Swedish Energy Agency
+TITLE: Ageing of Lithium-ion Batteries with Nickel-Rich Cathodes for Electromobility (ALINE)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Ni-rich Li-ion cells are entering the market for EVs, due to their higher energy density and
+abundance compared to cobalt. This might, however, be on the expense of cell life, total cost, and
+safety. Within the broad Academic-Industry collaboration of Batterifonden projectnumber 40501-1, we
+intend to continue to study ageing of novel Ni-rich Li-ion cells for automotive applications,
+quantify and characterise ageing by identifying limitations of Ni-rich cathodes and silicon
+containing anodes in order to optimize operation, maximize performance and lifetime. The goal is to
+improve the understanding of how material composition, cell design, temperature and the internal
+pressure affect the ageing. This will be achieved by cell cycling, post-mortem electrochemical and
+surface analysis and mathematical modelling. In-operando experiments will be performed to quantify
+the effects of specific parameters. Impact on e-mobility and sustainability will be evaluated by a
+life cycle assessment.
+
+=== [13] swecris:2018-02284_Formas | 2018 | EUR 0.98M | Formas
+TITLE: Smart, benign and synergistic antifouling cocktails for achieving a non-toxic environment: formulation and ecotoxicological evaluation
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+This project will study biocide combinations which show promising high efficacy at target sites and
+low environmental impacts. We aim to make use of biocidal synergy to formulate sustainable
+state-of-the-art antifouling fiber-based material. This is achieved by encapsulating the biocide in
+microcapsules from which the release of the biocides is controlled at the lowest efficient rate over
+a prolonged time. Combining biocidal synergy with smart and controlled release considerably reduces
+biocide emissions and, consequently, the environmental impact of antifouling and antimicrobial
+products.As a consequence of the efforts to prevent biofouling, a multitude of toxic biocides with
+potential to induce antimicrobial resistance are polluting the marine environment. The biocide
+emissions into the environment are usually excessive due to a fast and uncontrolled leakage from
+antifouling products. Biocide-free approaches suffer from high costs, poor longevity, and loss of
+function and are therefore not implemented by the industry.In recent times, concern has been raised
+about the risks of combination effects of chemical mixtures. Therefore both the industry as well as
+the public and regulatory authorities will benefit from increased ecotoxicological knowledge of
+synergistic mixtures. Further, the project will also directly contribute to the non-toxic
+environment by providing a sustainable and implementable antifouling/antimicrobial technology to
+industrial stakeholders and end-users.
+
+=== [14] swecris:P39045-1_Energi | 2015 | EUR 0.89M | Swedish Energy Agency
+TITLE: Energy AND Power: Hybrid Supercapacitors
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Batteries currently dominate the hybridisation of vehicles, but there is a struggle to provide both
+the best possible energy and power performance. This affects usage pattern and the reduction in fuel
+consumption possible, as well as the charging rates possible, affecting also life-length and ageing.
+The more recent “hybrid supercapacitor” concept, “hybrid” here meaning battery and supercapacitor
+technology combined, has the potential to fill this void in the energy and power demand chart. “The
+battery part”, must be more stable than usual, to provide > 100.000 cycles, and at the same time
+“the supercapacitor part” focussing on energy content, to not sub-optimise the device. All aspects
+are tackled in a project based on smart nano-materials created, tested and designed, to enable a
+functional cell. The team will consist of 3 PhD students in 3 different groups with 4 principal
+investigators (PIs) having complementary unique expertises in the field of batteries and
+supercapacitors.
+
+=== [15] swecris:2019-04735_Vinnova | 2020 | EUR 0.85M | Vinnova
+TITLE: Automated gentle radiotherapy - Innovation, Standardisation,
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Purpose and goal: The ASSIST project has strived towards one long-term objective, where by enabling
+the sharing of medical data without compromising patient privacy, we create the conditions for
+developing innovative AI-based clinical decision support. The ambition is to meet an aging
+population and the ever-increasing need for specialized hospital care this entails. The project has
+therefore developed tools for collection, annotation, selection and sharing of medical data in
+collaboration between academia, healthcare and industry. These will be implemented nationally during
+step 3. Expected results and effects: The project has achieved all set performance targets during
+stage 2 and considers itself to have thereby created the necessary technical and organizational
+maturity in order to be able to implement this during stage 3 as an activities which, after the end
+of the project, should be a natural part of Swedish FoI activities where all parts of the society
+affected finds great benefit in the operation. In concrete terms, the project has generated several
+products that will be further developed and above all a powerful infrastructure for the intended
+data sharing. Approach and implementation: That the ASSIST-project was carried out via challenge
+drive innovation has been central in many ways. Primarily because the level of risk in the project´s
+objectives was and still is high. The long-term effects of infrastructure developed also depend on
+active participation from various branches of society, something that means that the successful
+outcome even more shows that the project was carried out in the right format.
+
+=== [16] swecris:2021-02364_Formas | 2021 | EUR 0.71M | Formas
+TITLE: HEAT: Heat stress in outdoor Environments - Planning the city of the older Adults Today and in a future warmer climate
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+City planning needs to ensure that citizens are protected from the excessive heat that can be
+created in urban areas. This is especially important when the future perspective is a warmer climate
+where heat waves become more frequent and more intense. The population group of older adults are
+particularly affected by heat risks, both because health risks are exacerbated by pre-existing
+medical conditions, and because they are more likely to have social environments that make them
+vulnerable to isolation. It is essential to account for the needs of this population group when
+adapting our cities to the climate changes taking place today, and those that are expected to come.
+The aims of this project are to examine how heat waves and warm weather - today and in the future -
+affect older adults in Sweden, and to communicate how well-planned urban environments can reduce
+heat-related health effects and increase well-being. One essential part of the project is to work in
+close collaboration with stakeholders and civil society through participatory field studies,
+workshops and focus groups. In this interdisciplinary project, experts from a number of different
+research fields such as urban climatology, epidemiology, architecture, psychology and occupational
+science will work toward a common goal to create good, attractive, climate-adapted outdoor
+environments so older adults - and, indeed all adults - can cope with heat in the cities in which
+they live.
+
+=== [17] swecris:2021-00359_VR | 2021 | EUR 0.64M | Swedish Research Council
+TITLE: SpaceLab
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+SpaceLab is a tool for Swedish and international scientists as well as space-related companies to
+develop world-class instruments for space research, enabling participation in the most
+comprehensive, advanced and intriguing science missions in the near-Earth environment and our solar
+system.SpaceLab is an infrastructure hosted by the Swedish Institute of Space Physics (IRF) located
+on IRF’s premises, 6 km from Kiruna city centre and 33 km from Esrange rocket base.SpaceLab provides
+multiple unique facilities located on the same premises for testing, qualification and calibration
+(i.e. verification and validation) of scientific instruments to be used in space. A space instrument
+needs to pass mechanical vibration and shock tests, thermal vacuum tests and electromagnetic
+compatibility tests prior to integration on the launch vehicle. Modern space systems also require
+radiation and solar balance tests. SpaceLab can perform all of these tests. The instrument must also
+be calibrated, characterizing its response to signals similar to those it is designed to observe in
+space, a process with which SpaceLab has more than 50 years experience.To meet increasing demands
+for testing and calibration of scientific space equipment, SpaceLab is applying for resources to
+replace and upgrade the ageing facilities currently available. With the grant being applied for,
+SpaceLab will invest in a clean environment shaker and ringing table for vibration and shock tests
+as well as a multi-source calibration system, to enable calibration of instruments with both
+foreground and background signals. SpaceLab will also upgrade the vacuum pumping systems, including
+the thermal vacuum heating and cooling system, and acquire a Helmholtz coil to measure weak magnetic
+fields.The new investments, together with the experience and the engineering and scientific
+knowledge of the SpaceLab staff, strengthen the infrastructure as a national competence centre for
+scientific space instrumentation.
+
+=== [18] swecris:2016-01590_VR | 2017 | EUR 0.60M | Swedish Research Council
+TITLE: Determinants and outcomes of depression and suicidal behavior in older adults
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Older adult populations have high rates of depression and suicide. We will make use of data from
+prospective population-based studies in Gothenburg (H70, H85, the Prospective Population Study of
+Women) as well as data from national registers including the Military Conscript Register and the
+national prescribed drug register in order to study social, psychological, psychiatric and
+neurobiological determinants and consequences of late life depression and suicidal behavior. For the
+neurobiological studies we will utilize CSF, genetics, and brain imaging data from the above
+described population-based studies. In our multisite clinical study we will test the performance of
+suicide assessment instruments. This ongoing study is carried out with researchers in Stockholm and
+Umeå (N currently over 700 participants). At the Gothenburg site we will continue to recruit persons
+65+ in order to enrich the sample with this vulnerable but understudied age group. Suicide research
+involving older adults requires a multidisciplinary approach. A stimulating environment is provided
+by our AgeCap center for aging and health. Research findings will increase knowledge of pathways to
+depression and suicidal behavior in older adults, which will reduce clichés about suicide being a
+normal reaction to aging. Further, findings will inform care and treatment for this rapidly growing
+age group.
+
+=== [19] swecris:P2023-00144_Energi | 2023 | EUR 0.59M | Swedish Energy Agency
+TITLE: Faster fast-charging and extended lifetime of lithium-ion batteries by new onboard monitoring of degradation using feedback from new cheap sensors
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Faster transport electrification is vital to achieve the global target of carbon neutrality, and it
+depends heavily on its battery systems. For a given installation, the main factors affecting the
+sales are the fast-charging performance and the battery lifetime. With very limited sensors, today’s
+vehicle battery systems are treated as a black box, leaving the local states inside battery cells
+not well monitored and controlled. The consequence of this is suboptimal performance and premature
+battery ageing associated with undermined reliability and safety. In this project we will introduce
+and develop cheap sensors and develop intelligent algorithms for battery management systems that use
+the sensors in feedback to achieve accurate state estimations and faster charging without
+compromising on lifetime and safety. This project represents a creative collaboration between the
+research groups Automatic control and Nanomaterial and Manufacture at Chalmers, Volvo Cars, and
+ConScience AB.
+
+=== [20] swecris:2021-01302_VR | 2022 | EUR 0.57M | Swedish Research Council
+TITLE: Memory Representations and Language Processing
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+This project investigates the role of memory in language processing. Knowledge about how memory and
+language interact is essential for understanding how linguistic abilities are affected by processes
+of memory decay, such as ageing or brain injury. We focus on a fundamental linguistic process, that
+of establishing reference between a word and what it refers to. This four-year project is the first
+study to explore how individual working memory capacity and reference are connected, and to
+systematically investigate the relation between different types of semantic modification and
+short-term memory. Phrases referring to the same thing can contain different information (a boy and
+a tall young boy), and a pronoun (he) can refer back to both. A key question is if the amount of
+semantic content of a phrase affects its memory representation. By varying the semantic content, and
+the distance between the pronoun and this phrase, we examine how memory-related factors matter in
+the processing of reference. Our hypothesis is that the semantically richer a linguistic item is,
+the stronger the memory representation will be. Semantically rich items will therefore be more
+resistant to short-term memory decay. Using EEG, we look at the brain´s processing of pronominal
+reference to a previously mentioned phrase and relate the EEG-signal to individual memory capacity.
+The project will contribute to one of the most vibrant cross-disciplinary research fields: the study
+of the human mind.
+
+=== [21] swecris:2024-00804_VR | 2025 | EUR 0.56M | Swedish Research Council
+TITLE: Less oxygen for better cognition - EPO for cognitive aging
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+As the demographic shift towards an older population accelerates, identifying approaches for
+preserving and restoring cognition in old age is of unprecedented importance. The project builds on
+the important finding that the hormone erythropoietin (EPO) is expressed not only in the body but
+also in the brain where it increases the brain’s capacity for change (neuroplasticity) and for
+generating new neurons (neurogenesis). EPO administered via injection has well-known pro-cognitive
+effects, but it is also possible to increase brain EPO by temporarily reducing oxygen availability
+and achieving a mild state of hypoxia. The goal of this 4-year project is therefore to investigate
+if repeated mild hypoxia, so-called hypoxia conditioning, can rejuvenate the old brain and thereby
+promote cognitive function in aging. After a detailed mapping of circulating EPO during hypoxia
+conditioning in the first study, the second study will test the effects of hypoxia conditioning on
+hippocampal function and its consequences for memory and learning in aging. Using targeted cognitive
+assessments, magnetic resonance brain imaging and blood sampling, the study will test if hypoxia
+conditioning improves cognition and brain function in a way that is in line with the expected
+effects of brain EPO. This research will enhance our grasp of brain plasticity in the elderly and
+advance hypoxia conditioning as a potential remedy for cognitive aging, fostering independence in
+old age and benefiting society.
+
+=== [22] swecris:2015-00961_VR | 2016 | EUR 0.53M | Swedish Research Council
+TITLE: Socioeconomic dimensions of diet and health during the 20th century:  A longitudinal study
+RULES: Keyword evidence for social_population_aging (0.714) and intervention (0.7) is too close to call (margin 0.014 < 0.3; relative margin 0.020 < 0.15 or evidence floor not met).
+ABSTRACT:
+Inadequate diets and lifestyles pose major challenges to global public health, and are causing much
+of the burden of disease and premature death. Even if human living conditions have improved
+dramatically during the last century, under- and malnutrition still create huge health problems.
+Rapidly changing diets, with still inadequately known long-term consequences, also pose challenges
+to public health in both higher- and lower-income countries. We propose an interdisciplinary project
+(economic history, economics, nutritional science, medicine) aiming at contributing to meet these
+challenges. The overarching research problem is socioeconomic variations in diet and health. The
+research task is to analyze the social patterns of the health-related behaviors, living conditions
+and diet and their consequences for later life health. The project will create an historical cohort
+with rich information on health-related behaviors, living conditions and diet at baseline and with a
+very long follow-up time. The information on socioeconomic background and consumption comes from
+household budget surveys carried out by the Swedish Social Board between 1913 and 1934 (N≈2,500). We
+will link this household level data to information on longevity and cause of death (and height and
+weight for men) of the members of the households (N≈10,000). We have successfully tested the linking
+procedure in a pilot study. The household data provides very rich information also on socioeconomic
+status. The possible social gradients in diet and health will be studied along the dimensions of
+earnings, human capital and urban-rural location, exploring the extent to which they were associated
+with differences in access to resources or differences in lifestyle/behavior. We will also use the
+cohort to study to the long-term consequences for health from both the then still inadequate diets,
+for example micronutrient deficiencies, as well as from the then emerging “modern” diets, for
+example the then very high consumption of milk or sugar. The project aims to explore the potential
+of using historical sources for research that is modern with regard to questions, framework and
+methods. Specific aims of the project are also to establish research on Swedish historical diets
+based on household level data, create an historical cohort, inspire new research in this field,
+strengthen our interdisciplinary research cooperation and enable exchanges of experiences within our
+multi-disciplinary research group. The project group consists of researchers from economic history,
+economics, clinical nutrition and environmental and social medicine. The research group unites the
+expertise needed to plan and carry out all aspects of the proposed project – practical, theoretical
+and empirical – in the best possible way. The combined social scientific, historical and medical
+competencies enable us to do research that is state-of-the-art with regards to methods,
+specifications and interpretations and to use the collected data in an as complete and efficient way
+as possible. The project will be relevant to more than one research field. The results from the
+studies on the nutritional status of this historical population, the social variation in diet and
+the diet’s effect on later life health will, for example, contribute to discussions in economic
+history, historical demography, health economics and social medicine. The project will also
+contribute knowledge on the impact from health-related behaviors, living conditions and diet on
+health outcomes later in life. We will be able to explore how urbanization and changes in income and
+food production systems influenced diets and the social differences in diets during the
+transformative period in early 20th century Sweden. The budget is for five years since a longer time
+period facilitates the kind of research planned, with quite laborious manual linking between
+different source materials. We have deliberately kept the annual costs down in order to
+
+=== [23] swecris:2016-00981_VR | 2017 | EUR 0.53M | Swedish Research Council
+TITLE: Phenotypes of healthier aging: the role of environmental, behavioural and biological factors on health trajectories
+RULES: Keyword evidence for care (0.667) and age_related_disease (0.613) is too close to call (margin 0.054 < 0.3; relative margin 0.081 < 0.15 or evidence floor not met).
+ABSTRACT:
+Biological changes that lead to aging are neither linear nor consistent and their association with
+chronological age is weak. Older people follow different health trajectories over time, hence aging
+phenotypes should be viewed as a continuum in which different phases can only be traced
+longitudinally. Data from the Swedish National study on Aging and Care in Kungsholmen (SNAC-K)
+enable us to follow the 60+ year-olds individually over more than 15 years. Our goal is to inform
+preventive strategies to promote healthier aging by: 1) identifying trajectories of multimorbidity,
+frailty and disability in the older population; 2) studying multidimensional health trajectories as
+the synergistic combination of these three health dimensions; 3) examining how environmental,
+behavioural and biological factors relate to such trajectories; and 4) exploring how these
+trajectories change when time-varying factors are considered. Determinants will include contextual
+(social network, living arrangements), biographical (socioeconomic status, life habits, personality,
+attitudes) and biological (inflammation, energy homeostasis, vascular burden) factors. Health status
+will be measured by the number of chronic conditions, degree of frailty (Fried’s definition) and
+level of disability. Latent variable mixture modeling will be used for health trajectory
+identification. The proposed research will guide future person-centered interventions to reduce the
+societal burden of ill health in older people.
+
+=== [24] swecris:2016-01936_VR | 2017 | EUR 0.53M | Swedish Research Council
+TITLE: Brain functional connectome across the human lifespan: Links to white matter degeneration, dopamine depletion, and cognitive decline
+RULES: Keyword evidence for care (0.667) and fundamental_aging (0.642) is too close to call (margin 0.025 < 0.3; relative margin 0.037 < 0.15 or evidence floor not met).
+ABSTRACT:
+Cognitive impairments impede the functioning of older people and create major individual and social
+costs. Developing ways to preserve functioning in old age is thus of great importance. However,
+knowledge about brain mechanisms that underlie cognitive decline is insufficient to enable effective
+intervention programs. Changes in functional neural connectivity—the cross-talk between distant
+brain regions that collectively constitutes the human connectome—measured by functional MRI at rest,
+may be a potential mechanism underlying cognitive decline in aging. However, evidence relating
+age-related cognitive impairment to disruptions in functional connectome is sparse. In addition, the
+biological mechanisms underlying age-related alterations in functional connectome are largely
+unknown. This stems from a lack of comprehensive integration of age-related brain changes measured
+by different in vivo imaging modalities, in relation to changes in connectome and cognitive
+deficits. Due to this omission, many scientific questions remain inconclusive: To what extent do
+age-related structural and neurochemical deficits in the brain cause functional alterations? Do
+structural disconnection, dopaminergic deficits, and concomitant disruptive alterations in
+connectome mediate cognitive decline in aging, and how do these changes interrelate? Answering such
+questions will pave the road for design and implementation of novel intervention programs that may
+improve cognitive abilities in older age.
+
+=== [25] swecris:2018-02077_VR | 2019 | EUR 0.53M | Swedish Research Council
+TITLE: Why do some people become frail as they age while others do not? A life course approach to identifying genetic, epigenetic and environmental risk factors for frailty.
+RULES: Keyword evidence for social_population_aging (0.667) and age_related_disease (0.613) is too close to call (margin 0.054 < 0.3; relative margin 0.081 < 0.15 or evidence floor not met).
+ABSTRACT:
+Frailty has been described as the most problematic expression of population aging. Although progress
+has been made in understanding its risk factors and antecedents, the causal factors are still
+unknown. This project uses a longitudinal data to identify the genetic, epigenetic and traditional,
+i.e., lifestyle and environment -related risk factors for frailty. A co-twin control approach will
+be used to infer causality in the associations. By combining the genetic risk profile to traditional
+risk factors, the ultimate goal is to define a set of markers for individualized risk stratification
+and intervention. Exceptionally large samples consisting of the UK Biobank and the Swedish and
+Danish Twin Registries will be used. The aims will be achieved using a variety of bioinformatic and
+statistical approaches, such as genome-wide genetic and epigenetic analyses, latent growth curves
+and twin modeling. Work with the epigenetic analyses and growth models for the longitudinal frailty
+trajectories has already been started; these analyses are expected to be completed within the next
+two years. The genome-wide genetic analyses and analyses on the heritability of frailty (twin
+modeling) are expected to be completed in years 2 and 3. Part of the work is intended for a
+prospective PhD student. The project has the benefit of the involvement of collaborators with
+long-standing expertise in the aforementioned methods, access to high-performance computing clusters
+and longitudinal samples.
+
+=== [26] swecris:2020-06229_VR | 2020 | EUR 0.53M | Swedish Research Council
+TITLE: Decoding heterogeneity and durable immunity of lung resident memory T cells in health and acute respiratory infection
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+SARS-CoV-2 infection originates in the lung, which progressively exacerbates into a systemic
+manifestation. Although a specific immune cell type, CD8 + T cells, are critical for protection
+against viral pathogens, their dynamic interactions and durability in the lung is not well
+established. I have recently identified that SARS-CoV-2-specific CD8 + T cells are present in the
+blood of COVID-19 patients. However, the protective relevance of such subsets in circulation have
+not been demonstrated. I hypothesize that control of SARS-CoV-2 infection is achieved by SARS-CoV-2
+specific T cells in the lung. My aim is to provide further understanding of the lung immune
+landscape in viral infections by studying the protective properties and longevity of virus-specific
+T cells recruited to the lungs, through the use of tissues from human organ donors (Aim 1-2) and
+further determine the viral control mechanisms mediated by SARS-CoV-2 specific T cells through
+studies on individuals experiencing and recovering from COVID-19 (Aim 3). Capitalizing on
+state-of-the-art technologies, including advanced flow cytometry, next generation sequencing,
+cutting-edge CRISPR gene editing techniques, I will provide potential new avenues to the field of
+respiratory virus infections.
+
+=== [27] swecris:2024-01839_Formas | 2025 | EUR 0.53M | Formas
+TITLE: How is the climate change impacting the network of bridges?
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Sweden has approximately 30 000 bridges. Many of these bridges are aging and approaching or have
+overpassed their design life necessitating smarter management solutions to ensure safety, longevity,
+and sustainability. In addition to the classical challenges, climate change brings extreme wheatear
+events which are posing unforeseen and unaccounted for threats to the existing bridges. There are no
+current practices in designing and assessing the safety of bridges in the face of climate change.The
+aim of this project is to generate new knowledge that will support a better understating of how we
+can increase the resilience of the existing bridges’ stock in Sweden in the face of climate change
+threats. To achieve this, the following objectives are set: 1) identify the risks and
+vulnerabilities of different types of bridges 2) identify and map potential climate changes
+scenarios, 3) develop a strategy to mitigate the impact of climate change on existing network of
+bridges and 4) demonstrate the developed strategy on case studies. This can be achieved by employing
+mathematical, statistical and AI based tools for leveraging the climate change data models,
+integrating different performance indicators including reliability, availability, safety, risk,
+etc., under different representative concentration pathways (RCPs). The knowledge created in this
+project addresses two areas of Formas’ areas of responsibility, Environment and Spatial Planning.
+
+=== [28] swecris:2024-03032_VR | 2025 | EUR 0.53M | Swedish Research Council
+TITLE: Stress-induced chromatin remodelling in health and disease
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The human genome´s accessibility is tightly controlled by its organisation into chromatin. Cellular
+stresses, like DNA damage and protein misfolding, trigger transient chromatin remodelling, enabling
+essential responses such as DNA repair and stress-protective gene activation. This process is
+orchestrated by histone chaperones and nucleosome remodelling enzymes, and its dysfunction is linked
+to aging and neurological diseases.I aim to unveil the molecular mechanisms governing stress-induced
+chromatin plasticity. I will focus on SPT2, a poorly characterized histone chaperone that I have
+recently implicated in the cellular stress response. Notably, SPT2 dynamically interacts with
+proteins mutated in neurological diseases upon DNA damage and proteotoxic stress. Using advanced
+proteomics, targeted protein degradation, and microscopy, I will elucidate the function of SPT2 and
+its interacting partners in promoting transcriptional stress responses in human cells, including
+neurons. Finally, using quantitative temporal proteomics I will generate a comprehensive resource of
+the neuronal chromatin responses to stress.By unravelling the mechanisms of stress-induced chromatin
+remodelling and its connection to neurological health, this project holds significant promise. It
+will provide crucial insights into how the genome dynamically adapts to stress and how these
+responses contribute to neuronal protection and disease prevention.
+
+=== [29] swecris:2022-01931_Formas | 2022 | EUR 0.53M | Formas
+TITLE: More taste less waste – Sustainable production of healthy nutritious cereal-based food for senior citizens with focus on their sensory perception
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Whole grain intake has important health benefits and increased intake should be highly recommended.
+However, the whole grain-rich products on the market often face great challenges connected to taste
+and texture. In this project we will utilize novel processing techniques to address the growing size
+of the aging population and develop a sustainable nutritious cereal-based product appealing for the
+taste buds of senior citizen. The process design for this product has been optimized for its
+nutritional content and for minimizing side-stream content, to utilize the most of our valuable
+food. The aim of the project is to highlight the needs of the older adults and to be a driver in the
+development of future nutritious and appetizing food for seniors. The project is a collaboration
+between Lund University, University of Copenhagen, Lantmännen AB, and the consulting partner
+Mårtensen Consulting AB. The team will develop one or several product prototypes, further unfold
+their potential through flavour and texture optimization into a nutrient-rich climate-smart product,
+and the result will be evaluated by an expert sensory panel, as well as by older adults in Sweden
+and Denmark. Age should not determine how palatable your plate is!
+
+=== [30] swecris:P2022-00737_Energi | 2023 | EUR 0.53M | Swedish Energy Agency
+TITLE: Energy storage for grid support and priming of renewable energy applications based on sodium-ion batteries
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+This project aims to study grid support and priming of renewable energy power production units
+through the usage of a novel environmental-friendly sodium-based battery storage, a Na-ion battery
+(SIB) with Prussian white and hard carbon as electrodes and a newly developed electrolyte. The
+consequences of the various grid supporting efforts are evaluated in terms of losses and lifetime.
+The project is divided into three sub-studies: performance and lifetime testing, model development
+and evaluation for use in stationary energy storage for the electricity grid. Within the project,
+test protocols and load cycles representing normal use but gently accelerating ageing, without
+starting unrelated ageing mechanisms, will be developed. In parallel two models, developed for
+Lithium-ion batteries (LIBs), will be applied and evaluated for the SIB cell. A physics-based model,
+to study the physical processes that take place in SIBs, and a data-driven ageing algorithm for
+usage in applications.
+
+=== [31] swecris:2023-02315_Formas | 2024 | EUR 0.53M | Formas
+TITLE: Planning and development of Collaborative Housing and Shared Housing as Intermediate Forms of Housing for promoting older adults’ health and well-being
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+House-Well tackles the urgent challenge of developing novel, accessible and scalable intermediate
+forms of housing to counteract unwanted social isolation and negative effects on the physical,
+cognitive and mental health of older adults. Considering that the number of adults over 80 years old
+will double in Sweden by 2045, research focusing on what types of housing forms and social
+interaction they prefer and need for a healthier ageing is urgent. House-Well addresses these
+challenges through research, innovation and capacity building. First, the project will investigate
+the role that security accommodation and collaborative housing have on social isolation, loneliness
+and inactivity in older adults through a quantitative survey and qualitative evaluation of the built
+environment. The spatial features of the case studies will be depicted into architectural programmes
+and receive feedback by residents regarding how they connect socio-spatial practices, health and
+well-being in everyday life. House-Well will set up an Urban Living Lab with practice partners
+consisting of online exchanges, study visits to collaborative housing for seniors and co-creation
+workshops. This will lead to co-creating a design toolkit for planning intermediate forms of shared
+housing to promote health and well-being. Finally, workshops for practitioners focusing on how to
+use the design toolkit, as well as a series of webinars to build capacity among a diverse group of
+actors will be conducted.
+
+=== [32] swecris:P19-0567:1_RJ | 2020 | EUR 0.53M | Riksbankens Jubileumsfond
+TITLE: Sleep in everyday life – relationship to mood and performance in young and older adults
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+In today’s society, many individuals suffer from disturbed and short sleep. Laboratory studies show
+that sleep deprivation for one night has profound adverse consequences for mood and performance,
+which appear to be larger in young than older adults. However, much less is known on the impact of
+day to day variations in sleep that individuals normally encounter in their daily life. Using mobile
+experience sampling, we will combine accurate real-time repeated measures with a naturalistic
+setting to address the following research gaps: (i) how variable/stable is everyday sleep in young
+compared with older adults? (ii) how do daily variations in sleep length and quality impact on both
+mood and performance in everyday life? (iii) does age play a moderating role in the relationships
+between sleep, mood and performance? Sleep in 200 young (18-30 years) and 200 older adults (55-70
+years) will be measured subjectively and objectively over 3 weeks in the context of their daily
+life. Participants will several times a day answer questions on their momentary well-being (e.g.
+mood, sleepiness and stress), and perform an attention task when receiving prompts on their mobile
+phones. A novel software application to perform the experience sampling will be developed within an
+interdisciplinary collaboration. The results will improve the understanding of the pivotal role of
+sleep for well-being and performance ability in everyday life in an ageing population.
+
+=== [33] swecris:2017-01614_Forte | 2017 | EUR 0.53M | Forte
+TITLE: GenerationTech – Ageing, Technology and Health from a Generational Perspective
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The unique perspective of this project is to address ageing and technology from a generational
+perspective as related to health. We will address the paucity of research addressing perceptions of
+and attitudes to technology, adoption and usage among people of different generations as related to
+the technological developments they have experienced during their lifetime. Our aim is to generate
+new knowledge on such aspects and how they are associated with active and healthy ageing, with
+specific attention to cohort and period similarities and differences. Addressing the paucity of
+theoretically founded large-scale empirical projects, our project is founded on a combination of
+theories on health, environmental gerontology, age stratification and technology. Using quantitative
+and qualitative data, the ambitious mixed methods design rests on an inter- and transdisciplinary
+approach with international outreach. We will start with a series of focus groups (Study I) to
+increase the understanding of perceptions of, attitudes to and experiences of using different types
+of technology in different age cohorts. A national survey (Study II) will be used to validate the
+findings from Study I and to address research questions relating technology attitudes and
+developments to health. In order to encourage the involvement of users, validate the emerging
+findings in the Swedish context, and prepare for international projects, we will organise a series
+of World Cafés (Study III) in Sweden, Germany, Italy and Latvia. Based on valid knowledge of the
+ageing population’s attitudes and experiences, needs and wishes, the results can be used to promote
+the use of technology in everyday life as people age, ultimately enhancing their active
+participation in society. Communication and knowledge translation activities will cover scientific,
+societal, policy and practical aspects with the goal of acquiring the highest possible visibility
+and use of research results.
+
+=== [34] swecris:P42789-1_Energi | 2016 | EUR 0.52M | Swedish Energy Agency
+TITLE: Separating the influence of temperature and current swing on the ageing of a Li-Ion battery
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+In this project, the ageing of a Li-ion battery is investigated, when current pulsations are
+followed with thermal pulsations, i.e. using different cooling of the cells. The goal is to
+establish to what extent the temperature swing following upon a current swing affects the ageing. As
+a part of this a target is to verify a termo-electrochemical model of a battery cell, based on
+identification tests, conducted at Chalmers. Tre levels of cooling are investigated, giving various
+temperature swings as a function of current pulsation. This is achieved by designing various heat
+sinks, having both cooling and isolating properties. For the cycling tests, the battery lab at the
+Swedish Technical institute is thought to be used. The project is a PhD project with supervision
+from Chalmers-Electric Power Engineering as well as Uppsala-Ångström Battery Laboratory. The project
+also has good contacts with VCC, AB Volvo and ABB through ongoing and earlier battery projects.
+
+=== [35] swecris:2024-02412_Formas | 2025 | EUR 0.52M | Formas
+TITLE: Fire safety and design guidelines for combustible facades
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The project objective is to develop design guidelines for designing fire-safe wood facades,
+specifically addressing concerns related to internal corners and obstructions. The goal is to
+improve fire protection by studing how fires behave near facade corners and objects, and assessing
+the durability of sustainable, fire-treated materials exposed to natural aging. The research will
+involve a combination of experimental testing at both small and large scales, numerical simulations,
+and a literature review to gain insights into fire behavior on vertical surfaces and the durability
+of fire-protected materials.Additionally, the project will include a study of existing guidelines
+from other countries to identify best practices. As the use of wood in buildings increases due to
+its environmental advantages, this project seeks to balance sustainability with fire safety. The
+results will provide architects, fire safety engineers, and policymakers with scientifically based
+guidelines that ensure safer and more sustainable building practices, inline with both national
+building regulations and the global sustainability goals.
+
+=== [36] swecris:2019-02804_VR | 2020 | EUR 0.52M | Swedish Research Council
+TITLE: Mechanisms of Cognitive Aging: The Roles of Brain Iron Accumulation and Neuroinflammation
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Age-related cognitive impairments compromise the functional capacity of aging individuals, and
+create major individual and societal costs. Therefore, understanding the mechanisms underlying
+cognitive aging is of great importance. Increasing evidence suggests that metabolically active iron
+particles increase in the aging brain, disrupting optimal neural functioning. At the same time,
+human aging is characterized by chronic, low-grade inflammation, with negative consequences on
+cognition. Based on initial evidence, we hypothesize that an overload of iron is deleterious, as it
+may induce chronic inflammation. We also address the alternative hypothesis that high systemic
+inflammation precedes and predicts iron accumulation across 3 years. Moreover, neuroinflammationmay
+be independent of iron, but still contribute to cognitive and motor performance. The latter scenario
+may be particularly true for brain regions with low iron accumulation. The overarching goal of this
+research project is to determine the role of iron accumulation in the aging brain as a mechanism
+underlying neuroinflammation and concomitant impairments in cognitive as well as motor functions.
+Without a mechanistic understanding, intervention efforts to delay cognitive decline are likely to
+fail, because they may not focus on the causal factors. Overall, our findings will contribute to a
+better understanding of individual cognitive and brain aging trajectories.
+
+=== [37] swecris:2023-01421_VR | 2024 | EUR 0.51M | Swedish Research Council
+TITLE: Quantifying hippocampal neurogenesis in the living human brain and its relevance for long-term memory
+RULES: Keyword evidence for age_related_disease (0.842) and intervention (0.818) is too close to call (margin 0.024 < 0.3; relative margin 0.029 < 0.15 or evidence floor not met).
+ABSTRACT:
+Human aging is characterized by neurodegeneration and decline in long-term memory, creating major
+individual and societal costs. Neurogenesis describes the brain’s ability to produce new neurons
+into very old age, as shown in animal and human autopsy data. Adult neurogenesis occurs in the
+hippocampus and is necessary for successful long-term memory. Based on animal data, it is
+well-established that neurogenesis is crucial for memory formation and consolidation. Further,
+depression is associated with decreased hippocampal neurogenesis.So far, however, the importance of
+neurogenesis for human long-term memory and mental health has been elusive due to difficulties of
+quantifying biomarkers of neurogenesis in the living human brain using non-invasive measures. With
+new groundbreaking developments, it is now feasible to detect human neurogenic signals in vivo.
+Therefore, we hypothesize that the higher hippocampal neurogenic signal is related to better
+neurocognitive mechanisms underlying memory and lower expression of depression symptoms in
+middle-aged and older adults. Informed by well-established evidence from animal data, we further
+probe whether a 6-month intervention with Metformin, a drug used to treat type 2 diabetes, increases
+neurogenic signals, consequently resulting in better memory and mental health. Overall, our findings
+will shed light on basic mechanisms underlying human memory, which may contribute to maintenance of
+cognition and mental health into old age.
+
+=== [38] swecris:P2024-03164_Energi | 2024 | EUR 0.49M | Swedish Energy Agency
+TITLE: Pathways towards Age-friendly Neighbourhoods: Transnational research, knowledge transfer, collaborative approaches and capacity building for the transition towards the 15-minute city
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+AGE-15 tackles urban ageing challenges such as unwanted isolation, accessibility or safety concerns.
+AGE-15 focuses on understanding the role of age-friendly neighbourhoods in relation to the 15mC
+concept; carrying out applied research on the relation between the built environment and older
+adults’ everyday life activities, mobility and accessibility in neighbourhoods in Sweden, the
+Netherlands, Portugal and Turkey; learning from best practices of collaborative housing for seniors
+from Sweden and Japan; co-creating novel approaches for 15-m and age-friendly neighbourhoods
+focusing on countries ageing fast and countries ageing slowly; and building capacity. Planning
+guidelines on 15-m and age-friendly neighbourhoods and recommendations to policy makers will become
+publicly available. AGE-15 has a strong focus on transnational exchange, mutual learning between
+academics and non-academics; and transferability of knowledge across regions.
+
+=== [39] swecris:2015-01717_VR | 2016 | EUR 0.49M | Swedish Research Council
+TITLE: Temporal Dynamics of Adult Brain Plasticity: Effects of motor learning on brain anatomy and cognitive functions in adulthood
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Adult humans keep on learning new skills and knowledge every day. The brain as a system can be seen
+as the result of an equilibrium between two forces: on one side the pressure of the environment to
+adaptively adjust to external changes and new information; on the other, the opposing brain
+“inertia” to change, necessary to maintain a certain stability in the acquired functions.
+Neurosciences revealed that plasticity, the capacity of the brain for anatomical change in response
+to experience, even though reduced after normal childhood development, yet endures in the adult age
+supporting critical processes such as learning, cognitive maintenance in aging and functional
+recovery after brain damage. However, research on brain plasticity during learning depicted a
+complex scenario. Both increase and decrease of brain structures appear as possible consequences of
+behavioural training. The time scale of brain changes is not clearly known and which and how
+specific structural compartments change in the brain is still matter of speculation. Behaviourally,
+if training-dependent brain changes reflect learning per se or just the intense practice, is still
+debated. Similarly, whether untrained functions that rely on neural circuits invested by the change
+are also affected, remains unproven. In my hypothesis the above mixed results are due to the
+temporal dynamics of adult brain plasticity, to date unknown because of paradigms limited to
+comparisons between before and after training, so providing only a still-frame out of a dynamic
+process. I predict an initial learning-dependent volumetric increase of brain structures reflecting
+local neural “rewiring”, followed by a partial return to baseline once optimal “rewiring” has
+occurred. Therefore, main purpose of this research project is to extend our knowledge about the
+temporal dynamics of brain anatomical changes induced by motor learning and about how such a
+dynamics can critically affect cognitive performance and learning in other domains. In a series of
+studies on humans, my research team will develop paradigms to demonstrate whether (a) acquiring a
+new motor skill induces transient changes in brain structures devoted to motor control (Motor
+cortex, pre-motor cortex and putamen), following an initial volumetric expansion and a subsequent
+renormalization (Study I, III and IV); (b) the myelin component of training-dependent structural
+changes in the motor network reflects behavioural learning (improvement in performance) rather than
+intense practice (Study I to IV); (c) anatomical changes in the brain induced by motor learning
+affect untrained cognitive functions that rely on activity of the same brain areas invested by the
+structural changes (Study II, III and IV). Outcome variables include brain structure and activity
+acquired via a dense longitudinal multi-modal magnetic resonance imaging, and behavioural measures
+of performance. The parallel monitoring of brain and behaviour during training, will enlighten the
+mechanisms of plasticity and the time-frame of adult brain local changes. The resulting insights
+will pioneer new strategies to improve learning in adulthood, delay cognitive decline and boost
+functional rehabilitation in brain-damaged patients.
+
+=== [40] swecris:2018-01609_VR | 2018 | EUR 0.49M | Swedish Research Council
+TITLE: The transience and persistence of memory: Linking neurobehavioral mechanisms of adaptive forgetting to adult aging and mood
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+In cognitive models of memory, forgetting is most often treated as a failure to encode, maintain, or
+retrieve information. However, remembering a past experience can, quite surprisingly cause
+forgetting, and forgetting may be imperative to efficient remembering. An inability to remove
+outdated and irrelevant information from memory may also cause memory failures in older age, and
+could contribute to mood disorders that involve rumination and anxiety. The purpose of the present
+project is to elucidate the neurobehavioral mechanisms of adaptive forgetting and examine how such
+processes relate to memory deficits in adult aging and mood. In part 1 of this research program we
+will use novel behavioral paradigms in conjunction with functional magnetic resonance imaging to
+investigate age-differences and neural mechanisms underlying adaptive forgetting in memory (years
+1-3). In part 2, we aim to validate the link between individual differences in controlling ones
+thoughts, memories and emotions, to neurobehavioral indicators of adaptive forgetting (year 4). The
+project will be managed by a principal investigator, who will also supervise the project, together
+with the co-applicant. Data collection and analyses will be performed by a research assistant and a
+post-doc. The current research project has implications for understanding neurobehavioral mechanisms
+of forgetting, and may have implications for theories of memory deficits in aging and dysfunctional
+regulation of mood.
+
+=== [41] swecris:2019-03118_Vinnova | 2019 | EUR 0.49M | Vinnova
+TITLE: Sustainable product realization of cast iron components in an extended value chain
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Despite pandemic challenges, valuable results have been obtained such as the implementation of new
+cutting data that contributed to million savings and the establishment of new research projects,
+however without succeeding in solving the mechanisms of cold aging. Deficient aging can be managed
+with environmentally friendly vegetable oil with nanoparticles supplied through MQL lubrication.
+ColdingÂ´s equation for tool life can be adapted to milling with 3-5% deviation for fully aged
+material. Cost calculations show that MQL lubrication can reduce manufacturing costs by 5-20%.The
+work has been conducted through industrial case studies and through experimental trials in academia.
+One focus has been to understand the causes and mechanisms behind the industrial problems obtained
+in connection with the use of recycled materials, among others. However, the pandemic has affected
+the project. Initial studies at MAX IV have been carried out with the aim of clarifying the
+mechanisms behind cold ageing, further experiments are required, which are planned in Grenoble.
+
+=== [42] swecris:2020-01342_VR | 2020 | EUR 0.46M | Swedish Research Council
+TITLE: Mechanisms for why individuals with viral infections, diabetes and high age are more susceptibility to acquire invasive pneumococcal diseases
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Pneumococcal infections are major contributors to morbidity and mortality globally. Current vaccine
+strategies have led to an increase of non-vaccine types hampering the vaccine effectiveness. The
+emergence of antibiotic resistance threatens effective therapy. Thus, novel therapeutic and
+preventive approaches are needed especially for the risk groups such as the elderly. To get an
+appreciation of the importance of the microflora environment and co-infections for disease
+development in humans, we will study the microflora, metabolic conditions and host responses in the
+nasopharynx of healthy children as compared to those with a respiratory tract infection. To further
+explore mechanisms for the increased susceptibility to pneumococcal infections that has been
+associated with influenza virus co-infection, diabetes and ageing, we will use different
+experimental model systems in vitro and in vivo to find novel therapeutic and preventive strategies.
+Furthermore, we will target the important toxin and virulence factor pneumolysin as adjunct therapy
+to prevent the pro- and anti-inflammatory responses mediated by the toxin in the compromised host.
+The project will be driven by the applicant and performed at Karolinska Institutet with access to
+all infrastructure needed. The time plan is 5 years starting with the nasopharyngeal environment in
+humans followed by mechanisms for influenza virus co-infection and studies of the increased
+susceptibility in diabetes and ageing.
+
+=== [43] swecris:P2022-00445_Energi | 2022 | EUR 0.46M | Swedish Energy Agency
+TITLE: Long term effects of repetitive axial loads on DH pipes and their importance for service life
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Today's district heating networks will be used for a long time, provided there will be an efficient
+and selective replacement of worn parts based on correct methods for status determination and
+service life prediction. We know the effect of temperature and recently that mechanically stressed
+pipes degrade significantly faster. In this project we intend to investigate long term effects of
+cyclic mechanical loads on the rate of degradation and to develop a new model for calculation of
+life predictions that takes into consideration combined effects of high temperature and repetitive
+axial loads. A basic knowledge of digitalisation, the relationship between different stress levels
+and the rate of degradation will be gained of laboratory experiments. The effects of mechanical
+stress will also be evaluated from field tests. An important part will also be cooperation and
+exchange of experience regarding ageing and lifetime prediction with experts both within the country
+and internationally.
+
+=== [44] swecris:2016-00148_Forte | 2017 | EUR 0.45M | Forte
+TITLE: Improving medication management among people with polypharmacy by enhanced pharmaceutical counselling and eHealth support. A cluster randomised controlled trial.
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Polypharmacy (≥ 5 prescription medications) is common among elderly patients, but understanding
+medication information can be challenging. Failing to manage complex medication regimens as
+prescribed may lead to poor adherence, suboptimal patient outcomes, adverse events, hospitalisation
+or even death. The estimated cost of poor medication management in Sweden is 20 billion SEK, and is
+likely to increase with an ageing population. The pharmacist’s role in ensuring optimal medication
+management is an underutilised resource in community settings. However, community pharmacists are
+ideally placed to provide patient-centred medication information.The overall aim of the proposed
+project is to develop and evaluate a pharmacy counselling intervention supported by an eHealth tool,
+targeting people with polypharmacy in community settings. This project will be conducted as four
+work packages using a multidisciplinary participatory collaborative design.WP 1: A structured
+observation study to explore what proportion of time community pharmacists spend informing patients
+of different ages, genders and ethnicities about medications.WP 2: Adaption and testing of an
+eHealth tool (on a smartphone or tablet) to support people’s understanding of their medications.WP 3
+The effect of the intervention on medication adherence, healthcare utilisation and costs will be
+evaluated in a cluster RCT. People with polypharmacy requesting a prescription medication will
+either receive standard care (control pharmacy), or eHealth-supported medication counselling
+(intervention pharmacy) each time they come to the pharmacy. Data from interviews, observations,
+standard questionnaires, registers, and the eHealth support will be collected at multiple
+time-points during the 12-month cCT and used for analysis.WP 4. A qualitative evaluation of the
+intervention.
+
+=== [45] swecris:2015-02199_VR | 2016 | EUR 0.44M | Swedish Research Council
+TITLE: Individual time perspective: A new window to study aspects of psychological distress in old age and pathways to successful aging
+RULES: Keyword evidence for social_population_aging (0.667) and fundamental_aging (0.642) is too close to call (margin 0.025 < 0.3; relative margin 0.037 < 0.15 or evidence floor not met).
+ABSTRACT:
+Due to rising life expectancy and low birth rates, Western societies currently face a rise of the
+median age, known as population aging and forms of psychological distress are common in old age. The
+project aims to establish the role of time perspective (TP) to investigate these issues. A second
+goal is to establish what basic factors influence an individual´s TP that has been considered as a
+trait-like entity. A second aim is to identify basic factors (e.g. demographic, cognitive, social,
+and biological factors) predict individual profiles of TP dimensions. To this end, we will analyze
+available cross-sectional data for 504 participants collected that took part of the Betula
+prospective cohort study in 2013-2014. A longitudinal follow-up measurement of TP is in addition
+included to separate maturational change from cohort-related factors and to examine causal
+relationships among the variables in focus (e.g. time perspective and well-being). Construction of a
+new measure to assess a transcendent time perspective is in addition part of this project. This time
+perspective concerns how the individual views the "impersonal" past and future, that is times prior
+to and after own lifespan. Such a self-transcendent time perspective has not been considered in
+previous research, except for a “spiritual” future perspective. Consideration of this perspective is
+expected to contribute to a better understanding of how people, older individuals in particular,
+perceive and orient themselves toward an important aspect of time and its relationship to aspects of
+health and well-being in the elderly.
+
+=== [46] swecris:2023-00153_Forte | 2023 | EUR 0.44M | Forte
+TITLE: Old age depression: improving prevention and care by taking into account transitions across the spectrum of depressive symptoms
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Research problem and specific questions: This project aims to contribute key knowledge for
+optimizing prevention, intervention, and care management of old-age depression by disentangling the
+complexities of this common and burdensome condition. Compared to earlier in life, old-age
+depression is characterized by distinct symptom patterns and a more complex clinical course,
+precipitating intricate care needs and increased healthcare use among older adults. The drivers of
+these complexities remain poorly understood, and we aim to conduct three interconnected sub-projects
+scrutinizing them. Specifically, we will: 1) investigate the role of psychosocial, behavioral, and
+socioeconomic determinants of diverse depressive symptom patterns and transitions between them; 2)
+assess health and survival consequences of different depressive symptom patterns; and 3) evaluate
+healthcare utilization in people with old-age depression, focusing on complex and avoidable
+transitions across care settings.Data and method: Longitudinal data on more than 7,000 older adults
+from four population-based cohorts included in the Swedish National Study on Aging and Care (SNAC)
+and harmonized via the National E-Infrastructure for Aging Research (NEAR) will be used. We will
+exploit more than 20 years of already-collected follow-up data, gathered using shared instruments
+across cohorts. Multi-state transition models will be used to capture diverse shifts across
+depressive states (no depression, subsyndromal depression, major depression) and care settings
+(home, formal care, hospital, institution), as well as their associated determinants and
+consequences.Relevance and utilization: Depression in older adults is a cause of major distress for
+patients, their families, and the healthcare system. A better understanding of its fluctuating
+course is required to identify strategies promoting prevention, recovery, and care continuity.
+Planned in close connection with patient organizations and care provider networks, this project will
+bring about knowledge sought by multiple stakeholders, ensuring that older adults with depression
+experience old age with the dignity they deserve.Plan for project realization: The project will be
+carried out by a multidisciplinary team with expertise in geriatric mental health, epidemiology, and
+care sciences. Its results will be deployed through the National Association for Social and Mental
+Health (RSMH). Researcher salaries constitute key budgetary items.
+
+=== [47] swecris:2023-00446_Forte | 2024 | EUR 0.44M | Forte
+TITLE: Remote work and behavior-related health in pandemic and post-pandemic period (Re-work-health)
+RULES: Keyword evidence for fundamental_aging (0.75) and social_population_aging (0.75) is too close to call (margin 0.0 < 0.3; relative margin 0.000 < 0.15 or evidence floor not met).
+ABSTRACT:
+Research problem and questions: During the Covid-19 pandemic, remote working was introduced as a
+measure to reduce spread of infection and the pandemic also impacted commuting behaviors. Even in
+the post-pandemic period, remote work continues at least partly. Previous studies have linked remote
+work with unhealthy behaviors, but most studies are limited by the use of cross-sectional designs,
+small study populations, short observation periods, and limited control variables. In particular,
+the underlying roles of work, individual, and family-related factors have been little
+researched.This project examines the relationships between remote work and behavior-related health
+during pandemic and post-pandemic time. Specifically, we ask: How did remote workers’ division of
+time at home during the pandemic impact behavior-related health? How did changed commuting behavior
+affect behavior-related health in post-pandemic times? Are work, individual, or family-related
+factors underlying mechanisms these associations?Data and method: The participants will be employed
+respondents of the Swedish Longitudinal Occupational Survey of Health (SLOSH) from 2018-25 and
+SLOSH-corona surveys from 2021-22. Surveys include questions on physical activity, sedentary
+behavior, alcohol use, smoking, body mass index, sleep, commuting time, commuting distance and mode,
+and several work-related factors like job satisfaction. We will use random and fixed effects
+methods, and either structural equation mediation models or counterfactual-based mediation
+analyses.Societal relevance and utilisation: In many workplaces remote work is the new normal and
+thus its impact on employees’ behavior-related health needs investigation. This project will
+identify factors that can hinder healthy behaviors of remote workers which may impact their
+productivity, and mental and physical health in the longer term. Healthy lifestyles are essential
+for maintaining workability in an aging society. Alongside scientific publications, the results will
+be disseminated to public and employers to facilitate tailored and evidence-based workplace
+practices and policies.Plan for project realization: Dr Raza (83% worktime), PI, will apply for
+ethical approval, run statistical analyses, draft and submit articles and disseminate the findings
+(incl. conferences, media releases and video blogs). Drs Paraskevi (20%) and Halonen (17%) will
+contribute to analysis planning, article writing, and dissemination activities.
+
+=== [48] swecris:2022-00643_Forte | 2023 | EUR 0.44M | Forte
+TITLE: Prediction of medication risks and drug-related problems – a novel pharmacoepidemiological approach using real-world data, decision support algorithms and machine learning
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Research problem and specific questionsDrug-related problems (DRPs) occur frequently and is a common
+cause of hospitalizations and death. Many DRPs may be prevented by using clinical decision support
+systems in health care. In Sweden we have Janusmed knowledge databases, developed as decision
+support to detect potential drug-drug interactions, side-effects, and inappropriate dosing. There is
+a need for better knowledge about the prevalence of these potential DRPs, how well current knowledge
+databases can predict actual problems, and how they can be improved. The research project has three
+work packages to answer the following research questions:What is the prevalence of potential DRPs
+identified using Janusmed algorithms in the region of Kalmar, including drug-drug interaction,
+additive pharmacological effect and renally inappropriate medicines?How well can Janusmed algorithms
+predict actual DRPs, measured as correlation between calculated risk levels and clinical
+outcomes?Can machine learning be used to combine algorithms from Janusmed knowledge databases with
+additional factors to improve the prediction of DRPs?Data and methodThe core of the project is two
+sets of data which will be the same for all three WPs:(1) The real-world data primarily from the
+electronic health record in region of Kalmar including data on a population of approximately 200,000
+patients for 10 years, covering both hospitals and primary care. (2) The rules and algorithms from
+three Janusmed knowledge databases (Interactions, Risk Profile, and Renal function). WP1 will be a
+descriptive cross-sectional study, WP2 a nested case-control study, and WP3 will develop and
+evaluate new machine learning models.Plan for project realisationThe research project is carried out
+in an interdisciplinary team with broad competence including clinical pharmacology,
+pharmacoepidemiology, computer science, statistics, and visual analytics among other things. Most of
+the cost for this project is salary for involved researchers.RelevanceDRPs is a major problem for
+society, especially with an ageing population and increasing use of medicines. Knowledge from the
+current project can be used to improve current decision support algorithms, as well as provide new
+insights about how advanced technology such as artificial intelligence can be used to improve
+predictions. Improved predictions can lead to improved patient safety and reduced societal costs.
+
+=== [49] swecris:2022-00342_Forte | 2023 | EUR 0.44M | Forte
+TITLE: Social prescribing in Sweden - a person-centred model to reduce loneliness, improve health and well-being among community dwelling older adults
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Loneliness is a barrier for healthy ageing and has significant harmful effects on health.The aim of
+the study is to evaluate experiences and the effect of Social prescribing in Sweden (SPiS) regarding
+loneliness, health, wellbeing, and care consumption among older adults (≥65) in Sweden. The study
+will be carried out in two phases and the research questions that will be addressed are:Feasibility
+study (Phase I)RQ1: Is the SPiS model feasible with regards to recruitment, retainment and
+satisfaction among participants and experiences among professionals?Large-scale RCT (Phase II)RQ2:
+Are there any differences between the groups regarding loneliness, health or wellbeing at baseline
+and at three, six, nine and 12 months follow-up? RQ3: Are there any differences within the groups
+regarding loneliness, health or wellbeing at baseline and at three, six, nine and 12 months
+follow-up?RQ4: Are there any differences between the groups regarding consumption of care? RQ5: What
+are the perceived therapeutic mechanisms within the SPiS model? Data and methodFor the feasibility
+study, 30 participants will be recruited, for the RCT study at least 220 older adults will be
+recruited at eight primary health centers in four regions.Plan for project realizationRecruitment
+will take place at the primary health center where the question about experiences of loneliness is
+routinely asked. In cases where loneliness is identified, the person will be asked to participate.
+Randomization to intervention or waiting list will be done. The intervention, the SPiS model,
+consists of in-depths assessment by a specialized team and a prescription of relevant on-going
+social activities in the local community. The prescribed activity will meet the interests,
+engagement and needs of the individual. Individualized tailored support to participate in the
+prescribed activity will be offered. Loneliness, self-rated health, wellbeing and health-care
+consumption will be evaluated through forms in connection to recruitment, after six and twelve
+months. Additional data on involvement in prescribed activity will be gathered through telephone at
+three and nine months. Qualitative evaluation through interviews will increase knowledge about
+perceived therapeutic components of SPiS.RelevanceThe project will provide increased knowledge about
+social prescribing as an intervention to reduce loneliness among older adults in Sweden.
+
+=== [50] swecris:2023-01243_Vinnova | 2023 | EUR 0.44M | Vinnova
+TITLE: All aboard! Towards future sustainable mobility and digital service solutions accessible to all
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Purpose and goal: "All aboard!" aims to, from an intersectional perspective (with particular
+attention to gender and age) and by including different contexts and geographies, capture lessons
+learned and develop the knowledge on how to create more sustainable mobility for all. The focus is
+on different capacities in the use of new mobility solutions, new forms of accessibility and other
+more digital solutions. The project challenges notions of mobility and prevailing planning norms in
+society that are based on mobility and centralization of basic destinations in daily life. Expected
+results and effects: With a participatory approach, "All aboard" contributes to new and deeper
+knowledge of various conditions for changing consumer- and travel behaviors through new solutions
+and digitalisation. The results form the basis for policy proposals for future social development,
+that promote socially sustainable societies, with increasing conditions for a good quality of life
+and health. This in line with the work towards the global goals, the "UN Decade of Healthy Ageing”
+(2021-2030) and EU´s Territorial Agenda 2030. Approach and implementation: "All aboard" makes use of
+knowledge and experience from pilots and implementation of new solutions (mobility- and service
+solutions). Research shows that many innovative initiatives are underway, but that there is a lack
+of knowledge compilation and follow-up. The basis lies in collaboration and dialogues, and includes
+users, non-users and other key stakeholders. "All aboard" intends to involve social movements and
+senior activists to challenge norms and habitual behaviors, thus co-creating more sustainable future
+scenarios.
+

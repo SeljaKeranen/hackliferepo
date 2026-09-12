@@ -1,0 +1,1800 @@
+=== [1] reporter:2RM1HG011014-06 | 2025 | EUR 8.63M | National Human Genome Research Institute
+TITLE: Center for Integrated Cellular Analysis
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+A single cell is the fundamental unit of life, and the collective actions of individual cells define
+the behavior of living organisms. To understand cellular identity, it is essential to profile cells
+individually. In 2020 we launched the Center for Integrated Cellular Analysis as an NIH Center for
+Excellence in Genomic Science, focused on the measurement and integration of diverse data types at
+single-cell resolution. Representing a collaborative and synergistic effort across six institutions
+in New York City, we have pioneered a powerful and broadly impactful suite of methods that have
+opened the field to the measurement of new and diverse molecular modalities that span the central
+dogma. In this Renewal application, we aim to continue these efforts while radically advancing and
+expanding our vision. While our work since 2020 has enabled a breadth of new techniques for
+high-resolution annotation of cell states, the true potential of single-cell multimodal analysis
+lies in its ability to not only catalog what cells are doing, but to explain why they are doing it.
+We propose new technologies that can pinpoint the molecular determinants that establish a cell’s
+identity, and drive its future behavior and decisions. We aim to tackle four key questions: (i) how
+are dynamic changes in RNA transcription, splicing and degradation integrated to establish cell
+state? (ii) how do interactions between transcription factors (TFs) and epigenetic modifications
+regulate current and future decisions? (iii) how does cellular lineage affect plasticity,
+differentiation, and growth? (iv) How can perturbations in model systems be used to understand and
+explain cellular responses in-vivo? While focusing on methods development, we will demonstrate broad
+generalizability in multiple biological contexts, including the human hematopoietic system, the
+aging mouse kidney, and pre-malignant patient samples from the esophagus and stomach. To achieve
+this, we will develop highly scalable, multimodal, and broadly applicable single cell profiling
+technologies that address key limitations in the field. If successful, our center will unlock the
+potential of single-cell multi-omics beyond the construction of cell atlases and deliver a powerful
+and broadly applicable toolkit to understand the determinants of cellular behavior.
+
+=== [2] reporter:5U19AG023122-14 | 2021 | EUR 7.63M | National Institute on Aging
+TITLE: Longevity Consortium
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT: THE LONGEVITY CONSORTIUM (LC). Multiple studies of model organisms and humans have
+suggested that genetic variants, proteins, metabolites, as well as other biomolecules and molecular-
+physiologic processes, could play roles in mediating longevity, healthspan, and age-related disease
+in humans. Unfortunately, the direct relevance of many of these factors to human longevity,
+healthspan and age-related disease is uncertain, as is the amenability of these factors to
+pharmacological modulation. Therefore, well-integrated and sophisticated research strategies are
+needed to determine the degree to which various factors both influence human longevity and are
+amenable to pharmacological manipulation. The Longevity Consortium (LC) has a history of
+precedent-setting studies seeking to identify factors that influence human longevity and healthspan
+and has recently redefined its goals and research strategies to achieve an appropriate level of
+integration and sophistication to elucidate additional factors affecting longevity, as well as their
+interactions and translatability into targets for pharmacotherapeutic manipulation. To enable
+appropriate integration in human longevity research, the LC will exploit a multiple investigator
+structure with 5 interlinked research projects and 3 integrative cores. These projects and cores
+will include: A cross-species project focusing on cellular and organismal phenotypes led by Richard
+Miller (referred to as the Miller-Mice/Cell project hereafter); a metabolomics project led by Oliver
+Fiehn (Fiehn-Metabolomics); a Centenarians project co-led by Thomas Perls and Paola Sebastiani
+(Perls- Centenarian); a proteomics project led by Eric Orwoll (Orwoll-Proteomics) and a disease
+context project led by Nicholas Schork (Schork-Disease Context). The cores include a Systems Biology
+core led by Nathan Price (Price-Systems), a Chemoinformatics core led by Thomas Girke
+(Girke-Chemoinformatics), and an administrative core with an overall administrative component led by
+Steve Cummings (Cummings-Admin) and a scientific integration component led by Nicholas Schork. Drs.
+Cummings and Schork, as Multiple PIs, will share responsibility for the overall leadership of the LC
+effort. The proposed LC will complement, and partner with, an NIA-funded U24 project (U24AG051129)
+involving many LC investigators to construct a website for data dissemination. 1
+
+=== [3] reporter:2U19AG023122-11A1 | 2018 | EUR 7.06M | National Institute on Aging
+TITLE: Longevity Consortium
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT: THE LONGEVITY CONSORTIUM (LC). Multiple studies of model organisms and humans have
+suggested that genetic variants, proteins, metabolites, as well as other biomolecules and molecular-
+physiologic processes, could play roles in mediating longevity, healthspan, and age-related disease
+in humans. Unfortunately, the direct relevance of many of these factors to human longevity,
+healthspan and age-related disease is uncertain, as is the amenability of these factors to
+pharmacological modulation. Therefore, well-integrated and sophisticated research strategies are
+needed to determine the degree to which various factors both influence human longevity and are
+amenable to pharmacological manipulation. The Longevity Consortium (LC) has a history of
+precedent-setting studies seeking to identify factors that influence human longevity and healthspan
+and has recently redefined its goals and research strategies to achieve an appropriate level of
+integration and sophistication to elucidate additional factors affecting longevity, as well as their
+interactions and translatability into targets for pharmacotherapeutic manipulation. To enable
+appropriate integration in human longevity research, the LC will exploit a multiple investigator
+structure with 5 interlinked research projects and 3 integrative cores. These projects and cores
+will include: A cross-species project focusing on cellular and organismal phenotypes led by Richard
+Miller (referred to as the Miller-Mice/Cell project hereafter); a metabolomics project led by Oliver
+Fiehn (Fiehn-Metabolomics); a Centenarians project co-led by Thomas Perls and Paola Sebastiani
+(Perls- Centenarian); a proteomics project led by Eric Orwoll (Orwoll-Proteomics) and a disease
+context project led by Nicholas Schork (Schork-Disease Context). The cores include a Systems Biology
+core led by Nathan Price (Price-Systems), a Chemoinformatics core led by Thomas Girke
+(Girke-Chemoinformatics), and an administrative core with an overall administrative component led by
+Steve Cummings (Cummings-Admin) and a scientific integration component led by Nicholas Schork. Drs.
+Cummings and Schork, as Multiple PIs, will share responsibility for the overall leadership of the LC
+effort. The proposed LC will complement, and partner with, an NIA-funded U24 project (U24AG051129)
+involving many LC investigators to construct a website for data dissemination. 1
+
+=== [4] reporter:5U19AG023122-13 | 2020 | EUR 7.02M | National Institute on Aging
+TITLE: Longevity Consortium
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT: THE LONGEVITY CONSORTIUM (LC). Multiple studies of model organisms and humans have
+suggested that genetic variants, proteins, metabolites, as well as other biomolecules and molecular-
+physiologic processes, could play roles in mediating longevity, healthspan, and age-related disease
+in humans. Unfortunately, the direct relevance of many of these factors to human longevity,
+healthspan and age-related disease is uncertain, as is the amenability of these factors to
+pharmacological modulation. Therefore, well-integrated and sophisticated research strategies are
+needed to determine the degree to which various factors both influence human longevity and are
+amenable to pharmacological manipulation. The Longevity Consortium (LC) has a history of
+precedent-setting studies seeking to identify factors that influence human longevity and healthspan
+and has recently redefined its goals and research strategies to achieve an appropriate level of
+integration and sophistication to elucidate additional factors affecting longevity, as well as their
+interactions and translatability into targets for pharmacotherapeutic manipulation. To enable
+appropriate integration in human longevity research, the LC will exploit a multiple investigator
+structure with 5 interlinked research projects and 3 integrative cores. These projects and cores
+will include: A cross-species project focusing on cellular and organismal phenotypes led by Richard
+Miller (referred to as the Miller-Mice/Cell project hereafter); a metabolomics project led by Oliver
+Fiehn (Fiehn-Metabolomics); a Centenarians project co-led by Thomas Perls and Paola Sebastiani
+(Perls- Centenarian); a proteomics project led by Eric Orwoll (Orwoll-Proteomics) and a disease
+context project led by Nicholas Schork (Schork-Disease Context). The cores include a Systems Biology
+core led by Nathan Price (Price-Systems), a Chemoinformatics core led by Thomas Girke
+(Girke-Chemoinformatics), and an administrative core with an overall administrative component led by
+Steve Cummings (Cummings-Admin) and a scientific integration component led by Nicholas Schork. Drs.
+Cummings and Schork, as Multiple PIs, will share responsibility for the overall leadership of the LC
+effort. The proposed LC will complement, and partner with, an NIA-funded U24 project (U24AG051129)
+involving many LC investigators to construct a website for data dissemination. 1
+
+=== [5] reporter:5U19AG023122-12 | 2019 | EUR 6.88M | National Institute on Aging
+TITLE: Longevity Consortium
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT: THE LONGEVITY CONSORTIUM (LC). Multiple studies of model organisms and humans have
+suggested that genetic variants, proteins, metabolites, as well as other biomolecules and molecular-
+physiologic processes, could play roles in mediating longevity, healthspan, and age-related disease
+in humans. Unfortunately, the direct relevance of many of these factors to human longevity,
+healthspan and age-related disease is uncertain, as is the amenability of these factors to
+pharmacological modulation. Therefore, well-integrated and sophisticated research strategies are
+needed to determine the degree to which various factors both influence human longevity and are
+amenable to pharmacological manipulation. The Longevity Consortium (LC) has a history of
+precedent-setting studies seeking to identify factors that influence human longevity and healthspan
+and has recently redefined its goals and research strategies to achieve an appropriate level of
+integration and sophistication to elucidate additional factors affecting longevity, as well as their
+interactions and translatability into targets for pharmacotherapeutic manipulation. To enable
+appropriate integration in human longevity research, the LC will exploit a multiple investigator
+structure with 5 interlinked research projects and 3 integrative cores. These projects and cores
+will include: A cross-species project focusing on cellular and organismal phenotypes led by Richard
+Miller (referred to as the Miller-Mice/Cell project hereafter); a metabolomics project led by Oliver
+Fiehn (Fiehn-Metabolomics); a Centenarians project co-led by Thomas Perls and Paola Sebastiani
+(Perls- Centenarian); a proteomics project led by Eric Orwoll (Orwoll-Proteomics) and a disease
+context project led by Nicholas Schork (Schork-Disease Context). The cores include a Systems Biology
+core led by Nathan Price (Price-Systems), a Chemoinformatics core led by Thomas Girke
+(Girke-Chemoinformatics), and an administrative core with an overall administrative component led by
+Steve Cummings (Cummings-Admin) and a scientific integration component led by Nicholas Schork. Drs.
+Cummings and Schork, as Multiple PIs, will share responsibility for the overall leadership of the LC
+effort. The proposed LC will complement, and partner with, an NIA-funded U24 project (U24AG051129)
+involving many LC investigators to construct a website for data dissemination. 1
+
+=== [6] reporter:5U19AG023122-15 | 2022 | EUR 5.96M | National Institute on Aging
+TITLE: Longevity Consortium
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT: THE LONGEVITY CONSORTIUM (LC). Multiple studies of model organisms and humans have
+suggested that genetic variants, proteins, metabolites, as well as other biomolecules and molecular-
+physiologic processes, could play roles in mediating longevity, healthspan, and age-related disease
+in humans. Unfortunately, the direct relevance of many of these factors to human longevity,
+healthspan and age-related disease is uncertain, as is the amenability of these factors to
+pharmacological modulation. Therefore, well-integrated and sophisticated research strategies are
+needed to determine the degree to which various factors both influence human longevity and are
+amenable to pharmacological manipulation. The Longevity Consortium (LC) has a history of
+precedent-setting studies seeking to identify factors that influence human longevity and healthspan
+and has recently redefined its goals and research strategies to achieve an appropriate level of
+integration and sophistication to elucidate additional factors affecting longevity, as well as their
+interactions and translatability into targets for pharmacotherapeutic manipulation. To enable
+appropriate integration in human longevity research, the LC will exploit a multiple investigator
+structure with 5 interlinked research projects and 3 integrative cores. These projects and cores
+will include: A cross-species project focusing on cellular and organismal phenotypes led by Richard
+Miller (referred to as the Miller-Mice/Cell project hereafter); a metabolomics project led by Oliver
+Fiehn (Fiehn-Metabolomics); a Centenarians project co-led by Thomas Perls and Paola Sebastiani
+(Perls- Centenarian); a proteomics project led by Eric Orwoll (Orwoll-Proteomics) and a disease
+context project led by Nicholas Schork (Schork-Disease Context). The cores include a Systems Biology
+core led by Nathan Price (Price-Systems), a Chemoinformatics core led by Thomas Girke
+(Girke-Chemoinformatics), and an administrative core with an overall administrative component led by
+Steve Cummings (Cummings-Admin) and a scientific integration component led by Nicholas Schork. Drs.
+Cummings and Schork, as Multiple PIs, will share responsibility for the overall leadership of the LC
+effort. The proposed LC will complement, and partner with, an NIA-funded U24 project (U24AG051129)
+involving many LC investigators to construct a website for data dissemination. 1
+
+=== [7] reporter:1R01AG059416-01 | 2018 | EUR 5.57M | National Institute on Aging
+TITLE: Study of Muscle, Mobility and Aging (SOMMA)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Mobility inevitably declines with age, more in some than other people, often leading to mobility
+disability with dependency, decreased quality of life, and enormous health care costs. The role of
+age-related biological changes in skeletal muscle on the decline in mobility is poorly understood.
+We hypothesize that muscle mass and the capacity to produce ATP are strong determinants of the
+mobility disability in older adults. Based on advances from laboratory studies of muscle aging, we
+also hypothesize that denervation, oxidative damage, and decreased autophagic flux interact and
+contribute to declines in fitness, endurance and an increased risk of mobility disability. We will
+also use transcriptomic profiling by RNAseq to discover patterns of gene expression that play
+important roles in the loss of mobility with aging. In the Study of Muscle Mobility and Aging
+(SOMMA), a prospective, longitudinal study of men and women age 70 to 90, our team of experts in
+clinical and laboratory sciences will use innovative and state-of- the-art technologies with
+rigorous quality control to test these hypotheses and discover new pathways for the loss of mobility
+with aging. We will measure quadriceps contractile volume by MRI and total muscle mass by d3
+creatine dilution. We will use 31PMRS to assess the capacity of the quadriceps to generate ATP
+(ATPmax). In tissue form, muscle biopsies quantify denervation and oxidative damage to contractile
+proteins. SOMMA will be the first to quantify autophagic flux to assess the role of autophagy in the
+loss of mobility with aging. We use respirometry on fresh tissue to quantify the contribution of
+mitochondria to ATPmax and mobility disability. These properties interact: for example, decreased
+autophagic flux promotes the accumulation of oxidative damage and denervation, and understanding
+these relationships will guide the analysis and interpretation of our results. Furthermore, we will
+use unbiased RNA-sequencing (RNA-seq) to profile the entire transcriptome to discover new
+associations between clusters of genes and individual variation in rates of loss of fitness (peak
+VO2), muscle mass, and risk of mobility disability. Field centers at Wake Forest and Pittsburgh,
+with exceptional track records for recruiting and retaining older adults in complex studies, will
+enroll 875 women and men age 70–89 with a gait speed ≤ 1.0 m/s, providing sufficient power to
+identify important relationships between individual and combinations of properties and the risk of
+mobility disability. SOMMA may identify and prioritize targets for new therapeutics and tailored
+exercise regimens. We also will create a unique archive of tissue, blood, with longitudinal data
+about important clinical outcomes that the scientific community can use to efficiently test new
+hypotheses about muscle and loss of mobility with aging.
+
+=== [8] reporter:1U01AG071448-01 | 2021 | EUR 5.17M | National Institute on Aging
+TITLE: National Longitudinal Study of Adolescent to Adult Health (Add Health): Wave VI Core Project
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary This project, developed in response to RFA-AG-21-008, describes core plans for data
+collection and dissemination of the sixth wave (Wave VI) of the National Longitudinal Study of
+Adolescent to Adult Health (Add Health), when cohort members will be 39-48 years of age (mean 44).
+Add Health is a longitudinal study of a nationally representative sample of over 20,000 adolescents
+who were in grades 7-12 during the 1994-95 school year and have been followed for five waves to
+date. Over 25 years, Add Health has collected rich demographic, social, familial, socioeconomic,
+behavioral, psychosocial, cognitive, and health survey data from participants and their parents; a
+vast array of contextual data from participants' schools, neighborhoods, and geographies of
+residence; administrative data linked to participants, including birth and death certificates; and
+in-home physical and biological data from participants, including anthropometric measures, genetic
+markers, blood-based assays, and medications. Ancillary studies have added more information,
+including epigenetic, gene expression, and microbiome data. Thus, Add Health is exceptionally unique
+because it has a rich, multi- level, longitudinal array of data for a large nationally
+representative cohort of Americans who are entering midlife. Importantly, the overall health profile
+of the cohort as they make the transition to midlife is problematic across many dimensions.
+Moreover, health disparities by race, ethnicity, gender, socioeconomic status, sexual minority
+status, and rural-urban residence in this cohort are wide and, in some cases, widening. As such,
+rich longitudinal, multi-level, and nationally representative data are urgently needed to best
+understand the life course determinants of health trajectories and health disparities of US adults
+as they enter midlife. Wave VI of Add Health will fill this critical need. The overall goal of Wave
+VI of Add Health is to collect and disseminate the comprehensive data needed to best understand the
+social, economic, psychosocial, contextual, and biological determinants of health trajectories and
+disparities among this nationally representative cohort of Americans as they age into midlife. The
+project is focused around five aims: 1) Re-interviewing cohort members using predominantly web-based
+and in-person modes, with explicit attention to securing high response rates from racial/ethnic
+minority and low socioeconomic status participants; 2) Enriching study content in key domains that
+will elucidate mid- and later-life health trajectories and disparities; 3) Re-visiting cohort
+members who consent for an in-home health exam that includes venous blood collection and other
+important components of health; 4) Assaying biological specimens for important pre-disease and
+disease biomarkers; and 5) Cleaning, documenting, disseminating, archiving, promoting, and
+supporting Wave VI data for the scientific community. This project has extraordinary potential to
+contribute to the science of aging, health, and health disparities for decades to come, as the Add
+Health cohort ages into the middle adult years and beyond. Successful carryout of this project will
+supply essential data for thousands of researchers working on these critical issues.
+
+=== [9] reporter:5R01AG059416-02 | 2019 | EUR 5.02M | National Institute on Aging
+TITLE: Study of Muscle, Mobility and Aging (SOMMA)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Mobility inevitably declines with age, more in some than other people, often leading to mobility
+disability with dependency, decreased quality of life, and enormous health care costs. The role of
+age-related biological changes in skeletal muscle on the decline in mobility is poorly understood.
+We hypothesize that muscle mass and the capacity to produce ATP are strong determinants of the
+mobility disability in older adults. Based on advances from laboratory studies of muscle aging, we
+also hypothesize that denervation, oxidative damage, and decreased autophagic flux interact and
+contribute to declines in fitness, endurance and an increased risk of mobility disability. We will
+also use transcriptomic profiling by RNAseq to discover patterns of gene expression that play
+important roles in the loss of mobility with aging. In the Study of Muscle Mobility and Aging
+(SOMMA), a prospective, longitudinal study of men and women age 70 to 90, our team of experts in
+clinical and laboratory sciences will use innovative and state-of- the-art technologies with
+rigorous quality control to test these hypotheses and discover new pathways for the loss of mobility
+with aging. We will measure quadriceps contractile volume by MRI and total muscle mass by d3
+creatine dilution. We will use 31PMRS to assess the capacity of the quadriceps to generate ATP
+(ATPmax). In tissue form, muscle biopsies quantify denervation and oxidative damage to contractile
+proteins. SOMMA will be the first to quantify autophagic flux to assess the role of autophagy in the
+loss of mobility with aging. We use respirometry on fresh tissue to quantify the contribution of
+mitochondria to ATPmax and mobility disability. These properties interact: for example, decreased
+autophagic flux promotes the accumulation of oxidative damage and denervation, and understanding
+these relationships will guide the analysis and interpretation of our results. Furthermore, we will
+use unbiased RNA-sequencing (RNA-seq) to profile the entire transcriptome to discover new
+associations between clusters of genes and individual variation in rates of loss of fitness (peak
+VO2), muscle mass, and risk of mobility disability. Field centers at Wake Forest and Pittsburgh,
+with exceptional track records for recruiting and retaining older adults in complex studies, will
+enroll 875 women and men age 70–89 with a gait speed ≤ 1.0 m/s, providing sufficient power to
+identify important relationships between individual and combinations of properties and the risk of
+mobility disability. SOMMA may identify and prioritize targets for new therapeutics and tailored
+exercise regimens. We also will create a unique archive of tissue, blood, with longitudinal data
+about important clinical outcomes that the scientific community can use to efficiently test new
+hypotheses about muscle and loss of mobility with aging.
+
+=== [10] reporter:5U01AG071448-02 | 2022 | EUR 4.97M | National Institute on Aging
+TITLE: National Longitudinal Study of Adolescent to Adult Health (Add Health): Wave VI Core Project
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary This project, developed in response to RFA-AG-21-008, describes core plans for data
+collection and dissemination of the sixth wave (Wave VI) of the National Longitudinal Study of
+Adolescent to Adult Health (Add Health), when cohort members will be 39-48 years of age (mean 44).
+Add Health is a longitudinal study of a nationally representative sample of over 20,000 adolescents
+who were in grades 7-12 during the 1994-95 school year and have been followed for five waves to
+date. Over 25 years, Add Health has collected rich demographic, social, familial, socioeconomic,
+behavioral, psychosocial, cognitive, and health survey data from participants and their parents; a
+vast array of contextual data from participants' schools, neighborhoods, and geographies of
+residence; administrative data linked to participants, including birth and death certificates; and
+in-home physical and biological data from participants, including anthropometric measures, genetic
+markers, blood-based assays, and medications. Ancillary studies have added more information,
+including epigenetic, gene expression, and microbiome data. Thus, Add Health is exceptionally unique
+because it has a rich, multi- level, longitudinal array of data for a large nationally
+representative cohort of Americans who are entering midlife. Importantly, the overall health profile
+of the cohort as they make the transition to midlife is problematic across many dimensions.
+Moreover, health disparities by race, ethnicity, gender, socioeconomic status, sexual minority
+status, and rural-urban residence in this cohort are wide and, in some cases, widening. As such,
+rich longitudinal, multi-level, and nationally representative data are urgently needed to best
+understand the life course determinants of health trajectories and health disparities of US adults
+as they enter midlife. Wave VI of Add Health will fill this critical need. The overall goal of Wave
+VI of Add Health is to collect and disseminate the comprehensive data needed to best understand the
+social, economic, psychosocial, contextual, and biological determinants of health trajectories and
+disparities among this nationally representative cohort of Americans as they age into midlife. The
+project is focused around five aims: 1) Re-interviewing cohort members using predominantly web-based
+and in-person modes, with explicit attention to securing high response rates from racial/ethnic
+minority and low socioeconomic status participants; 2) Enriching study content in key domains that
+will elucidate mid- and later-life health trajectories and disparities; 3) Re-visiting cohort
+members who consent for an in-home health exam that includes venous blood collection and other
+important components of health; 4) Assaying biological specimens for important pre-disease and
+disease biomarkers; and 5) Cleaning, documenting, disseminating, archiving, promoting, and
+supporting Wave VI data for the scientific community. This project has extraordinary potential to
+contribute to the science of aging, health, and health disparities for decades to come, as the Add
+Health cohort ages into the middle adult years and beyond. Successful carryout of this project will
+supply essential data for thousands of researchers working on these critical issues.
+
+=== [11] reporter:5U01AG071448-03 | 2023 | EUR 4.90M | National Institute on Aging
+TITLE: National Longitudinal Study of Adolescent to Adult Health (Add Health): Wave VI Core Project
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary This project, developed in response to RFA-AG-21-008, describes core plans for data
+collection and dissemination of the sixth wave (Wave VI) of the National Longitudinal Study of
+Adolescent to Adult Health (Add Health), when cohort members will be 39-48 years of age (mean 44).
+Add Health is a longitudinal study of a nationally representative sample of over 20,000 adolescents
+who were in grades 7-12 during the 1994-95 school year and have been followed for five waves to
+date. Over 25 years, Add Health has collected rich demographic, social, familial, socioeconomic,
+behavioral, psychosocial, cognitive, and health survey data from participants and their parents; a
+vast array of contextual data from participants' schools, neighborhoods, and geographies of
+residence; administrative data linked to participants, including birth and death certificates; and
+in-home physical and biological data from participants, including anthropometric measures, genetic
+markers, blood-based assays, and medications. Ancillary studies have added more information,
+including epigenetic, gene expression, and microbiome data. Thus, Add Health is exceptionally unique
+because it has a rich, multi- level, longitudinal array of data for a large nationally
+representative cohort of Americans who are entering midlife. Importantly, the overall health profile
+of the cohort as they make the transition to midlife is problematic across many dimensions.
+Moreover, health disparities by race, ethnicity, gender, socioeconomic status, sexual minority
+status, and rural-urban residence in this cohort are wide and, in some cases, widening. As such,
+rich longitudinal, multi-level, and nationally representative data are urgently needed to best
+understand the life course determinants of health trajectories and health disparities of US adults
+as they enter midlife. Wave VI of Add Health will fill this critical need. The overall goal of Wave
+VI of Add Health is to collect and disseminate the comprehensive data needed to best understand the
+social, economic, psychosocial, contextual, and biological determinants of health trajectories and
+disparities among this nationally representative cohort of Americans as they age into midlife. The
+project is focused around five aims: 1) Re-interviewing cohort members using predominantly web-based
+and in-person modes, with explicit attention to securing high response rates from racial/ethnic
+minority and low socioeconomic status participants; 2) Enriching study content in key domains that
+will elucidate mid- and later-life health trajectories and disparities; 3) Re-visiting cohort
+members who consent for an in-home health exam that includes venous blood collection and other
+important components of health; 4) Assaying biological specimens for important pre-disease and
+disease biomarkers; and 5) Cleaning, documenting, disseminating, archiving, promoting, and
+supporting Wave VI data for the scientific community. This project has extraordinary potential to
+contribute to the science of aging, health, and health disparities for decades to come, as the Add
+Health cohort ages into the middle adult years and beyond. Successful carryout of this project will
+supply essential data for thousands of researchers working on these critical issues.
+
+=== [12] reporter:5U01AG071448-04 | 2024 | EUR 4.75M | National Institute on Aging
+TITLE: National Longitudinal Study of Adolescent to Adult Health (Add Health): Wave VI Core Project
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary This project, developed in response to RFA-AG-21-008, describes core plans for data
+collection and dissemination of the sixth wave (Wave VI) of the National Longitudinal Study of
+Adolescent to Adult Health (Add Health), when cohort members will be 39-48 years of age (mean 44).
+Add Health is a longitudinal study of a nationally representative sample of over 20,000 adolescents
+who were in grades 7-12 during the 1994-95 school year and have been followed for five waves to
+date. Over 25 years, Add Health has collected rich demographic, social, familial, socioeconomic,
+behavioral, psychosocial, cognitive, and health survey data from participants and their parents; a
+vast array of contextual data from participants' schools, neighborhoods, and geographies of
+residence; administrative data linked to participants, including birth and death certificates; and
+in-home physical and biological data from participants, including anthropometric measures, genetic
+markers, blood-based assays, and medications. Ancillary studies have added more information,
+including epigenetic, gene expression, and microbiome data. Thus, Add Health is exceptionally unique
+because it has a rich, multi- level, longitudinal array of data for a large nationally
+representative cohort of Americans who are entering midlife. Importantly, the overall health profile
+of the cohort as they make the transition to midlife is problematic across many dimensions.
+Moreover, health disparities by race, ethnicity, gender, socioeconomic status, sexual minority
+status, and rural-urban residence in this cohort are wide and, in some cases, widening. As such,
+rich longitudinal, multi-level, and nationally representative data are urgently needed to best
+understand the life course determinants of health trajectories and health disparities of US adults
+as they enter midlife. Wave VI of Add Health will fill this critical need. The overall goal of Wave
+VI of Add Health is to collect and disseminate the comprehensive data needed to best understand the
+social, economic, psychosocial, contextual, and biological determinants of health trajectories and
+disparities among this nationally representative cohort of Americans as they age into midlife. The
+project is focused around five aims: 1) Re-interviewing cohort members using predominantly web-based
+and in-person modes, with explicit attention to securing high response rates from racial/ethnic
+minority and low socioeconomic status participants; 2) Enriching study content in key domains that
+will elucidate mid- and later-life health trajectories and disparities; 3) Re-visiting cohort
+members who consent for an in-home health exam that includes venous blood collection and other
+important components of health; 4) Assaying biological specimens for important pre-disease and
+disease biomarkers; and 5) Cleaning, documenting, disseminating, archiving, promoting, and
+supporting Wave VI data for the scientific community. This project has extraordinary potential to
+contribute to the science of aging, health, and health disparities for decades to come, as the Add
+Health cohort ages into the middle adult years and beyond. Successful carryout of this project will
+supply essential data for thousands of researchers working on these critical issues.
+
+=== [13] reporter:5U01AG071448-05 | 2025 | EUR 4.65M | National Institute on Aging
+TITLE: National Longitudinal Study of Adolescent to Adult Health (Add Health): Wave VI Core Project
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+This project, developed in response to RFA-AG-21-008, describes core plans for data collection and
+dissemination of the sixth wave (Wave VI) of the National Longitudinal Study of Adolescent to Adult
+Health (Add Health), when cohort members will be 39-48 years of age (mean 44). Add Health is a
+longitudinal study of a nationally representative sample of over 20,000 adolescents who were in
+grades 7-12 during the 1994-95 school year and have been followed for five waves to date. Over 25
+years, Add Health has collected rich demographic, social, familial, socioeconomic, behavioral,
+psychosocial, cognitive, and health survey data from participants and their parents; a vast array of
+contextual data from participants’ schools, neighborhoods, and geographies of residence;
+administrative data linked to participants, including birth and death certificates; and in-home
+physical and biological data from participants, including anthropometric measures, genetic markers,
+blood-based assays, and medications. Ancillary studies have added more information, including
+epigenetic, gene expression, and microbiome data. Thus, Add Health is exceptionally unique because
+it has a rich, multi- level, longitudinal array of data for a large nationally representative cohort
+of Americans who are entering midlife. Importantly, the overall health profile of the cohort as they
+make the transition to midlife is problematic across many dimensions. Moreover, health disparities
+by race, ethnicity, sex, socioeconomic status, and rural-urban residence in this cohort are wide
+and, in some cases, widening. As such, rich longitudinal, multi-level, and nationally representative
+data are urgently needed to best understand the life course determinants of health trajectories and
+health disparities of US adults as they enter midlife. Wave VI of Add Health will fill this critical
+need. The overall goal of Wave VI of Add Health is to collect and disseminate the comprehensive data
+needed to best understand the social, economic, psychosocial, contextual, and biological
+determinants of health trajectories and disparities among this nationally representative cohort of
+Americans as they age into midlife. The project is focused around five aims: 1) Re-interviewing
+cohort members using predominantly web-based and in-person modes, with explicit attention to
+securing high response rates from racial/ethnic subgroups and low socioeconomic status participants;
+2) Enriching study content in key domains that will elucidate mid- and later-life health
+trajectories and disparities; 3) Re-visiting cohort members who consent for an in-home health exam
+that includes venous blood collection and other important components of health; 4) Assaying
+biological specimens for important pre-disease and disease biomarkers; and 5) Cleaning, documenting,
+disseminating, archiving, promoting, and supporting Wave VI data for the scientific community. This
+project has extraordinary potential to contribute to the science of aging, health, and health
+disparities for decades to come, as the Add Health cohort ages into the middle adult years and
+beyond. Successful carryout of this project will supply essential data for thousands of researchers
+working on these critical issues.
+
+=== [14] reporter:5R01AG059416-05 | 2022 | EUR 4.43M | National Institute on Aging
+TITLE: Study of Muscle, Mobility and Aging (SOMMA)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Mobility inevitably declines with age, more in some than other people, often leading to mobility
+disability with dependency, decreased quality of life, and enormous health care costs. The role of
+age-related biological changes in skeletal muscle on the decline in mobility is poorly understood.
+We hypothesize that muscle mass and the capacity to produce ATP are strong determinants of the
+mobility disability in older adults. Based on advances from laboratory studies of muscle aging, we
+also hypothesize that denervation, oxidative damage, and decreased autophagic flux interact and
+contribute to declines in fitness, endurance and an increased risk of mobility disability. We will
+also use transcriptomic profiling by RNAseq to discover patterns of gene expression that play
+important roles in the loss of mobility with aging. In the Study of Muscle Mobility and Aging
+(SOMMA), a prospective, longitudinal study of men and women age 70 to 90, our team of experts in
+clinical and laboratory sciences will use innovative and state-of- the-art technologies with
+rigorous quality control to test these hypotheses and discover new pathways for the loss of mobility
+with aging. We will measure quadriceps contractile volume by MRI and total muscle mass by d3
+creatine dilution. We will use 31PMRS to assess the capacity of the quadriceps to generate ATP
+(ATPmax). In tissue form, muscle biopsies quantify denervation and oxidative damage to contractile
+proteins. SOMMA will be the first to quantify autophagic flux to assess the role of autophagy in the
+loss of mobility with aging. We use respirometry on fresh tissue to quantify the contribution of
+mitochondria to ATPmax and mobility disability. These properties interact: for example, decreased
+autophagic flux promotes the accumulation of oxidative damage and denervation, and understanding
+these relationships will guide the analysis and interpretation of our results. Furthermore, we will
+use unbiased RNA-sequencing (RNA-seq) to profile the entire transcriptome to discover new
+associations between clusters of genes and individual variation in rates of loss of fitness (peak
+VO2), muscle mass, and risk of mobility disability. Field centers at Wake Forest and Pittsburgh,
+with exceptional track records for recruiting and retaining older adults in complex studies, will
+enroll 875 women and men age 70–89 with a gait speed ≤ 1.0 m/s, providing sufficient power to
+identify important relationships between individual and combinations of properties and the risk of
+mobility disability. SOMMA may identify and prioritize targets for new therapeutics and tailored
+exercise regimens. We also will create a unique archive of tissue, blood, with longitudinal data
+about important clinical outcomes that the scientific community can use to efficiently test new
+hypotheses about muscle and loss of mobility with aging.
+
+=== [15] reporter:5R01AG059416-04 | 2021 | EUR 4.42M | National Institute on Aging
+TITLE: Study of Muscle, Mobility and Aging (SOMMA)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Mobility inevitably declines with age, more in some than other people, often leading to mobility
+disability with dependency, decreased quality of life, and enormous health care costs. The role of
+age-related biological changes in skeletal muscle on the decline in mobility is poorly understood.
+We hypothesize that muscle mass and the capacity to produce ATP are strong determinants of the
+mobility disability in older adults. Based on advances from laboratory studies of muscle aging, we
+also hypothesize that denervation, oxidative damage, and decreased autophagic flux interact and
+contribute to declines in fitness, endurance and an increased risk of mobility disability. We will
+also use transcriptomic profiling by RNAseq to discover patterns of gene expression that play
+important roles in the loss of mobility with aging. In the Study of Muscle Mobility and Aging
+(SOMMA), a prospective, longitudinal study of men and women age 70 to 90, our team of experts in
+clinical and laboratory sciences will use innovative and state-of- the-art technologies with
+rigorous quality control to test these hypotheses and discover new pathways for the loss of mobility
+with aging. We will measure quadriceps contractile volume by MRI and total muscle mass by d3
+creatine dilution. We will use 31PMRS to assess the capacity of the quadriceps to generate ATP
+(ATPmax). In tissue form, muscle biopsies quantify denervation and oxidative damage to contractile
+proteins. SOMMA will be the first to quantify autophagic flux to assess the role of autophagy in the
+loss of mobility with aging. We use respirometry on fresh tissue to quantify the contribution of
+mitochondria to ATPmax and mobility disability. These properties interact: for example, decreased
+autophagic flux promotes the accumulation of oxidative damage and denervation, and understanding
+these relationships will guide the analysis and interpretation of our results. Furthermore, we will
+use unbiased RNA-sequencing (RNA-seq) to profile the entire transcriptome to discover new
+associations between clusters of genes and individual variation in rates of loss of fitness (peak
+VO2), muscle mass, and risk of mobility disability. Field centers at Wake Forest and Pittsburgh,
+with exceptional track records for recruiting and retaining older adults in complex studies, will
+enroll 875 women and men age 70–89 with a gait speed ≤ 1.0 m/s, providing sufficient power to
+identify important relationships between individual and combinations of properties and the risk of
+mobility disability. SOMMA may identify and prioritize targets for new therapeutics and tailored
+exercise regimens. We also will create a unique archive of tissue, blood, with longitudinal data
+about important clinical outcomes that the scientific community can use to efficiently test new
+hypotheses about muscle and loss of mobility with aging.
+
+=== [16] reporter:1UM1TR004772-01 | 2024 | EUR 3.51M | National Center for Advancing Translational Sciences
+TITLE: Dartmouth Clinical and Translational Science Institute
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The COVID-19 pandemic brought into stark relief the many healthcare challenges facing individuals
+living in rural areas—the compounded needs of an aging population, geographic dispersion, inadequate
+public transportation, spotty internet service, spikes in substance use, vaccine hesitancy. These
+disparities—like most public health problems—reflect a complex interplay of biological,
+environmental, psychological, social, and systems-level factors. At the same time, the pandemic
+highlighted potential solutions and spurred a wealth of research in healthcare delivery science in
+rural areas. Much of this work was conducted by scientists affiliated with SYNERGY, Dartmouth’s
+Clinical and Translational Science Institute, founded in 2013. SYNERGY faculty reported the expanded
+use of telehealth, digital health, machine learning; strengthened partnerships between healthcare
+systems and community health centers; and developed a “COVID compass” to guide policymaking. Our
+work in this area, centered in SYNERGY’s earliest years, has deepened our commitment to
+translational science that centers rural healthcare delivery and health equity, while exploring the
+full spectrum of translational science and workforce development. Hence, we propose to return
+SYNERGY to the national CTSA consortium. The overarching goal of this application is to continue to
+spur innovation in clinical and translational science with a focus on rural healthcare, in
+collaboration with other CTSA hubs, and to study a new model to catalyze T3 translational science in
+healthcare settings. SYNERGY reflects a close partnership between Dartmouth Health (DH) and
+Dartmouth College (DC). DH is the largest healthcare system in New Hampshire, with its flagship
+hospital in a rurally designated area. DC brings the resources of a research- intensive college,
+including schools of medicine, engineering, business, and graduate studies. SYNERGY includes our new
+Center for Rural Healthcare Delivery Science and key regional collaborators, including the Northern
+New England Clinical Translational Research Network (a partnership between MaineHealth and the
+University of Vermont), a Veterans Affairs hospital, community groups, and a “pipeline” program to
+grow the scientific workforce. SYNERGY’s goals are to (1) Accelerate the delivery of evidence-based
+diagnostics, therapeutics, and processes to address the healthcare needs of rural communities; (2)
+Assure the availability of timely, actionable patient- and population-level data to mitigate the
+translational block of “siloing” between translational scientists and healthcare system leadership
+by deploying a novel coproduction learning health system (LHS); (3) Train the next generation of
+translational scientists, with a particular focus on identifying future leaders in healthcare
+delivery science and rural health; (4) Disseminate these practices and lessons learned within the
+CTSA community through engagement with subnetworks addressing rural health, implementation science,
+and learning health systems science; and (5) Involve local communities in the design, conduct,
+analysis, and dissemination of our work, while engaging in studies of stakeholder engagement.
+
+=== [17] reporter:5UM1TR004772-02 | 2025 | EUR 3.51M | National Center for Advancing Translational Sciences
+TITLE: Dartmouth Clinical and Translational Science Institute
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Health and healthcare delivery for individuals living in rural areas face many health challenges—the
+compounded needs of an aging population, geographic dispersion, inadequate public transportation,
+spotty internet service, and spikes in substance use. These factors—like most public health
+problems—reflect a complex interplay of biological, environmental, psychological, social, and
+systems-level drivers. At the same time, recent years have seen a wealth of research in healthcare
+delivery science in rural areas. Much of this work was conducted by scientists affiliated with
+SYNERGY, Dartmouth’s Clinical and Translational Science Institute, founded in 2013. SYNERGY faculty
+reported the expanded use of telehealth, digital health, machine learning; strengthened partnerships
+between healthcare systems and community health centers; and developed a decision aid to guide
+policymaking. Our work in this area, centered in SYNERGY’s earliest years, has deepened our
+commitment to translational science that centers rural healthcare delivery and health, while
+exploring the full spectrum of translational science and workforce development. Hence, we propose to
+return SYNERGY to the national CTSA consortium. The overarching goal of this application is to
+continue to spur innovation in clinical and translational science with a focus on rural healthcare,
+in collaboration with other CTSA hubs, and to study a new model to catalyze T3 translational science
+in healthcare settings. SYNERGY reflects a close partnership between Dartmouth Health (DH) and
+Dartmouth College (DC). DH is the largest healthcare system in New Hampshire, with its flagship
+hospital in a rurally designated area. DC brings the resources of a research- intensive college,
+including schools of medicine, engineering, business, and graduate studies. SYNERGY includes our new
+Center for Rural Healthcare Delivery Science and key regional collaborators, including the Northern
+New England Clinical Translational Research Network (a partnership between MaineHealth and the
+University of Vermont), a Veterans Affairs hospital, community groups, and a “pipeline” program to
+grow the scientific workforce. SYNERGY’s goals are to (1) Accelerate the delivery of evidence-based
+diagnostics, therapeutics, and processes to address the healthcare needs of rural communities; (2)
+Assure the availability of timely, actionable patient- and population-level data to mitigate the
+translational block of “siloing” between translational scientists and healthcare system leadership
+by deploying a novel coproduction learning health system (LHS); (3) Train the next generation of
+translational scientists, with a particular focus on identifying future leaders in healthcare
+delivery science and rural health; (4) Disseminate these practices and lessons learned within the
+CTSA community through engagement with subnetworks addressing rural health, implementation science,
+and learning health systems science; and (5) Involve local communities in the design, conduct,
+analysis, and dissemination of our work, while engaging in studies of stakeholder engagement.
+
+=== [18] reporter:5R01AG059416-03 | 2020 | EUR 3.45M | National Institute on Aging
+TITLE: Study of Muscle, Mobility and Aging (SOMMA)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Mobility inevitably declines with age, more in some than other people, often leading to mobility
+disability with dependency, decreased quality of life, and enormous health care costs. The role of
+age-related biological changes in skeletal muscle on the decline in mobility is poorly understood.
+We hypothesize that muscle mass and the capacity to produce ATP are strong determinants of the
+mobility disability in older adults. Based on advances from laboratory studies of muscle aging, we
+also hypothesize that denervation, oxidative damage, and decreased autophagic flux interact and
+contribute to declines in fitness, endurance and an increased risk of mobility disability. We will
+also use transcriptomic profiling by RNAseq to discover patterns of gene expression that play
+important roles in the loss of mobility with aging. In the Study of Muscle Mobility and Aging
+(SOMMA), a prospective, longitudinal study of men and women age 70 to 90, our team of experts in
+clinical and laboratory sciences will use innovative and state-of- the-art technologies with
+rigorous quality control to test these hypotheses and discover new pathways for the loss of mobility
+with aging. We will measure quadriceps contractile volume by MRI and total muscle mass by d3
+creatine dilution. We will use 31PMRS to assess the capacity of the quadriceps to generate ATP
+(ATPmax). In tissue form, muscle biopsies quantify denervation and oxidative damage to contractile
+proteins. SOMMA will be the first to quantify autophagic flux to assess the role of autophagy in the
+loss of mobility with aging. We use respirometry on fresh tissue to quantify the contribution of
+mitochondria to ATPmax and mobility disability. These properties interact: for example, decreased
+autophagic flux promotes the accumulation of oxidative damage and denervation, and understanding
+these relationships will guide the analysis and interpretation of our results. Furthermore, we will
+use unbiased RNA-sequencing (RNA-seq) to profile the entire transcriptome to discover new
+associations between clusters of genes and individual variation in rates of loss of fitness (peak
+VO2), muscle mass, and risk of mobility disability. Field centers at Wake Forest and Pittsburgh,
+with exceptional track records for recruiting and retaining older adults in complex studies, will
+enroll 875 women and men age 70–89 with a gait speed ≤ 1.0 m/s, providing sufficient power to
+identify important relationships between individual and combinations of properties and the risk of
+mobility disability. SOMMA may identify and prioritize targets for new therapeutics and tailored
+exercise regimens. We also will create a unique archive of tissue, blood, with longitudinal data
+about important clinical outcomes that the scientific community can use to efficiently test new
+hypotheses about muscle and loss of mobility with aging.
+
+=== [19] reporter:1ZICDC000081-11 | 2022 | EUR 3.11M | National Institute on Deafness and Other Communication Disorders
+TITLE: Advanced Imaging Core
+RULES: Keyword evidence for social_population_aging (0.846) and age_related_disease (0.816) is too close to call (margin 0.03 < 0.3; relative margin 0.035 < 0.1 or evidence floor not met).
+ABSTRACT:
+Drs. Ronald S. Petralia and Ya-Xian Wang, who ran the NIDCD Advanced Imaging Core facility since its
+inception in October 2011, retired in December 2021. As of January 2022, Dr. Dennis C. Winkler runs
+the core with Dr. Julia Sokolova. This core is dedicated primarily to collaborating with and
+training scientists in NIDCD in studies utilizing transmission electron microscopy (TEM). The AIC
+also collaborates with and trains researchers from other NIH institutes. In addition, Dr. Petralia
+and Dr. Winkler have reviewed manuscripts, grants and various documents for NIDCD PIs, written
+letters of recommendation, and served on several NIH committees. With the 2019 turbo pump upgrade to
+the JEOL JEM-2100 TEM it is now possible to look at frozen hydrated biological specimens, and
+SerialEM automation scripts were installed to help facilitate the cryo-EM workflow on this
+microscope. Additionally, the installation of our second electron microscope, a Thermo Fisher/FEI
+Titan Halo 300 kV TEM, was completed this year. The scope will be dedicated largely to cryo-EM but
+has other features such as STEM and phase plate capabilities. Dr. Winkler oversaw the installation
+of the Halo and the scope is now available for use, although there are still some lingering issues
+with the room renovation and the NIH house chilled water systems. Dr. Winkler works with lab members
+within NIDCD and the NIH community, training them in EM and cryo-EM. He remains available for
+consultation regarding the transitioning of the former NIAMS lab space in Building 50 to others at
+NIH and continues to be the de facto manager for the JEOL 2200 electron microscope in Building 50 as
+NIDCD occasionally uses this scope for cryo-EM work and training. The best estimate for this scopes
+decommissioning/removal is sometime in FY 2023. Dr. Sokolova joined the core at the beginning of
+2021 and is now working with the core 75% of her time; she works directly for the Friedman lab
+during the other 25%. Dr. Sokolova has a strong background in TEM of microorganisms. Both the work
+for the core and for Dr. Friedmans lab involve similar multiple methods in TEM, and Dr. Petralia and
+Dr. Wang actively trained Dr. Sokolova on TEM methods as used for the study of auditory structures
+until their retirement at the end of December 2021. Dr. Sokolova is also working on implementing
+high pressure freezing and subsequent freeze-substitution as a sample preparation technique with a
+recently acquired, previously owned Leica EM PACT 2 High Pressure Freezer. This technique will be
+used as a substitution for chemical fixation and plunge freezing as it is highly recommended for
+better preservation of the native state of cellular structures and, particularly, antigenic sites
+for immune EM. NIDCD: Laboratory of Molecular Genetics (Dr. Thomas Friedman): Collaboration with Dr.
+Friedman and Dr. Inna Belyantseva is ongoing. Dr. Petralia and Dr. Wang assisted Dr. Belyantseva
+with tissue preparation, e.g., freeze substitution and ultramicrotomy. Dr. Sokolova now works with
+the Friedman lab for 25% of her time and continues to work with Dr. Belyantseva on TEM projects
+involving the Organ of Corti focusing on the fine structure of hair cells in wildtype and knockout
+(by CRISPR/CAS9 technology) mice as well as on immunolocalization of proteins of interest. The
+cryo-EM collaboration with Drs. Friedman and Takushi Miyoshi is ongoing. The project examines
+methods to detect abnormal functions of deafness gene variants in hair cell stereocilia Molecular
+Biology & Genetics Section (Dr. Isabelle Roux): Dr. Petralia and Dr. Wang had a major study on the
+structure and function of the endolymphatic sac, with preliminary work done in March 2020; this was
+halted abruptly due to the COVID-19 pandemic. This has continued through the first part of FY22.
+Section on Sensory Cell Development & Function (Dr. Katie Kindt): A new study on zebrafish hair
+cells involved Drs. Sokolova, Petralia, and Wang. Dr. Petralia and Dr. Wang trained Dr. Sokolova in
+the study of TEM on these zebrafish. Dr. Wang did part of the ultramicrotomy, and Dr. Petralia did
+part of the grid staining for this study and initially helped with image acquisition, while Dr.
+Sokolova has been doing the major part including specimen preparation, ultramicrotomy, staining, and
+TEM imaging. Auditory Development & Restoration Program (Dr. Michael Hoa): Dr. Sokolova has been
+working with Dr. Rafal Olszewski and Dr. Hoa on a project involving preparations for sectioning of
+inner ear tissue on the ultramicrotome for LM studies as well as a project on visualization of
+changes associated with endolymphatic hydrops in the Slc26a4-insufficiency mouse model. Section on
+Structural Cell Biology (Dr. Bechara Kachar): We provided training for Dr. Ranjan Sengupta, Dr.
+Felipe Montecinos and Mr. Dylan Murray on TEM use, traditional TEM and cryo-EM sample preparation
+methods, and cryo-EM techniques. Additional assistance to the lab includes aid in using the newly
+installed Thermo Fisher/FEI Titan Halo TEM and review of manuscripts. Other NIH institutes:
+NINDS/Basic Neurosciences Program and Laboratory of Functional & Molecular Imaging: Drs. Petralia
+and Wang had a previous study with Dr. Wei Lus lab on Neuroligin 2 that is in preparation for
+submission (Han et al.; delayed by the COVID-19 pandemic). For the past year Dr. Winkler has worked
+with Dr. Simone Mastrogiacomo, training him on negative stain and cryo-EM sample preparation,
+concentrating on a structural biology study of a protein of interest. NICHD/Section on Molecular
+Neurophysiology & Biophysics: Lab of Drs. Lin Lin and Dax Hoffman: Dr. Petralia and Dr. Wang had a
+study examining the association of Cav2.3 and Kv4.2 channels in the journal, Cell Reports (Murphy et
+al.). They have a paper in review that is a follow up study on the novel structure associated with
+aging dementia in DPP6-KO mice that they published in 2020. In addition, Dr. Petralia and Dr. Wang
+ha
+
+=== [20] reporter:1ZICMH002903-11 | 2017 | EUR 3.05M | National Institute of Mental Health
+TITLE: Procurement and Characterization of Postmortem Brain Tissue
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Currently, the HBCC resources include brains from individuals with the following diagnoses (numbers
+of subjects listed in parentheses): Bipolar disorder (161), Non-psychiatric controls (358),
+Schizophrenia and schizoaffective disorder (202), Substance Abuse (48), Major depressive disorder
+(228), Other psychiatric/neurological diagnoses 136, Not diagnosed (60). A total number of subjects
+1154. From Oct 1, 2016, until July 31, 2017 we collected 64 brains through the DC and Northern and
+Central VA Medical Examiners Offices. Other resources include: -cDNA libraries constructed from
+dorsolateral prefrontal cortex (DLPFC), hippocampus, anterior cingulate cortex (ACC) and subgenual
+anterior cingulate cortex (sgACC), and dura from hundreds of subjects with mental disorders and
+controls -microarray expression and genotyping data (publicly available at dbGAP accession ID:
+phs000979.v1.p1) from DLPFC, hippocampus and dura -frozen sections (14 um thick) mounted on slides
+(DLPFC from 32 patients with schizophrenia and 63 controls), -formalin-fixed coronal slices
+(approximately 15 mm thick) of a single hemisphere from 15 controls, 10 patients with schizophrenia,
+5 with major depression, 4 with bipolar disorder. -Fibroblasts derived from postmortem dura: 450
+-Whole genome sequencing, RNA sequencing, and Chip-sequencing data for 400 subjects, to become
+publicly available soon -RNA sequencing data from 200 individuals from the subgenual ACC will become
+available probably in the next year. We have undertaken an effort to combine and share as much
+information as possible between Neurobiobank (NBB) and HBCC resources. For this we obtained detailed
+quantitative electronic toxicological data from NMS on hundreds of our specimens and shared them
+with NBB. We are implementing a transition to DSM5/ICD10 codes that will make our diagnostic
+definitions easily sharable with NBB. We have unified the naming and reporting of brain
+regions/specimens available in HBCC with the goal of making these fields easily available to NBB and
+investigators (work in progress as we have 46,000 biospecimens available). The number of requests
+for tissue/data in the last year has more than doubled compared to the same period last year. We are
+still processing and/or evaluating nine projects, while we have distributed tissue/data for 23
+collaborative studies. Four requests were not fulfilled after discussions with the investigators.
+The projects/collaborations that we have accrued in the last year (some include multiple requests
+for different samples): 1. Examination of inhibitory microcircuits in 3D with CLARITY of postmortem
+schizophrenia. 2. Transcriptional and epigenetic signatures of human brain development and autism.
+3. Molecular bio-signatures of axonal pathology in schizophrenia (measurement of proteins related to
+the axon initial segment). 4. Methylation of the dopamine transporter gene as a biomarker for
+dopamine transporter binding in normal volunteers and patients with ADHD (blood, pulverized tissue
+of caudate, DNA and RNA from substantia nigra) 5. Risk genetic variants and cis regulation of gene
+expression in bipolar disorder and schizophrenia (this is further work being done on the DLPFC
+samples distributed to the Common Mind Consortium). 6. Measurement of antibodies in human Herpes
+Virus in blood in subjects with and without migraine. 7. New roles for REST during brain maturation
+(FACS sorted nuclei in controls). 8. The function of miR-3162 in brain development and synaptic
+physiology (formalin fixed tissue). 9. PTSD and blast exposure (tissue from several brain regions
+for histological studies). 10. NMDA signaling in amygdala in schizophrenia (pulverized amygdala).
+11. Allele-specific expression of vasopressin/orexin and GRIN2A receptors in hippocampus , including
+bioinformatics for detection of differential allelic expression over the whole genome based on HBCC
+DLPFC RNAseq data. 12. GABA and AMPA currents in schizophrenia vs controls (DLPFC blocks
+distributed). 13. Erbb4 isoforms in human brain (tissue blocks of anterior cingulate cortex/corpus
+callosum: manuscript in preparation (Erben, He et al. in preparation). 14. Sharing of DLPFC RNAseq
+data with CommonMindConsortium/Psychencode with all consortia users. 15. Rostromedial tegmental
+nucleus in humans (brainstem sections made available for confirmation of the existence of this
+nucleus in humans). 16. Transposable elements in psychiatric disorders (whole genome sequencing data
+made available) 17. Single cell expression analysis of human locus coerulus, dorsal raphe and
+substantia nigra (fresh dissections for nuclear extraction and single cell sequencing to confirm
+pattern of expression in animal models). 18. Characterization of human anterior insula postmortem
+genome expression in affective disorders using RNA-Sequencing (RNA distributed). 19. Single cell
+sequencing from frozen human tissue (establishing methodology for extraction and sorting of nuclei
+from frozen tissue for single cell sequencing). 20. Accelerated epigenetic aging and mitochondrial
+DNA copy number in bipolar disorder (DNA distributed). 21. qPCR validation of RNAseq findings from
+sgACC (validation of RNAseq results with independent method). 22. RNAseq in ADHD (caudate and medial
+prefrontal cortex distributed). 23. Molecular profiling of schizophrenia (extension of the Common
+Mind Consortium project). We continue to actively follow several projects initiated in previous
+years (for exhaustive list see the 2016 report). These are the ones that generated publication in
+the last year: 1. RNA sequencing data from DLPFC for 400 subjects were generated, together with
+whole genome sequencing and Chip-Seq on a subset of these subjects (Fromer, Roussos et al. 2016);
+posted on BioRxiv (Dobbyn, Huckins et al. 2017). 2. Glutamate receptors in in the DLPFC of
+individuals with major depression and controls (Funk, Mielnik et al. 2017). 3. Epigenetic study of
+cell-type specific, high-resolution D
+
+=== [21] reporter:2RF1AG068168-06 | 2025 | EUR 2.83M | National Institute on Aging
+TITLE: Extracellular Vesicle treatment and age-related neuropathology in non-human primates
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT In our previous grant (R01AG068168) we demonstrated the efficacy of mesenchymal stromal
+cell (MSC)-derived extracellular vesicles (EVs) from young monkeys to slow or reverse age-related
+cognitive decline in aging rhesus monkeys. Compared to controls, EV-treated monkeys showed a higher
+level of performance on a spatial working memory task, which was correlated with increased Aβ42
+protein concentration in the CSF, possibly due to enhanced clearance. EV-mediated improved spatial
+working memory was also correlated with enhanced white matter integrity, functional connectivity in
+vivo and greater excitability of pyramidal neurons in prefrontal cortex, pointing to compensatory
+mechanisms that may promote plasticity during aging. In addition, extensive proteomic profiling of
+the contents of our monkey EVs identified the enrichment of proteins involved in several
+neuritogenic and synaptogenic processes that provide mechanistic insight on the ability of the EVs
+to ameliorate age-related changes in the brain. Furthermore, our in vitro studies showed that EVs
+mitigate age- and AD-related neurodegenerative changes in human-derived cortical organoids (COs).
+Together these findings demonstrate the significant therapeutic efficacy of MSC-EVs in aging.
+However, recent evidence has demonstrated sex differences in the cargo and gene expression in EVs.
+Recent transcriptomic studies have demonstrated that EVs from male donors express a greater variety
+and abundance of RNAs than those from female donors.6 Further, differentially expressed genes (DEG)
+in male EVs were associated with intracellular signaling and vesicle transport, whereas DEGs in
+female EVs were associated with extracellular matrix organization and signal transmission. These
+outcomes suggest that male and female EVs may support different biological, repair and
+immunomodulatory processes and therefore may have different effects on the aged brain.6 In the
+previous grant, our studies used EVs from both male and female donors. However, our most recent data
+showed a positive effect of female EVs on cognition, white matter integrity and neuropathological
+debris clearance. In this renewal, we now propose to conduct an in-depth analysis of the mechanistic
+action and efficacy of EVs from MSCs from both male and female donors, to determine sex differences
+in the ability of EVs to ameliorate age-related impairments in cognition, facilitate clearance of
+neurodegenerative debris and reduce inflammation in monkeys and human-derived COs. Based on our data
+and evidence from the literature we hypothesize that EVs derived from female MSCs will have more
+efficacious therapeutic benefits, including increased clearance of age-related neurodegenerative
+debris that will correlate with white matter integrity, neuronal plasticity and improved cognitive
+function.
+
+=== [22] reporter:2U01DA036939-11 | 2025 | EUR 2.45M | National Institute on Drug Abuse
+TITLE: The RADAR cohort study of multilevel Influences on HIV and substance use
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+We propose to continue the largest cohort study of young men in the Unites States with a very high
+HIV incidence. RADAR was launched in 2015 (renewed in 2020) to provide critical insights into risk
+and protective factors for HIV and drug use, and to identify facilitators and barriers to the
+implementation of effective strategies to end the epidemics of substance use and HIV among young
+men. RADAR is reflective of the US HIV epidemic; it focuses on the ages with the highest HIV and
+substance use disorder incidence, has exceptional representation of those most affected, and is
+located in the urban epicenter of the HIV and drug epidemics in the Midwest (i.e., Chicago/Cook
+County-4th highest incidence in US). We have been extremely productive in recruitment (N=1,357),
+retention (>80%), scientific outputs (113+ publications), and serving as a platform for additional
+innovative research (4 Fs, 4 Ks, 10 Rs, 50+ connected studies; 10 concepts via NIDA consortium).
+High-risk young men, such as those in our sample, account for 75% of all new HIV diagnoses among
+adolescents and young adults in the US and have not seen the declines found in other age groups.
+Substance use and multi-level health challenges (i.e., limited health knowledge or pre-existing
+psychological/biological factors) are key drivers HIV acquisition in this group. We propose a
+sophisticated multilevel research design, in which we will enhance the cohort with 600 new
+participants and continue to follow existing cohort members into their 30s and 40s. We will answer
+critical new questions about the substance use epidemics that drive the HIV epidemic and non-AIDS
+comorbidities. Aim 1: we will keep a pulse on emerging trends in drug use, HIV risk/preventive
+behaviors, and care continuum engagement. We will chart trajectories and multilevel risk/protective
+factors for substance use and HIV outcomes. Aim 2: RADAR will investigate the impact of health
+challenges, HIV, and substance use on key aging-related biological mechanisms and their impacts on
+vascular health and cognitive function comorbidities among young men living with and without HIV.
+Aim 3: we will engage in regular dialogue with key stakeholders, conduct implementation research,
+and disseminate findings directly to end-users to close research-to-practice gaps. Aim 4: RADAR will
+continue to add specimens and data to our large and well-characterized biobehavioral repository to
+provide a platform for high-impact science, and we will maintain existing collaborations. RADAR is a
+unique multilevel and longitudinal study of young men with a very high observed HIV incidence. The
+multi-cohort design (youth enrolled in 2008, 2011, 2015, 2020, now) provides a powerful design for
+examining trajectories and predictors while staying attuned to historical/generational
+differences–its continuation is critical to informing approaches to ending the substance us and HIV
+epidemics in all young men.
+
+=== [23] reporter:5R01AI116382-02 | 2016 | EUR 2.23M | National Institute of Allergy and Infectious Diseases
+TITLE: GBV-C-mediated protection from AIDS in humans and GBV-C/SIV co-infected macaques
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+﻿ DESCRIPTION (provided by applicant): GB virus C (GBV-C) is an enigmatic RNA virus. HIV+ people
+infected with GBV-C exhibit delayed progression to AIDS, a phenomenon we term "GBV-C mediated
+protection from AIDS (GPFA)." Though this protective effect has been substantiated by multiple
+studies, the mechanism of protection is unknown. There are at least three reasons why GPFA is
+understudied: (1) GBV-C grows poorly in vitro, (2) there is no animal model for exploring GPFA, and
+(3) human studies have focused almost entirely on cross-sectional sampling of blood, while we have
+now demonstrated that GBV-C RNA is much more abundant in other tissues, specifically the spleen and
+bone marrow. We developed an animal model to study GPFA by infecting macaques with GBV-C isolated
+from wild baboons. Importantly, we have shown that GBV-C infects both SIV+ and SIV-naive macaques
+and that macaque GBV-C infection recapitulates key features of human GBV-C infection: it causes
+high-titer, persistent viremia without any overt signs of disease. We have already used this model
+to demonstrate that GBV-C RNA is ~1,000x more abundant in spleen and bone marrow than blood. We
+hypothesize that GBV-C mediates protection from AIDS by directly interfering with lymphocyte
+activation, particularly in those tissues where GBV-C RNA is concentrated. To test this hypothesis,
+we will study GPFA in our pioneering model for GBV-C/SIV co-infection. Specifically, we will:
+Specific Aim 1: Determine the impact of GBV-C infection on peripheral immunity in the presence and
+absence of SIV co-infection. We will measure peripheral immune activation, virus-specific adaptive
+immunity, SIV-mediated immune pathology, and the effect of GBV-C on SIV pathogenesis during both
+acute and chronic infections. These experiments are essential for reconciling previous, conflicting
+observations about GPFA from studies of human blood. Specific Aim 2: Evaluate GBV-C-mediated immune
+activation in bone marrow, spleen, and gut mucosal tissues. We will compare immune activation
+between the bone marrow and blood from GBV-C±SIV-experimentally-infected macaques and GBV-C±HIV
+human volunteers. We will also characterize immune activation in the spleen and gut mucosa, two
+tissues where GBV-C and HIV/SIV, respectively, are concentrated. Understanding GPFA could have
+important practical implications. Aberrant immune activation is observed even in HIV+ patients
+treated with antiretrovirals; GBV-C might have therapeutic value if it interferes with immune
+activation. Furthermore, an estimated 7 million people eligible for ARV treatment remain untreated.
+GBV-C (or treatments that mimic its effects) could be a safe and simple healthspan extending
+treatment in settings where ARV access is low. This project is led by investigators experienced in
+HIV/SIV pathogenesis, novel virus characterization, and GBV-C immunology and pathogenesis. We are
+uniquely qualified to undertake this ambitious project.
+
+=== [24] reporter:4P20GM104318-04 | 2016 | EUR 2.18M | National Institute of General Medical Sciences
+TITLE: Comparative Biology of Tissue Repair, Regeneration and Aging
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+DESCRIPTION (provided by applicant): This application proposes to create an innovative Center of
+Biomedical Research Excellence (COBRE) focused on the Comparative Biology of Tissue Repair,
+Regeneration and Aging. Tissue regeneration in mammals is extremely limited. However, robust
+regeneration is the norm for countless lower vertebrates and invertebrates. In addition, nature has
+endowed diverse animals with remarkable longevity and robust tissue repair mechanisms that slow
+aging-induced degenerative processes. The COBRE research theme uniquely focuses on using diverse
+non-mammalian and mammalian model organisms together with comparative biology approaches to address
+several overarching and fundamental questions in the field of regenerative biology that can only be
+addressed at the level of the whole organism. This research focus represents a cornerstone of the
+long term strategic scientific Vision of the Mount Desert Island Biological Laboratory (MDIBL), and
+builds on the MDIBL and Maine INBRE success stories and on MDIBL's longstanding and increasingly
+important expertise in comparative biomedical research. The four proposed COBRE projects have
+extensive points of intersection and interaction and focus on defining mechanisms of limb and
+sensory axon regeneration in zebrafish, the impact of aging and somatic mutation load on mouse
+hematopoietic stem cell tissue homeostasis, and the effects of aging and stress on zebrafish tissue
+regeneration. Proposed scientific cores will provide essential services and resources to Project
+Leaders and will be valuable to a larger scientific community. The Comparative Animal Models Core
+will provide COBRE investigators with resources necessary to utilize diverse non-mammalian animal
+models in regenerative and aging biology research. The Comparative Functional Genomics Core will
+provide data management and analysis expertise to COBRE investigators. It will also develop a novel
+web-based resource that integrates data generated by COBRE investigators with published data sets in
+order to provide a systems-level view of regeneration that will inform new hypotheses about how
+genes regulate regenerative responses in diverse organisms. The Administrative Core will provide
+administrative, scientific, and fiscal leadership; implement a career development plan for junior
+faculty that facilitates their transition to independence; and implement an evaluation strategy to
+assess the progress of the COBRE in accomplishing its goals. The proposed COBRE will greatly enhance
+MDIBL's growth and development, which in turn will contribute to the continued growth and
+enhancement of the biomedical research infrastructure in Maine.
+
+=== [25] reporter:5P20GM104318-03 | 2015 | EUR 2.17M | National Institute of General Medical Sciences
+TITLE: Comparative Biology of Tissue Repair, Regeneration and Aging
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+DESCRIPTION (provided by applicant): This application proposes to create an innovative Center of
+Biomedical Research Excellence (COBRE) focused on the Comparative Biology of Tissue Repair,
+Regeneration and Aging. Tissue regeneration in mammals is extremely limited. However, robust
+regeneration is the norm for countless lower vertebrates and invertebrates. In addition, nature has
+endowed diverse animals with remarkable longevity and robust tissue repair mechanisms that slow
+aging-induced degenerative processes. The COBRE research theme uniquely focuses on using diverse
+non-mammalian and mammalian model organisms together with comparative biology approaches to address
+several overarching and fundamental questions in the field of regenerative biology that can only be
+addressed at the level of the whole organism. This research focus represents a cornerstone of the
+long term strategic scientific Vision of the Mount Desert Island Biological Laboratory (MDIBL), and
+builds on the MDIBL and Maine INBRE success stories and on MDIBL's longstanding and increasingly
+important expertise in comparative biomedical research. The four proposed COBRE projects have
+extensive points of intersection and interaction and focus on defining mechanisms of limb and
+sensory axon regeneration in zebrafish, the impact of aging and somatic mutation load on mouse
+hematopoietic stem cell tissue homeostasis, and the effects of aging and stress on zebrafish tissue
+regeneration. Proposed scientific cores will provide essential services and resources to Project
+Leaders and will be valuable to a larger scientific community. The Comparative Animal Models Core
+will provide COBRE investigators with resources necessary to utilize diverse non-mammalian animal
+models in regenerative and aging biology research. The Comparative Functional Genomics Core will
+provide data management and analysis expertise to COBRE investigators. It will also develop a novel
+web-based resource that integrates data generated by COBRE investigators with published data sets in
+order to provide a systems-level view of regeneration that will inform new hypotheses about how
+genes regulate regenerative responses in diverse organisms. The Administrative Core will provide
+administrative, scientific, and fiscal leadership; implement a career development plan for junior
+faculty that facilitates their transition to independence; and implement an evaluation strategy to
+assess the progress of the COBRE in accomplishing its goals. The proposed COBRE will greatly enhance
+MDIBL's growth and development, which in turn will contribute to the continued growth and
+enhancement of the biomedical research infrastructure in Maine.
+
+=== [26] reporter:1P20GM144265-01A1 | 2023 | EUR 2.12M | National Institute of General Medical Sciences
+TITLE: Regulation of Cellular Behavior in Response to Extracellular Cues
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+OVERALL ABSTRACT The long-term goal of this Center for Biomedical Research Excellence (COBRE) is to
+help grow the burgeoning biomedical research industry in Maine by positioning the University of
+Maine (UMaine) as a biomedical research and training hub that supports and recruits outstanding
+junior faculty while strengthening our unique statewide graduate program. This COBRE is focused on
+Regulation of Cellular Behavior in Response to Extracellular Cues. All cells interpret and respond
+to their environment, yet the mechanisms by which cells process signaling inputs and parse them into
+discrete cell behaviors are not fully understood. How does G protein coupled receptor signaling
+regulate polarity in different cell types? How does the extracellular environment regulate muscle
+cell behaviors such as migration and regeneration? How do viruses modify cells to cause disease?
+Five research projects led by early career investigators from UMaine and Mount Desert Island
+Biological Laboratory (MDIBL) will address cell-microenvironmental signaling across three contexts :
+mechanisms of viral infection in cultured cells and zebrafish; gradient tracking in yeast, and
+mechanisms of muscle homeostasis in zebrafish. The five research projects are: Cellular
+reprogramming in Persistent versus Lytic JC Viral Infections (Maginnis); Motility and Guidance
+Signals Control Migration of Muscle Precursors (Talbot); Mechanisms of GPCR-induced Autophagy
+(Kelley); Apelin Signaling in Muscle Regeneration (Madeleine), and Innate Immune Function in
+Influenza-Associated Myopathy (King). Each project leverages the unique expertise of research
+project leaders while advancing the theme of extracellular impacts on cell behavior. Projects
+exploit existing IDeA resources and the proposed new core facility in Microscopy and Image Analysis.
+This COBRE further enhances partnerships among biomedical research institutions in Maine. As
+director of a state-wide graduate program with 54 graduate students and >150 faculty, Dr. Henry has
+the leadership experience to guide this COBRE. This COBRE will accelerate the careers of our Junior
+Investigators by adding: external senior scientists as mentors, state-of-the art live imaging, image
+analytics, and an expanded zebrafish facility to strengthen the biomedical research infrastructure.
+UMaine is the only institution in the state that grants doctoral degrees in biomedical science and
+biomedical engineering. This COBRE, which will be UMaine’s first, will transform UMaine’s ability to
+serve as the academic leader for biomedical research in Maine and feed the growing biomedical
+research industry in Maine. This research will elucidate basic biological mechanisms underlying cell
+behavior, and also has the potential to inform future treatment of infectious diseases,
+neuromuscular disorders, and muscle aging and regeneration.
+
+=== [27] reporter:5P20GM104318-07 | 2019 | EUR 2.12M | National Institute of General Medical Sciences
+TITLE: Comparative Biology of Tissue Repair, Regeneration and Aging
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+OVERALL PROJECT SUMMARY Regeneration of damaged and lost tissues is limited in humans and other
+mammals. However, robust regeneration is the norm for numerous diverse invertebrates and lower
+vertebrates. COBRE Phase I, Comparative Biology of Tissue Repair, Regeneration and Aging, played a
+central role in establishing and growing the Kathryn W. Davis Center for Regenerative Biology and
+Medicine (Davis Center) at the MDI Biological Laboratory (MDIBL) and in dramatically improving the
+institution’s research environment. The Davis Center was founded on the guiding principle that
+studying diverse animal models would lead to a detailed and predictive understanding of the cellular
+and molecular mechanisms of tissue and organ regeneration, and an understanding of why these
+processes are poorly active in most human tissues and of why they decline with disease and aging.
+This in turn would lead to a rational foundation for development of regenerative medicine therapies,
+particularly small molecule drug candidates capable of stimulating tissue regeneration and slowing
+or reversing aging-induced degenerative changes in patients. COBRE Phase I supported four
+early-career Project Leaders and one mid-career Project Leader. All five Project Leaders graduated
+from Phase I with independent grant support. The average time for graduation of the four
+early-career Project Leaders was 2.8 years. Phase I Project Leaders also achieved multiple other
+successes including publication of significant peer-reviewed papers, creation of intellectual
+property, receipt of foundation and R21 grants and significant peer recognition. Other noteworthy
+successes include further development and patenting of MSI-1436, the only small molecule known to
+stimulate regeneration of the adult mammalian heart following a heart attack, discovery of two small
+molecules with potential to reverse chemotherapy-induced peripheral nerve damage, development of new
+disease models and research tools, and formation of a growing IDeA program/Maine state government
+partnership that allowed MDIBL to obtain $3M in voter-approved state bond funding to expand research
+infrastructure. COBRE Phase II will continue to support the growth and development of the Davis
+Center in order to establish a self-sustaining critical mass of investigators. Three new
+early-career scientists, Drs. Sam Beck, James Godwin and Jarod Rollins, have been recruited as Phase
+II Project Leaders. Recruitment of a fourth Davis Center faculty member is underway. Research
+programs of Phase II Project Leaders are highly synergistic with and bring new scientific expertise
+to the Davis Center. Essential services and resources will be provided to the Project Leaders and
+larger scientific community by continuation of the Comparative Functional Genomics Core and
+Comparative Animal Models Core. COBRE Phase II will greatly enhance the development of the Davis
+Center and MDIBL, which in turn will contribute to the continued enhancement of the biomedical
+research environment in Maine.
+
+=== [28] reporter:1ZIAAG000696-04 | 2023 | EUR 2.10M | National Institute on Aging
+TITLE: RNA dynamics and co-translational decay in aging and aging-related disease
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+While genomes encapsulate the information for the development and function of cells most of the
+biological complexity lies on high-order interactions and gene regulatory programs. Dissecting these
+regulatory mechanisms is critical for understanding complex, polygenic processes such as aging. In
+previous works we described a co-translational pathway of mRNA decay that is mediated by
+ribosome-phased cleavage of the mRNA (Ibrahim et al., 2018). There we developed a new experimental
+protocol to capture the native ends of mRNAs. However, the available protocols are limited as they
+cannot capture both the 5' and 3' ends simultaneously on the same molecule. This limited our ability
+to probe mRNA properties. We therefore developed, experimental/computational approaches to capture
+the native ends of mRNA molecules using direct RNA, nanopore sequencing. We have applied these
+protocols to analyze RNA metabolism (transcription and decay rates) in cellular stress and in aging
+animal tissues as well as isoform dynamics across cell-types. We also employ machine learning to
+extract information about post-transcriptional RNA modifications from raw nanopore electrical signal
+which we use to more accurately probe RNA metabolism.
+
+=== [29] reporter:5P20GM104318-08 | 2020 | EUR 2.08M | National Institute of General Medical Sciences
+TITLE: Comparative Biology of Tissue Repair, Regeneration and Aging
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+OVERALL PROJECT SUMMARY Regeneration of damaged and lost tissues is limited in humans and other
+mammals. However, robust regeneration is the norm for numerous diverse invertebrates and lower
+vertebrates. COBRE Phase I, Comparative Biology of Tissue Repair, Regeneration and Aging, played a
+central role in establishing and growing the Kathryn W. Davis Center for Regenerative Biology and
+Medicine (Davis Center) at the MDI Biological Laboratory (MDIBL) and in dramatically improving the
+institution’s research environment. The Davis Center was founded on the guiding principle that
+studying diverse animal models would lead to a detailed and predictive understanding of the cellular
+and molecular mechanisms of tissue and organ regeneration, and an understanding of why these
+processes are poorly active in most human tissues and of why they decline with disease and aging.
+This in turn would lead to a rational foundation for development of regenerative medicine therapies,
+particularly small molecule drug candidates capable of stimulating tissue regeneration and slowing
+or reversing aging-induced degenerative changes in patients. COBRE Phase I supported four
+early-career Project Leaders and one mid-career Project Leader. All five Project Leaders graduated
+from Phase I with independent grant support. The average time for graduation of the four
+early-career Project Leaders was 2.8 years. Phase I Project Leaders also achieved multiple other
+successes including publication of significant peer-reviewed papers, creation of intellectual
+property, receipt of foundation and R21 grants and significant peer recognition. Other noteworthy
+successes include further development and patenting of MSI-1436, the only small molecule known to
+stimulate regeneration of the adult mammalian heart following a heart attack, discovery of two small
+molecules with potential to reverse chemotherapy-induced peripheral nerve damage, development of new
+disease models and research tools, and formation of a growing IDeA program/Maine state government
+partnership that allowed MDIBL to obtain $3M in voter-approved state bond funding to expand research
+infrastructure. COBRE Phase II will continue to support the growth and development of the Davis
+Center in order to establish a self-sustaining critical mass of investigators. Three new
+early-career scientists, Drs. Sam Beck, James Godwin and Jarod Rollins, have been recruited as Phase
+II Project Leaders. Recruitment of a fourth Davis Center faculty member is underway. Research
+programs of Phase II Project Leaders are highly synergistic with and bring new scientific expertise
+to the Davis Center. Essential services and resources will be provided to the Project Leaders and
+larger scientific community by continuation of the Comparative Functional Genomics Core and
+Comparative Animal Models Core. COBRE Phase II will greatly enhance the development of the Davis
+Center and MDIBL, which in turn will contribute to the continued enhancement of the biomedical
+research environment in Maine.
+
+=== [30] reporter:1P20GM152330-01 | 2024 | EUR 2.04M | National Institute of General Medical Sciences
+TITLE: UNE Center for Cell Signaling Research
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Cellular systems such as the nervous, immune, vascular systems and bone do not work in isolation,
+but are functionally integrated and communicate extensively both in health and disease states.
+Defects or dysfunction in cell signaling are fundamental drivers of human disease, and our ability
+to meet contemporary clinical challenges, including neurodegenerative and metabolic disease, chronic
+pain and optimizing healthy aging, requires a broader understanding of mechanisms of intercellular
+and intracellular communication. The proposed UNE Center for Cell Signaling Research (CCSR) will
+build a critical mass of talented investigators with a broad research emphasis on cellular
+metabolism, inflammation and aging. The initial Research Project Leaders (RPLs), selected through a
+competitive process, bring diverse and complementary expertise from across UNE colleges and
+departments. Their research projects address discrete clinical challenges by investigating
+fundamental cell biological mechanisms that may have broad ramifications for human disease. New
+faculty recruitment and support of a pilot project program will ensure a continued pipeline of RPLs
+and further grow the Center. Investigators will be provided with a structured mentorship program to
+support both their professional and research program development in their progression to independent
+funding and beyond. The proposed Center will also expand the research infrastructure at UNE to
+support the innovative research programs of investigators in cell signaling. The proposed In Vitro
+Analytical Core will support the research of the RPLs with outstanding instrumentation and
+innovative services that are not broadly available elsewhere in the region, including primary cell
+and cell line culturing, transfection and analysis through functional imaging as well as
+transcriptional and protein-based analysis. The core will be housed in newly renovated research
+space that will be contiguous with an existing UNE Histology and Imaging Core, providing a unique
+suite of resources to support research at UNE. Institutional commitments include additional
+protected research time for RPLs and institutional matching funds for the pilot project program. In
+addition, the university has committed to hiring 3 additional investigators whose research programs
+will complement those of the existing faculty. The Center will also benefit from strong continued
+institutional investment into research infrastructure, as well as well-established collaborations
+with neighboring IDeA state programs in Maine and New Hampshire. Research infrastructure will be
+enhanced by laboratory renovations, purchasing new instrumentation, and key support for personnel.
+Additional institutional support has been committed for each of these. With sound financial and
+administrative management and regular assessments of performance with specified bench marks, the
+CCSR will be well- positioned to make a significant impact in optimizing healthy, pain-free aging
+and in finding new treatments for neurodegenerative and metabolic diseases.
+
+=== [31] reporter:4DP1NS131408-04 | 2025 | EUR 2.03M | National Institute of Neurological Disorders and Stroke
+TITLE: Single cell analysis of the kinome
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary Profiling kinases and their activities in single cells will enable exploration of
+cell type specific functional and biochemical pathways. While we have learned a great deal about
+transcriptional states of different cell types in the past decade through single cell genomics, we
+still understand little about proteins and in particular kinases networks in diverse cell
+populations. This is largely because single-cell kinome analysis faces major technical challenges.
+Unlike nucleic acids, proteins cannot be amplified, making detection of minute quantities from
+single cells difficult. We recently demonstrated a proof-of-principle experiment to accurately
+detect protein PTM isoforms in single cells. Here we propose to scale this method up to profile
+kinases at the global level in single cells in both cell culture and in tissues. We will integrate
+the single cell kinome analysis with RNA measurements to identify cell type specific kinase
+profiles. Ultimately, we will map the kinome with spatial context in the mouse and human brain to
+examine the kinase pathways involved in aging and neurodegeneration which could identify druggable
+targets. This project is a major departure from our current research. Its goals are ambitious but
+achievable. The project will leverage our expertise in single cell technology development and in
+application of new technology to diverse biological systems.
+
+=== [32] reporter:5P50MH130957-02 | 2023 | EUR 2.01M | National Institute of Mental Health
+TITLE: Mental Health in Autistic Adults: An RDoC Approach
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Center Overview Abstract The University of Pittsburgh Autism Center of Excellence (ACE) directly
+addresses the Interagency Autism Coordinating Committee’s call for research on adult mental health
+to improve safety and quality of life, and to reduce premature mortality. We do so by generating the
+measures and mechanistic targets needed to improve mental health and reduce suicide risk in autistic
+adults. We address this understudied and critical topic in authentic partnership with autistic
+adults and their allies. We emphasize mechanistic translation, bring new researchers to work on
+autism, and provide an academic home for junior researchers getting started in this area. We will
+assemble a Pittsburgh ACE cohort of 200 autistic and 100 non-autistic 18- to 65-year-old adults (≥
+50 with recent suicidality in each group) who will complete three projects that are focused on
+different units of analysis (self-report, behavior and ambulatory physiology, and neural circuits),
+time scales, and primary outcomes, all related to adult mental health. Project 1 will provide the
+first dimensional self-report questionnaire of suicidality developed for ASD and the first
+longitudinal characterization of suicidality in autistic adults. Project 2’s innovative
+physiologically-triggered ecological momentary design will characterize proximal risk processes for
+suicidal ideation, non-suicidal self-injury, and impulsive aggression in a temporally sensitive
+manner to allow for future interventions prior to escalation of emotion dysregulation and harmful
+outcomes. Project 3 tests a neural mechanistic model of early neural hyper-reactivity to stimuli
+followed by decreased recruitment of regulatory resources and consequent physiological, subjective,
+and behavioral hypo-reactivity. Our Clinical Core provides data to all of the projects to
+characterize the sample, including novel phenotypic measures (e.g., a biomarker of aging based on
+structural brain images). Our Center structure enables us to integrate data from all sources to
+enhance the impact of individual projects. For example, we will speed translation by connecting a
+biological causal mechanism to lived experience and longitudinal outcomes. We will pool all data to
+identify the most salient predictors of suicidality trajectories, providing a significant advance
+over approaches that consider small sets of predictors and enabling determination of relative
+contributions to risk. We will shed light on heterogeneity in outcomes by connecting subgroups based
+on daily dynamics of emotion and physiological reactivity and regulation to neural reactivity and
+suicidality. Our age range and transdiagnostic, suicidal comparison group allows us to determine
+what is unique about mental health in ASD and how aging may play a role. We will employ novel means
+to disseminate this critical information to the community with the help of our team of autistic
+partners from diverse backgrounds. This process will ensure that our Center will not only engage
+individuals from groups that have been marginalized, but will also create and maintain mutually
+beneficial and rewarding relationships that will enhance and enrich our research sample, outcomes,
+and overall impact.
+
+=== [33] reporter:1P50MH130957-01 | 2022 | EUR 2.01M | National Institute of Mental Health
+TITLE: Mental Health in Autistic Adults: An RDoC Approach
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Center Overview Abstract The University of Pittsburgh Autism Center of Excellence (ACE) directly
+addresses the Interagency Autism Coordinating Committee’s call for research on adult mental health
+to improve safety and quality of life, and to reduce premature mortality. We do so by generating the
+measures and mechanistic targets needed to improve mental health and reduce suicide risk in autistic
+adults. We address this understudied and critical topic in authentic partnership with autistic
+adults and their allies. We emphasize mechanistic translation, bring new researchers to work on
+autism, and provide an academic home for junior researchers getting started in this area. We will
+assemble a Pittsburgh ACE cohort of 200 autistic and 100 non-autistic 18- to 65-year-old adults (≥
+50 with recent suicidality in each group) who will complete three projects that are focused on
+different units of analysis (self-report, behavior and ambulatory physiology, and neural circuits),
+time scales, and primary outcomes, all related to adult mental health. Project 1 will provide the
+first dimensional self-report questionnaire of suicidality developed for ASD and the first
+longitudinal characterization of suicidality in autistic adults. Project 2’s innovative
+physiologically-triggered ecological momentary design will characterize proximal risk processes for
+suicidal ideation, non-suicidal self-injury, and impulsive aggression in a temporally sensitive
+manner to allow for future interventions prior to escalation of emotion dysregulation and harmful
+outcomes. Project 3 tests a neural mechanistic model of early neural hyper-reactivity to stimuli
+followed by decreased recruitment of regulatory resources and consequent physiological, subjective,
+and behavioral hypo-reactivity. Our Clinical Core provides data to all of the projects to
+characterize the sample, including novel phenotypic measures (e.g., a biomarker of aging based on
+structural brain images). Our Center structure enables us to integrate data from all sources to
+enhance the impact of individual projects. For example, we will speed translation by connecting a
+biological causal mechanism to lived experience and longitudinal outcomes. We will pool all data to
+identify the most salient predictors of suicidality trajectories, providing a significant advance
+over approaches that consider small sets of predictors and enabling determination of relative
+contributions to risk. We will shed light on heterogeneity in outcomes by connecting subgroups based
+on daily dynamics of emotion and physiological reactivity and regulation to neural reactivity and
+suicidality. Our age range and transdiagnostic, suicidal comparison group allows us to determine
+what is unique about mental health in ASD and how aging may play a role. We will employ novel means
+to disseminate this critical information to the community with the help of our team of autistic
+partners from diverse backgrounds. This process will ensure that our Center will not only engage
+individuals from groups that have been marginalized, but will also create and maintain mutually
+beneficial and rewarding relationships that will enhance and enrich our research sample, outcomes,
+and overall impact.
+
+=== [34] reporter:5P50MH130957-03 | 2024 | EUR 1.99M | National Institute of Mental Health
+TITLE: Mental Health in Autistic Adults: An RDoC Approach
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Center Overview Abstract The University of Pittsburgh Autism Center of Excellence (ACE) directly
+addresses the Interagency Autism Coordinating Committee’s call for research on adult mental health
+to improve safety and quality of life, and to reduce premature mortality. We do so by generating the
+measures and mechanistic targets needed to improve mental health and reduce suicide risk in autistic
+adults. We address this understudied and critical topic in authentic partnership with autistic
+adults and their allies. We emphasize mechanistic translation, bring new researchers to work on
+autism, and provide an academic home for junior researchers getting started in this area. We will
+assemble a Pittsburgh ACE cohort of 200 autistic and 100 non-autistic 18- to 65-year-old adults (≥
+50 with recent suicidality in each group) who will complete three projects that are focused on
+different units of analysis (self-report, behavior and ambulatory physiology, and neural circuits),
+time scales, and primary outcomes, all related to adult mental health. Project 1 will provide the
+first dimensional self-report questionnaire of suicidality developed for ASD and the first
+longitudinal characterization of suicidality in autistic adults. Project 2’s innovative
+physiologically-triggered ecological momentary design will characterize proximal risk processes for
+suicidal ideation, non-suicidal self-injury, and impulsive aggression in a temporally sensitive
+manner to allow for future interventions prior to escalation of emotion dysregulation and harmful
+outcomes. Project 3 tests a neural mechanistic model of early neural hyper-reactivity to stimuli
+followed by decreased recruitment of regulatory resources and consequent physiological, subjective,
+and behavioral hypo-reactivity. Our Clinical Core provides data to all of the projects to
+characterize the sample, including novel phenotypic measures (e.g., a biomarker of aging based on
+structural brain images). Our Center structure enables us to integrate data from all sources to
+enhance the impact of individual projects. For example, we will speed translation by connecting a
+biological causal mechanism to lived experience and longitudinal outcomes. We will pool all data to
+identify the most salient predictors of suicidality trajectories, providing a significant advance
+over approaches that consider small sets of predictors and enabling determination of relative
+contributions to risk. We will shed light on heterogeneity in outcomes by connecting subgroups based
+on daily dynamics of emotion and physiological reactivity and regulation to neural reactivity and
+suicidality. Our age range and transdiagnostic, suicidal comparison group allows us to determine
+what is unique about mental health in ASD and how aging may play a role. We will employ novel means
+to disseminate this critical information to the community with the help of our team of autistic
+partners from diverse backgrounds. This process will ensure that our Center will not only engage
+individuals from groups that have been marginalized, but will also create and maintain mutually
+beneficial and rewarding relationships that will enhance and enrich our research sample, outcomes,
+and overall impact.
+
+=== [35] reporter:1ZIAAG000696-05 | 2024 | EUR 1.99M | National Institute on Aging
+TITLE: RNA dynamics and co-translational decay in aging and aging-related disease
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+While genomes encapsulate the information for the development and function of cells most of the
+biological complexity lies on high-order interactions and gene regulatory programs. Dissecting these
+regulatory mechanisms is critical for understanding complex, polygenic processes such as aging. In
+previous works we described a co-translational pathway of mRNA decay that is mediated by
+ribosome-phased cleavage of the mRNA (Ibrahim et al., 2018). There we developed a new experimental
+protocol to capture the native ends of mRNAs. However, the available protocols are limited as they
+cannot capture both the 5' and 3' ends simultaneously on the same molecule. This limited our ability
+to probe mRNA properties. We therefore developed, experimental/computational approaches to capture
+the native ends of mRNA molecules using direct RNA, nanopore sequencing. We have applied these
+protocols to analyze RNA metabolism (transcription and decay rates) in cellular stress and in aging
+animal tissues as well as isoform dynamics across cell-types. We also employ machine learning to
+extract information about post-transcriptional RNA modifications from raw nanopore electrical signal
+which we use to more accurately probe RNA metabolism.
+
+=== [36] reporter:5R01AI116382-03 | 2017 | EUR 1.97M | National Institute of Allergy and Infectious Diseases
+TITLE: GBV-C-mediated protection from AIDS in humans and GBV-C/SIV co-infected macaques
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+﻿ DESCRIPTION (provided by applicant): GB virus C (GBV-C) is an enigmatic RNA virus. HIV+ people
+infected with GBV-C exhibit delayed progression to AIDS, a phenomenon we term "GBV-C mediated
+protection from AIDS (GPFA)." Though this protective effect has been substantiated by multiple
+studies, the mechanism of protection is unknown. There are at least three reasons why GPFA is
+understudied: (1) GBV-C grows poorly in vitro, (2) there is no animal model for exploring GPFA, and
+(3) human studies have focused almost entirely on cross-sectional sampling of blood, while we have
+now demonstrated that GBV-C RNA is much more abundant in other tissues, specifically the spleen and
+bone marrow. We developed an animal model to study GPFA by infecting macaques with GBV-C isolated
+from wild baboons. Importantly, we have shown that GBV-C infects both SIV+ and SIV-naive macaques
+and that macaque GBV-C infection recapitulates key features of human GBV-C infection: it causes
+high-titer, persistent viremia without any overt signs of disease. We have already used this model
+to demonstrate that GBV-C RNA is ~1,000x more abundant in spleen and bone marrow than blood. We
+hypothesize that GBV-C mediates protection from AIDS by directly interfering with lymphocyte
+activation, particularly in those tissues where GBV-C RNA is concentrated. To test this hypothesis,
+we will study GPFA in our pioneering model for GBV-C/SIV co-infection. Specifically, we will:
+Specific Aim 1: Determine the impact of GBV-C infection on peripheral immunity in the presence and
+absence of SIV co-infection. We will measure peripheral immune activation, virus-specific adaptive
+immunity, SIV-mediated immune pathology, and the effect of GBV-C on SIV pathogenesis during both
+acute and chronic infections. These experiments are essential for reconciling previous, conflicting
+observations about GPFA from studies of human blood. Specific Aim 2: Evaluate GBV-C-mediated immune
+activation in bone marrow, spleen, and gut mucosal tissues. We will compare immune activation
+between the bone marrow and blood from GBV-C±SIV-experimentally-infected macaques and GBV-C±HIV
+human volunteers. We will also characterize immune activation in the spleen and gut mucosa, two
+tissues where GBV-C and HIV/SIV, respectively, are concentrated. Understanding GPFA could have
+important practical implications. Aberrant immune activation is observed even in HIV+ patients
+treated with antiretrovirals; GBV-C might have therapeutic value if it interferes with immune
+activation. Furthermore, an estimated 7 million people eligible for ARV treatment remain untreated.
+GBV-C (or treatments that mimic its effects) could be a safe and simple healthspan extending
+treatment in settings where ARV access is low. This project is led by investigators experienced in
+HIV/SIV pathogenesis, novel virus characterization, and GBV-C immunology and pathogenesis. We are
+uniquely qualified to undertake this ambitious project.
+
+=== [37] reporter:5P50MH130957-04 | 2025 | EUR 1.96M | National Institute of Mental Health
+TITLE: Mental Health in Autistic Adults: An RDoC Approach
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Center Overview Abstract The University of Pittsburgh Autism Center of Excellence (ACE) directly
+addresses the Interagency Autism Coordinating Committee’s call for research on adult mental health
+to improve safety and quality of life, and to reduce premature mortality. We do so by generating the
+measures and mechanistic targets needed to improve mental health and reduce suicide risk in autistic
+adults. We address this understudied and critical topic in authentic partnership with autistic
+adults and their allies. We emphasize mechanistic translation, bring new researchers to work on
+autism, and provide an academic home for junior researchers getting started in this area. We will
+assemble a Pittsburgh ACE cohort of 200 autistic and 100 non-autistic 18- to 65-year-old adults (≥
+50 with recent suicidality in each group) who will complete three projects that are focused on
+different units of analysis (self-report, behavior and ambulatory physiology, and neural circuits),
+time scales, and primary outcomes, all related to adult mental health. Project 1 will provide the
+first dimensional self-report questionnaire of suicidality developed for ASD and the first
+longitudinal characterization of suicidality in autistic adults. Project 2’s innovative
+physiologically-triggered ecological momentary design will characterize proximal risk processes for
+suicidal ideation, non-suicidal self-injury, and impulsive aggression in a temporally sensitive
+manner to allow for future interventions prior to escalation of emotion dysregulation and harmful
+outcomes. Project 3 tests a neural mechanistic model of early neural hyper-reactivity to stimuli
+followed by decreased recruitment of regulatory resources and consequent physiological, subjective,
+and behavioral hypo-reactivity. Our Clinical Core provides data to all of the projects to
+characterize the sample, including novel phenotypic measures (e.g., a biomarker of aging based on
+structural brain images). Our Center structure enables us to integrate data from all sources to
+enhance the impact of individual projects. For example, we will speed translation by connecting a
+biological causal mechanism to lived experience and longitudinal outcomes. We will pool all data to
+identify the most salient predictors of suicidality trajectories, providing a significant advance
+over approaches that consider small sets of predictors and enabling determination of relative
+contributions to risk. We will shed light on heterogeneity in outcomes by connecting subgroups based
+on daily dynamics of emotion and physiological reactivity and regulation to neural reactivity and
+suicidality. Our age range and transdiagnostic, suicidal comparison group allows us to determine
+what is unique about mental health in ASD and how aging may play a role. We will employ novel means
+to disseminate this critical information to the community with the help of our team of autistic
+partners from diverse backgrounds. This process will ensure that our Center will not only engage
+individuals from groups that have been marginalized, but will also create and maintain mutually
+beneficial and rewarding relationships that will enhance and enrich our research sample, outcomes,
+and overall impact.
+
+=== [38] reporter:5P20GM104318-10 | 2022 | EUR 1.91M | National Institute of General Medical Sciences
+TITLE: Comparative Biology of Tissue Repair, Regeneration and Aging
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+OVERALL PROJECT SUMMARY Regeneration of damaged and lost tissues is limited in humans and other
+mammals. However, robust regeneration is the norm for numerous diverse invertebrates and lower
+vertebrates. COBRE Phase I, Comparative Biology of Tissue Repair, Regeneration and Aging, played a
+central role in establishing and growing the Kathryn W. Davis Center for Regenerative Biology and
+Medicine (Davis Center) at the MDI Biological Laboratory (MDIBL) and in dramatically improving the
+institution’s research environment. The Davis Center was founded on the guiding principle that
+studying diverse animal models would lead to a detailed and predictive understanding of the cellular
+and molecular mechanisms of tissue and organ regeneration, and an understanding of why these
+processes are poorly active in most human tissues and of why they decline with disease and aging.
+This in turn would lead to a rational foundation for development of regenerative medicine therapies,
+particularly small molecule drug candidates capable of stimulating tissue regeneration and slowing
+or reversing aging-induced degenerative changes in patients. COBRE Phase I supported four
+early-career Project Leaders and one mid-career Project Leader. All five Project Leaders graduated
+from Phase I with independent grant support. The average time for graduation of the four
+early-career Project Leaders was 2.8 years. Phase I Project Leaders also achieved multiple other
+successes including publication of significant peer-reviewed papers, creation of intellectual
+property, receipt of foundation and R21 grants and significant peer recognition. Other noteworthy
+successes include further development and patenting of MSI-1436, the only small molecule known to
+stimulate regeneration of the adult mammalian heart following a heart attack, discovery of two small
+molecules with potential to reverse chemotherapy-induced peripheral nerve damage, development of new
+disease models and research tools, and formation of a growing IDeA program/Maine state government
+partnership that allowed MDIBL to obtain $3M in voter-approved state bond funding to expand research
+infrastructure. COBRE Phase II will continue to support the growth and development of the Davis
+Center in order to establish a self-sustaining critical mass of investigators. Three new
+early-career scientists, Drs. Sam Beck, James Godwin and Jarod Rollins, have been recruited as Phase
+II Project Leaders. Recruitment of a fourth Davis Center faculty member is underway. Research
+programs of Phase II Project Leaders are highly synergistic with and bring new scientific expertise
+to the Davis Center. Essential services and resources will be provided to the Project Leaders and
+larger scientific community by continuation of the Comparative Functional Genomics Core and
+Comparative Animal Models Core. COBRE Phase II will greatly enhance the development of the Davis
+Center and MDIBL, which in turn will contribute to the continued enhancement of the biomedical
+research environment in Maine.
+
+=== [39] reporter:1ZIANS003137-12 | 2024 | EUR 1.91M | National Institute of Neurological Disorders and Stroke
+TITLE: Experience-dependent regulation of dendrite morphogenesis and plasticity
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Over the past few years, our research has revealed critical functions of cholinergic receptor
+signaling and neuron-glia lipid trafficking in regulating synapse maturation, dendrite development
+and the adaptive response to alterations in neuronal activities. Expanding upon these findings, we
+are incorporating multi-omics analysis with genetics and imaging studies to gain a systematic
+understanding on how the nervous system adapts to the changing internal and external environment.
+Our ongoing investigations are concentrated on three areas. Firstly, we are studying the central
+cholinergic synapse organization, development, and plasticity. By using chemical genetics proximity
+labeling approach, we identified proteins in the vicinity of two nAchR subunits and effectively
+determined the molecular composition of the postsynaptic compartment of central cholinergic synapses
+with high spatial resolution. We are planning to characterize a subset of the newly identified
+synaptic proteins and evaluate their roles in activity-dependent structural and functional
+plasticity. Secondly, our genetic studies have identified novel lipid binding proteins highly
+expressed in the Drosophila CNS glia. These findings present us unique opportunities to monitor and
+manipulate lipid trafficking in both developing and aging brains. By conducting further
+characterizations of these lipid binding proteins in vivo, we aim to elucidate the structural
+mechanisms regulating their ligand binding and release, investigate the cell biological processes
+associated with their intra- and intercellular lipid trafficking, and explore their contributions to
+brain lipid and redox homeostasis under physiological and pathological conditions. Lastly, as a new
+research direction, we are investigating the molecular machinery associated with the trafficking and
+release of neuropeptides and the role of neuromodulation in regulating behavioral plasticity. Our
+cellular model, the larval LNvs, serves as a platform for investigating this process, as they
+produce and release a key neuropeptide in the circadian output circuit, Pigment Dispersing Factor
+(PDF). Through LNv-specific transcriptome analyses and genetic studies, we have identified a group
+of molecules influencing the trafficking and circadian-regulated release of PDF. Using combined
+genetics, imaging and behavioral analysis, we are elucidating the functions of these candidate genes
+and the fundamental molecular mechanism controlling the neuropeptide release. In summary, our
+primary goal is to unravel the cellular and molecular mechanisms regulating the brain’s ability to
+adjust its structural and functional properties while ensuring stability in its output. In addition
+to identifying shared organizational principles governing the synapse and circuit development across
+insects and higher organisms, we have also uncovered remarkable molecular adaptations within the
+Drosophila genome. These adaptations have given rise to proteins with distinctive functional
+properties that hold promise for both research and therapeutic applications.
+
+=== [40] reporter:1ZIADK061000-27 | 2024 | EUR 1.88M | National Institute of Diabetes and Digestive and Kidney Diseases
+TITLE: Genetic Approaches To Understanding Organ Development and Function
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Our research is based on a multidisciplinary approach, using tools of biochemistry, genetics and
+computational science. In this reporting period, our studies on genetic control mechanisms executed
+by the JAK/STAT signaling pathway resulted in two publications, one variant-specific immune
+responses to SARS-CoV-2 (PMID: 38307916) and one on alternative transcriptome splicing in SARS-CoV-2
+patients (PMID: 38414855). We also made major progress in understanding how interleukins and immune
+regulators impact kidney disease, specifically glomerulosclerosis (PMID: 38414855), and the impact
+of transcription enhancers on sexual dimorphic genetic programs in the kidney (PMID: 38529500).
+Lastly, we participated in an international partnership to develop computations programs to advance
+epistasis detection in complex diseases (PMID: 39175109). Hormonal control of genetic programs in
+the mammary gland and immune cells Our lab continues to investigate how hormones control genetic
+programs in the mammary gland that lead to a successful pregnancy and lactation. Our studies
+identified regulatory elements that activate expression of a gene during pregnancy and lactation by
+more than 1000-fold. Other layers of gene regulation include the alternative splicing to primary
+transcripts that yields different mRNA species from individual genes. Such alternatively spliced
+mRNAs could also modulate the immune response to viral infection. In research published during this
+reporting period (PMID: 38414855) we investigated alternative splicing in patients infected with
+different SARS-CoV-2 variants. The COVID-19 pandemic, caused by the coronavirus SARS-CoV-2, and its
+subsequent variants has underscored the importance of understanding the host-viral molecular
+interactions to devise effective therapeutic strategies. A significant aspect of these interactions
+is the role of alternative splicing in modulating host responses and viral replication mechanisms.
+Our study sought to delineate the patterns of alternative splicing of RNAs from immune cells across
+different SARS-CoV-2 variants and vaccination statuses, utilizing a robust dataset of 190 RNA-seq
+samples from our previous studies, encompassing an average of 212 million reads per sample. We
+identified a dynamic alteration in alternative splicing and genes related to RNA splicing were
+highly deactivated in COVID-19 patients and showed variant- and vaccination-specific expression
+profiles. Overall, Omicron-infected patients exhibited a gene expression profile akin to healthy
+controls, unlike the Alpha or Beta variants. However, significantly, we found identified a subset of
+infected individuals, most pronounced in vaccinated patients infected with Omicron variant, that
+exhibited a specific dynamic in their alternative splicing patterns that was not widely shared
+amongst the other groups. Our findings underscore the complex interplay between SARS-CoV-2 variants,
+vaccination-induced immune responses, and alternative splicing, emphasizing the necessity for
+further investigations into these molecular cross-talks to foster deeper understanding and guide
+strategic therapeutic development. A major focus is on understanding genetic programs controlling
+normal kidney physiology and disease. As part of this we have identified transcription control
+elements, called enhancers, that are specific to kidney cells and regulate sexual dimorphic gene
+expression (PMID: 38529500). Transcription enhancers are genomic sequences regulating common and
+tissue-specific genes and their disruption can contribute to human disease development and
+progression. Klotho, a sexually dimorphic gene specifically expressed in kidney, is well-linked to
+kidney dysfunction and its deletion from the mouse genome leads to premature aging and death. Our
+study identified two candidate Klotho enhancers using H3K27ac epigenetic marks and transcription
+factor binding and investigate their functions, individually and combined, through CRISPR-Cas9
+genome engineering. We discovered that only the distal (E1), but not the proximal (E2) candidate
+region constitutes a functional enhancer, with the double deletion not causing Klotho expression to
+further decrease. E1 activity is dependent on HNF1b transcription factor binding site within the
+enhancer. Further, E1 controls the sexual dimorphism of Klotho. Our longstanding expertise revolves
+around transcription programs regulated by cytokines and interleukins through STAT transcription
+factors. We used our expertise and experimental genetic tools and partnered with others in a
+multicenter investigation of immune pathways in kidney disease (PMID: 38414855). During glomerular
+diseases, podocyte-specific pathways can modulate the intensity of histological disease and
+prognosis. The therapeutic targeting of these pathways could thus improve the management and
+prognosis of kidney diseases. The Janus Kinase/Signal Transducer and Activator of Transcription
+(JAK/STAT) pathway, classically described in immune cells, has been recently described in detail in
+intrinsic kidney cells. Our study shows, for the first time, that STAT5 is activated in human
+podocytes in patients with focal segmental glomerulosclerosis (FSGS). We demonstrated that
+podocyte-specific Stat5 inactivation aggravates the structural and functional alterations in a mouse
+model of FSGS. We show that interleukin 15 (IL-15), a classical activator of STAT5 in immune cells,
+increases STAT5 phosphorylation in human podocytes, and its administration alleviates glomerular
+injury in vivo by maintaining autophagic flux in podocytes. We suggest that activating podocyte
+STAT5 with commercially available IL-15 represents a potential new therapeutic avenue for FSGS.
+Mutations, so called single nucleotide polymorphisms (SNP), within the human genome have been linked
+to diseases. However, most heritable diseases are polygenic, i.e. dependent on the presence of more
+than one mutation. To comprehend the underlying genetic architec
+
+=== [41] reporter:5P20GM144265-02 | 2024 | EUR 1.87M | National Institute of General Medical Sciences
+TITLE: Regulation of Cellular Behavior in Response to Extracellular Cues
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+OVERALL ABSTRACT The long-term goal of this Center for Biomedical Research Excellence (COBRE) is to
+help grow the burgeoning biomedical research industry in Maine by positioning the University of
+Maine (UMaine) as a biomedical research and training hub that supports and recruits outstanding
+junior faculty while strengthening our unique statewide graduate program. This COBRE is focused on
+Regulation of Cellular Behavior in Response to Extracellular Cues. All cells interpret and respond
+to their environment, yet the mechanisms by which cells process signaling inputs and parse them into
+discrete cell behaviors are not fully understood. How does G protein coupled receptor signaling
+regulate polarity in different cell types? How does the extracellular environment regulate muscle
+cell behaviors such as migration and regeneration? How do viruses modify cells to cause disease?
+Five research projects led by early career investigators from UMaine and Mount Desert Island
+Biological Laboratory (MDIBL) will address cell-microenvironmental signaling across three contexts :
+mechanisms of viral infection in cultured cells and zebrafish; gradient tracking in yeast, and
+mechanisms of muscle homeostasis in zebrafish. The five research projects are: Cellular
+reprogramming in Persistent versus Lytic JC Viral Infections (Maginnis); Motility and Guidance
+Signals Control Migration of Muscle Precursors (Talbot); Mechanisms of GPCR-induced Autophagy
+(Kelley); Apelin Signaling in Muscle Regeneration (Madeleine), and Innate Immune Function in
+Influenza-Associated Myopathy (King). Each project leverages the unique expertise of research
+project leaders while advancing the theme of extracellular impacts on cell behavior. Projects
+exploit existing IDeA resources and the proposed new core facility in Microscopy and Image Analysis.
+This COBRE further enhances partnerships among biomedical research institutions in Maine. As
+director of a state-wide graduate program with 54 graduate students and >150 faculty, Dr. Henry has
+the leadership experience to guide this COBRE. This COBRE will accelerate the careers of our Junior
+Investigators by adding: external senior scientists as mentors, state-of-the art live imaging, image
+analytics, and an expanded zebrafish facility to strengthen the biomedical research infrastructure.
+UMaine is the only institution in the state that grants doctoral degrees in biomedical science and
+biomedical engineering. This COBRE, which will be UMaine’s first, will transform UMaine’s ability to
+serve as the academic leader for biomedical research in Maine and feed the growing biomedical
+research industry in Maine. This research will elucidate basic biological mechanisms underlying cell
+behavior, and also has the potential to inform future treatment of infectious diseases,
+neuromuscular disorders, and muscle aging and regeneration.
+
+=== [42] reporter:5P20GM144265-03 | 2025 | EUR 1.87M | National Institute of General Medical Sciences
+TITLE: Regulation of Cellular Behavior in Response to Extracellular Cues
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+OVERALL ABSTRACT The long-term goal of this Center for Biomedical Research Excellence (COBRE) is to
+help grow the burgeoning biomedical research industry in Maine by positioning the University of
+Maine (UMaine) as a biomedical research and training hub that supports and recruits outstanding
+junior faculty while strengthening our unique statewide graduate program. This COBRE is focused on
+Regulation of Cellular Behavior in Response to Extracellular Cues. All cells interpret and respond
+to their environment, yet the mechanisms by which cells process signaling inputs and parse them into
+discrete cell behaviors are not fully understood. How does G protein coupled receptor signaling
+regulate polarity in different cell types? How does the extracellular environment regulate muscle
+cell behaviors such as migration and regeneration? How do viruses modify cells to cause disease?
+Five research projects led by early career investigators from UMaine and Mount Desert Island
+Biological Laboratory (MDIBL) will address cell-microenvironmental signaling across three contexts :
+mechanisms of viral infection in cultured cells and zebrafish; gradient tracking in yeast, and
+mechanisms of muscle homeostasis in zebrafish. The five research projects are: Cellular
+reprogramming in Persistent versus Lytic JC Viral Infections (Maginnis); Motility and Guidance
+Signals Control Migration of Muscle Precursors (Talbot); Mechanisms of GPCR-induced Autophagy
+(Kelley); Apelin Signaling in Muscle Regeneration (Madeleine), and Innate Immune Function in
+Influenza-Associated Myopathy (King). Each project leverages the unique expertise of research
+project leaders while advancing the theme of extracellular impacts on cell behavior. Projects
+exploit existing IDeA resources and the proposed new core facility in Microscopy and Image Analysis.
+This COBRE further enhances partnerships among biomedical research institutions in Maine. As
+director of a state-wide graduate program with 54 graduate students and >150 faculty, Dr. Henry has
+the leadership experience to guide this COBRE. This COBRE will accelerate the careers of our Junior
+Investigators by adding: external senior scientists as mentors, state-of-the art live imaging, image
+analytics, and an expanded zebrafish facility to strengthen the biomedical research infrastructure.
+UMaine is the only institution in the state that grants doctoral degrees in biomedical science and
+biomedical engineering. This COBRE, which will be UMaine’s first, will transform UMaine’s ability to
+serve as the academic leader for biomedical research in Maine and feed the growing biomedical
+research industry in Maine. This research will elucidate basic biological mechanisms underlying cell
+behavior, and also has the potential to inform future treatment of infectious diseases,
+neuromuscular disorders, and muscle aging and regeneration.
+
+=== [43] reporter:5P20GM152330-02 | 2025 | EUR 1.84M | National Institute of General Medical Sciences
+TITLE: UNE Center for Cell Signaling Research
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Cellular systems such as the nervous, immune, vascular systems and bone do not work in isolation,
+but are functionally integrated and communicate extensively both in health and disease states.
+Defects or dysfunction in cell signaling are fundamental drivers of human disease, and our ability
+to meet contemporary clinical challenges, including neurodegenerative and metabolic disease, chronic
+pain and optimizing healthy aging, requires a broader understanding of mechanisms of intercellular
+and intracellular communication. The proposed UNE Center for Cell Signaling Research (CCSR) will
+build a critical mass of talented investigators with a broad research emphasis on cellular
+metabolism, inflammation and aging. The initial Research Project Leaders (RPLs), selected through a
+competitive process, bring diverse and complementary expertise from across UNE colleges and
+departments. Their research projects address discrete clinical challenges by investigating
+fundamental cell biological mechanisms that may have broad ramifications for human disease. New
+faculty recruitment and support of a pilot project program will ensure a continued pipeline of RPLs
+and further grow the Center. Investigators will be provided with a structured mentorship program to
+support both their professional and research program development in their progression to independent
+funding and beyond. The proposed Center will also expand the research infrastructure at UNE to
+support the innovative research programs of investigators in cell signaling. The proposed In Vitro
+Analytical Core will support the research of the RPLs with outstanding instrumentation and
+innovative services that are not broadly available elsewhere in the region, including primary cell
+and cell line culturing, transfection and analysis through functional imaging as well as
+transcriptional and protein-based analysis. The core will be housed in newly renovated research
+space that will be contiguous with an existing UNE Histology and Imaging Core, providing a unique
+suite of resources to support research at UNE. Institutional commitments include additional
+protected research time for RPLs and institutional matching funds for the pilot project program. In
+addition, the university has committed to hiring 3 additional investigators whose research programs
+will complement those of the existing faculty. The Center will also benefit from strong continued
+institutional investment into research infrastructure, as well as well-established collaborations
+with neighboring IDeA state programs in Maine and New Hampshire. Research infrastructure will be
+enhanced by laboratory renovations, purchasing new instrumentation, and key support for personnel.
+Additional institutional support has been committed for each of these. With sound financial and
+administrative management and regular assessments of performance with specified bench marks, the
+CCSR will be well- positioned to make a significant impact in optimizing healthy, pain-free aging
+and in finding new treatments for neurodegenerative and metabolic diseases.
+
+=== [44] reporter:1ZICTR000037-06 | 2020 | EUR 1.81M | National Center for Advancing Translational Sciences
+TITLE: Analytical Chemistry
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The Analytical Chemistry team has continued to perform the core responsibility of purifying samples
+with material in the range of milligrams to grams. Major and minor components (< 0.1 percent) have
+been isolated for additional testing and characterization. The teams automated sample processing
+protocol allows for dispensing into 1D barcoded vials, Matrix 2D barcoded tubes and/or 96-well
+plates for efficient tracking, storing, and testing. The entire process from receiving the sample to
+final plating is completed within one week. While the group uses a variety of liquid chromatographs
+to determine identity and purity, single quadrupole liquid chromatography/mass spectrometry
+instrumentation is utilized for high-throughput automated analysis. Due to the wide variety of
+analytes tested, the teams range of analytical detectors includes ultraviolet (UV), mass
+spectrometry (MS; positive and negative mode), and evaporative light scattering detector and
+fluorescence (ELSD). Time-of-flight mass spectrometry (TOF-MS) is employed to achieve formula
+confirmation and identity determination of unknowns. The chemical and enantiomeric purity of chiral
+compounds is routinely determined within the groups full-scale chiral laboratory. Methods
+development with the chiral chromatography screening protocol involves the utilization of various
+chiral stationary phases in conjunction with multiple mobile phase conditions. The use of an inline
+chiral detector allows for the determination of relative optical rotation. Sample purification on a
+scale of up to hundreds of milligrams is possible. We have expanded our chiral purification
+capabilities through the addition of two new semi-preparative chiral columns. These columns contain
+chiral stationary phases unique from our other columns enabling a wider range of separation methods
+and conditions. Our vibrational circular dichroism (VCD) spectrometry platform continues to be
+developed to determine the absolute stereochemistry for the ever increasing number of chiral
+compounds being synthesized at NCATS. Progress is being made in the deployment of a conformational
+analysis software onto the NCATS high-performance computing (HPC) cluster. This will greatly reduce
+the computing time needed to generate predicted VCD spectra for comparison with experimental
+results. Additionally, this software can be applied to the computer-assisted 3D structure
+elucidation (CASE-3D) platform we are developing, which will utilize isotropic and anisotropic NMR
+data. The expansion of DPIs focus beyond small molecules to alternate therapeutic modalities
+necessitates constant advancement in our NMR and MS analytical capabilities through the acquisition
+and incorporation of more advanced instrumentation and techniques in order to detect, identify,
+quantify, and validate these new chemical entities. For NMR spectroscopy, we continued the
+implementation of routine methods for the analysis of peptides. Ligand-protein binding experiments
+were utilized to investigate protein-protein interactions (PPIs) for various disease states to aid
+in therapeutic development. Explorations into the use of Mestrelabs Stereofitter software were
+initiated to determine the 3D conformation of chiral small molecules. For mass spectrometry, we
+acquired a field asymmetric ion mobility spectrometry (FAIMS) Pro module for installation on our
+Thermo Fisher Orbitrap Fusion Lumos MS system, which will be extremely beneficial to proteomics
+analysis. The FAIMS Pro interface is an ion separation technique based on differences in an ions
+mobility between two electrodes at varying electric fields. This technique lets selected ions pass
+from the ion source to the mass spectrometer improved selectivity (greater signal-to-noise ratio),
+improved detection limits, and increased throughput. These improvements not only minimize the cell
+counts require per sample but will enable the discovery of low quantity proteins within the cells.
+Another advancement to our proteomics program was the development of a universal 384-well proteomic
+sample preparation platform for high-throughput screening and biomarker discovery. The workflow
+utilizes an Agilent Bravo liquid handler to automate the majority of process steps leading to
+greater efficiency, higher throughput, and reduced costs. The proteomics sample preparation platform
+was so successful that we are in the process of acquiring another Agilent Bravo system to meet
+research demands. Our work on antibody-drug conjugate (ADC) screening project continues to expand
+and we are currently purchasing an high performance mass spectrometer that is designed for intact
+protein analysis in the native state to accommodate these growing needs. We completed the
+installation of a second Agilent RapidFire-QQQ high-throughput mass spectrometry system. This allows
+us to utilize one RapidFire system to methods development and small-scale screens (<10,000 samples)
+while the other system is a full production unit dedicated to large-scale biological assays. The
+Sample Management and Resource Tracking (SMART) laboratory information management system (LIMS), in
+conjunction with our centralized purification platform is utilized at DPI for sample submission,
+compound purification, compound processing, sample registration, compound inventory, sample
+tracking, data retrieval, and data management. This semi-automated workflow is continuously being
+modified and expanded based on changing scientific needs. We are in the process of replacing our
+aging Sirius MultiTasker liquid handling system with a more advanced Sirius OmniTasker platform. In
+addition to greater automated capabilities, the OmniTasker was designed to hold two process batches
+of samples compared to the current single batch improving efficiency and productivity. Furthermore,
+we have acquired a Sirius MicroTasker customized for preparing samples within NMR tubes that will
+provide a time savings to the medicinal chemists. In association with the A Specializ
+
+=== [45] reporter:1S10OD032437-01 | 2022 | EUR 1.73M | NIH Office of the Director
+TITLE: Acquisition of 200kV Glacios Cryo Transmission Electron Microscope
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary/Abstract We propose to acquire a state-of-the-art 200 kV Glacios Cryo transmission
+electron microscope at Case Western Reserve University School of Medicine (CWRU SOM) for structural
+studies of biological macromolecular assemblies. Cryo-electron microscopy (Cryo-EM) has emerged as
+an unparalleled tool for high-resolution structure determination of macromolecules ranging from
+sizes as low as 40 kDa and as high as several MDa. The technology allows for imaging samples in
+solution, native membrane bilayers, or even in their physiological cellular environment. This new
+microscope will extend the capabilities of the Cryo-EM Core Facility at CWRU SOM in single-particle
+Cryo-EM and Cryo- electron tomography (Cryo-ET). Currently, the Cryo-EM needs of the research
+community in the Greater Cleveland area are supported by three transmission electron microscopes:
+Tecnai T12, Tecnai TF20, and most recently added Krios G3i. The Cryo-EM Core provides access to
+users from CWRU, its regional affiliate institutions, and other Universities in Northeast Ohio. The
+major technological advancements in Cryo-EM have made this methodology easier to adopt for diverse
+biological systems. Combined with NIH-supported Cryo-EM training programs and increased
+institutional support for collaborative initiatives, these developments have led to a major increase
+in the demand for pursing Cryo-EM. While our high- resolution instrumentation is state-of-the-art,
+our productivity is severely affected by our aging screening microscopes, which, although maintained
+under continued service contracts, have increasingly frequent and prolonged periods of repair. The
+proposed Glacios microscope will meet the substantial needs of seven major users and eight minor
+users. This microscope is a major advancement over our current 200 kV microscope featuring better
+electron optics, column stability, and more importantly is equipped with a larger capacity sample-
+handling robot that is directly compatible with the Krios G3i. Advanced features of the proposed
+instrument that are critical to the success of the proposed experiments include: a) significantly
+improved sensitivity for smaller- sized samples with poor contrast; b) enhanced throughput for
+Cryo-EM/Cryo-ET sample screening, optimization, and high-resolution data collection to cater to the
+growing needs of the structural biologists; c) ease of training, and better integration within the
+existing Cryo-EM workflow. The NIH-funded research projects that will directly benefit from this
+instrumentation include the structural studies of a number of clinically relevant targets such as
+ion channels, membrane signalling receptors, prion proteins, immune receptors, and viruses. Overall,
+the acquisition of the new microscope will expand the scope of biomedical research and further
+strengthen the multidisciplinary collaborative interactions within our scientific community here in
+the Greater Cleveland area.
+
+=== [46] reporter:1RF1AG068296-01 | 2020 | EUR 1.63M | National Institute on Aging
+TITLE: Cellular senescence and Alzheimer's disease
+RULES: Keyword evidence for fundamental_aging (3.3) and age_related_disease (3.087) is too close to call (margin 0.213 < 0.3; relative margin 0.065 < 0.1 or evidence floor not met).
+ABSTRACT:
+PROJECT SUMMARY / ABSTRACT Senescent cells develop a senescence-associated secretory phenotype
+(SASP) involving pro-inflammatory and pro-oxidative factors that can elicit deleterious
+paracrine-like effects on neighboring cells. Independently of the original stressor, senescence can
+also spread from senescent to non-senescent bystander cells in a process known as senescence-induced
+senescence (SIS). Neurons were historically considered to be unable to undergo cellular senescence.
+Recent research has however provided evidence that neurons may be able to undergo senescence during
+normal aging and disease. Senolytic drugs, which selectively kill senescent cells, have for example
+been shown to improve functions in the brains of animal models of Alzheimer’s disease (AD) and
+related dementias. This new approach is of great importance—clinical trials investing efficacy of
+amyloid beta (Aβ) antibodies have led to disappointing failures and no known disease-modifying
+treatments have to date been identified. There is however a caveat to the use of senolytics for AD
+and related disorders. It is not known whether senolytics kill senescent glial cells and spare
+neurons because they cannot senesce, or if senolytics not only kill senescent glial cells but also
+senescent neurons. Senescent cells in the periphery are normally removed by immune cells including
+natural killer (NK) cells. Due to its unique immune privilege, senescent cells in the brain may
+initially be able to evade removal by NK cells, allowing for an increase and spread in the overall
+senescent cell load. When immune privilege becomes compromised in later stages of the disease, this
+could result in a large-scale removal of senescent cells including neurons. It is unclear whether
+this would be beneficial or detrimental to global brain health. We will initially assess neuronal
+senescence in mixed primary human neuronal-astrocytic 2D and 3D cultures recently generated by our
+laboratory in response to Abeta-mediated stress. We will then determine the role of senescence in
+vivo utilizing a well-characterized AD mouse model, the 3xTg AD line. This line has been crossed
+with a p16-3MR transgenic mouse model that allows the identification and inducible ablation of
+senescent cells. Use of these models will allow us to determine: (1) the ability of neurons,
+astrocytes, and other CNS cell types to undergo stress-mediated senescence and a SASP, (2) whether
+this is accompanied by an Abeta-independent SIS, (3) whether late-stage losses in immune privilege
+enables clearance of senescent cells via infiltration of peripheral immune cells, and (4) whether
+senescent cell removal is beneficial or detrimental and at what stage of disease progression.
+
+=== [47] reporter:75N95024C00027-P00003-9999-1 | 2025 | EUR 1.63M | National Institute of Mental Health
+TITLE: THE NIH NATIONAL NEUROHIV TISSUE CONSORTIUM (NNTC) - NEW CLINICAL SITE
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The purpose of this contract is to establish a new National NeuroHIV Tissue Consortium (NNTC)
+Clinical site as a critical resource for catalyzing high priority research in NeuroHIV (CNS
+complications in people with HIV), including studies to understand the mechanisms of HIV
+neuropathogenesis, aging with long-term HIV and ART, and research towards an HIV cure. The NNTC
+clinical site shall collect, store, and provide clinical data and well characterized biological
+specimens, including antemortem/ postmortem tissue from study volunteers and/or organ donors with
+HIV as well as HIV-negative controls. The establishment of a new NNTC clinical site is necessary to
+ensure geographic diversity in the southern and midwestern United States that are actively being
+sought.
+
+=== [48] reporter:1ZIAAG000390-03 | 2018 | EUR 1.60M | National Institute on Aging
+TITLE: Epigenomic analysis of primary immune cells from young and old animals
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+In our publication (Oh KS et al. 2018 Journal of Immunology), we uncovered an unexpected role of
+Ikaros, a protein which is known to promote immune cell development away from the myeloid
+(phagocytic) lineage. Not only is the protein expressed in phagocytic (pathogen-engulfing) cells,
+but it also regulates the expression of critical genes that are required to fight off infectious
+agents. Our study sheds a new light on the biological importance of Ikaros in a new cellular
+context, myeloid cells, and suggests that pharmacological inhibition of Ikaros with available
+compounds will modulate inflammatory responses in phagocytic cells of the immune system. In another
+subproject, we aimed to improve the genomic TF footprinting protocol to address the difficulty of
+capturing highly dynamic interactions of some TFs with target DNA elements in chromatin. The
+additional step which we introduced in the protocol can be easily incorporated by any laboratory. We
+have performed the modified assays and generated a panel of sequencing libraries to systematically
+assess how the various protocols affect the genomic footprints of dynamic proteins. The enrichment,
+complexity, and quality of each library was confirmed, and all the libraries were subject to
+ultra-deep Illumina paired-end read sequencing. The resulting dataset represents an
+unprecedented-scale resource data for the epigenetics and immunology communities, in addition to
+providing an insight on the effects of various crosslinking protocols (Oh KS et al. manuscript in
+preparation). Tissue-resident macrophages play a major role in tissue homeostasis. They have also
+been associated with age-related pathological inflammation. It is important to understand how
+macrophages are epigenetically and functionally altered during aging and in age-dependent chronic
+inflammation. To address this, we expanded our efforts to tissue-resident macrophages including
+peritoneal, and brain-resident macrophages. We performed ChIP-seq of a few histone marks, ATAC-seq,
+and RNA-seq using macrophages (BMDM) from young and aged mice (NIA aged colony at Charles River Lab)
+treated with lipopolysaccharide (LPS) for 0, 3, 8 hours. The analysis of these data is ongoing and
+so far has revealed intriguing age-related differential basal gene expression and responses to an
+inflammatory stimulus.
+
+=== [49] reporter:75N95024C00027-0-9999-1 | 2024 | EUR 1.60M | National Institute on Drug Abuse
+TITLE: THE NIH NATIONAL NEUROHIV TISSUE CONSORTIUM (NNTC) - NEW CLINICAL SITE
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The purpose of this contract is to establish a new National NeuroHIV Tissue Consortium (NNTC)
+Clinical site as a critical resource for catalyzing high priority research in NeuroHIV (CNS
+complications in people with HIV), including studies to understand the mechanisms of HIV
+neuropathogenesis, aging with long-term HIV and ART, and research towards an HIV cure. The NNTC
+clinical site shall collect, store, and provide clinical data and well characterized biological
+specimens, including antemortem/ postmortem tissue from study volunteers and/or organ donors with
+HIV as well as HIV-negative controls. The establishment of a new NNTC clinical site is necessary to
+ensure geographic diversity in the southern and midwestern United States that are actively being
+sought.
+
+=== [50] reporter:1P42ES030990-01 | 2020 | EUR 1.56M | National Institute of Environmental Health Sciences
+TITLE: Metals and Metal Mixtures: Cognitive Aging, Remediation and Exposure Sources (MEMCARE)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+SUMMARY/ ABSTRACT Health concerns of aging—especially cognitive decline and memory loss in older
+age—have huge public health implications as the United States and world populations are shifting in
+distribution toward older ages. While a variety of toxicants contribute to cognitive aging, we are
+focused on heavy metals (Pb, As, Mn, Cd, Cr, and Se) and metal mixtures because, despite years of
+regulation, clean-up, and remediation efforts, metal contamination in many Superfund sites persists
+and continues to threaten public health. To our knowledge, there is no current Superfund Research
+Center (SRC) that specifically addresses the health effects, risk, and remediation of metal
+contaminants in relation to their effects on cognitive health in older age. To fill this critical
+gap and to address the pressing public health problems posed by environmental metal contaminants on
+cognitive aging, we propose a new SRC entitled Metals and Metal Mixtures: Cognitive Aging,
+Remediation and Exposure Sources (MEMCARE). The overall goal of MEMCARE-SRC is to understand and
+mitigate effects of exposure to metals and metal mixtures on late-life cognitive health. To achieve
+this goal, we have designed a highly integrated, solution-based program of 4 Research Projects and 4
+Cores. Project 1 uses an innovative approach to assess early-life exposures and late-life cognitive
+function in a unique population of adults now in their 60s and 70s who donated baby teeth as
+children. Project 2 investigates basic biological mechanisms underlying effects of early-life
+exposures using both in vitro and in vivo approaches. Project 3 examines the role of surface and
+groundwater treatment systems in spatial and temporal patterns of metals in water across the US,
+including Superfund sites. Project 4 will develop novel nanostructured adsorbents to remove metals
+from water, potentially providing improved remedies for our populations in Project 1 and the
+Community Engagement Core (CEC). Our CEC will partner with an urban, industrially-contaminated
+community in Boston, MA, and a rural community directly affected by two Superfund sites in Colorado.
+The Data Management and Analysis Core (DMAC) will provide data management, biostatistical, and
+bioinformatics support and ensure resource sharing and reproducible science for all Projects and
+Cores. The Administrative Core will provide oversight and communicate our science to stakeholders.
+The Research Experience and Training Coordination Core (RETCC) will embed with all aspects of our
+Center to provide doctoral and postdoctoral trainees with relevant experiences in all aspects of
+work in the SRC.
+

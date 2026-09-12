@@ -1,0 +1,70 @@
+﻿category,term,words,n_pos,n_bg,lift,eur_pos_m,is_trap,example_record_id,context
+age_related_disease,fractures,1,4,0,124.56,1.77,False,swecris:2018-00462_VR, – Hip Screws or (Total) Hip Replacement for undisplaced femoral neck fractures in elderly patients Femoral neck fractures (FNFs) are a great challen
+age_related_disease,complications,1,3,0,96.88,10.86,False,swecris:2019-01382_VR,CanOptiPhys: OPTImizing PHYSical function before surgery: effects on complications and quality of life after gastrointestinal CANcer surgey in older peo
+age_related_disease,condition,1,3,0,96.88,1.15,False,reporter:5R01AG069915-03,"the genitourinary syndrome of menopause (GSM), a progressive, chronic condition related to estrogen decline"
+age_related_disease,retinal,1,3,0,96.88,0.86,False,reporter:1K99EY034938-01,"Partial epigenetic reprogramming of retinal pigment cells in age-related degeneration, dysfunction, and injury Pa"
+age_related_disease,randomized controlled trial,3,3,1,32.29,1.48,False,swecris:2022-01122_Forte,
+age_related_disease,randomized controlled,2,3,1,32.29,1.48,False,swecris:2022-01122_Forte,
+age_related_disease,controlled trial,2,3,2,19.38,1.48,False,swecris:2022-01122_Forte,
+age_related_disease,risk factors,2,3,6,7.45,2.45,False,cordis:645648,"states to innovative translation in applied myology. Major underlying risk factors of chronic muscle force loss are ageing, inactive lifestyles, and unb"
+care,person centred,2,3,1,203.36,1.07,False,swecris:2024-01840_Forte,
+fundamental_aging,nutrient,1,5,0,30.35,1.55,False,swecris:2024-06463_VR,d aging A hallmark of aging is the decline in the ability to adapt to nutrient availability (metabolic flexibility).
+fundamental_aging,reproduction,1,5,0,30.35,4.65,False,reporter:5R01GM114170-05,nction of the underlying neural circuit responsible for regulation of reproduction.
+fundamental_aging,mirnas,1,5,0,30.35,1.95,False,reporter:1R21AG054894-01A1,
+fundamental_aging,regulating,1,5,0,30.35,1.26,False,reporter:5R01AG049711-05,Systemic inflammation in regulating the onset and progression of brain aging The goal of the proposed wor
+fundamental_aging,mtdna,1,4,0,24.83,1.46,False,swecris:2015-02657_VR,
+fundamental_aging,lived,1,4,0,24.83,2.33,False,cordis:101041331,lucidating and targeting the mechanisms encoded in the genome of long-lived individuals to improve healthy ageing by studying the genome of long-
+fundamental_aging,underlie,1,4,0,24.83,1.89,False,reporter:5R01AG045036-04, the fundamental epigenetic mechanisms and physiological changes that underlie the effects of poor nutrition during critical periods of development 
+fundamental_aging,brain iron,2,4,0,24.83,1.7,False,swecris:2018-01327_VR,"The impact of genetic, biological and lifestyle factors on brain iron load: Consequences for motor and cognitive functions in adulthood and"
+fundamental_aging,foxo,1,4,0,24.83,1.36,False,reporter:3R01AG027060-11S1,
+fundamental_aging,healthier,1,4,0,24.83,2.64,False,swecris:2024-01444_Forte,"Personalised diet for healthier longevity: the role of dietary changes, sensitive windows of exposure"
+fundamental_aging,rhythms,1,4,0,24.83,0.76,False,reporter:3R01AG065993-03S1,"the onset of age-related declines in health, cognition, and circadian rhythms dietary interventions can support circadian clock function and promot"
+fundamental_aging,mechanisms associated,2,4,0,24.83,2.23,False,reporter:1R21AG085140-01,human brain and adipose and their inter-organ communication Molecular mechanisms associated with pathological tissue aging can be learned by comparing the differ
+fundamental_aging,abilities,1,3,0,19.31,1.12,False,swecris:2017-01759_VR,Longitudinal trajectories of olfactory abilities: What predicts old-age olfactory memory decline? We aim to do a thoro
+fundamental_aging,impairs,1,3,0,19.31,0.49,False,swecris:2025-01999_KI,oach This project addresses a critical gap in understanding how aging impairs wound healing by generating a high-resolution single-cell multi-omics
+fundamental_aging,disrupted,1,3,0,19.31,0.88,False,cordis:659030, important role in synapse maintenance and that synaptic autophagy is disrupted during ageing and in neurodegenerative diseases.
+fundamental_aging,focusing,1,3,0,19.31,3.35,False,swecris:2025-06686_VR,"s project explores how aging affects antibody structure and function, focusing on their role in protecting—or failing to protect—against respiratory"
+fundamental_aging,chromatin,1,3,0,19.31,0.99,False,swecris:2015-03740_VR,"Regulation of aging by DAF-16/FOXO, its cofactors, and the chromatin landscape Regulation of aging by DAF-16/FOXO, its cofactors, and the "
+fundamental_aging,neurogenesis,1,3,0,19.31,1.38,False,reporter:5R01AG066768-04, of enteric Juvenile Protective Factors and their role in stimulating neurogenesis in the adult and ageing Enteric Nervous System Aging is associated wi
+fundamental_aging,regulator,1,3,0,19.31,0.77,False,cordis:101105584,Role of extracellular matrix as regulator of ageing through mechanosignaling we hypothesize that the culprit of
+fundamental_aging,identifying genetic,2,3,0,19.31,0.9,False,reporter:5K01AG046432-02,"rstanding the genetics, physiology and pathology of aging, as well as identifying genetic loci and genes that regulate aging and healthspan"
+fundamental_aging,required,1,3,0,19.31,1.86,False,cordis:637801," attempts to fulfil this ambition, and thus innovative approaches are required to better understand the underlying biology."
+fundamental_aging,systems biology,2,3,0,19.31,10.93,False,reporter:5U19AG057377-02,
+fundamental_aging,axis,1,3,0,19.31,10.5,False,reporter:5U01AG086145-02,
+fundamental_aging,evolutionarily conserved,2,3,0,19.31,0.7,False,cordis:709015,logical mechanisms that govern ageing can facilitate the discovery of evolutionarily conserved factors
+fundamental_aging,evolutionarily,1,3,0,19.31,0.7,False,cordis:709015,logical mechanisms that govern ageing can facilitate the discovery of evolutionarily conserved factors
+fundamental_aging,germline,1,3,0,19.31,2.85,False,reporter:5R01GM100315-07,"ll competition and their mammalian homologues We tested for mammalian germline stem cell competitions, for HSC competitions in aging, and in the pro"
+fundamental_aging,regulated,1,3,0,19.31,0.7,False,reporter:1K99NS109286-01,ding how all stages of autophagy change with age and how autophagy is regulated during aging will be important for developing treatments for age-rela
+fundamental_aging,hypothalamic,1,3,0,19.31,1.06,False,reporter:5R01AG031774-10,ing early aging to induce neuronal inflammation and thus mediates the hypothalamic mechanism of aging
+fundamental_aging,homeostatic,1,3,0,19.31,0.85,False,reporter:5U19AI116491-02,tion interrogate the role of human aging and biological rhythms in GI homeostatic responses to infection
+fundamental_aging,gene expression,2,3,0,19.31,0.83,False,reporter:5R21AG057977-02,tion of Aged Hematopoietic Stem Cells HSCs undergo complex changes in gene expression during aging. Whether these changes are responsible for HSC aging...
+fundamental_aging,tractable,1,3,0,19.31,0.78,False,reporter:1R21AG047931-01A1,ult brain this project seeks to establish Drosophila as a genetically tractable and quickly aging model system to study and manipulate cell cycle re-
+fundamental_aging,itself,1,3,0,19.31,1.94,False,reporter:5R01AG056436-04,ying the genetics of aging A fundamental question is whether aging is itself causal of disease or if aging is the result of generalized accumulati
+fundamental_aging,inflamm,1,3,0,19.31,0.26,False,reporter:5P60AA009803-26,
+fundamental_aging,exhibit,1,3,0,19.31,0.58,False,reporter:1R36AG087309-01, A/C is required for maintaining subsynaptic myonuclei integrity NMJs exhibit structural and functional disruptions including a complete loss of in
+fundamental_aging,stress resistance,2,3,0,19.31,0.75,False,reporter:1P01AG055369-01A1,"n dietary restriction, IGF reduction, and H2S expression, integrating stress resistance and fitness during aging"
+fundamental_aging,interest,1,3,0,19.31,1.37,False,reporter:3P30AG068635-02S1,"ses and the overall functional decline in individuals, there is great interest in understanding its biological underpinnings"
+fundamental_aging,dietary restriction,2,5,1,10.12,1.86,True,reporter:1R01AG052606-01A1,Effects of dietary restriction on age-related neurophysiological adaptations: from behavior to singl
+fundamental_aging,stem cell,2,13,4,8.28,7.87,False,reporter:5R01GM100315-07,"Genes, cells, and pathways that regulate urochordate allogeneic stem cell competition and their mammalian homologues We tested for mammalian ge"
+fundamental_aging,biological mechanisms,2,13,4,8.28,13.28,False,reporter:5R01AG061155-02, Alzheimer's Disease targeting aging is one such approach... Studying biological mechanisms and populations that delay aging may lead to the identification of mo
+fundamental_aging,hematopoietic stem cells,3,4,1,8.28,1.18,False,reporter:1R21AG054894-01A1,CRISPR screen of microRNAs that regulate the regenertive potential of hematopoietic stem cells To gain insight into the molecular mechanisms of age-associated decli
+fundamental_aging,underlying mechanisms,2,4,1,8.28,4.04,False,reporter:5R01AG070704-04,man primate longitudinal model identify early biomarkers/pathways and underlying mechanisms of ELA-related accelerated neural aging trajectories
+fundamental_aging,memory deficits,2,3,1,6.44,1.02,False,swecris:2018-01609_VR,rgetting to adult aging and mood examine how such processes relate to memory deficits in adult aging and mood
+fundamental_aging,extracellular matrix,2,3,1,6.44,0.43,False,reporter:5I01BX002145-03,
+fundamental_aging,epigenetic mechanisms,2,3,1,6.44,1.28,False,reporter:5R01AG045036-04,Priming of Metabolism and Aging in Drosophila dissect the fundamental epigenetic mechanisms and physiological changes that underlie the effects of poor nutrition
+fundamental_aging,molecular mechanisms,2,13,7,4.97,21.12,False,reporter:1R21AG054894-01A1,"ertive potential of hematopoietic stem cells To gain insight into the molecular mechanisms of age-associated decline in HSC function, we propose to investigate "
+fundamental_aging,hematopoietic stem,2,4,2,4.97,1.18,False,reporter:1R21AG054894-01A1,CRISPR screen of microRNAs that regulate the regenertive potential of hematopoietic stem cells To gain insight into the molecular mechanisms of age-associated
+fundamental_aging,immune system,2,4,2,4.97,2.6,False,swecris:2018-06156_VR,erstand the role of antiretroviral therapy in premature ageing of the immune system in HIV-infection unravel the physiological and molecular pathways tha
+fundamental_aging,mechanisms underlying,2,9,5,4.77,4.35,False,cordis:659030,Molecular mechanisms underlying synaptic maintenance and rejuvenation I hypothesize that autophagy pl
+fundamental_aging,stem cells,2,9,6,4.03,5.46,False,reporter:1R21AG054894-01A1,of microRNAs that regulate the regenertive potential of hematopoietic stem cells To gain insight into the molecular mechanisms of age-associated decli
+fundamental_aging,hiv infection,2,3,2,3.86,3.22,False,swecris:2018-06156_VR,
+fundamental_aging,cognitive performance,2,3,2,3.86,0.94,False,swecris:2018-01327_VR," the effects of brain iron accumulation on brain integrity, motor and cognitive performance as we age"
+fundamental_aging,single cell,2,3,2,3.86,1.38,False,swecris:2025-01999_KI,
+fundamental_aging,training program,2,3,2,3.86,0.86,False,reporter:2T32AG058503-06,
+fundamental_aging,nervous system,2,3,2,3.86,0.85,False,reporter:5R01AG066768-04,
+social_population_aging,housing,1,6,0,294.7,1.74,False,swecris:2023-02315_Formas,"being developing novel, accessible and scalable intermediate forms of housing to counteract unwanted social isolation and negative effects on the p"
+social_population_aging,lives,1,4,0,204.02,2.48,False,cordis:643850,
+social_population_aging,journal,1,3,0,158.68,0.27,False,swecris:2024-02201_Forte,"Äldre i Centrum – scientific supplement, journal and website Äldre i Centrum Vetenskapligt Supplement, ÄiCVS, is a new"
+social_population_aging,social inequalities,2,3,0,158.68,4.8,False,swecris:2016-07206_Forte,"that must be filled by families or other agents, which might increase social inequalities."
+social_population_aging,choices,1,3,0,158.68,3.42,False,swecris:2022-00521_VR,
+social_population_aging,old age,2,6,9,15.51,4.02,False,swecris:2015-01360_Forte,Who lives alone during old age? Investigating the diverse conditions and prospects for healthy agein

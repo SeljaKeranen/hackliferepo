@@ -1,0 +1,1666 @@
+=== [1] reporter:1ZIAAG000435-02 | 2020 | EUR 1.55M | National Institute on Aging
+TITLE: STARRRS: Successful trajectories of aging; reserve and resilience in rats
+RULES: Keyword evidence for social_population_aging (0.842) and age_related_disease (0.816) is too close to call (margin 0.026 < 0.3; relative margin 0.031 < 0.1 or evidence floor not met).
+ABSTRACT:
+Progress since the STARRRS project was approved in 2019 has focused on soliciting community input,
+staffing, infrastructure acquisition, and pilot testing. Major launch efforts have centered on
+facility renovation and equipment procurement for a state-of-the-art, research-dedicated
+neuroimaging facility. Imaging equipment in construction includes the latest generation high-field
+Bruker BioSpec 9.4T/20 scanner with Cryoprobe array, providing sensitivity for documenting resting
+state functional connectivity in the rat brain. The temporary interruption of research activities
+associated with the COVID-19 pandemic notwithstanding, designs for the facility renovations needed
+to site the imaging equipment in proximity to STARRRS animal housing have reached the 100% draft
+completion stage, on target to accommodate construction for a projected MRI scanner delivery in the
+first half of 2021. In parallel, sufficient caging has been purchased for the 450-animal colony
+allotted to STARRRS, and we are putting into place instrumentation for longitudinal phenotypic
+assessment. Detailed testing protocols and specific assessments will be identified in the next
+project period, informed by community input, including the animal working group of a related
+initiative, the Collaboratory on Research Definitions for Reserve and Resilience in Cognitive Aging
+and Dementia (https://reserveandresilience.com/). We anticipate resuming pilot testing late in 2020,
+including training and optimization for biological sampling to archive as part of the STARRRS
+program (e.g., serum collection, vaginal smears, etc.).
+
+=== [2] reporter:1ZIAEY000281-32 | 2024 | EUR 1.54M | National Eye Institute
+TITLE: Clinical/molecular Studies In Families With Congenital Or Hereditary Cataracts
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The eye lens not only provides and excellent model system for development, aging, and protein
+structure and interaction, but is important clinically for vision. A better understanding of
+cataractogenesis will come through an understanding of the molecular components of the lens of the
+eye and the ways in which lesions of these components are manifested, structurally and functionally,
+as opacity of the lens. Currently, several different genetic congenital cataracts are being studied
+by linkage analysis, physical mapping, mutational screening, and expression in transgenic mice and
+in vitro. In addition, it is apparent that hereditary lesions that mimic or contribute additively to
+environmental stress known to cause cataracts might be candidate genes for causing age related
+cataracts. Age related cataracts are being studied by association analysis and sequencing of
+candidate genes followed by molecular genetic investigation of wild type and mutant gene structure
+and function. The work in this project is designed to specifically concentrate on congenital and
+complex hereditary cataracts and to take full advantage of molecular technology developed for
+linkage analysis and protein structural and functional studies. Lens crystallins comprise over 90%
+of the soluble protein of the lens and are heavily modified in most cataracts. The effects that
+specific modifications of beta and gamma-crystallin structure produce on crystallin functions, such
+as stability and formation of macromolecular aggregates, are being studied using bacteria
+transformed with coding sequences of normal and modified beta A3/A1-, B1, B2- gamma C- and
+gammaS-crystallin genes. Regions of the beta-crystallin molecule of special interest include the
+amino and carboxy terminal arms, the connecting peptide and the Greek key motifs of the core
+domains. In addition, new loci and genes associated with age related cataract are being identified,
+and the characteristics of mutations leading to congenital Mendelian or age related complex
+cataracts are being studied. Pathways of cataractogenesis, including developmental control and the
+UPR and apoptosis are being explored. Finally, the biological activity of crystallins in
+extralenticular systems are being investigated.
+
+=== [3] reporter:1ZIAHD008997-05 | 2025 | EUR 1.54M | Eunice Kennedy Shriver National Institute of Child Health and Human Development
+TITLE: Transcriptional Control of Cell Specification and Differentiation During Zebrafish Development
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Animals consist of a collection of cells with beautifully diverse shapes, structures, and functions,
+and this diversity is rebuilt from scratch by every embryo. The genetic programs that direct this
+process are a central mystery of developmental and regenerative biology. How are decisions about
+what cell type to adopt controlled? What genetic programs direct the morphological and functional
+specialization of different cells? How do genetic programs minimize errors to ensure robust
+developmental outcomes? The single-cell revolution in developmental biology has given us new access
+and new tools to address these questions. I previously developed approaches to identify
+transcriptional trajectories from high temporal resolution single-cell RNA sequencing. These are the
+highways or most likely paths through gene expression that cells take during development. From these
+data, we were able to identify the sequence of genes expressed by individual cell types during early
+development. This provides insight into the genetic programs that regulate cell fate decisions and
+then their downstream functional transformations at a wider breadth than was previously achievable.
+We combine single-cell genomics, imaging, genetic, and classical embryological approaches to
+investigate the genetic control of cell specification and differentiation during vertebrate
+embryogenesis. We focus on zebrafish embryos as a model system to study these questions, because
+among vertebrates, they are easy to culture, image, and manipulate both embryologically and
+genetically. Using zebrafish enables us to study developmental biology in vivo, where cells develop
+in their native context, interacting with many other cell types and tissues through signaling and
+mechanical force. Specific areas of investigation include: 1. Genetic Underpinnings of Cell
+Specification and Differentiation A central quest in developmental biology is to understand the
+genetic programs that confer specific identities, morphologies, and behaviors to the many different
+cell types in a functioning animal. Our goal is to identify the cascades of gene expression within
+distinct cell types that drive specification and differentiation and to understand their regulation.
+Recently, we created a heavily-used public resource (Daniocell) that profiled gene expression at the
+single-cell level across the first five days of zebrafish development and is used by investigators
+around the world to browse and query to rapidly answer questions about when and where genes are
+expressed. During this project period, we expanded that resource to include an interactive desktop
+version, DaniocellDesktop, that enables users to perform their own simple bioinformatic analyses,
+including redefining cell populations, performing differential expression testing, and generating
+publication-ready customized plots. Through collaborations, we also contributed to several projects
+this project period, including: (1) helping to identify the changes that occur in spermatogenesis
+during aging that may contribute to declining fertility with age (Sposato et al.), (2) providing
+unpublished data that helped determine that hair cells (the mechanosensory cells in the ear that
+detect sound) become transcriptionally similar to a related mechanosensory cell type (in the lateral
+line) when they lack the transcription factor prdm1a (Sandler et al.), and (3) helped identify the
+transcriptional cascade as putative precursor cells are specified and differentiate into
+leptomeningeal barrier cells and meningeal fibroblasts (Venero Galanternik et al.). Finally,
+developmental trajectories identify the gene expression cascades that accompany the specification
+and differentiation of individual cell types, but interpreting them biologically remains difficult.
+During this project period, we developed an approach (MIMIR) to organize the genes identified within
+a developmental trajectory into functional gene modules that help explain the biological processes
+that accompany the differentiation of individual cell types (Wang et al.). MIMIR integrates
+similarity in expression dynamics and functional annotations. We used MIMIR to catalog dozens of new
+and previously known differentiation processes and their dynamics during zebrafish axial mesoderm
+development, which included anticipatory stimulation of the unfolded protein response (UPR) prior to
+cargo secretion. We then profiled loss-of-function and gain-of-function embryos to determine the
+regulatory logic underlying the UPR activation and identified that a shared, core program is
+activated by different TFs in different cell types, that single TFs activate both the core UPR and
+cargo-specific UPR responses in each cell type, and that the hatching gland UPR requires the
+cell-type-specific co-factor, mist1. 2. Differences in RNA stability during development Cell
+specification and differentiation during development is ultimately regulated by cell-type-specific
+transcriptional states that drive their different behavior. Many efforts to understand the gene
+regulatory network that generates cell-type-specific transcriptional states focuses on differences
+in RNA production, but equally important in determining cellular transcriptional states are rates of
+RNA destruction. Previously, in a collaboration with the lab of Michal Rabani, we combined 4sU RNA
+labeling and single-cell RNAseq and were able to distinguish between maternally loaded and
+zygotically transcribed mRNA in zebrafish embryos in a cell-type-specific manner. This allowed us to
+quantify the rates of destruction of maternally loaded mRNAs during the maternal-to-zygotic
+transition using new kinetic models developed by the Rabani lab. Ongoing work is underway to
+identify the mechanisms that mediate differential stability of maternal mRNAs in enveloping layer
+cells, to extend labeling efforts to profile changes in stability at additional developmental
+stages, and to develop more sophisticated and low-cost methods fo
+
+=== [4] reporter:5P30MH062512-15 | 2015 | EUR 1.53M | National Institute of Mental Health
+TITLE: HIV Neurobehavioral Research Center
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+DESCRIPTION (provided by applicant): This is a competing renewal of the UCSD HIV Neurobehavioral
+Research Center (HNRC), in response to PAR-08-009. The renewal builds on the track record of the
+HNRC as a national and international leader and resource facilitating research on neuropathogenesis,
+treatment, and prevention of HIV-associated neurocognitive disorders (HAND). In the renewal, our
+work will be guided by continuity of the major themes established in the prior period, and augmented
+by three areas of special concentration in the next 5 years. The continuity themes include: 1)
+delineating the attributes of the virus, host, and host-virus interaction that determine HAND; 2)
+identifying mechanisms by which host-virus factors generate neural injury; 3) understanding the role
+of comorbid factors; 4) developing strategies to prevent or ameliorate HAND; 5) determining the real
+life significance of HAND and its treatment. The areas of special emphasis will be 1) supporting
+studies examining the effects of aging on the prevalence, manifestations, mechanisms, and treatment
+of HAND; 2) determining the incidence of HAND, its clinical and biological correlates, unique
+mechanisms, and possibility of prevention in the acute/early stages of HIV infection (i.e., in the
+first 6 months); and 3) implementing improved translation of research findings to the clinic. In
+terms of the latter, the HNRC envisions support of studies on better CNS penetrating ARVs,
+adjunctive neuroprotective therapies, improved biomarkers of HAND, and improved assessment
+methodologies derived from research experience. To accomplish these goals the HNRC will maintain 5
+scientific Cores (Neuromedical, Neurobehavioral, Neurolmaging, Neurovirology, and Neurobiology) that
+will provide intellectual leadership and technical support, plus 3 over-arching cores to support and
+coordinate their activities: The Developmental Core will support innovative preliminary experiments
+and coordinate training and mentorship with the scientific cores and HNRC associated faculty,
+targeting the future generation of neuro-HIV scientists. The International Core will provide
+consultation to international scholars, translation of techniques developed at the HNRC to diverse
+settings around the world, and support joint research efforts between US and foreign investigators.
+The activities of the HNRC will be led by an Executive Team and synergized by a Coordinating Core
+consisting of Administrative, Participant Accrual and Retention, Data Management and Information
+Systems, and Statistics units. With these structures and processes the HNRC will continue to foster
+its national and international leadership role in neuro-HIV research, training, and treatment.
+
+=== [5] reporter:5P20GM104318-05 | 2017 | EUR 1.49M | National Institute of General Medical Sciences
+TITLE: Comparative Biology of Tissue Repair, Regeneration and Aging
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+DESCRIPTION (provided by applicant): This application proposes to create an innovative Center of
+Biomedical Research Excellence (COBRE) focused on the Comparative Biology of Tissue Repair,
+Regeneration and Aging. Tissue regeneration in mammals is extremely limited. However, robust
+regeneration is the norm for countless lower vertebrates and invertebrates. In addition, nature has
+endowed diverse animals with remarkable longevity and robust tissue repair mechanisms that slow
+aging-induced degenerative processes. The COBRE research theme uniquely focuses on using diverse
+non-mammalian and mammalian model organisms together with comparative biology approaches to address
+several overarching and fundamental questions in the field of regenerative biology that can only be
+addressed at the level of the whole organism. This research focus represents a cornerstone of the
+long term strategic scientific Vision of the Mount Desert Island Biological Laboratory (MDIBL), and
+builds on the MDIBL and Maine INBRE success stories and on MDIBL's longstanding and increasingly
+important expertise in comparative biomedical research. The four proposed COBRE projects have
+extensive points of intersection and interaction and focus on defining mechanisms of limb and
+sensory axon regeneration in zebrafish, the impact of aging and somatic mutation load on mouse
+hematopoietic stem cell tissue homeostasis, and the effects of aging and stress on zebrafish tissue
+regeneration. Proposed scientific cores will provide essential services and resources to Project
+Leaders and will be valuable to a larger scientific community. The Comparative Animal Models Core
+will provide COBRE investigators with resources necessary to utilize diverse non-mammalian animal
+models in regenerative and aging biology research. The Comparative Functional Genomics Core will
+provide data management and analysis expertise to COBRE investigators. It will also develop a novel
+web-based resource that integrates data generated by COBRE investigators with published data sets in
+order to provide a systems-level view of regeneration that will inform new hypotheses about how
+genes regulate regenerative responses in diverse organisms. The Administrative Core will provide
+administrative, scientific, and fiscal leadership; implement a career development plan for junior
+faculty that facilitates their transition to independence; and implement an evaluation strategy to
+assess the progress of the COBRE in accomplishing its goals. The proposed COBRE will greatly enhance
+MDIBL's growth and development, which in turn will contribute to the continued growth and
+enhancement of the biomedical research infrastructure in Maine.
+
+=== [6] reporter:1ZICES102506-18 | 2025 | EUR 1.43M | National Institute of Environmental Health Sciences
+TITLE: Viral Vector Core
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The Viral Vector Core (VVC) facility offers comprehensive support for the production, purification,
+titering, and validation of seventeen types of viruses: Adenovirus, Adeno-Associated Virus (AAV),
+Coronaviruses (229E, OC43, NL63, and Mouse Hepatitis Virus [MHV]), Epstein-Barr Virus (EBV), Herpes
+Simplex Virus (HSV), Influenza A, Lentiviruses including Human Immunodeficiency Virus (HIV),
+Lymphocytic Choriomeningitis Virus (LCMV), Rabies-delta-G (SAD-B19-dG, dGL, SiR, and CVS-N2c),
+Retrovirus, Respiratory Syncytial Virus (RSV), Sindbis Virus, Varicella-Zoster Virus (VZV),
+Vesicular Stomatitis Virus (VSV), and Zika Virus. The core employs multiple vector systems to safely
+produce recombinant, pseudotyped, and wild-type viruses. During this fiscal year, the VVC provided
+services for the propagation and transduction assays using RSV, HIV, H5N1 envelope pseudotyped
+virions, and mouse coronavirus MHV. These virions were employed in transduction assays to screen the
+effects of genes on viral propagation. Additionally, HIV-1 and SARS-CoV-2 pseudotyped virions were
+purified and utilized for structural studies of the viral spike protein. The core also developed
+transduction protocols for gene delivery to primary or immortalized cell lines and animal tissues.
+Over the past year, the VVC packaged and validated 335 viral samples for gene delivery. These
+vectors have been used in research to express ion channels, transcription factors, biological
+indicators, hormone receptors, secreted proteins for expression and purification, toxicological
+studies, gene knockdown by shRNA, or genetic modification using CRISPR components. Viral vectors
+were also applied to introduce genes into primary and immortalized cell lines, mouse tissues, and
+cultured cells. Hard-to-transfect cell lines, such as hematopoietic and mouse embryonic cells, were
+successfully transduced using viral vectors. Lentiviral vectors facilitated the immortalization of
+primary cell lines for toxicological studies, and several viral strains were imported for use in
+immunological studies. The VVC supports research in various divisions and laboratories at the
+National Institute of Environmental Health Sciences (NIEHS), including the Division of Translational
+Toxicology (DTT), Clinical Research Branch (CRB), Epigenetic and Stem Cell Biology Laboratory
+(ESCBL), Genome Integrity and Structural Biology Laboratory (GISBL), Immunity, Inflammation and
+Disease Laboratory (IIDL), Neurobiology Laboratory (NL), Signal Transduction Laboratory (STL), and
+Reproductive and Developmental Biology Laboratory (RDBL). By providing highly effective means of
+gene delivery, the VVC plays a critical role in advancing research at the NIEHS. Additionally, the
+core provided viral products for laboratories at the National Center for Complementary and
+Integrative Health (NCCIH), National Human Genome Research Institute (NHGRI), National Heart, Lung,
+and Blood Institute (NHLBI), National Institute on Aging (NIA), National Institute of Allergy and
+Infectious Diseases (NIAID), National Institute of Diabetes and Digestive and Kidney Diseases
+(NIDDK), and National Institute of Mental Health (NIMH) via the Collaborative Research Exchange
+(CREx) program.
+
+=== [7] reporter:5UH3AG056925-04 | 2020 | EUR 1.42M | National Institute on Aging
+TITLE: Physical Resiliencies:  Indicators and Mechanisms in the Elderly Collaborative
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT The overarching objectives of the PRIME Collaborative (Physical Resilience: Indicators and
+Mechanisms in the Elderly) are to characterize specific resilience phenotypes, elucidate biological
+mechanisms, and validate clinically valuable predictive tools and measures of physical resilience.
+The application focuses on resilience in three systems that are central to older adults' overall
+health: musculoskeletal, cognitive, and immune. The central hypothesis of this application is that
+resilience to physical stressors is influenced by biological mechanisms at the molecular level. We
+will examine whether mechanisms associated with one or more of the seven “Pillars of Aging,” which
+have been described by the trans-NIH Geroscience Interest Group, underlie a more generalized
+capacity for recovery that applies across multiple stressor/response scenarios. An inter-
+professional team of aging researchers from has been assembled to accomplish these objectives; the
+team represents expertise from six NIA-funded Older American Independence Centers (OAICs) and
+leverages other existing resources. The PRIME Collaborative team will use a two-phased approach. In
+Phase 1, workgroups will define specific resilience phenotypes in existing datasets using latent
+class trajectory analysis of sequential outcome measures following a stressor. The three resilience
+phenotypes, selected for their over-arching relevance to late life health as well as our team's
+expertise, are: musculoskeletal recovery after orthopedic surgery, immune recovery after infection,
+and cognitive recovery after surgery/anesthesia. We will conduct pilot studies to identify novel
+clinical tests and biomarkers associated with each of these resiliencies. Feasibility and response
+data from pilot studies will inform the design of a larger cohort study in Phase 2. In the final 6
+months of Phase 1, the most promising predictive tests and markers will be selected and will inform
+two parallel activities in Phase 2. First, a longitudinal cohort study of older patients undergoing
+elective surgery will be conducted to validate predictors in a more diverse population. The Phase 2
+cohort study will also allow us to assess synergy and interactions between different types of
+predictors (provocative tests, physiologic output measures, biomarkers) and different types of
+resilience (musculoskeletal, cognitive, immune). Second, biological mechanisms underpinning
+resilience will be identified using newly developed mouse resilience models, and in vitro human and
+mouse myotubule systems. These model systems are suitable for intervention studies. The Phase 2
+biological studies will be designed to identify pathways related to one or more Pillars of Aging so
+that they are likely to underpin multiple types of resilience, and suggest therapeutic targets and
+novel, resilience-bolstering interventions.
+
+=== [8] reporter:5P42ES030990-02 | 2021 | EUR 1.38M | National Institute of Environmental Health Sciences
+TITLE: Metals and Metal Mixtures: Cognitive Aging, Remediation and Exposure Sources (MEMCARE)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+SUMMARY/ ABSTRACT Health concerns of aging—especially cognitive decline and memory loss in older
+age—have huge public health implications as the United States and world populations are shifting in
+distribution toward older ages. While a variety of toxicants contribute to cognitive aging, we are
+focused on heavy metals (Pb, As, Mn, Cd, Cr, and Se) and metal mixtures because, despite years of
+regulation, clean-up, and remediation efforts, metal contamination in many Superfund sites persists
+and continues to threaten public health. To our knowledge, there is no current Superfund Research
+Center (SRC) that specifically addresses the health effects, risk, and remediation of metal
+contaminants in relation to their effects on cognitive health in older age. To fill this critical
+gap and to address the pressing public health problems posed by environmental metal contaminants on
+cognitive aging, we propose a new SRC entitled Metals and Metal Mixtures: Cognitive Aging,
+Remediation and Exposure Sources (MEMCARE). The overall goal of MEMCARE-SRC is to understand and
+mitigate effects of exposure to metals and metal mixtures on late-life cognitive health. To achieve
+this goal, we have designed a highly integrated, solution-based program of 4 Research Projects and 4
+Cores. Project 1 uses an innovative approach to assess early-life exposures and late-life cognitive
+function in a unique population of adults now in their 60s and 70s who donated baby teeth as
+children. Project 2 investigates basic biological mechanisms underlying effects of early-life
+exposures using both in vitro and in vivo approaches. Project 3 examines the role of surface and
+groundwater treatment systems in spatial and temporal patterns of metals in water across the US,
+including Superfund sites. Project 4 will develop novel nanostructured adsorbents to remove metals
+from water, potentially providing improved remedies for our populations in Project 1 and the
+Community Engagement Core (CEC). Our CEC will partner with an urban, industrially-contaminated
+community in Boston, MA, and a rural community directly affected by two Superfund sites in Colorado.
+The Data Management and Analysis Core (DMAC) will provide data management, biostatistical, and
+bioinformatics support and ensure resource sharing and reproducible science for all Projects and
+Cores. The Administrative Core will provide oversight and communicate our science to stakeholders.
+The Research Experience and Training Coordination Core (RETCC) will embed with all aspects of our
+Center to provide doctoral and postdoctoral trainees with relevant experiences in all aspects of
+work in the SRC.
+
+=== [9] reporter:5P42ES030990-03 | 2022 | EUR 1.38M | National Institute of Environmental Health Sciences
+TITLE: Metals and Metal Mixtures: Cognitive Aging, Remediation and Exposure Sources (MEMCARE)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+SUMMARY/ ABSTRACT Health concerns of aging—especially cognitive decline and memory loss in older
+age—have huge public health implications as the United States and world populations are shifting in
+distribution toward older ages. While a variety of toxicants contribute to cognitive aging, we are
+focused on heavy metals (Pb, As, Mn, Cd, Cr, and Se) and metal mixtures because, despite years of
+regulation, clean-up, and remediation efforts, metal contamination in many Superfund sites persists
+and continues to threaten public health. To our knowledge, there is no current Superfund Research
+Center (SRC) that specifically addresses the health effects, risk, and remediation of metal
+contaminants in relation to their effects on cognitive health in older age. To fill this critical
+gap and to address the pressing public health problems posed by environmental metal contaminants on
+cognitive aging, we propose a new SRC entitled Metals and Metal Mixtures: Cognitive Aging,
+Remediation and Exposure Sources (MEMCARE). The overall goal of MEMCARE-SRC is to understand and
+mitigate effects of exposure to metals and metal mixtures on late-life cognitive health. To achieve
+this goal, we have designed a highly integrated, solution-based program of 4 Research Projects and 4
+Cores. Project 1 uses an innovative approach to assess early-life exposures and late-life cognitive
+function in a unique population of adults now in their 60s and 70s who donated baby teeth as
+children. Project 2 investigates basic biological mechanisms underlying effects of early-life
+exposures using both in vitro and in vivo approaches. Project 3 examines the role of surface and
+groundwater treatment systems in spatial and temporal patterns of metals in water across the US,
+including Superfund sites. Project 4 will develop novel nanostructured adsorbents to remove metals
+from water, potentially providing improved remedies for our populations in Project 1 and the
+Community Engagement Core (CEC). Our CEC will partner with an urban, industrially-contaminated
+community in Boston, MA, and a rural community directly affected by two Superfund sites in Colorado.
+The Data Management and Analysis Core (DMAC) will provide data management, biostatistical, and
+bioinformatics support and ensure resource sharing and reproducible science for all Projects and
+Cores. The Administrative Core will provide oversight and communicate our science to stakeholders.
+The Research Experience and Training Coordination Core (RETCC) will embed with all aspects of our
+Center to provide doctoral and postdoctoral trainees with relevant experiences in all aspects of
+work in the SRC.
+
+=== [10] reporter:5P42ES030990-04 | 2023 | EUR 1.38M | National Institute of Environmental Health Sciences
+TITLE: Metals and Metal Mixtures: Cognitive Aging, Remediation and Exposure Sources (MEMCARE)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+SUMMARY/ ABSTRACT Health concerns of aging—especially cognitive decline and memory loss in older
+age—have huge public health implications as the United States and world populations are shifting in
+distribution toward older ages. While a variety of toxicants contribute to cognitive aging, we are
+focused on heavy metals (Pb, As, Mn, Cd, Cr, and Se) and metal mixtures because, despite years of
+regulation, clean-up, and remediation efforts, metal contamination in many Superfund sites persists
+and continues to threaten public health. To our knowledge, there is no current Superfund Research
+Center (SRC) that specifically addresses the health effects, risk, and remediation of metal
+contaminants in relation to their effects on cognitive health in older age. To fill this critical
+gap and to address the pressing public health problems posed by environmental metal contaminants on
+cognitive aging, we propose a new SRC entitled Metals and Metal Mixtures: Cognitive Aging,
+Remediation and Exposure Sources (MEMCARE). The overall goal of MEMCARE-SRC is to understand and
+mitigate effects of exposure to metals and metal mixtures on late-life cognitive health. To achieve
+this goal, we have designed a highly integrated, solution-based program of 4 Research Projects and 4
+Cores. Project 1 uses an innovative approach to assess early-life exposures and late-life cognitive
+function in a unique population of adults now in their 60s and 70s who donated baby teeth as
+children. Project 2 investigates basic biological mechanisms underlying effects of early-life
+exposures using both in vitro and in vivo approaches. Project 3 examines the role of surface and
+groundwater treatment systems in spatial and temporal patterns of metals in water across the US,
+including Superfund sites. Project 4 will develop novel nanostructured adsorbents to remove metals
+from water, potentially providing improved remedies for our populations in Project 1 and the
+Community Engagement Core (CEC). Our CEC will partner with an urban, industrially-contaminated
+community in Boston, MA, and a rural community directly affected by two Superfund sites in Colorado.
+The Data Management and Analysis Core (DMAC) will provide data management, biostatistical, and
+bioinformatics support and ensure resource sharing and reproducible science for all Projects and
+Cores. The Administrative Core will provide oversight and communicate our science to stakeholders.
+The Research Experience and Training Coordination Core (RETCC) will embed with all aspects of our
+Center to provide doctoral and postdoctoral trainees with relevant experiences in all aspects of
+work in the SRC.
+
+=== [11] reporter:5P42ES030990-05 | 2024 | EUR 1.38M | National Institute of Environmental Health Sciences
+TITLE: Metals and Metal Mixtures: Cognitive Aging, Remediation and Exposure Sources (MEMCARE)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+SUMMARY/ ABSTRACT Health concerns of aging—especially cognitive decline and memory loss in older
+age—have huge public health implications as the United States and world populations are shifting in
+distribution toward older ages. While a variety of toxicants contribute to cognitive aging, we are
+focused on heavy metals (Pb, As, Mn, Cd, Cr, and Se) and metal mixtures because, despite years of
+regulation, clean-up, and remediation efforts, metal contamination in many Superfund sites persists
+and continues to threaten public health. To our knowledge, there is no current Superfund Research
+Center (SRC) that specifically addresses the health effects, risk, and remediation of metal
+contaminants in relation to their effects on cognitive health in older age. To fill this critical
+gap and to address the pressing public health problems posed by environmental metal contaminants on
+cognitive aging, we propose a new SRC entitled Metals and Metal Mixtures: Cognitive Aging,
+Remediation and Exposure Sources (MEMCARE). The overall goal of MEMCARE-SRC is to understand and
+mitigate effects of exposure to metals and metal mixtures on late-life cognitive health. To achieve
+this goal, we have designed a highly integrated, solution-based program of 4 Research Projects and 4
+Cores. Project 1 uses an innovative approach to assess early-life exposures and late-life cognitive
+function in a unique population of adults now in their 60s and 70s who donated baby teeth as
+children. Project 2 investigates basic biological mechanisms underlying effects of early-life
+exposures using both in vitro and in vivo approaches. Project 3 examines the role of surface and
+groundwater treatment systems in spatial and temporal patterns of metals in water across the US,
+including Superfund sites. Project 4 will develop novel nanostructured adsorbents to remove metals
+from water, potentially providing improved remedies for our populations in Project 1 and the
+Community Engagement Core (CEC). Our CEC will partner with an urban, industrially-contaminated
+community in Boston, MA, and a rural community directly affected by two Superfund sites in Colorado.
+The Data Management and Analysis Core (DMAC) will provide data management, biostatistical, and
+bioinformatics support and ensure resource sharing and reproducible science for all Projects and
+Cores. The Administrative Core will provide oversight and communicate our science to stakeholders.
+The Research Experience and Training Coordination Core (RETCC) will embed with all aspects of our
+Center to provide doctoral and postdoctoral trainees with relevant experiences in all aspects of
+work in the SRC.
+
+=== [12] reporter:1ZIAEY000281-33 | 2025 | EUR 1.37M | National Eye Institute
+TITLE: Clinical/molecular Studies In Families With Congenital Or Hereditary Cataracts
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The eye lens not only provides and excellent model system for development, aging, and protein
+structure and interaction, but is important clinically for vision. A better understanding of
+cataractogenesis will come through an understanding of the molecular components of the lens of the
+eye and the ways in which lesions of these components are manifested, structurally and functionally,
+as opacity of the lens. Currently, several different genetic congenital cataracts are being studied
+by linkage analysis, physical mapping, mutational screening, and expression in transgenic mice and
+in vitro. In addition, it is apparent that hereditary lesions that mimic or contribute additively to
+environmental stress known to cause cataracts might be candidate genes for causing age related
+cataracts. Age related cataracts are being studied by association analysis and sequencing of
+candidate genes followed by molecular genetic investigation of wild type and mutant gene structure
+and function. The work in this project is designed to specifically concentrate on congenital and
+complex hereditary cataracts and to take full advantage of molecular technology developed for
+linkage analysis and protein structural and functional studies. Lens crystallins comprise over 90%
+of the soluble protein of the lens and are heavily modified in most cataracts. The effects that
+specific modifications of beta and gamma-crystallin structure produce on crystallin functions, such
+as stability and formation of macromolecular aggregates, are being studied using bacteria
+transformed with coding sequences of normal and modified beta A3/A1-, B1, B2- gamma C- and
+gammaS-crystallin genes. Regions of the beta-crystallin molecule of special interest include the
+amino and carboxy terminal arms, the connecting peptide and the Greek key motifs of the core
+domains. In addition, new loci and genes associated with age related cataract are being identified,
+and the characteristics of mutations leading to congenital Mendelian or age related complex
+cataracts are being studied. Pathways of cataractogenesis, including developmental control and the
+UPR and apoptosis are being explored. Finally, the biological activity of crystallins in
+extralenticular systems are being investigated.
+
+=== [13] reporter:1S10OD032452-01 | 2022 | EUR 1.35M | NIH Office of the Director
+TITLE: 600MHz NMR Spectrometer
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary We propose to acquire a Bruker Avance Neo 2-channel 600 MHz NMR spectrometer with a
+BBFO CryoProbe and a SampleCase automation device, to be housed in the NMR Facility at the Barnett
+Institute of Northeastern University. This versatile configuration will transform the capabilities
+of the two aging and oversubscribed instruments in our NMR core, a 500 MHz Varian INOVA and a 400
+MHz Varian Mercury Plus, to meet rapidly increasing demands for chemical and biological structural
+analysis. The cutting-edge CryoProbe and automation capabilities of the requested 600 MHz NMR will
+enable a range of innovative projects at the forefront of interdisciplinary biomedical research,
+leaving routine usage to the existing NMR instruments. The following NIH-funded projects of the
+major users of the instrument will benefit immediately from the new features of the instrument:
+Kinetic target-guided synthesis to modulate protein-protein interactions (R. Manetsch); Discovery of
+lead and tool compounds for probing and modulating protozoan parasite biology (M. Pollastri/L.
+Ferrins); de novo synthesis of biologically active natural products and carbohydrate motifs (G.A.
+O’Doherty); Targeting the endocannabinoid system in treating brain disorders (A. Makriyannis);
+Profiling secondary metabolites in cell extracts of uncultured bacteria (K. Lewis); Improving
+oligonucleotide biopharmaceuticals by steric protection (K. Zhang); Dynamics of processivity clamp
+proteins in bacterial DNA replication (P. Beuning); and Transport of biologically active molecules
+across tight epithelial barriers (W. Lencer, Harvard Medical School).
+
+=== [14] reporter:1S10OD025097-01 | 2018 | EUR 1.34M | NIH Office of the Director
+TITLE: 200 kV Field Emission Gun Transmission Electron Microscope for Cryo-electron Microscopy
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY Recent advances in microscopes, detectors and computational image processing have
+revolutionized structural analysis of biological macromolecules by cryo-electron microscopy
+(cryo-EM). These advances are allowing researchers to generate atomic models of biomedically
+relevant molecules that are refractory to other structural techniques. The University of California
+at Santa Cruz hosts several NIH-funded structural biology researchers who are advancing studies of
+complex cellular machineries including the ribosome, spliceosome, telomerase, cell-cycle regulators,
+circadian clock, childhood viruses, immune response regulators and amyloidogenic polypeptides.
+Cryo-EM holds huge promise to advance our research programs, but we need to update and expand our
+local capabilities to bring new structural studies to fruition. We request funding for a 200 kV
+transmission electron microscope with a direct electron detector, and bundled with an automated
+plunge freezer. The instrument will replace an aging 120 kV instrument with limited cryo-EM
+capabilities and an obsolete operating system. A 200 kV instrument designed for cryo-EM data
+collection will allow a talented group of structural biologists to realize the promise of cryo-EM to
+determine the structures of larger and more challenging complexes of proteins and nucleic acids and
+reveal the molecular basis of a variety of human diseases. The instrumentation will also complement
+our membership in a consortium of our sister institutions in the San Francisco Bay Area, which gives
+us access to the most advanced cryo-EM instrumentation to push the structures that we first solve at
+UC Santa Cruz to the highest resolution possible.
+
+=== [15] reporter:2U54AG062334-06 | 2025 | EUR 1.29M | National Institute on Aging
+TITLE: Emory Specialized Center of Research Excellence (SCORE) on Sex Differences
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The overarching goal of this Specialized Centers of Research Excellence on Sex Differences (Emory
+SCORE) renewal application is to advance women’s health through a comprehensive investigation of the
+influence of sex on infectious diseases. A unifying theme of our program will be to promote the
+normalization of sex as a biological variable (SABV) in biomedical and biobehavioral research. Our
+Leadership Administrative Core (LAC) has promoted the NIH SCORE’s vision of normalizing SABV in
+research in multiple ways, including the development of an annual international SABV workshop (now
+in its 3rd year), the organization of a monthly women’s health research seminar series, and the
+co-sponsorship (with the Johns Hopkins SCORE) of the first ever Gordon Research Conference on Sex
+Differences in Immunity. The LAC also nurtured the development of next-generation leaders in the
+field. Simultaneously, our Career Enhancement Core (CEC) has promoted the national SCORE’s interests
+by initiating work to establish common metrics for CEC evaluation across all SCORE programs and
+through an organized program of funding, training, mentoring, and professional development
+activities while the Biostatistics Resource Core (BRC) has ensured rigor and reproducibility in all
+SCORE-supported projects and publications. During the initial cycle, our integrated research
+projects focused on using HIV as a model to probe the influence of biological sex on
+microbial-host-pathogen interactions. We are now well positioned to build on our work to date and
+expand our investigation to explore the role of the gut. Driven by the scientific evidence that low
+estrogen and chronic HIV independently induces dysbiosis, disrupts gut integrity and leads to
+microbial translocation resulting in immune dysregulation, we will focus our work in this renewal
+cycle on the combined effects of ovarian deficiency and HIV on the gut, the largest immune organ in
+the body. The unifying hypothesis for the three interlinked research projects is that ovarian
+deficiency and HIV co-act in aging women to enhance the effects of a leaky gut, leading to
+associated immune dysregulation and end-organ injuries; and that psychosocial factors may enhance
+these effects. The gut may be a target for manipulation via diet, probiotics, fecal transplantation,
+etc., to improve the health of women with HIV or other chronic infections. We propose the following
+Overall Aims: 1) Leverage resources through the LAC and CEC to foster career and leadership
+development and advance standards and policies that normalize the consideration of SABV in all
+research; 2) Expand the BRC into a Biostatistics and Bioinformatics Resource Core (BBRC) to enhance
+rigor and the provision of analytical support and data management/integration in alignment with our
+scientific aims; and 3) Implement 3 interlinked Research Projects to evaluate how HIV and low
+estrogen state co-act in women living with HIV to exacerbate leaky gut/immune dysregulation and the
+progression of non-AIDS age-related co-morbidities (NACMs) in the bone, brain, and heart.
+
+=== [16] reporter:1R44NS134432-01 | 2023 | EUR 1.28M | National Institute of Neurological Disorders and Stroke
+TITLE: Commercial translation of high-density carbon fiber electrode arrays for multi-modal analysis of neural microcircuits
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT The ability to measure and manipulate local brain circuit activity in living, behaving
+animals is essential to understanding the complexities of brain function and dysfunction. A novel,
+penetrating high-density carbon fiber electrode array composed of flexible, ultrathin conductive
+carbon microfibers was recently developed under the BRAIN Initiative to study neural microcircuit
+dynamics. In contrast to conventional microelectrode arrays, carbon fiber arrays are exceptionally
+biocompatible and produce minimal glial scarring resulting in exceptional proximity of the recording
+electrodes to neurons for unprecedented single-unit recording yield with improved electrode
+stability, high signal-to-noise recording, and high charge injection capacity (CIC) for superior
+stimulation. In addition, these arrays can be used to measure neurotransmitter or other biological
+compounds using fast-scan cyclic voltammetry (FSCV). Led by Blackrock Neurotech, a pioneer and
+industry leader in microelectrode array fabrication, the goal of this Direct-to-Phase II SBIR is to
+translate the novel laboratory fabricated high-density carbon fiber array (C-CFA) by the Chestek lab
+at the University of Michigan to a state-of-the-art commercial product (BRN-CFA) to enable broad
+dissemination of this powerful and versatile neurotechnology across the neuroscience community. Aim
+1: Microfabrication and assembly of the BRN-CFA will dramatically improve the microfabrication
+process for the silicon support shuttles of the carbon fibers in the BRN-CFA by removing
+occupationally hazardous materials from the fabrication scheme and adopting a modern
+silicon-on-insulator wafer fabrication process to improve manufacturing safety, efficiency, and
+reliability. Array assembly and fabrication will occur under Blackrock’s Quality Management System.
+Aim 2: Performance validation and process transfer to Blackrock Neurotech will assess the optimized
+BRN-CFA electrical characteristics, robustness, stability, and longevity through in-vitro
+electrical, electrochemical testing, accelerated aging, and visual inspection. Analyses will be
+cross-validated against the C-CFA. The validated geometry, fabrication, and assembly processes will
+be transferred to Blackrock manufacturing to enable robust and reproducible production. Aim 3.
+In-vivo chronic performance validation of the BRN-CFA will cross-validate the BRN-CFA against the C-
+CFA in a 6-month in-vivo study in rat cortex to assess insertability and chronic performance of the
+devices. The successful outcome of this project will be the first commercially available BRN-CFA
+with exceptional performance for the study of local neural circuit dynamics. By addressing this
+critical, unmet need, the BRN-CFA product promises to accelerate basic scientific discovery of brain
+dynamics and the development of next-generation therapies.
+
+=== [17] reporter:5P20GM104318-09 | 2021 | EUR 1.28M | National Institute of General Medical Sciences
+TITLE: Comparative Biology of Tissue Repair, Regeneration and Aging
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+OVERALL PROJECT SUMMARY Regeneration of damaged and lost tissues is limited in humans and other
+mammals. However, robust regeneration is the norm for numerous diverse invertebrates and lower
+vertebrates. COBRE Phase I, Comparative Biology of Tissue Repair, Regeneration and Aging, played a
+central role in establishing and growing the Kathryn W. Davis Center for Regenerative Biology and
+Medicine (Davis Center) at the MDI Biological Laboratory (MDIBL) and in dramatically improving the
+institution’s research environment. The Davis Center was founded on the guiding principle that
+studying diverse animal models would lead to a detailed and predictive understanding of the cellular
+and molecular mechanisms of tissue and organ regeneration, and an understanding of why these
+processes are poorly active in most human tissues and of why they decline with disease and aging.
+This in turn would lead to a rational foundation for development of regenerative medicine therapies,
+particularly small molecule drug candidates capable of stimulating tissue regeneration and slowing
+or reversing aging-induced degenerative changes in patients. COBRE Phase I supported four
+early-career Project Leaders and one mid-career Project Leader. All five Project Leaders graduated
+from Phase I with independent grant support. The average time for graduation of the four
+early-career Project Leaders was 2.8 years. Phase I Project Leaders also achieved multiple other
+successes including publication of significant peer-reviewed papers, creation of intellectual
+property, receipt of foundation and R21 grants and significant peer recognition. Other noteworthy
+successes include further development and patenting of MSI-1436, the only small molecule known to
+stimulate regeneration of the adult mammalian heart following a heart attack, discovery of two small
+molecules with potential to reverse chemotherapy-induced peripheral nerve damage, development of new
+disease models and research tools, and formation of a growing IDeA program/Maine state government
+partnership that allowed MDIBL to obtain $3M in voter-approved state bond funding to expand research
+infrastructure. COBRE Phase II will continue to support the growth and development of the Davis
+Center in order to establish a self-sustaining critical mass of investigators. Three new
+early-career scientists, Drs. Sam Beck, James Godwin and Jarod Rollins, have been recruited as Phase
+II Project Leaders. Recruitment of a fourth Davis Center faculty member is underway. Research
+programs of Phase II Project Leaders are highly synergistic with and bring new scientific expertise
+to the Davis Center. Essential services and resources will be provided to the Project Leaders and
+larger scientific community by continuation of the Comparative Functional Genomics Core and
+Comparative Animal Models Core. COBRE Phase II will greatly enhance the development of the Davis
+Center and MDIBL, which in turn will contribute to the continued enhancement of the biomedical
+research environment in Maine.
+
+=== [18] reporter:1P30AG067988-01A1 | 2021 | EUR 1.28M | National Institute on Aging
+TITLE: Claude D. Pepper Older Americans Independence Center (P30 Clinical Trial Optional)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY OVERALL This proposal seeks to establish the Claude D Pepper Older Americans
+Independence Center at UConn (UConn OAIC) with the overarching goal of developing clinical
+strategies for enhancing function and independence in older adults that are more precise,
+personalized, and effective. Our focus on Precision Gerontology has emerged through the collective
+experiences and insights of our multidisciplinary team of accomplished investigators in the UConn
+Center on Aging – all united by a shared commitment to improving the lives of older adults through
+research, education, and clinical care. Our emphasis on Precision Gerontology has been guided by
+three principles: 1. A growing heterogeneity or variability over time among individuals involving
+all aspects of aging that therefore necessitates a multidisciplinary team-based approach to aging
+research; 2. Increased heterogeneity or variability with aging in older adults’ responses to
+treatment, highlighting the need for better targeting; and 3. Recognition of a need to incorporate
+these considerations into the design and testing of novel geroscience-guided therapies. These
+objectives will be achieved by establishing a UConn OAIC through the coordinated activities of a
+Leadership and Administration Core (LAC), Recruitment and Community Engagement Core (RC1), Data
+Resource Core (RC2), Biomarker and Preclinical Research Core (RC3), Pilot and Exploratory Studies
+Core (PESC), and Research Education Component (REC). We will seek to address these goals through the
+following aims: Aim 1: To develop and refine new approaches to the study and clinical translation of
+Precision Gerontology. Aim 2: To develop and evaluate new research methods, techniques, and
+collaborative approaches required to advance the goals of Precision Gerontology. Aim 3: To identify,
+develop, and learn from experiences of the next generation of researchers poised to become leaders
+in geriatrics research related to the UConn OAIC focus. Aim 4: To select and support innovative
+pilot studies that show promise in helping to guide the design, funding, and completion of more
+definitive future research studies related to the UConn OAIC focus.
+
+=== [19] reporter:1DP2AR087515-01 | 2025 | EUR 1.27M | National Institute of Arthritis and Musculoskeletal and Skin Diseases
+TITLE: Disentangling molecular networks in RNA homeostasis and neuromuscular diseases
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY Cellular compartments are critical to controlling the biochemistry that is essential
+for organismal survival. Most compartments are membrane-bound, sequestering enzymatic reactions from
+the rest of the cellular milieu. Yet, many compartments lack membranes and exchange biomolecules
+freely with their surroundings. Such membraneless compartments were observed over a century ago, but
+attracted little attention until recently. Perhaps due to methodological advancements, a marriage of
+physics and cell biology sparked a revolution in our appreciation for membraneless compartments.
+Over the past 15-years, these compartments were shown to have liquid-like properties. Recent
+consensus states that biological phase transitions are fundamental to their (dis)assembly. Hence,
+they are now commonly referred to as biomolecular condensates. Such discoveries might have eluded
+the public curiosity if not for compelling human genetics and disease pathology, both of which
+implicate condensate dysfunction in diseases of aging including neuromuscular diseases (e.g., ALS)
+and cancers. Yet, a direct link between physiological condensation and disease pathobiology has
+evaded conclusive assessment. Such causal relationships have been difficult to infer, as entirely
+new technologies were required to rigorously and quantitatively illuminate this new biological
+frontier. With this unmet need in mind, my colleagues and I have invested heavily in creating the
+proper tools to link condensate biology to disease. My unique perspective is informed by my previous
+research on pathological protein aggregation. As an independent investigator, I now bridge my
+experience in cellular models of protein aggregation and physiological condensation to provide much
+needed insights into how cell biology and disease are connected. In this proposal, we will test a
+groundbreaking hypothesis for condensate function. Specifically, we propose that RNA-rich
+condensates, including cytoplasmic stress granules and nuclear speckles, coordinate RNA homeostasis
+to prevent RNAs from becoming hopelessly entangled. We surmise that such RNA entanglement
+mechanistically drives the pathological protein aggregates of neuromuscular diseases. We will
+rigorously test this hypothesis by taking a cross-disciplinary approach that scales from test tube
+biophysics to cellular and organismal biology then forward to the clinic. We will leverage our
+unprecedented tools to discover ligands that disassemble pathological aggregates. If successful, we
+will inform an entirely new way of thinking about RNA homeostasis that is independent of classic
+biochemical reactions. In doing so, we will provide a foundation for understanding the function of
+condensates in living cells and inform tractable targets for disease intervention.
+
+=== [20] reporter:5P01AG020166-11 | 2015 | EUR 1.27M | National Institute on Aging
+TITLE: PSYCHOSOCIAL CONTRIBUTORS TO HEALTH AND ILLNESS
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The primary goals of Project 1 are (1) to recruit a new national probability sample of 2,100
+respondents (aged 25-54) as well as a new stratified sample of 500 African Americans from Milwaukee,
+Wl (also aged 25-54), and (2) carry out the 2nd longitudinal follow-up ofthe existing samples (MIDUS
+III). All respondents will complete the same set of assessments - a phone interview (or personal
+interview in Milwaukee) and selfadministered questionnaires - that were obtained at MIDUS II. A key
+reason for refreshing (augmenting) the MIDUS samples is to allow for investigation of period effects
+ofthe economic recession by comparing sameaged adults from the MIDUS I (pre-recession) sample
+assessed in 1995/96 with the refresher (postrecession) sample assessed in 2011/12 on a multitude of
+indicators of economic adversity, mental and physical health, and psychosocial moderators. The
+expanded sample sizes will also facilitate cross-project analyses focused on the interplay of
+sociodemographic, psychosocial, and biological influences on the health of mid- and later-life
+adults. The second primary objective, that of launching the 3rd wave of assessments on the existing
+MIDUS samples (¿ 5,500 respondents), will allow for more precise and reliable estimates of change in
+key variables as well as strengthen opportunities for testing psychosocial factors (negative and
+positive) as moderators or mediators of age-related changes in health. Our revision offers extensive
+evidence of the many lines of research that have been pursued with MIDUS survey data (255
+publications to date, 59 of which are based on MIDUS II data), all of which will be advanced by the
+planned expansion of the sample and its related focus on the economic recession as well as by
+carrying out the next longitudinal follow-up of the existing sample. Project 1 also serves as the
+hub from which all other projects emanate, making its sample recruitment and data collection
+essential for moving forward all components ofthe MIDUS enterprise. Overall, our planned additions
+will allow MIDUS to become a major forum for investigating how the economic recession is affecting
+the health of young and midlife adults, while also move forward the next phase of assessments 9-10
+years later (adhering to the interval between MIDUS I and MIDUS II) with the existing sample. In the
+longer term, our proposed plans lay the groundwork for longitudinal tracking of parallel samples of
+adults (aged 25-54) from different birth cohorts whose biopsychosocial aging is unfolding in the
+context of major economic upheaval - hence, our emphasis, akin to Elder's classic work, on adults of
+the great recession.
+
+=== [21] reporter:1P30AG094848-01 | 2025 | EUR 1.26M | National Institute on Aging
+TITLE: Los Angeles Claude D. Pepper Older Americans Independence Center
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY – OVERALL We propose the creation of the Los Angeles Claude D. Pepper Older
+Americans Independence Center (LA OAIC), the joint effort of three pre-eminent institutions,
+Cedars-Sinai Medical Center (CSMC), University of California Los Angeles (UCLA), and University of
+Southern California (USC). The overarching objective of the LA OAIC is to extend human healthspan by
+accelerating and expanding translational geroscience. The Specific Aims of the LA OAIC are to: (1)
+Develop advanced gerotherapeutics for extension of human healthspan; (2) Expand the scope of
+clinical trials in translational geroscience; (3) Increase the research workforce in translational
+geroscience; and (4) Provide leadership, enhance implementation, and promote dissemination of
+knowledge about geroscience. The LA OAIC will achieve these Aims through the following cores: (1) A
+Leadership and Administrative Core (LAC) that will direct operations and sponsor enrichment and
+dissemination activities; (2) A Pilot and Exploratory Studies Core (PESC) that will provide
+scientific guidance and merit-based support for rigorously designed geroscience-guided studies and
+offer “mini-sabbaticals” for faculty to visit other laboratories; (3) A Research Education Component
+(REC) that will build a cadre of uniquely qualified scientists cross-trained in aging biology and
+translational geroscience; (4) An Advanced Gerotherapeutics Core (Resource Core [RC]1) that will
+provide expertise and infrastructure for discovery, development, and translation of novel
+interventions with gerotherapeutic potential; (5) A Clinical Research Core (RC2) that will provide
+direction and clinical research infrastructure for the evaluation of gerotherapeutics and
+gerodiagnostics in humans; and (6) A Data Science Core (RC3) that will provide biostatistical and
+bioinformatics expertise for experimental design, data analysis, and integration of multimodal
+geroscience data using AI and machine learning. The proposed LA OAIC is built on a robust foundation
+provided by the expertise of its leadership and members, many of whom have been pioneers in aging
+biology, geriatrics, and translational geroscience; exceptional research environments and resources
+in geroscience; and our location in the second largest metropolis in the U.S. with broad
+representation. LA OAIC will function as a vibrant hub for geroscience research and education. We
+anticipate that by the end of the project period the LA OAIC would have catalyzed the discovery and
+clinical translation of novel molecular targets and interventions with gerotherapeutic potential and
+the identification of novel gerodiagnostics/biomarkers to predict and monitor response and direct
+personalized interventions. Furthermore, the LA OAIC will prepare a cadre of outstanding scientists
+with the necessary skill sets for successful careers in translational geroscience.
+
+=== [22] reporter:1ZIAEY000281-31 | 2023 | EUR 1.26M | National Eye Institute
+TITLE: Clinical/molecular Studies In Families With Congenital Or Hereditary Cataracts
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The eye lens not only provides and excellent model system for development, aging, and protein
+structure and interaction, but is important clinically for vision. A better understanding of
+cataractogenesis will come through an understanding of the molecular components of the lens of the
+eye and the ways in which lesions of these components are manifested, structurally and functionally,
+as opacity of the lens. Currently, several different genetic congenital cataracts are being studied
+by linkage analysis, physical mapping, mutational screening, and expression in transgenic mice and
+in vitro. In addition, it is apparent that hereditary lesions that mimic or contribute additively to
+environmental stress known to cause cataracts might be candidate genes for causing age related
+cataracts. Age related cataracts are being studied by association analysis and sequencing of
+candidate genes followed by molecular genetic investigation of wild type and mutant gene structure
+and function. The work in this project is designed to specifically concentrate on congenital and
+complex hereditary cataracts and to take full advantage of molecular technology developed for
+linkage analysis and protein structural and functional studies. Lens crystallins comprise over 90%
+of the soluble protein of the lens and are heavily modified in most cataracts. The effects that
+specific modifications of beta and gamma-crystallin structure produce on crystallin functions, such
+as stability and formation of macromolecular aggregates, are being studied using SF9 cells or
+bacteria transformed with coding sequences of normal and modified beta A3/A1-, B1, B2- and
+gammaS-crystallin genes. Regions of the beta-crystallin molecule of special interest include the
+amino and carboxy terminal arms, the connecting peptide and the Greek key motifs of the core
+domains. In addition, new loci and genes associated with age related cataract are being identified,
+and the characteristics of mutations leading to congenital Mendelian or age related complex
+cataracts are being studied. Pathways of cataractogenesis, including developmental control and the
+UPR and apoptosis are being explored. Finally, the biological activity of crystallins in
+extralenticular systems are being investigated.
+
+=== [23] reporter:1ZIAEY000281-25 | 2017 | EUR 1.22M | National Eye Institute
+TITLE: Clinical/molecular Studies In Families With Congenital Or Hereditary Cataracts
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The eye lens not only provides and excellent model system for development, aging, and protein
+structure and interaction, but is important clinically for vision. A better understanding of
+cataractogenesis will come through an understanding of the molecular components of the lens of the
+eye and the ways in which lesions of these components are manifested, structurally and functionally,
+as opacity of the lens. Currently, several different genetic congenital cataracts are being studied
+by linkage analysis, physical mapping, mutational screening, and expression in transgenic mice and
+in vitro. In addition, it is apparent that hereditary lesions that mimic or contribute additively to
+environmental stress known to cause cataracts might be candidate genes for causing age related
+cataracts. Age related cataracts are being studied by association analysis and sequencing of
+candidate genes followed by molecular genetic investigation of wild type and mutant gene structure
+and function. The work in this project is designed to specifically concentrate on congenital and
+complex hereditary cataracts and to take full advantage of molecular technology developed for
+linkage analysis and protein structural and functional studies. Lens crystallins comprise over 90%
+of the soluble protein of the lens and are heavily modified in most cataracts. The effects that
+specific modifications of beta and gamma-crystallin structure produce on crystallin functions, such
+as stability and formation of macromolecular aggregates, are being studied using SF9 cells or
+bacteria transformed with coding sequences of normal and modified beta A3/A1-, B1, B2- and
+gammaS-crystallin genes. Regions of the beta-crystallin molecule of special interest include the
+amino and carboxy terminal arms, the connecting peptide and the Greek key motifs of the core
+domains. In addition, new loci and genes associated with age related cataract are being identified,
+and the characteristics of mutations leading to congenital Mendelian or age related complex
+cataracts are being studied. Finally, the biological activity of crystallins in extralenticular
+systems are being investigated.
+
+=== [24] reporter:1ZIAEY000281-24 | 2016 | EUR 1.22M | National Eye Institute
+TITLE: Clinical/molecular Studies In Families With Congenital Or Hereditary Cataracts
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The eye lens not only provides and excellent model system for development, aging, and protein
+structure and interaction, but is important clinically for vision. A better understanding of
+cataractogenesis will come through an understanding of the molecular components of the lens of the
+eye and the ways in which lesions of these components are manifested, structurally and functionally,
+as opacity of the lens. Currently, several different genetic congenital cataracts are being studied
+by linkage analysis, physical mapping, mutational screening, and expression in transgenic mice and
+in vitro. In addition, it is apparent that hereditary lesions that mimic or contribute additively to
+environmental stress known to cause cataracts might be candidate genes for causing age related
+cataracts. Age related cataracts are being studied by association analysis and sequencing of
+candidate genes followed by molecular genetic investigation of wild type and mutant gene structure
+and function. The work in this project is designed to specifically concentrate on congenital and
+complex hereditary cataracts and to take full advantage of molecular technology developed for
+linkage analysis and protein structural and functional studies. Lens crystallins comprise over 90%
+of the soluble protein of the lens and are heavily modified in most cataracts. The effects that
+specific modifications of beta and gamma-crystallin structure produce on crystallin functions, such
+as stability and formation of macromolecular aggregates, are being studied using SF9 cells or
+bacteria transformed with coding sequences of normal and modified beta A3/A1-, B1, B2- and
+gammaS-crystallin genes. Regions of the beta-crystallin molecule of special interest include the
+amino and carboxy terminal arms, the connecting peptide and the Greek key motifs of the core
+domains. In addition, new loci and genes associated with age related cataract are being identified,
+and the characteristics of mutations leading to congenital Mendelian or age related complex
+cataracts are being studied. Finally, the biological activity of crystallins in extralenticular
+systems are being investigated.
+
+=== [25] reporter:1ZIAEY000281-30 | 2022 | EUR 1.22M | National Eye Institute
+TITLE: Clinical/molecular Studies In Families With Congenital Or Hereditary Cataracts
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The eye lens not only provides and excellent model system for development, aging, and protein
+structure and interaction, but is important clinically for vision. A better understanding of
+cataractogenesis will come through an understanding of the molecular components of the lens of the
+eye and the ways in which lesions of these components are manifested, structurally and functionally,
+as opacity of the lens. Currently, several different genetic congenital cataracts are being studied
+by linkage analysis, physical mapping, mutational screening, and expression in transgenic mice and
+in vitro. In addition, it is apparent that hereditary lesions that mimic or contribute additively to
+environmental stress known to cause cataracts might be candidate genes for causing age related
+cataracts. Age related cataracts are being studied by association analysis and sequencing of
+candidate genes followed by molecular genetic investigation of wild type and mutant gene structure
+and function. The work in this project is designed to specifically concentrate on congenital and
+complex hereditary cataracts and to take full advantage of molecular technology developed for
+linkage analysis and protein structural and functional studies. Lens crystallins comprise over 90%
+of the soluble protein of the lens and are heavily modified in most cataracts. The effects that
+specific modifications of beta and gamma-crystallin structure produce on crystallin functions, such
+as stability and formation of macromolecular aggregates, are being studied using SF9 cells or
+bacteria transformed with coding sequences of normal and modified beta A3/A1-, B1, B2- and
+gammaS-crystallin genes. Regions of the beta-crystallin molecule of special interest include the
+amino and carboxy terminal arms, the connecting peptide and the Greek key motifs of the core
+domains. In addition, new loci and genes associated with age related cataract are being identified,
+and the characteristics of mutations leading to congenital Mendelian or age related complex
+cataracts are being studied. Pathways of cataractogenesis, including developmental control and the
+UPR and apoptosis are being explored. Finally, the biological activity of crystallins in
+extralenticular systems are being investigated.
+
+=== [26] reporter:5UG3OD035544-02 | 2024 | EUR 1.20M | NIH Office of the Director
+TITLE: Exploring Pathways through which Structural Racism Impacts Children's Environmental Health
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary/Abstract Structural racism and discrimination, which affects processes, policies and
+regulations that govern myriad systems, have been described as the root cause of social determinants
+of health and provide a framework for understanding child health disparities. Further, these
+structural factors affect life experiences and induce stress, which leads to a cascade of changes in
+biologic function and physiological stress responses, including epigenetic processes. Hence, both
+upstream (within the societal or neighborhood realm) and downstream (within the individual or
+biological realm) factors coalesce to influence children’s health disparities, including disparities
+in neurodevelopmental and respiratory health, which are both widespread, socially patterned, and
+largely unexplained by individual-level risk factors alone. Exposure to environmental toxicants (a
+downstream factor) has been implicated in children’s neurodevelopmental and respiratory health
+disparities. Thus, in Aim 1, we propose to elucidate profiles of exposure to chemical mixtures
+during the prenatal and postnatal periods that impair neurodevelopmental trajectories and assess
+whether these effects are modified by maternal discriminatory experiences. In Aim 2, we propose a
+novel conceptualization of structural racism to capture impacts across multiple domains and will
+evaluate the potential role of environmental toxicant exposures and epigenetic aging as mediators of
+the relation between structural racism and child neurodevelopment. In Aim 4, we will explore racial
+and ethnic differences in preconception exposure to environmental tobacco smoke and children’s
+respiratory health outcomes. Our ECHO Cohort Study Site (Aim 3) will enhance the geographic and
+racial/ethnic heterogeneity of the ECHO Consortium with the recruitment of study participants from
+Houston, Texas, the fourth largest and most diverse city in the nation, and located in a region for
+which there is currently very limited representation in ECHO. Houston is also characterized by no
+zoning and a large petrochemical complex, a busy seaport, heavily trafficked roadways, and numerous
+hazardous waste sites, which lead to complex exposure profiles. Hence, inclusion of participants
+from our Study Site will strengthen the ability of the ECHO Cohort to address research questions
+related to children’s environmental health disparities. Our proposed research will be enhanced by a
+comprehensive Plan for Enhancing Diverse Perspectives (PEDP) that leverages institutional
+infrastructure for diversity, equity, and inclusion and successful investigator development programs
+funded by the Health Resources and Services Administration (HRSA) and NIMHD/NIEHS/NICHD; will
+provide mentoring to team members who are at different career stages; and engage community partners,
+governmental officials and advocacy groups with whom we have trusting relationships to promote the
+ECHO Program, obtain feedback on the conduct of studies to ensure diversity of ECHO cohort
+participants, and assist in translation and dissemination of results to maximize impact.
+
+=== [27] reporter:1UG3MH137353-01 | 2024 | EUR 1.18M | National Institute of Mental Health
+TITLE: Biotype-assigned Augmentation Approach in Resistant late life Depression (BAARD)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY/ABSTRACT Up to half of depressed older adults do not respond to an initial
+antidepressant, and fewer than 20% achieve remission. Using a robust multi-site clinical trial
+network, we have completed two landmark randomized controlled trials (RCTs) showing that
+augmentation of current antidepressant with aripiprazole (ARI) or bupropion (BUP) results in a 29%
+remission rate in TRLLD. In response to RFA-MH-24-120, we will use this and other existing clinical
+trial data to design and evaluate a clinical decision support tool, the Biotype-assigned
+Augmentation Approach in Resistant Late-Life Depression (BAARD), to improve treatment selection
+using precision biomedical information. With integrated expertise in geroscience,
+psychopharmacology, cognition, molecular subtyping, neuroimaging, computational psychiatry, and
+qualitative research methods represented on our research team, we will use existing demographic,
+clinical, cognitive, genetic, proteomic, and high quality neuroimaging on ~700 participants to
+develop and test the BAARD tool. UG3 Phase Specific Aims: Design and Validate the BAARD Decision
+Support Tool. Aim 1, Yr 1: Develop the BAARD tool for treatment selection in TRLLD using data from
+two large multi-center trials (‘IRL-GRey’ & ‘OPTIMUM’) and the embedded biomarker study
+(‘OPT-Neuro’) (total N~700). Aim 2, Yr 2: Refine the BAARD biotype profile & analytic approach using
+data from individuals diagnosed with major depressive disorder (MDD) or treatment resistant
+depression (TRD) from the Canadian Biomarker Integration Network in Depression (CANBIND, N~200) and
+UK Biobank (UKB, N~2,400) studies, respectively. Go-no-go threshold for Yrs 1-2: To proceed to the
+proposed UH3 RCT phase (N=300), our BAARD tool must achieve a combined predicted remission rate of
+≥46% in cross-validation. This corresponds to a balanced accuracy of ≥75% for remission prediction
+in test data and will be assessed at the end of Yr 1 and Yr 2. UH3 Phase Specific Aims: Test the
+BAARD Decision Support Tool in a Prospective RCT. Aim 3, Yrs 3-5: In the UH3 phase, we will
+randomize 300 adults aged ≥60 yrs with TRLLD (2:1) to BAARD tool- assigned treatment vs. randomized
+treatment assignment (1:1 ARI:BUP) and compare remission rates based on the Montgomery Asberg Rating
+Scale score (MADRS score<10) following 10 weeks of treatment. Hypothesis: The remission rate in the
+group treated with ARI or BUP based on BAARD predictions will be at least 17% higher than the
+remission rate observed in the randomly treated comparison group (e.g., 46% vs. 29%). Go-no-Go
+threshold for Yrs 3-5: The annual threshold for proceeding with the RCT will be based on participant
+enrollment milestones (first by end of Q9; 50% by end of Q12; 100% by end of Q15). Exploratory Aim,
+Yrs 4-5: Obtain stakeholder input on acceptability and appropriateness of BAARD and explore
+facilitators and barriers to implementation in future clinical trials, and eventually, routine
+clinical care.
+
+=== [28] reporter:5P30AG067988-02 | 2022 | EUR 1.17M | National Institute on Aging
+TITLE: Claude D. Pepper Older Americans Independence Center (P30 Clinical Trial Optional)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY OVERALL This proposal seeks to establish the Claude D Pepper Older Americans
+Independence Center at UConn (UConn OAIC) with the overarching goal of developing clinical
+strategies for enhancing function and independence in older adults that are more precise,
+personalized, and effective. Our focus on Precision Gerontology has emerged through the collective
+experiences and insights of our multidisciplinary team of accomplished investigators in the UConn
+Center on Aging – all united by a shared commitment to improving the lives of older adults through
+research, education, and clinical care. Our emphasis on Precision Gerontology has been guided by
+three principles: 1. A growing heterogeneity or variability over time among individuals involving
+all aspects of aging that therefore necessitates a multidisciplinary team-based approach to aging
+research; 2. Increased heterogeneity or variability with aging in older adults’ responses to
+treatment, highlighting the need for better targeting; and 3. Recognition of a need to incorporate
+these considerations into the design and testing of novel geroscience-guided therapies. These
+objectives will be achieved by establishing a UConn OAIC through the coordinated activities of a
+Leadership and Administration Core (LAC), Recruitment and Community Engagement Core (RC1), Data
+Resource Core (RC2), Biomarker and Preclinical Research Core (RC3), Pilot and Exploratory Studies
+Core (PESC), and Research Education Component (REC). We will seek to address these goals through the
+following aims: Aim 1: To develop and refine new approaches to the study and clinical translation of
+Precision Gerontology. Aim 2: To develop and evaluate new research methods, techniques, and
+collaborative approaches required to advance the goals of Precision Gerontology. Aim 3: To identify,
+develop, and learn from experiences of the next generation of researchers poised to become leaders
+in geriatrics research related to the UConn OAIC focus. Aim 4: To select and support innovative
+pilot studies that show promise in helping to guide the design, funding, and completion of more
+definitive future research studies related to the UConn OAIC focus.
+
+=== [29] reporter:5P30AG067988-03 | 2023 | EUR 1.16M | National Institute on Aging
+TITLE: Claude D. Pepper Older Americans Independence Center (P30 Clinical Trial Optional)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY OVERALL This proposal seeks to establish the Claude D Pepper Older Americans
+Independence Center at UConn (UConn OAIC) with the overarching goal of developing clinical
+strategies for enhancing function and independence in older adults that are more precise,
+personalized, and effective. Our focus on Precision Gerontology has emerged through the collective
+experiences and insights of our multidisciplinary team of accomplished investigators in the UConn
+Center on Aging – all united by a shared commitment to improving the lives of older adults through
+research, education, and clinical care. Our emphasis on Precision Gerontology has been guided by
+three principles: 1. A growing heterogeneity or variability over time among individuals involving
+all aspects of aging that therefore necessitates a multidisciplinary team-based approach to aging
+research; 2. Increased heterogeneity or variability with aging in older adults’ responses to
+treatment, highlighting the need for better targeting; and 3. Recognition of a need to incorporate
+these considerations into the design and testing of novel geroscience-guided therapies. These
+objectives will be achieved by establishing a UConn OAIC through the coordinated activities of a
+Leadership and Administration Core (LAC), Recruitment and Community Engagement Core (RC1), Data
+Resource Core (RC2), Biomarker and Preclinical Research Core (RC3), Pilot and Exploratory Studies
+Core (PESC), and Research Education Component (REC). We will seek to address these goals through the
+following aims: Aim 1: To develop and refine new approaches to the study and clinical translation of
+Precision Gerontology. Aim 2: To develop and evaluate new research methods, techniques, and
+collaborative approaches required to advance the goals of Precision Gerontology. Aim 3: To identify,
+develop, and learn from experiences of the next generation of researchers poised to become leaders
+in geriatrics research related to the UConn OAIC focus. Aim 4: To select and support innovative
+pilot studies that show promise in helping to guide the design, funding, and completion of more
+definitive future research studies related to the UConn OAIC focus.
+
+=== [30] reporter:5P30AG067988-04 | 2024 | EUR 1.16M | National Institute on Aging
+TITLE: Claude D. Pepper Older Americans Independence Center (P30 Clinical Trial Optional)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY OVERALL This proposal seeks to establish the Claude D Pepper Older Americans
+Independence Center at UConn (UConn OAIC) with the overarching goal of developing clinical
+strategies for enhancing function and independence in older adults that are more precise,
+personalized, and effective. Our focus on Precision Gerontology has emerged through the collective
+experiences and insights of our multidisciplinary team of accomplished investigators in the UConn
+Center on Aging – all united by a shared commitment to improving the lives of older adults through
+research, education, and clinical care. Our emphasis on Precision Gerontology has been guided by
+three principles: 1. A growing heterogeneity or variability over time among individuals involving
+all aspects of aging that therefore necessitates a multidisciplinary team-based approach to aging
+research; 2. Increased heterogeneity or variability with aging in older adults’ responses to
+treatment, highlighting the need for better targeting; and 3. Recognition of a need to incorporate
+these considerations into the design and testing of novel geroscience-guided therapies. These
+objectives will be achieved by establishing a UConn OAIC through the coordinated activities of a
+Leadership and Administration Core (LAC), Recruitment and Community Engagement Core (RC1), Data
+Resource Core (RC2), Biomarker and Preclinical Research Core (RC3), Pilot and Exploratory Studies
+Core (PESC), and Research Education Component (REC). We will seek to address these goals through the
+following aims: Aim 1: To develop and refine new approaches to the study and clinical translation of
+Precision Gerontology. Aim 2: To develop and evaluate new research methods, techniques, and
+collaborative approaches required to advance the goals of Precision Gerontology. Aim 3: To identify,
+develop, and learn from experiences of the next generation of researchers poised to become leaders
+in geriatrics research related to the UConn OAIC focus. Aim 4: To select and support innovative
+pilot studies that show promise in helping to guide the design, funding, and completion of more
+definitive future research studies related to the UConn OAIC focus.
+
+=== [31] reporter:5P30AG067988-05 | 2025 | EUR 1.15M | National Institute on Aging
+TITLE: Claude D. Pepper Older Americans Independence Center (P30 Clinical Trial Optional)
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY OVERALL This proposal seeks to establish the Claude D Pepper Older Americans
+Independence Center at UConn (UConn OAIC) with the overarching goal of developing clinical
+strategies for enhancing function and independence in older adults that are more precise,
+personalized, and effective. Our focus on Precision Gerontology has emerged through the collective
+experiences and insights of our multidisciplinary team of accomplished investigators in the UConn
+Center on Aging – all united by a shared commitment to improving the lives of older adults through
+research, education, and clinical care. Our emphasis on Precision Gerontology has been guided by
+three principles: 1. A growing heterogeneity or variability over time among individuals involving
+all aspects of aging that therefore necessitates a multidisciplinary team-based approach to aging
+research; 2. Increased heterogeneity or variability with aging in older adults’ responses to
+treatment, highlighting the need for better targeting; and 3. Recognition of a need to incorporate
+these considerations into the design and testing of novel geroscience-guided therapies. These
+objectives will be achieved by establishing a UConn OAIC through the coordinated activities of a
+Leadership and Administration Core (LAC), Recruitment and Community Engagement Core (RC1), Data
+Resource Core (RC2), Biomarker and Preclinical Research Core (RC3), Pilot and Exploratory Studies
+Core (PESC), and Research Education Component (REC). We will seek to address these goals through the
+following aims: Aim 1: To develop and refine new approaches to the study and clinical translation of
+Precision Gerontology. Aim 2: To develop and evaluate new research methods, techniques, and
+collaborative approaches required to advance the goals of Precision Gerontology. Aim 3: To identify,
+develop, and learn from experiences of the next generation of researchers poised to become leaders
+in geriatrics research related to the UConn OAIC focus. Aim 4: To select and support innovative
+pilot studies that show promise in helping to guide the design, funding, and completion of more
+definitive future research studies related to the UConn OAIC focus.
+
+=== [32] reporter:2P30AG021342-21 | 2023 | EUR 1.14M | National Institute on Aging
+TITLE: Claude D. Pepper Older Americans Independence Center at Yale
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The overarching objective of the Yale Older Americans Independence Center (OAIC), established in
+1992, is to provide intellectual leadership and innovation for aging research that is directed at
+enhancing the inde- pendence of older persons. The unifying theme of the Yale OAIC remains the
+investigation of multifactorial ger- iatric conditions, encompassing single conditions resulting
+from multiple contributing factors or affecting multi- ple outcomes and multiple conditions
+occurring simultaneously. The central Yale OAIC hypothesis is that geriatric conditions are
+determined by the co-occurrence of multiple predisposing and precipitating factors. These conditions
+and factors, in turn, affect a range of health outcomes. The predisposing factors may be at the
+genetic, molecular, physiologic, impairment, disease, or socio-demographic level, while the
+precipitating factors may be behavioral, environmental, social, medical, or psychological. The Yale
+OAIC theme requires designs and models (e.g. molecular, animal, and statistical) that inform the
+study of multiple, simultaneously interactive factors and outcomes. As a prominent subtheme, the
+Yale OAIC also aims to advance the science of clinical decision making in the face of trade-offs and
+multiple competing outcomes. This includes developing strategies to elicit older persons’ health
+outcome priorities. The Specific Aims of the Yale OAIC are to: 1) foster the career development of
+future academic leaders, from multiple disciplines, in aging research; 2) train investigators,
+biostatisticians and other methodologists in the skills necessary to design, conduct, analyze, and
+disseminate findings from studies of multifactorial geriat- ric conditions; 3) develop and
+disseminate design and analytic techniques for conducting studies of multifacto- rial geriatric
+conditions; 4) develop strategies for recruiting into, and retaining, a broad spectrum of older per-
+sons, including minorities, into studies of multifactorial geriatric conditions; 5) investigate the
+causative mecha- nisms of, and develop and test effective treatments for, geriatric conditions from
+a multifactorial research per- spective; 6) develop strategies to enhance clinical decision making
+in the setting of multiple competing out- comes; 7) encourage and facilitate interdisciplinary
+research (basic, translational and clinical) that connects to our focus on multifactorial geriatric
+conditions; and 8) further strengthen collaborations with other OAICs. The Yale OAIC cores include:
+1) Leadership and Administrative; 2) Research Education (REC); 3) Pilot/Exploratory Studies; 4)
+Operations; and 5) Biostatistics. For the first one to two years of the next funding cycle, we
+propose to support 3 REC Scholars, 3 pilot studies, 2 development projects, and 40 externally funded
+projects. The Yale OAIC has made outstanding progress during the current funding cycle, as evidenced
+by publica- tion of 474 manuscripts and receipt of more than $196 million in grants (total costs),
+with an additional $25.5 million pending. Based on grants received, the return on investment from
+OAIC support is more than 34 to 1. During the next 5 years, we are planning to focus more intently
+on translational geroscience research.
+
+=== [33] reporter:5P30AG021342-22 | 2024 | EUR 1.14M | National Institute on Aging
+TITLE: Claude D. Pepper Older Americans Independence Center at Yale
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The overarching objective of the Yale Older Americans Independence Center (OAIC), established in
+1992, is to provide intellectual leadership and innovation for aging research that is directed at
+enhancing the inde- pendence of older persons. The unifying theme of the Yale OAIC remains the
+investigation of multifactorial ger- iatric conditions, encompassing single conditions resulting
+from multiple contributing factors or affecting multi- ple outcomes and multiple conditions
+occurring simultaneously. The central Yale OAIC hypothesis is that geriatric conditions are
+determined by the co-occurrence of multiple predisposing and precipitating factors. These conditions
+and factors, in turn, affect a range of health outcomes. The predisposing factors may be at the
+genetic, molecular, physiologic, impairment, disease, or socio-demographic level, while the
+precipitating factors may be behavioral, environmental, social, medical, or psychological. The Yale
+OAIC theme requires designs and models (e.g. molecular, animal, and statistical) that inform the
+study of multiple, simultaneously interactive factors and outcomes. As a prominent subtheme, the
+Yale OAIC also aims to advance the science of clinical decision making in the face of trade-offs and
+multiple competing outcomes. This includes developing strategies to elicit older persons’ health
+outcome priorities. The Specific Aims of the Yale OAIC are to: 1) foster the career development of
+future academic leaders, from multiple disciplines, in aging research; 2) train investigators,
+biostatisticians and other methodologists in the skills necessary to design, conduct, analyze, and
+disseminate findings from studies of multifactorial geriat- ric conditions; 3) develop and
+disseminate design and analytic techniques for conducting studies of multifacto- rial geriatric
+conditions; 4) develop strategies for recruiting into, and retaining, a broad spectrum of older per-
+sons, including minorities, into studies of multifactorial geriatric conditions; 5) investigate the
+causative mecha- nisms of, and develop and test effective treatments for, geriatric conditions from
+a multifactorial research per- spective; 6) develop strategies to enhance clinical decision making
+in the setting of multiple competing out- comes; 7) encourage and facilitate interdisciplinary
+research (basic, translational and clinical) that connects to our focus on multifactorial geriatric
+conditions; and 8) further strengthen collaborations with other OAICs. The Yale OAIC cores include:
+1) Leadership and Administrative; 2) Research Education (REC); 3) Pilot/Exploratory Studies; 4)
+Operations; and 5) Biostatistics. For the first one to two years of the next funding cycle, we
+propose to support 3 REC Scholars, 3 pilot studies, 2 development projects, and 40 externally funded
+projects. The Yale OAIC has made outstanding progress during the current funding cycle, as evidenced
+by publica- tion of 474 manuscripts and receipt of more than $196 million in grants (total costs),
+with an additional $25.5 million pending. Based on grants received, the return on investment from
+OAIC support is more than 34 to 1. During the next 5 years, we are planning to focus more intently
+on translational geroscience research.
+
+=== [34] reporter:5P30AG021342-23 | 2025 | EUR 1.14M | National Institute on Aging
+TITLE: Claude D. Pepper Older Americans Independence Center at Yale
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The overarching objective of the Yale Older Americans Independence Center (OAIC), established in
+1992, is to provide intellectual leadership and innovation for aging research that is directed at
+enhancing the inde- pendence of older persons. The unifying theme of the Yale OAIC remains the
+investigation of multifactorial ger- iatric conditions, encompassing single conditions resulting
+from multiple contributing factors or affecting multi- ple outcomes and multiple conditions
+occurring simultaneously. The central Yale OAIC hypothesis is that geriatric conditions are
+determined by the co-occurrence of multiple predisposing and precipitating factors. These conditions
+and factors, in turn, affect a range of health outcomes. The predisposing factors may be at the
+genetic, molecular, physiologic, impairment, disease, or socio-demographic level, while the
+precipitating factors may be behavioral, environmental, social, medical, or psychological. The Yale
+OAIC theme requires designs and models (e.g. molecular, animal, and statistical) that inform the
+study of multiple, simultaneously interactive factors and outcomes. As a prominent subtheme, the
+Yale OAIC also aims to advance the science of clinical decision making in the face of trade-offs and
+multiple competing outcomes. This includes developing strategies to elicit older persons’ health
+outcome priorities. The Specific Aims of the Yale OAIC are to: 1) foster the career development of
+future academic leaders, from multiple disciplines, in aging research; 2) train investigators,
+biostatisticians and other methodologists in the skills necessary to design, conduct, analyze, and
+disseminate findings from studies of multifactorial geriat- ric conditions; 3) develop and
+disseminate design and analytic techniques for conducting studies of multifacto- rial geriatric
+conditions; 4) develop strategies for recruiting into, and retaining, a broad spectrum of older per-
+sons, including minorities, into studies of multifactorial geriatric conditions; 5) investigate the
+causative mecha- nisms of, and develop and test effective treatments for, geriatric conditions from
+a multifactorial research per- spective; 6) develop strategies to enhance clinical decision making
+in the setting of multiple competing out- comes; 7) encourage and facilitate interdisciplinary
+research (basic, translational and clinical) that connects to our focus on multifactorial geriatric
+conditions; and 8) further strengthen collaborations with other OAICs. The Yale OAIC cores include:
+1) Leadership and Administrative; 2) Research Education (REC); 3) Pilot/Exploratory Studies; 4)
+Operations; and 5) Biostatistics. For the first one to two years of the next funding cycle, we
+propose to support 3 REC Scholars, 3 pilot studies, 2 development projects, and 40 externally funded
+projects. The Yale OAIC has made outstanding progress during the current funding cycle, as evidenced
+by publica- tion of 474 manuscripts and receipt of more than $196 million in grants (total costs),
+with an additional $25.5 million pending. Based on grants received, the return on investment from
+OAIC support is more than 34 to 1. During the next 5 years, we are planning to focus more intently
+on translational geroscience research.
+
+=== [35] reporter:1ZIAES021164-21 | 2017 | EUR 1.14M | National Institute of Environmental Health Sciences
+TITLE: Environmentally Induced Alterations In Neuron And Glia Development and Aging
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Neuroinflammation is associated with essentially every neurological disorder, neurodegenerative
+disease, and neurodevelopmental disorder. In the brain, regulation of an inflammatory response is
+under the control of specific cells known as microglia, They coordinate CNS inflammation by an
+intricate communication network with other intrinsic cellular components to shape inflammatory
+responses. Brain macrophages exist in various states of activation within injured tissue and retain
+the capability to shift their functional phenotype within specific stages of the inflammatory
+response. Like other tissue macrophages, microglia provide the first line of defense against
+invading microbes; yet, remain unique in their ability to detect critical changes in neuronal
+activity and health. They are capable of actively monitoring and controlling the extracellular
+environment, walling off areas of the CNS from non-CNS tissue, and removing dead or damaged cells.
+In addition, microglia play a critical role in maintaining brain homeostasis and in facilitating
+synapse formation and remodeling. Alterations in the normal functions of microglia can have
+detrimental effects on brain development and in the ability of the brain to maintain normal
+functioning and plasticity. We have examined the process by which the microglia can be altered as a
+function of development, aging, and in disease states such as schizophrenia and as a function of
+environmental factors. We are interested in determining the regulatory factors that influence the
+microglia response and whether this can be altered by environmental factors. Much of our work has
+been associated with identifying markers of microglia activation state/polarization and
+understanding the functional associations with each state (phagocytosis, chemotaxis, shifts in
+mitochondrial bioenergetics). We are examining the ability of various environmental agents
+(trimethyltin, arsenic) to modify the normal functional ability of microglia. In examining the
+neurotoxic potential of arsenic, we have examined the effect of acute and prolonged arsenic exposure
+to modify the ability of microglia to mount a normal host-response to an inflammatory event. We have
+identified that arsenic can shift the normal response of microglia to lipopolysaccharide for a
+pro-inflammatory response and to interleukin 4/ interleukin 13 to induce an anti-inflammatory
+response. We have also identified that under these exposure conditions the phagocytic capability of
+the macrophage is blunted. We have also characterized the dynamics of the bioenergetic capacity of
+microglia under these conditions and how they shift depending on the initiating stimulus. We have
+expanded this research to examine the ability of environmental agents to act as a trigger for
+inflammasome activation as a regulatory process for inflammation. Using these systems as models of
+hindered macrophage response we are examining the impact on biological functions such as migration
+and phagocytic capability and developing methods to assess what impact this shift may have not only
+on adult response to disease or injury but also in brain development and ability to repair following
+injury. To evaluate the impact of pro-inflammatory cytokines on the brain repair response we have
+developed a model system to examine the progenitor cell population from the subgranular zone of the
+hippocampus at different ages. Using this system as well as the in vivo model we are examining the
+influence of microglia and pro-inflammatory cytokines on the proliferation and differentiation of
+neural progenitor cells and how drug or toxicant exposure can influence this process to enhance or
+hinder repair. We have identified a possible pivot point distinguishing beneficial versus
+detrimental effects on neural progenitor cells in the hippocampus of adolescent mice in the
+interleukin 1 activation of the inflammasome. For these studies we continue to use a number of
+methods to examine alterations in the developing nervous system following exposure to environmental
+agents including immunohistochemistry, con-focal imaging, flow cytometry, seahorse mitochondrial
+bioenergetics, molecular techniques to examine mRNA level such as qRT-PCR, microarray, RNase
+protection assays, neuroprogenitor cell cultures, adult derived neural stem/progenitor cells, as
+well as assessment of neurobehavioral functioning.
+
+=== [36] reporter:2P30AG028716-16 | 2021 | EUR 1.13M | National Institute on Aging
+TITLE: Duke Claude D. Pepper Older Americans Independence Center
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY – Overall Duke Claude D. Pepper Older Americans Independence Center (Duke OAIC) The
+Duke OAIC will provide scientific leadership, innovation, interdisciplinary research strategies,
+translational approaches, development of early-stage investigators and a collaborative spirit in its
+theme: to understand and optimize physiologic reserve and physical resilience in older adults. The
+specific aims are to advance knowledge of measures, mechanisms and analysis of reserve and
+resilience in older adults through an integrated research program; to develop and evaluate
+interventions that optimize reserve and resilience in older adults; to identify and develop the next
+generation of researchers who will become leaders in aging and geriatrics research related to the
+theme; and to support pilot studies that will progress to successful, more definitive research
+studies related to the Duke OAIC focus. The experienced Leadership and Administrative Core will
+direct OAIC activities. The Center supports a Research Education Component (REC), Pilot/Exploratory
+Studies Core (PESC) and three resource Cores: Molecular Measures, Health and Mobility Measures, and
+Analysis. The resource cores provide collaborative support to externally funded projects,
+developmental projects, REC Scholars and PESC pilot studies. In addition, the Molecular Measures
+Core will develop new molecular profiling and testing capabilities to evaluate resiliencies in the
+setting of stressors, including SARS-CoV2, and conduct systems analyses to identify biological
+pathways indicative of resilient phenotypes. The Health and Mobility Measures Core will identify
+gaps in reserve and resiliency measures at the person level, and develop and adapt innovative
+measurements for related outcomes; and build resiliency related data science capacity in
+collaboration with Duke’s Center for Actionable Health Data Science (Forge). The Analysis Core will
+develop and disseminate new biostatistical analytic methodologies to advance the study of reserve
+and resilience. The REC will deliver an aging research curriculum around promoting reserve and
+resilience, while providing multiple opportunities for feedback, networking, and peer support. The
+PESC will facilitate the highest caliber pilot studies related to our theme. The Duke OAIC will use
+innovative approaches to facilitate career development and research capabilities, including the Data
+Integration Working Group, “Pepper Shakers” Networking Events, Intervention Development for Elderly
+Adults (IDEA) workshops, National Research Mentoring Network Training Workshop, training workshops
+on physical function measurement and accelerometer analysis methods, Health Care Disparities
+Research Curriculum, Duke Pepper Center Study Dashboard and inclusion of community representatives
+in the pilot study selection process.
+
+=== [37] reporter:5P30AG028716-20 | 2025 | EUR 1.13M | National Institute on Aging
+TITLE: Duke Claude D. Pepper Older Americans Independence Center
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY – Overall Duke Claude D. Pepper Older Americans Independence Center (Duke OAIC) The
+Duke OAIC will provide scientific leadership, innovation, interdisciplinary research strategies,
+translational approaches, development of early-stage investigators and a collaborative spirit in its
+theme: to understand and optimize physiologic reserve and physical resilience in older adults. The
+specific aims are to advance knowledge of measures, mechanisms and analysis of reserve and
+resilience in older adults through an integrated research program; to develop and evaluate
+interventions that optimize reserve and resilience in older adults; to identify and develop the next
+generation of researchers who will become leaders in aging and geriatrics research related to the
+theme; and to support pilot studies that will progress to successful, more definitive research
+studies related to the Duke OAIC focus. The experienced Leadership and Administrative Core will
+direct OAIC activities. The Center supports a Research Education Component (REC), Pilot/Exploratory
+Studies Core (PESC) and three resource Cores: Molecular Measures, Health and Mobility Measures, and
+Analysis. The resource cores provide collaborative support to externally funded projects,
+developmental projects, REC Scholars and PESC pilot studies. In addition, the Molecular Measures
+Core will develop new molecular profiling and testing capabilities to evaluate resiliencies in the
+setting of stressors, including SARS-CoV2, and conduct systems analyses to identify biological
+pathways indicative of resilient phenotypes. The Health and Mobility Measures Core will identify
+gaps in reserve and resiliency measures at the person level, and develop and adapt innovative
+measurements for related outcomes; and build resiliency related data science capacity in
+collaboration with Duke’s Center for Actionable Health Data Science (Forge). The Analysis Core will
+develop and disseminate new biostatistical analytic methodologies to advance the study of reserve
+and resilience. The REC will deliver an aging research curriculum around promoting reserve and
+resilience, while providing multiple opportunities for feedback, networking, and peer support. The
+PESC will facilitate the highest caliber pilot studies related to our theme. The Duke OAIC will use
+innovative approaches to facilitate career development and research capabilities, including the Data
+Integration Working Group, “Pepper Shakers” Networking Events, Intervention Development for Elderly
+Adults (IDEA) workshops, National Research Mentoring Network Training Workshop, training workshops
+on physical function measurement and accelerometer analysis methods, Health Care Disparities
+Research Curriculum, Duke Pepper Center Study Dashboard and inclusion of community representatives
+in the pilot study selection process.
+
+=== [38] reporter:5P30AG028716-18 | 2023 | EUR 1.12M | National Institute on Aging
+TITLE: Duke Claude D. Pepper Older Americans Independence Center
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY – Overall Duke Claude D. Pepper Older Americans Independence Center (Duke OAIC) The
+Duke OAIC will provide scientific leadership, innovation, interdisciplinary research strategies,
+translational approaches, development of early-stage investigators and a collaborative spirit in its
+theme: to understand and optimize physiologic reserve and physical resilience in older adults. The
+specific aims are to advance knowledge of measures, mechanisms and analysis of reserve and
+resilience in older adults through an integrated research program; to develop and evaluate
+interventions that optimize reserve and resilience in older adults; to identify and develop the next
+generation of researchers who will become leaders in aging and geriatrics research related to the
+theme; and to support pilot studies that will progress to successful, more definitive research
+studies related to the Duke OAIC focus. The experienced Leadership and Administrative Core will
+direct OAIC activities. The Center supports a Research Education Component (REC), Pilot/Exploratory
+Studies Core (PESC) and three resource Cores: Molecular Measures, Health and Mobility Measures, and
+Analysis. The resource cores provide collaborative support to externally funded projects,
+developmental projects, REC Scholars and PESC pilot studies. In addition, the Molecular Measures
+Core will develop new molecular profiling and testing capabilities to evaluate resiliencies in the
+setting of stressors, including SARS-CoV2, and conduct systems analyses to identify biological
+pathways indicative of resilient phenotypes. The Health and Mobility Measures Core will identify
+gaps in reserve and resiliency measures at the person level, and develop and adapt innovative
+measurements for related outcomes; and build resiliency related data science capacity in
+collaboration with Duke’s Center for Actionable Health Data Science (Forge). The Analysis Core will
+develop and disseminate new biostatistical analytic methodologies to advance the study of reserve
+and resilience. The REC will deliver an aging research curriculum around promoting reserve and
+resilience, while providing multiple opportunities for feedback, networking, and peer support. The
+PESC will facilitate the highest caliber pilot studies related to our theme. The Duke OAIC will use
+innovative approaches to facilitate career development and research capabilities, including the Data
+Integration Working Group, “Pepper Shakers” Networking Events, Intervention Development for Elderly
+Adults (IDEA) workshops, National Research Mentoring Network Training Workshop, training workshops
+on physical function measurement and accelerometer analysis methods, Health Care Disparities
+Research Curriculum, Duke Pepper Center Study Dashboard and inclusion of community representatives
+in the pilot study selection process.
+
+=== [39] reporter:5P30AG028716-19 | 2024 | EUR 1.12M | National Institute on Aging
+TITLE: Duke Claude D. Pepper Older Americans Independence Center
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY – Overall Duke Claude D. Pepper Older Americans Independence Center (Duke OAIC) The
+Duke OAIC will provide scientific leadership, innovation, interdisciplinary research strategies,
+translational approaches, development of early-stage investigators and a collaborative spirit in its
+theme: to understand and optimize physiologic reserve and physical resilience in older adults. The
+specific aims are to advance knowledge of measures, mechanisms and analysis of reserve and
+resilience in older adults through an integrated research program; to develop and evaluate
+interventions that optimize reserve and resilience in older adults; to identify and develop the next
+generation of researchers who will become leaders in aging and geriatrics research related to the
+theme; and to support pilot studies that will progress to successful, more definitive research
+studies related to the Duke OAIC focus. The experienced Leadership and Administrative Core will
+direct OAIC activities. The Center supports a Research Education Component (REC), Pilot/Exploratory
+Studies Core (PESC) and three resource Cores: Molecular Measures, Health and Mobility Measures, and
+Analysis. The resource cores provide collaborative support to externally funded projects,
+developmental projects, REC Scholars and PESC pilot studies. In addition, the Molecular Measures
+Core will develop new molecular profiling and testing capabilities to evaluate resiliencies in the
+setting of stressors, including SARS-CoV2, and conduct systems analyses to identify biological
+pathways indicative of resilient phenotypes. The Health and Mobility Measures Core will identify
+gaps in reserve and resiliency measures at the person level, and develop and adapt innovative
+measurements for related outcomes; and build resiliency related data science capacity in
+collaboration with Duke’s Center for Actionable Health Data Science (Forge). The Analysis Core will
+develop and disseminate new biostatistical analytic methodologies to advance the study of reserve
+and resilience. The REC will deliver an aging research curriculum around promoting reserve and
+resilience, while providing multiple opportunities for feedback, networking, and peer support. The
+PESC will facilitate the highest caliber pilot studies related to our theme. The Duke OAIC will use
+innovative approaches to facilitate career development and research capabilities, including the Data
+Integration Working Group, “Pepper Shakers” Networking Events, Intervention Development for Elderly
+Adults (IDEA) workshops, National Research Mentoring Network Training Workshop, training workshops
+on physical function measurement and accelerometer analysis methods, Health Care Disparities
+Research Curriculum, Duke Pepper Center Study Dashboard and inclusion of community representatives
+in the pilot study selection process.
+
+=== [40] reporter:5P30AG028716-17 | 2022 | EUR 1.12M | National Institute on Aging
+TITLE: Duke Claude D. Pepper Older Americans Independence Center
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+PROJECT SUMMARY – Overall Duke Claude D. Pepper Older Americans Independence Center (Duke OAIC) The
+Duke OAIC will provide scientific leadership, innovation, interdisciplinary research strategies,
+translational approaches, development of early-stage investigators and a collaborative spirit in its
+theme: to understand and optimize physiologic reserve and physical resilience in older adults. The
+specific aims are to advance knowledge of measures, mechanisms and analysis of reserve and
+resilience in older adults through an integrated research program; to develop and evaluate
+interventions that optimize reserve and resilience in older adults; to identify and develop the next
+generation of researchers who will become leaders in aging and geriatrics research related to the
+theme; and to support pilot studies that will progress to successful, more definitive research
+studies related to the Duke OAIC focus. The experienced Leadership and Administrative Core will
+direct OAIC activities. The Center supports a Research Education Component (REC), Pilot/Exploratory
+Studies Core (PESC) and three resource Cores: Molecular Measures, Health and Mobility Measures, and
+Analysis. The resource cores provide collaborative support to externally funded projects,
+developmental projects, REC Scholars and PESC pilot studies. In addition, the Molecular Measures
+Core will develop new molecular profiling and testing capabilities to evaluate resiliencies in the
+setting of stressors, including SARS-CoV2, and conduct systems analyses to identify biological
+pathways indicative of resilient phenotypes. The Health and Mobility Measures Core will identify
+gaps in reserve and resiliency measures at the person level, and develop and adapt innovative
+measurements for related outcomes; and build resiliency related data science capacity in
+collaboration with Duke’s Center for Actionable Health Data Science (Forge). The Analysis Core will
+develop and disseminate new biostatistical analytic methodologies to advance the study of reserve
+and resilience. The REC will deliver an aging research curriculum around promoting reserve and
+resilience, while providing multiple opportunities for feedback, networking, and peer support. The
+PESC will facilitate the highest caliber pilot studies related to our theme. The Duke OAIC will use
+innovative approaches to facilitate career development and research capabilities, including the Data
+Integration Working Group, “Pepper Shakers” Networking Events, Intervention Development for Elderly
+Adults (IDEA) workshops, National Research Mentoring Network Training Workshop, training workshops
+on physical function measurement and accelerometer analysis methods, Health Care Disparities
+Research Curriculum, Duke Pepper Center Study Dashboard and inclusion of community representatives
+in the pilot study selection process.
+
+=== [41] reporter:4UH3AG056925-03 | 2019 | EUR 1.09M | National Institute on Aging
+TITLE: Physical Resiliencies:  Indicators and Mechanisms in the Elderly Collaborative
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT The overarching objectives of the PRIME Collaborative (Physical Resilience: Indicators and
+Mechanisms in the Elderly) are to characterize specific resilience phenotypes, elucidate biological
+mechanisms, and validate clinically valuable predictive tools and measures of physical resilience.
+The application focuses on resilience in three systems that are central to older adults' overall
+health: musculoskeletal, cognitive, and immune. The central hypothesis of this application is that
+resilience to physical stressors is influenced by biological mechanisms at the molecular level. We
+will examine whether mechanisms associated with one or more of the seven “Pillars of Aging,” which
+have been described by the trans-NIH Geroscience Interest Group, underlie a more generalized
+capacity for recovery that applies across multiple stressor/response scenarios. An inter-
+professional team of aging researchers from has been assembled to accomplish these objectives; the
+team represents expertise from six NIA-funded Older American Independence Centers (OAICs) and
+leverages other existing resources. The PRIME Collaborative team will use a two-phased approach. In
+Phase 1, workgroups will define specific resilience phenotypes in existing datasets using latent
+class trajectory analysis of sequential outcome measures following a stressor. The three resilience
+phenotypes, selected for their over-arching relevance to late life health as well as our team's
+expertise, are: musculoskeletal recovery after orthopedic surgery, immune recovery after infection,
+and cognitive recovery after surgery/anesthesia. We will conduct pilot studies to identify novel
+clinical tests and biomarkers associated with each of these resiliencies. Feasibility and response
+data from pilot studies will inform the design of a larger cohort study in Phase 2. In the final 6
+months of Phase 1, the most promising predictive tests and markers will be selected and will inform
+two parallel activities in Phase 2. First, a longitudinal cohort study of older patients undergoing
+elective surgery will be conducted to validate predictors in a more diverse population. The Phase 2
+cohort study will also allow us to assess synergy and interactions between different types of
+predictors (provocative tests, physiologic output measures, biomarkers) and different types of
+resilience (musculoskeletal, cognitive, immune). Second, biological mechanisms underpinning
+resilience will be identified using newly developed mouse resilience models, and in vitro human and
+mouse myotubule systems. These model systems are suitable for intervention studies. The Phase 2
+biological studies will be designed to identify pathways related to one or more Pillars of Aging so
+that they are likely to underpin multiple types of resilience, and suggest therapeutic targets and
+novel, resilience-bolstering interventions.
+
+=== [42] reporter:4R44EY034758-02 | 2025 | EUR 1.05M | National Eye Institute
+TITLE: Humidifeye Plug for Dry Eye Disease
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary More than 16 million Americans have been diagnosed with Dry Eye Disease (DED). This
+number is growing due to aggravating factors like increased screen time, and an aging population. It
+already has an estimated impact of $6.58 billion on the US healthcare system and $70 billion overall
+economic impact due to decrease in productivity. Two contributing factors to this burden are the
+price an inadequacy of existing treatments. Common treatments include pharmaceutical drops,
+lubricant drops, and punctal plugs. Collectively, these therapies are plagued by poor compliance,
+poor efficacy, discomfort, and untenable costs. Pharmaceutical drops (i.e. Cyclosporine) can also
+take months to achieve an effect. Punctal plugs offer rapid symptom relief but are prone to sizing
+issues, patient discomfort, and in some cases the need for surgical removal. They are made in
+approximately the same designs and with the same materials as at their invention over forty years
+ago. Our objective is to develop a patient-adaptable punctal plug using environmentally sensitive
+hydrogels which exhibit a reverse phase transition. An abundance of literature, including prior
+academic research by members of our team, illustrates the desirable properties of N-
+isopropylacrylamide copolymers for biomedical applications. The majority of these applications are
+aimed at drug release, and to-date no one has designed a material suitable for a long-term medical
+insert. Durability, reliable long-term transition behavior, and scalable manufacture and processing
+are all functional barriers to development. The AesculaTech team developed an early model of such a
+material and a prototype applicator which can store it for two months. When inserted, the plug flows
+into the duct as a liquid, molding to patient anatomy before solidifying. Upon a standard irrigation
+procedure, this material reverts back to flowable gel for removal. Short term early data has also
+shown preliminary biocompatibility. As a new medical material, this plug requires optimized and
+reliable behavior for commercially competitive long-term use. If this project is successful, it will
+provide a wealth of information on new responsive hydrogels and produce a plug which improves
+outcomes and provides a safer and easier alternative for most patients. Phase 1 will research new
+smart hydrogels, using rheology and simulated use to identify a commercially suitable material. The
+Applicator will also be optimized for usable shelf-life. Phase 2-1 will rigorously test the chemical
+and biological safety of the device using extract-based and direct contact methods along with
+generating a list of contraindicated products. Phase 2-2 will clinically validate the performance of
+the product.
+
+=== [43] reporter:5UH3AG056925-05 | 2021 | EUR 1.05M | National Institute on Aging
+TITLE: Physical Resiliencies:  Indicators and Mechanisms in the Elderly Collaborative
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT The overarching objectives of the PRIME Collaborative (Physical Resilience: Indicators and
+Mechanisms in the Elderly) are to characterize specific resilience phenotypes, elucidate biological
+mechanisms, and validate clinically valuable predictive tools and measures of physical resilience.
+The application focuses on resilience in three systems that are central to older adults' overall
+health: musculoskeletal, cognitive, and immune. The central hypothesis of this application is that
+resilience to physical stressors is influenced by biological mechanisms at the molecular level. We
+will examine whether mechanisms associated with one or more of the seven “Pillars of Aging,” which
+have been described by the trans-NIH Geroscience Interest Group, underlie a more generalized
+capacity for recovery that applies across multiple stressor/response scenarios. An inter-
+professional team of aging researchers from has been assembled to accomplish these objectives; the
+team represents expertise from six NIA-funded Older American Independence Centers (OAICs) and
+leverages other existing resources. The PRIME Collaborative team will use a two-phased approach. In
+Phase 1, workgroups will define specific resilience phenotypes in existing datasets using latent
+class trajectory analysis of sequential outcome measures following a stressor. The three resilience
+phenotypes, selected for their over-arching relevance to late life health as well as our team's
+expertise, are: musculoskeletal recovery after orthopedic surgery, immune recovery after infection,
+and cognitive recovery after surgery/anesthesia. We will conduct pilot studies to identify novel
+clinical tests and biomarkers associated with each of these resiliencies. Feasibility and response
+data from pilot studies will inform the design of a larger cohort study in Phase 2. In the final 6
+months of Phase 1, the most promising predictive tests and markers will be selected and will inform
+two parallel activities in Phase 2. First, a longitudinal cohort study of older patients undergoing
+elective surgery will be conducted to validate predictors in a more diverse population. The Phase 2
+cohort study will also allow us to assess synergy and interactions between different types of
+predictors (provocative tests, physiologic output measures, biomarkers) and different types of
+resilience (musculoskeletal, cognitive, immune). Second, biological mechanisms underpinning
+resilience will be identified using newly developed mouse resilience models, and in vitro human and
+mouse myotubule systems. These model systems are suitable for intervention studies. The Phase 2
+biological studies will be designed to identify pathways related to one or more Pillars of Aging so
+that they are likely to underpin multiple types of resilience, and suggest therapeutic targets and
+novel, resilience-bolstering interventions.
+
+=== [44] reporter:1ZIAAI001152-07 | 2017 | EUR 1.04M | National Institute of Allergy and Infectious Diseases
+TITLE: Integrative analysis and modeling of human immune responses and pathologies
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+We have been generating and analyzing multi-modal data to assess the immune phenotypes of healthy
+individuals at baseline and after perturbations, particularly with influenza vaccination. For each
+individual we generate multiple types of measurements from blood, including gene expression,
+multiple panels of 15-color flow cytometry for assessing single-cell phenotypes and cell population
+frequencies (and relative expression of protein markers), proteomic assays (Somalogic and Luminex)
+for measuring serum protein levels, genome-wide genotyping, and serological information such as
+virus-specific antibody titers. We have been conducting integrative modeling analyses using both
+in-house and public data sets to draw novel insights into human immobiology. We have also initiated
+collaborative projects with both extramural and intramural colleagues by applying our human systems
+immunology approach to meta-analyze data from multiple cohorts, and to generate and integrate new
+data from both healthy and disease subjects. Recent highlights of our efforts include: 1. By
+utilizing vaccination as a perturbation, we have developed a conceptual and methodological framework
+to quantify baseline and response variations at the level of genes, pathways, and cell populations
+in a cohort of individuals. Our framework takes advantage of such natural variations to
+systematically infer correlates, build predictive models of response quality after immune
+perturbation, and infer novel functional connections among various components in the human immune
+system. We have applied this framework to the influenza vaccination study utilizing antibody titer
+response as an exemplar endpoint. We confirmed previously known post-vaccination correlates based on
+gene expression and plasmablast frequency from day 7 samples. More importantly, using an approach
+that compensates for the influence of pre-existing serology, age and gender, we derived accurate
+predictive models of antibody responses using pre-vaccination data alone. This finding has obvious
+implications for the design of future vaccine trials and for developing a deeper understanding of
+the molecular and cellular parameters that contribute to robust vaccine responses. The robustness
+and translational potential of these findings is further emphasized by our discovery that the
+parameters playing the greatest role in correct response prediction are those with the most stable
+baseline values across individuals. This raises the prospect of monitoring immune health and
+predicting the quality of responses in the clinic via the evaluation of these baseline blood
+biomarkers. The conceptual and computational analysis framework we have developed can also be
+applied to systems and population level exploration in a number of medically relevant circumstances,
+including but not limited to the effects of drug intervention or natural disease history studies in
+humans. See Tsang JS. 2015 for details. 2. Cell-to-cell expression variation (CEV) is a prevalent
+feature of cell populations, but the functional relevance of this variation is not well understood.
+We have developed an analysis framework for quantifying CEV in human immune cell populations. We
+show that CEV can exhibit substantial subject-to-subject differences but is largely stable within
+individuals, and we identify CEV correlates of aging and disease-associated genetic polymorphisms.
+Our findings indicate that CEV can be a temporally stable phenotype reflective of personal immune
+states. (See Lu Y et al. 2016) 3. Together with colleagues at the Human Immunology Project
+Consortium (HIPC), we have been performing meta-analysis of multiple human influenza vaccination
+data sets to derive common predictive signatures of vaccine responses using pre-vaccination
+gene-expression data. We have successfully uncovered and validated using independent cohorts both
+gene- and gene module-based predictive signatures for younger subjects using data from several study
+cohorts spanning multiple vaccination seasons and geographic locations. 4. Together with colleagues
+at the CHI, we have begun analyzing the multi-modal data obtained from the H5N1 adjuvanted vaccine
+systems biology study. The data were obtained at baseline and from multiple time-points post
+vaccination. The vaccine together with the adjuvant were administered in one of the arms of the
+study, while subjects in the second arm only had the vaccine without the adjuvant. One of the goals
+is to evaluate the effect of the adjuvant. We are developing a novel analysis framework to extract,
+in an unsupervised manner, information about the response dynamics as possible. We will correlate
+the distinct patterns of dynamical responses to biological variables, including the adjuvant status
+and antibody responses. 5. Together with NIH clinical colleagues studying immune-mediated monogenic
+diseases, we have begun to collect baseline samples from different patient groups and are in the
+process of phenotyping them using modern, multiplexed approaches such as blood and cell subset
+profiling, immune cell phenotyping, assessing circulating serum cytokines. One of the key goals is
+to obtain an integrative understanding of similarities and differences across disease groups and to
+further assess whether data from such a collection can help dissect genetically more complex
+diseases. 6. Since we routinely use and analyze publicly available data to argument data generated
+in-house, we have developed a web-based framework (including both user interfaces and database
+components) to facilitate search, retrieval, annotating, meta-analysis, and gene-expression
+signature generation. At the core of our tool are interfaces for creating, annotating, and sharing
+(among the user community) of which groups of samples can be compared to form classical
+gene-expression signatures or expression difference profiles the latter can be used to integrate
+across data sets and studies to generate virtual perturbation pr
+
+=== [45] reporter:1DP1NS131408-01 | 2022 | EUR 1.02M | National Institute of Neurological Disorders and Stroke
+TITLE: Single cell analysis of the kinome
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary Profiling kinases and their activities in single cells will enable exploration of
+cell type specific functional and biochemical pathways. While we have learned a great deal about
+transcriptional states of different cell types in the past decade through single cell genomics, we
+still understand little about proteins and in particular kinases networks in diverse cell
+populations. This is largely because single-cell kinome analysis faces major technical challenges.
+Unlike nucleic acids, proteins cannot be amplified, making detection of minute quantities from
+single cells difficult. We recently demonstrated a proof-of-principle experiment to accurately
+detect protein PTM isoforms in single cells. Here we propose to scale this method up to profile
+kinases at the global level in single cells in both cell culture and in tissues. We will integrate
+the single cell kinome analysis with RNA measurements to identify cell type specific kinase
+profiles. Ultimately, we will map the kinome with spatial context in the mouse and human brain to
+examine the kinase pathways involved in aging and neurodegeneration which could identify druggable
+targets. This project is a major departure from our current research. Its goals are ambitious but
+achievable. The project will leverage our expertise in single cell technology development and in
+application of new technology to diverse biological systems.
+
+=== [46] reporter:5DP1NS131408-02 | 2023 | EUR 1.02M | National Institute of Neurological Disorders and Stroke
+TITLE: Single cell analysis of the kinome
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary Profiling kinases and their activities in single cells will enable exploration of
+cell type specific functional and biochemical pathways. While we have learned a great deal about
+transcriptional states of different cell types in the past decade through single cell genomics, we
+still understand little about proteins and in particular kinases networks in diverse cell
+populations. This is largely because single-cell kinome analysis faces major technical challenges.
+Unlike nucleic acids, proteins cannot be amplified, making detection of minute quantities from
+single cells difficult. We recently demonstrated a proof-of-principle experiment to accurately
+detect protein PTM isoforms in single cells. Here we propose to scale this method up to profile
+kinases at the global level in single cells in both cell culture and in tissues. We will integrate
+the single cell kinome analysis with RNA measurements to identify cell type specific kinase
+profiles. Ultimately, we will map the kinome with spatial context in the mouse and human brain to
+examine the kinase pathways involved in aging and neurodegeneration which could identify druggable
+targets. This project is a major departure from our current research. Its goals are ambitious but
+achievable. The project will leverage our expertise in single cell technology development and in
+application of new technology to diverse biological systems.
+
+=== [47] reporter:5DP1NS131408-03 | 2024 | EUR 1.02M | National Institute of Neurological Disorders and Stroke
+TITLE: Single cell analysis of the kinome
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+Project Summary Profiling kinases and their activities in single cells will enable exploration of
+cell type specific functional and biochemical pathways. While we have learned a great deal about
+transcriptional states of different cell types in the past decade through single cell genomics, we
+still understand little about proteins and in particular kinases networks in diverse cell
+populations. This is largely because single-cell kinome analysis faces major technical challenges.
+Unlike nucleic acids, proteins cannot be amplified, making detection of minute quantities from
+single cells difficult. We recently demonstrated a proof-of-principle experiment to accurately
+detect protein PTM isoforms in single cells. Here we propose to scale this method up to profile
+kinases at the global level in single cells in both cell culture and in tissues. We will integrate
+the single cell kinome analysis with RNA measurements to identify cell type specific kinase
+profiles. Ultimately, we will map the kinome with spatial context in the mouse and human brain to
+examine the kinase pathways involved in aging and neurodegeneration which could identify druggable
+targets. This project is a major departure from our current research. Its goals are ambitious but
+achievable. The project will leverage our expertise in single cell technology development and in
+application of new technology to diverse biological systems.
+
+=== [48] reporter:2P30AG021332-16 | 2018 | EUR 1.01M | National Institute on Aging
+TITLE: Wake Forest Claude D. Pepper OAIC
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The Wake Forest Older Americans Independence Center (WF OAIC) has been funded since 1992 and has
+developed and tested interventions to improve physical function and prevent disability. Our
+translational perspective integrates medicine, behavioral and cognitive science, biostatistics,
+muscle and adipose tissue biology, geroscience, genomics, state-of-the-art imaging, and preclinical,
+clinical and population approaches. Based on our theme, Integrating pathways affecting physical
+function for new approaches to disability treatment and prevention, the WF OAIC will pursue four
+programmatic aims: 1. Discover new common pathways contributing to age-related declines in physical
+function and disability; 2. Develop, evaluate, and refine strategies for disability treatment and
+prevention; 3. Translate proven strategies beyond the traditional academic research environment; 4.
+Train the next generation of research leaders focused on disability treatment and prevention. The
+aims will be pursued by integrating the efforts of 4 highly productive research support cores: the
+Clinical Research Core; Biostatistics and Research Information Systems Core; Integrative Biology
+Core; and BioImaging Resource Core. Under the continuing and dedicated leadership of Drs.
+Kritchevsky and Kitzman, the Leadership and Administrative Core will coordinate these research core
+activities with those of the Research Education Component and the Pilot and Exploratory Studies
+Core. The WF OAIC will use its core structure and highly integrated approach to: 1) Translate
+measures and approaches from the biology of aging for disability prevention; 2) Incorporate new
+pathways important to functional decline, including brain-mediated ones, into our integrated model
+for intervention development; 3) Develop and test innovative approaches to optimize body composition
+and function in older adults; 4) Translate OAIC approaches into clinical and community settings; and
+5) Provide mentoring and support for the next generation translational research leaders focused on
+disability treatment and prevention in older Americans.
+
+=== [49] reporter:5P30AG021332-17 | 2019 | EUR 1.01M | National Institute on Aging
+TITLE: Wake Forest Claude D. Pepper OAIC
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+The Wake Forest Older Americans Independence Center (WF OAIC) has been funded since 1992 and has
+developed and tested interventions to improve physical function and prevent disability. Our
+translational perspective integrates medicine, behavioral and cognitive science, biostatistics,
+muscle and adipose tissue biology, geroscience, genomics, state-of-the-art imaging, and preclinical,
+clinical and population approaches. Based on our theme, Integrating pathways affecting physical
+function for new approaches to disability treatment and prevention, the WF OAIC will pursue four
+programmatic aims: 1. Discover new common pathways contributing to age-related declines in physical
+function and disability; 2. Develop, evaluate, and refine strategies for disability treatment and
+prevention; 3. Translate proven strategies beyond the traditional academic research environment; 4.
+Train the next generation of research leaders focused on disability treatment and prevention. The
+aims will be pursued by integrating the efforts of 4 highly productive research support cores: the
+Clinical Research Core; Biostatistics and Research Information Systems Core; Integrative Biology
+Core; and BioImaging Resource Core. Under the continuing and dedicated leadership of Drs.
+Kritchevsky and Kitzman, the Leadership and Administrative Core will coordinate these research core
+activities with those of the Research Education Component and the Pilot and Exploratory Studies
+Core. The WF OAIC will use its core structure and highly integrated approach to: 1) Translate
+measures and approaches from the biology of aging for disability prevention; 2) Incorporate new
+pathways important to functional decline, including brain-mediated ones, into our integrated model
+for intervention development; 3) Develop and test innovative approaches to optimize body composition
+and function in older adults; 4) Translate OAIC approaches into clinical and community settings; and
+5) Provide mentoring and support for the next generation translational research leaders focused on
+disability treatment and prevention in older Americans.
+
+=== [50] reporter:1UH2AG056925-01 | 2017 | EUR 0.99M | National Institute on Aging
+TITLE: Physical Resiliencies:  Indicators and Mechanisms in the Elderly Collaborative
+RULES: An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.
+ABSTRACT:
+ABSTRACT The overarching objectives of the PRIME Collaborative (Physical Resilience: Indicators and
+Mechanisms in the Elderly) are to characterize specific resilience phenotypes, elucidate biological
+mechanisms, and validate clinically valuable predictive tools and measures of physical resilience.
+The application focuses on resilience in three systems that are central to older adults' overall
+health: musculoskeletal, cognitive, and immune. The central hypothesis of this application is that
+resilience to physical stressors is influenced by biological mechanisms at the molecular level. We
+will examine whether mechanisms associated with one or more of the seven “Pillars of Aging,” which
+have been described by the trans-NIH Geroscience Interest Group, underlie a more generalized
+capacity for recovery that applies across multiple stressor/response scenarios. An inter-
+professional team of aging researchers from has been assembled to accomplish these objectives; the
+team represents expertise from six NIA-funded Older American Independence Centers (OAICs) and
+leverages other existing resources. The PRIME Collaborative team will use a two-phased approach. In
+Phase 1, workgroups will define specific resilience phenotypes in existing datasets using latent
+class trajectory analysis of sequential outcome measures following a stressor. The three resilience
+phenotypes, selected for their over-arching relevance to late life health as well as our team's
+expertise, are: musculoskeletal recovery after orthopedic surgery, immune recovery after infection,
+and cognitive recovery after surgery/anesthesia. We will conduct pilot studies to identify novel
+clinical tests and biomarkers associated with each of these resiliencies. Feasibility and response
+data from pilot studies will inform the design of a larger cohort study in Phase 2. In the final 6
+months of Phase 1, the most promising predictive tests and markers will be selected and will inform
+two parallel activities in Phase 2. First, a longitudinal cohort study of older patients undergoing
+elective surgery will be conducted to validate predictors in a more diverse population. The Phase 2
+cohort study will also allow us to assess synergy and interactions between different types of
+predictors (provocative tests, physiologic output measures, biomarkers) and different types of
+resilience (musculoskeletal, cognitive, immune). Second, biological mechanisms underpinning
+resilience will be identified using newly developed mouse resilience models, and in vitro human and
+mouse myotubule systems. These model systems are suitable for intervention studies. The Phase 2
+biological studies will be designed to identify pathways related to one or more Pillars of Aging so
+that they are likely to underpin multiple types of resilience, and suggest therapeutic targets and
+novel, resilience-bolstering interventions.
+

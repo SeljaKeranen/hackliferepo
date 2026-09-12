@@ -304,6 +304,29 @@ def main() -> int:
             fresh = term_stats(entry["term"], proxy, rows, examples=3)
             check(entry, fresh, label)
 
+        # conditional voters are syntax-checked only: they are conditioned
+        # (anchor / dev_cues), so the unconditional precision and hit
+        # thresholds do not apply; weights come from ratio/expert labels and
+        # are recorded in the entry's evidence field. A term may be a trap
+        # term or an expert-validated seed that cannot clear the stale
+        # category proxy (the social category's llm proxy predates it).
+        kept_terms = {e["term"] for e in block.get("en", [])
+                      + block.get("sv", [])}
+        for entry in block.get("conditional_voters", []):
+            label = f"{cat}/conditional/{entry.get('term')}"
+            err = term_error(entry.get("term", ""))
+            if err:
+                failures.append(f"malformed term {label}: {err}")
+                continue
+            if entry.get("requires") not in ("anchor", "dev_cues"):
+                failures.append(f"{label}: requires must be 'anchor' or "
+                                f"'dev_cues'")
+            weight = entry.get("weight")
+            if not isinstance(weight, (int, float)) or not 0.0 <= weight <= 1.0:
+                failures.append(f"{label}: weight must be a number in [0, 1]")
+            if entry["term"] in kept_terms:
+                failures.append(f"{label}: term is already a kept keyword")
+
     for lang in ("en", "sv"):
         for entry in lex["meta"]["broad_net"][lang]:
             label = f"broad_net/{lang}/{entry['term']}"

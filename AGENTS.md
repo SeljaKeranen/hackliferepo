@@ -16,6 +16,8 @@ The delivery target is the Sunday 12:00 submission and the Demo Day pitch. Befor
 - What now works, with verification evidence. Identify fixtures, simulations, and unverified claims.
 - What remains incomplete.
 
+The demo centerpiece is the index map under `map/` (run command, index formula and vendored-asset provenance in `map/README.md`). It reads `eval/findings/` and `eval/verdicts/` but must stay decoupled from the eval loop, which works standalone.
+
 Evidence over theatre. Every material finding, classification, or claim links to a dated source. Findings follow `schema/finding.schema.json` and are human-verified with the eval loop in `eval/README.md` (`python3 eval/server.py`). State uncertainty and failure modes. Where the track brief asks for a falsification criterion or a held-out evaluation, build for generalisation rather than the visible data.
 
 Document each dataset's source and licence before using it. Do not commit raw datasets, restricted data, credentials, or anything identifiable. Restricted, paid, private, or identifiable data needs explicit permission and safeguards. Be explicit about what the prototype can and cannot do, especially for anything health related. No clinical claims.

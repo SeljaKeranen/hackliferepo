@@ -29,6 +29,7 @@ V1_OVERALL = 0.533
 
 
 def main() -> int:
+    print("DEVELOPMENT ONLY: the reference labels are not verified human ground truth; this is not an accuracy result.")
     experts = {}
     for line in EXPERT.open(encoding="utf-8"):
         rec = json.loads(line)

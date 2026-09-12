@@ -1,3 +1,5 @@
+> Historical development artifact. The “expert” and review terminology below does not establish human provenance. Treat these labels and comparisons as unvalidated development evidence, not human ground truth. The current deliverable is the [research instrument](INSTRUMENT.md), with no published funding estimate.
+
 # Ratio v2 plan: keyword expansion and near-tie rules
 
 Status: Tracks A and B implemented and validated 2026-09-12; Phase 2

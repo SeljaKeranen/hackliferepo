@@ -16,7 +16,7 @@ The delivery target is the Sunday 12:00 submission and the Demo Day pitch. Befor
 - What now works, with verification evidence. Identify fixtures, simulations, and unverified claims.
 - What remains incomplete.
 
-The demo centerpiece is the index map under `map/` (run command, index formula and vendored-asset provenance in `map/README.md`). It reads `eval/findings/` and `eval/verdicts/` but must stay decoupled from the eval loop, which works standalone.
+The current demo is the research instrument under `ratio/`; see `ratio/INSTRUMENT.md` for the working taxonomy, run commands, sources and validation limits. No funding estimate is a weekend deliverable. The earlier policy map and eval loop remain separate historical prototypes.
 
 Evidence over theatre. Every material finding, classification, or claim links to a dated source. Findings follow `schema/finding.schema.json` and are human-verified with the eval loop in `eval/README.md` (`python3 eval/server.py`). State uncertainty and failure modes. Where the track brief asks for a falsification criterion or a held-out evaluation, build for generalisation rather than the visible data.
 

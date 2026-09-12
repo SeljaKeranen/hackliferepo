@@ -22,6 +22,7 @@ import json
 import sys
 from datetime import date, timezone
 from pathlib import Path
+from urllib.parse import quote
 
 DATA_DIR = Path(__file__).resolve().parent
 REPO_ROOT = DATA_DIR.parent.parent
@@ -72,7 +73,32 @@ def write_census(source: str, records: list, funnel: dict) -> Path:
     return out
 
 
+def swecris_project_url(project_id: str) -> str:
+    """SweCRIS uses a hash router; searchText is an API parameter, not a UI route.
+
+    Verified against the official portal's /project/:projectId route on
+    2026-09-12. Encode the project ID as one path segment.
+    """
+    if not isinstance(project_id, str) or not project_id.strip():
+        raise ValueError("SweCRIS project ID is required")
+    return "https://www.vr.se/english/swecris.html#/project/" + quote(project_id.strip(), safe="")
+
+
+def source_url(record: dict) -> str:
+    if record.get("source") == "swecris":
+        project_id = record.get("source_id")
+        if not project_id:
+            record_id = record.get("record_id", "")
+            if record_id.startswith("swecris:"):
+                project_id = record_id.split(":", 2)[1]
+        return swecris_project_url(project_id)
+    return record.get("url", "")
+
+
 def load_census(source: str) -> list:
     path = DATA_DIR / f"census_{source}.jsonl.gz"
     with gzip.open(path, "rt", encoding="utf-8") as fh:
-        return [json.loads(line) for line in fh]
+        rows = [json.loads(line) for line in fh]
+    for row in rows:
+        row["url"] = source_url(row)
+    return rows

@@ -1,3 +1,5 @@
+> Historical development artifact. The “expert” and review terminology below does not establish human provenance. Treat these labels and comparisons as unvalidated development evidence, not human ground truth. The current deliverable is the [research instrument](../INSTRUMENT.md), with no published funding estimate.
+
 # Second-expert outcomes review of the funding-gap ratio
 
 Independent verification pass over the funding-gap ratio pipeline (PR #10,

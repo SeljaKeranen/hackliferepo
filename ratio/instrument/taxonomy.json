@@ -1,0 +1,28 @@
+{
+  "version": "andrew-working-v1",
+  "status": "Working interpretation of the team decisions supplied on 2026-09-12; Andrew's confirmation is pending.",
+  "labels": [
+    {
+      "id": "preventing_slowing",
+      "name": "Preventing/slowing ageing",
+      "description": "The stated aim studies biological ageing itself or develops/tests ways to modify it. This working definition includes fundamental mechanisms of ageing, even without a therapy. Model organisms qualify when biological ageing is the research aim. A drug name, cellular senescence in a tumour, or a background reference to ageing is not enough."
+    },
+    {
+      "id": "consequences",
+      "name": "Fighting the consequences of ageing",
+      "description": "The stated aim concerns age-related disease, functional decline, care, or social and population consequences of ageing. It must establish the ageing connection. Treating a disease in older adults does not by itself target ageing biology. Generic disease research without that connection does not qualify."
+    },
+    {
+      "id": "neither",
+      "name": "Neither",
+      "description": "The available aims support neither definition, for example extending battery life or studying leaf senescence. Absence of a search keyword alone does not establish this label."
+    },
+    {
+      "id": "ambiguous",
+      "name": "Ambiguous",
+      "description": "The two definitions compete without a clear primary aim, or the available text does not support a choice. Use the separate low-confidence checkbox when missing text or uncertainty limits your judgment. A clearly documented boundary case can be ambiguous without low confidence."
+    }
+  ],
+  "confidence_note": "Low confidence is independent of category. It records uncertainty about your judgment, including missing or truncated text. It is not a probability.",
+  "validation_note": "No external check on the classifier. No validated funding estimate. A 90% human-agreement target remains a future criterion, not a measured result or an automatic publication gate."
+}

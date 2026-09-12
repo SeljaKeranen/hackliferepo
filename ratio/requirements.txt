@@ -1,0 +1,2 @@
+# Optional model runner and its mocked regression tests; no key needed for tests.
+requests==2.32.5

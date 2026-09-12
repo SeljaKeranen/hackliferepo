@@ -27,3 +27,9 @@ ratio/data/__pycache__/
 
 # Local agent-system state
 .agent-system/
+
+# New instrument: generated text, predictions and human decisions remain local.
+ratio/instrument/output/
+ratio/instrument/human/
+ratio/instrument/model-cache/
+ratio/benchmark/human_labels_*.jsonl

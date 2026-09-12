@@ -36,7 +36,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from census_common import (ABSTRACT_LIMIT, YEARS, FX_DATE, to_eur, today,
-                           write_census)
+                           write_census, swecris_project_url)
 
 csv.field_size_limit(10_000_000)  # abstracts overflow the 128 KiB default
 
@@ -126,8 +126,7 @@ def main():
             "currency": "SEK",
             "amount_eur": to_eur(amount, "SEK"),
             "fx_date": FX_DATE,
-            "url": ("https://www.vr.se/english/swecris.html?"
-                    f"searchText={urllib.parse.quote(pid)}"),
+            "url": swecris_project_url(pid),
             "extra": {
                 "matched_phrases": sorted(entry["phrases"]),
                 "funder_type": (r.get("FundingOrganisationTypeOfOrganisationEn")

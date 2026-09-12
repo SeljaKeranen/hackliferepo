@@ -56,7 +56,15 @@ Each judge verdict is `pass`, `fail` or `uncertain` with a one-or-two-line
 reason. The review screen shows the three verdicts per finding and sorts
 findings any judge flagged (fail/uncertain, or stale judgments) first. The
 human then clicks **Agree** (all four checks pass), **Disagree** (pick which
-check fails), or overrides individual checks. The AI judgments are advisory
+check fails), or overrides individual checks. When a judge flag makes you
+disagree, map the dimension to the rubric check like this: a credibility
+fail is usually *claim supported* (or *source resolves* if the URL itself is
+the problem), a recency fail with a wrong date on the original source is
+*date correct* (a merely-superseded source with a correct date is a judgment
+call — often still all-pass plus a note), and a classification fail is
+*classification correct*. Disagree records the picked check as fail and the
+untouched checks as pass; use the per-check buttons instead when more than
+one check fails. The AI judgments are advisory
 pre-marks only: the human's four-check verdict in `verdicts/` remains the
 accuracy metric the challenge is scored on.
 

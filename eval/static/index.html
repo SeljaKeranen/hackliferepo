@@ -180,8 +180,8 @@ function judgePriority(f) {
   const j = judgments[f.id];
   if (!j || !j.judges) return 1;
   if (j.stale) return 0;
-  const verdicts = JUDGES.map(([key]) => (j.judges[key] || {}).verdict);
-  return verdicts.every(v => v === "pass") ? 2 : 0;
+  const judgeVerdicts = JUDGES.map(([key]) => (j.judges[key] || {}).verdict);
+  return judgeVerdicts.every(v => v === "pass") ? 2 : 0;
 }
 
 function verdictState(v) {
@@ -369,7 +369,7 @@ async function save(id, card) {
   saved.classList.remove("err");
   verdicts[id] = res.verdict;
   const state = verdictState(res.verdict);
-  card.classList.remove("correct", "incorrect");
+  card.classList.remove("correct", "incorrect", "stale");
   if (state !== "pending") card.classList.add(state);
   const label = card.querySelector(".verdict-label");
   label.className = "verdict-label " + state;

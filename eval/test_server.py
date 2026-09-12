@@ -85,9 +85,11 @@ def main():
     expect(data["countries"]["broken"]["findings"] == [],
            "corrupt findings file should serve an empty findings list")
     served_judgment = data["countries"]["testland"]["judgments"].get("xx-001", {})
-    expect(served_judgment.get("judges", {}).keys()
-           == {d: None for d in server.JUDGE_DIMENSIONS}.keys(),
+    expect(set(served_judgment.get("judges", {})) == set(server.JUDGE_DIMENSIONS),
            "AI judgments should be served on /api/data")
+    expect(served_judgment.get("judges", {}).get("credibility")
+           == {"verdict": "pass", "reason": "smoke"},
+           "judge record content should round-trip unmodified")
     expect(served_judgment.get("stale") is False,
            "current judgment should not be marked stale")
     expect(data["countries"]["broken"]["judgments"] == {},
@@ -117,6 +119,13 @@ def main():
            "editing a reviewed finding must mark its served verdict stale")
     expect(data["countries"]["testland"]["judgments"]["xx-001"].get("stale") is True,
            "editing a judged finding must mark its served AI judgment stale")
+    with open(findings_path, "w", encoding="utf-8") as f:
+        json.dump([], f)
+    status, data = request(port, "/api/data")
+    expect(data["countries"]["testland"]["verdicts"]["xx-001"].get("stale") is True,
+           "a verdict whose finding vanished must be marked stale")
+    expect(data["countries"]["testland"]["judgments"]["xx-001"].get("stale") is True,
+           "a judgment whose finding vanished must be marked stale")
     with open(findings_path, "w", encoding="utf-8") as f:
         json.dump([FINDING], f)
     status, data = request(port, "/api/data")

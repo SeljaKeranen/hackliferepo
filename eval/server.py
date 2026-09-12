@@ -57,6 +57,18 @@ def finding_fingerprint(rec):
     return hashlib.sha256(core.encode("utf-8")).hexdigest()[:16]
 
 
+def mark_stale(attestations, by_id):
+    """Flag attestations (verdicts or judgments) whose finding changed since
+    they were made, or vanished, so the UI can demand a re-review instead of
+    showing stale green checkmarks. Served only, never written back."""
+    for fid, att in attestations.items():
+        if isinstance(att, dict):
+            rec = by_id.get(fid)
+            att["stale"] = (rec is None
+                            or att.get("finding_fingerprint")
+                            != finding_fingerprint(rec))
+
+
 def load_json(path, default):
     try:
         with open(path, encoding="utf-8") as f:
@@ -114,23 +126,9 @@ class Handler(SimpleHTTPRequestHandler):
                 if not isinstance(judgments, dict):
                     errors.append(f"judgments file {name}.judgments.json is unreadable")
                     judgments = {}
-                # Flag verdicts (and AI judgments) whose finding changed since
-                # review (or vanished) so the UI can demand a re-review instead
-                # of showing stale green checkmarks. Served only, never written
-                # back.
                 by_id = {r.get("id"): r for r in findings if isinstance(r, dict)}
-                for fid, v in verdicts.items():
-                    if isinstance(v, dict):
-                        rec = by_id.get(fid)
-                        v["stale"] = (rec is None
-                                      or v.get("finding_fingerprint")
-                                      != finding_fingerprint(rec))
-                for fid, j in judgments.items():
-                    if isinstance(j, dict):
-                        rec = by_id.get(fid)
-                        j["stale"] = (rec is None
-                                      or j.get("finding_fingerprint")
-                                      != finding_fingerprint(rec))
+                mark_stale(verdicts, by_id)
+                mark_stale(judgments, by_id)
                 entry = {"findings": findings, "verdicts": verdicts,
                          "judgments": judgments}
                 if errors:

@@ -7,7 +7,12 @@ the validated lexicon in classifier/keywords.json:
   step 0  relevance gate: exclusion markers and NONBIO-style engineering /
           agriculture vocabulary route obvious off-topic records to
           not_relevant; a record with no ageing anchor and no category
-          keyword never gets a substantive category either.
+          keyword never gets a substantive category either. A plant /
+          agriculture / ecology arm (PLANTECO below) fires even when a
+          lexicon keyword matched, because senescence, lifespan and
+          longevity are everyday botany, forestry, ecology and
+          animal-breeding vocabulary - unless a human or biomedical-model
+          marker co-occurs (HUMAN_BIOMED below).
   step 1  keyword voting: every kept (non-trap) lexicon keyword that matches
           the record votes for its category with its measured precision as
           the weight ("precision as priors" in KEYWORDS.md). Keywords with
@@ -91,6 +96,38 @@ BIO_CONTEXT = re.compile(
     r"\b(cell|cells|cellular|human|patient|patients|mouse|mice|clinical|"
     r"cohort|gene|genes|protein|proteins)\b")
 
+# Plant / agriculture / ecology contexts in which senescence, lifespan and
+# longevity are everyday non-ageing vocabulary (leaf senescence, productive
+# longevity in livestock, population ecology). Unlike NONBIO, this arm must
+# fire even when a lexicon keyword matched - the tree-physiology grant
+# "How do trees survive the winter?" (swecris:2021-05062_VR) matches
+# senescen* on "leaf senescence" and got fundamental_aging. Terms are
+# compile_term patterns like the lexicon's own.
+PLANTECO_TERMS = [
+    "leaf", "leaves", "foliage", "plant", "plants", "seedling*",
+    "tree", "trees", "forest*", "forestry", "deciduous", "conifer*",
+    "crop", "crops", "agricultur*", "agronom*", "horticultur*",
+    "arabidopsis", "wheat", "maize", "barley",
+    "botany", "botanic*", "photosynthe*", "pollinat*",
+    "livestock", "cattle", "dairy", "poultry", "herd", "breeding",
+    "aquaculture", "fisheries",
+    "grassland*", "meadow*", "soil", "ecosystem*", "ecolog*", "wildlife",
+]
+
+# Guard for the PLANTECO arm: a record with any human or biomedical-model
+# marker is never excluded by plant/ecology vocabulary (a plant-derived
+# compound tested in patients, a socio-ecological study of older adults).
+# BIO_CONTEXT is too weak here - plants have cells, genes and proteins - so
+# this list is human subjects, clinical settings, and the established
+# animal models of ageing biology. OLDER_REF is checked alongside it.
+HUMAN_BIOMED = re.compile(
+    r"\b(humans?|patients?|clinical|cohorts?|participants?|volunteers?|"
+    r"mouse|mice|murine|rats?|primates?|monkeys?|elderly|hospital\w*|"
+    r"nursing|dementia|alzheimer\w*|geriatric\w*|"
+    r"healthy ag(?:e)?ing|active ag(?:e)?ing|diet\w*|nutrition\w*|"
+    r"supplement\w*|"
+    r"drosophila|c\. elegans|elegans|killifish|zebrafish|yeast)\b")
+
 # KEYWORDS.md: a classification anchor is "a meta.broad_net term or an
 # explicit older-adults reference". The broad net carries "older adults" and
 # "elderly"; this regex supplies the other explicit older-adults surface
@@ -145,7 +182,9 @@ def load_ruleset(keywords_path=KEYWORDS_JSON) -> dict:
                 })
         keywords[cat] = entries
     nonbio = [(t, compile_term(t)) for t in NONBIO_TERMS]
-    return {"anchors": anchors, "keywords": keywords, "nonbio": nonbio}
+    planteco = [(t, compile_term(t)) for t in PLANTECO_TERMS]
+    return {"anchors": anchors, "keywords": keywords, "nonbio": nonbio,
+            "planteco": planteco}
 
 
 def classify(title: str, quote: str, ruleset: dict) -> dict:
@@ -180,7 +219,19 @@ def classify(title: str, quote: str, ruleset: dict) -> dict:
             "confidence": confidence,
         }
 
-    # step 0: relevance gate
+    # step 0: relevance gate. The plant/agriculture/ecology arm runs first
+    # and fires even when a lexicon keyword matched: senescence, lifespan
+    # and longevity are everyday vocabulary in those fields, so the match
+    # itself is what needs discounting. A human or biomedical-model marker
+    # (or an explicit older-adults reference) always blocks the exclusion.
+    planteco_hits = [t for t, p in ruleset["planteco"] if p.search(text)]
+    if planteco_hits and not HUMAN_BIOMED.search(text) and not older_ref:
+        return result(
+            "not_relevant",
+            "The ageing vocabulary appears in a plant, agriculture or "
+            "ecology context with no human or biomedical-model marker "
+            f"(matched: {', '.join(planteco_hits)}).")
+
     if not matched:
         nonbio_hits = [t for t, p in ruleset["nonbio"] if p.search(text)]
         if nonbio_hits and not BIO_CONTEXT.search(text):
@@ -353,6 +404,20 @@ def self_test():
          "ambiguous"),
         # British spelling reaches the developing/testing cues
         ("Slowing ageing with metformin", "", "intervention"),
+        # plant-senescence trap (real corpus record swecris:2021-05062_VR):
+        # senescen* matches "leaf senescence" but the grant is tree
+        # physiology, so the plant/ecology gate excludes it
+        ("How do trees survive the winter?",
+         "A main challenge for deciduous trees is to correctly time the "
+         "onset of leaf senescence", "not_relevant"),
+        # a plant term with human/biomedical context never excludes:
+        # senescence here is human ageing biology despite "plant"
+        ("Plant-derived senolytics against cellular senescence",
+         "testing plant-derived compounds in aged mice", "fundamental_aging"),
+        # ecology vocabulary with an explicit older-adults reference stays
+        # on-topic (socio-ecological gerontology)
+        ("A socio-ecological model of loneliness in older adults",
+         "elderly care and community ecology of support", "care"),
         # a NONBIO term with biomedical context never excludes the record
         ("A battery of cognitive tests in aging patients", "", "ambiguous"),
         # a decisive intervention win over an unrelated category stands on

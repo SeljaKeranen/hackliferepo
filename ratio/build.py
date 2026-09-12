@@ -35,15 +35,20 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent / "data"))
 import classify as clf
+import census_common
 
 OUT_DIR = Path(__file__).resolve().parent / "output"
+CENSUS_SOURCES = ("swecris", "cordis", "reporter")
+CENSUS_FILES = [census_common.DATA_DIR / f"census_{s}.jsonl.gz"
+                for s in CENSUS_SOURCES]
 # the files whose content determines the committed outputs; their combined
 # hash is stamped into aggregates.json and enforced by --check, so stale
 # outputs fail loudly instead of silently serving numbers from older rules
 INPUT_FILES = [Path(__file__).resolve(),
                Path(clf.__file__).resolve(),
-               clf.KEYWORDS_JSON]
+               clf.KEYWORDS_JSON] + CENSUS_FILES
 REGION_BY_SOURCE = {"swecris": "SE", "cordis": "EU", "reporter": "US"}
 REGION_NAMES = {"SE": "Sweden", "EU": "European Union", "US": "United States"}
 
@@ -179,6 +184,10 @@ def main():
     ap.add_argument("--check", action="store_true",
                     help="verify the committed outputs match the current "
                          "classifier + lexicon (exit 1 on drift)")
+    ap.add_argument("--corpus", choices=["census", "atlas"], default="census",
+                    help="census (default): the complete ratio/data/ fetch; "
+                         "atlas: the 2,944-record sample, for comparison "
+                         "runs only - committed outputs are census-based")
     args = ap.parse_args()
     if args.self_test:
         return self_test()
@@ -186,7 +195,17 @@ def main():
         return check_fresh()
 
     ruleset = clf.load_ruleset()
-    rows = clf.load_corpus()
+    if args.corpus == "census":
+        rows = []
+        for s in CENSUS_SOURCES:
+            rows.extend(census_common.load_census(s))
+        # census records carry the full (truncated) abstract as evidence
+        # text; atlas rows only had the model's llm_quote
+        for r in rows:
+            r["llm_quote"] = r["abstract"]
+            r["llm_category"] = None
+    else:
+        rows = clf.load_corpus()
 
     OUT_DIR.mkdir(exist_ok=True)
     regions = collections.defaultdict(blank_bucket)
@@ -223,12 +242,36 @@ def main():
         ["git", "describe", "--always", "--dirty"], capture_output=True,
         text=True, cwd=clf.REPO_ROOT).stdout.strip() or "unknown"
 
+    per_source = collections.Counter(r["source"] for r in rows)
+    if args.corpus == "census":
+        retrieved = rows[0]["retrieved_at"] if rows else "?"
+        corpus_desc = (f"census of {len(rows)} grant records - the complete "
+                       f"result set of the atlas search nets, fetched "
+                       f"{retrieved} (SweCRIS {per_source['swecris']}, "
+                       f"CORDIS {per_source['cordis']}, NIH RePORTER "
+                       f"{per_source['reporter']}); funnel in "
+                       "ratio/data/funnel.json")
+        corpus_caveats = [
+            "The corpus is the complete result set of the ageing search "
+            "nets, not any funding body's total budget; net recall bounds "
+            "coverage - see ratio/data/CROSSCHECK.md for the comparison "
+            "against published funder totals.",
+            "Census records are classified over title + abstract; the "
+            "earlier atlas sample used title + a short model-chosen quote.",
+        ]
+    else:
+        corpus_desc = (f"2,944 grant records from commit {clf.ATLAS_COMMIT} "
+                       "(SweCRIS 855, CORDIS 558, NIH RePORTER 1,531)")
+        corpus_caveats = [
+            "The corpus is an ageing-filtered sample per funder, not a "
+            "census of any funding body's budget.",
+        ]
     aggregates = {
         "method": {
-            "description": "Deterministic rule classifier over the Aging "
-                           "Funding Atlas; see ratio/README.md.",
-            "corpus": f"2,944 grant records from commit {clf.ATLAS_COMMIT} "
-                      "(SweCRIS 855, CORDIS 558, NIH RePORTER 1,531)",
+            "description": "Deterministic rule classifier over the ageing "
+                           "grant corpus; see ratio/README.md.",
+            "corpus": corpus_desc,
+            "corpus_mode": args.corpus,
             "lexicon": "classifier/keywords.json",
             "numerator": sorted(clf.NUMERATOR),
             "denominator": list(clf.CATEGORIES),
@@ -238,8 +281,7 @@ def main():
             "caveats": [
                 "Labels are rule-based and not yet human-verified; the "
                 "30-record human benchmark is pending.",
-                "The corpus is an ageing-filtered sample per funder, not a "
-                "census of any funding body's budget.",
+                *corpus_caveats,
                 "Ambiguous grants are excluded from the ratio and shown as "
                 "an explicit share beside it.",
             ],

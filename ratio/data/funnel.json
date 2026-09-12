@@ -1,0 +1,109 @@
+{
+  "swecris": {
+    "retrieved_at": "2026-09-12",
+    "endpoint": "https://swecris-api.vr.se/v1/scp/export",
+    "auth": "Bearer public test token from the API docs",
+    "net_phrases": [
+      "ageing",
+      "aging",
+      "senescence",
+      "longevity",
+      "healthspan",
+      "geroscience",
+      "inflammaging",
+      "senolytic",
+      "åldrande",
+      "senescens",
+      "livslängd",
+      "hälsosamt åldrande",
+      "biologiskt åldrande"
+    ],
+    "broad_only_excluded": [
+      "aging",
+      "livslängd"
+    ],
+    "window_years": [
+      2015,
+      2025
+    ],
+    "fetched_rows_all_phrases": 7704,
+    "unique_funding_rows": 6410,
+    "after_broad_term_rule": 1329,
+    "out_of_window": 459,
+    "dropped_no_title": 0,
+    "kept": 870,
+    "kept_without_amount": 0
+  },
+  "cordis": {
+    "retrieved_at": "2026-09-12",
+    "dumps": {
+      "fp7": {
+        "url": "https://cordis.europa.eu/data/cordis-fp7projects-csv.zip",
+        "sha256": "886ee47973584971259db3ab3de76feb4d95c9b13fbe41241b85e5bfc97113a6",
+        "bytes": 32953397,
+        "retrieved_at": "2026-09-12"
+      },
+      "h2020": {
+        "url": "https://cordis.europa.eu/data/cordis-h2020projects-csv.zip",
+        "sha256": "a2827fe37d220659f51d1e3286c2bfd6858e3024655375e8b0632b39e637fe22",
+        "bytes": 55235626,
+        "retrieved_at": "2026-09-12"
+      },
+      "horizon": {
+        "url": "https://cordis.europa.eu/data/cordis-HORIZONprojects-csv.zip",
+        "sha256": "f91d5b6d7f952a4eeb725f4917576ffba652b6b03739d2ba763fa67b5dee6d22",
+        "bytes": 36672015,
+        "retrieved_at": "2026-09-12"
+      }
+    },
+    "net_phrases": [
+      "cellular senescence",
+      "senescence",
+      "geroscience",
+      "healthspan",
+      "health span",
+      "senolytic",
+      "inflammaging",
+      "biological ageing",
+      "biological aging",
+      "cellular ageing",
+      "anti-ageing",
+      "ageing research",
+      "longevity"
+    ],
+    "match_fields": "title + objective (compile_term semantics)",
+    "window_years": [
+      2015,
+      2025
+    ],
+    "projects_scanned": 84625,
+    "net_matched": 422,
+    "out_of_window": 183,
+    "kept": 239,
+    "kept_without_amount": 0
+  },
+  "reporter": {
+    "retrieved_at": "2026-09-12",
+    "endpoint": "https://api.reporter.nih.gov/v2/projects/search",
+    "auth": "none (public API)",
+    "net_phrases": [
+      "cellular senescence",
+      "biological aging",
+      "biological ageing",
+      "geroscience",
+      "healthspan",
+      "inflammaging",
+      "senolytic",
+      "epigenetic clock"
+    ],
+    "window_fiscal_years": [
+      2015,
+      2025
+    ],
+    "fetched_rows_all_queries": 16037,
+    "unique_project_nums": 12115,
+    "dropped_no_abstract": 0,
+    "kept": 12115,
+    "kept_without_amount": 321
+  }
+}

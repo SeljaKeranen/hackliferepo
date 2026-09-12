@@ -133,10 +133,10 @@ still meet the precision threshold.
 | --- | --- | --- | --- |
 | fundamental_aging | 37 | 1 | 0.555 |
 | intervention | 11 | 1 | 0.414 |
-| age_related_disease | 58 | 8 | 0.770 |
+| age_related_disease | 56 | 8 | 0.770 |
 | care | 16 | 6 | 0.624 |
 
-English counts include the 35 HALD-derived keywords described below (marked
+English counts include the 33 HALD-derived keywords described below (marked
 `source: "HALD"` in the JSON); the rest are the seed lexicon.
 
 Coverage = share of the category's LLM-labelled records matched by at least
@@ -191,7 +191,9 @@ project text, but it is sound Swedish search vocabulary regardless.
 ## HALD enrichment
 
 The lexicon was enriched from HALD, the Human Aging and Longevity Dataset
-(CC BY 4.0), a text-mined knowledge graph built from 339,918 PubMed abstracts:
+(Wu, Feng, Hu, Zhou, Li, Zhang, Hu, Chen, Chao, Ni and Chen; CC BY 4.0;
+entity names used as keyword candidates, otherwise unmodified), a text-mined
+knowledge graph built from 339,918 PubMed abstracts:
 entity list plus aging/longevity biomarker files from the Figshare bulk data
 (doi:10.6084/m9.figshare.22828196.v6; paper
 [10.1038/s41597-023-02781-0](https://doi.org/10.1038/s41597-023-02781-0);
@@ -203,21 +205,28 @@ The funnel, recorded in `meta.hald_enrichment`: 6,922 entity names -> 6,891
 usable candidates (after dropping duplicates of existing lexicon terms, terms
 under 3 characters, and malformed terms) -> 255 with at least one corpus hit
 -> 62 with >= 3 hits -> 40 clearing the precision threshold toward one of the
-four categories -> **35 admitted** with `source: "HALD"`. Most HALD entities
+four categories -> **33 admitted** with `source: "HALD"`. Most HALD entities
 have zero grant hits, as expected: molecular-level entities rarely appear in
 grant titles and quote snippets.
 
-Five threshold-clearing terms were excluded as live-search traps and moved to
-`trap_terms` with their stats: `disease` (too generic), `app` (the gene APP
-clears the proxy, but live text says application), `shock` (heat-shock
+Seven threshold-clearing terms were excluded as live-search traps and moved
+to `trap_terms` with their stats: `disease` (too generic), `app` (the gene
+APP clears the proxy, but live text says application), `shock` (heat-shock
 contexts only), `clock` (already covered by `epigenetic clock*`; bare form
 matches scheduling), `fatigue` (the material-fatigue engineering trap, same
-class as `accelerated ageing`). Some admissions overlap seed stems
+class as `accelerated ageing`), `tert` (collides with the tert- prefix of
+organic chemistry - tert-butyl electrolytes are battery-domain text), and
+`myc` (c-Myc/myc-tag saturates unrelated methods sections). The corpus proxy
+cannot see these collisions because the atlas contains almost no general
+chemistry or methods-heavy text; that asymmetry is exactly why admitted
+gene symbols stay `low_evidence`. Some admissions overlap seed stems
 (`alzheimer disease` under `alzheimer*`, `myocardial infarction` under
 `myocardial`); they are kept because each carries its own stats and some
 plural forms (`cardiovascular diseases`) are not covered by the singular seed
-term. Gene symbols (`apoe`, `tert`, `myc`, `cgas`, `tfeb`) ride on word
-boundaries and are `low_evidence` at 3-5 hits each.
+term. The remaining gene symbols (`apoe`, `cgas`, `tfeb`) are unlikely to
+collide with non-biomedical vocabulary and are `low_evidence` at 3-5 hits
+each; `glucose` and `obesity` sit exactly at the 0.60 precision floor and
+carry warning notes.
 
 ## How to use this lexicon
 
@@ -230,10 +239,12 @@ boundaries and are `low_evidence` at 3-5 hits each.
   first (`not_relevant` for material/component/infrastructure ageing and other
   off-topic matches), then assign one of the four substantive categories or
   `ambiguous` per the annotation guide.
-- **HALD entities as a relevance signal.** A record matching any HALD entity
-  name is evidence the text is biomedical: useful as a feature at the
-  relevance gate (a battery-ageing grant matches the broad net but no HALD
-  entity).
+- **HALD entities as a relevance signal.** A record matching one of the 33
+  admitted `source: "HALD"` keywords - NOT the raw 6,922-entity list, which
+  contains unvetted generic tokens like `disease`, `app` and `tert` - is
+  evidence the text is biomedical: useful as a feature at the relevance gate
+  (a battery-ageing grant matches the broad net but none of the vetted
+  entities). Trap-flagged terms never count as positive relevance signals.
 - **Trap terms as negative filters.** `exclusion_markers` (battery, li-ion,
   aging infrastructure) can auto-route obvious engineering records to
   `not_relevant` before classification; per-category `trap_terms` tell the

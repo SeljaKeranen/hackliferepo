@@ -290,16 +290,18 @@
         "with_any_corpus_hit": 255,
         "with_min_3_hits": 62,
         "cleared_thresholds": 40,
-        "admitted": 35,
+        "admitted": 33,
         "excluded_as_live_traps": [
           "app",
           "clock",
           "disease",
           "fatigue",
-          "shock"
+          "myc",
+          "shock",
+          "tert"
         ]
       },
-      "note": "admitted terms carry source:HALD; validation identical to the seed lexicon"
+      "note": "admitted terms carry source:HALD; validation identical to the seed lexicon; tert and myc excluded post-review for live-text collisions (see their trap_terms entries)"
     }
   },
   "categories": {
@@ -1737,17 +1739,6 @@
           "low_evidence": true
         },
         {
-          "term": "tert",
-          "source": "HALD",
-          "hits": 3,
-          "by_category": {
-            "age_related_disease": 2,
-            "fundamental_aging": 1
-          },
-          "precision": 0.667,
-          "low_evidence": true
-        },
-        {
           "term": "multiple myeloma",
           "source": "HALD",
           "hits": 3,
@@ -1869,7 +1860,8 @@
             "age_related_disease": 3,
             "fundamental_aging": 2
           },
-          "precision": 0.6
+          "precision": 0.6,
+          "note": "exactly at threshold; generic biomedical term with live-search flood potential - weight by precision, never let it decide alone"
         },
         {
           "term": "myocardial infarction",
@@ -1901,7 +1893,8 @@
             "ambiguous": 4,
             "intervention": 3
           },
-          "precision": 0.6
+          "precision": 0.6,
+          "note": "exactly at threshold; generic biomedical term with live-search flood potential - weight by precision, never let it decide alone"
         },
         {
           "term": "disease progression",
@@ -1943,17 +1936,6 @@
             "ambiguous": 2
           },
           "precision": 0.778
-        },
-        {
-          "term": "myc",
-          "source": "HALD",
-          "hits": 3,
-          "by_category": {
-            "age_related_disease": 2,
-            "fundamental_aging": 1
-          },
-          "precision": 0.667,
-          "low_evidence": true
         },
         {
           "term": "blindness",
@@ -2194,6 +2176,40 @@
               "record_id": "swecris:20220601_HLF",
               "llm_category": "fundamental_aging",
               "title": "The interplay between lipid handling, inflammation and autophagy: Implications for cardiovascular disease and "
+            }
+          ]
+        },
+        {
+          "term": "tert",
+          "why": "HALD gene symbol TERT clears the corpus proxy, but whole-word 'tert' collides with the tert- organic-chemistry prefix (tert-butyl electrolytes and catalysts) - the exact materials/battery domain the exclusion markers filter",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:5R03AG054723-02",
+              "llm_category": "fundamental_aging",
+              "title": "Transitional Growth-Associated Skeletal Stem Cells"
+            }
+          ]
+        },
+        {
+          "term": "myc",
+          "why": "HALD oncogene symbol clears the corpus proxy at 3 hits, but c-Myc/myc-tag saturates unrelated molecular-biology methods text in live data and floods the disease bucket",
+          "hits": 3,
+          "by_category": {
+            "age_related_disease": 2,
+            "fundamental_aging": 1
+          },
+          "precision": 0.667,
+          "example_false_hits": [
+            {
+              "record_id": "reporter:5R01AG053269-06",
+              "llm_category": "fundamental_aging",
+              "title": "Activation of Endogenous Transposable Elements by Myc During Aging"
             }
           ]
         }

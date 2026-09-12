@@ -1,5 +1,12 @@
 # Longevity Politics Index map
 
+> **Scope.** This map is a presentation-layer prototype with a placeholder v0
+> activity index. After the team's pivot, the headline metric will become the
+> funding-gap ratio: money going to slowing ageing versus money going to
+> managing its consequences. This map does not replace, modify, or compete
+> with the Longview app on branch `codex/longview-demo`, which remains
+> untouched.
+
 Interactive world map for the [map-the-politics-of-longevity
 challenge](../docs/challenge.md): one headline index per country in the style
 of the World Happiness Index, composed client-side from the verified findings

@@ -42,6 +42,12 @@ shows running accuracy. See [`eval/README.md`](../eval/README.md).
 
 ## The index map
 
+Scope: the map is a presentation-layer prototype with a placeholder v0
+activity index. After the team's pivot, the headline metric will become the
+funding-gap ratio (money going to slowing ageing versus money going to
+managing its consequences). It does not replace, modify, or compete with the
+Longview app on branch `codex/longview-demo`, which remains untouched.
+
 Built 11 September 2026: an interactive Longevity Politics Index map under
 [`map/`](../map/README.md): one 0–100 score per covered country, World
 Happiness Index style, computed client-side from `eval/findings/` and

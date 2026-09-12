@@ -6,7 +6,8 @@ Then open http://localhost:8000
 
 Stdlib only. Serves the review UI and every findings file under
 eval/findings/*.json (one country per file); reads/writes verdicts to
-eval/verdicts/<country>.verdicts.json.
+eval/verdicts/<country>.verdicts.json. AI judge panel pre-marks from
+eval/judgments/<country>.judgments.json are served read-only alongside.
 """
 import argparse
 import glob
@@ -22,8 +23,13 @@ EVAL_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(EVAL_DIR, "static")
 FINDINGS_DIR = os.path.join(EVAL_DIR, "findings")
 VERDICTS_DIR = os.path.join(EVAL_DIR, "verdicts")
+JUDGMENTS_DIR = os.path.join(EVAL_DIR, "judgments")
 
 CHECKS = ("source_resolves", "date_correct", "classification_correct", "claim_supported")
+# AI judge panel dimensions; committed pre-marks the server serves read-only.
+# The human's four-check verdict stays the accuracy metric.
+JUDGE_DIMENSIONS = ("credibility", "recency", "classification")
+JUDGE_VERDICTS = ("pass", "fail", "uncertain")
 # Country slugs are findings FILENAMES ("sweden", "us"), not the two-letter
 # ISO codes inside the records ("SE", "US"); keep them boring so they can't
 # traverse paths.
@@ -93,6 +99,9 @@ class Handler(SimpleHTTPRequestHandler):
                 verdicts_path = os.path.join(VERDICTS_DIR, f"{name}.verdicts.json")
                 verdicts = (load_json(verdicts_path, None)
                             if os.path.exists(verdicts_path) else {})
+                judgments_path = os.path.join(JUDGMENTS_DIR, f"{name}.judgments.json")
+                judgments = (load_json(judgments_path, None)
+                             if os.path.exists(judgments_path) else {})
                 # Don't let a corrupted file masquerade as a clean "0 findings"
                 # or "not reviewed" country — the UI shows this error instead.
                 errors = []
@@ -102,9 +111,13 @@ class Handler(SimpleHTTPRequestHandler):
                 if not isinstance(verdicts, dict):
                     errors.append(f"verdicts file {name}.verdicts.json is unreadable")
                     verdicts = {}
-                # Flag verdicts whose finding changed since review (or vanished)
-                # so the UI can demand a re-review instead of showing stale
-                # green checkmarks. Served only, never written back.
+                if not isinstance(judgments, dict):
+                    errors.append(f"judgments file {name}.judgments.json is unreadable")
+                    judgments = {}
+                # Flag verdicts (and AI judgments) whose finding changed since
+                # review (or vanished) so the UI can demand a re-review instead
+                # of showing stale green checkmarks. Served only, never written
+                # back.
                 by_id = {r.get("id"): r for r in findings if isinstance(r, dict)}
                 for fid, v in verdicts.items():
                     if isinstance(v, dict):
@@ -112,7 +125,14 @@ class Handler(SimpleHTTPRequestHandler):
                         v["stale"] = (rec is None
                                       or v.get("finding_fingerprint")
                                       != finding_fingerprint(rec))
-                entry = {"findings": findings, "verdicts": verdicts}
+                for fid, j in judgments.items():
+                    if isinstance(j, dict):
+                        rec = by_id.get(fid)
+                        j["stale"] = (rec is None
+                                      or j.get("finding_fingerprint")
+                                      != finding_fingerprint(rec))
+                entry = {"findings": findings, "verdicts": verdicts,
+                         "judgments": judgments}
                 if errors:
                     entry["error"] = "; ".join(errors)
                 countries[name] = entry

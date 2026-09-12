@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Validate eval/findings/*.json and eval/verdicts/*.verdicts.json.
+"""Validate eval/findings/*.json, eval/verdicts/*.verdicts.json and
+eval/judgments/*.judgments.json.
 
 Stdlib only: the schema's constraints are enforced with structural asserts
 mirroring schema/finding.schema.json. To keep the two from drifting, the
@@ -17,12 +18,14 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "eval"))
-# single source for the rubric's check keys and the verdict fingerprint
-from server import CHECKS, finding_fingerprint
+# single source for the rubric's check keys, the AI judge panel's dimensions
+# and the verdict fingerprint
+from server import CHECKS, JUDGE_DIMENSIONS, JUDGE_VERDICTS, finding_fingerprint
 
 SCHEMA_PATH = os.path.join(ROOT, "schema", "finding.schema.json")
 FINDINGS_GLOB = os.path.join(ROOT, "eval", "findings", "*.json")
 VERDICTS_GLOB = os.path.join(ROOT, "eval", "verdicts", "*.verdicts.json")
+JUDGMENTS_GLOB = os.path.join(ROOT, "eval", "judgments", "*.judgments.json")
 
 # Which ISO country code each findings file must contain. Register every new
 # findings file here so a record can't be misfiled into the wrong country
@@ -110,6 +113,63 @@ def validate_verdict(fid, v, where):
               f"{where}: correct flag inconsistent with checks")
 
 
+JUDGMENT_REQUIRED = {"finding_id", "finding_fingerprint", "judged_at", "judges"}
+JUDGE_REQUIRED = {"verdict", "reason"}
+# per-dimension extras: recency may suggest a newer source; the
+# classification judge may propose a different label
+JUDGE_ALLOWED = {
+    "credibility": JUDGE_REQUIRED,
+    "recency": JUDGE_REQUIRED | {"newer_source"},
+    "classification": JUDGE_REQUIRED | {"proposed_classification"},
+}
+
+
+def validate_judgment(fid, j, where):
+    check(isinstance(j, dict) and j.get("finding_id") == fid, f"{where}: finding_id mismatch")
+    if not isinstance(j, dict):
+        return
+    for key in JUDGMENT_REQUIRED:
+        check(key in j, f"{where}: missing required field {key!r}")
+    for key in j:
+        check(key in JUDGMENT_REQUIRED, f"{where}: unexpected field {key!r}")
+    check(matches(TIMESTAMP_RE, j.get("judged_at")),
+          f"{where}: bad judged_at {j.get('judged_at')!r}")
+    judges = j.get("judges")
+    check(isinstance(judges, dict) and set(judges) == set(JUDGE_DIMENSIONS),
+          f"{where}: judges must cover exactly {sorted(JUDGE_DIMENSIONS)}")
+    if not isinstance(judges, dict):
+        return
+    for dim, g in judges.items():
+        allowed = JUDGE_ALLOWED.get(dim, JUDGE_REQUIRED)
+        jwhere = f"{where}.{dim}"
+        check(isinstance(g, dict), f"{jwhere}: judge record is not an object")
+        if not isinstance(g, dict):
+            continue
+        for key in JUDGE_REQUIRED:
+            check(key in g, f"{jwhere}: missing required field {key!r}")
+        for key in g:
+            check(key in allowed, f"{jwhere}: unexpected field {key!r}")
+        check(g.get("verdict") in JUDGE_VERDICTS,
+              f"{jwhere}: bad verdict {g.get('verdict')!r}")
+        reason = g.get("reason")
+        check(isinstance(reason, str) and reason.strip(),
+              f"{jwhere}: reason must be a non-empty string")
+        ns = g.get("newer_source")
+        if ns is not None:
+            check(isinstance(ns, dict) and set(ns) == {"url", "date"},
+                  f"{jwhere}: newer_source needs exactly url and date")
+            if isinstance(ns, dict):
+                url = ns.get("url", "")
+                check(isinstance(url, str) and url.startswith("https://"),
+                      f"{jwhere}: newer_source url must be https ({url!r})")
+                check(matches(DATE_RE, ns.get("date")),
+                      f"{jwhere}: bad newer_source date {ns.get('date')!r}")
+        pc = g.get("proposed_classification")
+        if pc is not None:
+            check(pc in CLASSIFICATIONS,
+                  f"{jwhere}: bad proposed_classification {pc!r}")
+
+
 def assert_schema_in_sync(schema):
     """Fail loudly if this validator drifts from schema/finding.schema.json."""
     defs = schema.get("$defs", {})
@@ -166,6 +226,46 @@ BAD_VERDICTS = [
     ({"reviewed": False}, "reviewed flag inconsistent"),
     ({"correct": False}, "correct flag inconsistent"),
 ]
+GOOD_JUDGMENT = {
+    "finding_id": "xx-001",
+    "finding_fingerprint": "0" * 16,
+    "judged_at": "2026-01-02T03:04:05Z",
+    "judges": {
+        "credibility": {"verdict": "pass", "reason": "Official source supports the claim."},
+        "recency": {"verdict": "uncertain", "reason": "A newer report may exist.",
+                    "newer_source": {"url": "https://example.org/newer", "date": "2026-01"}},
+        "classification": {"verdict": "fail", "reason": "It is a statute, not a policy.",
+                           "proposed_classification": "legislation"},
+    },
+}
+BAD_JUDGMENTS = [
+    ({"finding_id": "other"}, "finding_id mismatch"),
+    ({"judged_at": "yesterday"}, "bad judged_at"),
+    ({"extra": 1}, "unexpected field"),
+    ({"judges": {"credibility": GOOD_JUDGMENT["judges"]["credibility"]}},
+     "judges must cover exactly"),
+    ({"judges": {**GOOD_JUDGMENT["judges"],
+                 "credibility": {"verdict": "maybe", "reason": "hmm"}}}, "bad verdict"),
+    ({"judges": {**GOOD_JUDGMENT["judges"],
+                 "credibility": {"verdict": "pass", "reason": " "}}},
+     "reason must be a non-empty string"),
+    ({"judges": {**GOOD_JUDGMENT["judges"],
+                 "credibility": {"verdict": "pass", "reason": "ok",
+                                 "newer_source": {"url": "https://e.org", "date": "2026"}}}},
+     "unexpected field 'newer_source'"),
+    ({"judges": {**GOOD_JUDGMENT["judges"],
+                 "recency": {"verdict": "fail", "reason": "old",
+                             "newer_source": {"url": "http://e.org", "date": "2026"}}}},
+     "newer_source url must be https"),
+    ({"judges": {**GOOD_JUDGMENT["judges"],
+                 "recency": {"verdict": "fail", "reason": "old",
+                             "newer_source": {"url": "https://e.org", "date": "soon"}}}},
+     "bad newer_source date"),
+    ({"judges": {**GOOD_JUDGMENT["judges"],
+                 "classification": {"verdict": "fail", "reason": "wrong",
+                                    "proposed_classification": "opinion"}}},
+     "bad proposed_classification"),
+]
 
 
 def collect(validate, *args):
@@ -206,6 +306,13 @@ def self_test():
         probe = collect(validate_verdict, "xx-001", {**good_verdict, **mutation})
         check(any(expected in e for e in probe),
               f"self-test: verdict mutation {mutation} not rejected (expected {expected!r})")
+
+    check(not collect(validate_judgment, "xx-001", GOOD_JUDGMENT),
+          "self-test: good judgment fixture unexpectedly rejected")
+    for mutation, expected in BAD_JUDGMENTS:
+        probe = collect(validate_judgment, "xx-001", {**GOOD_JUDGMENT, **mutation})
+        check(any(expected in e for e in probe),
+              f"self-test: judgment mutation {mutation} not rejected (expected {expected!r})")
 
 
 def load_json_file(path):
@@ -272,6 +379,30 @@ def main():
                 check(v.get("finding_fingerprint") == finding_fingerprint(rec),
                       f"{name}[{fid}]: verdict is stale — the finding changed "
                       f"since it was reviewed; re-review it")
+
+    for path in sorted(glob.glob(JUDGMENTS_GLOB)):
+        name = os.path.basename(path)
+        slug = name[:-len(".judgments.json")]
+        recs = recs_by_file.get(slug)
+        check(recs is not None, f"{name}: no matching findings file {slug}.json")
+        judgments = load_json_file(path)
+        if judgments is None:
+            continue
+        check(isinstance(judgments, dict), f"{name}: top level must be an object")
+        if not isinstance(judgments, dict):
+            continue
+        for fid, j in judgments.items():
+            validate_judgment(fid, j, f"{name}[{fid}]")
+            if recs is None:
+                continue
+            rec = recs.get(fid)
+            check(rec is not None,
+                  f"{name}[{fid}]: judgment references a finding id "
+                  f"not present in {slug}.json")
+            if rec is not None and isinstance(j, dict):
+                check(j.get("finding_fingerprint") == finding_fingerprint(rec),
+                      f"{name}[{fid}]: judgment is stale — the finding changed "
+                      f"since it was judged; re-judge it")
 
     if errors:
         print(f"FAIL: {len(errors)} problem(s)")

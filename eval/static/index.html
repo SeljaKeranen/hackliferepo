@@ -66,6 +66,33 @@
   }
   .pf button.on-pass { background: var(--pass); border-color: var(--pass); color: #fff; }
   .pf button.on-fail { background: var(--fail); border-color: var(--fail); color: #fff; }
+  .judges {
+    margin-top: 10px; border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 10px; background: #fafbfc; display: grid; gap: 6px;
+  }
+  .judge { display: flex; gap: 8px; align-items: baseline; font-size: 13px; }
+  .jbadge {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+    padding: 1px 8px; border-radius: 999px; color: #fff; flex: none;
+  }
+  .jbadge.pass { background: var(--pass); }
+  .jbadge.fail { background: var(--fail); }
+  .jbadge.uncertain { background: var(--stale); }
+  .jdim { font-weight: 600; flex: none; width: 96px; }
+  .jreason { color: var(--muted); }
+  .jreason a { color: #0b57d0; word-break: break-all; }
+  .jstale { color: var(--stale); font-size: 12px; font-weight: 600; }
+  .jnote { margin-top: 10px; font-size: 12px; color: var(--pending); }
+  .quick { margin-top: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .quick button {
+    border: 1px solid var(--line); background: #fff; border-radius: 6px;
+    padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer;
+  }
+  .quick button.agree { color: var(--pass); border-color: var(--pass); }
+  .quick button.disagree { color: var(--fail); border-color: var(--fail); }
+  .pick { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+  .pick[hidden] { display: none; }
+  .pick button { color: var(--fail); }
   .noteline { margin-top: 10px; display: flex; gap: 8px; }
   .noteline input { flex: 1; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font: inherit; font-size: 13px; }
   .saved { font-size: 12px; color: var(--pass); align-self: center; min-width: 46px; }
@@ -79,6 +106,7 @@
   <select id="country"></select>
   <input id="reviewer" placeholder="reviewer name">
   <div class="stats">
+    <div class="stat"><b id="s-flagged">–</b><span>judge-flagged</span></div>
     <div class="stat"><b id="s-total">–</b><span>findings</span></div>
     <div class="stat"><b id="s-reviewed">–</b><span>reviewed</span></div>
     <div class="stat"><b id="s-correct" class="ok">–</b><span>correct</span></div>
@@ -89,8 +117,12 @@
 <main>
   <p class="rubric">A finding counts as <b>correct only if all four checks pass</b>:
   the source URL resolves, the source date is right, the classification is right,
-  and the claim is supported by the source. Click the source link, read, then mark each check.
-  Verdicts save automatically to <code>eval/verdicts/</code>.</p>
+  and the claim is supported by the source. Three AI judges (credibility, recency,
+  classification) have pre-marked each finding — findings they flag as fail or
+  uncertain are sorted first. The AI verdicts are advice only: <b>your</b> click is
+  the verdict. <b>Agree</b> marks all four checks pass; <b>Disagree</b> asks which
+  check fails; the per-check buttons override in detail. Verdicts save
+  automatically to <code>eval/verdicts/</code>.</p>
   <div id="list"></div>
 </main>
 <script>
@@ -100,7 +132,12 @@ const CHECKS = [
   ["classification_correct", "Classification correct"],
   ["claim_supported", "Claim supported"],
 ];
-let data = {}, country = "", findings = [], verdicts = {};
+const JUDGES = [
+  ["credibility", "Credibility"],
+  ["recency", "Recency"],
+  ["classification", "Classification"],
+];
+let data = {}, country = "", findings = [], verdicts = {}, judgments = {};
 
 const reviewerInput = document.getElementById("reviewer");
 reviewerInput.value = localStorage.getItem("reviewer") || "";
@@ -132,7 +169,19 @@ function selectCountry() {
   // Same object references as `data`, so verdict saves update overall stats too.
   findings = (data[country] || {}).findings || [];
   verdicts = (data[country] || {}).verdicts || {};
+  judgments = (data[country] || {}).judgments || {};
   render();
+}
+
+// 0 = a judge flagged fail/uncertain (or the judgment is stale/incomplete):
+// human attention goes here first. 1 = no AI pre-marks. 2 = judges all pass.
+function judgePriority(f) {
+  if (f.type !== "finding") return 1;
+  const j = judgments[f.id];
+  if (!j || !j.judges) return 1;
+  if (j.stale) return 0;
+  const verdicts = JUDGES.map(([key]) => (j.judges[key] || {}).verdict);
+  return verdicts.every(v => v === "pass") ? 2 : 0;
 }
 
 function verdictState(v) {
@@ -159,7 +208,10 @@ function render() {
     p.textContent = "Server error for this country: " + err;
     list.appendChild(p);
   }
-  for (const f of findings) {
+  // Judge-flagged findings first (human attention where it matters), then
+  // unjudged, then all-pass. Stable sort keeps file order within groups.
+  const ordered = findings.slice().sort((a, b) => judgePriority(a) - judgePriority(b));
+  for (const f of ordered) {
     const v = verdicts[f.id];
     const state = verdictState(v);
     const card = document.createElement("div");
@@ -181,6 +233,13 @@ function render() {
         &nbsp;· source date ${esc(f.source_date)} · retrieved ${esc(f.retrieved_at.slice(0, 10))}
       </div>` : ""}
       ${f.source_note ? `<details><summary>source note</summary>${esc(f.source_note)}</details>` : ""}
+      ${isFinding ? judgePanel(f) : ""}
+      ${isFinding ? `<div class="quick">
+        <button class="agree">✓ Agree — all checks pass</button>
+        <button class="disagree">✗ Disagree</button>
+        <span class="pick" hidden>which check fails? ${CHECKS.map(([key, label]) =>
+          `<button data-check="${key}">${label}</button>`).join("")}</span>
+      </div>` : ""}
       <div class="checks">${CHECKS.map(([key, label]) => `
         <div class="check"><span>${label}</span>
           <div class="pf" data-check="${key}">
@@ -197,6 +256,31 @@ function render() {
     card.querySelectorAll(".pf button").forEach(btn => {
       btn.addEventListener("click", () => toggleCheck(f.id, btn));
     });
+    const agree = card.querySelector(".agree");
+    if (agree) agree.addEventListener("click", () => {
+      card.querySelector(".pick").hidden = true;
+      CHECKS.forEach(([key]) => setCheck(card, key, true));
+      save(f.id, card);
+    });
+    const disagree = card.querySelector(".disagree");
+    if (disagree) disagree.addEventListener("click", () => {
+      const pick = card.querySelector(".pick");
+      pick.hidden = !pick.hidden;
+    });
+    card.querySelectorAll(".pick button").forEach(btn => {
+      // A disagree needs a named failing check so the four-check metric stays
+      // meaningful: the picked check fails, the other unset checks pass.
+      btn.addEventListener("click", () => {
+        setCheck(card, btn.dataset.check, false);
+        CHECKS.forEach(([key]) => {
+          const group = card.querySelector(`.pf[data-check="${key}"]`);
+          if (!group.querySelector(".on-pass") && !group.querySelector(".on-fail"))
+            setCheck(card, key, true);
+        });
+        card.querySelector(".pick").hidden = true;
+        save(f.id, card);
+      });
+    });
     const note = card.querySelector(".note");
     note.addEventListener("change", () => save(f.id, card));
     let noteTimer;
@@ -208,6 +292,41 @@ function render() {
     list.appendChild(card);
   }
   renderStats();
+}
+
+function judgePanel(f) {
+  const j = judgments[f.id];
+  if (!j || !j.judges) return `<div class="jnote">No AI judge pre-marks — review from scratch.</div>`;
+  const rows = JUDGES.map(([key, label]) => {
+    const g = j.judges[key];
+    if (!g) return `<div class="judge"><span class="jbadge uncertain">missing</span>
+      <span class="jdim">${label}</span><span class="jreason">no judgment recorded</span></div>`;
+    const verdict = ["pass", "fail", "uncertain"].includes(g.verdict) ? g.verdict : "uncertain";
+    const ns = g.newer_source;
+    return `<div class="judge">
+      <span class="jbadge ${verdict}">${verdict}</span>
+      <span class="jdim">${label}</span>
+      <span class="jreason">${esc(g.reason || "")}${
+        ns && /^https:\/\//.test(ns.url || "")
+          ? ` — newer source: <a href="${encodeURI(ns.url)}" target="_blank"
+              rel="noopener noreferrer">${esc(ns.url)}</a> (${esc(ns.date || "undated")})`
+          : ""}${
+        g.proposed_classification
+          ? ` — proposed: <b>${esc(g.proposed_classification)}</b>` : ""}</span>
+    </div>`;
+  }).join("");
+  return `<div class="judges">
+    ${j.stale ? `<div class="jstale">⚠ AI judgments are stale — the finding changed since judging</div>` : ""}
+    ${rows}
+    ${j.judged_at ? `<div class="jnote">AI judged ${esc(String(j.judged_at).slice(0, 10))}</div>` : ""}
+  </div>`;
+}
+
+function setCheck(card, key, val) {
+  const group = card.querySelector(`.pf[data-check="${key}"]`);
+  group.querySelectorAll("button").forEach(b => b.classList.remove("on-pass", "on-fail"));
+  const btn = group.querySelector(`button[data-val="${val ? "pass" : "fail"}"]`);
+  btn.classList.add(val ? "on-pass" : "on-fail");
 }
 
 function toggleCheck(id, btn) {
@@ -265,6 +384,8 @@ function renderStats() {
   const reviewed = findings.filter(f =>
     verdicts[f.id] && verdicts[f.id].reviewed && !verdicts[f.id].stale);
   const correct = reviewed.filter(f => verdicts[f.id].correct);
+  document.getElementById("s-flagged").textContent =
+    findings.filter(f => judgePriority(f) === 0).length;
   document.getElementById("s-total").textContent = findings.length;
   document.getElementById("s-reviewed").textContent = reviewed.length;
   document.getElementById("s-correct").textContent = correct.length;

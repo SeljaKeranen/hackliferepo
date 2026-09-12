@@ -1,0 +1,346 @@
+{
+  "us-001": {
+    "finding_fingerprint": "2dbf95c5660039a0",
+    "finding_id": "us-001",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "Source confirms HHS/ACL released 'Aging in the United States: A Strategic Framework for a National Plan on Aging' on 14 June 2024, a framework document laying groundwork for a national plan. A strategic framework is squarely 'strategy'. NIA page returned 405 to WebFetch; verified by direct retrieval of the same canonical URL.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "NIA (nia.nih.gov, official .gov repost of the HHS news release) blocked automated WebFetch with HTTP 405, but a direct HTTP retrieval of the same canonical URL succeeded and the page confirms every element: June 14, 2024, HHS through ACL released 'Aging in the United States: A Strategic Framework for a National Plan on Aging', developed by leaders and experts from 16 federal agencies and departments through the Interagency Coordinating Committee on Healthy Aging and Age-Friendly Communities, laying groundwork for a national plan on aging.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "The NIA repost URL is bot-blocked to direct fetch (HTTP 405 twice) but search confirms the page is live with matching title. The June 2024 Strategic Framework remains the current top-level artifact: no full National Plan on Aging has been published as of 2026-09-12, only interim feedback material.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-002": {
+    "finding_fingerprint": "f933a987fedd7494",
+    "finding_id": "us-002",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The bill-status XML confirms S.2120, Older Americans Act Reauthorization Act of 2025, introduced 18 June 2025 by Sen. Cassidy, passed Senate by unanimous consent 14 July 2026 and received in the House 15 July 2026. A bill is squarely 'legislation'.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official GPO/govinfo bulk-data bill-status XML confirms all details: S.2120 Older Americans Act Reauthorization Act of 2025, introduced 2025-06-18 by Sen. Bill Cassidy (R-LA) with Sanders (I-VT) as cosponsor, passed Senate without amendment by unanimous consent 2026-07-14, received in the House 2026-07-15.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the live GPO bulk-data XML (last updated 2026-07-20): latest action is 'Held at the desk' in the House, 2026-07-15, matching the claim's Senate passage 2026-07-14 and House receipt 2026-07-15. The bill has not advanced further or been enacted, so this record is current.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-003": {
+    "finding_fingerprint": "10e59c2583ec2c26",
+    "finding_id": "us-003",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "proposed_classification": "policy",
+        "reason": "The page announces the launch of the PROSPR program as a solicitation: awards are only 'anticipated' and 'will depend on the quality of proposals received and the availability of funds', with no PROSPR money committed on this page. Under the given definitions a programme launch with no money awarded is 'policy'; the actual awards are the separate us-004 record.",
+        "verdict": "fail"
+      },
+      "credibility": {
+        "reason": "Official ARPA-H news release, dated December 19, 2024, confirms the PROSPR (PROactive Solutions for Prolonging Resilience) launch, program manager Andrew Brack, the healthspan-extension goal for aging adults, and the aim to identify physiological and biochemical markers of early health changes during aging.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2026-02-24",
+          "url": "https://arpa-h.gov/news-and-events/research-teams-add-more-healthy-years-americans-lives-they-age"
+        },
+        "reason": "The launch page is live and matches the claim, but the program has a known follow-up that has since landed: ARPA-H announced the seven funded PROSPR teams and the up-to-$144M program total on 2026-02-24, which completes the picture for this program.",
+        "verdict": "fail"
+      }
+    }
+  },
+  "us-004": {
+    "finding_fingerprint": "bd5d0a1c4effa4a9",
+    "finding_id": "us-004",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The page announces the seven funded PROSPR teams (Stanford, UT Health San Antonio, Columbia Mailman, Cambrian BioPharma, University of Rochester and two others) and a program investment of up to $144 million over five years, dated 24 February 2026. Money awarded is the point, so 'funding' fits.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official ARPA-H announcement dated February 24, 2026 confirms seven funded PROSPR teams, names all five institutions in the claim (Stanford, UT Health San Antonio, Columbia Mailman, Cambrian BioPharma, University of Rochester), and states the program is investing up to $144 million over five years.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the ARPA-H award announcement: 2026-02-24 date, seven named teams and up to $144 million over five years all confirmed. This is the most recent official PROSPR artifact found; no newer award announcement located.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-005": {
+    "finding_fingerprint": "34d72eb1cf3d60b2",
+    "finding_id": "us-005",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The page is NIA's FY 2025 Congressional Budget Justification, a budget/appropriations request document where the dollar amounts are the substance, so 'funding' is the best fit of the five labels. NIA page returned 405 to WebFetch; verified by direct retrieval of the same canonical URL.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "The official NIA FY2025 budget page (fetched directly after WebFetch was 405-blocked) confirms the $4,425.3 million request and the $13.2 million increase over the FY 2023 Final level, but its tables show FY 2023 Final as $4,412,090 thousand ($4,412.1M); the claim's $4,407.6 million is actually the FY 2024 Continuing Resolution figure ($4,407,623 thousand), so the claim misattributes a material number.",
+        "verdict": "fail"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2026",
+          "url": "https://www.nia.nih.gov/about/budget/fiscal-year-2027-budget"
+        },
+        "reason": "The FY2025 page is bot-blocked (HTTP 405 twice), and the claim covers a budget REQUEST that has been overtaken: NIA has since published FY2026 (request $2,686.5M against an FY2025 full-year continuing resolution) and FY2027 congressional justifications, materially newer official budget data a reader should see.",
+        "verdict": "fail"
+      }
+    }
+  },
+  "us-006": {
+    "finding_fingerprint": "820c1872bbe58a67",
+    "finding_id": "us-006",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The GPO record confirms the Senate Special Committee on Aging hearing 'Optimizing Longevity: From Research to Action' on 12 February 2025, chaired by Sen. Rick Scott with Sen. Gillibrand as Ranking Member, with Verdin and Buettner among four witnesses. Congressional hearings are explicitly included under 'legislation'.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official GPO-published hearing record confirms 'Optimizing Longevity: From Research to Action', S. Hrg. 119-40, February 12, 2025, Senate Special Committee on Aging with Chair Rick Scott (FL) and Ranking Member Kirsten Gillibrand (NY), and witnesses Eric Verdin (Buck Institute CEO) and Dan Buettner (Blue Zones founder).",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the GPO hearing record: 2025-02-12 Senate Special Committee on Aging hearing 'Optimizing Longevity: From Research to Action', Chair Rick Scott, Ranking Member Gillibrand, witnesses including Eric Verdin and Dan Buettner. A published hearing record is a final dated artifact and is not superseded.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-007": {
+    "finding_fingerprint": "90bd25e68ac4897b",
+    "finding_id": "us-007",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The Bilirakis press release confirms the 25 April 2025 re-launch of the Congressional Caucus for Longevity Science by the six named members, aiming to educate Members about aging and longevity biotechnology. Caucus announcements are explicitly 'political statement'.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official press release on Rep. Bilirakis's house.gov site, dated April 25, 2025, confirms the re-launch of the Congressional Caucus for Longevity Science by the six named representatives and quotes the aim to 'educate Members about the growing field of aging and longevity biotechnology'.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the Bilirakis press release: 2025-04-25 re-launch of the Congressional Caucus for Longevity Science with all six named members confirmed. This remains the canonical artifact for the caucus re-launch; no newer superseding announcement found.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-008": {
+    "finding_fingerprint": "d19fe5945808ff3f",
+    "finding_id": "us-008",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The MIT Technology Review article confirms O'Neill was sworn in as HHS Deputy Secretary on 9 June 2025, his SENS Research Foundation CEO role 2019-2021, and attributes the quoted 'aging an absurdity' line to a 2020 SENS annual report. The record's substance is his stated longevity position, so 'political statement' is the best fit; the swearing-in alone could arguably be 'policy'.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "MIT Technology Review is a secondary but credible publisher, and the source_note explains primary pages were bot-blocked; the article confirms O'Neill was sworn in as HHS deputy secretary on June 9 (2025), was SENS Research Foundation CEO from 2019 to 2021, and contains the exact quote 'More and more influential people consider aging an absurdity. Now we need to make it one.' Note this remains journalism, not an official HHS record.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2026-02-15",
+          "url": "https://www.statnews.com/2026/02/15/cdc-lacks-director-jim-oneill-susan-monarez/"
+        },
+        "reason": "The MIT Technology Review article is live and supports the claim, but the picture has materially changed: O'Neill left HHS on 2026-02-13 (after also serving as acting CDC director from August 2025) and was nominated to head NSF on 2026-03-02, so a reader should not take him as the sitting Deputy Secretary.",
+        "verdict": "fail"
+      }
+    }
+  },
+  "us-009": {
+    "finding_fingerprint": "a1e4c1a5551a3221",
+    "finding_id": "us-009",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The NIA blog post (26 March 2025, by Chhanda Dutta) announces the launch of the ELITE Portal, an NIH-designated data repository centralizing exceptional-longevity study data. An agency infrastructure/programme decision fits 'policy'; no money is awarded on this page. NIA page returned 405 to WebFetch; verified by direct retrieval of the same canonical URL.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official NIA blog post (canonical URL 405-blocked to WebFetch but retrieved directly), dated March 26, 2025 by Chhanda Dutta, confirms the launch of the ELITE Portal as a 'new NIH-designated data repository' centralizing data from NIA-funded studies of exceptionally long-lived individuals and names all four studies: Long Life Family Study, Longevity Consortium, Longevity Genomics, Integrative Longevity Omics.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "The NIA blog URL is bot-blocked to direct fetch (HTTP 405 twice), but search confirms the exact post ('Unlock longevity data through the ELITE Portal', 2025-03-26) and its content, and the ELITE Portal remains live at eliteportal.synapse.org. The launch post is still the current announcement artifact.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-010": {
+    "finding_fingerprint": "f8cc477ef9081a02",
+    "finding_id": "us-010",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The NIA blog post (29 July 2026, by Viviana Perez Montes) announces the GSIG/NIA Fifth Geroscience Summit for 2-3 December 2026 as described. An agency-convened summit fits none of the five labels well, but 'policy' as agency programme activity is the least-bad defensible choice, as the source_note argues. NIA page returned 405 to WebFetch; verified by direct retrieval of the same canonical URL.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official NIA blog post (canonical URL 405-blocked to WebFetch but retrieved directly), dated July 29, 2026 by Viviana Perez Montes, confirms the NIH Geroscience Interest Group (GSIG) and NIA announcing the Fifth Geroscience Summit 'Revisiting the Geroscience Hypothesis - Focus on Health' for December 2-3, 2026, addressed to scientists, clinicians and public policy experts.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "The NIA blog URL is bot-blocked to direct fetch (HTTP 405 twice), but search confirms the post and NIA's dedicated Fifth Geroscience Summit workshop page for 2026-12-02/03. The summit is still upcoming as of 2026-09-12, so the announcement is current.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-011": {
+    "finding_fingerprint": "22b0bee0d4159f52",
+    "finding_id": "us-011",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The Federal Register notice (87 FR 60684, 6 Oct 2022) confirms ACL made the 2022 National Strategy to Support Family Caregivers available for a 60-day comment period closing 30 November 2022, under the RAISE Family Caregivers Act. The subject is a national strategy document, so 'strategy' is the best fit. WebFetch was bot-redirected; verified by direct retrieval of the same canonical URL.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "The canonical federalregister.gov URL was bot-blocked (302 to an unblock page, twice), but the same official notice in GPO's govinfo Federal Register PDF (FR 2022-10-06, doc 2022-21697, 87 FR 60684) confirms the ACL notice on the 2022 National Strategy to Support Family Caregivers, the RAISE Family Caregivers Act of 2017, the Family Caregiving Advisory Council, and the November 30, 2022 comment deadline; canonical URL unverifiable to automated fetch.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2024",
+          "url": "https://acl.gov/sites/default/files/2024ProgressReport_StrategyToSupportCaregivers.pdf"
+        },
+        "reason": "federalregister.gov bot-blocked the fetch (redirect to unblock page), but search confirms the notice exists at this exact URL and the claim asserts a dated 2022 publication and comment period; the 2022 Strategy has not been superseded by a newer strategy. ACL's 2024 progress report to Congress on implementing the strategy is newer official material worth noting.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-012": {
+    "finding_fingerprint": "dfc6d8309a774bec",
+    "finding_id": "us-012",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The CHHS announcement confirms California released its first Master Plan for Aging on 6 January 2021, a ten-year blueprint with five bold goals including Health Reimagined and one million caregiving jobs. A state master plan is squarely 'strategy'.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official California Health & Human Services Agency announcement dated January 6, 2021 confirms the first-ever Master Plan for Aging as a 10-year blueprint with five bold goals including 'Health Reimagined', the one million high-quality caregiving jobs target, and the 60-and-over population growing to 10.8 million by 2030.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the CHHS announcement: 2021-01-06 release of California's Master Plan for Aging with the five bold goals, one-million-caregiving-jobs target and 10.8 million 60+ projection all confirmed. The MPA remains California's operative ten-year plan (annual implementation reports exist but no replacement plan).",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-013": {
+    "finding_fingerprint": "d425b238b96e6c41",
+    "finding_id": "us-013",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The Governor's press release confirms Hochul signed the executive order on 4 November 2022 creating the Master Plan for Aging Council, headed by the Health Commissioner and Office for the Aging Director. An executive order is explicitly 'policy'.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official New York Governor's office press release dated November 4, 2022 confirms Executive Order No. 23 creating the state's first-ever Master Plan for Aging, with the Health Commissioner chairing and the Office for the Aging Director as vice-chair of the Master Plan for Aging Council developing guidance for healthy, livable communities.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "newer_source": {
+          "date": "2025-06-30",
+          "url": "https://www.governor.ny.gov/news/governor-hochul-releases-first-ever-master-plan-aging-offering-roadmap-aging-new-yorkers"
+        },
+        "reason": "Fetched the press release, which confirms EO 23 on 2022-11-04, but the process it launched has since completed: New York published the Master Plan for Aging Final Report on 2025-06-30, the newer authoritative artifact that completes this picture.",
+        "verdict": "fail"
+      }
+    }
+  },
+  "us-014": {
+    "finding_fingerprint": "d51dcd20c72186c0",
+    "finding_id": "us-014",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The press release confirms the 30 June 2025 release of New York's Master Plan for Aging Final Report with more than 100 proposals across nine pillars, and the $45 million FY 2026 budget item. The record's point is the plan/roadmap itself, so 'strategy' fits; the budget line is incidental.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official New York Governor's office release dated June 30, 2025 confirms the Master Plan for Aging Final Report with more than 100 proposals across nine pillars (including caregiver/workforce support and healthcare-focused pillars) and states the FY 2026 Enacted State Budget includes $45 million in additional funds for community-based aging services through Area Agencies on Aging.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the Governor's press release: 2025-06-30 release of the MPA Final Report with 100+ proposals across nine pillars and the $45 million FY2026 AAA funding confirmed. This is the current final-report artifact; no newer superseding plan found.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-015": {
+    "finding_fingerprint": "93429c5c825c40af",
+    "finding_id": "us-015",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The PDF is the enrolled (Authorized Print Version) Montana SB 535, 69th Legislature 2025: 'AN ACT REVISING LAWS RELATED TO EXPERIMENTAL TREATMENTS; PROVIDING FOR LICENSING OF EXPERIMENTAL TREATMENT CENTERS; AMENDING THE RIGHT TO TRY ACT'. An enacted state bill is squarely 'legislation'. PDF text extracted from the downloaded file's content streams.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "The official Montana Legislature archive PDF (enrolled bill, Authorized Print Version, 69th Legislature 2025) was fetched and its text extracted locally: SB 535's title matches verbatim ('AN ACT REVISING LAWS RELATED TO EXPERIMENTAL TREATMENTS; PROVIDING FOR LICENSING OF EXPERIMENTAL TREATMENT CENTERS; AMENDING THE RIGHT TO TRY ACT...'), and the definitions cover treatments that have successfully completed phase 1 of a clinical trial but are not yet FDA-approved; the session-law chapter file supports enactment.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the PDF and extracted its text locally: enrolled SB 535, 69th Montana Legislature (2025), revising experimental treatment laws, licensing experimental treatment centers and amending the Right to Try Act, as claimed. An enrolled session-law chapter is a final artifact; no later amendment found.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-016": {
+    "finding_fingerprint": "88e6330a4cbacc6a",
+    "finding_id": "us-016",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The Colorado General Assembly page confirms HB22-1035 was signed into law 24 March 2022 (session laws chapter 38), expanding the Commission on Aging from 17 to 19 members and creating the Lifelong Colorado initiative. An enacted state law is squarely 'legislation'.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "Official Colorado General Assembly bill page confirms HB22-1035 'Modernization of the Older Coloradans' Act' was signed March 24, 2022, increased the Commission on Aging from 17 to 19 members, and created the Lifelong Colorado initiative within the state office on aging to coordinate the strategic action plan on aging.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the Colorado General Assembly bill page: HB22-1035 signed 2022-03-24, commission expanded from 17 to 19 members and the Lifelong Colorado initiative created, all confirmed. An enacted 2022 law page remains the adequate artifact for this dated claim.",
+        "verdict": "pass"
+      }
+    }
+  },
+  "us-017": {
+    "finding_fingerprint": "7034c6ede824e62d",
+    "finding_id": "us-017",
+    "judged_at": "2026-09-12T06:56:29Z",
+    "judges": {
+      "classification": {
+        "reason": "The Age-Friendly Minnesota page confirms the December 2024 release of the ten-year Multisector Blueprint for Aging, developed by the council created by Executive Order 19-38, with 'Optimized Health and Longevity' among its four domains. A ten-year state plan is squarely 'strategy'.",
+        "verdict": "pass"
+      },
+      "credibility": {
+        "reason": "The Age-Friendly Minnesota Council's own initiative site (not a .gov domain, as the source_note discloses, since state pages were bot-blocked) confirms the Multisector Blueprint for Aging released December 2024, the council's creation by Governor Walz's Executive Order 19-38 in December 2019, and 'Optimized Health and Longevity' as one of the four domains; the council-run site is a credible institutional source for its own plan.",
+        "verdict": "pass"
+      },
+      "recency": {
+        "reason": "Fetched the Age-Friendly Minnesota page: it confirms the Multisector Blueprint for Aging (released December 2024), EO 19-38 creating the council, and the Optimized Health and Longevity domain. The blueprint is a ten-year plan and remains current; no newer version found.",
+        "verdict": "pass"
+      }
+    }
+  }
+}

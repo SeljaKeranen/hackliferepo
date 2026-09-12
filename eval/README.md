@@ -36,6 +36,62 @@ checks, each pass or fail:
 A finding is **correct only if all four checks pass**. The header shows
 running accuracy = correct / reviewed.
 
+## The AI judge panel
+
+To compress the human workload, three independent AI judges pre-mark every
+finding before the human pass (each judge fetched and read the source, not
+just the claim text):
+
+1. **credibility** — is the publisher credible, and does the source genuinely
+   support the whole claim (right numbers, names, dates, no overreach)?
+2. **recency** — is the source still current for what the claim asserts? If
+   it is superseded or a materially newer official artifact exists, the judge
+   records a `newer_source` suggestion (URL + date). Suggestions never replace
+   the original source; they live only in the judgment record.
+3. **classification** — is the label (policy / legislation / funding /
+   strategy / political statement) right for what the source shows? If not,
+   the judge records a `proposed_classification`.
+
+Each judge verdict is `pass`, `fail` or `uncertain` with a one-or-two-line
+reason. The review screen shows the three verdicts per finding and sorts
+findings any judge flagged (fail/uncertain, or stale judgments) first. The
+human then clicks **Agree** (all four checks pass), **Disagree** (pick which
+check fails), or overrides individual checks. The AI judgments are advisory
+pre-marks only: the human's four-check verdict in `verdicts/` remains the
+accuracy metric the challenge is scored on.
+
+### Judgment record schema
+
+`judgments/<country>.judgments.json` is an object keyed by finding id:
+
+```json
+{
+  "se-001": {
+    "finding_id": "se-001",
+    "finding_fingerprint": "16-hex-digit fingerprint of the judged content",
+    "judged_at": "2026-09-12T09:00:00Z",
+    "judges": {
+      "credibility": { "verdict": "pass", "reason": "..." },
+      "recency": {
+        "verdict": "fail", "reason": "...",
+        "newer_source": { "url": "https://...", "date": "2026-02-24" }
+      },
+      "classification": {
+        "verdict": "fail", "reason": "...",
+        "proposed_classification": "policy"
+      }
+    }
+  }
+}
+```
+
+`verdict` is one of `pass` / `fail` / `uncertain`. `newer_source` (recency
+only) and `proposed_classification` (classification only) are optional. The
+fingerprint works like the verdict fingerprint: editing a finding marks its
+judgments stale — the UI says so and `test_findings.py` fails until the
+finding is re-judged. The server serves judgments read-only; there is no
+write API for them.
+
 ## Where things live
 
 - `../schema/finding.schema.json` — the finding record contract, including the
@@ -43,6 +99,9 @@ running accuracy = correct / reviewed.
 - `findings/<country>.json` — the findings under review, one file per country
   (`sweden.json`, `us.json`, `singapore.json`; committed; `data/` stays
   gitignored for local scratch).
+- `judgments/<country>.judgments.json` — AI judge panel pre-marks (committed;
+  schema above), produced by fan-out judging sessions and read-only to the
+  server.
 - `verdicts/<country>.verdicts.json` — verdicts, written by the server on every
   click. Committed: the verdicts are the evidence for the accuracy claim, so
   commit them after a review session. Each verdict stores a fingerprint of the
@@ -70,6 +129,7 @@ python3 eval/test_server.py
 ```
 
 `test_findings.py` structurally validates every `findings/*.json` against the
-schema constraints and cross-checks verdicts (ids exist, fingerprints match,
-records sit in the right country file). `test_server.py` smoke-tests the
-server's HTTP contract against a temporary data directory.
+schema constraints and cross-checks verdicts and AI judgments (ids exist,
+fingerprints match, records sit in the right country file, judge records are
+well-formed). `test_server.py` smoke-tests the server's HTTP contract against
+a temporary data directory.

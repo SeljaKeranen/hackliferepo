@@ -99,7 +99,7 @@
 </section>
 
 <section class="slide"><!-- 8 results -->
-  <h2 style="font-size:1.5rem">Our results<span class="navy" id="rm-sub"> · darker = more captured ageing-research funding · hover a region</span></h2>
+  <h2 style="font-size:1.5rem">Our results<span class="navy" id="rm-sub"> · navy US, blue Sweden, purple EU · hover a region</span></h2>
   <style>
     .mreg{stroke:#FBFAF8;stroke-width:.5;cursor:pointer;transition:opacity .15s}
     .mreg:hover{opacity:.75}
@@ -117,10 +117,11 @@
       SE:{name:"Sweden",total:211,grants:"870 grants",amb:"+94 M€ ambiguous",cats:[["fundamental ageing",38.6,"#1B5E8C"],["intervention",0.6,"#14375F"],["age-related disease",74.8,"#8A8A8F"],["care",61.4,"#B7B7BC"],["social / population",35.8,"#D3CDC3"]]},
       EU:{name:"European Union",total:164,grants:"239 grants · small n",amb:"+254 M€ ambiguous",cats:[["fundamental ageing",104.6,"#1B5E8C"],["intervention",0.0,"#14375F"],["age-related disease",43.3,"#8A8A8F"],["care",13.8,"#B7B7BC"],["social / population",1.8,"#D3CDC3"]]}
     };
-    const shade={US:.95,SE:.55,EU:.5};
+    const FILL={US:['#14375F',.95],SE:['#1B5E8C',.9],EU:['#8B5A9E',.55]};
     document.querySelectorAll('.mreg').forEach(p=>{
       const r=p.dataset.reg;
-      p.setAttribute('fill','#14375F'); p.setAttribute('fill-opacity', shade[r]||.4);
+      const f=FILL[r]||['#14375F',.4];
+      p.setAttribute('fill',f[0]); p.setAttribute('fill-opacity',f[1]);
       p.addEventListener('mouseenter',()=>show(r));
     });
     const panel=document.getElementById('rm-panel');

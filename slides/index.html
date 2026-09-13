@@ -137,8 +137,10 @@
         <div style="display:flex;height:20px;border-radius:6px;overflow:hidden;background:#F4F1EC">${seg(pro,'#1B5E8C')}${seg(rea,'#DFDAD2')}</div>
         <p class="cap"><b style="color:#1B5E8C">${(pro/d.total*100).toFixed(1)}% proactive</b> · ${(rea/d.total*100).toFixed(1)}% reactive</p>
         <p class="cap" style="margin-top:.8rem;font-weight:600;color:var(--ink2)">focus areas</p>
-        <div style="display:flex;height:20px;border-radius:6px;overflow:hidden;background:#F4F1EC">${d.cats.map(c=>seg(c[1],c[2])).join('')}</div>
-        <p class="cap" style="margin-top:.3rem">${d.cats.map(c=>`<span style="color:${c[2]}">■</span> ${c[0]} ${c[1].toLocaleString()}`).join(' · ')}</p>`;
+        ${d.cats.map(c=>`<div style="display:grid;grid-template-columns:9.5rem 1fr 4.5rem;gap:.5rem;align-items:center;margin:.28rem 0">
+          <span class="cap" style="color:var(--ink2)">${c[0]}</span>
+          <div style="height:12px;border-radius:6px;background:#F4F1EC;overflow:hidden"><div style="width:${Math.max(c[1]/d.total*100,1)}%;height:100%;background:${c[2]}"></div></div>
+          <span class="cap" style="text-align:right">${c[1]<1?'&lt;1':Math.round(c[1]).toLocaleString()} M€</span></div>`).join('')}`;
     }
     show('US');
   })();

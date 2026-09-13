@@ -1,0 +1,341 @@
+{
+  "corpus": {
+    "dataset": "UKHRA 2022, manually coded and non-redacted rows",
+    "awards_scored": 11664,
+    "note": "A general UK health research corpus, not selected by any ageing keyword search. Treat confident ageing labels here as candidate relevance-gate leaks, not as measured errors."
+  },
+  "label_distribution": {
+    "not_relevant": 6203,
+    "age_related_disease": 4531,
+    "ambiguous": 411,
+    "care": 257,
+    "fundamental_aging": 207,
+    "intervention": 41,
+    "social_population_aging": 14
+  },
+  "numerator_share_of_awards": 0.021262002743484224,
+  "funding_gap_ratio_on_ukhra": 0.06203848984823472,
+  "funding_gap_ratio_note": "The ratio the instrument reads on a corpus with no ageing focus. Not a target and not an error rate: a reference point for the per-region ratios reported elsewhere in the repo.",
+  "keyword_drivers": {
+    "age_related_disease": {
+      "cancer": 1933,
+      "stroke": 353,
+      "dementia*": 333,
+      "cardiovascular disease": 324,
+      "obesity": 304,
+      "heart failure": 293,
+      "myocardial": 262,
+      "arthritis": 236,
+      "hypertension": 230,
+      "breast cancer": 213,
+      "disease progression": 206,
+      "immunotherapy": 202,
+      "alzheimer*": 186,
+      "glucose": 162,
+      "infarction": 159
+    },
+    "care": {
+      "older people": 178,
+      "social care": 150,
+      "care services": 47,
+      "end of life": 36,
+      "end-of-life": 20,
+      "social services": 14,
+      "informal care*": 14,
+      "care of older": 10,
+      "caregiv*": 9,
+      "long-term care": 6,
+      "nursing home*": 6,
+      "ageing in place": 6,
+      "elderly care": 2,
+      "home care": 2
+    },
+    "fundamental_aging": {
+      "senescen*": 52,
+      "lifespan": 43,
+      "oxidative stress": 27,
+      "dna methylation": 26,
+      "senescent cell*": 19,
+      "cellular senescence": 17,
+      "mitochondrial function": 17,
+      "telomere*": 16,
+      "cell senescence": 15,
+      "mitochondrial dysfunction": 15,
+      "sasp": 10,
+      "proteostasis": 10,
+      "insulin resistance": 7,
+      "biological age": 6,
+      "nutrient sensing": 5
+    },
+    "intervention": {
+      "malnutrition": 15,
+      "pharmacological intervention*": 14,
+      "exercise intervention*": 7,
+      "caloric restriction": 3,
+      "rapamycin": 2,
+      "metformin": 1
+    },
+    "social_population_aging": {
+      "ageing societ*": 5,
+      "retirement": 4,
+      "pension*": 4,
+      "labour market": 2,
+      "working life": 1,
+      "older workers": 1,
+      "social relations": 1,
+      "aging societ*": 1
+    }
+  },
+  "suspicious_numerator_labels": {
+    "count": 51,
+    "criterion": "label in ('fundamental_aging', 'intervention') while the human primary Health Category is one of ('Infection', 'Reproductive Health and Childbirth', 'Oral and Gastrointestinal', 'Renal and Urogenital', 'Congenital Disorders')",
+    "examples": [
+      {
+        "award_id": "HRCS22_01198",
+        "human_health_category": "Congenital Disorders",
+        "our_label": "fundamental_aging",
+        "title": "From Microcephaly to Genome Stability, Inflammation and Growth Regulation",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "cgas"
+          ]
+        },
+        "value_2022_gbp": 1000915.99
+      },
+      {
+        "award_id": "HRCS22_01222",
+        "human_health_category": "Reproductive Health and Childbirth",
+        "our_label": "fundamental_aging",
+        "title": "Reproductive and cardio-metabolic health",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "dna methylation"
+          ]
+        },
+        "value_2022_gbp": 704924.0
+      },
+      {
+        "award_id": "HRCS22_01492",
+        "human_health_category": "Oral and Gastrointestinal",
+        "our_label": "fundamental_aging",
+        "title": "Defining the regenerative capacity of ductular cells from non-transplantable human liver",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "senescen*"
+          ]
+        },
+        "value_2022_gbp": 310337.3457
+      },
+      {
+        "award_id": "HRCS22_01592",
+        "human_health_category": "Oral and Gastrointestinal",
+        "our_label": "fundamental_aging",
+        "title": "MECHANISM OF INFLAMMATION IN ENVIRONMENTAL ENTERIC DYSFUNCTION",
+        "matched_keywords": {
+          "intervention": [
+            "malnutrition"
+          ]
+        },
+        "value_2022_gbp": 148228.0443
+      },
+      {
+        "award_id": "HRCS22_01600",
+        "human_health_category": "Infection",
+        "our_label": "intervention",
+        "title": "Formation and function of the parasitophorous vacuole membrane in Plasmodium falciparum-infected erythrocytes",
+        "matched_keywords": {
+          "intervention": [
+            "rapamycin"
+          ]
+        },
+        "value_2022_gbp": 183507.4667
+      },
+      {
+        "award_id": "HRCS22_01639",
+        "human_health_category": "Reproductive Health and Childbirth",
+        "our_label": "fundamental_aging",
+        "title": "Tommy's Reproductive Health Biobank",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "dna methylation"
+          ]
+        },
+        "value_2022_gbp": 63287.9015
+      },
+      {
+        "award_id": "HRCS22_01798",
+        "human_health_category": "Oral and Gastrointestinal",
+        "our_label": "fundamental_aging",
+        "title": "MICA:The Potential of Multipoint Adult Progenitor Cells as a Novel Therapeutic Strategy in Alcoholic Hepatitis",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "oxidative stress"
+          ]
+        },
+        "value_2022_gbp": 81608.05
+      },
+      {
+        "award_id": "HRCS22_01868",
+        "human_health_category": "Infection",
+        "our_label": "fundamental_aging",
+        "title": "Investigation of fever as a protective mechanism in sepsis",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "mitochondrial function"
+          ]
+        },
+        "value_2022_gbp": 87634.5309
+      },
+      {
+        "award_id": "HRCS22_01901",
+        "human_health_category": "Reproductive Health and Childbirth",
+        "our_label": "fundamental_aging",
+        "title": "Prenatal influences on childhood health: what role for mums and dads?",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "dna methylation"
+          ]
+        },
+        "value_2022_gbp": 99550.1939
+      },
+      {
+        "award_id": "HRCS22_01902",
+        "human_health_category": "Reproductive Health and Childbirth",
+        "our_label": "fundamental_aging",
+        "title": "Prenatal influences on childhood health: what role for mums and dads?",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "dna methylation"
+          ]
+        },
+        "value_2022_gbp": 27242.5714
+      },
+      {
+        "award_id": "HRCS22_01968",
+        "human_health_category": "Infection",
+        "our_label": "intervention",
+        "title": "MICA: Development of new agents for the treatment of cryptosporidiosis",
+        "matched_keywords": {
+          "intervention": [
+            "malnutrition"
+          ]
+        },
+        "value_2022_gbp": 576641.2134
+      },
+      {
+        "award_id": "HRCS22_02173",
+        "human_health_category": "Oral and Gastrointestinal",
+        "our_label": "fundamental_aging",
+        "title": "Role of DNA methylation in regulating intestinal epithelial cell function in health and paediatric Inflammatory Bowel Diseases",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "dna methylation"
+          ]
+        },
+        "value_2022_gbp": 172409.631
+      },
+      {
+        "award_id": "HRCS22_02233",
+        "human_health_category": "Oral and Gastrointestinal",
+        "our_label": "fundamental_aging",
+        "title": "Regulatory T cell therapy for IBD",
+        "matched_keywords": {
+          "intervention": [
+            "rapamycin"
+          ]
+        },
+        "value_2022_gbp": 88275.3759
+      },
+      {
+        "award_id": "HRCS22_02252",
+        "human_health_category": "Renal and Urogenital",
+        "our_label": "fundamental_aging",
+        "title": "The impact of primary and secondary epithelial senescence on renal function and fibrosis",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "senescen*",
+            "senescent cell*"
+          ]
+        },
+        "value_2022_gbp": 91613.8846
+      },
+      {
+        "award_id": "HRCS22_02272",
+        "human_health_category": "Renal and Urogenital",
+        "our_label": "fundamental_aging",
+        "title": "Defining the oxidative stress-related mechanisms by which activation of the transcription factor Nrf2 arrests and resolves liver fibrosis",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "oxidative stress"
+          ]
+        },
+        "value_2022_gbp": 489769.85
+      },
+      {
+        "award_id": "HRCS22_02282",
+        "human_health_category": "Infection",
+        "our_label": "fundamental_aging",
+        "title": "Senescent CD8+ T and NK cells contribute to immunopathogy duting cutaneous leishmaniasis",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "senescen*"
+          ]
+        },
+        "value_2022_gbp": 199907.9365
+      },
+      {
+        "award_id": "HRCS22_02298",
+        "human_health_category": "Reproductive Health and Childbirth",
+        "our_label": "fundamental_aging",
+        "title": "The impact of metformin exposure on placental ageing, metabolism, and mitochondrial function",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "telomere*",
+            "mitochondrial function",
+            "oxidative stress"
+          ],
+          "intervention": [
+            "metformin"
+          ]
+        },
+        "value_2022_gbp": 196486.8667
+      },
+      {
+        "award_id": "HRCS22_02441",
+        "human_health_category": "Infection",
+        "our_label": "fundamental_aging",
+        "title": "The clinical impact of inherited chromosomally-integrated human herpesvirus 6 (iciHHV-6): a comprehensive analysis using UK Biobank",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "telomere*"
+          ]
+        },
+        "value_2022_gbp": 403870.695
+      },
+      {
+        "award_id": "HRCS22_02659",
+        "human_health_category": "Oral and Gastrointestinal",
+        "our_label": "intervention",
+        "title": "NOVEL TOOLS FOR EVALUATING INTESTINAL DYSFUNCTION IN CHILDREN AND ADULTS WITH MALNUTRITION DISORDERS",
+        "matched_keywords": {
+          "intervention": [
+            "malnutrition"
+          ]
+        },
+        "value_2022_gbp": 587236.1052
+      },
+      {
+        "award_id": "HRCS22_02664",
+        "human_health_category": "Congenital Disorders",
+        "our_label": "fundamental_aging",
+        "title": "Investigating polyamines as a treatment target for mitochondrial disease",
+        "matched_keywords": {
+          "fundamental_aging": [
+            "mitochondrial dysfunction"
+          ]
+        },
+        "value_2022_gbp": 124220.8241
+      }
+    ]
+  }
+}

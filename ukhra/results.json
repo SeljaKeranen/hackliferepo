@@ -1,0 +1,109 @@
+{
+  "source": {
+    "dataset": "UK Health Research Analysis 2022 (UKCRC), HRCS public dataset v1-2",
+    "url": "https://hrcsonline.net/reports/analysis-data/",
+    "licence": "Creative Commons; formal citation required, re-analysis should be notified to HRCS Online",
+    "file": "UKHRA2022.xlsx"
+  },
+  "classifier": "ukhra.cancer_terms:looks_like_cancer (keyword baseline)",
+  "coverage": {
+    "awards_total": 18023,
+    "awards_manually_coded": 12543,
+    "awards_algorithmically_coded": 5126,
+    "awards_mixed_coding": 354,
+    "manually_coded_text_redacted": 879,
+    "manually_coded_scoreable": 11664,
+    "total_value_2022_gbp": 2792713351.5846047,
+    "manual_value_2022_gbp": 2280937910.5376983,
+    "note": "Only manually coded awards count as ground truth. Rows whose title and abstract were withheld from the public release are excluded as unscoreable."
+  },
+  "cancer_any_health_category": {
+    "tp": 1818,
+    "fp": 544,
+    "fn": 348,
+    "tn": 8954,
+    "precision": 0.7696867061812024,
+    "recall": 0.8393351800554016,
+    "f1": 0.8030035335689046,
+    "funding_wrongly_included_gbp": 133699513.67209993,
+    "funding_missed_gbp": 72378134.39829996
+  },
+  "cancer_primary_health_category": {
+    "tp": 1711,
+    "fp": 651,
+    "fn": 281,
+    "tn": 9021,
+    "precision": 0.7243861134631668,
+    "recall": 0.8589357429718876,
+    "f1": 0.7859439595774002,
+    "funding_wrongly_included_gbp": 154634778.62669984,
+    "funding_missed_gbp": 56008647.20189999
+  },
+  "cancer_including_redacted_rows": {
+    "tp": 1818,
+    "fp": 544,
+    "fn": 514,
+    "tn": 9667,
+    "precision": 0.7696867061812024,
+    "recall": 0.7795883361921098,
+    "f1": 0.7746058798466128,
+    "funding_wrongly_included_gbp": 133699513.67209993,
+    "funding_missed_gbp": 75273940.39829995
+  },
+  "research_activity_profile": {
+    "by_group": {
+      "1": {
+        "group": "Underpinning",
+        "awards": 1927,
+        "apportioned_gbp": 361864818.62515056
+      },
+      "2": {
+        "group": "Aetiology",
+        "awards": 4610,
+        "apportioned_gbp": 646006566.8921183
+      },
+      "3": {
+        "group": "Prevention",
+        "awards": 849,
+        "apportioned_gbp": 165869933.43091673
+      },
+      "4": {
+        "group": "Detection and Diagnosis",
+        "awards": 2026,
+        "apportioned_gbp": 223265363.86028323
+      },
+      "5": {
+        "group": "Treatment Development",
+        "awards": 1763,
+        "apportioned_gbp": 236994284.61569175
+      },
+      "6": {
+        "group": "Treatment Evaluation",
+        "awards": 2055,
+        "apportioned_gbp": 306107424.6804586
+      },
+      "7": {
+        "group": "Disease Management",
+        "awards": 1279,
+        "apportioned_gbp": 121485812.31950828
+      },
+      "8": {
+        "group": "Health Services",
+        "awards": 1605,
+        "apportioned_gbp": 204699405.11357528
+      }
+    },
+    "prevention_gbp": 165869933.43091673,
+    "consequences_gbp": 887852885.4759419,
+    "unmapped_gbp": 1212570790.630844,
+    "prevention_share_of_mapped": 0.1574132499123362,
+    "note": "Groups 1 (Underpinning) and 2 (Aetiology) are left unmapped on purpose: upstream biology sits on neither side of the prevention/consequences split, and it is the territory an ageing-biology grant occupies."
+  },
+  "limitations": [
+    "HRCS has no ageing category: nothing here validates ageing classification.",
+    "Scores a cancer screen, not the ageing classifier in ratio/classify.py.",
+    "UKHRA is UK-only, 2022 spend, health research only: not a comparator for SweCRIS totals.",
+    "Funding figures are GBP 2022 annualised values, not apportioned by Health Category share.",
+    "cancer_including_redacted_rows keeps the exclusion auditable: it scores the same classifier over rows whose text was withheld, where no classifier could succeed, and is the more pessimistic number."
+  ]
+}

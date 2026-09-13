@@ -149,28 +149,13 @@
 
 <section class="slide"><!-- 6 evals -->
   <h2>Blind evaluation</h2>
-  <div class="row" style="margin-top:.4rem;align-items:stretch">
-    <div class="card" style="flex:1">
-      <h3 style="font-size:.95rem;color:var(--navy);font-weight:600;letter-spacing:.04em">WHAT DID WE MEASURE?</h3>
-      <p class="serif" style="margin-top:.5rem;font-size:1.05rem">Can our classifier match trained human coders — people who never saw our work?</p>
-      <p class="cap" style="margin-top:.6rem">Eval set: UKHRA 2022 — 11,664 UK research awards, each hand-coded by professional HRCS coders. Independent, not selected by our search, impossible to overfit.</p>
-    </div>
-    <div class="card" style="flex:1">
-      <h3 style="font-size:.95rem;color:var(--navy);font-weight:600;letter-spacing:.04em">HOW DID WE MEASURE?</h3>
-      <p class="serif" style="margin-top:.5rem;font-size:1.05rem">Run the pipeline on the exact text the human coder read. Compare label to label.</p>
-      <p class="cap" style="margin-top:.6rem">Scored on the cancer axis — the axis their taxonomy supports. Algorithm-coded rows excluded (that would be classifier vs classifier). Never tuned on this set.</p>
-    </div>
-    <div class="card" style="flex:1">
-      <h3 style="font-size:.95rem;color:var(--navy);font-weight:600;letter-spacing:.04em">WHAT WERE THE RESULTS?</h3>
-      <div style="display:flex;gap:1.4rem;margin-top:.6rem">
-        <div><p style="font-size:2.1rem;font-weight:600;color:var(--ink1)">0.77</p><p class="cap">precision</p></div>
-        <div><p style="font-size:2.1rem;font-weight:600;color:var(--ink1)">0.84</p><p class="cap">recall</p></div>
-        <div><p style="font-size:2.1rem;font-weight:600;color:var(--ink1)">0.80</p><p class="cap">F1</p></div>
-      </div>
-      <p class="cap" style="margin-top:.5rem">10,772 / 11,664 labels agree with the human coder. Two blind expert passes on our own corpus concur at <b>88%</b>.</p>
-    </div>
+  <div class="row" style="margin-top:.6rem">
+    <div class="card metric" style="flex:1.3"><strong>11,664</strong><span>awards, hand-coded by independent human coders</span><em>UKHRA 2022 · never seen by us · never tuned on</em></div>
+    <div class="card metric"><strong>0.77</strong><span>precision</span></div>
+    <div class="card metric"><strong>0.84</strong><span>recall</span></div>
+    <div class="card metric"><strong>0.80</strong><span>F1</span></div>
   </div>
-  <p class="cap"><span class="flagc">Honest boundary:</span> this validates the method. The ageing axis itself is measured next, by blind researcher labelling — never tuned on the test, and we report the number whatever it is.</p>
+  <p class="cap" style="margin-top:.4rem">Pipeline run on the exact text each human coder read, label against label. <span class="flagc">Validates the method; the ageing axis is measured next, by blind researcher labelling.</span></p>
 </section>
 
 <section class="slide"><!-- 7 architecture -->
@@ -208,6 +193,19 @@
 </section>
 
 
+
+<section class="slide"><!-- team -->
+  <h2>The crew</h2>
+  <div style="display:flex;gap:1rem;margin-top:.5rem">
+    <img src="team_6297.jpg" style="flex:1;min-width:0;height:44vh;object-fit:cover;border-radius:14px;border:1px solid var(--line2)">
+    <img src="team_6298.jpg" style="flex:1;min-width:0;height:44vh;object-fit:cover;border-radius:14px;border:1px solid var(--line2)">
+    <img src="team_6299.jpg" style="flex:1;min-width:0;height:44vh;object-fit:cover;border-radius:14px;border:1px solid var(--line2)">
+    <img src="team_6300.jpg" style="flex:1;min-width:0;height:44vh;object-fit:cover;border-radius:14px;border:1px solid var(--line2)">
+    <img src="team_6301.jpg" style="flex:1;min-width:0;height:44vh;object-fit:cover;border-radius:14px;border:1px solid var(--line2)">
+  </div>
+  <p class="lead" style="margin-top:.6rem">Selja · Max · Jan · Miko</p>
+  <p class="cap">github.com/SeljaKeranen/hackliferepo · every number traces to a committed artifact</p>
+</section>
 
 <div class="foot"><span>Longview</span><span id="pg"></span></div>
 <script>

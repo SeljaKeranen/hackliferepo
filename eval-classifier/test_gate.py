@@ -351,6 +351,8 @@ def test_http(tmp):
                  "record_fingerprint": fp, "correct_label": "care"},
                 {"record_id": "swecris:T1", "verdict": "disagree",
                  "record_fingerprint": fp, "correct_label": "policy"},
+                {"record_id": "swecris:T1", "verdict": "agree",
+                 "record_fingerprint": fp, "low_confidence": "false"},
                 {"record_id": "swecris:T1", "record_fingerprint": fp}):
         status, _ = request(port, "/api/verdict", bad)
         expect(status == 400, f"payload {bad} must be rejected with 400")
@@ -396,7 +398,8 @@ def test_http(tmp):
         json.dump({
             "format": server.IMPORT_FORMAT, "label_origin": "human",
             "human_attested": True, "reviewer": "andrew_1",
-            "packet_id": "someone-elses-packet", "taxonomy_version": "x",
+            "packet_id": "someone-elses-packet",
+            "taxonomy_version": server.IMPORT_TAXONOMY_VERSION,
             "decisions": [
                 {"record_id": "swecris:T1", "label": "preventing_slowing",
                  "low_confidence": True, "reason": "instrument review",
@@ -406,19 +409,9 @@ def test_http(tmp):
                  "low_confidence": False, "reason": "outside sample",
                  "reviewed_at": "2026-09-13T00:00:00Z",
                  "source_version": "v"}]}, f)
-    with open(os.path.join(server.IMPORTS_DIR, "model.json"), "w",
-              encoding="utf-8") as f:
-        json.dump({"format": server.IMPORT_FORMAT, "label_origin": "model",
-                   "human_attested": True, "reviewer": "bot",
-                   "decisions": [{"record_id": "swecris:T1",
-                                  "label": "neither",
-                                  "low_confidence": False}]}, f)
     status, data = request(port, "/api/data")
     expect("import:andrew_1" in data["verdicts"],
            "instrument exports must be ingested as import:<reviewer>")
-    expect("import:bot" not in data["verdicts"]
-           and "model.json" in (data.get("error") or ""),
-           "a non-human export must be rejected loudly, never ingested")
     s = data["summary"]
     expect(s["reviewed"] == 1 and s["consensus_reviewed"] == 0
            and len(s["inter_reviewer_disagreements"]) == 1,
@@ -457,8 +450,48 @@ def test_http(tmp):
            "the CSV export must carry every reviewer's decisions")
     expect("\"'=SUM(A1)\"" in csv_body,
            "formula-like cells must be escaped against CSV injection")
-    os.unlink(import_path)
+
+    # rejected import files: non-human origin, wrong taxonomy version -
+    # both surfaced loudly, neither ingested, and the CSV export refuses
+    # while the evidence is incomplete
+    with open(os.path.join(server.IMPORTS_DIR, "model.json"), "w",
+              encoding="utf-8") as f:
+        json.dump({"format": server.IMPORT_FORMAT, "label_origin": "model",
+                   "human_attested": True, "reviewer": "bot",
+                   "taxonomy_version": server.IMPORT_TAXONOMY_VERSION,
+                   "decisions": [{"record_id": "swecris:T1",
+                                  "label": "neither",
+                                  "low_confidence": False}]}, f)
+    with open(os.path.join(server.IMPORTS_DIR, "oldtax.json"), "w",
+              encoding="utf-8") as f:
+        json.dump({"format": server.IMPORT_FORMAT, "label_origin": "human",
+                   "human_attested": True, "reviewer": "old_hand",
+                   "taxonomy_version": "some-future-v2",
+                   "decisions": [{"record_id": "swecris:T1",
+                                  "label": "neither",
+                                  "low_confidence": False}]}, f)
+    status, data = request(port, "/api/data")
+    expect("import:bot" not in data["verdicts"]
+           and "model.json" in (data.get("error") or ""),
+           "a non-human export must be rejected loudly, never ingested")
+    expect("import:old_hand" not in data["verdicts"]
+           and "oldtax.json" in (data.get("error") or ""),
+           "a different taxonomy_version must be rejected loudly")
+    status, res = request(port, "/api/export.csv")
+    expect(status == 500 and "evidence incomplete" in res.get("error", ""),
+           "the CSV export must refuse while evidence files are rejected")
     os.unlink(os.path.join(server.IMPORTS_DIR, "model.json"))
+    os.unlink(os.path.join(server.IMPORTS_DIR, "oldtax.json"))
+
+    # DNS rebinding on reads: evidence must not be readable via a
+    # non-loopback Host on any /api/ GET
+    for api_path in ("/api/admin", "/api/export.csv", "/api/data"):
+        status, _ = request(port, api_path,
+                            headers={"Host": "evil.example:80"})
+        expect(status == 403,
+               f"GET {api_path} with a non-loopback Host must be refused")
+
+    os.unlink(import_path)
 
     # staleness: edit the sampled record after review
     request(port, "/api/verdict",
@@ -531,6 +564,158 @@ def test_http(tmp):
            "a corrupt sample must fail verdict writes with 500")
 
     httpd.shutdown()
+
+
+def test_admin_extras(tmp):
+    """Deeper admin/import coverage on a multi-record, multi-reviewer
+    state: pairwise over three reviewers, item ranking as an actual sort,
+    the unreviewed CSV row, malformed/duplicate import handling, and the
+    legacy-label loud drop."""
+    old = (server.SAMPLE_PATH, server.VERDICTS_DIR, server.JUDGMENTS_PATH,
+           server.IMPORTS_DIR)
+    server.SAMPLE_PATH = os.path.join(tmp, "sample.json")
+    server.VERDICTS_DIR = os.path.join(tmp, "verdicts")
+    server.JUDGMENTS_PATH = os.path.join(tmp, "judgments.json")
+    server.IMPORTS_DIR = os.path.join(tmp, "imports")
+    os.makedirs(server.VERDICTS_DIR)
+    os.makedirs(server.IMPORTS_DIR)
+    try:
+        recs = [make_record("r1", "care"), make_record("r2", "ambiguous"),
+                make_record("r3", "not_relevant"),
+                make_record("r4", "fundamental_aging")]
+        for i, r in enumerate(recs):
+            r["sampling"]["split"] = "tuning" if i % 2 == 0 else "holdout"
+        with open(server.SAMPLE_PATH, "w", encoding="utf-8") as f:
+            json.dump({"meta": {}, "records": recs}, f)
+        # reviewer a: r1 agree, r2 disagree->preventing_slowing,
+        # r4 agree with low confidence. reviewer b: r1 disagree->neither
+        # (human conflict on r1), r2 disagree->preventing_slowing (agrees
+        # with a, both against the pipeline).
+        a = {"r1": verdict_for(recs[0], reviewer="a"),
+             "r2": verdict_for(recs[1], "disagree", "preventing_slowing",
+                               "a"),
+             "r4": verdict_for(recs[3], reviewer="a", low_confidence=True)}
+        b = {"r1": verdict_for(recs[0], "disagree", "neither", "b"),
+             "r2": verdict_for(recs[1], "disagree", "preventing_slowing",
+                               "b")}
+        for reviewer, verdicts in (("a", a), ("b", b)):
+            with open(os.path.join(server.VERDICTS_DIR,
+                                   f"{reviewer}.verdicts.json"),
+                      "w", encoding="utf-8") as f:
+                json.dump(verdicts, f)
+        # import file: one valid decision on r4 plus three malformed ones
+        # and one duplicate; only the valid one may count
+        with open(os.path.join(server.IMPORTS_DIR, "c.json"), "w",
+                  encoding="utf-8") as f:
+            json.dump({"format": server.IMPORT_FORMAT,
+                       "label_origin": "human", "human_attested": True,
+                       "reviewer": "cc",
+                       "taxonomy_version": server.IMPORT_TAXONOMY_VERSION,
+                       "decisions": [
+                           {"record_id": "r4",
+                            "label": "preventing_slowing",
+                            "low_confidence": False, "reason": "x"},
+                           {"record_id": "r4", "label": "neither",
+                            "low_confidence": False},   # duplicate id
+                           {"record_id": "r1", "label": "care",
+                            "low_confidence": False},   # raw-space label
+                           {"record_id": "r1", "label": "neither",
+                            "low_confidence": "yes"},   # non-bool flag
+                           "not even a dict"]}, f)
+        # second file reusing the same reviewer code: rejected whole
+        with open(os.path.join(server.IMPORTS_DIR, "c2.json"), "w",
+                  encoding="utf-8") as f:
+            json.dump({"format": server.IMPORT_FORMAT,
+                       "label_origin": "human", "human_attested": True,
+                       "reviewer": "cc",
+                       "taxonomy_version": server.IMPORT_TAXONOMY_VERSION,
+                       "decisions": [{"record_id": "r3",
+                                      "label": "neither",
+                                      "low_confidence": False}]}, f)
+        # invalid reviewer code: rejected whole
+        with open(os.path.join(server.IMPORTS_DIR, "bad-rev.json"), "w",
+                  encoding="utf-8") as f:
+            json.dump({"format": server.IMPORT_FORMAT,
+                       "label_origin": "human", "human_attested": True,
+                       "reviewer": "x",
+                       "taxonomy_version": server.IMPORT_TAXONOMY_VERSION,
+                       "decisions": [{"record_id": "r3",
+                                      "label": "neither",
+                                      "low_confidence": False}]}, f)
+        records, verdicts_by_reviewer, judgments, meta, errors = \
+            server.load_state()
+        joined = "; ".join(errors)
+        expect("4 malformed decision(s)" in joined,
+               f"malformed import decisions must be counted loudly: "
+               f"{joined}")
+        expect("duplicate reviewer 'cc'" in joined,
+               f"a duplicate import reviewer file must be rejected: "
+               f"{joined}")
+        expect("bad-rev.json: invalid reviewer code" in joined,
+               f"an invalid import reviewer code must be rejected: "
+               f"{joined}")
+        expect(list(verdicts_by_reviewer["import:cc"]) == ["r4"],
+               "only the valid import decision may be ingested")
+
+        admin = server.admin_summary(records, verdicts_by_reviewer,
+                                     judgments, meta)
+        # pairwise: C(3,2) pairs; a-b overlap 2 agree 1; the import
+        # overlaps a on r4 (agree), has no overlap with b
+        pairs = {(p["a"], p["b"]): p for p in admin["pairwise"]}
+        expect(len(pairs) == 3, f"3 reviewers make 3 pairs: {pairs.keys()}")
+        expect(pairs[("a", "b")]["n"] == 2
+               and pairs[("a", "b")]["agree"] == 1
+               and pairs[("a", "b")]["rate"] == 0.5,
+               f"a-b pairwise agreement wrong: {pairs[('a', 'b')]}")
+        expect(pairs[("a", "import:cc")]["n"] == 1
+               and pairs[("a", "import:cc")]["agree"] == 1,
+               f"a-import overlap wrong: {pairs[('a', 'import:cc')]}")
+        expect(pairs[("b", "import:cc")]["n"] == 0
+               and pairs[("b", "import:cc")]["rate"] is None,
+               "a zero-overlap pair reports n=0 and no rate")
+        # ranking: r1 (human disagreement) first, r2 (2 pipeline
+        # disagreements) second, r4 (low confidence) third, r3
+        # (unreviewed) last
+        expect([i["record_id"] for i in admin["items"]]
+               == ["r1", "r2", "r4", "r3"],
+               f"item ranking wrong: "
+               f"{[i['record_id'] for i in admin['items']]}")
+
+        csv_text = server.export_csv(records, verdicts_by_reviewer)
+        unreviewed = [line for line in csv_text.splitlines()
+                      if line.startswith('"r3"')]
+        expect(len(unreviewed) == 1 and ',"",""' in unreviewed[0]
+               and ',"0",' in unreviewed[0],
+               f"an unreviewed record must export one empty-decision row: "
+               f"{unreviewed}")
+        expect(sum(1 for line in csv_text.splitlines()
+                   if line.startswith('"r1"')) == 2,
+               "each decision on a record exports its own row")
+
+        # a verdict file in the pre-retarget label space surfaces loudly
+        legacy = verdict_for(recs[2], reviewer="z")
+        legacy["label"] = "not_relevant"     # raw five-cat space
+        with open(os.path.join(server.VERDICTS_DIR, "z.verdicts.json"),
+                  "w", encoding="utf-8") as f:
+            json.dump({"r3": legacy}, f)
+        _r, _v, _j, _m, errors = server.load_state()
+        expect(any("labels outside the four-label taxonomy" in e
+                   for e in errors),
+               f"legacy-label verdicts must surface an error: {errors}")
+
+        # the shared injection guard, branch by branch
+        for hot in ("=SUM(A1)", "+1", "@cmd", "-2", " \t=x", "\t x",
+                    "﻿=1", "﻿\tx", "\rx"):
+            expect(server.csv_cell(hot).startswith("\"'"),
+                   f"csv_cell must escape {hot!r}")
+        for cold in ("plain", "a=b", "1", "", "x\ty"):
+            expect(not server.csv_cell(cold).startswith("\"'"),
+                   f"csv_cell must not escape {cold!r}")
+        expect(server.csv_cell('say "hi"') == '"say ""hi"""',
+               "csv_cell must double embedded quotes")
+    finally:
+        (server.SAMPLE_PATH, server.VERDICTS_DIR, server.JUDGMENTS_PATH,
+         server.IMPORTS_DIR) = old
 
 
 def test_reviewer_identity():
@@ -703,6 +888,8 @@ def main():
     test_judge_flagged()
     with tempfile.TemporaryDirectory() as tmp:
         test_http(tmp)
+    with tempfile.TemporaryDirectory() as tmp:
+        test_admin_extras(tmp)
     test_reviewer_identity()
     test_export()
     test_committed_artifacts()

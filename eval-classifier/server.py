@@ -71,7 +71,15 @@ FOUR_LABEL_MAP = {
 # Jan's Longview research-instrument export format (see PR #16,
 # ratio/instrument/review.mjs): admin ingests these as extra reviewers.
 IMPORT_FORMAT = "longview-human-labels-v1"
+# The taxonomy version this gate's four labels implement. An import whose
+# taxonomy_version differs may reuse the same label STRINGS with different
+# semantics, so it is rejected, not mixed into the agreement numbers.
+IMPORT_TAXONOMY_VERSION = "andrew-working-v1"
 IMPORTS_DIR = os.path.join(GATE_DIR, "imports")
+# Deliberately different from REVIEWER_SLUG_RE: import reviewer codes are
+# opaque tokens minted by the instrument (its own 2-40 char rule), not
+# filenames this server generates; they are namespaced with "import:",
+# which the local slug rule cannot produce.
 IMPORT_REVIEWER_RE = re.compile(r"[A-Za-z0-9_-]{2,40}")
 
 
@@ -79,6 +87,8 @@ def pipeline_label(rec):
     """The record's pipeline label mapped into the four-label taxonomy;
     None when the raw label is unknown (corrupt sample)."""
     return FOUR_LABEL_MAP.get(rec.get("label"))
+
+
 JUDGE_DIMENSIONS = ("relevance", "category", "evidence")
 JUDGE_VERDICTS = ("pass", "fail", "uncertain")
 # Reviewer slugs are verdict FILENAMES; keep them boring so they can't
@@ -145,7 +155,9 @@ def load_json(path, default):
     try:
         with open(path, encoding="utf-8") as f:
             return json.load(f)
-    except (OSError, ValueError):
+    except (OSError, ValueError, RecursionError):
+        # RecursionError: a maliciously deep JSON document must read as
+        # unreadable, not crash the server mid-request
         return default
 
 
@@ -287,12 +299,33 @@ def load_imports(by_id):
         if not entry.endswith(".json"):
             errors.append(f"imports/{entry} is not a .json export; ignored")
             continue
-        body = load_json(os.path.join(IMPORTS_DIR, entry), None)
+        path = os.path.join(IMPORTS_DIR, entry)
+        # regular files under a sane size only: a FIFO would block this
+        # single-threaded server forever, a huge file would exhaust memory
+        try:
+            if not os.path.isfile(path):
+                errors.append(f"imports/{entry} is not a regular file; "
+                              "ignored")
+                continue
+            if os.path.getsize(path) > 10_000_000:
+                errors.append(f"imports/{entry} exceeds 10 MB; ignored")
+                continue
+        except OSError:
+            errors.append(f"imports/{entry} is unreadable")
+            continue
+        body = load_json(path, None)
         if not isinstance(body, dict):
             errors.append(f"imports/{entry} is unreadable")
             continue
         if body.get("format") != IMPORT_FORMAT:
             errors.append(f"imports/{entry}: not a {IMPORT_FORMAT} export")
+            continue
+        if body.get("taxonomy_version") != IMPORT_TAXONOMY_VERSION:
+            errors.append(
+                f"imports/{entry}: taxonomy_version "
+                f"{body.get('taxonomy_version')!r} is not "
+                f"{IMPORT_TAXONOMY_VERSION!r}; same label strings under a "
+                "different taxonomy are not comparable evidence")
             continue
         if (body.get("label_origin") != "human"
                 or body.get("human_attested") is not True
@@ -356,8 +389,7 @@ def load_imports(by_id):
     return imported, notes, errors
 
 
-def admin_summary(records, verdicts_by_reviewer, judgments, meta,
-                  import_notes):
+def admin_summary(records, verdicts_by_reviewer, judgments, meta):
     """Everything the admin panel shows: per-item label counts,
     labeller-vs-labeller pairwise agreement, per-reviewer pipeline
     agreement, disagreements ranked first, plus the gate summary."""
@@ -421,6 +453,9 @@ def admin_summary(records, verdicts_by_reviewer, judgments, meta,
             "decisions": decisions,
             "human_disagreement":
                 len({d["label"] for d in decisions}) > 1,
+            # mapped is None for a corrupt raw label, so every decision
+            # counts as a pipeline disagreement - deliberately pushing the
+            # corrupt record to the top of the queue
             "pipeline_disagreements":
                 sum(1 for d in decisions if d["label"] != mapped),
         })
@@ -438,15 +473,26 @@ def admin_summary(records, verdicts_by_reviewer, judgments, meta,
         "pairwise": pairs,
         "items": items,
         "meta": meta,
-        "import_notes": import_notes,
+        "import_notes": meta.get("import_notes", []),
     }
+
+
+def formula_like(text):
+    """True when a spreadsheet would evaluate the cell as a formula. The
+    single source of truth for the injection guard - export_benchmark.py
+    reuses it, so the two CSV writers cannot drift apart. A leading BOM is
+    stripped before BOTH checks so it cannot smuggle a control character
+    past the second one."""
+    bare = text.lstrip('\ufeff')
+    return bool(re.match(r"^\s*[=+@-]", bare)
+                or re.match(r"^[\t\r\n]", bare))
 
 
 def csv_cell(value):
     """CSV field with formula-injection guard (same rule as the Longview
     instrument's csvCell)."""
     text = "" if value is None else str(value)
-    if re.match(r"^[\s﻿]*[=+@-]", text) or re.match(r"^[\t\r\n]", text):
+    if formula_like(text):
         text = "'" + text
     return '"' + text.replace('"', '""') + '"'
 
@@ -541,6 +587,18 @@ def load_state():
                           "unreadable")
             continue
         mark_stale(verdicts, by_id)
+        # a verdict in a label space this gate no longer speaks (the
+        # pre-retarget five categories) must surface loudly: it silently
+        # counts as unreviewed otherwise, which looks like lost evidence
+        legacy = sum(
+            1 for v in verdicts.values()
+            if isinstance(v, dict) and v.get("verdict") in
+            ("agree", "disagree") and v.get("label") not in LABELS)
+        if legacy:
+            errors.append(
+                f"{os.path.basename(path)}: {legacy} verdict(s) carry "
+                "labels outside the four-label taxonomy and are IGNORED - "
+                "re-review those records")
         verdicts_by_reviewer[reviewer] = verdicts
 
     imported, import_notes, import_errors = load_imports(by_id)
@@ -570,19 +628,35 @@ class Handler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def loopback_host(self):
+        """True when the request's Host header names loopback. The review
+        evidence must not be readable through DNS rebinding (an attacker
+        domain resolving to 127.0.0.1), so every /api/ endpoint - reads
+        included - checks this, not only the write path."""
+        host = (self.headers.get("Host") or "").rsplit(":", 1)[0]
+        return host in ("127.0.0.1", "localhost", "[::1]")
+
     def do_GET(self):
         path = urlparse(self.path).path
+        if path.startswith("/api/") and not self.loopback_host():
+            return self.send_json(
+                {"error": "API served to localhost only"}, 403)
         if path == "/api/admin":
             records, verdicts_by_reviewer, judgments, meta, errors = \
                 load_state()
             payload = admin_summary(records, verdicts_by_reviewer,
-                                    judgments, meta,
-                                    meta.get("import_notes", []))
+                                    judgments, meta)
             if errors:
                 payload["error"] = "; ".join(errors)
             return self.send_json(payload)
         if path == "/api/export.csv":
-            records, verdicts_by_reviewer, _j, _m, _e = load_state()
+            records, verdicts_by_reviewer, _j, _m, errors = load_state()
+            if errors:
+                # a partial evidence export would look unanimous where a
+                # rejected reviewer file actually holds a disagreement
+                return self.send_json(
+                    {"error": "export refused, evidence incomplete: "
+                              + "; ".join(errors)}, 500)
             body = export_csv(records, verdicts_by_reviewer) \
                 .encode("utf-8")
             self.send_response(200)
@@ -685,6 +759,12 @@ class Handler(SimpleHTTPRequestHandler):
                               f"{rec.get('label')!r}; fix sample.json"}, 500)
             saved = {"verdict": "agree", "label": mapped}
         elif verdict == "disagree":
+            if mapped is None:
+                # same guard as agree: a corrupt sample must not accept
+                # evidence in either direction
+                return self.send_json(
+                    {"error": f"sample record carries unknown label "
+                              f"{rec.get('label')!r}; fix sample.json"}, 500)
             label = payload.get("correct_label")
             if label not in LABELS:
                 return self.send_json(
@@ -698,6 +778,11 @@ class Handler(SimpleHTTPRequestHandler):
             return self.send_json(
                 {"error": "verdict must be agree, disagree or null"}, 400)
 
+        low_confidence = payload.get("low_confidence", False)
+        if saved is not None and not isinstance(low_confidence, bool):
+            # a truthy string like "false" must not silently become True
+            return self.send_json(
+                {"error": "low_confidence must be a boolean"}, 400)
         if saved is not None:
             saved.update({
                 "record_id": record_id,
@@ -705,7 +790,7 @@ class Handler(SimpleHTTPRequestHandler):
                 "reviewer": REVIEWER,
                 # low confidence is independent of the chosen label:
                 # "borderline case" stays distinct from "couldn't tell"
-                "low_confidence": bool(payload.get("low_confidence")),
+                "low_confidence": low_confidence,
                 "note": str(payload.get("note") or ""),
                 "reviewed_at": str(payload.get("reviewed_at") or ""),
             })
@@ -761,6 +846,15 @@ def main():
         s = summarize(records, verdicts_by_reviewer, judgments)
         for e in errors:
             print(f"error: {e}")
+        # provenance: imported instrument decisions are NOT fingerprinted
+        # against this gate's cards; they must never move the headline
+        # number invisibly
+        imported = {k: v for k, v in verdicts_by_reviewer.items()
+                    if k.startswith("import:")}
+        if imported:
+            print(f"instrument imports: {sum(len(v) for v in imported.values())} "
+                  f"decision(s) from {len(imported)} imported reviewer(s) "
+                  "INCLUDED in these numbers (not gate-fingerprinted)")
         print(f"records:            {s['total']} "
               f"({s['judge_flagged']} judge-flagged)")
         print(f"reviewed:           {s['reviewed']} by "

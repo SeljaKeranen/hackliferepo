@@ -77,6 +77,12 @@ def load_consensus(sample_path):
         verdicts = json.loads(Path(path).read_text(encoding="utf-8"))
         server.mark_stale(verdicts, records)
         verdicts_by_reviewer[reviewer] = verdicts
+    # instrument imports join the consensus pool: an imported disagreement
+    # must block a benchmark export exactly like a local one
+    imported, _notes, import_errors = server.load_imports(records)
+    for e in import_errors:
+        print(f"warning: {e}", file=sys.stderr)
+    verdicts_by_reviewer.update(imported)
     consensus = {}
     for rid, per_rev in server.effective_verdicts(
             verdicts_by_reviewer).items():
@@ -110,8 +116,9 @@ def fill_rows(bench_rows, key, consensus):
         if v.get("note"):
             notes.append(v["note"])
         joined = "; ".join(notes)
-        # spreadsheet formula-injection guard for the free-text note cell
-        if joined[:1] in ("=", "+", "-", "@"):
+        # spreadsheet formula-injection guard for the free-text note cell,
+        # shared with the admin CSV export so the two cannot drift
+        if server.formula_like(joined):
             joined = "'" + joined
         row["human_notes"] = joined
         filled += 1

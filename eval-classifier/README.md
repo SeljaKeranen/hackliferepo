@@ -161,9 +161,19 @@ The Longview research instrument (PR #16, `ratio/instrument/`) exports
 per-reviewer JSON files in its `longview-human-labels-v1` format. Drop such
 files into `eval-classifier/imports/` and they are ingested as extra
 reviewers named `import:<reviewer>` in every metric. Only attested human
-exports are accepted (model/simulation files are rejected loudly);
-decisions on record ids outside this gate's sample are counted and
-skipped. **Limitation:** imported decisions attested to the instrument's
+exports are accepted (model/simulation files are rejected loudly), and
+only with `taxonomy_version` = `andrew-working-v1` — the same label
+strings under a different taxonomy version are not comparable evidence.
+Decisions on record ids outside this gate's sample are counted and
+skipped. `--summary` prints how many included decisions came from imports,
+so the headline number never moves invisibly.
+
+Import files are evidence with the same trust model as `verdicts/`: the
+gate cannot prove who authored a file, so an import landing in a PR must
+be reviewed there like any other evidence — check in the PR that the file
+came from the named researcher, not from the same author as the classifier
+change it appears to confirm. Nothing cryptographic binds a reviewer code
+to a person. **Limitation:** imported decisions attested to the instrument's
 own text of the record, not to this gate's card, so they bypass this
 gate's fingerprint check — the admin view and CSV mark their origin.
 

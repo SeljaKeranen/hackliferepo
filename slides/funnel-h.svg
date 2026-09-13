@@ -1,37 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 420" role="img" aria-label="Pipeline funnel: broad net, relevance gate, anchor check, categories">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 430" role="img" aria-label="Pipeline: studies remaining at each step">
 <style>
  text{font-family:"Instrument Sans",Arial,sans-serif;fill:#1A1A1C}
- .t{font-size:22px;font-weight:600;fill:#111113;letter-spacing:-.3px}
- .num{font-size:26px;font-weight:600;fill:#111113}
+ .t{font-size:21px;font-weight:600;fill:#111113;letter-spacing:-.3px}
+ .num{font-size:30px;font-weight:600;fill:#111113}
  .s{font-size:14px;fill:#57575C}
 </style>
-<rect width="1400" height="420" fill="#EFEBE4"/>
+<rect width="1400" height="430" fill="#EFEBE4"/>
 
-<!-- gate names on top -->
-<text x="40" y="90" class="t">Broad net</text>
-<text x="400" y="90" class="t">Relevance gate</text>
-<text x="740" y="90" class="t">Context check</text>
-<text x="1080" y="90" class="t">Categories</text>
+<text x="40" y="70" class="t">Broad keyword check</text>
+<text x="400" y="70" class="t">Field-of-study gate</text>
+<text x="740" y="70" class="t">Taxonomy match</text>
+<text x="1080" y="70" class="t">LLM grouping</text>
+<text x="40" y="94" class="s">22 recall terms, two languages</text>
+<text x="400" y="94" class="s">does it study human ageing at all</text>
+<text x="740" y="94" class="s">keywords valid in ageing context</text>
+<text x="1080" y="94" class="s">structured output, five categories</text>
 
-<!-- narrowing band -->
-<path d="M40 130 L380 130 L380 290 L40 290 Z" fill="#14375F" opacity=".14"/>
-<path d="M380 130 L720 156 L720 264 L380 290 Z" fill="#14375F" opacity=".24"/>
-<path d="M720 156 L1060 176 L1060 244 L720 264 Z" fill="#14375F" opacity=".38"/>
-<path d="M1060 176 L1360 188 L1360 232 L1060 244 Z" fill="#14375F" opacity=".62"/>
+<path d="M40 120 L380 120 L380 300 L40 300 Z" fill="#14375F" opacity=".14"/>
+<path d="M380 120 L720 128 L720 292 L380 300 Z" fill="#14375F" opacity=".24"/>
+<path d="M720 128 L1060 146 L1060 274 L720 292 Z" fill="#14375F" opacity=".38"/>
+<path d="M1060 146 L1360 146 L1360 274 L1060 274 Z" fill="#14375F" opacity=".62"/>
 
-<!-- separators -->
-<line x1="380" y1="110" x2="380" y2="330" stroke="#D3CDC3" stroke-dasharray="4 6"/>
-<line x1="720" y1="110" x2="720" y2="330" stroke="#D3CDC3" stroke-dasharray="4 6"/>
-<line x1="1060" y1="110" x2="1060" y2="330" stroke="#D3CDC3" stroke-dasharray="4 6"/>
+<line x1="380" y1="105" x2="380" y2="330" stroke="#D3CDC3" stroke-dasharray="4 6"/>
+<line x1="720" y1="105" x2="720" y2="330" stroke="#D3CDC3" stroke-dasharray="4 6"/>
+<line x1="1060" y1="105" x2="1060" y2="330" stroke="#D3CDC3" stroke-dasharray="4 6"/>
 
-<!-- numbers below -->
-<text x="40" y="345" class="num">108,366</text>
-<text x="40" y="368" class="s">records scanned</text>
-<text x="400" y="345" class="num">13,224</text>
-<text x="400" y="368" class="s">about human ageing</text>
-<text x="740" y="345" class="num">138</text>
-<text x="740" y="368" class="s">keywords, valid only in ageing context</text>
-<text x="1080" y="330" class="num" style="font-size:17px">5,048 slowing ageing</text>
-<text x="1080" y="352" class="s">4,802 disease · 169 care · 113 social</text>
-<text x="1080" y="371" class="s">2,866 ambiguous · 226 not relevant</text>
+<text x="40" y="355" class="num">13,224</text>
+<text x="40" y="378" class="s">matched of 108,366 scanned</text>
+<text x="400" y="355" class="num">12,998</text>
+<text x="400" y="378" class="s">study human ageing · 226 out</text>
+<text x="740" y="355" class="num">10,132</text>
+<text x="740" y="378" class="s">matched the taxonomy · 2,866 ambiguous</text>
+<text x="1080" y="355" class="num">10,132</text>
+<text x="1080" y="378" class="s">grouped: 5,048 slowing · 4,802 disease · 282 care+social</text>
 </svg>

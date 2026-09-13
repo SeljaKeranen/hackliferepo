@@ -1,36 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 430" role="img" aria-label="Pipeline: studies remaining at each step">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 470" role="img" aria-label="Pipeline: studies remaining at each step, splitting into five category streams">
 <style>
  text{font-family:"Instrument Sans",Arial,sans-serif;fill:#1A1A1C}
  .t{font-size:21px;font-weight:600;fill:#111113;letter-spacing:-.3px}
- .num{font-size:30px;font-weight:600;fill:#111113}
+ .num{font-size:29px;font-weight:600;fill:#111113}
  .s{font-size:14px;fill:#57575C}
+ .lab{font-size:14.5px;fill:#1A1A1C;font-weight:600}
+ .cnt{font-size:13px;fill:#57575C}
 </style>
-<rect width="1400" height="430" fill="#EFEBE4"/>
+<rect width="1400" height="470" fill="#EFEBE4"/>
 
-<text x="40" y="70" class="t">Broad keyword check</text>
-<text x="400" y="70" class="t">Field-of-study gate</text>
-<text x="740" y="70" class="t">Taxonomy match</text>
-<text x="1080" y="70" class="t">LLM grouping</text>
-<text x="40" y="94" class="s">22 recall terms, two languages</text>
-<text x="400" y="94" class="s">does it study human ageing at all</text>
-<text x="740" y="94" class="s">keywords valid in ageing context</text>
-<text x="1080" y="94" class="s">structured output, five categories</text>
+<text x="40" y="66" class="t">Broad keyword check</text>
+<text x="380" y="66" class="t">Field-of-study gate</text>
+<text x="690" y="66" class="t">Taxonomy match</text>
+<text x="990" y="66" class="t">Five streams</text>
+<text x="40" y="90" class="s">22 recall terms, two languages</text>
+<text x="380" y="90" class="s">does it study human ageing at all</text>
+<text x="690" y="90" class="s">keywords valid in ageing context</text>
+<text x="990" y="90" class="s">LLM grouping · structured output</text>
 
-<path d="M40 120 L380 120 L380 300 L40 300 Z" fill="#14375F" opacity=".14"/>
-<path d="M380 120 L720 128 L720 292 L380 300 Z" fill="#14375F" opacity=".24"/>
-<path d="M720 128 L1060 146 L1060 274 L720 292 Z" fill="#14375F" opacity=".38"/>
-<path d="M1060 146 L1360 146 L1360 274 L1060 274 Z" fill="#14375F" opacity=".62"/>
+<!-- band -->
+<path d="M40 120 L360 120 L360 320 L40 320 Z" fill="#14375F" opacity=".14"/>
+<path d="M360 120 L670 128 L670 312 L360 320 Z" fill="#14375F" opacity=".24"/>
+<path d="M670 128 L960 150 L960 290 L670 312 Z" fill="#14375F" opacity=".38"/>
 
-<line x1="380" y1="105" x2="380" y2="330" stroke="#D3CDC3" stroke-dasharray="4 6"/>
-<line x1="720" y1="105" x2="720" y2="330" stroke="#D3CDC3" stroke-dasharray="4 6"/>
-<line x1="1060" y1="105" x2="1060" y2="330" stroke="#D3CDC3" stroke-dasharray="4 6"/>
+<!-- five streams out of the taxonomy stage (heights ~ share, small ones floored) -->
+<path d="M960 150 C1010 150 1010 138 1060 138 L1060 200 C1010 200 1010 212 960 212 Z" fill="#1B5E8C"/>
+<path d="M960 214 C1010 214 1010 216 1060 216 L1060 274 C1010 274 1010 272 960 272 Z" fill="#8A8A8F"/>
+<path d="M960 274 C1010 274 1010 286 1060 286 L1060 296 C1010 296 1010 284 960 284 Z" fill="#B7B7BC"/>
+<path d="M960 285 C1010 285 1010 304 1060 304 L1060 312 C1010 312 1010 293 960 293 Z" fill="#D3CDC3"/>
+<path d="M960 212 C1010 212 1010 208 1060 208 L1060 212 C1010 212 1010 214 960 214 Z" fill="#14375F"/>
 
-<text x="40" y="355" class="num">13,224</text>
-<text x="40" y="378" class="s">matched of 108,366 scanned</text>
-<text x="400" y="355" class="num">12,998</text>
-<text x="400" y="378" class="s">study human ageing · 226 out</text>
-<text x="740" y="355" class="num">10,132</text>
-<text x="740" y="378" class="s">matched the taxonomy · 2,866 ambiguous</text>
-<text x="1080" y="355" class="num">10,132</text>
-<text x="1080" y="378" class="s">grouped: 5,048 slowing · 4,802 disease · 282 care+social</text>
+<!-- stream labels -->
+<rect x="1076" y="138" width="14" height="14" fill="#1B5E8C"/><text x="1098" y="150" class="lab">fundamental ageing</text><text x="1290" y="150" class="cnt">4,997</text>
+<rect x="1076" y="164" width="14" height="14" fill="#14375F"/><text x="1098" y="176" class="lab">intervention</text><text x="1290" y="176" class="cnt">51</text>
+<rect x="1076" y="190" width="14" height="14" fill="#8A8A8F"/><text x="1098" y="202" class="lab">age-related disease</text><text x="1290" y="202" class="cnt">4,802</text>
+<rect x="1076" y="216" width="14" height="14" fill="#B7B7BC"/><text x="1098" y="228" class="lab">care</text><text x="1290" y="228" class="cnt">169</text>
+<rect x="1076" y="242" width="14" height="14" fill="#D3CDC3"/><text x="1098" y="254" class="lab">social / population</text><text x="1290" y="254" class="cnt">113</text>
+<text x="1098" y="286" class="cnt">stream heights indicative · counts exact</text>
+
+<line x1="360" y1="105" x2="360" y2="350" stroke="#D3CDC3" stroke-dasharray="4 6"/>
+<line x1="670" y1="105" x2="670" y2="350" stroke="#D3CDC3" stroke-dasharray="4 6"/>
+<line x1="960" y1="105" x2="960" y2="350" stroke="#D3CDC3" stroke-dasharray="4 6"/>
+
+<text x="40" y="385" class="num">13,224</text>
+<text x="40" y="408" class="s">matched of 108,366 scanned</text>
+<text x="380" y="385" class="num">12,998</text>
+<text x="380" y="408" class="s">study human ageing · 226 out</text>
+<text x="690" y="385" class="num">10,132</text>
+<text x="690" y="408" class="s">matched taxonomy · 2,866 ambiguous</text>
+<text x="990" y="385" class="num">5 streams</text>
+<text x="990" y="408" class="s">10,132 studies grouped</text>
 </svg>

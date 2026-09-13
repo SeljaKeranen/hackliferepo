@@ -98,7 +98,8 @@
   .pick { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
   .pick[hidden] { display: none; }
   .pick button { color: var(--fail); }
-  .noteline { margin-top: 10px; display: flex; gap: 8px; }
+  .noteline { margin-top: 10px; display: flex; gap: 8px; align-items: center; }
+  .lowconf { font-size: 13px; color: var(--muted); white-space: nowrap; display: flex; gap: 4px; align-items: center; }
   .noteline input { flex: 1; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font: inherit; font-size: 13px; }
   .saved { font-size: 12px; color: var(--pass); align-self: center; min-width: 46px; }
   .saved.err { color: var(--fail); font-weight: 600; }
@@ -129,23 +130,27 @@
   </div>
 </header>
 <main>
-  <p class="rubric">The deliverable is the <b>measured agreement between the
-  pipeline and human judgment</b> — the target band is ≥ 85%, but an honest
-  low number beats a lenient high one: <b>disagreements are the product</b>,
-  they quantify classifier reliability, so judge each label strictly on the
-  rubric. Read the title and quote (the exact text the classifier saw), then
-  <b>Agree</b> if the label is right or <b>Disagree</b> and pick the correct
-  label — <code>ambiguous</code> (on-topic but unplaceable) and
-  <code>not_relevant</code> (not about human ageing at all) are first-class
-  answers, never force a category. Rubric:
-  <code>eval-classifier/README.md</code> and <code>classifier/KEYWORDS.md</code>
-  (relevance gate first, then mechanism-vs-intervention). Where AI judge
-  pre-marks (relevance, category, evidence) exist, flagged records sort first —
-  the AI verdicts are advice only: <b>your</b> click is the verdict. Verdicts
-  save to <code>eval-classifier/verdicts/&lt;you&gt;.verdicts.json</code>;
-  several reviewers can work at once and the numbers merge. Add
+  <p class="rubric">Label each grant's <b>stated research purpose</b> in the
+  four-label taxonomy: <code>preventing_slowing</code> (studies biological
+  ageing itself or ways to modify it), <code>consequences</code> (age-related
+  disease, functional decline, care, or social/population consequences —
+  needs an explicit ageing connection), <code>neither</code> (not about human
+  ageing at all), or <code>ambiguous</code> (the definitions compete or the
+  text underdetermines). Tick <b>low confidence</b> when missing or truncated
+  text limits your judgment — it is independent of the label: a documented
+  boundary case is <code>ambiguous</code> without low confidence. The
+  pipeline's raw five-category label is shown mapped into this taxonomy;
+  <b>Agree</b> confirms the mapped label, <b>Disagree</b> records the correct
+  one. The deliverable is the <b>measured agreement</b> — an honest low
+  number beats a lenient high one: <b>disagreements are the product</b>.
+  Rubric: <code>eval-classifier/README.md</code>. AI judge pre-marks
+  (relevance, category, evidence — advisory, in the old label space) sort
+  flagged records first; <b>your</b> click is the verdict. Verdicts save to
+  <code>eval-classifier/verdicts/&lt;you&gt;.verdicts.json</code>; several
+  reviewers can work at once and the numbers merge. Add
   <code>?assign=1of2</code> / <code>?assign=2of2</code> to the URL to split
-  the records deterministically between two reviewers.</p>
+  the records deterministically between two reviewers. Metrics and CSV
+  export: <a href="/admin.html">admin panel</a>.</p>
   <p id="error" class="rubric" style="color: var(--fail)" hidden></p>
   <div id="conflicts" class="conflicts" hidden></div>
   <div id="list"></div>
@@ -157,7 +162,10 @@ const JUDGES = [
   ["evidence", "Evidence"],
 ];
 let records = [], verdictsByReviewer = {}, judgments = {}, labels = [];
-let me = null;
+let mapping = {}, me = null;
+
+// the pipeline's raw label mapped into the four-label human taxonomy
+function mapped(r) { return mapping[r.label] || null; }
 
 // ?assign=KofN: deterministic split so two reviewers can divide the sample
 // without coordination. djb2 over the record id, stable across sessions.
@@ -192,6 +200,7 @@ async function boot() {
   verdictsByReviewer = res.verdicts || {};
   judgments = res.judgments || {};
   labels = res.labels || [];
+  mapping = res.mapping || {};
   me = res.reviewer;
   document.getElementById("whoami").textContent = me || "unknown";
   if (assignInvalid) {
@@ -275,7 +284,8 @@ function render() {
     card.innerHTML = `
       <div class="top">
         <span class="id">${esc(r.record_id)}</span>
-        <span class="badge">${esc(r.label)}</span>
+        <span class="badge">${esc(mapped(r) || "?")}</span>
+        <span class="badge src">raw: ${esc(r.label)}</span>
         <span class="badge src">${esc(r.source)}</span>
         ${s.split ? `<span class="badge src">${esc(s.split)}</span>` : ""}
         ${s.benchmark_id ? `<span class="badge bench">benchmark ${esc(s.benchmark_id)}</span>` : ""}
@@ -301,14 +311,16 @@ function render() {
       ${judgePanel(r)}
       ${othersLine(r)}
       <div class="quick">
-        <button class="agree-btn">✓ Agree — label is right</button>
+        <button class="agree-btn">✓ Agree — ${esc(mapped(r) || "?")} is right</button>
         <button class="disagree-btn">✗ Disagree</button>
         ${state !== "pending" && state !== "stale" ? `<button class="undo-btn">undo</button>` : ""}
         <span class="pick" hidden>correct label: ${labels
-          .filter(l => l !== r.label)
+          .filter(l => l !== mapped(r))
           .map(l => `<button data-label="${esc(l)}">${esc(l)}</button>`).join("")}</span>
       </div>
       <div class="noteline">
+        <label class="lowconf"><input type="checkbox" class="low-confidence"
+          ${v && v.low_confidence ? "checked" : ""}> low confidence</label>
         <input class="note" placeholder="note (optional, e.g. why the label is wrong)"
                value="${v ? esc(v.note) : ""}">
         <span class="saved"></span>
@@ -331,7 +343,8 @@ function render() {
       });
     });
     const note = card.querySelector(".note");
-    // notes only piggyback on an existing verdict; a bare note is not a review
+    // notes and the low-confidence flag only piggyback on an existing
+    // verdict; a bare note or checkbox tick is not a review
     let noteTimer;
     const noteSave = () => {
       const cur = myVerdicts()[r.record_id];
@@ -340,6 +353,7 @@ function render() {
         ? { verdict: "agree" }
         : { verdict: "disagree", correct_label: cur.label });
     };
+    card.querySelector(".low-confidence").addEventListener("change", noteSave);
     note.addEventListener("change", noteSave);
     note.addEventListener("input", () => {
       clearTimeout(noteTimer);
@@ -379,6 +393,7 @@ async function save(rec, card, body) {
     // echo the fingerprint of the version this card rendered; the server
     // rejects the save (409) if the record changed since the page loaded
     record_fingerprint: rec.fingerprint,
+    low_confidence: card.querySelector(".low-confidence").checked,
     note: card.querySelector(".note").value,
     reviewed_at: new Date().toISOString(),
   }, body);

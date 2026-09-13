@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eval gate — admin</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #1b2430; --muted: #5b6675;
+    --line: #dde2e9; --accent: #14532d; --pass: #157f3c; --fail: #b42318;
+    --stale: #b45309;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  header {
+    background: var(--card); border-bottom: 1px solid var(--line);
+    padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 14px;
+    align-items: center;
+  }
+  header h1 { font-size: 17px; margin: 0; }
+  header a.btn, header a.link { font-size: 13px; }
+  a.btn {
+    border: 1px solid var(--accent); color: var(--accent); border-radius: 6px;
+    padding: 5px 12px; text-decoration: none; font-weight: 600;
+  }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  .tiles { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+  .tile {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 16px; min-width: 150px;
+  }
+  .tile b { display: block; font-size: 20px; }
+  .tile b.ok { color: var(--pass); } .tile b.bad { color: var(--fail); }
+  .tile span { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .tile small { display: block; font-size: 11px; color: var(--muted); }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; }
+  section h2 { font-size: 15px; margin: 0 0 8px; }
+  section p.hint { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  code { font-family: ui-monospace, monospace; font-size: 12px; background: #eef1f5; border-radius: 4px; padding: 0 4px; }
+  tr.dispute { background: #fdf1f0; }
+  tr.pipedis { background: #fdf6ec; }
+  .flag { color: var(--fail); font-weight: 600; }
+  .pflag { color: var(--stale); font-weight: 600; }
+  .imported { color: var(--stale); }
+  #error { color: var(--fail); font-size: 13px; }
+  .decisions { color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Eval gate — admin</h1>
+  <a class="link" href="/">← review UI</a>
+  <a class="btn" href="/api/export.csv" download>Export CSV (everything)</a>
+</header>
+<main>
+  <p id="error" hidden></p>
+  <div class="tiles" id="tiles"></div>
+
+  <section>
+    <h2>Pipeline vs human agreement</h2>
+    <p class="hint">Human consensus label (four-label taxonomy) vs the
+    pipeline's mapped label. Conflicting reviewer labels are excluded until
+    resolved. 95% Wilson intervals; tuning/holdout is the overfitting guard —
+    fixes may only be motivated by tuning-half findings.</p>
+    <table id="splits"></table>
+  </section>
+
+  <section>
+    <h2>Labeller vs labeller agreement (pairwise)</h2>
+    <p class="hint">Share of overlapping records where both reviewers chose
+    the same four-label. <span class="imported">import:*</span> reviewers
+    come from Longview instrument export files in
+    <code>eval-classifier/imports/</code> — their decisions attested to the
+    instrument's own text of the record, not this gate's card.</p>
+    <table id="pairs"></table>
+  </section>
+
+  <section>
+    <h2>Per-reviewer pipeline agreement</h2>
+    <table id="reviewers"></table>
+  </section>
+
+  <section>
+    <h2>Items — disagreements ranked first</h2>
+    <p class="hint">Human-vs-human disagreements first, then
+    pipeline-vs-human, then low-confidence. Counts are per four-label across
+    all reviewers.</p>
+    <table id="items"></table>
+  </section>
+
+  <section>
+    <h2>Taxonomy mapping (pipeline raw label → human four-label)</h2>
+    <table id="mapping"></table>
+    <p class="hint" id="imports"></p>
+  </section>
+</main>
+<script>
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function pct(rate, ci, n) {
+  if (rate == null) return "–";
+  let out = (100 * rate).toFixed(1) + "%";
+  if (ci) out += ` (95% CI ${(100 * ci[0]).toFixed(1)}–${(100 * ci[1]).toFixed(1)}%, n=${n})`;
+  return out;
+}
+
+async function boot() {
+  const d = await fetch("/api/admin").then(r => r.json());
+  if (d.error) {
+    const err = document.getElementById("error");
+    err.textContent = "Server error: " + d.error;
+    err.hidden = false;
+  }
+  const s = d.summary || {};
+  const tiles = [
+    ["records", s.total, ""],
+    ["reviewed", s.reviewed, `${(d.reviewers || []).length} reviewer(s)`],
+    ["agreement", s.agreement == null ? "–"
+      : `${Math.round(100 * s.agreement)}%`,
+      s.agreement_ci95 ? `95% CI ${Math.round(100 * s.agreement_ci95[0])}–${Math.round(100 * s.agreement_ci95[1])}% · n=${s.consensus_reviewed}` : "",
+      s.agreement == null ? "" : (s.agreement >= s.target ? "ok" : "bad")],
+    ["reviewer conflicts", (s.inter_reviewer_disagreements || []).length, ""],
+    ["low confidence", s.low_confidence ?? 0, "flagged verdicts"],
+    ["ambiguous confirmed", s.ambiguous_reviewed ? `${s.ambiguous_confirmed}/${s.ambiguous_reviewed}` : "–", ""],
+  ];
+  document.getElementById("tiles").innerHTML = tiles.map(([k, v, sub, cls]) =>
+    `<div class="tile"><b class="${cls || ""}">${esc(v)}</b><span>${esc(k)}</span>${sub ? `<small>${esc(sub)}</small>` : ""}</div>`).join("");
+
+  const rows = [["combined", s]];
+  for (const split of ["tuning", "holdout"])
+    if (s.splits && s.splits[split]) rows.push([split, s.splits[split]]);
+  document.getElementById("splits").innerHTML =
+    `<tr><th>slice</th><th class="num">total</th><th class="num">consensus reviewed</th><th class="num">agreed</th><th>agreement</th></tr>` +
+    rows.map(([name, b]) => `<tr><td>${esc(name)}</td><td class="num">${esc(b.total)}</td><td class="num">${esc(b.consensus_reviewed)}</td><td class="num">${esc(b.agreed)}</td><td>${pct(b.agreement, b.agreement_ci95, b.consensus_reviewed)}</td></tr>`).join("");
+
+  const pairs = d.pairwise || [];
+  document.getElementById("pairs").innerHTML = pairs.length
+    ? `<tr><th>reviewer A</th><th>reviewer B</th><th class="num">overlap</th><th class="num">agree</th><th>rate</th></tr>` +
+      pairs.map(p => `<tr><td>${esc(p.a)}</td><td>${esc(p.b)}</td><td class="num">${p.n}</td><td class="num">${p.agree}</td><td>${pct(p.rate, p.ci95, p.n)}</td></tr>`).join("")
+    : `<tr><td>fewer than two reviewers have overlapping records</td></tr>`;
+
+  const revs = d.reviewers || [];
+  document.getElementById("reviewers").innerHTML = revs.length
+    ? `<tr><th>reviewer</th><th>origin</th><th class="num">reviewed</th><th class="num">agree with pipeline</th><th>rate</th><th class="num">low confidence</th></tr>` +
+      revs.map(r => `<tr><td>${esc(r.reviewer)}</td><td>${r.imported ? '<span class="imported">instrument import</span>' : "gate"}</td><td class="num">${r.n}</td><td class="num">${r.agree}</td><td>${pct(r.rate, r.ci95, r.n)}</td><td class="num">${r.low_confidence}</td></tr>`).join("")
+    : `<tr><td>no verdicts yet</td></tr>`;
+
+  const labels = d.labels || [];
+  const items = d.items || [];
+  document.getElementById("items").innerHTML =
+    `<tr><th>record</th><th>pipeline</th>${labels.map(l => `<th class="num">${esc(l)}</th>`).join("")}<th class="num">low conf</th><th>flags</th><th>decisions</th></tr>` +
+    items.map(i => {
+      const cls = i.human_disagreement ? "dispute" : (i.pipeline_disagreements ? "pipedis" : "");
+      const flags = [
+        i.human_disagreement ? '<span class="flag">human disagreement</span>' : "",
+        i.pipeline_disagreements ? `<span class="pflag">${i.pipeline_disagreements}× vs pipeline</span>` : "",
+      ].filter(Boolean).join(" · ");
+      const dec = i.decisions.map(x =>
+        `${esc(x.reviewer)} → ${esc(x.label)}${x.low_confidence ? " (low conf)" : ""}`).join(" · ");
+      return `<tr class="${cls}"><td><code>${esc(i.record_id)}</code><br>${esc((i.title || "").slice(0, 90))}</td>` +
+        `<td>${esc(i.pipeline_label)}<br><small>raw: ${esc(i.raw_label)} · ${esc(i.split || "")}</small></td>` +
+        labels.map(l => `<td class="num">${i.counts[l] || ""}</td>`).join("") +
+        `<td class="num">${i.low_confidence || ""}</td><td>${flags}</td><td class="decisions">${dec}</td></tr>`;
+    }).join("");
+
+  document.getElementById("mapping").innerHTML =
+    `<tr><th>pipeline raw label</th><th>four-label taxonomy</th></tr>` +
+    Object.entries(d.mapping || {}).map(([raw, four]) =>
+      `<tr><td><code>${esc(raw)}</code></td><td><code>${esc(four)}</code></td></tr>`).join("");
+  const notes = (d.import_notes || []);
+  document.getElementById("imports").textContent = notes.length
+    ? "Instrument imports: " + notes.join(" · ")
+    : "No instrument import files in eval-classifier/imports/.";
+}
+boot();
+</script>
+</body>
+</html>

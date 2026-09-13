@@ -51,7 +51,7 @@ OLD_SUBSTANTIVE = ("fundamental_aging", "intervention", "age_related_disease",
                    "care")
 SUBSTANTIVE = OLD_SUBSTANTIVE + ("social_population_aging",)
 # the full output vocabulary of ratio/classify.py; test_gate.py asserts it
-# matches the review server's LABELS, so the two lists cannot drift apart
+# matches the review server's RAW_LABELS, so the two lists cannot drift apart
 ALL_LABELS = SUBSTANTIVE + ("ambiguous", "not_relevant")
 # A substantive label whose winning precision margin is below this is a
 # decision boundary worth oversampling: ratio/classify.py sends margins

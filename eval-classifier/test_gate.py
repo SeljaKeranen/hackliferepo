@@ -63,12 +63,16 @@ def make_record(rid, label="care", **over):
     return rec
 
 
-def verdict_for(rec, verdict="agree", label=None, reviewer="t"):
+def verdict_for(rec, verdict="agree", label=None, reviewer="t",
+                low_confidence=False):
     return {
         "record_id": rec["record_id"],
         "record_fingerprint": server.record_fingerprint(rec),
         "verdict": verdict,
-        "label": label or rec["label"],
+        # human labels live in the four-label taxonomy; agree means the
+        # pipeline's MAPPED label
+        "label": label or server.FOUR_LABEL_MAP[rec["label"]],
+        "low_confidence": low_confidence,
         "reviewer": reviewer, "note": "",
         "reviewed_at": "2026-09-12T00:00:00Z",
     }
@@ -80,7 +84,7 @@ def test_summarize():
     by_id = {r["record_id"]: r for r in recs}
     a = {
         "r0": verdict_for(recs[0], reviewer="a"),                     # agree
-        "r1": verdict_for(recs[1], "disagree", "intervention", "a"),
+        "r1": verdict_for(recs[1], "disagree", "preventing_slowing", "a"),
         "r3": verdict_for(recs[3], reviewer="a"),   # ambiguous confirmed
         "r4": verdict_for(recs[4], reviewer="a"),                     # agree
     }
@@ -88,7 +92,7 @@ def test_summarize():
         # same record, same conclusion: counts once
         "r0": verdict_for(recs[0], reviewer="b"),
         # same record, conflicting label: inter-reviewer disagreement
-        "r4": verdict_for(recs[4], "disagree", "not_relevant", "b"),
+        "r4": verdict_for(recs[4], "disagree", "neither", "b"),
     }
     for v in (a, b):
         server.mark_stale(v, by_id)
@@ -103,7 +107,7 @@ def test_summarize():
            == ["r4"],
            "the conflicting record must be listed as a disagreement")
     expect(s["inter_reviewer_disagreements"][0]["labels"]
-           == {"a": "care", "b": "not_relevant"},
+           == {"a": "consequences", "b": "neither"},
            "the disagreement must show each reviewer's label")
     expect(s["ambiguous_reviewed"] == 1 and s["ambiguous_confirmed"] == 1,
            "ambiguous honesty counts wrong")
@@ -162,7 +166,7 @@ def test_summarize():
     # a hand-edited "agree" carrying a different label is the disagreement
     # it actually expresses, never counted as agreement
     inconsistent = verdict_for(recs[2], "agree", reviewer="a")
-    inconsistent["label"] = "not_relevant"
+    inconsistent["label"] = "neither"
     marked = {"r2": inconsistent}
     server.mark_stale(marked, by_id)
     s = server.summarize(recs, {"a": marked}, {})
@@ -200,13 +204,22 @@ def test_summarize():
     # the label vocabularies of the sibling modules stay consistent with
     # the server's - equality, not just subset, so a new label cannot
     # silently miss a list
-    expect(set(sample_mod.ALL_LABELS) == set(server.LABELS),
-           "sample.ALL_LABELS must equal server.LABELS")
-    expect(set(sample_mod.SUBSTANTIVE) < set(server.LABELS),
-           "sample.SUBSTANTIVE must be a subset of server.LABELS")
+    expect(set(sample_mod.ALL_LABELS) == set(server.RAW_LABELS),
+           "sample.ALL_LABELS must equal server.RAW_LABELS")
+    expect(set(sample_mod.SUBSTANTIVE) < set(server.RAW_LABELS),
+           "sample.SUBSTANTIVE must be a subset of server.RAW_LABELS")
     expect(set(export_benchmark.NEW_LABELS)
            == set(server.LABELS) - set(export_benchmark.GUIDE_LABELS),
            "NEW_LABELS must be exactly the post-guide server labels")
+    # the raw->four mapping must be total over the pipeline's vocabulary
+    # and land only on human labels; a new raw label cannot silently fall
+    # out of the agreement metric
+    expect(set(server.FOUR_LABEL_MAP) == set(server.RAW_LABELS),
+           "FOUR_LABEL_MAP must cover every raw pipeline label")
+    expect(set(server.FOUR_LABEL_MAP.values()) == set(server.LABELS),
+           "FOUR_LABEL_MAP must map onto the four-label taxonomy")
+    expect(server.pipeline_label({"label": "junk"}) is None,
+           "an unknown raw label maps to None, never a junk category")
 
 
 def test_judge_flagged():
@@ -245,6 +258,7 @@ def test_http(tmp):
     server.SAMPLE_PATH = os.path.join(tmp, "sample.json")
     server.VERDICTS_DIR = os.path.join(tmp, "verdicts")
     server.JUDGMENTS_PATH = os.path.join(tmp, "judgments.json")
+    server.IMPORTS_DIR = os.path.join(tmp, "imports")
     server.REVIEWER = "smoke"
     my_verdicts = os.path.join(server.VERDICTS_DIR, "smoke.verdicts.json")
     with open(server.SAMPLE_PATH, "w", encoding="utf-8") as f:
@@ -279,23 +293,28 @@ def test_http(tmp):
                and "text/html" in resp.headers.get("Content-Type", ""),
                "GET / must serve the review page")
 
-    # agree
+    # agree records the pipeline's MAPPED four-label (care -> consequences)
     status, res = request(port, "/api/verdict",
                           {"record_id": "swecris:T1", "verdict": "agree",
-                           "record_fingerprint": fp})
+                           "record_fingerprint": fp,
+                           "low_confidence": True})
     expect(status == 200 and res["ok"], "agree verdict should be accepted")
-    expect(res["verdict"]["label"] == "care"
+    expect(res["verdict"]["label"] == "consequences"
            and res["verdict"]["reviewer"] == "smoke",
-           "agree must record the pipeline's label and the local reviewer")
+           "agree must record the pipeline's mapped label and the reviewer")
+    expect(res["verdict"]["low_confidence"] is True,
+           "the low-confidence flag must round-trip with the verdict")
     expect(res["summary"]["agreed"] == 1 and res["summary"]["agreement"] == 1,
            "summary must update with the verdict")
+    expect(res["summary"]["low_confidence"] == 1,
+           "the summary must count low-confidence verdicts")
     with open(my_verdicts, encoding="utf-8") as f:
         expect("swecris:T1" in json.load(f),
                "the verdict must persist to the reviewer's own file")
 
     # a second reviewer's file merges into the summary; a conflicting label
     # becomes an inter-reviewer disagreement
-    other = verdict_for(rec, "disagree", "not_relevant", reviewer="other")
+    other = verdict_for(rec, "disagree", "neither", reviewer="other")
     with open(os.path.join(server.VERDICTS_DIR, "other.verdicts.json"),
               "w", encoding="utf-8") as f:
         json.dump({"swecris:T1": other}, f)
@@ -308,23 +327,26 @@ def test_http(tmp):
            f"a reviewer conflict must be surfaced, not averaged: {s}")
     os.unlink(os.path.join(server.VERDICTS_DIR, "other.verdicts.json"))
 
-    # disagree with a corrected label
+    # disagree with a corrected four-label
     status, res = request(port, "/api/verdict",
                           {"record_id": "swecris:T1", "verdict": "disagree",
                            "record_fingerprint": fp,
-                           "correct_label": "not_relevant"})
-    expect(status == 200 and res["verdict"]["label"] == "not_relevant",
+                           "correct_label": "neither"})
+    expect(status == 200 and res["verdict"]["label"] == "neither",
            "disagree must record the corrected label")
     expect(res["summary"]["agreed"] == 0,
            "a disagree overwrites the earlier agree")
 
-    # rejection branches
+    # rejection branches: unknown record, junk verdict, missing/equal/raw/
+    # unknown correct_label, missing verdict field
     for bad in ({"record_id": "nope", "verdict": "agree",
                  "record_fingerprint": fp},
                 {"record_id": "swecris:T1", "verdict": "maybe",
                  "record_fingerprint": fp},
                 {"record_id": "swecris:T1", "verdict": "disagree",
                  "record_fingerprint": fp},
+                {"record_id": "swecris:T1", "verdict": "disagree",
+                 "record_fingerprint": fp, "correct_label": "consequences"},
                 {"record_id": "swecris:T1", "verdict": "disagree",
                  "record_fingerprint": fp, "correct_label": "care"},
                 {"record_id": "swecris:T1", "verdict": "disagree",
@@ -363,6 +385,80 @@ def test_http(tmp):
            "null verdict must clear the stored verdict")
     with open(my_verdicts, encoding="utf-8") as f:
         expect(json.load(f) == {}, "cleared verdict must not persist")
+
+    # --- admin panel, CSV export and instrument imports ---
+    request(port, "/api/verdict",
+            {"record_id": "swecris:T1", "verdict": "agree",
+             "record_fingerprint": fp, "note": "=SUM(A1)"})
+    os.makedirs(server.IMPORTS_DIR, exist_ok=True)
+    import_path = os.path.join(server.IMPORTS_DIR, "andrew.json")
+    with open(import_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "format": server.IMPORT_FORMAT, "label_origin": "human",
+            "human_attested": True, "reviewer": "andrew_1",
+            "packet_id": "someone-elses-packet", "taxonomy_version": "x",
+            "decisions": [
+                {"record_id": "swecris:T1", "label": "preventing_slowing",
+                 "low_confidence": True, "reason": "instrument review",
+                 "reviewed_at": "2026-09-13T00:00:00Z",
+                 "source_version": "v"},
+                {"record_id": "not:in-this-sample", "label": "neither",
+                 "low_confidence": False, "reason": "outside sample",
+                 "reviewed_at": "2026-09-13T00:00:00Z",
+                 "source_version": "v"}]}, f)
+    with open(os.path.join(server.IMPORTS_DIR, "model.json"), "w",
+              encoding="utf-8") as f:
+        json.dump({"format": server.IMPORT_FORMAT, "label_origin": "model",
+                   "human_attested": True, "reviewer": "bot",
+                   "decisions": [{"record_id": "swecris:T1",
+                                  "label": "neither",
+                                  "low_confidence": False}]}, f)
+    status, data = request(port, "/api/data")
+    expect("import:andrew_1" in data["verdicts"],
+           "instrument exports must be ingested as import:<reviewer>")
+    expect("import:bot" not in data["verdicts"]
+           and "model.json" in (data.get("error") or ""),
+           "a non-human export must be rejected loudly, never ingested")
+    s = data["summary"]
+    expect(s["reviewed"] == 1 and s["consensus_reviewed"] == 0
+           and len(s["inter_reviewer_disagreements"]) == 1,
+           f"an imported label must merge into the conflict machinery: {s}")
+
+    status, admin = request(port, "/api/admin")
+    expect(status == 200 and admin["mapping"] == server.FOUR_LABEL_MAP,
+           "/api/admin must serve the documented raw->four mapping")
+    expect(len(admin["pairwise"]) == 1
+           and admin["pairwise"][0]["n"] == 1
+           and admin["pairwise"][0]["agree"] == 0,
+           f"pairwise agreement must cover reviewer overlap: "
+           f"{admin['pairwise']}")
+    expect(admin["items"][0]["record_id"] == "swecris:T1"
+           and admin["items"][0]["human_disagreement"] is True
+           and admin["items"][0]["counts"]["consequences"] == 1
+           and admin["items"][0]["counts"]["preventing_slowing"] == 1,
+           f"per-item label counts must aggregate all reviewers: "
+           f"{admin['items'][0]}")
+    imported_row = [r for r in admin["reviewers"]
+                    if r["reviewer"] == "import:andrew_1"]
+    expect(imported_row and imported_row[0]["imported"] is True
+           and imported_row[0]["low_confidence"] == 1,
+           "imported reviewers must be marked and counted in admin")
+    expect(any("andrew.json" in n for n in admin["import_notes"]),
+           "the admin payload must report what was imported")
+
+    req = urllib.request.Request(f"http://127.0.0.1:{port}/api/export.csv")
+    with urllib.request.urlopen(req) as resp:
+        csv_body = resp.read().decode("utf-8")
+        expect("text/csv" in resp.headers.get("Content-Type", ""),
+               "the CSV export must be served as text/csv")
+    expect(csv_body.splitlines()[0].startswith('"record_id"'),
+           "the CSV export must carry the documented header")
+    expect('"import:andrew_1"' in csv_body and '"smoke"' in csv_body,
+           "the CSV export must carry every reviewer's decisions")
+    expect("\"'=SUM(A1)\"" in csv_body,
+           "formula-like cells must be escaped against CSV injection")
+    os.unlink(import_path)
+    os.unlink(os.path.join(server.IMPORTS_DIR, "model.json"))
 
     # staleness: edit the sampled record after review
     request(port, "/api/verdict",
@@ -482,8 +578,8 @@ def test_export():
              "human_confidence": "0.5", "human_notes": "stale annotation"}]
     rows, filled = export_benchmark.fill_rows(rows, key, consensus)
     expect(filled == 1, "one consensus benchmark record should be filled")
-    expect(rows[0]["human_category"] == "not_relevant",
-           "the confirmed label is written verbatim")
+    expect(rows[0]["human_category"] == "neither",
+           "the confirmed four-label is written verbatim")
     expect("legacy_equiv=ambiguous" in rows[0]["human_notes"],
            "post-guide labels must carry the legacy mapping note")
     expect(rows[1]["human_category"] == ""
@@ -546,7 +642,7 @@ def test_committed_artifacts():
     expect(len(bench) == 30,
            f"all 30 benchmark records must be sampled, got {len(bench)}")
     for r in records:
-        expect(r.get("label") in server.LABELS,
+        expect(r.get("label") in server.RAW_LABELS,
                f"{r.get('record_id')}: unknown label {r.get('label')!r}")
         for field in ("title", "reason", "source", "sampling"):
             expect(field in r, f"{r.get('record_id')}: missing {field}")
@@ -578,7 +674,9 @@ def test_committed_artifacts():
                 expect(isinstance(g.get("reason"), str) and g["reason"],
                        f"judgments.json: {rid}/{dim} needs a reason")
                 if g.get("proposed_label") is not None:
-                    expect(g["proposed_label"] in server.LABELS,
+                    # AI judges pre-date the four-label retarget and
+                    # propose in the pipeline's raw label space
+                    expect(g["proposed_label"] in server.RAW_LABELS,
                            f"judgments.json: {rid}/{dim} proposes unknown "
                            "label")
 

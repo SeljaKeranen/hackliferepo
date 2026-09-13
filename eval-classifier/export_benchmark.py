@@ -10,11 +10,12 @@ Unreviewed rows, stale verdicts and inter-reviewer conflicts are written
 blank - including any annotation already present in the input CSV, so the
 output holds exactly this gate's evidence and nothing else.
 
-Vocabulary note: the guide predates the not_relevant/ambiguous split and the
-social_population_aging category (classifier/KEYWORDS.md). Those labels are
-written verbatim - honesty over backwards compatibility - with a
+Vocabulary note: gate verdicts now carry the four-label taxonomy
+(preventing_slowing / consequences / neither / ambiguous), which postdates
+the annotation guide. Labels are written verbatim - honesty over backwards
+compatibility - and every label the guide does not know carries a
 `legacy_equiv=ambiguous` marker in human_notes for old tooling that only
-knows the original five labels.
+knows the guide's vocabulary.
 
 Usage:
     python3 eval-classifier/export_benchmark.py

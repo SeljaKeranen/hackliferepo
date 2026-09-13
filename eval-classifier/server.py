@@ -7,10 +7,17 @@ Then open http://localhost:8001
 Stdlib only. Serves the review UI over eval-classifier/sample.json (the
 stratified sample of ratio-pipeline labels), AI judge pre-marks from
 eval-classifier/judgments.json (read-only), and reads/writes human verdicts
-to eval-classifier/verdicts/<reviewer>.verdicts.json.
+to eval-classifier/verdicts/<reviewer>.verdicts.json. Humans label in the
+four-label taxonomy (preventing_slowing / consequences / neither /
+ambiguous, plus an independent low-confidence flag); the pipeline's raw
+five-category label is mapped via FOUR_LABEL_MAP for the agreement metric
+and stays visible per record. /admin.html serves the admin panel
+(per-item counts, pairwise reviewer agreement, pipeline-vs-human agreement,
+disagreements ranked first, CSV export); Longview instrument exports in
+eval-classifier/imports/ are ingested as extra reviewers.
 
 The measured deliverable is the pipeline's agreement with human judgment,
-with `ambiguous` flagged honestly rather than forced; the challenge bar is
+with `ambiguous` flagged honestly rather than forced; the working bar is
 >= 85% on the reviewed sample. Disagreements are the product, not a failure.
 
 Two reviewers can review at once on different machines: each server writes
@@ -41,9 +48,37 @@ SAMPLE_PATH = os.path.join(GATE_DIR, "sample.json")
 VERDICTS_DIR = os.path.join(GATE_DIR, "verdicts")
 JUDGMENTS_PATH = os.path.join(GATE_DIR, "judgments.json")
 
-# every label a human can assign; ambiguous and not_relevant are first-class
-LABELS = ("fundamental_aging", "intervention", "age_related_disease", "care",
-          "social_population_aging", "ambiguous", "not_relevant")
+# The pipeline's raw five-category label space (plus ambiguous/not_relevant).
+# Kept visible on every record; sample.json is validated against it.
+RAW_LABELS = ("fundamental_aging", "intervention", "age_related_disease",
+              "care", "social_population_aging", "ambiguous", "not_relevant")
+# The four-label human taxonomy (Andrew's working taxonomy, same label ids
+# as ratio/instrument/taxonomy.json "andrew-working-v1"): every human
+# verdict carries one of these plus an independent low-confidence flag.
+LABELS = ("preventing_slowing", "consequences", "neither", "ambiguous")
+# Documented mapping from the pipeline's raw labels into the four-label
+# taxonomy, used for the pipeline-vs-human agreement metric. The raw label
+# stays visible per record; only the comparison happens in mapped space.
+FOUR_LABEL_MAP = {
+    "fundamental_aging": "preventing_slowing",
+    "intervention": "preventing_slowing",
+    "age_related_disease": "consequences",
+    "care": "consequences",
+    "social_population_aging": "consequences",
+    "not_relevant": "neither",
+    "ambiguous": "ambiguous",
+}
+# Jan's Longview research-instrument export format (see PR #16,
+# ratio/instrument/review.mjs): admin ingests these as extra reviewers.
+IMPORT_FORMAT = "longview-human-labels-v1"
+IMPORTS_DIR = os.path.join(GATE_DIR, "imports")
+IMPORT_REVIEWER_RE = re.compile(r"[A-Za-z0-9_-]{2,40}")
+
+
+def pipeline_label(rec):
+    """The record's pipeline label mapped into the four-label taxonomy;
+    None when the raw label is unknown (corrupt sample)."""
+    return FOUR_LABEL_MAP.get(rec.get("label"))
 JUDGE_DIMENSIONS = ("relevance", "category", "evidence")
 JUDGE_VERDICTS = ("pass", "fail", "uncertain")
 # Reviewer slugs are verdict FILENAMES; keep them boring so they can't
@@ -180,14 +215,14 @@ def summarize(records, verdicts_by_reviewer, judgments):
         rid for rid in reviewed
         if len({v["label"] for v in per_record[rid].values()}) > 1)
     consensus = [rid for rid in reviewed if rid not in conflicts]
-    # agreement is label equality, not the stored verdict word: a hand-
-    # edited "agree" carrying a different label counts as the disagreement
-    # it actually expresses
+    # agreement is label equality in the four-label space, not the stored
+    # verdict word: a hand-edited "agree" carrying a different label counts
+    # as the disagreement it actually expresses
     agreed = [rid for rid in consensus
               if next(iter(per_record[rid].values()))["label"]
-              == by_id[rid].get("label")]
+              == pipeline_label(by_id[rid])]
     ambiguous = [rid for rid in consensus
-                 if by_id[rid].get("label") == "ambiguous"]
+                 if pipeline_label(by_id[rid]) == "ambiguous"]
     ambiguous_confirmed = [rid for rid in ambiguous if rid in agreed]
     n = len(consensus)
 
@@ -225,8 +260,227 @@ def summarize(records, verdicts_by_reviewer, judgments):
             for rid in conflicts],
         "ambiguous_reviewed": len(ambiguous),
         "ambiguous_confirmed": len(ambiguous_confirmed),
+        "low_confidence": sum(
+            1 for rid in reviewed
+            for v in per_record[rid].values() if v.get("low_confidence")),
         "judge_flagged": sum(judge_flagged(r, judgments) for r in records),
     }
+
+
+def load_imports(by_id):
+    """Ingest Longview instrument export files (Jan's four-label labelling
+    tool, PR #16) from eval-classifier/imports/*.json as extra reviewers.
+
+    Decisions are matched to our sample by record_id; ids outside the sample
+    are counted and skipped (the instrument packet is a different sample of
+    the same corpus). Imported decisions attested to the instrument's own
+    text of the record, not to this gate's card, so they carry
+    imported: True and skip our fingerprint check - documented limitation,
+    surfaced in the admin view. Returns (verdicts_by_reviewer, notes,
+    errors)."""
+    imported, notes, errors = {}, [], []
+    try:
+        entries = sorted(os.listdir(IMPORTS_DIR))
+    except OSError:
+        return {}, [], []
+    for entry in entries:
+        if not entry.endswith(".json"):
+            errors.append(f"imports/{entry} is not a .json export; ignored")
+            continue
+        body = load_json(os.path.join(IMPORTS_DIR, entry), None)
+        if not isinstance(body, dict):
+            errors.append(f"imports/{entry} is unreadable")
+            continue
+        if body.get("format") != IMPORT_FORMAT:
+            errors.append(f"imports/{entry}: not a {IMPORT_FORMAT} export")
+            continue
+        if (body.get("label_origin") != "human"
+                or body.get("human_attested") is not True
+                or body.get("simulation") is True):
+            errors.append(f"imports/{entry}: not an attested human export "
+                          "(model/simulation files are not human labels)")
+            continue
+        reviewer = body.get("reviewer")
+        if (not isinstance(reviewer, str)
+                or not IMPORT_REVIEWER_RE.fullmatch(reviewer)):
+            errors.append(f"imports/{entry}: invalid reviewer code")
+            continue
+        key = f"import:{reviewer}"  # ':' cannot appear in local slugs
+        if key in imported:
+            errors.append(f"imports/{entry}: duplicate reviewer "
+                          f"{reviewer!r}; keep one export file per reviewer")
+            continue
+        decisions = body.get("decisions")
+        if not isinstance(decisions, list) or not decisions:
+            errors.append(f"imports/{entry}: no decisions")
+            continue
+        verdicts, skipped, bad = {}, 0, 0
+        for d in decisions:
+            if (not isinstance(d, dict)
+                    or not isinstance(d.get("record_id"), str)
+                    or d.get("label") not in LABELS
+                    or not isinstance(d.get("low_confidence"), bool)):
+                bad += 1
+                continue
+            rec = by_id.get(d["record_id"])
+            if rec is None:
+                skipped += 1  # not in our sample: expected, not an error
+                continue
+            if d["record_id"] in verdicts:
+                bad += 1
+                continue
+            verdicts[d["record_id"]] = {
+                "record_id": d["record_id"],
+                "verdict": ("agree" if d["label"] == pipeline_label(rec)
+                            else "disagree"),
+                "label": d["label"],
+                "low_confidence": d["low_confidence"],
+                "note": str(d.get("reason") or ""),
+                "reviewed_at": str(d.get("reviewed_at") or ""),
+                "reviewer": key,
+                "imported": True,
+                # attests to the instrument's text version, not our card
+                "stale": False,
+            }
+        if bad:
+            errors.append(f"imports/{entry}: {bad} malformed decision(s) "
+                          "ignored")
+        if verdicts:
+            imported[key] = verdicts
+            notes.append(f"imports/{entry}: reviewer {reviewer!r}, "
+                         f"{len(verdicts)} decision(s) on this sample, "
+                         f"{skipped} outside it")
+        else:
+            notes.append(f"imports/{entry}: reviewer {reviewer!r} has no "
+                         f"decisions on this sample ({skipped} outside it)")
+    return imported, notes, errors
+
+
+def admin_summary(records, verdicts_by_reviewer, judgments, meta,
+                  import_notes):
+    """Everything the admin panel shows: per-item label counts,
+    labeller-vs-labeller pairwise agreement, per-reviewer pipeline
+    agreement, disagreements ranked first, plus the gate summary."""
+    per_record = effective_verdicts(verdicts_by_reviewer)
+    by_id = {r["record_id"]: r for r in records}
+    reviewers = sorted(
+        {rev for vs in per_record.values() for rev in vs})
+    pairs = []
+    for i, a in enumerate(reviewers):
+        for b in reviewers[i + 1:]:
+            overlap = [rid for rid, vs in per_record.items()
+                       if a in vs and b in vs and rid in by_id]
+            agree = sum(1 for rid in overlap
+                        if per_record[rid][a]["label"]
+                        == per_record[rid][b]["label"])
+            n = len(overlap)
+            pairs.append({
+                "a": a, "b": b, "n": n, "agree": agree,
+                "rate": round(agree / n, 4) if n else None,
+                "ci95": wilson_interval(agree, n),
+            })
+    per_reviewer = []
+    for rev in reviewers:
+        mine = [(rid, vs[rev]) for rid, vs in per_record.items()
+                if rev in vs and rid in by_id]
+        agree = sum(1 for rid, v in mine
+                    if v["label"] == pipeline_label(by_id[rid]))
+        n = len(mine)
+        per_reviewer.append({
+            "reviewer": rev,
+            "imported": any(v.get("imported") for _, v in mine),
+            "n": n, "agree": agree,
+            "rate": round(agree / n, 4) if n else None,
+            "ci95": wilson_interval(agree, n),
+            "low_confidence": sum(1 for _, v in mine
+                                  if v.get("low_confidence")),
+        })
+    items = []
+    for rec in records:
+        rid = rec["record_id"]
+        decisions = [
+            {"reviewer": rev, "label": v["label"],
+             "low_confidence": bool(v.get("low_confidence")),
+             "verdict": v.get("verdict"), "note": v.get("note", ""),
+             "imported": bool(v.get("imported"))}
+            for rev, v in sorted(per_record.get(rid, {}).items())]
+        counts = {label: sum(1 for d in decisions if d["label"] == label)
+                  for label in LABELS}
+        mapped = pipeline_label(rec)
+        items.append({
+            "record_id": rid,
+            "title": rec.get("title"),
+            "source": rec.get("source"),
+            "url": rec.get("url"),
+            "split": (rec.get("sampling") or {}).get("split"),
+            "raw_label": rec.get("label"),
+            "pipeline_label": mapped,
+            "counts": counts,
+            "low_confidence": sum(1 for d in decisions
+                                  if d["low_confidence"]),
+            "decisions": decisions,
+            "human_disagreement":
+                len({d["label"] for d in decisions}) > 1,
+            "pipeline_disagreements":
+                sum(1 for d in decisions if d["label"] != mapped),
+        })
+    # disagreements ranked to the top: human-vs-human first, then
+    # pipeline-vs-human, then low-confidence, then reviewed before
+    # unreviewed, stable by id
+    items.sort(key=lambda i: (
+        -int(i["human_disagreement"]), -i["pipeline_disagreements"],
+        -i["low_confidence"], -sum(i["counts"].values()), i["record_id"]))
+    return {
+        "summary": summarize(records, verdicts_by_reviewer, judgments),
+        "labels": LABELS,
+        "mapping": FOUR_LABEL_MAP,
+        "reviewers": per_reviewer,
+        "pairwise": pairs,
+        "items": items,
+        "meta": meta,
+        "import_notes": import_notes,
+    }
+
+
+def csv_cell(value):
+    """CSV field with formula-injection guard (same rule as the Longview
+    instrument's csvCell)."""
+    text = "" if value is None else str(value)
+    if re.match(r"^[\s﻿]*[=+@-]", text) or re.match(r"^[\t\r\n]", text):
+        text = "'" + text
+    return '"' + text.replace('"', '""') + '"'
+
+
+def export_csv(records, verdicts_by_reviewer):
+    """One row per (record, human decision); unreviewed records get one row
+    with empty decision fields so the export covers the whole sample."""
+    per_record = effective_verdicts(verdicts_by_reviewer)
+    header = ["record_id", "source", "title", "url", "split",
+              "pipeline_raw_label", "pipeline_label", "reviewer",
+              "reviewer_origin", "human_label", "low_confidence", "note",
+              "reviewed_at", "agrees_with_pipeline", "human_label_count",
+              "human_disagreement"]
+    rows = [header]
+    for rec in records:
+        rid = rec["record_id"]
+        mapped = pipeline_label(rec)
+        decisions = sorted(per_record.get(rid, {}).items())
+        base = [rid, rec.get("source"), rec.get("title"), rec.get("url"),
+                (rec.get("sampling") or {}).get("split"),
+                rec.get("label"), mapped]
+        n = len(decisions)
+        disagreement = len({v["label"] for _, v in decisions}) > 1
+        if not decisions:
+            rows.append(base + [""] * 7 + [0, ""])
+            continue
+        for rev, v in decisions:
+            rows.append(base + [
+                rev, "instrument-import" if v.get("imported") else "gate",
+                v["label"], bool(v.get("low_confidence")),
+                v.get("note", ""), v.get("reviewed_at", ""),
+                v["label"] == mapped, n, disagreement])
+    return ("\r\n".join(",".join(csv_cell(c) for c in row) for row in rows)
+            + "\r\n")
 
 
 def list_verdict_files():
@@ -289,13 +543,18 @@ def load_state():
         mark_stale(verdicts, by_id)
         verdicts_by_reviewer[reviewer] = verdicts
 
+    imported, import_notes, import_errors = load_imports(by_id)
+    errors.extend(import_errors)
+    verdicts_by_reviewer.update(imported)
+
     judgments = (load_json(JUDGMENTS_PATH, None)
                  if os.path.exists(JUDGMENTS_PATH) else {})
     if not isinstance(judgments, dict):
         errors.append("judgments.json is unreadable")
         judgments = {}
     mark_stale(judgments, by_id)
-    meta = sample.get("meta", {}) if isinstance(sample, dict) else {}
+    meta = dict(sample.get("meta", {})) if isinstance(sample, dict) else {}
+    meta["import_notes"] = import_notes
     return records, verdicts_by_reviewer, judgments, meta, errors
 
 
@@ -312,7 +571,29 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self):
-        if urlparse(self.path).path == "/api/data":
+        path = urlparse(self.path).path
+        if path == "/api/admin":
+            records, verdicts_by_reviewer, judgments, meta, errors = \
+                load_state()
+            payload = admin_summary(records, verdicts_by_reviewer,
+                                    judgments, meta,
+                                    meta.get("import_notes", []))
+            if errors:
+                payload["error"] = "; ".join(errors)
+            return self.send_json(payload)
+        if path == "/api/export.csv":
+            records, verdicts_by_reviewer, _j, _m, _e = load_state()
+            body = export_csv(records, verdicts_by_reviewer) \
+                .encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "text/csv; charset=utf-8")
+            self.send_header("Content-Disposition",
+                             'attachment; filename="eval-gate-export.csv"')
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+            return None
+        if path == "/api/data":
             records, verdicts_by_reviewer, judgments, meta, errors = \
                 load_state()
             # Serve each record's fingerprint; the client echoes it back on
@@ -329,6 +610,7 @@ class Handler(SimpleHTTPRequestHandler):
                 "summary": summarize(records, verdicts_by_reviewer,
                                      judgments),
                 "labels": LABELS,
+                "mapping": FOUR_LABEL_MAP,
             }
             if errors:
                 payload["error"] = "; ".join(errors)
@@ -391,22 +673,23 @@ class Handler(SimpleHTTPRequestHandler):
             return self.send_json(
                 {"error": "record changed since the page loaded - reload "
                           "and re-review"}, 409)
+        mapped = pipeline_label(rec)
         if verdict is None:
             # explicit undo: drop the local reviewer's verdict
             saved = None
         elif verdict == "agree":
-            if rec.get("label") not in LABELS:
+            if mapped is None:
                 # a corrupt sample must not become confirmed evidence
                 return self.send_json(
                     {"error": f"sample record carries unknown label "
                               f"{rec.get('label')!r}; fix sample.json"}, 500)
-            saved = {"verdict": "agree", "label": rec["label"]}
+            saved = {"verdict": "agree", "label": mapped}
         elif verdict == "disagree":
             label = payload.get("correct_label")
             if label not in LABELS:
                 return self.send_json(
                     {"error": f"correct_label must be one of {LABELS}"}, 400)
-            if label == rec["label"]:
+            if label == mapped:
                 return self.send_json(
                     {"error": "disagree needs a label different from the "
                               "pipeline's; use agree instead"}, 400)
@@ -420,6 +703,9 @@ class Handler(SimpleHTTPRequestHandler):
                 "record_id": record_id,
                 "record_fingerprint": current_fp,
                 "reviewer": REVIEWER,
+                # low confidence is independent of the chosen label:
+                # "borderline case" stays distinct from "couldn't tell"
+                "low_confidence": bool(payload.get("low_confidence")),
                 "note": str(payload.get("note") or ""),
                 "reviewed_at": str(payload.get("reviewed_at") or ""),
             })
@@ -497,6 +783,7 @@ def main():
               f"{len(s['inter_reviewer_disagreements'])}")
         print(f"ambiguous flags:    {s['ambiguous_confirmed']}/"
               f"{s['ambiguous_reviewed']} confirmed")
+        print(f"low confidence:     {s['low_confidence']} verdict(s)")
         if errors:
             return 2
         if s["agreement"] is not None and s["agreement"] < s["target"]:

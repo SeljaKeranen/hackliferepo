@@ -20,18 +20,47 @@ an honest low number beats a lenient high one: **disagreements are the
 product**, they quantify the classifier's reliability. Judge each label
 strictly on the rubric, never leniently.
 
+## The taxonomy and the mapping
+
+Humans label in the **four-label taxonomy** (the team's working taxonomy
+after Andrew's input, same label ids as
+`ratio/instrument/taxonomy.json` "andrew-working-v1" on the Longview
+instrument branch, PR #16):
+
+| label | means |
+| --- | --- |
+| `preventing_slowing` | the stated aim studies biological ageing itself or develops/tests ways to modify it (fundamental mechanisms count, even without a therapy) |
+| `consequences` | the stated aim concerns age-related disease, functional decline, care, or social/population consequences of ageing — needs an explicit ageing connection |
+| `neither` | the available aims support neither definition (battery life, leaf senescence, unrelated topics) |
+| `ambiguous` | the two definitions compete without a clear primary aim, or the text does not support a choice |
+
+Every verdict also carries an independent **low-confidence checkbox**: it
+records uncertainty about your judgment (missing or truncated text), not a
+probability — a clearly documented boundary case is `ambiguous` *without*
+low confidence.
+
+The pipeline still emits its raw five-category labels; for the agreement
+metric they are mapped (`server.py:FOUR_LABEL_MAP`), and the raw label
+stays visible on every record and in every export:
+
+| pipeline raw label | four-label |
+| --- | --- |
+| `fundamental_aging`, `intervention` | `preventing_slowing` |
+| `age_related_disease`, `care`, `social_population_aging` | `consequences` |
+| `not_relevant` | `neither` |
+| `ambiguous` | `ambiguous` |
+
 ## The metric
 
-**Agreement = records where human judgment confirms the pipeline's label /
-records with a human consensus.** A click on **Agree** confirms;
-**Disagree** requires picking the correct label, where `ambiguous` and
-`not_relevant` are first-class choices. The header shows the point estimate
-with a 95% Wilson confidence interval and n. Stale verdicts (the record
-changed after review) count as unreviewed. The header also shows
-**ambiguous honesty**: of the consensus-reviewed records the pipeline
-flagged `ambiguous`, how many the human confirmed as genuinely unplaceable —
-whether the pipeline flags uncertainty honestly instead of forcing
-categories.
+**Agreement = records where the human four-label matches the pipeline's
+mapped label / records with a human consensus.** A click on **Agree**
+confirms the mapped label; **Disagree** requires picking the correct
+four-label. The header shows the point estimate with a 95% Wilson
+confidence interval and n. Stale verdicts (the record changed after review)
+count as unreviewed. The header also shows **ambiguous honesty**: of the
+consensus-reviewed records the pipeline flagged `ambiguous`, how many the
+human confirmed as genuinely unplaceable — whether the pipeline flags
+uncertainty honestly instead of forcing categories.
 
 `python3 eval-classifier/server.py --summary` prints the same numbers and
 exits 0 on target (or nothing reviewed), 1 below target, 2 on unreadable
@@ -95,27 +124,48 @@ server, UI and validation tests.
 
 ## The rubric
 
-Full definitions with worked corpus examples live in
-[`classifier/KEYWORDS.md`](../classifier/KEYWORDS.md); the annotation guide
-they extend is `data/Track3_C2/benchmark/ANNOTATION_GUIDE.md`. In substance:
+Label the **stated research purpose** from the taxonomy table above.
+Decide relevance first (is this about human ageing at all? if not:
+`neither`), then whether the aim targets ageing biology itself
+(`preventing_slowing`) or its consequences (`consequences` — the ageing
+connection must be explicit: treating a disease common in older adults does
+not by itself qualify). `ambiguous` is a first-class answer, never a
+dumping ground. Tick low confidence when the text limits your judgment.
+Judge from title + quote — the same text the classifier saw (shown on each
+card; the source link is there for doubt, but the classifier can only be
+graded on its input).
 
-| label | means | not |
-| --- | --- | --- |
-| `fundamental_aging` | studies ageing mechanisms themselves (senescence, epigenetic clocks, proteostasis, comparative longevity) — including **mechanistic studies of interventions** | a disease study that merely mentions ageing |
-| `intervention` | develops or tests an intervention aimed at slowing/reversing ageing (senolytics, rapamycin, metformin as geroprotection) | a drug trial for one specific disease; a mechanism study that names an intervention |
-| `age_related_disease` | research on a specific age-related disease (Alzheimer's, cancer, CVD, osteoporosis, sarcopenia) | mechanistic ageing work using a disease model |
-| `care` | delivery and organisation of services to older people (nursing homes, home care, caregiving, welfare technology) | clinical treatment of a disease; research *about* ageing societies |
-| `social_population_aging` | research about ageing societies and older people's lives (retirement, loneliness, demography, ageism) — needs an ageing anchor in the text | general social research with no ageing anchor |
-| `ambiguous` | on-topic (human ageing) but the text does not let you place it | a dumping ground — only use when the text truly underdetermines |
-| `not_relevant` | not about human ageing at all: material/battery/infrastructure ageing, "productive longevity" in livestock, unrelated topics | on-topic-but-vague records (those are `ambiguous`) |
+The raw five-category definitions the *pipeline* uses (with worked corpus
+examples) live in [`classifier/KEYWORDS.md`](../classifier/KEYWORDS.md);
+they matter for understanding what the raw label meant, not for your
+verdict.
 
-Order of decisions (same as the classifier's): **relevance first** (step 0:
-is this about human ageing at all?), then category, applying the
-**mechanism-vs-intervention rule** at that boundary: studying how an
-intervention works is `fundamental_aging`; developing or testing one is
-`intervention`. Judge from title + quote — the same text the classifier saw
-(shown on each card; the source link is there for doubt, but the classifier
-can only be graded on its input).
+## The admin panel (for the researcher review)
+
+`http://localhost:8001/admin.html` (any running review server) shows:
+
+- per-item label counts across all reviewers, with **disagreements ranked
+  to the top** (human-vs-human first, then pipeline-vs-human, then
+  low-confidence);
+- **labeller-vs-labeller agreement** for every reviewer pair with overlap
+  (share of identical four-labels, Wilson 95% CI);
+- **pipeline-vs-human agreement** combined and per tuning/holdout split,
+  and per reviewer;
+- **one-click CSV export** of every decision (`/api/export.csv`: one row
+  per record × reviewer, with raw + mapped pipeline labels, low-confidence
+  flags, notes, provenance; formula-injection-escaped).
+
+### Importing Longview instrument exports
+
+The Longview research instrument (PR #16, `ratio/instrument/`) exports
+per-reviewer JSON files in its `longview-human-labels-v1` format. Drop such
+files into `eval-classifier/imports/` and they are ingested as extra
+reviewers named `import:<reviewer>` in every metric. Only attested human
+exports are accepted (model/simulation files are rejected loudly);
+decisions on record ids outside this gate's sample are counted and
+skipped. **Limitation:** imported decisions attested to the instrument's
+own text of the record, not to this gate's card, so they bypass this
+gate's fingerprint check — the admin view and CSV mark their origin.
 
 ## How the sample was stratified
 
@@ -194,6 +244,10 @@ The review screen sorts judge-flagged records first and shows the three
 verdicts per card. **The AI judgments are advisory pre-marks only: the
 human verdicts in `verdicts/` are the agreement metric the gate is scored
 on.** The judges compress the human workload; they do not replace it.
+The judges pre-date the four-label retarget and speak the raw label space
+(`proposed_label` is a raw category); they remain valid as attention
+routers — a category flag still means "look closely" — but their proposals
+are not four-labels.
 
 ## The legacy benchmark export
 
@@ -207,11 +261,11 @@ python3 eval-classifier/export_benchmark.py   # writes benchmark_30_filled.csv
 ```
 
 Only consensus verdicts export (conflicting or stale ones stay blank).
-`human_category` gets the human-confirmed label verbatim. `not_relevant`
-and `social_population_aging` postdate the annotation guide, so those rows
-also carry `legacy_equiv=ambiguous` in `human_notes` for tooling that only
-knows the original five labels. `human_confidence` is 1.0 throughout: the
-gate collects a categorical decision, not graded confidence.
+`human_category` gets the human-confirmed **four-label** verbatim — honesty
+over backwards compatibility — and labels the annotation guide does not
+know carry `legacy_equiv=ambiguous` in `human_notes` for old tooling.
+`human_confidence` is 1.0 throughout: the gate collects a categorical
+decision plus a separate low-confidence flag, not graded confidence.
 
 ## Where things live
 
@@ -224,7 +278,11 @@ gate collects a categorical decision, not graded confidence.
   the verdicts are the evidence for the agreement claim, so commit yours
   after a review session. The server refuses to save over a verdicts file
   it cannot parse, so evidence is never silently clobbered.
-- `server.py` / `static/` — the review UI. `--summary` prints the metrics.
+- `server.py` / `static/` — the review UI (`/`) and the admin panel
+  (`/admin.html`, with `/api/admin` and `/api/export.csv`). `--summary`
+  prints the metrics.
+- `imports/` — drop Longview instrument export files here (not committed
+  unless they are real review evidence you want in the PR).
 - `export_benchmark.py` — fills the legacy benchmark CSV from the verdicts.
 - `test_sample.py`, `test_gate.py` — sampler determinism and boundary
   logic; verdict/agreement math (multi-reviewer merge, conflicts, Wilson

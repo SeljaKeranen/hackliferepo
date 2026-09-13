@@ -13,33 +13,24 @@
 
   <header id="masthead">
     <h1>Longevity Politics Index</h1>
-    <p class="tagline">Where governments engage seriously with longevity and healthy
-    ageing. Every score is composed from dated, human-verifiable primary sources
-    &mdash; and an honest zero where nothing reliable was found.</p>
-    <div class="counters" id="counters" hidden>
-      <div class="counter"><b id="c-countries">0</b><span>countries scored</span></div>
-      <div class="counter"><b id="c-findings">0</b><span>cited findings</span></div>
-      <div class="counter"><b id="c-verified">0</b><span>human-verified</span></div>
+    <p class="tagline" id="tagline"></p>
+    <div class="switcher" id="scenario-switch" role="group" aria-label="Label scenario" hidden>
+      <button type="button" data-scenario="rules">Rules (v2)</button>
+      <button type="button" data-scenario="adjudicated">Adjudicated (AI)</button>
     </div>
+    <div class="counters" id="counters" hidden></div>
   </header>
 
-  <div id="legend" hidden>
-    <div class="legend-title">Index, 0&ndash;100</div>
-    <canvas id="ramp" width="180" height="10" aria-hidden="true"></canvas>
-    <div class="ramp-ends"><span>0</span><span>100</span></div>
-    <div class="legend-row"><span class="swatch hatch"></span>searched, nothing reliable found</div>
-    <div class="legend-row"><span class="swatch empty"></span>not yet covered</div>
-  </div>
-
+  <div id="legend" hidden></div>
   <div id="tooltip" hidden></div>
 
   <aside id="panel">
     <div id="panel-body">
-      <p class="loading">Loading findings&hellip;</p>
+      <p class="loading">Loading&hellip;</p>
     </div>
   </aside>
 
-  <p id="load-error" hidden>Findings could not be loaded. Serve the repository
+  <p id="load-error" hidden>Could not load the map data. Serve the repository
   root &mdash; <code>python3 -m http.server 8010</code> &mdash; and open
   <code>/map/</code> from there.</p>
 </div>

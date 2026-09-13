@@ -114,4 +114,36 @@ const allFailed = S.scoreCountry(
 assert.strictEqual(allFailed.status, "scored");
 assert.strictEqual(allFailed.index, 0);
 
+/* ---------- funding-gap layer ---------- */
+
+// the 0–100 headline index is the ratio itself, rounded; missing stays null
+assert.strictEqual(S.ratioIndex(0.2278), 23);
+assert.strictEqual(S.ratioIndex(0.6543), 65);
+assert.strictEqual(S.ratioIndex(0), 0);
+assert.strictEqual(S.ratioIndex(1), 100);
+assert.strictEqual(S.ratioIndex(null), null);
+assert.strictEqual(S.ratioIndex(undefined), null);
+assert.strictEqual(S.ratioIndex(NaN), null);
+
+// jurisdiction mapping: Sweden and the US keep their national corpora, all
+// other EU members carry the European Commission's number, everyone else has
+// no ratio data yet.
+assert.strictEqual(S.jurisdictionFor("SE"), "SE");
+assert.strictEqual(S.jurisdictionFor("US"), "US");
+assert.strictEqual(S.jurisdictionFor("DE"), "EU");
+assert.strictEqual(S.jurisdictionFor("MT"), "EU");
+assert.strictEqual(S.jurisdictionFor("GB"), null);
+assert.strictEqual(S.jurisdictionFor("CH"), null);
+
+// the EU list is exactly the 27 current members
+assert.strictEqual(S.EU27.length, 27);
+assert.strictEqual(new Set(S.EU27).size, 27);
+assert.ok(S.EU27.includes("SE") && S.EU27.includes("MT"));
+assert.ok(!S.EU27.includes("GB"));
+
+// every jurisdiction a feature can map to has display metadata
+for (const code of ["SE", "EU", "US"]) {
+  assert.ok(S.JURISDICTIONS[code].name && S.JURISDICTIONS[code].source);
+}
+
 console.log("OK: scoring regression tests passed");

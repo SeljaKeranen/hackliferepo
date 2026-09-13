@@ -16,7 +16,7 @@ The delivery target is the Sunday 12:00 submission and the Demo Day pitch. Befor
 - What now works, with verification evidence. Identify fixtures, simulations, and unverified claims.
 - What remains incomplete.
 
-The demo centerpiece is the index map under `map/` (run command, index formula and vendored-asset provenance in `map/README.md`). It reads `eval/findings/` and `eval/verdicts/` but must stay decoupled from the eval loop, which works standalone.
+The demo centerpiece is the index map under `map/` (run command, both layer formulas and vendored-asset provenance in `map/README.md`). Its visible funding-gap layer reads `ratio/output/`; the original politics layer reads `eval/findings/` and `eval/verdicts/` and is retained but hidden from the header. Both read only built JSON and stay decoupled from the eval loop, which works standalone.
 
 Evidence over theatre. Every material finding, classification, or claim links to a dated source. Findings follow `schema/finding.schema.json` and are human-verified with the eval loop in `eval/README.md` (`python3 eval/server.py`). State uncertainty and failure modes. Where the track brief asks for a falsification criterion or a held-out evaluation, build for generalisation rather than the visible data.
 

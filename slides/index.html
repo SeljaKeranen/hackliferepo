@@ -49,36 +49,66 @@
   .foot{position:fixed;bottom:1rem;left:0;right:0;display:flex;justify-content:space-between;padding:0 2rem;color:var(--ink5);font-size:.75rem}
   .mut{opacity:.45}
   a{color:var(--navy);text-decoration:none}
+
+  /* --- overview (press O or Esc) --- */
+  .deck,.cell{display:contents}
+  body.ov{overflow:auto}
+  body.ov .deck{display:grid;grid-template-columns:repeat(var(--cols),1fr);gap:1.1rem;padding:4.2rem 1.4rem 3rem}
+  body.ov .cell{display:block;position:relative;width:100%;aspect-ratio:var(--ar);overflow:hidden;
+    border:1px solid var(--line2);border-radius:10px;background:var(--card);cursor:pointer;transition:border-color .12s,box-shadow .12s}
+  body.ov .cell:hover{border-color:var(--navy);box-shadow:0 0 0 3px rgba(20,55,95,.13)}
+  body.ov .cell.cur{border-color:var(--navy);box-shadow:0 0 0 3px rgba(20,55,95,.28)}
+  body.ov .cell>.slide{display:flex!important;position:absolute;top:0;left:0;width:100vw;height:100vh;
+    transform:scale(var(--k));transform-origin:0 0;pointer-events:none}
+  .cell>.n{display:none}
+  body.ov .cell>.n{display:block;position:absolute;left:.5rem;top:.5rem;z-index:2;background:var(--lift);border:1px solid var(--line2);
+    border-radius:6px;padding:.05rem .42rem;font-size:.72rem;font-weight:600;color:var(--ink4);font-variant-numeric:tabular-nums}
+  body.ov .foot{display:none}
+  .ovbar{display:none}
+  body.ov .ovbar{display:flex;position:fixed;top:0;left:0;right:0;z-index:5;align-items:center;justify-content:space-between;
+    padding:.85rem 1.5rem;background:rgba(239,235,228,.93);backdrop-filter:blur(6px);border-bottom:1px solid var(--line1)}
+  .ovbar b{font-size:.95rem;font-weight:600;color:var(--ink1)}
+  .ovbar span{font-size:.78rem;color:var(--ink5)}
+  kbd{background:var(--recess);border:1px solid var(--line2);border-radius:4px;padding:.02rem .32rem;font:inherit;font-size:.72rem;color:var(--ink3)}
+  .nav{position:fixed;bottom:.75rem;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:.4rem;align-items:center}
+  .nav button{font:inherit;line-height:1;background:var(--lift);color:var(--ink3);border:1px solid var(--line2);
+    border-radius:8px;padding:.42rem .72rem;cursor:pointer;opacity:.55;transition:opacity .12s,border-color .12s,color .12s}
+  .nav:hover button{opacity:1}
+  .nav button:hover{border-color:var(--navy);color:var(--navy);opacity:1}
+  .nav button:active{background:var(--recess)}
+  .nav .ar{font-size:1.05rem;padding:.3rem .7rem}
+  .nav .all{font-size:.76rem}
+  body.ov .nav .ar{display:none}
 </style>
 </head>
 <body>
 
-<section class="slide on"><!-- 1 -->
-  <div class="meta">Stockholm Longevity × AI · Track 3 · Selja · Max · Jan · Miko</div>
-  <h1>Longview</h1>
-  <p class="lead">How governments are investing in longevity right now, measured through research grants.</p>
+<section class="slide on" style="gap:1.9rem"><!-- title -->
+  <div class="meta" style="font-size:.9rem">Stockholm Longevity × AI · Track 3 · Selja · Max · Jan · Miko</div>
+  <h1 style="font-size:3.9rem;margin-top:-.4rem">Longview</h1>
+  <p class="lead" style="font-size:1.62rem;max-width:52ch">How governments are investing in longevity right now, measured through research grants.</p>
 </section>
 
-<section class="slide"><!-- 2 -->
-  <h1 style="font-size:3.6rem;max-width:22ch">Every country funds ageing.<br><span class="navy">Almost none funds the biology of it.</span></h1>
+<section class="slide"><!-- worldmap -->
+  <h2>Think World Happiness Index.<br><span class="navy">… for longevity.</span></h2>
+  <img src="worldmap.svg" alt="World map: Sweden, EU, UK and US highlighted" style="width:100%;max-height:62vh;object-fit:contain">
 </section>
 
-<section class="slide"><!-- 2b persona -->
+<section class="slide"><!-- persona -->
   <div class="row" style="align-items:center;gap:3rem">
-    <div style="flex:0 0 240px"><img src="andrew.png" alt="Andrew Steele" style="width:260px;height:300px;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line2)"></div>
+    <div style="flex:0 0 auto"><img src="andrew.jpg" alt="Andrew Steele" style="width:min(24rem,34vw);aspect-ratio:1;object-fit:cover;border-radius:18px;border:1px solid var(--line2)"></div>
     <div style="flex:1;min-width:18rem">
-      <h2>Andrew Steele</h2>
-      <p class="lead" style="margin-top:.4rem">Oxford researcher in longevity science</p>
-      <div class="keys" style="margin-top:1rem">
-        <span class="key">geroscience</span><span class="key">author of the book Ageless</span>
+      <h2 style="font-size:3.1rem">Andrew Steele</h2>
+      <p class="lead" style="margin-top:.6rem;font-size:1.55rem">Oxford researcher in longevity science</p>
+      <div class="keys" style="margin-top:1.3rem">
+        <span class="key" style="font-size:1rem;padding:.35rem 1rem">geroscience</span><span class="key" style="font-size:1rem;padding:.35rem 1rem">author of the book Ageless</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="slide"><!-- 3 -->
-  <h2>Think World Happiness Index.<br><span class="navy">We are building the same for longevity.</span></h2>
-  <img src="worldmap.svg" alt="World map: Sweden, EU, UK and US highlighted" style="width:100%;max-height:62vh;object-fit:contain">
+<section class="slide"><!-- hook -->
+  <h1 style="font-size:min(3.6rem,4.3vw);white-space:nowrap">Every country funds ageing.<br><span class="navy">Almost none funds the biology of it.</span></h1>
 </section>
 
 <section class="slide"><!-- 4 -->
@@ -155,7 +185,7 @@
     <div class="card metric" style="text-align:center;padding:2rem 1rem"><strong style="font-size:3.4rem">0.84</strong><span style="font-size:1rem;margin-top:.5rem">recall</span></div>
     <div class="card metric" style="text-align:center;padding:2rem 1rem"><strong style="font-size:3.4rem">0.80</strong><span style="font-size:1rem;margin-top:.5rem">F1</span></div>
   </div>
-  <p class="cap">Scores from running our classifier on the UKHRA dataset: a database of health and biomedical research projects funded in the UK. Suggested by Dr. Andrew Steele.</p>
+  <p class="cap" style="margin-top:1.1rem">Scores from running our classifier on the <a href="https://hrcsonline.net/reports/analysis-data/" target="_blank" rel="noopener">UKHRA dataset</a>: a database of health and biomedical research projects funded in the UK. Suggested by Dr. Andrew Steele.</p>
 </section>
 
 
@@ -187,12 +217,66 @@
 </section>
 
 <div class="foot"><span>Longview</span><span id="pg"></span></div>
+<div class="nav">
+  <button class="ar" id="pv" title="Previous slide (Left arrow)" aria-label="Previous slide">&lsaquo;</button>
+  <button class="all" id="ab" title="Toggle the all-slides overview (O)">All slides</button>
+  <button class="ar" id="nx" title="Next slide (Right arrow)" aria-label="Next slide">&rsaquo;</button>
+</div>
+<div class="ovbar"><b>All slides</b><span><kbd>click</kbd> a slide to open it · <kbd>Esc</kbd> back · <kbd>-</kbd>/<kbd>+</kbd> thumbnail size</span></div>
 <script>
 const S=[...document.querySelectorAll('.slide')];let i=0;
 const pg=document.getElementById('pg');
-function show(n){S[i].classList.remove('on');i=(n+S.length)%S.length;S[i].classList.add('on');pg.textContent=(i+1)+' / '+S.length;}
-show(0);
-addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))show(i+1);
+
+/* wrap every slide in a cell inside one deck container.
+   both are display:contents until overview turns on, so normal mode is untouched. */
+const deck=document.createElement('div');deck.className='deck';
+S[0].parentNode.insertBefore(deck,S[0]);
+S.forEach((s,n)=>{const c=document.createElement('div');c.className='cell';
+  const b=document.createElement('div');b.className='n';b.textContent=n+1;
+  deck.appendChild(c);c.appendChild(b);c.appendChild(s);
+  c.addEventListener('click',()=>{show(n);ov(false);});});
+
+function show(n){S[i].classList.remove('on');i=(n+S.length)%S.length;S[i].classList.add('on');
+  pg.textContent=(i+1)+' / '+S.length;history.replaceState(null,'','#'+(i+1));}
+
+let cols=3;
+function fit(){deck.style.setProperty('--cols',cols);
+  deck.style.setProperty('--ar',innerWidth+'/'+innerHeight);
+  const c=deck.firstChild;if(c)deck.style.setProperty('--k',c.clientWidth/innerWidth);}
+function ov(on){document.body.classList.toggle('ov',on);
+  ab.textContent=on?'Back to slide':'All slides';
+  if(on){deck.querySelectorAll('.cell').forEach((c,n)=>c.classList.toggle('cur',n===i));
+    fit();requestAnimationFrame(fit);
+    deck.children[i].scrollIntoView({block:'nearest'});}
+  else scrollTo(0,0);}
+addEventListener('resize',()=>{if(document.body.classList.contains('ov'))fit();});
+
+show(Math.max(0,(parseInt(location.hash.slice(1),10)||1)-1));
+
+/* on-screen controls: keyboard needs the page focused, which an embedded
+   preview does not give until you click. buttons always work. */
+const isOv=()=>document.body.classList.contains('ov');
+pv.onclick=()=>{show(i-1);if(isOv())ov(true);};
+nx.onclick=()=>{show(i+1);if(isOv())ov(true);};
+ab.onclick=()=>ov(!isOv());
+
+/* take focus where allowed so the arrow keys work straight away */
+document.body.tabIndex=-1;
+addEventListener('load',()=>{try{focus();document.body.focus({preventScroll:true});}catch(e){}});
+addEventListener('click',()=>{try{focus();}catch(e){}});
+addEventListener('keydown',e=>{
+ const on=document.body.classList.contains('ov');
+ if(e.key==='o'||e.key==='O'){ov(!on);return;}
+ if(e.key==='Escape'){ov(!on);return;}
+ if(on){
+   if(e.key==='-'||e.key==='_'){cols=Math.min(6,cols+1);fit();return;}
+   if(e.key==='+'||e.key==='='){cols=Math.max(1,cols-1);fit();return;}
+   if(['ArrowRight','ArrowDown'].includes(e.key)){show(i+1);ov(true);return;}
+   if(['ArrowLeft','ArrowUp'].includes(e.key)){show(i-1);ov(true);return;}
+   if(e.key==='Enter'||e.key===' '){ov(false);return;}
+   return;
+ }
+ if(['ArrowRight','PageDown',' '].includes(e.key))show(i+1);
  if(['ArrowLeft','PageUp'].includes(e.key))show(i-1);
  if(e.key==='Home')show(0); if(e.key==='End')show(S.length-1);});
 </script>

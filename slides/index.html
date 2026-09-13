@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Longview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--ground:#EFEBE4;--card:#FBFAF8;--lift:#FFFFFF;--recess:#F4F1EC;
+    --ink1:#111113;--ink2:#1A1A1C;--ink3:#34343A;--ink4:#57575C;--ink5:#666670;
+    --line1:#E7E3DD;--line2:#DFDAD2;
+    --navy:#14375F;--yes:#1B5E8C;--border:#8B5A9E;--cancer:#2F7A4F;--flag:#B4472F;}
+  *{box-sizing:border-box;margin:0}
+  html,body{height:100%}
+  body{background:var(--ground);color:var(--ink2);font:16px/1.55 "Instrument Sans",-apple-system,sans-serif;letter-spacing:-.012em;overflow:hidden;font-variant-numeric:tabular-nums}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 9vw;gap:1.5rem}
+  .slide.on{display:flex}
+  h1{font-size:2.9rem;font-weight:600;letter-spacing:-.03em;color:var(--ink1);line-height:1.1}
+  h2{font-size:1.9rem;font-weight:600;letter-spacing:-.025em;color:var(--ink1);line-height:1.18}
+  .serif{font-family:"Source Serif 4",Georgia,serif;line-height:1.65}
+  .lead{font-family:"Source Serif 4",Georgia,serif;font-size:1.3rem;line-height:1.6;color:var(--ink3);max-width:60ch}
+  .cap{font-size:.84rem;color:var(--ink4)} .meta{font-size:.8rem;color:var(--ink5)}
+  .navy{color:var(--navy)} .flagc{color:var(--flag)}
+  .row{display:flex;gap:1.1rem;flex-wrap:wrap}
+  .card{background:var(--card);border:1px solid var(--line2);border-radius:12px;padding:1.1rem 1.4rem;flex:1;min-width:13rem}
+  .metric strong{display:block;font-size:2.6rem;font-weight:600;color:var(--ink1);letter-spacing:-.02em}
+  .metric span{display:block;font-size:.85rem;color:var(--ink2);margin-top:.15rem}
+  .metric em{display:block;font-style:normal;font-size:.8rem;color:var(--ink4);margin-top:.15rem}
+  table{border-collapse:collapse;background:var(--card);border:1px solid var(--line2);border-radius:12px;overflow:hidden;font-size:.95rem}
+  th,td{padding:.5rem 1.2rem;text-align:left;border-bottom:1px solid var(--line1)}
+  th{color:var(--ink4);font-weight:500;font-size:.8rem}
+  td.r,th.r{text-align:right}
+  .bar{height:12px;background:var(--recess);border-radius:6px;position:relative}
+  .fill{position:absolute;top:0;bottom:0;left:0;background:var(--navy);border-radius:6px}
+  .floorline{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--flag)}
+  .brow{display:grid;grid-template-columns:3.5rem 1fr 13rem;gap:1rem;align-items:center;max-width:52rem}
+  .chain{display:flex;gap:.6rem}
+  .step{background:var(--card);border:1px solid var(--line2);border-radius:10px;padding:.7rem .9rem;flex:1;font-size:.83rem;color:var(--ink3)}
+  .step b{display:block;color:var(--ink2);font-weight:600;font-size:.88rem}
+  .step .n{color:var(--navy);font-weight:600}
+  .keys{display:flex;gap:.6rem;flex-wrap:wrap}
+  .key{background:var(--recess);border-radius:7px;padding:.2rem .7rem;font-size:.82rem;font-weight:600;color:var(--ink2)}
+  .sel-yes{border:1.5px solid var(--yes);background:#F5F9FC;border-radius:10px;padding:.8rem 1.1rem}
+  .sel-border{border:1.5px solid var(--border);background:#F9F6FA;border-radius:10px;padding:.8rem 1.1rem}
+  .sel-cancer{border:1.5px solid var(--cancer);background:#F5FAF6;border-radius:10px;padding:.8rem 1.1rem}
+  .sel-flag{border:1.5px dashed #D3CDC3;background:#FDF7F5;border-radius:10px;padding:.8rem 1.1rem}
+  ul{padding-left:1.2rem;display:flex;flex-direction:column;gap:.45rem;max-width:58ch;color:var(--ink3)}
+  img,object{max-width:100%}
+  .foot{position:fixed;bottom:1rem;left:0;right:0;display:flex;justify-content:space-between;padding:0 2rem;color:var(--ink5);font-size:.75rem}
+  .mut{opacity:.45}
+  a{color:var(--navy);text-decoration:none}
+</style>
+</head>
+<body>
+
+<section class="slide on"><!-- 1 -->
+  <div class="meta">Stockholm Longevity × AI · Track 3 · Selja · Max · Jan · Miko</div>
+  <h1>Longview</h1>
+  <p class="lead">How governments are investing in longevity right now, measured through research grants.</p>
+</section>
+
+<section class="slide"><!-- 2 -->
+  <h1 style="font-size:3.6rem;max-width:22ch">Every country funds ageing.<br><span class="navy">Almost none funds the biology of it.</span></h1>
+</section>
+
+<section class="slide"><!-- 2b persona -->
+  <div class="row" style="align-items:center;gap:3rem">
+    <div style="flex:0 0 240px"><img src="andrew.png" alt="Andrew Steele" style="width:260px;height:300px;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line2)"></div>
+    <div style="flex:1;min-width:18rem">
+      <h2>Andrew Steele</h2>
+      <p class="lead" style="margin-top:.4rem">Oxford researcher in longevity science</p>
+      <div class="keys" style="margin-top:1rem">
+        <span class="key">geroscience</span><span class="key">author of the book Ageless</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide"><!-- 3 -->
+  <h2>Think World Happiness Index.<br><span class="navy">We are building the same for longevity.</span></h2>
+  <img src="worldmap.svg" alt="World map: Sweden, EU, UK and US highlighted" style="width:100%;max-height:62vh;object-fit:contain">
+</section>
+
+<section class="slide"><!-- 4 -->
+  <h2>We ran the datasets</h2>
+  <table>
+    <tr><th>Source</th><th class="r">Pulled</th><th class="r">Kept</th><th>Licence</th></tr>
+    <tr><td>NIH RePORTER · US</td><td class="r">16,037</td><td class="r"><b>12,115</b></td><td class="meta">public domain</td></tr>
+    <tr><td>Swecris · SE</td><td class="r">7,704</td><td class="r"><b>870</b></td><td class="meta">open · VR</td></tr>
+    <tr><td>CORDIS · EU</td><td class="r">84,625</td><td class="r"><b>239</b></td><td class="meta">CC BY 4.0</td></tr>
+    <tr><td>UKHRA 2022 · UK</td><td class="r">18,023</td><td class="r"><b>11,664</b></td><td class="meta">open · HRCS</td></tr>
+  </table>
+  <p class="cap">UKHRA rows are human-coded by trained HRCS coders and serve as our independent evaluation set.</p>
+</section>
+
+<section class="slide"><!-- pipe overview -->
+  <h2>Four steps between a grant and a number</h2>
+  <img src="funnel-h.svg" alt="Pipeline funnel" style="width:100%;max-height:58vh;object-fit:contain">
+</section>
+
+<section class="slide"><!-- 6 -->
+  <h2>Blind evaluation. <span class="navy">Checked against people who never saw our work</span></h2>
+  <p class="cap">Method test: can the screen match trained human coders? Scored on the cancer axis of UKHRA 2022, the axis their taxonomy supports.</p>
+  <div class="row" style="margin-top:.4rem">
+    <div class="card metric"><strong>11,664</strong><span>human-coded awards</span><em>UKHRA 2022 · trained coders</em></div>
+    <div class="card metric"><strong>0.77</strong><span>precision</span><em>method test · cancer axis</em></div>
+    <div class="card metric"><strong>0.84</strong><span>recall</span><em>method test · cancer axis</em></div>
+    <div class="card metric"><strong>88%</strong><span>expert concurrence</span><em>two independent expert passes, ageing labels</em></div>
+  </div>
+  <p class="cap"><span class="flagc">The ageing classification itself has no human-validated accuracy yet</span> — that number comes from the blind researcher labelling round, and we will report it whatever it is.</p>
+</section>
+
+<section class="slide"><!-- 7 architecture -->
+  <h2>The instrument</h2>
+  <div class="row" style="align-items:stretch;margin-top:.4rem">
+    <div class="card" style="flex:1.1"><p class="meta">1</p><b>Research grants</b><p class="cap" style="margin-top:.3rem">keyword-based search, validated by experts</p></div>
+    <div style="align-self:center;color:var(--ink5);font-size:1.4rem">→</div>
+    <div class="card" style="flex:1"><p class="meta">2</p><b>Relevance gate</b><p class="cap" style="margin-top:.3rem">does it study the field at all</p></div>
+    <div style="align-self:center;color:var(--ink5);font-size:1.4rem">→</div>
+    <div class="card" style="flex:1.4"><p class="meta">3</p><b>LLM classifier</b><p class="cap" style="margin-top:.3rem">structured output, one of:</p>
+      <div class="keys" style="margin-top:.5rem">
+        <span class="key" style="color:var(--yes)">fundamental ageing</span>
+        <span class="key" style="color:var(--yes)">intervention</span>
+        <span class="key">age-related disease</span>
+        <span class="key">care</span>
+        <span class="key">social / population</span>
+        <span class="key" style="color:var(--flag)">ambiguous</span>
+        <span class="key" style="color:var(--ink5)">not relevant</span>
+      </div></div>
+    <div style="align-self:center;color:var(--ink5);font-size:1.4rem">→</div>
+    <div class="card" style="flex:.9"><p class="meta">4</p><b>Results</b><p class="cap" style="margin-top:.3rem">per country, per funder, every label traceable</p></div>
+  </div>
+</section>
+
+<section class="slide"><!-- 8 results -->
+  <h2>Our results. <span class="navy">How much of each place's ageing research is proactive</span></h2>
+  <img src="results-bars.svg" alt="Stacked funding bars per region" style="width:100%;max-height:56vh;object-fit:contain">
+  <p class="cap">UK reference from independent human coding: prevention 15.7% of mapped funding. <span class="flagc">EU: 239 grants, small n.</span></p>
+</section>
+
+<section class="slide"><!-- 9 -->
+  <h2>From here</h2>
+  <ul class="serif" style="font-size:1.15rem">
+    <li>Labelling round through Andrew Steele's researcher network — taxonomy already settled by email.</li>
+    <li>Score pipeline vs humans on a sealed holdout — target ≥85%, never tuned on the test.</li>
+    <li>Extend country by country; publish the number as a short paper, instrument open.</li>
+  </ul>
+  <p class="cap"><span class="flagc">Said plainly:</span> no validated ageing number exists yet. Public grants only. AI labels are pre-marks; people are the metric.</p>
+</section>
+
+
+
+<div class="foot"><span>Longview</span><span id="pg"></span></div>
+<script>
+const S=[...document.querySelectorAll('.slide')];let i=0;
+const pg=document.getElementById('pg');
+function show(n){S[i].classList.remove('on');i=(n+S.length)%S.length;S[i].classList.add('on');pg.textContent=(i+1)+' / '+S.length;}
+show(0);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))show(i+1);
+ if(['ArrowLeft','PageUp'].includes(e.key))show(i-1);
+ if(e.key==='Home')show(0); if(e.key==='End')show(S.length-1);});
+</script>
+</body>
+</html>

@@ -1,10 +1,10 @@
-# hackliferepo
+# Longview
 
-Team repo for the Stockholm Longevity x AI Hackathon, 11 to 13 September 2026 at Epicenter Stockholm. Team: Selja, Max, Jan.
+**Which countries fund the causes of ageing, and which only pay for its consequences.** Longview measures it grant by grant: a census of public grant databases, an open classification pipeline, and a human verification chain. Built at the Stockholm Longevity × AI Hackathon, 11–13 September 2026. Team: Selja, Max, Jan, Miko.
 
-**Status: track and challenge decided. Nothing is built yet.**
-
-We take Track 3 (Communication, Trust & Policy), challenge 1: [map the politics of longevity](docs/challenge.md) — an AI research agent that produces a cited, time-stamped map of political engagement with longevity, covering Sweden, the US (federal and state level) and Singapore first. Full brief and plan in [docs/challenge.md](docs/challenge.md).
+- **Pitch slides**: `slides/index.html` (serve repo root: `python3 -m http.server 8060`, open `/slides/`; the map slide expects `python3 -m http.server 8010` serving `/map/`)
+- **The map**: `map/` · **the pipeline**: `ratio/` · **blind labelling study**: `label/` · **evaluation gates**: `eval/`, `eval-classifier/` · **external benchmark**: `ukhra/` · **lexicon**: `classifier/`
+- Current readings (pipeline measurement, human validation in progress): US 42.8% · SE 18.6% · EU 64.0% (small n) of ageing-research funding targeting slowing ageing; method externally tested vs 11,664 human-coded awards (P 0.77 · R 0.84 · F1 0.80).
 
 ## What we know
 

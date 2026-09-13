@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+  <title id="title">Longview architecture — a grant becomes a trusted label</title>
+  <desc id="desc">One grant record travels from three public grant databases through the ageing search net, relevance gate and classifier, then through the verification chain of judges, expert passes, blind researcher labelling and the external UKHRA evaluation, ending at the country index. One illustrative dot follows the route.</desc>
+  <defs>
+    <style>
+      text{font-family:"Instrument Sans",Arial,Helvetica,sans-serif;fill:#1A1A1C;font-size:18px;letter-spacing:-.01em}
+      .small{font-size:14.5px;fill:#57575C}.label{font-size:15px;font-style:italic;fill:#666670}
+      .num{font-size:14px;fill:#14375F;font-weight:600}
+      .head{font-size:26px;font-weight:600;fill:#111113;letter-spacing:-.025em}
+      .badge{font-size:13px;fill:#14375F;letter-spacing:2px}
+      .node{fill:#FBFAF8;stroke:#DFDAD2;stroke-width:1;rx:12}
+      .human{stroke:#8B5A9E;stroke-width:1.5;fill:#F9F6FA}
+      .boundary{fill:none;stroke:#D3CDC3;stroke-width:1;stroke-dasharray:5 6}
+      .wire{fill:none;stroke:#70707A;stroke-width:1.2;marker-end:url(#arrow)}
+      .icon{fill:none;stroke:#14375F;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .packet{fill:#14375F;filter:url(#glow)}
+      .amber{fill:#B4472F}
+    </style>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 7 4 1 7" fill="none" stroke="#70707A"/></marker>
+    <filter id="glow" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="4"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <g id="db" class="icon"><ellipse cy="-16" rx="19" ry="7"/><path d="M-19-16v32c0 9 38 9 38 0v-32M-19 0c0 9 38 9 38 0"/></g>
+    <g id="net" class="icon"><circle r="13"/><path d="M9 9l12 12M-13 0h26M0-13v26"/></g>
+    <g id="chip" class="icon"><rect x="-16" y="-16" width="32" height="32" rx="3"/><path d="M-9-23v7M0-23v7M9-23v7M-9 16v7M0 16v7M9 16v7M-23-9h7M-23 0h7M-23 9h7M16-9h7M16 0h7M16 9h7"/></g>
+    <g id="person" class="icon"><circle cy="-9" r="8"/><path d="M-13 15c1-9 8-13 13-13s12 4 13 13"/></g>
+    <g id="check" class="icon"><circle r="15"/><path d="M-7 0l5 6 10-12"/></g>
+    <g id="map" class="icon"><path d="M-18-13l12-5 12 5 12-5v26l-12 5-12-5-12 5z"/><path d="M-6-18v26M6-13v26"/></g>
+  </defs>
+
+  <rect width="1600" height="720" fill="#EFEBE4"/>
+  <text x="72" y="62" class="badge">LONGVIEW · STOCKHOLM LONGEVITY × AI 2026</text>
+  <text x="72" y="102" class="head">A grant becomes a trusted label</text>
+  <text x="72" y="130" class="small">13,224 public grants · every stage reproducible · humans decide, AI pre-marks</text>
+
+  <!-- boundary: sources -->
+  <rect x="60" y="170" width="250" height="430" class="boundary" rx="14"/>
+  <text x="80" y="198" class="label">Public grant databases</text>
+
+  <!-- source nodes -->
+  <g><rect x="84" y="220" width="200" height="92" class="node" rx="12"/><use xlink:href="#db" x="120" y="266"/><text x="152" y="258">NIH RePORTER</text><text x="152" y="280" class="small">US · 12,115 kept</text><text x="152" y="298" class="num">public domain</text></g>
+  <g><rect x="84" y="336" width="200" height="92" class="node" rx="12"/><use xlink:href="#db" x="120" y="382"/><text x="152" y="374">Swecris</text><text x="152" y="396" class="small">SE · 870 kept</text><text x="152" y="414" class="num">open · VR</text></g>
+  <g><rect x="84" y="452" width="200" height="92" class="node" rx="12"/><use xlink:href="#db" x="120" y="498"/><text x="152" y="490">CORDIS</text><text x="152" y="512" class="small">EU · 239 kept</text><text x="152" y="530" class="num">CC BY 4.0</text></g>
+
+  <!-- pipeline nodes -->
+  <g><rect x="400" y="330" width="220" height="110" class="node" rx="12"/><use xlink:href="#net" x="440" y="382"/><text x="472" y="372">Ageing net</text><text x="472" y="394" class="small">22 recall terms</text><text x="472" y="414" class="small">relevance gate →</text><text x="472" y="430" class="num">not_relevant out</text></g>
+  <g><rect x="700" y="330" width="230" height="110" class="node" rx="12"/><use xlink:href="#chip" x="742" y="384"/><text x="778" y="372">Classifier</text><text x="778" y="394" class="small">138 measured keywords</text><text x="778" y="412" class="small">honest ambiguous</text><text x="778" y="430" class="num">21/21 self-tests</text></g>
+
+  <!-- verification boundary -->
+  <rect x="1000" y="180" width="300" height="420" class="boundary" rx="14"/>
+  <text x="1020" y="208" class="label">Verification chain</text>
+  <g><rect x="1024" y="228" width="252" height="78" class="node" rx="12"/><use xlink:href="#check" x="1058" y="266"/><text x="1088" y="258">AI judges + experts</text><text x="1088" y="278" class="small">2,944 blind · 88% concur</text><text x="1088" y="296" class="num">ambiguous 770 → 63</text></g>
+  <g><rect x="1024" y="326" width="252" height="78" class="node human" rx="12"/><use xlink:href="#person" x="1058" y="366"/><text x="1088" y="356">Blind researcher labels</text><text x="1088" y="376" class="small">geroscience? yes/no/borderline</text><text x="1088" y="394" class="num">labellers never see our answer</text></g>
+  <g><rect x="1024" y="424" width="252" height="78" class="node" rx="12"/><use xlink:href="#check" x="1058" y="464"/><text x="1088" y="454">External eval · UKHRA</text><text x="1088" y="474" class="small">11,664 human-coded awards</text><text x="1088" y="492" class="num" fill="#2F7A4F" style="fill:#2F7A4F">P .77 · R .84 · F1 .80</text></g>
+
+  <!-- index -->
+  <g><rect x="1380" y="330" width="170" height="110" class="node" rx="12"/><use xlink:href="#map" x="1412" y="384"/><text x="1442" y="374">The index</text><text x="1442" y="396" class="small">per country</text><text x="1442" y="416" class="small amber">validation</text><text x="1442" y="432" class="small amber">in progress</text></g>
+
+  <!-- wires -->
+  <path class="wire" d="M284 266 C340 266 340 372 396 378"/>
+  <path class="wire" d="M284 382 H396"/>
+  <path class="wire" d="M284 498 C340 498 340 392 396 388"/>
+  <path class="wire" d="M620 385 H696"/>
+  <path class="wire" d="M930 385 C970 385 976 365 1020 340"/>
+  <path class="wire" d="M1150 306 V322"/>
+  <path class="wire" d="M1150 404 V420"/>
+  <path class="wire" d="M1276 463 C1330 463 1340 400 1376 388"/>
+
+  <!-- moving dot -->
+  <circle class="packet" r="7">
+    <animateMotion dur="7s" repeatCount="indefinite"
+      path="M284 382 H400 H620 C660 385 660 385 700 385 H930 C970 385 990 340 1060 267 C1120 267 1150 280 1150 326 V424 C1150 470 1200 463 1276 463 C1330 463 1340 400 1400 385"/>
+  </circle>
+
+  <text x="72" y="680" class="small">github.com/SeljaKeranen/hackliferepo · retrieved 12 Sep 2026 · every number traces to a committed artifact</text>
+</svg>

@@ -1,0 +1,740 @@
+{
+  "built_from": {
+    "census": "ratio/data/census_*.jsonl.gz (full abstracts)",
+    "classifier": "ratio/output/labels.jsonl",
+    "expert": "ratio/expert/expert-labels.jsonl"
+  },
+  "note": "Every labeller sees every record in this batch. Overlap is deliberate: inter-rater agreement cannot be computed from a partitioned queue.",
+  "records": [
+    {
+      "_hidden": {
+        "classifier_label": "fundamental_aging",
+        "classifier_reason": "Lexicon keywords for fundamental_aging decide the record (matched: senescen*).",
+        "expert_label": "not_relevant",
+        "expert_reason": "'Spontaneous pregnancy loss' and endometrial immunity — reproductive medicine, no ageing content.",
+        "stratum": "disagreement"
+      },
+      "abstract": "PROJECT SUMMARY (of the Parent Award)\nSpontaneous pregnancy loss is the most common early obstetric complication, affecting 1 in 4 women worldwide.\nWhile ~50% of cases are due to fetal chromosomal abnormalities, the causes for the other ~50% remain unclear,\nalthough there is increasing evidence that a dysfunctional maternal endometrium may play a role. Bacterial and\nviral infections have been associated with ~15% of early pregnancy losses, as well as later gestational\ncomplications such as preterm birth and preeclampsia. However, how the maternal endometrium intrinsically\nresponds to infection remains unclear, highlighting a major gap in knowledge. Endometrial stromal cells (EnSCs)\nare the major cellular component of the endometrium and they undergo a specialized differentiation process,\ntermed decidualization, monthly in anticipation of pregnancy. If pregnancy ensues, EnSCs play key roles in\nregulating blastocyst implantation and placental trophoblast invasion at the maternal-fetal interface. Thus,\nappropriate EnSC function is crucial to the establishment of a healthy pregnancy. EnSCs are likely to affect\ntrophoblast function through a combination of soluble factor secretion and production of extracellular vesicles\n(EVs) which mediate intercellular communication through their protein, nucleic acid, and lipid cargos. This\nresearch proposes to take a focused mechanistic approach to investigate how a viral infection affects EnSC\ndecidualization, EV production and interactions with trophoblasts using viral dsRNA [Poly(I:C)] as a model. In\npreliminary studies, we found that Poly(I:C) reduced EnSC decidualization whilst increasing senescence and EV\nproduction. Poly(I:C)-exposed EnSCs also had reduced capacity to chemoattract trophoblasts. Based on this,\nour central hypothesis is that viral infection prevents adequate EnSC decidualization and accelerate senescence,\nleading to increased EV production by EnSCs. Together, this results in altered EnSC interactions with\ntrophoblasts, impairing implantation and placentation. Our specific aims are to: examine the mechanisms by\nwhich Poly(I:C) affects EnSC decidualization and senescence (Aim 1); determine the effects of early Poly(I:C)\nexposure on pregnancy progression and outcome in vivo (Aim 2); and determine how Poly(I:C) affect EnSC EV\nproduction and subsequent effects on trophoblasts (Aim 3). This project enables the candidate to combine her\nbackgrounds in reproductive immunology, early placental development and endometrial biology with her\ninterests in EVs as a novel mode of intercellular communication at the maternal-fetal interface. These studies\nare significant because they will provide novel mechanistic insights into how infection impacts EnSC\ndecidualization and their subsequent interactions with placental trophoblasts, establishing a strong link between\ninfection, endometrial dysfunction, implantation failure and the myriad of obstetric complications associated with\nimpaired placentation. Thus, successful completion of this project may contribute to the identification of novel\npreventative and therapeutic strategies to improve pregnancy success for women worldwide.",
+      "amount_eur": 91208.59,
+      "fingerprint": "407062b67ebb4275",
+      "funder": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
+      "record_id": "reporter:3R00HD101653-05S1",
+      "source": "reporter",
+      "title": "Mechanisms of Endometrial Innate Immune Responses to Infection and Impact on Placental Interactions",
+      "url": "https://reporter.nih.gov/project-details/3R00HD101653-05S1",
+      "year": 2024
+    },
+    {
+      "_hidden": {
+        "classifier_label": "not_relevant",
+        "classifier_reason": "The ageing vocabulary appears in a plant, agriculture or ecology context with no human or biomedical-model marker (matched: plant).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "not_relevant"
+      },
+      "abstract": "This is a competitive renewal for a predoctoral Training Program in developmental biology at the University of\nPennsylvania. The Training Program serves as a melting and cohesion point in developmental biology as it\nincludes trainers spread across four schools within the University, and students from 8 graduate groups. The\nTraining Program also serves as an incubator for new initiatives in graduate training that continue to be\nadapted by graduate groups. The program continues to take advantage of an exceptionally strong programmatic\nfoundation in developmental biology at the University of Pennsylvania. The Training Program’s goal is to provide\nbroad-based training that uses state of the art technologies towards the fundamental mechanisms of\ndevelopmental biology using a diversity of vertebrate, invertebrate, and plant organisms. Research training areas\ninclude transcription and cell signaling that control cell differentiation, migration, organogenesis, cellular\nsenescence, morphogenesis, pattern formation, epigenetic regulation of developmental processes, and stem\ncell biology. Trainees receive formal instruction in an established curriculum of study, including lecture courses\nin developmental biology and advanced seminars on genetic, cellular, and molecular approaches to\ndevelopmental mechanisms and disease. Students also participate in developmental biology journal clubs, a\ndevelopmental biology seminar series that includes student invited speakers, research discussion groups on\nselected topics, and in annual scientific symposia. Trainees present their research findings at departmental\nseminars, local symposia and national conferences. Finally, the training program provides trainee specific\nactivities: a) a yearly symposium to present their work in a more formal setting that includes an eminent\nexternal speaker who evaluates the training program; b) Professional development activities, such as careers\nin science meetings with invited speakers to discuss career options; mini-writing classes tailored to graduate\nstudents covering in depth grant and manuscript writing; a mini courses in experimental design, and training\nsessions with communication professionals; c) Show and Tell research days where trainees lecture other\ntrainees about their project followed by a hands-on demonstration of research techniques employed by the\ntrainee presenter, e.g. live cell imaging, d) lunchtime discussion with a Penn faculty of the trainee’s choice to\nlearn about the faculty’s field of research and/or to discuss lab management or career path decisions, e) a day\nlong visit to a pharmaceutical company to explore different aspects of working in this sector. The proposed\ntraining program requests 8 trainees per year. Trainees will be selected annually by an ad hoc trainer committee,\nand appointed for one year with the option for a second year pending satisfactory progress. Training outcomes\nwill be evaluated yearly by measuring trainee publications, transitions to individual training awards, trainee\nsurveys, an external evaluation, which all will be reviewed by an Executive Committee. Lastly, Trainers\nparticipate in a number of efforts to recruit under-represented minorities both locally and nationally.",
+      "amount_eur": 341669.25,
+      "fingerprint": "a4b8505427046df4",
+      "funder": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
+      "record_id": "reporter:5T32HD083185-10",
+      "source": "reporter",
+      "title": "Graduate Training in Developmental Biology",
+      "url": "https://reporter.nih.gov/project-details/5T32HD083185-10",
+      "year": 2025
+    },
+    {
+      "_hidden": {
+        "classifier_label": "care",
+        "classifier_reason": "Lexicon keywords for care decide the record (matched: social care, older people).",
+        "expert_label": "ambiguous",
+        "expert_reason": "'Äldre i Centrum - journal and website on current aging research' - an ageing-research journal, on-topic but with no single research category to assign.",
+        "stratum": "disagreement"
+      },
+      "abstract": "Äldre i Centrum presents aging research and and how its results can be used in practice. The aim of the journal is to spread knowledge about healthy and non-healthy aging, and thus to support older people, decision makers and others within the field.The aging population makes the issues of the journal increasingly important, a fact that has become obvious with the covid-19 pandemic, that has highlighted the need for better knowledge on the lives of people 65+ in care and society.Each of the four annual issues presents a certain theme with articles written by researchers, the latest news in aging research, interviews with researchers, reportage on how the results are being used in practice, doctoral theses, book reviews by the researchers, book tips etc. The scope of the magazine is naturally interdisciplinary.The edition amounts to approximately 2 500 copies, out of which approximately 2 000 are subscriptions. Furthermore, articles and daily news are being published on the website www.aldreicentrum.se. At our website, you can also read the magazine in pdf format, and find our podcast, that premiered in 2020.The target group consists of politicians, local officials and personnel in health and social care, researchers, students, older people and their relatives, and a general public interested in aging matters. According to a reader survey (by SKOP) conducted in 2020, 94 percent of the readers rank the journal ”good” or ”very good”, and 99 percent think that it is reliable.Our aging society makes it even more important for science to reach out, in order to be able to meet the challenge in health and social care and to strive for a more healthy aging. For many years Äldre i Centrum has received grants from Forte, and this support has been necessary to maintain editorial strength and quality. We want to continue spreading the journal and its contents, both in print and in digital channels.Therefore we apply for an annual publishing grant.",
+      "amount_eur": 106787.22,
+      "fingerprint": "ad721aa75bd1a187",
+      "funder": "Forte",
+      "record_id": "swecris:2024-02144_Forte",
+      "source": "swecris",
+      "title": "Äldre i Centrum – journal and website on current aging research",
+      "url": "https://www.vr.se/english/swecris.html?searchText=2024-02144_Forte",
+      "year": 2025
+    },
+    {
+      "_hidden": {
+        "classifier_label": "intervention",
+        "classifier_reason": "Lexicon keywords for intervention decide the record (matched: geroprotect*, caloric restriction, metformin, rapamycin, extend lifespan).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "intervention"
+      },
+      "abstract": "Abstract:\nThere are no effective treatments for age-dependent neurodegenerative conditions such as Alzheimer's\ndisease (AD). To address this major public health crisis, the National Alzheimer's Project Act (NAPA) was\npassed to “find effective interventions to treat and prevent AD and related dementias by 2025.” To achieve\nthis goal in 5 years one or more effective drugs are required, likely sourced from repurposed drugs that are\nthe basis of this application. Dementias are diseases that occur with age. Therefore, aging must be\nincorporated into the drug target validation strategy to ensure that the target mechanism remains active in\naged individuals and to facilitate an understanding of the interaction between aging and AD. The recognition\nof this fact led to the NOT-AG-18-051 initiative with one goal of “employing a lifespan approach to understand\nthe mechanisms of protective and risk factors” for AD. In this application, we formally address the goals of\nboth initiatives by integrating lifespan studies with an age-related phenotypic screening platform that has\nyielded compounds that extend lifespan (geroprotectors), one of which is now in AD clinical trials.\n During the last decade a novel phenotypic screening platform based upon 5 toxicities associated with the\naged brain was used to identify compounds that have therapeutic efficacy in multiple models of\nneurodegeneration and dementia. Surprisingly, these new synthetic compounds as well as their precursors\nslow aging in mice, keeping them younger at both the gene transcription and metabolomics levels and extend\nlifespan in other model organisms. The molecular target of one compound, J147, is identical to the target of a\ncompound that extends lifespan in C. elegans. J147 has since been used in a 'chemical biology' approach to\nunderstand fundamental aspects of aging itself, for it engages essentially all of the known molecular\npathways associated with the geroprotectors metformin and rapamycin as well as caloric restriction. Because\nof these new observations, we reasoned that by integrating lifespan studies in C. elegans with our novel\nphenotypic screening platform we could efficiently identify additional new aging pathways as well as AD\ndrugs and drug targets. To accelerate the time needed to bring any discoveries to the clinic we will screen the\nReFRAME library. This unique library consists of 12,000 compounds developed by the pharmaceutical\nindustry, including nearly all that have ever been in man and those registered as investigational drug\ncandidates. These drugs will initially be screened in the neurotoxicity assay used as our primary screen in\nprevious drug discovery efforts. Positive hits will then be assayed for longevity in C. elegans. When\nnecessary, target identification will be carried out as we have done in the past. Finally, pathway validation\nstudies will be done in two very distinct mouse models of aging and dementia. This collaborative effort\nbetween three laboratories uses a new approach to understand the relationship between aging and dementia\nand the molecular pathways involved, with the likelihood of identifying new AD drugs.",
+      "amount_eur": 661430.3,
+      "fingerprint": "e69f1362b91ba562",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:5R01AG069206-04",
+      "source": "reporter",
+      "title": "Using geroscience to understand and treat Alzheimer's disease",
+      "url": "https://reporter.nih.gov/project-details/5R01AG069206-04",
+      "year": 2023
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+        "expert_label": "not_relevant",
+        "expert_reason": "“Marine aerosol influence on clouds in the high Arctic” — atmospheric science, no ageing content.",
+        "stratum": "disagreement"
+      },
+      "abstract": "The goal of this project is to investigate if local emissions of aerosol particles from the ocean surface govern the background state of clouds in the summertime high Arctic. This knowledge is fundamental for understanding the response of Arctic clouds to different perturbations, for example increased air pollution or enhanced levels of greenhouse gases. The Arctic is currently warming considerably faster than the rest of the world. Clouds over the Arctic pack ice area can persist for several days and are crucial for the surface energy budget, which controls whether sea ice will freeze or melt. The longevity of Arctic clouds is surprising as they predominantly consist of both liquid droplets and ice crystals, a mixture that is unstable and should make the clouds dissipate. Aerosol particles are necessary to form cloud droplets and ice crystals, but the source of aerosols that dominates the cloud-forming process in the summertime high Arctic is still not well known. Current climate models have problems representing Arctic cloud conditions and thus the surface energy budget. Our hypothesis is that aerosol particles emitted from open leads (water channels) in the pack ice are crucial for governing the background state of Arctic clouds. Consequently, the aerosol sources, and their droplet and ice forming potential, need to be adequately addressed in climate models.\r\nUsing a three-dimensional large-eddy simulation model, uniquely developed with the aim to study the complex processes governing Arctic cloud properties, we will simulate in detail the evolution of Arctic clouds and compare the model results with observations. Making use of unique high-quality data, extending over decades and obtained from past successful expeditions to the high Arctic, we will extract information on the fluxes of aerosols from the open leads in the pack ice as well as their cloud droplet nucleating properties. With the model, we will examine if a surface source of aerosols can sustain the clouds and how different input parameters, both meteorological and chemical, affect the cloud properties. As no data on the ice crystal forming potential of marine Arctic Ocean aerosols currently exist, laboratory experiments will be performed as a complement to the already available in-situ measurements. These experiments will be a collaborative effort with ETH-Zurich, Switzerland, using a combined aerosol immersion and ice nucleation chamber. Based on the results obtained from the comparison between the simulations and the observations, the numerical descriptions for cloud droplet activation and ice crystal formation will be evaluated and revised, to consider the most crucial processes while still being suitable for application in global models. The results will provide novel insights on the complex processes governing cloud properties in one of the climatically most sensitive regions of the world.  \r\nThe project extends over four years and is led by Dr. Annica Ekman, an expert in cloud-aerosol interactions and their numerical modelling at both the small (large-eddy simulation) and the global (climate model) scales. She has solid experience in integrating observations and models, and is collaborating on a national and international level with both experimental and modelling aerosol-cloud-climate interaction experts. The large-eddy simulation model applied in the project has been developed by Dr. Ekman and her research group. Co-leader of the project will be Prof. Caroline Leck, a world-leading expert on biogeochemical processes in the Arctic and with extensive previous experience of managing large multidisciplinary/institutional Arctic research programs. The project resources will mainly be used to fund a PhD student. Our collaborative partner at ETH-Zurich, Switzerland will be Prof. Ulrike Lohmann.",
+      "amount_eur": 345723.62,
+      "fingerprint": "14765fbdee63dcb7",
+      "funder": "Swedish Research Council",
+      "record_id": "swecris:2015-05318_VR",
+      "source": "swecris",
+      "title": "Marine aerosol influence on clouds in the high Arctic",
+      "url": "https://www.vr.se/english/swecris.html?searchText=2015-05318_VR",
+      "year": 2016
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "Keyword evidence for care (0.857) and social_population_aging (0.846) is too close to call (margin 0.011 < 0.3).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "ambiguous"
+      },
+      "abstract": "Project Summary/Abstract\nThis project aims to improve our ability to support the resilience of family caregivers of adults with autism and\ndevelopmental disorders as the caregivers move into later life. Based on a 30 year longitudinal study that\nprospectively followed families from when their children were referred for possible autism or developmental\ndelays, we will use a social convoy model to investigate trajectories of social connectedness and isolation over\nthe next five years as they affect caregivers’ mental health and well-being. This model describes changes in\nsocial connectedness over time that may increase vulnerability or reduce the effects of caregiver burden. We\nexamine additional interacting factors specifically related to family caregiver well-being and mental health in\nfamilies with adult children with developmental disabilities. We will use questionnaires, app-based diaries, face\nto face interviews and exploratory measures of biological and cognitive aging over the course of 5 years during\nwhich our sample is in their 60’s, linked to rich behavioral data from the past 20-30 years. Our objective is to\nidentify life milestones, such as retirement and the adult child’s moving out, as well as caregiver coping\nstrategies that allow us to support well-being and mental health in family caregivers as they age.",
+      "amount_eur": 565169.94,
+      "fingerprint": "735291bee9cfa886",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:1R01AG080599-01",
+      "source": "reporter",
+      "title": "Family caregivers in later life: A longitudinal study of well-being and mental health in families of adults with autism and developmental disabilities",
+      "url": "https://reporter.nih.gov/project-details/1R01AG080599-01",
+      "year": 2023
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: cancer, carcinoma*, prostate cancer, carcinogenesis).",
+        "expert_label": "not_relevant",
+        "expert_reason": "'PREVENTION OF PROSTATE CARCINOGENESIS BY NEXT-GENERATION SELENIUM' — chemoprevention with no ageing angle whatsoever in the text.",
+        "stratum": "disagreement"
+      },
+      "abstract": "DESCRIPTION (provided by applicant):  Selenium (Se) has been thought to hold great promise as a cancer chemopreventive agent. However, the negative efficacy outcomes of recently concluded human trials in North America with seleno-methionine (SeMet) for prostate cancer (PCa) prevention (SELECT, HGPIN trials) have caused many to conclude that there is no hope for using Se to prevent cancer. We, however, beg to disagree with such a mainstream opinion. A costly lesson from these well-executed clinical studies is that whatever preclinical efficacy data that existed at the time the decision was made to conduct these trials DID NOT support the choice of SeMet for human efficacy validation, NOR did cell culture-based studies. In contrast, many pre-clinical studies from our group and others have shown inhibition of the genesis of cancers of the prostate and other organ sites by supra-nutritional intake of other Se forms, especially methylseleninic acid (MSeA) and Se- methylselenocysteine (MSeC), the presumed precursors of in vivo active anti-cancer methylselenol pool. Our recent data with a proteomic approach question the validity of the methylselenol paradigm and suggest unique potential molecular targets for MSeA vs. MSeC with little overlap. Our latest data with organ specific Pten- knockout (KO) driven prostate carcinogenesis suggest a super-activation of p53-p21-senescence pathway by MSeA to suppress neoplastic prostatic lesion growth in a preclinical mouse model, heralding in a new prevention paradigm through inducing irreversible terminal arrest of early lesion cells in vivo.  Our central hypothesis is that MSeA/C will prevent prostate carcinogenesis in preclinical rodent models each by regulating distinct sets of molecular targets and signaling pathways (e.g., p53-p21-senescence; p53- apoptosis; suppressor/oncoprotein balances). We propose testing this hypothesis with 3 Specific Aims: 1. To contrast the in vivo preventive efficacy of MSeA/C with (the lack thereof) SeMet against epithelial adeno- carcinogenesis in the prostate specific Pten-KO mice and to critically assess the contribution of the p53-p21 senescence pathway to their efficacy using Pten and p53 double KO mice. 2. To contrast the in vivo preventive efficacy of MSeA/C with the lack thereof by SeMet against chemically-induced, androgen-promoted prostate carcinogenesis in rats and to determine whether p53-p21 senescence activation is involved. 3. To identify proteomic signatures and molecular targets in the prostate gland and prostate carcinomas from studies of Aims 1 and 2 of MSeA and MSeC in addition to the p53-p21-senescene pathway and validate identified key targets. The results are expected to provide solid in vivo efficacy data for MSeA/C from multiple preclinical models of prostate carcinogenesis representing diverse human PCa etiologies and different mammalian species (mice and rats). Positive efficacies in multiple models increase the translatability for human application. The results may help to resurrect and advance the field of Se-prostate cancer chemoprevention research, redefining and changing mechanism paradigms of active Se form(s), cellular processes and molecular targets.",
+      "amount_eur": 275252.76,
+      "fingerprint": "0ce9f42bbf94d2c9",
+      "funder": "National Cancer Institute",
+      "record_id": "reporter:5R01CA172169-03",
+      "source": "reporter",
+      "title": "PREVENTION OF PROSTATE CARCINOGENESIS BY NEXT-GENERATION SELENIUM",
+      "url": "https://reporter.nih.gov/project-details/5R01CA172169-03",
+      "year": 2015
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*, dementia*).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "age_related_disease"
+      },
+      "abstract": "Digital biomarkers for Alzheimer's Disease with compact dual-mode brain sensing\nIn 2018, the National Institute on Aging and Alzheimer's Association jointly created a “research framework,”\nproviding a new biological definition of Alzheimer's disease (AD) by emphasizing a biological construct and\nfocuses on the diagnosis of AD with biomarkers in living persons [1]. Now, “Alzheimer's disease (AD) is defined\nby its underlying pathologic processes that can be documented by postmortem examination or in vivo by\nbiomarkers.” [1] It is highly desirable to develop and validate digital biomarkers for early detection of AD. It is\neven better if such digital biomarkers can be measured with compact devices.\n It is known that the AD brain has significant degenerations in all anatomical, biological, and pathological\naspects. Such deteriorations must be accompanied by cerebral dysfunctions of metabolic, hemodynamic, and\nelectrophysiological (MHE) activities in the AD brain. Also, the progression from early to late stage of AD takes\nyears and often shows no or few symptoms at the early stage. However, cutting-edge, biological-construct-\nbased, brain-sensing technology may enable to detect progressive degeneration of MHE-activity.\n The hypothesis of this study is that patients with AD are impaired in their cerebral MHE functions and can\nbe sensed by digital biomarkers derived from 15-min, resting-state brain measurements concurrently taken with\ncompact, dual-mode, broadband near infrared spectroscopy (bbNIRS) and dry/wireless electroencephalogram\n(dwlEEG) from potential patients with AD.\n Specifically, we wish to conduct a proof-of-principle study, namely, to develop, test, and demonstrate a novel\nAD-sensing system by integrating bbNIRS and dwlEEG (bbNIRS+dwlEEG) as a compact, dual-mode, low-cost,\nand high-efficient device. The proposed bbNIRS+dwlEEG device enables us to perform resting-state human\nbrain measurements which will result in quantifications of (1) cerebral metabolism, (2) cerebral blood volume\nand oxygenation, and (3) brain rhythm powers and connectivity oscillating at different frequencies, respectively,\nfrom both normal subjects and patients with AD. For this R21 proposal, specifically, we have two aims: Aim 1 is\nto establish digital biomarkers or features of cerebral MHE-activities of the healthy human brain based on resting-\nstate, neurophysiological measures with a compact bbNIRS+dwlEEG system. Aim 2 is to identify appropriate\nbiomarkers that can accurately separate healthy older adults from patients with AD as well as to stratify AD\npatients based on the stages of dementia (mild and moderate-to-severe).\n The outcome of this R21 will provide proof of principle that the dual-mode bbNIRS+dwlEEG system\nenables to identify critical digital biomarkers that will enable accurate detection and stratification of AD\nat mild or moderate-to-severe stage, permitting us to pursue a larger research project (i.e., R01) for\npromoting digital biomarkers for early detection of AD by a compact, low-cost, effective, dual-mode brain\nsensing system.",
+      "amount_eur": 335139.75,
+      "fingerprint": "94e7f3a59eecc35e",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:1R21AG079309-01",
+      "source": "reporter",
+      "title": "Digital biomarkers for Alzheimer's Disease with compact dual-mode brain sensing",
+      "url": "https://reporter.nih.gov/project-details/1R21AG079309-01",
+      "year": 2022
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: cancer, carcinogenesis).",
+        "expert_label": "not_relevant",
+        "expert_reason": "Polyamines conference \"targeting polyamine pathways in cancer development and in other pathogenic and infectious diseases\" — no ageing angle in the text.",
+        "stratum": "disagreement"
+      },
+      "abstract": "Project Summary. The Polyamines Gordon Research Conference (GRC) has continuously run since 1975, and\nprovides a multidisciplinary forum that brings together top polyamine researchers as well as young and\nestablished investigators new to the field. The 2017 Polyamines GRC will be held at Waterville Valley, NH, from\nJune 25-30, 2017. The conference will focus on the regulation and role of polyamine pathways in cell physiology,\ndevelopment and human disease. The meeting is unique in that it attracts a diverse array of top investigators\nassessing the control and roles of polyamines across a broad spectrum of model systems (prokaryotes,\nparasites, Drosophila, plants, vertebrates and mammals). Polyamines are small, amino-acid-derived polycations\nthat are found in all forms of life. By interacting with important biological targets, polyamines play essential roles\nin many basic cellular processes including transcription, translation, replication, metabolism, epigenetic control,\nand even ion channel functions. A major focus for the 2017 Polyamines GRC is targeting polyamine pathways in\ncancer development and in other pathogenic and infectious diseases. The Preliminary Program has a strong\nmix of basic, translational and clinical cancer researchers. This GRC is attended by biologists, chemists,\nstructural biologists and clinicians, and investigators from academia, biotech and pharmaceutical sectors.\nIndeed, the diversity of scientific disciplines is unique among GRCs and creates a remarkably stimulating\nenvironment. The meeting will also emphasize several new areas of basic polyamine research including\nprovocative findings relating polyamines to circadian clock control, inflammation, pathogenic virulence, and novel\npolyamine-targeted therapies. Presentations will provide insight into the mechanism by which normal polyamine\nmetabolism contributes to cell growth, autophagy and development and how these regulatory circuits are\ndisabled or hijacked in other pathological states (e.g., in carcinogenesis, infection with parasites or bacteria, and\nneurodegenerative disorders). The specific aims seek to obtain funds to support the registration and travel costs\nfor 25 GRC participants and 12 GRS participants. The long term objective of this conference series is to develop\na deeper understanding of the interplay between polyamine metabolism, polyamine homeostasis, and human\ndiseases as well as to develop future young scientists into contributing members of the polyamine scientific\ncommunity. Presentations by invited speakers will be 25-30 minutes long, followed by a 10-minute discussion\nperiod. Sessions will also include short talks by students whose work is chosen from poster sessions. To foster\nparticipation of young scientists, the GRC will be held in conjunction with the 6th Polyamines Gordon Research\nSeminar (GRS) June 24-25, 2017. The GRS provides graduate students and fellows with a student-run venue\nthat fosters the exchange of data and ideas. The GRS has made the GRC a richer experience, as it promotes\nthe participation of young scientists during the main conference. Interactions between GRS and GRC conferees\nwill facilitate the sharing of new ideas and create new partnerships that will drive the field forward.",
+      "amount_eur": 12939.96,
+      "fingerprint": "c2107028aba8da15",
+      "funder": "National Cancer Institute",
+      "record_id": "reporter:1R13CA216980-01",
+      "source": "reporter",
+      "title": "2017 Polyamines Gordon Research Conference and Gordon Research Seminar",
+      "url": "https://reporter.nih.gov/project-details/1R13CA216980-01",
+      "year": 2017
+    },
+    {
+      "_hidden": {
+        "classifier_label": "fundamental_aging",
+        "classifier_reason": "Lexicon keywords for fundamental_aging decide the record (matched: senescen*, cellular senescence, mitochondrial dysfunction, lifespan, insulin resistance).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "fundamental_aging"
+      },
+      "abstract": "The study investigates the association between growth hormone deficiency and longevity in\nmouse models. We discovered that GHRH-KO mice with extended lifespans have different\ncirculating lipid profiles, with ceramides being the most significantly altered lipid class.\nCeramides have been implicated in several pathways related to aging, including insulin\nresistance, mitochondrial dysfunction, inflammation, apoptosis, and cellular senescence. The\nstudy aims to determine the role of ceramides in regulating healthspan and lifespan in mice, and\nto investigate the impact of genetic and pharmacological interventions that lower ceramide\nlevels. The research approach involves integrating the understanding of GH action and\nceramide signaling from the cellular and tissue levels to whole-animal outcomes. The results of\nthis proposal will provide new insights into the differential mechanisms of action and offer the\npossibility of developing translational interventions. The proposed project is novel and has the\npotential to revolutionize our understanding of mammalian aging and longevity.",
+      "amount_eur": 650213.94,
+      "fingerprint": "b494e69bd1c84691",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:1R01AG085793-01A1",
+      "source": "reporter",
+      "title": "Targeting Ceramide Signaling: Enhancing Healthy Aging and Combating Tauopathy in Mammals",
+      "url": "https://reporter.nih.gov/project-details/1R01AG085793-01A1",
+      "year": 2025
+    },
+    {
+      "_hidden": {
+        "classifier_label": "intervention",
+        "classifier_reason": "Lexicon keywords for intervention decide the record (matched: caloric restriction, extend lifespan).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "intervention"
+      },
+      "abstract": "PROJECT SUMMARY:\nAging is the single biggest risk factor for disease. For the first time in US history, by 2030, people aged 65 and\nolder will outnumber individuals under the age of 18. Over the next 20-30 years, the number of people over the\nage of 65 will double to ~80 million in the US with associated healthcare costs projected to be 2 trillion dollars.\nAging induced inflammation is the major risk factor for multiple diseases including Alzheimer's disease.\nTherefore, the endogenous pathways and metabolites that deactivate inflammation of aging have high clinical\nimpact. Caloric restriction (CR) in animals has been shown to extend lifespan and healthspan. However, the\nimpact of CR on immune system, and immunometabolic control of inflammation in humans is unknown. This\nproposal is in response to the PA-18-823 “Analyses of CALERIE Data and Biospecimens to Elucidate\nMechanisms of Caloric Restriction (CR)-Induced Effects in Humans”. The central hypothesis. Therefore, the\nComprehensive Assessment of Long-term Effects of Reducing Intake of Energy (CALERIE-II) clinical trial was\ndesigned to test the long-term effects of 2 years of moderate CR on human physiology and predictors of\nhealthspan and longevity. Our preliminary data establishes that further profiling of CALERIE-II immune cell\nsamples, plasma and adipose tissue biopsies collected in our study is a fruitful approach to discover\nmechanism of CR and identify targets that can be developed against age-associated chronic diseases. This\nproject will test the central hypothesis that – negative energy balance in humans integrates metabolic and\nimmune cells that enhances anti-inflammatory reprogramming and reveals clinically relevant CR-mimetic\ntargets. The long-term goal of this project is to discover CR-mimetic targets that reduced inflammation,\nenhance immune response, and promote healthspan.",
+      "amount_eur": 408239.3,
+      "fingerprint": "540f261a359942e2",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:5R01AG073969-04",
+      "source": "reporter",
+      "title": "Caloric restriction-driven immunometabolic checkpoints of inflammation",
+      "url": "https://reporter.nih.gov/project-details/5R01AG073969-04",
+      "year": 2025
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*, dementia*).",
+        "expert_label": "age_related_disease",
+        "expert_reason": "'Alzheimer's disease and other dementias are becoming an epidemic... therapies to prevent or delay onset' — presymptomatic dementia is the target.",
+        "stratum": "age_related_disease"
+      },
+      "abstract": "Alzheimer’s disease and other dementias are becoming an epidemic and there is a great need to develop therapies to prevent or delay onset. However, clinical trials to date have failed to find effective drugs. One reason for these failures may be multiple underlying co-pathologies in participants. In fact, mixed pathology is extremely common in late-onset sporadic dementia. Thus, drugs targeting a single neuropathological entity may not be sufficient to induce a detectable clinical change.The project aim is to identify how genomic/age/education/sex/cardiovascular risk factors, together with serum/plasma protein biomarkers, impact neuroimaging and cognitive/behavioural phenotypes across neurodegenerative diseases. Based on this data dementia biotypes (pure vs mixed) will be defined. The dementia biotypes will be validated in an autopsy-confirmed subset. Furthermore, a longitudinal ageing study will be used to evaluate how well the dementia biotypes determine risk for dementia and whether they predict mixed or pure forms. Methodologies include genomic screening, fluid biomarker analysis and multimodal analysis of biological variables and risk factors. By understanding the mechanisms leading to the underlying pathological complexity in late-onset sporadic dementia, a critical knowledge gap will be closed, and results may have an impact on future clinical trial design, including patient selection.",
+      "amount_eur": 193284.86,
+      "fingerprint": "ffe2207bbc065009",
+      "funder": "Swedish Research Council",
+      "record_id": "swecris:2021-00713_VR",
+      "source": "swecris",
+      "title": "TACKLing the challenges of PREsymptomatic sporadic Dementia",
+      "url": "https://www.vr.se/english/swecris.html?searchText=2021-00713_VR",
+      "year": 2022
+    },
+    {
+      "_hidden": {
+        "classifier_label": "intervention",
+        "classifier_reason": "Lexicon keywords for intervention decide the record (matched: extend lifespan).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "intervention"
+      },
+      "abstract": "DESCRIPTION (provided by applicant): Children of long-lived parents have a lower mortality risk than their spouses, with whom they share environmental conditions. Furthermore, siblings of centenarians have a greater chance of becoming centenarians themselves, compared to age-matched controls. Thus, while environmental factors play an important part in aging, evidence suggests lifespan is at least under moderate genetic control. Since the early 1980s, scientists have known that mutations of single genes can extend lifespan in animal models. The work since has led to the discovery of several genes, signaling pathways, and cellular processes important for aging. For example, increased cellular metabolism associated with proliferation is known to increase the formation of reactive oxygen species (ROS), DNA damage, and replicative stress, all of which are theoretical contributors to aging. We have preliminary data to suggest that MTBP, a protein that we have recently shown is important in regulating cancer development, is also a novel regulator of proliferation and aging. We hypothesize that MTBP modulates the deleterious effects of proliferation and cellular metabolism that contribute to aging. To test this hypothesis, we propose three aims that use both in vitro and in vivo approaches. In the first aim, we plan to characterize novel protein interactions involving MTBP. In the second aim, we will examine the effect of MTBP on cellular processes implicated in aging. In the third aim, we will evaluate the role of MTBP in mammalian aging, in vivo, by using a mouse model. The results from the proposed study will further our understanding of the biological processes that govern aging and the role of MTBP in these processes. Our work is likely to identify a novel therapeutic target to retard aging, promote healthy aging, and treat and/or prevent age-related diseases.  The didactic MD/PhD training plan at Vanderbilt University School of Medicine provides a supportive environment that will allow me to meet the goals of this research proposal and gain the training necessary to achieve my career goals in science and medicine. During my training, I will learn to think critically, engage others in scientific discourse, and innovatively question the unknown. Outstanding courses, seminars, and career development activities are provided at Vanderbilt to support trainees. My sponsor, Dr. Eischen, will also provide valuable training and critical one-on-one mentorship to ensure success in graduate school and beyond. Completing this training plan will help me meet my career goal of becoming a productive physician-scientist, who cares for patients and conducts biomedical research that furthers our understanding of human disease and aging.",
+      "amount_eur": 41511.39,
+      "fingerprint": "5fb8c61fefc7ca2c",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:5F30AG039164-05",
+      "source": "reporter",
+      "title": "Investigating the role of MTBP in aging using a novel mouse model",
+      "url": "https://reporter.nih.gov/project-details/5F30AG039164-05",
+      "year": 2015
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: cancer, colorectal cancer).",
+        "expert_label": "fundamental_aging",
+        "expert_reason": "Proteome-wide 'measurements of protein stability to characterize different biological states including those associated with aging' — method aimed in part at characterizing ageing; thin, method-first text.",
+        "stratum": "disagreement"
+      },
+      "abstract": "ABSTRACT\n Genome- and proteome-based gene expression profiling studies have been widely used\nover the past decade to characterize biological states including those associated with normal\nbiological process (e.g., aging) and with disease (e.g., cancer). While such differential gene\nexpression profiling studies can help identify the cellular pathways and physiological processes\nassociated with a biological state they often fail to produce a complete understanding of the\nbiological state because gene expression levels are not directly tied to protein function. This has\nlimited the number of useful protein biomarkers and therapeutic targets discovered from such\nstudies, and left gaps in our understanding of disease states. Proposed here is the development\nand application of thermodynamic measurements of protein stability to characterize different\nbiological states including those associated with aging and cancer. Such thermodynamic\nmeasurements of protein stability are expected to be more closely related to protein function\nthan are protein expression levels, and thus produce more useful protein biomarkers and\ntherapeutic targets of disease and generate a better understanding of the molecular basis of\ndisease.\n The proposed work will further develop and utilize three mass spectrometry-based\nproteomics methods, termed SPROX, LiP and PP, to characterize the protein folding and\nstability changes associated with a fundamental biological process, aging, and a disease,\ncolorectal cancer. The specific aims of this work are: (1) to interface SPROX and LiP with middle-\ndown proteomics methods to enable proteoform specific folding and stability measurments; (2)\nto utilize the middle down SPROX and LiP workflows developed in (1) to make proteoform\nspecific thermodynamic stability measurements on mouse brain proteins derived from a mouse\nmodel of aging; (3) to utilize the SPROX, LiP, and PP techniques to identify protein biomarker\nwith altered folding and stability in patient-derived colorectal cancer cell lines with different\nsensitivities to oxaliplatin treatment; (4) to utilize the protein biomarkers discovered in (3) to\ndevelop a clinically relevant assay for predicting oxaliplatin resistance/sensitivity in colorectal\ncancer.",
+      "amount_eur": 261149.93,
+      "fingerprint": "7ecaae5b2225a34a",
+      "funder": "National Institute of General Medical Sciences",
+      "record_id": "reporter:5R01GM134716-04",
+      "source": "reporter",
+      "title": "Global Measurements of Protein Folding Stability for Characterization of Aging and Disease",
+      "url": "https://reporter.nih.gov/project-details/5R01GM134716-04",
+      "year": 2022
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*, dementia*, parkinson*).",
+        "expert_label": "fundamental_aging",
+        "expert_reason": "\"DNA Damage and Repair and its Impact on Healthy Ageing\" — \"connection between DNA damage and (accelerated) aging\", a core ageing mechanism.",
+        "stratum": "disagreement"
+      },
+      "abstract": "We pioneered an initially highly controversial connection between DNA damage and (accelerated) aging. In the previous ERC grant ‘DamAge’ we reached the stage that (segmental) aging in DNA repair-deficient mice can be largely controlled. The severity of the repair defect determines the rate of segmental aging; the repair pathways affected influence which organs age fast; conditional repair mutants allow targeting accelerated aging to any organ. Importantly, we found that dietary restriction (DR), the only universal intervention known to delay aging, extends remaining life- and healthspan in progeroid Ercc1Δ/- mutants by 200% (see Vermeij et al., Nature 2016 and fig.2). Also Xpg-/- progeroid repair mice strongly benefit from DR, generalizing this finding. The prominent Alzheimer- and Parkinson-like neurodegeneration is even retarded up to 30-fold(!) disclosing powerful untapped reserves unleashed by 30% less food, with enormous clinical potential. Also we discovered that in accelerated and normal aging gene expression declines due to accumulating stochastic transcription-blocking lesions and that DR counteracts genomic dysfunction. In Dam2Age we will focus on the cross-talk between DNA damage, aging and DR with emphasis on the relevance for normal aging, elucidate underlying mechanisms and use our unique -for DR research superior- mouse models and a variety of novel assays to search for effective nutritional-pharmacological DR mimetics. This serves as a stepping stone towards potent universal therapy for a range of repair-deficient progeroid syndromes and prevention of many aging-related diseases, most urgently dementia’s, to promote sustained health.",
+      "amount_eur": 2251719.0,
+      "fingerprint": "f2d0001df565438d",
+      "funder": "European Commission",
+      "record_id": "cordis:742426",
+      "source": "cordis",
+      "title": "DNA Damage and Repair and its Impact on Healthy Ageing",
+      "url": "https://cordis.europa.eu/project/id/742426",
+      "year": 2017
+    },
+    {
+      "_hidden": {
+        "classifier_label": "not_relevant",
+        "classifier_reason": "No ageing anchor and no lexicon keyword appears in the available text, so ageing relevance is not established.",
+        "expert_label": "not_relevant",
+        "expert_reason": "'Interactive exhibition about social robots' and a sustainable society — no older-adults or ageing reference in the text.",
+        "stratum": "not_relevant"
+      },
+      "abstract": "The project aims to produce an interactive exhibition about social robots and how they can promote a sustainable society. It will focus on today’s youth and let them explore different types of innovations for work and home environments. The exhibition will showcase current research on human-machine interaction as well as explore expectations and norms around this technology.Robotization raises great hopes that we will live and work in a more sustainable manner. At the same time, many have concerns for the future changes. The aim of the exhibition is to raise interest in the technology´s possibilities, as well as initiate a critical discussion about how it can provide sustainable living environments, contribute to good working conditions, address ethical and security challenges, and reach everyone in society.The project will build on established cooperation with the Royal Institute for Technology (KTH) on how robots can be implemented in our habitats in a sustainable manner, including research at a new test environment for welfare technology and social robots.The exhibition will complement a permanent exhibition at The Museum of Work about sustainability and broaden the perspective of how technological development can contribute to a fair and resource-efficient society. Among UN´s sustainability goals, focus is mainly on Objective 11: Sustainable Cities and Communities, Objective 8: Decent Work and Economic Growth, and Objective 9: Industry, Innovation and Infrastructure.",
+      "amount_eur": 177969.09,
+      "fingerprint": "7549e1a5895de5b3",
+      "funder": "Formas",
+      "record_id": "swecris:2018-02185_Formas",
+      "source": "swecris",
+      "title": "Sustainable Development of Social Robots – an Interactive Exhibition about Future Living Environments",
+      "url": "https://www.vr.se/english/swecris.html?searchText=2018-02185_Formas",
+      "year": 2018
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: cardiovascular disease, hypertension).",
+        "expert_label": "age_related_disease",
+        "expert_reason": "'Alcohol Consumption and Cardiovascular Health Among Older Couples' - cardiovascular-health epidemiology in an older population.",
+        "stratum": "age_related_disease"
+      },
+      "abstract": "Due to rapid population aging and more frequent and heavier drinking among the baby boom generation,\nan alarming rise is expected in the number of older adults with alcohol-related problems. At the same time,\nmore than 50% of adults over age 55 in the U.S. have hypertension (HTN) and cardiovascular disease (CVD)\nremains the nation's leading cause of death. Alcohol use is strongly related to HTN and CVD, and moderation\nof alcohol is key for preventing and managing HTN in older adults. Although low levels of alcohol use can have\ncardioprotective effects, physiological changes, chronic illnesses, and medication use can make even small\namounts of alcohol detrimental for cardiovascular health among older individuals. Marriage is a critical context\nfor examining alcohol use and its effects on cardiovascular health. Over 60% of older adults are married and\ncouples often engage in similar (i.e., concordant) drinking behaviors that can benefit marital quality, potentially\nestablishing or maintaining problematic drinking patterns. Further, it is well established that CVDs and their\nbiological risk factors are moderately to highly heritable, indicating that they are influenced by genetics.\nHowever, we know little about how alcohol use changes among couples as they age together or the\nmarital and genetic factors that may make individuals and couples more resilient or vulnerable to CVD.\nIn response to Accelerating the Pace of Drug Abuse Research Using Existing Data (PAR-16-234), the\nproposed project will use nationally representative longitudinal data from one of the largest studies of older\ncouples (N = 8,545 married/cohabiting couples; 17,090 individuals) to address the following aims: 1) Identify\nalcohol use patterns among older couples over time and the demographic and contextual predictors of\nthose patterns, 2) Determine the implications of individual and partner alcohol use for cardiovascular\nhealth and mortality among older couples over time, 3) Identify genetic and marital risk and protective\nfactors linked to alcohol-related cardiovascular health and mortality among older couples, and 4)\nDevelop and validate an innovative prognostic model to identify individuals and couples at high risk\nfor poor cardiovascular health and mortality. Identifying individuals and couples who are most at risk or\nresilient to alcohol-related cardiovascular health problems and development of new prognostic models will\ngenerate key insights for designing and testing interventions to reduce these major public health threats among\nthe growing population of aging adults.",
+      "amount_eur": 350057.8,
+      "fingerprint": "55ba1e70820f1aeb",
+      "funder": "National Institute on Alcohol Abuse and Alcoholism",
+      "record_id": "reporter:5R01AA026687-02",
+      "source": "reporter",
+      "title": "Alcohol Consumption and Cardiovascular Health Among Older Couples:  The Roles of Genetics and Marital Quality",
+      "url": "https://reporter.nih.gov/project-details/5R01AA026687-02",
+      "year": 2020
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "Keyword evidence for fundamental_aging (2.619) and age_related_disease (2.505) is too close to call (margin 0.114 < 0.3).",
+        "expert_label": "not_relevant",
+        "expert_reason": "'Social Connectedness and Health' examining 'social relationships, health, and cognitive functioning' — social vocabulary with no ageing/older-adult anchor anywhere in title or quote.",
+        "stratum": "disagreement"
+      },
+      "abstract": "7. PROJECT SUMMARY\nA large body of evidence indicates that high-quality social relationships are correlated with decreased risk for\nmorbidity and mortality from a range of disease outcomes, and that social disconnection and poor relationship\nquality are correlated with considerable risk for negative health outcomes. Although most of the work in this\narea is correlational in nature, it is often interpreted as if it is causal. Genetically informed research methods\ncan allow researchers to rule-out causal explanations for epidemiological associations and/or identify effects\nthat may be consistent with a causal influence. Using co-twin control methods and a comprehensive new data\ncollection in the Washington State Twin Registry (WSTR), this grant brings together a diverse and established\nscientific team to examine a series of unanswered questions around social relationships, health, and cognitive\nfunctioning, all of which center on causal inference. The work in this proposal is guided by three Specific Aims\nthat will: (1) Conduct a detailed assessment of social relationship functioning in the WSTR and use\nthese variables in co-twin analyses of health and health behaviors. We will conduct a new data collection\non 1,000 adult twin pairs (N = 2,000) in the WSTR and complete a “deep phenotyping” of key relationship\nquality variables, including social integration, relationship satisfaction/quality, and attachment styles. Under\nAim 1, we will also collect DNA methylation data and use a series of epigenetic clocks to characterize\naccelerated biological aging among our main study outcomes; (2) Conduct a detailed neuropsychological\nassessment of cognitive functioning in the WSTR cohort and use these variables as key outcomes in\nco-twin models. Social isolation and loneliness may hasten declines in cognitive functioning, but are these\nassociations consistent with a causal effect? We will conduct detailed neuropsychological assessments of the\n2,000 WSTR participants using assessments that target cognitive outcomes shown to be associated with\naccelerated cognitive decline, mild cognitive impairment, and biomarkers of Alzheimer’s disease and related\ndementias; and (3) Examine the association between objective measures of daily social functioning and\nthe health and cognitive outcomes in the WSTR. The Electronically Activated Recorder (EAR) is a\nsmartphone application that records ambient sounds in participants’ daily lives and provides a means of\nassessing social behaviors beyond self-report alone. We will collect EAR data from a sub-sample of 140 adult\nMZ twin pairs discordant for marital status (N = 280) from the WSTR to determine if within twin-pair differences\nin the objective indices of social integration are associated with the health, health behavior, and cognitive\noutcomes. Successful completion of the proposed research will help build a causal foundation for public health\nintervention efforts around social relationships.",
+      "amount_eur": 966408.73,
+      "fingerprint": "6aa1e0213948efbc",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:5R01AG078361-04",
+      "source": "reporter",
+      "title": "Genetically Informed Studies of Social Connectedness and Health",
+      "url": "https://reporter.nih.gov/project-details/5R01AG078361-04",
+      "year": 2025
+    },
+    {
+      "_hidden": {
+        "classifier_label": "not_relevant",
+        "classifier_reason": "The text concerns materials, engineering or agriculture rather than human ageing (matched: polymer*).",
+        "expert_label": "not_relevant",
+        "expert_reason": "Bridge strengthening with FRP composites; “aging” refers to bridge structures — infrastructure ageing.",
+        "stratum": "not_relevant"
+      },
+      "abstract": "Purpose and goal:\r\nAt the present, bridge owners deal with a large number of bridge structures in need for strengthening due to aging, higher traffic demands in terms of intensity and axel loads and higher safety demands. \r\nBonded fiber reinforced polymer (FRP) materials have attracted a great deal of attention for sustainable strengthening and repair of bridge structures. FRPs offer outstanding mechanical and durability properties, light weight and ease of application. The goal of this study is to develop a method for shortening the time needed for application of bonded composites to structural members.\r\n\r\nExpected results and effects:\r\nBonding FRPs is often done using structural epoxy adhesives. Depending on the type of adhesive, it usually needs between 3 to 7 days for full curing. The idea of the project is to develop a fast during method by implementing embedded heating elements in the bond line. The analyses and small scale testing show that it is possible to reduce the curing time from 3 days to 2 hours. The target in the project will be to reduce the strengthening operation time below 12 hours.\r\n\r\nApproach and implementation:\r\nPreliminary test results on small scale samples, using carbon fiber mesh as embedded heating elements, have proved the feasibility of the idea and in the continuation, the fast curing system will be developed to be applied at full scale level. The aim is to combine the proposed solution with an innovative system using pre-stressed FRP laminates for more effective strengthening of structural elements. Three partners including Chalmers, Tenroc technologies and Besab will carry out the job in this project.",
+      "amount_eur": 20426.61,
+      "fingerprint": "2d7941d8394c0b2f",
+      "funder": "Vinnova",
+      "record_id": "swecris:2016-03289_Vinnova",
+      "source": "swecris",
+      "title": "Low disturbance strengthening of bridges using a fast curing method for bonding FRP composite materials",
+      "url": "https://www.vr.se/english/swecris.html?searchText=2016-03289_Vinnova",
+      "year": 2016
+    },
+    {
+      "_hidden": {
+        "classifier_label": "fundamental_aging",
+        "classifier_reason": "Lexicon keywords for fundamental_aging decide the record (matched: senescen*, cellular senescence, senescent cell*, sasp).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "fundamental_aging"
+      },
+      "abstract": "PROJECT SUMMARY\nA critical level at which aging is regulated is the cellular responses to molecular events, which in turn alter the\ntissue and systemic milieu. Understanding cell fate decisions that occur in response to endogenous and\nexogenous insults that cause aging offers opportunities to develop novel therapies for age-related phenotypes\nand pathologies. One important cell fate that drives aging is cellular senescence: an essentially irreversible\narrest of cell proliferation coupled to a complex senescence-associated secretory phenotype (SASP).\nSenescent cells increases with age in most tissues. These cells can drive a surprisingly diverse array of aging\nphenotypes and diseases, largely through the SASP. Moreover, eliminating senescent cells, using either\ntransgenic mouse models or a new class of drugs termed senolytics, can help maintain homeostasis in aged or\ndamaged tissues, and postpone or ameliorate many age-related pathologies. In this proposal, we will\ncharacterize a novel aspect of cellular senescence, cell competition, to determine how it contributes to aging.\nCell competition is a process by which neighboring (winner) cells detect and remove suboptimal (loser) cells by\nkilling and engulfing them. Our preliminary data show that several senescence-inducing stimuli allow a subset\nof senescent cells to acquire winner status, allowing them to actively kill and engulf a subset of neighboring\nnon-senescent cells. This killing is transient and coincides with the onset of the pro-inflammatory SASP. We\npropose that this early transient killing of non-senescent neighbors is required for the long-term survival of pro-\ninflammatory senescent cells during aging. It is possible that a subset of senescent cells acquires winner\nstatus to avoid elimination and/or acquire nutrients (by engulfment) for survival. Deciphering the mechanisms\nof cell competition in the context of cellular senescence is essential to understand many processes in biology,\nranging from embryogenesis to cancer. Using unbiased high throughput techniques such as proteomics and\nsingle cell transcriptomics, we plan to determine the molecular events that regulate cell competition by early\nsenescent cells. Further, investigating these processes will open new opportunities for eliminating pro-\ninflammatory senescent cells before they can drive pathology.",
+      "amount_eur": 251035.2,
+      "fingerprint": "62a1499732ed194a",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:5R21AG067201-02",
+      "source": "reporter",
+      "title": "Cell competition as a novel aspect of cellular senescence during aging",
+      "url": "https://reporter.nih.gov/project-details/5R21AG067201-02",
+      "year": 2021
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "ambiguous"
+      },
+      "abstract": "ABSTRACT\nThe overarching objectives of the PRIME Collaborative (Physical Resilience: Indicators and Mechanisms in\nthe Elderly) are to characterize specific resilience phenotypes, elucidate biological mechanisms, and validate\nclinically valuable predictive tools and measures of physical resilience. The application focuses on resilience in\nthree systems that are central to older adults' overall health: musculoskeletal, cognitive, and immune. The\ncentral hypothesis of this application is that resilience to physical stressors is influenced by biological\nmechanisms at the molecular level. We will examine whether mechanisms associated with one or more of the\nseven “Pillars of Aging,” which have been described by the trans-NIH Geroscience Interest Group, underlie a\nmore generalized capacity for recovery that applies across multiple stressor/response scenarios. An inter-\nprofessional team of aging researchers from has been assembled to accomplish these objectives; the team\nrepresents expertise from six NIA-funded Older American Independence Centers (OAICs) and leverages other\nexisting resources. The PRIME Collaborative team will use a two-phased approach. In Phase 1, workgroups\nwill define specific resilience phenotypes in existing datasets using latent class trajectory analysis of sequential\noutcome measures following a stressor. The three resilience phenotypes, selected for their over-arching\nrelevance to late life health as well as our team's expertise, are: musculoskeletal recovery after orthopedic\nsurgery, immune recovery after infection, and cognitive recovery after surgery/anesthesia. We will conduct pilot\nstudies to identify novel clinical tests and biomarkers associated with each of these resiliencies. Feasibility and\nresponse data from pilot studies will inform the design of a larger cohort study in Phase 2. In the final 6\nmonths of Phase 1, the most promising predictive tests and markers will be selected and will inform two\nparallel activities in Phase 2. First, a longitudinal cohort study of older patients undergoing elective surgery will\nbe conducted to validate predictors in a more diverse population. The Phase 2 cohort study will also allow us to\nassess synergy and interactions between different types of predictors (provocative tests, physiologic output\nmeasures, biomarkers) and different types of resilience (musculoskeletal, cognitive, immune). Second,\nbiological mechanisms underpinning resilience will be identified using newly developed mouse resilience\nmodels, and in vitro human and mouse myotubule systems. These model systems are suitable for intervention\nstudies. The Phase 2 biological studies will be designed to identify pathways related to one or more Pillars of\nAging so that they are likely to underpin multiple types of resilience, and suggest therapeutic targets and novel,\nresilience-bolstering interventions.",
+      "amount_eur": 392953.76,
+      "fingerprint": "019f79e00c9735fd",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:3UH3AG056925-03S1",
+      "source": "reporter",
+      "title": "Physical Resiliencies:  Indicators and Mechanisms in the Elderly Collaborative",
+      "url": "https://reporter.nih.gov/project-details/3UH3AG056925-03S1",
+      "year": 2019
+    },
+    {
+      "_hidden": {
+        "classifier_label": "not_relevant",
+        "classifier_reason": "The ageing vocabulary appears in a plant, agriculture or ecology context with no human or biomedical-model marker (matched: plants).",
+        "expert_label": "not_relevant",
+        "expert_reason": "'Aging Atoms: Nuclear Maintenance Techniques' - ageing of nuclear plants/infrastructure, not human ageing.",
+        "stratum": "not_relevant"
+      },
+      "abstract": "Nuclear power has made a remarkable comeback, as the industry and many national governments try to market new reactor designs as a solution to climate change. Yet, this contrasts with the mounting reactor breakdowns the industry is facing. This project remedies a crucial gap in the literature on nuclear safety by studying maintenance workers and the techniques required for maintaining nuclear reactor components from the 1980s until today. Studying these techniques, I will focus specifically on (1) risk assessment, (2) ´agency´ of the workers, and (3) implementing regulations. The data for this project will come from interviews and participatory observations during summer reactor outages at the Forsmark (Sweden) and Sizewell (UK) nuclear power plants. This Industrial Anthropology approach will be complemented with archival work in national and local archives. For the first time, this project brings the perspective and voice of maintenance workers into larger questions of nuclear safety. This has major implications for how we understand nuclear technology and safety. It allows us to move beyond the dominant innovation-centered narratives of scientific discoveries or engineering features, showing alternative and more practical types of knowledge needed to keep these technologies working. Not only does this move the scholarship on nuclear safety and technology in general forward, it also provides new policy-relevant insights into how reactors can be made safer and more reliable.",
+      "amount_eur": 410864.44,
+      "fingerprint": "fba061287b1a7e4f",
+      "funder": "Formas",
+      "record_id": "swecris:2024-00765_Formas",
+      "source": "swecris",
+      "title": "Aging Atoms: Nuclear Maintenance Techniques in Sweden and the UK (1980-2026)",
+      "url": "https://www.vr.se/english/swecris.html?searchText=2024-00765_Formas",
+      "year": 2025
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "ambiguous"
+      },
+      "abstract": "This program provides interdisciplinary training in muscle biology for predoctoral students and postdoctoral\nfellows. The program emphasizes the functional, structural and molecular properties of skeletal, cardiac and\nsmooth muscle, and how these properties are compromised in various disease states. Our 18 faculty members\ncome from 2 basic science departments (Biochemistry & Molecular Biology and Physiology) and 5 clinical\ndepartments (Medicine, Orthopedics, Pathology, Physical Therapy & Rehabilitation, and Surgery) at the\nUniversity of Maryland School of Medicine. Affiliate faculty also come from the Departments of Mechanical\nEngineering and Mathematics & Statistics at our sister campus, University of Maryland Baltimore County, and\nfrom Morgan State University. Trainees are drawn from all of the participating departments and from our\ninterdepartmental PhD Programs. Indicative of the diversity of our faculty backgrounds, the training offered is\nmultifaceted ranging from the molecular determinants of muscle development through the cell biological aspects\nof muscle cytoskeleton, membranes and matrix, to the biophysical analysis of individual muscle cell function and\nthe biomechanical evaluation of whole muscles to the effects of muscle disease at all these levels of\ninvestigation. Our faculty is nationally and internationally recognized in the areas of Ca2+ control of muscle\nfunction and membrane systems, muscle cytoskeleton and extracellular matrix, muscle development, growth\nand plasticity, as well as muscle disease, injury and aging. Our students will receive training in these and in a\nvariety of related areas, with emphasis on the use of complementary state-of-the-art technologies to address\neach question under examination. The major didactic aspect of our training is two one-semester interdisciplinary\ncourses on muscle biology, which are team-taught by the program faculty and have been well received by past\ntrainees, and a seminar series focusing on muscle related techniques, technologies and model systems.\nProgram activities comprise an annual on campus Mini-Retreat which includes trainee poster and oral\npresentations and a renowned muscle researcher as Program visitor and Keynote Speaker, a semi-annual Wade\nMemorial lectureship and lunch meetings for all trainees, as well as training in professional career development,\ngrant and manuscript writing, the principles of rigor and reproducibility, and the responsible conduct of research.\nWe will continue at our present level of 5 predoctoral and 5 postdoctoral trainees throughout the renewal period.\nEntering predoctoral trainees will be required to have a strong background in biological sciences and praising\nrecommendation letters. Incoming postdoctoral trainees will have completed a solid PhD thesis, and also have\nstrong recommendation letters. Trainees from this program will be prepared to bring a wide range of approaches\nto bear on answering fundamental questions in muscle biology and on the causes of muscle diseases as well as\ntheir possible treatment and ultimately cure. This program therefore serves a national need for preparing highly\ncompetent investigators with multi-disciplinary training in the area of muscle biology and disease.",
+      "amount_eur": 439095.07,
+      "fingerprint": "2186c5b1de716784",
+      "funder": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+      "record_id": "reporter:5T32AR007592-27",
+      "source": "reporter",
+      "title": "Interdisciplinary Training Program in Muscle Biology",
+      "url": "https://reporter.nih.gov/project-details/5T32AR007592-27",
+      "year": 2022
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: type 2 diabetes, hypertension, diabetes mellitus, fatty liver, cardiovascular diseases).",
+        "expert_label": "fundamental_aging",
+        "expert_reason": "\"modifier loci, candidate genes, and molecular networks that modulate healthspan and longevity\" — systems genetics of ageing.",
+        "stratum": "disagreement"
+      },
+      "abstract": "DESCRIPTION (provided by applicant): Disturbances of metabolism, often linked to mitochondrial function, have a major impact on disease risk and healthspan among human populations. Type 2 diabetes mellitus, non-alcoholic fatty liver disease, hypertension, hyperlipidemia, and cardiovascular diseases are all linked to major changes in metabolic and mitochondrial function. A complex set of genetic and environmental factors-including diet-underlie individual differences in the risk and severity of metabolic syndrome. This project is focused on the complex gene-by- environmental interactions (GXE) that contribute to mitochondrial and metabolic syndrome, and that reduce healthy lifespan. We use a new integrative systems genetics approach to study effects of a high fat Western diet. This work relies on a large family of isogenic and genetically diverse murine lines-including F1 hybrids- that serve as a translational and mechanistic bridge between reductionist and integrative approaches. Identical cohorts will be studied as a function of age on markedly different diets. In Aim 1, we study lifespan using BXD strains and non-inbred but isogenic F1 cohorts of females under high and low fat diets. We map and quantify novel GXE-type modifier loci, candidate genes, and molecular networks that modulate healthspan and longevity. In Aim 2 we generate deep molecular, mitochondrial, and metabolic biomarker data as a function of age and diet. We expect that gene variants and diet will be causally linked to mitochondrial function and to metabolism in key organs and tissues. In Aim 3 we model complex and integrative molecular and cellular networks that define differences in vitality and healthspan. We use sophisticated bioinformatic and statistical frameworks (eQTL analysis, ANOVA, and structural equation modeling). Finally, in Aim 4 we validate and translate networks involved in metabolism, mitochondria, and healthspan. We test candidate genes using gain- and loss-of-function strategies in C. elegans. We evaluate translational relevance of candidate genes and biomarkers by testing for associations in a remarkably well studied cohort of 161,000 postmenopausal women (Women's Health Initiative data sets). The WHI is an ideal translation companion to test effects of diet. This project will (1) identify high impact variants and molecular/metabolic networks involved in metabolic diseases and healthspan, and (2) provide an experimental and predictive systems biology framework that links genotype and environmental factors to disease risk in human populations.",
+      "amount_eur": 423254.83,
+      "fingerprint": "84a46636ec9e9b1b",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:5R01AG043930-03",
+      "source": "reporter",
+      "title": "Translational Systems Genetics of Mitochondria, Metabolism, and Aging",
+      "url": "https://reporter.nih.gov/project-details/5R01AG043930-03",
+      "year": 2015
+    },
+    {
+      "_hidden": {
+        "classifier_label": "fundamental_aging",
+        "classifier_reason": "Lexicon keywords for fundamental_aging decide the record (matched: biological age, dna methylation).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "fundamental_aging"
+      },
+      "abstract": "PROJECT SUMMARY\nIn the era of combination antiretroviral therapy, routine care of persons living with HIV infection (PLWH)\nrequires extra attention to coinfections and comorbidities, as PLWH with impaired immunologic competency\n(IIC) are prone to non-AIDS morbidity and mortality. We propose that IIC is also the basis for accelerated/\npremature aging (A/PA) in PLWH and that herpes zoster (shingles) can serve as a readily diagnosed sentinel\ndisease for studying molecular and immunologic correlates of A/PA. To prove these concepts, we have already\ngathered compelling data from a Southeast US cohort of PLWH (N = 4,225) to demonstrate that relatively\nyoung PLWH (30-55 years old) are already at high risk of developing herpes zoster, but recurrent herpes\nzoster is relatively rare. New research can now focus on the disparity between biological age and chronological\nage in PLWH and on the dynamics of immune protection against recurrent herpes zoster. Specifically, aim 1\nwill identify DNA methylation (epigenetic) age and molecular signatures of memory T-cells shortly before the\nonset of herpes zoster, using high-throughput techniques to define genome-wide DNA methylation and gene\nexpression profiles. Aim 2 will compare virus-specific T-cell activation, proliferation and immune function after\nco-culture with pools of immunogens derived from the varicella-zoster virus, using samples from two visits after\nthe first occurrence of herpes zoster. These studies will target two primary ethnic groups (African Americans\nand European Americans) with disparate HIV/AIDS burdens and will properly account for potential confounders\n(e.g., coinfections and comorbidities) as observed in a clinical setting. For further translation, analyses of DNA\nmethylation age (aim 1) should help with the design and implementation of interventional strategies for\nalleviating or reversing IIC in diverse PLWH populations, including the application of a newly available\nrecombinant vaccine (Shingrix) against herpes zoster.",
+      "amount_eur": 160131.99,
+      "fingerprint": "a90493ed7334aebf",
+      "funder": "National Institute of Allergy and Infectious Diseases",
+      "record_id": "reporter:5R21AI134282-02",
+      "source": "reporter",
+      "title": "Immunologic Health in Aging PLWH",
+      "url": "https://reporter.nih.gov/project-details/5R21AI134282-02",
+      "year": 2019
+    },
+    {
+      "_hidden": {
+        "classifier_label": "fundamental_aging",
+        "classifier_reason": "Lexicon keywords for fundamental_aging decide the record (matched: aging process*, epigenetic clock*, epigenetic age*, biological age, dna methylation).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "fundamental_aging"
+      },
+      "abstract": "I.\tEpigenomics and multi-omics in AUD:\nAlcohol may influence disease outcomes through epigenetic modifications and is known to affect the acetylation and methylation of histones and the methylation of DNA (Zakhari, 2013). DNA methylation involves the addition of a methyl group, donated by the metabolite, S-adenosylmethionine (SAM), to the C of CpG dinucleotides. Chronic alcohol consumption leads to a reduction in SAM, which can lead to hypomethylation across the epigenome (Lu et al., 2000). Alcohol also impacts the folate cycle which is necessary for the generation of methionine for the synthesis of methyl groups (Mason and Choi, 2005) and the highly reactive alcohol metabolite acetaldehyde can induce inhibition of DNA methyltransferases, the family of enzymes that catalyze CpG methylation, to reduce methylation (Jangra et al., 2016, Garro et al., 1991). Alcohol metabolism also acutely depletes molecules needed for re-methylation by increasing reactive oxygen species (ROS) formation, which results in decreased production of methionine and SAM (Chen et al., 2011).\nEpigenome-wide association studies (EWAS) have identified CpGs that are associated with alcohol consumption and AUD (Lohoff et al., 2018, Lohoff et al., 2020, Longley et al., 2021). However, prior studies were somewhat limited by small sample sizes and lower capture arrays (Longley et al., 2021). In addition, only a few studies exist linking alcohol consumption and AUD EWAS data with detailed biological validation. To address these gaps in the literature, we conducted the largest EWAS analyses of alcohol consumption in a single cohort of individuals (n=8161) and we are continuing to follow up top findings in AUD relevant phenotypes using a translational cross-tissue/cross-phenotypic approach to identify novel potential targets relevant to AUD. Various other computational genomic approaches are applied to identify new drug targets for AUD, including Mendelian Randomization and multi-omics studies (Mavromatis et al., 2022).\n\nII.\tAging in AUD\nStudies have shown that individuals with AUD die earlier than healthy controls and are at a significantly increased risk for all-cause mortality (Westman et al., 2015, Larame et al., 2015). Given the potential role of AUD in the aging process, it is important to understand this relationship on a molecular, epigenetic level. To better assess biological age, several epigenetic clocks that robustly correlate with chronological age have been developed. These clocks are algorithms that take the weighted average of methylation levels at specific CpG sites to calculate DNA methylation age (DNAm age), which is highly correlated with chronological age. We have previously shown that AUD is associated with epigenetic age acceleration (Rosen et al., 2018) and confirmed our finding in a larger sample. There was a 2.22-year age acceleration in AUD compared to controls after adjusting for gender and blood cell composition (p = 1.85  10-5)(Luo et al., 2020). We continue to work on epigenetic biomarkers of aging in individuals with AUD and have developed a methylation score of stress that tracks stress exposure in individuals with AUD (Jung et al., 2022). In addition, we have conducted multi-omic analyses of aging and identified several novel targets (Mavromatis et al., 2023)(Rosoff et al., 2023).\n\nIII.\tPCSK9 in AUD\nApproximately 50% of all liver disease mortality is currently attributable to alcohol misuse (Gao and Bataller, 2011, Rehm et al., 2013, Seitz et al., 2018), yet there are no FDA approved treatment options for alcohol-associated liver disease (ALD). Thus, a substantial and increasing need is emerging for new therapeutic options capable of reducing alcohol-associated liver damage. \nWe have recently shown that the PCSK9 inhibitor alirocumab attenuates alcohol-induced hepatic triglyceride accumulation, hepatocellular injury and hepatic inflammation in a rat model of chronic alcohol exposure (Lee et al., 2019). Given the unmet clinical need for novel treatment options for ALD, we started a safety and tolerability study of alirocumab in heavy social drinkers. We hypothesize that alirocumab will be well tolerated and safe in this new target population and alirocumab will attenuate alcohol-induced liver damage and inflammatory biomarkers. We are currently conducting this clinical trial entitled A Phase I, Randomized, Double-Blind, Placebo-Controlled, Study of Safety, Tolerability, and Bioeffects of alirocumab in Non-treatment Seeking Heavy Drinkers (ClinicalTrials.gov Identifier: NCT04781322). Additional preclinical work is ongoing on the mechanisms by which PCSK9 inhibition attenuates ALD and inflammation. We have also recently shown that PCSK9 inhibition appears to have a neutral effect on neurocognitive outcomes using a drug-target Mendelian Randomization approach (Rosoff et al., 2022).",
+      "amount_eur": 1740448.59,
+      "fingerprint": "8643d0c263e24046",
+      "funder": "National Institute on Alcohol Abuse and Alcoholism",
+      "record_id": "reporter:1ZIAAA000242-09",
+      "source": "reporter",
+      "title": "Clinical Genomics and Experimental Therapeutics",
+      "url": "https://reporter.nih.gov/project-details/1ZIAAA000242-09",
+      "year": 2023
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+        "expert_label": "not_relevant",
+        "expert_reason": "Nuclear membrane proteins in chromatin organization and differentiation; ageing appears only in the significance clause 'impact on aging and diseases associated with loss of heterochromatin' - not an ageing-biology aim per the text.",
+        "stratum": "disagreement"
+      },
+      "abstract": "The aim is to understand the role of nuclear membrane proteins in chromatin organization and cell differentiation, which have impact on aging and diseases associated with loss of heterochromatin and thus dysregulated gene expression.A large part of the analysis will be performed using our recently developed imaging tool (FRIC), which will be adapted to HCS (High Content Screeining). Using HCS-FRIC as read-out we will screen siRNA libraries targeting all annotated nuclear membrane proteins to identify those involved in chromatin organization. This is followed by detailed investigations to define specific roles and underlaying mechanisms.The four-year research project will be carried out by my lab and in collaboration with other labs in the field. We will use different tissue culture cell models and a variety of techniques including, siRNA, CRISPR/Cas mediated genome editing, DamID, ChIP-sequencing, HCS-FRIC and protein chemistry technology. Mass spectrometry and ChIP-sequencing will be performed in collaboration with experts on these techniques.The outcome of our studies increases our understanding of the diverse and complex organization of proteins in the nuclear envelope, which orchestrates many new fundamental cell functions than previously realized. Our focus on cell differentiation and chromatin organization has impact on understanding and preventing loss of heterochromatin in aging and disease.",
+      "amount_eur": 250149.06,
+      "fingerprint": "e409fa0ea725e52c",
+      "funder": "Swedish Research Council",
+      "record_id": "swecris:2020-03888_VR",
+      "source": "swecris",
+      "title": "Nuclear membrane proteins in chromatin organization, cell differentiation and disease.",
+      "url": "https://www.vr.se/english/swecris.html?searchText=2020-03888_VR",
+      "year": 2021
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "Keyword evidence for fundamental_aging (2.313) and age_related_disease (2.187) is too close to call (margin 0.126 < 0.3).",
+        "expert_label": "not_relevant",
+        "expert_reason": "\"MAFA... plays an essential role in regulating insulin secretion in adults\" — beta-cell transcription-factor biology with no ageing angle in the text.",
+        "stratum": "disagreement"
+      },
+      "abstract": "Much of our knowledge of islet physiology stems from rodent studies. However, we now know that marked\ndiscrepancies exist between rodent and human islets in regard to (for example) architecture, hormone secretion,\nand islet cell transcription factor (TF) expression, demonstrating potential limitations in assuming that rodent\nmodels entirely mimic human islet physiology and disease. An example of such a discrepancy lies in the islet β\ncell enriched MAFA TF, a fundamentally important protein to these cells in postnatal rodents. Thus, the MAFA\nprotein is barely detectable in human islet β cells until ~9 years of age, whereas this TF is first detected\ndevelopmentally and then produced throughout the lifespan of rodent insulin+ cells. We propose that humans\nhave at least two postnatal, age-dependent MAFA-producing β cell populations capable of maintaining\neuglycemia: juvenile β cells (i.e. <~9 years old) with little MAFA (i.e. MAFALow) and post-juvenile β cells with\nrobust MAFA (MAFAHigh). In fact, independent studies have established distinct molecular and functional\nproperties of these human cell populations. Here we will examine the impact of MAFA on human β cells and\nhypothesize that this TF plays an essential role in regulating insulin secretion in adults. Our analysis in the first\naim will be conducted using the β-like cells produced from both human embryonic stem cells (hESC) and induced\npluripotent stem cells (iPSC) (collectively termed human pluripotent stem cells, or hPSCs). Here we will\ndetermine how knockout and over-expression of MAFA influences β cell maturation and function, appreciating\nthat their greatly improved glucose-stimulated insulin secretion properties parallel enhanced MAFA expression\nafter transplantation into immunocompromised NSG mice. In addition, we will investigate how a pathogenic\nvariant of MAFA (Serine (S) 64 -> Phenylalanine (F)) that prominently increases its protein stability affects human\nβ cell activity. Notably, MAFAS64F predisposes subjects to either adult-onset diabetes or insulinomatosis (i.e.\nnon-syndromic insulin-producing β cell tumors) in a gender-biased manner. We generated a mouse model\nharboring this mutation in the endogenous MafA gene, and our results show glucose intolerance in males and\nimproved glucose clearance in females, mimicking the findings in human subjects. Significantly, dysfunction in\nmale mice was associated with premature cellular aging and senescence. Recently, independent reports have\nlinked pathologic, senescent β cell populations to type 1 diabetes and type 2 diabetes islet dysfunction. Our\nexperimentation in the second aim will define the molecular and functional consequences of MAFAS64F in human\nβ cells. Our overall focus on human islet cells is viewed as innovative, as well as the combined use of human\nstem cell derived β-like cells and human islets for obtaining novel, physiologically relevant mechanistic insights.",
+      "amount_eur": 479579.02,
+      "fingerprint": "21d362f95f7b6545",
+      "funder": "National Institute of Diabetes and Digestive and Kidney Diseases",
+      "record_id": "reporter:5R01DK090570-10",
+      "source": "reporter",
+      "title": "Defining the role of MafA in islet beta cells",
+      "url": "https://reporter.nih.gov/project-details/5R01DK090570-10",
+      "year": 2022
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: obesity).",
+        "expert_label": "not_relevant",
+        "expert_reason": "Botanical therapeutic for tissue ischemia; ageing appears only in an association list (\"associated with aging, diabetes, hypercholesterolemia, and obesity\").",
+        "stratum": "disagreement"
+      },
+      "abstract": "DESCRIPTION (provided by applicant): Tissue ischemia, defined as insufficient blood flow for providing oxygen and nutrients, is a serious clinical problem associated with aging, diabetes, hypercholesterolemia, and obesity. Ischemia results from progressive functional decline of large and small blood vessels and the consequences are debilitating and often fatal. The specific objectives of the proposed research plan are to identify effective, mechanistically characterized strategies, employing natural products, for overcoming current barriers to alleviation of ischemia. The specific aims are: (Aim 1a) Investigate oral administration of aqueous extracts of Barleria lupulina (AE-BL) for remedying ischemia-driven dysfunctional angiogenesis in mouse models, and define benefits for tissue oxygenation and survival; (Aim 1b) Define cellular and molecular mechanisms; (Aim 2a) Identify the individual components constituting the full activity of un-fractionated AE-BL, which stabilize the endothelial cell (EC) cytoskeleton and EC-EC junctions; (Aim 2b) Indentify combinations of purified components that remedy dysfunctional, ischemia-driven angiogenesis similarly to the un-fractionated extract. The specific vascular improvements (e.g., vessel architecture, lumen formation, network integration, barrier integrity, blood flow) provided by oral administration of AE-BL, and the resulting improvement in tissue oxygenation and tissue survival will be defined in mouse models of ischemia-driven angiogenesis. EC signaling pathways and cytoskeleton-regulating mechanisms through which AE-BL remedies dysfunctional vascular morphogenesis and thereby improves angiogenesis will be defined with ECs in vitro. These in vitro assays also will be employed to identify purified components of AE-BL with important bioactivity and to identify combinations of purified components comprising bioactivity similar to un-fractionated AE-BL. Thus, the proposed research plan is designed to illustrate a new strategy for remedying dysfunctional angiogenesis and alleviating tissue ischemia with un-fractionated AE-BL and also to identify specific compounds that embody this important biological activity.",
+      "amount_eur": 410189.79,
+      "fingerprint": "aefa6a7b138b1c2f",
+      "funder": "National Center for Complementary and Integrative Health",
+      "record_id": "reporter:5R01AT007022-04",
+      "source": "reporter",
+      "title": "Remedying dysfunctional angiogenesis and tissue ischemia with Barleria lupulina",
+      "url": "https://reporter.nih.gov/project-details/5R01AT007022-04",
+      "year": 2015
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "An ageing anchor is present but no category keyword matches, so the text does not support any substantive category.",
+        "expert_label": "not_relevant",
+        "expert_reason": "'Many of these bridges are aging and approaching... their design life' - infrastructure ageing.",
+        "stratum": "disagreement"
+      },
+      "abstract": "Sweden has approximately 30 000 bridges. Many of these bridges are aging and approaching or have overpassed their design life necessitating smarter management solutions to ensure safety, longevity, and sustainability. In addition to the classical challenges, climate change brings extreme wheatear events which are posing unforeseen and unaccounted for threats to the existing bridges. There are no current practices in designing and assessing the safety of bridges in the face of climate change.The aim of this project is to generate new knowledge that will support a better understating of how we can increase the resilience of the existing bridges’ stock in Sweden in the face of climate change threats. To achieve this, the following objectives are set: 1) identify the risks and vulnerabilities of different types of bridges 2) identify and map potential climate changes scenarios, 3) develop a strategy to mitigate the impact of climate change on existing network of bridges and 4) demonstrate the developed strategy on case studies. This can be achieved by employing mathematical, statistical and AI based tools for leveraging the climate change data models, integrating different performance indicators including reliability, availability, safety, risk, etc., under different representative concentration pathways (RCPs). The knowledge created in this project addresses two areas of Formas’ areas of responsibility, Environment and Spatial Planning.",
+      "amount_eur": 533936.09,
+      "fingerprint": "ce213627c3aa28e1",
+      "funder": "Formas",
+      "record_id": "swecris:2024-01839_Formas",
+      "source": "swecris",
+      "title": "How is the climate change impacting the network of bridges?",
+      "url": "https://www.vr.se/english/swecris.html?searchText=2024-01839_Formas",
+      "year": 2025
+    },
+    {
+      "_hidden": {
+        "classifier_label": "intervention",
+        "classifier_reason": "The text describes developing or testing an intervention against ageing (matched: calorie restriction, metformin).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "intervention"
+      },
+      "abstract": "Calorie restriction (CR) delays age-related diseases in laboratory animals, and a small molecule that safely mimics its effects has been greatly sought after. There is evidence that resveratrol can mimic effects of CR in lower organisms and we have now concluded the first study of the aging intervention program. In mice, we found that resveratrol induces gene expression patterns in multiple tissues that are highly similar to those induced by CR. Moreover, elderly resveratrol-fed mice showed a marked reduction in signs of aging. These changes included reduced albuminuria, decreased inflammation and apoptosis in the vascular endothelium, increased aortic elasticity, greater motor coordination, reduced cataract formation, and preservation of bone mineral density. However, mice fed a standard diet did not live longer when treated with resveratrol beginning at mid-life. Thus it is possible to mimic transcriptional aspects of DR and delay functional decline with a safe, orally available small molecule. Our findings indicate that resveratrol treatment starting from mid-life has a range of beneficial effects in mice, but suggest that it may not be an effective strategy to increase the longevity of normal ad libitum-fed animals. Long-term resveratrol treatment mimicked important physiological and transcriptional aspects of CR in vivo, and allowed treated animals to live healthier, more vigorous lives. In addition to improving insulin sensitivity and increasing survival in mice fed a high calorie diet, we found evidence that resveratrol improves cardiovascular function, bone density, motor coordination, and delays cataracts, even in non-obese rodents. Since cardiovascular disease is a major cause of age-related morbidity and mortality in humans but not mice, it is possible that a CR mimetics such as resveratrol could have an even greater impact on human health than on mice. However, resveratrol does not seem to mimic all of the salutary effects of DR in that its introduction into the diet of normal one year old mice did not increase longevity.\nWhen we tested resveratrol in non-human primates we were able to replicate most of the findings in rodents. For example, in a manuscript under review, we tested the effect of a 2-year resveratrol administration on the pro-inflammatory profile and insulin resistance caused by a high-fat, high-sugar (HFS) diet in white adipose tissue (WAT) from rhesus monkeys. Eighty mg/day of resveratrol for 12-month followed by 480 mg/day for the second year decreased adipocyte size, increased sirtuin 1 expression, decreased NF-kB activation and improved insulin sensitivity in visceral but not subcutaneous WAT from HFS-fed animals. These effects were reproduced in 3T3-L1 adipocytes cultured in media supplemented with serum from monkeys fed HFS +/- resveratrol diets. In conclusion, chronic administration of resveratrol exerts beneficial metabolic and inflammatory adaptations in visceral WAT from diet-induced obese monkeys.\nAnother CR mimetic compound that we have tested is metformin. Metformin, a drug commonly prescribed to treat type-2 diabetes. We showed that treatment with metformin (0.1% w/w in diet) starting at one year of age extends healthspan and lifespan in male mice, while a higher dose (1% w/w) was toxic. Treatment with metformin mimicked some of the benefits of calorie restriction, such as improved physical performance, increased insulin sensitivity, and reduced LDL and cholesterol levels without a decrease in caloric intake. At a molecular level, metformin increased AMP-activated protein kinase activity and increased antioxidant protection, resulting in lower oxidative damage accumulation and chronic inflammation. Our results indicate that these specific factors may contribute to the beneficial effects of metformin administration on healthspan and lifespan. These findings are in agreement with current epidemiological data and further support metformin-based interventions to promote healthy aging.",
+      "amount_eur": 668146.14,
+      "fingerprint": "524effdf1448c1a1",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:1ZIAAG000363-08",
+      "source": "reporter",
+      "title": "Aging Intervention Program",
+      "url": "https://reporter.nih.gov/project-details/1ZIAAG000363-08",
+      "year": 2015
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: alzheimer*, tau, apoe).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "age_related_disease"
+      },
+      "abstract": "ABSTRACT: The locus coeruleus (LC) is considered to be one of the earliest regions accumulating\nhyperphosphorylated tau. The first pretangle deposits occur in young adulthood, and by age 40 the LC is\naffected in nearly every case at autopsy. These tau aggregates occur before the earliest cortical involvement in\nthe entorhinal cortex around age 50, from where they progress to limbic and other cortical regions. The fact\nthat this highly predictable anatomic pattern of pathology progression occurs along regions that are connected\nsuggests that LC-brain connectivity is one of the mechanisms contributing to the earliest vulnerability of\naccumulation and propagation of tau in Alzheimer's disease (AD). The LC has widespread projections to the\ncortex enabling the integration and coordination of communication between segregated regions. However,\neven though, tau is omnipresent in the LC of every person above age 40, not everyone will head down to an\nirreversible AD path. Thus, to ensure that prevention trials are more effective in these early stages, it will be\ncritical to distinguish individuals at risk of AD versus those who remain resilient in the face of pathology. To\novercome this barrier, we need to discern LC large-scale network architectural patterns associated with AD\nvulnerability versus those conferring resiliency to AD. This will provide a deeper understanding of network\nchanges related to healthy or pathological aging, improve early detection and contribute to identifying\nindividuals at-risk for inclusion in prevention trials. The overall goal of this proposal is to characterize and\nunderstand the biological background of LC's specific vulnerability by identifying specific LC- network patterns\ncontributing to vulnerability to AD versus those that confer resiliency, and map associated genetic traits. We\nhypothesize that associating the selective degradation of the LC's capacity to integrate brain networks with AD\npathology will uncover vulnerable and resilient LC-cortical network architectural layouts, which will be\nassociated with AD-related cognitive decline or resiliency, respectively. To achieve this, we will generate multi-\nmodal LC tau-vulnerable clusters by utilizing a unique large 7T fMRI adult lifespan brainstem cohort with\nnovel plasma AD-biomarker data. The architecture of networks emerging from LC clusters will be examined in\nthis 7T fMRI dataset and in two large-scale NIA-funded, rich multi-modal longitudinal datasets, the Harvard\nAging Brain Study and ADNI. We will examine the following aims: 1) To identify the anatomic vulnerability to\ntau along the rostro-caudal axis of the LC and its association with age, sex and APOE; 2) To relate AD\npathology to patterns of LC-cortical network architecture, and identify at-risk versus resilient patterns; 3) To\ncharacterize the genetic brain transcriptome of tau spreading profiles associated with at-risk and resilient LC-\ncortical network patterns. The proposed research is innovative and can result in a significant breakthrough for\nthe field by shifting detection to earlier time points and providing new enrollment strategies or targets for\ntherapeutic approaches administered earlier in the disease trajectory, when brain damage is not yet irreversible.",
+      "amount_eur": 590248.45,
+      "fingerprint": "1530987a7647f6d8",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:5R01AG082006-02",
+      "source": "reporter",
+      "title": "Locus coeruleus network architecture of Alzheimer's disease vulnerability",
+      "url": "https://reporter.nih.gov/project-details/5R01AG082006-02",
+      "year": 2024
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "Keyword evidence for intervention (0.818) and age_related_disease (0.613) is too close to call (margin 0.205 < 0.3).",
+        "expert_label": "age_related_disease",
+        "expert_reason": "\"alcohol use disorder (AUD) is a major cause of morbidity and mortality among people aging with HIV\" — medication safety for a disease in an explicitly ageing population; closest fit is disease-in-older-population research.",
+        "stratum": "disagreement"
+      },
+      "abstract": "HARP PROJECT 2 SUMMARY\nAlthough rarely addressed by HIV healthcare providers, alcohol use disorder (AUD) is a major cause of\nmorbidity and mortality among people aging with HIV (PAH). There are only three Food and Drug\nAdministration-approved medications for AUD and these have had limited acceptability and uptake for several\nreasons. HIV providers are unfamiliar with AUD medications and reticent to add an unfamiliar medication in the\ncomplex context of pre-existing polypharmacy and physiologic frailty. Even in less complex contexts, the\neffectiveness of these medications is modest on average, likely due in part to variations in genetic liability.\nFurther, despite PAH’s excess liability for hepatic injury from alcohol-associated liver disease (AALD), we lack\nmedications to mitigate this injury. As more people are aging with HIV and they continue to drink alcohol, there\nis growing need to identify and evaluate candidate AUD and AALD medications that will be safe and effective\nin the context of polypharmacy and physiologic frailty. Analyses of large scale, real-world data may help us\nidentify and evaluate candidate medications for repurposing (i.e., medications commonly used for other\npurposes that may also decrease drinking or hepatic injury). Building on our strong collaborative history and\nsupported by the larger HIV and Alcohol Research center focused on Polypharmacy (HARP) Program, we will\napply innovative approaches to enhance timely discovery and initial evaluation of candidate repurposed\nmedications for AUD and AALD. In Aim 1 we apply Explainable Artificial Intelligence methods and systems\nbiology to data from the national Veterans Administration Healthcare (VA) electronic health record linked to\ngenetic data and public data to identify candidate repurposed AUD and AALD medications in the context of\ngene networks, which may provide mechanistic details at the biological level. In Aim 2 we use data from the\nwell-characterized VA family of cohorts encompassing >60,000 PAH and millions of uninfected controls, to\nconduct propensity score matched analyses to examine the safety and effectiveness of four candidate\nmedications (prazosin, pioglitazone, and verapamil for AUD and metformin for AALD) among PAH and\nuninfected individuals. In Aim 3, informed by these analyses, our prior alcohol interventions in HIV treatment\nsettings, and in collaboration with the Risk Communication and Administrative/Data Analytic Cores, we will\nconduct three pilot studies employing clinical pharmacist-delivered personalized risk messaging and identified\ncandidate medications to generate time sensitive data on the feasibility, acceptability, and efficacy of these\nmedications to address AUD or AALD. Together, these studies will collectively expedite the pipeline from\ndiscovery to evaluation of novel medications to address AUD and AALD among PAH.",
+      "amount_eur": 470822.12,
+      "fingerprint": "1a73b487d9ae24df",
+      "funder": "National Institute on Alcohol Abuse and Alcoholism",
+      "record_id": "reporter:1P01AA029545-01",
+      "source": "reporter",
+      "title": "Safety and Effectiveness of Medications for Alcohol Use Disorder among HIV+/-",
+      "url": "https://reporter.nih.gov/project-details/1P01AA029545-01",
+      "year": 2021
+    },
+    {
+      "_hidden": {
+        "classifier_label": "fundamental_aging",
+        "classifier_reason": "Lexicon keywords for fundamental_aging decide the record (matched: senescen*, cellular senescence, senescent cell*, sasp, oxidative stress).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "fundamental_aging"
+      },
+      "abstract": "In 2013, my laboratory identified that premature senescence in lung contributes to late radiation injury. We observed IR-induced senescence in type II pneumocytes (AECII), an alveolar stem cell. Progressive accumulation of senescent AECII in mice exposed to fibrosis evoking doses of IR corresponded to the progressive depletion of AECII in the alveoli and the onset of fibrosis. Radiation-induced senescence in AECII and fibrosis were significantly reduced with delivery of an NADPH Oxidase (NOX-4) inhibitor. These data were the first to link senescence occurring in a non-hematopoietic tissue after IR with late radiation injury. My laboratory demonstrated that senescent AECII did not only cause tissue damage through loss of replicative capacity, but also induced secondary senescence in unirradiated AECII via secreted factors and stimulated collagen production by unirradiated fibroblasts. These effects were driven by elaboration of the senescence associated secretory phenotype (SASP), a mixture of cytokines and mitogenic molecules secreted by senescent cells. A number of SASP molecules, such as TGF-beta, VEGF, EGF, IL-6 and IL-1alpha, have been implicated in fibrosis. My laboratory's findings suggested that senescence in irradiated tissue contributes to fibrosis through loss of replicative reserve, enhanced production of mitogenic and pro-inflammatory cytokines, and induction of secondary senescence. The laboratory's efforts have focused on further exploring senescence in radiation injury with the aim of understanding the underlying mechanisms of injury and eventual clinical translation of effective therapies. The general approach has been to target senescence through three mechanisms: 1) targeting SASP family members, 2) preventing senescence after irradiation, and 3) clearing senescent cells. The rationale for this approach is to determine if senescence and members of the SASP are markers or targets (correlated versus causally related), and to clarify further how senescence perpetuates chronic injury. We began exploring candidate genes from the senescence signature used in our initial microarray data set (45 genes), which included genes encoding members of the SASP and genes identified in the AGEMAP database. Using this gene set, we identified candidates for further evaluation based on novelty, evidence of inhibition of senescence in vitro, and supporting scientific rationale. Additional candidates have been identified through analysis of gene expression in mouse and human tissues after radiation exposure. The aging/senescence signature we identified in irradiated fibrotic lung included several SASP molecules not previously implicated in radiation lung injury. We have had promising success with the several targets we have tested, such as PAI-1 and 12-HETE. Our strategy is centered around the careful study of the most activated SASP pathways in our models which may provide important new targets, biomarkers of toxicity, and/or deeper mechanistic understanding. PAI-1. We used a recombinant truncated PAI-1 protein (rPAI-123) a that competitively inhibits endogenous PAI-1 binding on tPA and reduces PAI-1 activity to probe the importance of PAI-1 in radiation fibrosis and senescence. Treatment of mice with rPAI-123 was highly effective in preventing AECII senescence, reducing macrophage accumulation, and preventing lung fibrosis. We have since confirmed increased PAI-1 expression in a cutaneous fibrosis model and in irradiated human lung. 12-HETE (via 12-LOX). We hypothesized that 12-LOX activity after IR enhances the fibrotic response in lung via 12-Hydroxyeicosatetraenoic acid (12-HETE), the product of 12-LOX. Using primary pneumocyte cultures, we described that 12-HETE is capable of directly inducing senescence in AECII in a NOX4 dependent manner. Further, 12-HETE treated pneumocytes secreted increased levels of IL-13 and induced M2 polarization in co-cultured macrophages. ALOX12 deficient mice treated with thoracic IR were resistant to AECII senescence, fibrosis, and M2 macrophage accumulation, emphasizing the importance of 12-LOX in radiation fibrosis and inflammation. The laboratory subsequently demonstrated that 12-LOX is a critical component of accelerated tumor growth in senescent, irradiated tissue. NOX4. Studies in irradiated primary AECII cultures demonstrated that inhibition of NOX4 with diphenylene iodonium (DPI) inhibited superoxide production and prevented IR-induced AECII senescence. Treatment of mice exposed to 5x6 Gy thoracic IR with DPI inhibited senescence of AECII, reduced AECII depletion, and mitigated radiation-induced lung fibrosis. These data support the hypothesis that oxidative stress plays a critical role in radiation injury and AECII senescence in vivo. These data support the concept that AECII senescence and chronic oxidative stress mediated by NOX4 plays an important role in radiation lung injury. mTOR. In collaboration with Jim Mitchell (RBB), we explored mTOR inhibition with rapamycin as a method to prevent AECII senescence and lung injury. The mTOR signaling pathway plays an essential role in aging and senescence. Rapamycin prevents cellular senescence induced by cellular stress as well as oncogene-induced and replicative senescence. Delivery of rapamycin (low dose: 14 mg/kg/day) to C57BL/6NCr mice reduced lung fibrosis and significantly prolonged survival after thoracic IR (6Gy x 5). Treatment with rapamycin inhibited IR-induced signaling downstream of mTOR and reduced expression of pro-fibrotic, immunomodulatory, and senescence associated cytokines in irradiated lungs, including TGF-beta and IL-1beta. Lung tissue of rapamycin treated irradiated mice exhibited a marked reduction in macrophage accumulation, collagen content, and AECII senescence (linked publication). The laboratory later demonstrated that mTOR inhibition (rapamycin, INK-128) was capable of preventing accelerated tumor growth in senescent, irradiated lung. IGF1. Treatment of primary pneumocyte cu",
+      "amount_eur": 1640332.13,
+      "fingerprint": "fe85d568594c1b53",
+      "funder": "National Cancer Institute",
+      "record_id": "reporter:1ZIABC010850-18",
+      "source": "reporter",
+      "title": "Mechanisms of Normal Tissue Toxicity From Irradiation",
+      "url": "https://reporter.nih.gov/project-details/1ZIABC010850-18",
+      "year": 2024
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: adrd, dementia*).",
+        "expert_label": "ambiguous",
+        "expert_reason": "Inclusion core to 'resolve the barriers to research participation for African and Native Americans' within an ageing center — infrastructure with no category signal in its own text.",
+        "stratum": "disagreement"
+      },
+      "abstract": "PROJECT SUMMARY – INCLUSION OF UNDER-REPRESENTED GROUPS CORE (Core F)\nThe Inclusion of Under-Represented Groups Core or the IURG Core currently works with the Clinical; Outreach,\nRecruitment and Engagement (ORE); Data Management and Statistical (DMS); and Biomarker Cores to identify\nand resolve the barriers to research participation for African and Native Americans. The IURG has made inroads,\nallowing us to enroll 290 individuals from URG, comprising 26% of the overall cohort, and we are poised to\nexpand this Justice, Equity, Diversity, and Inclusion (JEDI) focused work. The IURG Core will continue to be fully\nintegrated with the Center, assisting investigators to engage Native and African American, and Veteran\ncommunities, ensuring adequate inclusion to answer scientific questions and optimize generalizability of findings.\nThe work proposed in this application will promote research focused on the biological underpinnings of healthy\naging, preclinical AD and the transition from MCI to AD dementia and ensure that science conducted at the\nWisconsin ADRC includes groups traditionally under-included in research. Briefly, the IURG Core will ensure\nthat participants from under-represented groups (URG) are included in the Wisconsin ADRC Clinical Core. In\nsupport, we propose the following Specific Aims.\nSpecific Aim 1: In collaboration with the Outreach, Recruitment and Education (ORE) Core, the IURG Core will\nadapt and tailor outreach, recruitment, and engagement activities to reach groups under-represented in\nresearch. Specifically, efforts will focus on tailored approaches for African American and American\nIndian/Indigenous groups. We will build on our Center’s work with military Veterans and will support ORE Core\nefforts to expand Registry participation. Sub-Aims include supporting Community Advisory Boards (CABs),\nleading community-specific outreach and engagement programs, developing culturally-safe, community-based\ndata collection processes, and developing stakeholder engagement opportunities.\nSpecific Aim 2: The IURG Core will provide consultation to support community engaged research with\nindividuals from URGs at two levels – both of which will grow Center-wide capacity for JEDI-centered research.\nSub-Aims include working with the Biomarkers and Neuropathology Cores to promote participation of individuals\nfrom URG in biomarker sub-studies, and the Center’s Brain Donor Program, and to provide programed\nconsultation for teams seeking to increase inclusion of racialized groups into research studies.\nThe aims and activities described here align with and support the Center’s overarching scientific theme by\napplying the JEDI principles – Justice, Equity, Diversity, and Inclusion in service of inclusive ADRD research.",
+      "amount_eur": 368896.65,
+      "fingerprint": "0f23386d340eb147",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:2P30AG062715-06",
+      "source": "reporter",
+      "title": "Core F - Inclusion of Underrepresented Groups Core",
+      "url": "https://reporter.nih.gov/project-details/2P30AG062715-06",
+      "year": 2024
+    },
+    {
+      "_hidden": {
+        "classifier_label": "ambiguous",
+        "classifier_reason": "Keyword evidence for fundamental_aging (0.667) and age_related_disease (0.6) is too close to call (margin 0.067 < 0.3).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "ambiguous"
+      },
+      "abstract": "The Colorado Specialized Center of Research Excellence (SCORE) on Sex Differences and Women’s Health\nis focused on Bioenergetic and Cardiometabolic Consequences of the Loss of Gonadal Function. The\noverarching scientific goal of the SCORE is to address gaps in knowledge of the impact of gonadal aging on\nthe regulation of energy homeostasis and metabolism by conducting mechanistically driven research across\nthe basic-to-clinical translational spectrum. The scientific premise is that gonadal aging, through the\naccompanying decline in sex hormones, mediates biological changes that increase risk for chronic disease.\nImportantly, because gonadal failure is inevitable in women in mid-life, but rare in men until much later in life,\nthis meets the objective of the SCORE Program to study sex differences that impact women’s health. The\nColorado SCORE is focused on the increased propensity for abdominal fat accumulation and the associated\ncardiometabolic dysfunction that are consequent to the loss of ovarian function. The overarching educational\nobjective is to engage new investigators in research aligned with the focus of the SCORE. The SCORE will\nprovide mentored career development and training on how to conduct research that appropriately addresses\nsex as a biological variable (SABV). These overarching objectives will be accomplished through the following\nAims: 1) Advance novel translational research on mechanisms that are postulated to contribute to the\nabdominal adiposity and cardiometabolic dysfunction that accelerate following estradiol withdrawal. All projects\ninclude a focus on the kynurenine pathway because of the emerging evidence that it regulates energy\nhomeostasis, metabolic function, and the aging process. The Colorado SCORE investigators are experts in\nthese areas and are exceptionally well positioned to advance this research. 2) Attract and support outstanding\nearly career investigators with research interests related to the SCORE and engage them in CEC training\nactivities that will successfully advance their careers. The SCORE will support one Scholar and four Pilot\nProject Awardees each year. 3) Provide infrastructural support for the SCORE Research Projects, Scholars,\nand Pilot Awardees through the LAC, including biostatistics, data management, financial oversight, and\nadministrative support. 4) Partner with and leverage resources provided by other programs at CU-AMC\n(Multidisciplinary Center on Aging, Ludeman Center for Women’s Health Research, Nutrition Obesity Research\nCenter, Clinical and Translational Sciences Institute) to elevate the visibility and multi-disciplinary reach of\nwomen’s health research and the importance of investigating SABV. Activities will target both scientific and lay\ncommunities at local, regional, and national levels. Achieving these Aims will position the SCORE as a\nnational leader in women’s health research, and the CEC as a model program for training the next\ngeneration of scientists to integrate SABV in their research with a goal of improving women’s health.",
+      "amount_eur": 1293995.86,
+      "fingerprint": "1c7a4f2e0896b437",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:5U54AG062319-12",
+      "source": "reporter",
+      "title": "Bioenergetic and Cardiometabolic Consequences of the Loss of Gonadal Function",
+      "url": "https://reporter.nih.gov/project-details/5U54AG062319-12",
+      "year": 2024
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: tumor*, carcinoma*, carcinogenesis).",
+        "expert_label": "not_relevant",
+        "expert_reason": "\"Signaling Pathways that Initiate Squamous Cell Carcinogenesis\" — cancer initiation biology, no ageing angle.",
+        "stratum": "disagreement"
+      },
+      "abstract": "In the skin model activating mutations in H-ras, K-ras and N-ras are sufficient to produce the clonal benign squamous papilloma expressing the phenotype of the initiated cell. Utilizing H-ras transduced isolated primary keratinocytes, we have demonstrated that oncogenic Ras upregulates EGFR ligands, establishing a positive feedback loop through EGFR, thus increasing proliferation and simultaneously activating src kinases to tyrosine phosphorylate and inactivate PKC delta, thereby inhibiting PKC-dependent keratinocyte terminal differentiation. Contemporaneous H-ras mediated activation of phospholipase C and PKCalpha establishes a second feedback loop through IL-1alpha and its receptor, activating MyD88 and NFkB to establish a unique gene expression profile characteristic of both initiated cells and papillomas. Interruption of any of these interacting pathways by drugs, knockdown or genetic deletion reduces or prevents tumor formation. An important downstream effector of these interacting pathways is the upregulation and release of chemokines such as CXCL1 and CXCL2 that act in a paracrine mode to attract inflammatory cells and stimulate angiogenesis and an autocrine mode to promote migration of initiated cells. Interruption of any of these pathways inhibits tumor formation. We have also discovered a fundamental function for Adam17, a disintegrin required for the release of EGFR ligands from their membrane attachment. Knockdown of Adam17 prevents the activation of EGFR in H-ras transformed keratinocytes. Preliminary studies indicate that H-ras mediates Adam17 activity via as yet undetermined action on iRhom1 and iRhom2 that are required for Adam17 membrane localization and maturation. Tissue array analysis of human skin tumors indicates that MET is abundantly expressed in progressing squamous carcinomas along with its ligand HGF. We induced tumors with DMBA and TPA on transgenic mice that overexpress HGF and noted a marked increase in papillomas and carcinomas relative to control groups. Further analysis revealed that activation of MET in epidermis is sufficient to initiate tumor formation after TPA promotion in the absence of DMBA. In isolated keratinoctyes, activation of MET mimics the H-ras initiated phenotype reproducing the EGFR and other required feedback loops. However, the application of DMBA to mice with activated MET produces more carcinomas with K-ras mutations than application of DMBA to control mice where H-ras mutations dominate, suggesting that tissue context influences the selection of ras mutations in tumors. RNA profiling of initiated mouse keratinocytes produced by MET or H-ras activation has revealed signature gene expression changes common to both and not previously associated with tumor initiation. Current studies are extending the analysis to K-ras initiated keratinocytes and using knockdown or overexpression approaches to test for critical elements in the common expression profiles essential for initiation and tumor formation. The pathways that have been defined for transforming mouse keratinocytes are also being tested in human keratinocytes transformed by the oncogenic H-, K- and N- ras alleles. Keratinocytes and other epithelial cells may respond to oncogenic stimuli such as mutant ras alleles by activating a senescence program. Current studies indicate that this program in keratinocytes is mediated by the Rho pathway and depends on the activation of p19/Arf and p21. Antagonism of this pathway provides an opportunity to evaluate the cellular biochemistry associated with premalignant progression and malignant conversion.",
+      "amount_eur": 1030192.37,
+      "fingerprint": "7eaaa0fd6b5ff895",
+      "funder": "National Cancer Institute",
+      "record_id": "reporter:1ZIABC004504-44",
+      "source": "reporter",
+      "title": "Interacting Signaling Pathways that Initiate Squamous Cell Carcinogenesis",
+      "url": "https://reporter.nih.gov/project-details/1ZIABC004504-44",
+      "year": 2016
+    },
+    {
+      "_hidden": {
+        "classifier_label": "fundamental_aging",
+        "classifier_reason": "Lexicon keywords for fundamental_aging decide the record (matched: senescen*, aging hallmark*, telomere*, dna methylation).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "fundamental_aging"
+      },
+      "abstract": "Cystolic DNA (cyDNA), which is acquired in somatic cells, is emerging as an instigator/integrator of cellular\nfunctions associated with aging, yet the causes/consequences of cyDNA are poorly understood. Do individuals\nhave a genetic predisposition to develop cyDNA or is its frequency most heavily influenced by environmental\nfactors? Is cyDNA an early trigger for the acquisition of other age-related biomarker hallmarks, or does it arise\nin response to perturbations involving a subset of these hallmarks? To answer these primary questions, we will\ncomplete a longitudinal study (10 to 15 years timeframe) of 100 twin pairs [70 identical (MZ) and 30 fraternal\n(DZ) twin pairs; 200 individuals] who are discordant (35 MZ; 15 DZ) or concordant (35 MZ; 15 DZ) for cyDNA\nfrequencies. The twin pairs will vary in age (currently 22 to at least 80 y.o) to allow us to chronicle associations\nbetween aging hallmarks and the acquisition of cyDNA. For each time point we will determine: (a) cyDNA\nlevels, (b) chromosome specific-telomere/subtelomere lengths, (c) senescence markers, and (d) DNA\nmethylation patterns in cells from two different tissues (blood and buccal mucosa cells [to assess potential\nsoma-related differences]). Two measures of cyDNA will be quantified: (1) micronuclei (MN) frequency; and (2)\nextrachromosomal circular DNA (eccDNA) frequency. The MN frequencies will be identified for each of the 24\nhuman chromosomes using a novel assay we developed that combines spectral karyotyping and fluorescence\nin situ hybridization technologies. The genetic contents of the eccDNA will be determined using our rolling\ncircle amplification and sequencing protocol. Chromosome-specific telomere and subtelomere lengths will be\ndetermined using our Q-FISH method and our newly developed nanomapping method that exploits atomic\nforce microscopy, CRISPR-Cas9, and our novel genome sequence algorithm to provide unprecedented\nresolution of telomere/subtelomere measures. We will also use “state of the art” tools we developed/optimized,\nto quantify telomere dysfunction; senescence (SADS, classical, and transcriptome studies), and genome-wide\nDNA methylation patterns. Using a method of robust variance component estimation (implemented in the\nFISHER quantitative genetics package), this study will provide the first measure of the extent to which\nindividual differences in cyDNA and subtelomere lengths (which are associated with TERRA) are determined\nby additive genetic, common environmental, and specific environmental effects. We will also use “state of the\nart” statistical modeling and bioinformatic tools that we developed/optimized to analyze biomarker patterns\nwithin individuals, between co-twins, and among twin pairs to determine the stability of patterns with aging, and\nto identify temporal, as well as driver/mediator, relationships among cyDNA and other aging hallmarks\n(telomeres/subtelomeres, DNA methylation, senescence). The information gained from this study could also\nlead to the development of a health screening test(s) and/or identify new therapeutic targets that could\ntransform our approach for developing treatments to alleviate symptoms of age-related health conditions.",
+      "amount_eur": 712717.39,
+      "fingerprint": "1ba42029cba04562",
+      "funder": "National Institute on Aging",
+      "record_id": "reporter:5R01AG082811-03",
+      "source": "reporter",
+      "title": "Cytosolic DNA, Telomeres/Subtelomeres, and Epigenetics: A Longitudinal Twin Study to Assess the Role of Genetics and Environment on their Frequency and Inter-relationships",
+      "url": "https://reporter.nih.gov/project-details/5R01AG082811-03",
+      "year": 2025
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: stroke).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "age_related_disease"
+      },
+      "abstract": "Conditional Animal Models of mtDNA Disease: Abstract\nMitochondria are critical for metabolism, organ homeostasis, apoptosis, and aging. This wide range of impact is\nmanifested by the enormous biological variation and diverse disorders in patients with mitochondrial disease\naffecting organs such as the eye, ear, brain, muscle, and kidney. Understanding how mitochondria function in\nnormal biology - and how human mitochondrial DNA (mtDNA) variations contribute to health and disease - has\nbeen hampered by a lack of animal models due to limited approaches to manipulate this powerhouse of the cell.\nThis project aims to resolve this major technical bottleneck in the field to enable us to deploy a full complement\nof gene editors to introduce precise edits in the mitochondrial genome in a manner capable of temporal and\nspatial control and to use these to make the first conditional animal model of mitochondrial disease using\nzebrafish.\n CRISPR gene editing tools have enabled the rapid manipulation of the nuclear genome. CRISPR\nsystems are dual molecular, with Cas protein and gRNA components. They are not currently operational in the\nmitochondrial compartment however because of a lack of effective methods to deliver exogenous guide RNAs.\nWe have identified an endogenously trafficked RNA that can carry targeted nucleotide changes from the nucleus\ninto mitochondria, representing a potential novel method for the introduction of programmed RNAs suitable for\nuse as guide molecules for CRISPR Cas proteins in mitochondria. When combined with a Cre-regulated\nmitochondrial Cas12a base editor, we will generate a conditional zebrafish disease model for multi-systemic\nmtDNA-encoded mitochondrial encephalopathy, lactic acidosis, and stroke-like episodes (MELAS).\n The establishment of this toolkit will not only shed mechanistic insights but will also facilitate the\ngenomic nosology of a large class of mitochondrial disorders. If successful, the versatile mtRNA chimeric\ngRNA delivery system will enable us to model different mitochondrial pathogenic variations. This application\nharnesses the unique environment of mitochondria to generate a new toolbox to expand the repertoire of tools\nto edit the mitochondrial genome.",
+      "amount_eur": 206392.34,
+      "fingerprint": "d8a5825fd185c7c3",
+      "funder": "NIH Office of the Director",
+      "record_id": "reporter:5R21OD036173-02",
+      "source": "reporter",
+      "title": "Conditional Animal Models of mtDNA Disease",
+      "url": "https://reporter.nih.gov/project-details/5R21OD036173-02",
+      "year": 2025
+    },
+    {
+      "_hidden": {
+        "classifier_label": "age_related_disease",
+        "classifier_reason": "Lexicon keywords for age_related_disease decide the record (matched: heart failure).",
+        "expert_label": "",
+        "expert_reason": "",
+        "stratum": "age_related_disease"
+      },
+      "abstract": "Project Summary\nHeart failure (HF) with preserved ejection fraction (HFpEF) is most common form of HF in the US and is\nassociated with high morbidity and mortality. HFpEF disproportionately affects women and non-Hispanic Black\npersons. HFpEF is now understood as a heterogeneous syndrome intertwined with aging and multiple\ncomorbidities, and likely has multiple phenotypes. The pathophysiology remains incompletely understood and\nfew evidence-based treatments exist. This is the premise for HeartShare, a pivotal NHLBI initiative, whose\nultimate goals are to discover novel biological signals that will lead to actionable targets to inform future HFpEF\ninterventions.10 HeartShare is developing a Registry of 10,000 HF patients and matched comparators, and a\ncomprehensive 1000 participant Deep Phenotyping cohort. The Deep Phenotyping arm has to date recruited\n262 participants from 7 sites. Of these, 80%, are White, and only 11% are African American, considerably\nbelow the expected goal. There has developed a broad consensus among HeartShare stakeholders that\nadditional effort and support are needed to develop and implement strategies to help achieve diversity goals,\nand specifically for a ‘Diversity Champion’ approach. Without the urgent, coordinated intervention in this\nproposal to enhance inclusivity, participant diversity is likely to continue to be suboptimal, jeopardizing\nHeartShare’s validity and generalizability. The Wake Forest-Atrium HeartShare Clinical Site has a diverse\ninvestigator team, has consistently exceeded diversity enrollment targets in many clinical studies, and to date\nleads overall Heart Share enrollment and has the highest percentage of female participants and the second\nhighest percentage of Black participants among the 7 sites. The overall goal of this proposal is to enhance\nenrollment of under-represented groups across HeartShare sites by carrying out the following Aims: 1)\nCompleting a comprehensive assessment of resources and strategies for enrolling URM participants at each of\nthe clinical sites across HeartShare, as well as outcomes to date; 2) Utilizing the results of the comprehensive\nassessment to develop optimal practices for enrollment of URM participants in HeartShare, test and refine\nthem at Wake Forest’s site, and then disseminate and help implement them across all HeartShare sites; 3)\nContinuously monitor progress and dynamically adjust strategies as needed to help ensure optimal participant\ndiversity and inclusion across HeartShare. Our proposal is supported by: 1) An unexpected, compelling need\nin a pivotal, ongoing NHLBI study; 2) Preliminary data indicating lack of a cohesive, robust, organized\napproach to diversity and inclusion; 3) a diverse, multi-disciplinary leadership team consisting of a promising\nminority female early career investigator combined with highly experienced senior investigators and staff, who\ntogether have developed a strong track record for diverse participant enrollment in HeartShare and multiple\nother trials; 4) enthusiastic support of the HeartShare Data Translational Center and Clinical Sites.",
+      "amount_eur": 235659.94,
+      "fingerprint": "1a5e80e74c5e1189",
+      "funder": "National Heart Lung and Blood Institute",
+      "record_id": "reporter:3U01HL160272-04S1",
+      "source": "reporter",
+      "title": "Wake Forest Atrium HeartShare Clinical Center",
+      "url": "https://reporter.nih.gov/project-details/3U01HL160272-04S1",
+      "year": 2024
+    }
+  ],
+  "seed": 20260913,
+  "size": 40,
+  "strata": {
+    "age_related_disease": 6,
+    "ambiguous": 4,
+    "disagreement": 16,
+    "fundamental_aging": 6,
+    "intervention": 4,
+    "not_relevant": 4
+  }
+}

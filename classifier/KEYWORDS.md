@@ -258,9 +258,9 @@ still meet the precision threshold.
 
 | category | en keywords | sv keywords | coverage of category records |
 | --- | --- | --- | --- |
-| fundamental_aging | 39 | 1 | 0.562 |
+| fundamental_aging | 50 | 1 | 0.610 |
 | intervention | 11 | 1 | 0.414 |
-| age_related_disease | 56 | 8 | 0.770 |
+| age_related_disease | 58 | 8 | 0.777 |
 | care | 16 | 6 | 0.624 |
 | social_population_aging | 11 | 1 | 0.048 |
 
@@ -275,9 +275,10 @@ hits were therefore additionally spot-checked by title; terms that cleared the
 proxy numerically but failed the spot-check are recorded in the category's
 `trap_terms` (see the funnel section below).
 
-English counts include the 33 HALD-derived keywords and the 2
-longevity-factor terms described below (marked `source: "HALD"` and
-`source: "longevity_keywords_ext.md"` in the JSON); the rest are the seed
+English counts include the 33 HALD-derived keywords, the 2
+longevity-factor terms and the 13 ambiguous-mining terms described below
+(marked `source: "HALD"`, `source: "longevity_keywords_ext.md"` and
+`source: "ambiguous-mining-2026-09-12"` in the JSON); the rest are the seed
 lexicon.
 
 Coverage = share of the category's LLM-labelled records matched by at least
@@ -431,6 +432,83 @@ list:
 
 The admitted stats come from the same unverified LLM labels as the rest of
 the lexicon; `nutrient sensing` is `low_evidence` and provisional.
+
+## Ambiguous-mining expansion (12 September 2026)
+
+Track A of [`ratio/V2_PLAN.md`](../ratio/V2_PLAN.md). Source of truth for
+candidate selection: `ratio/expert/expert-labels.jsonl`. From the 561 records
+the senior expert labelled with a substantive category while the ratio rules
+classifier called them `ambiguous`, 1-3-grams were ranked by lift against
+records with any other expert label (per-title dedupe, name and function-word
+filters). 69 candidates were validated through two gates:
+
+- Gate 1: the standard validator thresholds on the atlas (`PROXY_LABEL` for
+  the social category applies as usual).
+- Gate 2: precision >= 0.60 against the expert labels, minimum 3 labelled
+  records.
+- Gate 3 (genericity guard): share of already-classified census records that
+  fall in the candidate's category, because generic terms can clear both
+  precision gates in an ageing-filtered corpus and still collide in live text
+  (the same trap class as `disease`, `app`, `shock` in the HALD enrichment).
+
+44 candidates cleared Gates 1-2, 13 survived Gate 3:
+
+| category | term | atlas hits / precision | expert precision | ambiguous census hits / EUR | category share |
+| --- | --- | ---: | ---: | ---: | ---: |
+| fundamental_aging | stress resistance | 5 / 1.0 | 1.0 | 10 / 4.6M | 0.80 |
+| fundamental_aging | mtdna | 10 / 0.9 | 0.8 | 14 / 6.6M | 0.77 |
+| fundamental_aging | foxo | 3 / 0.667 | 1.0 | 0 / 0 | 0.76 |
+| fundamental_aging | hematopoietic stem cells | 6 / 1.0 | 0.83 | 40 / 16.5M | 0.75 |
+| fundamental_aging | reproduction | 6 / 0.667 | 1.0 | 22 / 8.6M | 0.74 |
+| fundamental_aging | mirnas | 7 / 1.0 | 1.0 | 31 / 15.0M | 0.73 |
+| fundamental_aging | underlying mechanisms | 8 / 0.75 | 0.75 | 83 / 28.0M | 0.68 |
+| fundamental_aging | stem cells | 23 / 0.826 | 0.7 | 185 / 64.7M | 0.66 |
+| fundamental_aging | evolutionarily conserved | 4 / 1.0 | 1.0 | 20 / 10.8M | 0.63 |
+| fundamental_aging | hypothalamic | 4 / 1.0 | 1.0 | 5 / 1.2M | 0.58 |
+| fundamental_aging | germline | 3 / 0.667 | 1.0 | 27 / 11.1M | 0.55 |
+| age_related_disease | retinal | 8 / 0.625 | 0.75 | 27 / 24.2M | 0.70 |
+| age_related_disease | fractures | 9 / 0.889 | 0.78 | 32 / 10.5M | 0.59 |
+
+All 13 carry `source: "ambiguous-mining-2026-09-12"` in the JSON;
+`low_evidence` (3-4 hits): `foxo`, `evolutionarily conserved`, `germline`,
+`hypothalamic`. Coverage moved 0.562 -> 0.610 for fundamental_aging and
+0.770 -> 0.777 for age_related_disease.
+
+Rejected at Gate 3 with their measured census collision (ambiguous hits /
+EUR): `gene expression` (274 / 161.7M), `molecular mechanisms` (239 /
+132.1M), `required` (227 / 98.5M), `focusing` (155 / 115.6M),
+`biological mechanisms` (158 / 77.8M), `underlying` remainders, pronouns and
+verbs (`itself`, `interest`, `exhibit`, `disrupted`, `impairs`, `tractable`,
+`axis`, `underlie`, `lived`), social non-terms (`lives`, `journal`),
+disease-adjacent noise (`complications`, `hiv infection`, `memory deficits`,
+`brain iron`, `neurogenesis`, `nervous system`, `systems biology`,
+`nutrient`, `mechanisms associated`, `identifying genetic`). Full evidence:
+[`ratio/candidates_validated.csv`](../ratio/candidates_validated.csv);
+candidate mining in [`ratio/mine_candidates.py`](../ratio/mine_candidates.py).
+`inflamm` was rejected as a fragment of the already-kept `inflammaging`.
+`social_population_aging` produced no admits this round: its blind spots are
+trap terms (`loneliness`, `participation`, ...) and are handled by the
+conditional-voter block below instead of new unconditional keywords.
+
+### Conditional voters (Track A3)
+
+Trap terms and expert-validated seeds that cannot decide alone carry
+measured signal under a condition and were admitted as `conditional_voters`:
+`loneliness` (weight 0.500), `participation` (0.444), `social isolation`
+(0.400) and `older age` (0.400) vote for `social_population_aging` only when
+an ageing anchor is present; `senolytic*` (0.421) votes for `intervention`
+only with explicit developing/testing language. Two expert-validated seeds
+join them under the same anchor condition because they cannot clear the
+stale social proxy: `housing` (0.842 on 19 atlas records) and
+`social inequalities` (1.000 on 4). Weights are measured expert precision
+from `ratio/expert/expert-labels.jsonl` and are recorded per entry with
+their evidence; `ratio/classify.py` marks them `(conditional)` in
+`matched_keywords`. The validator syntax-checks the block (term well-formed,
+`requires` in anchor/dev_cues, weight in [0,1], term must not be a kept
+keyword) and applies no thresholds, because the vote is conditioned.
+Terms measured below 0.40 expert precision were not admitted (`healthspan`
+0.22, `extend healthspan` 0.33, `life course` 0.16, `ageing population`
+0.36, `social network*` 0.00, `lifespan extension` 0.00).
 
 ## social_population_aging derivation (12 September 2026)
 

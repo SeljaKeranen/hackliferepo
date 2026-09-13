@@ -1,9 +1,12 @@
 {
   "method": {
-    "description": "Deterministic rule classifier over the ageing grant corpus; see ratio/README.md.",
-    "corpus": "census of 13224 grant records - the complete result set of the atlas search nets, fetched 2026-09-12 (SweCRIS 870, CORDIS 239, NIH RePORTER 12115); funnel in ratio/data/funnel.json",
+    "description": "Rule classifier with deepseek-flash adjudication of every ambiguous record; see ratio/README.md.",
+    "corpus": "same 13,224-grant census as the rules build",
     "corpus_mode": "census",
     "lexicon": "classifier/keywords.json",
+    "scenario": "adjudicated",
+    "model": "deepseek-flash (API, temperature 0)",
+    "adjudicated_records": 1314,
     "numerator": [
       "fundamental_aging",
       "intervention"
@@ -18,39 +21,39 @@
     "tie_margin": 0.3,
     "evidence_floor": 0.6,
     "rel_margin": 0.1,
-    "inputs_hash": "246522e235e3",
-    "built_at_commit": "d57c99a-dirty",
+    "inputs_hash": "74197464d32e",
     "caveats": [
-      "Labels are rule-based and not yet human-verified; the 30-record human benchmark is pending.",
-      "The corpus is the complete result set of the ageing search nets, not any funding body's total budget; net recall bounds coverage - see ratio/data/CROSSCHECK.md for the comparison against published funder totals.",
-      "Census records are classified over title + abstract; the earlier atlas sample used title + a short model-chosen quote.",
-      "Ambiguous grants are excluded from the ratio and shown as an explicit share beside it."
+      "Adjudicated labels come from one deepseek-flash pass, not from human reviewers; the 30-record human benchmark is still unlabelled.",
+      "Every adjudication carries one verbatim quote from the record, machine-verified (ratio/verify_adjudication.py); records whose quote failed validation keep their rules label.",
+      "On a 29-record overlap the API pass agrees with the in-session pass on 24 (83%); disagreements are boundary calls and are documented in ratio/README.md.",
+      "The corpus is the complete result set of the ageing search nets, not any funding body's total budget; compare shapes across regions, not absolute budgets.",
+      "Ambiguous adjudications stay excluded from both sides and reported as the honesty band beside the ratio."
     ]
   },
   "total": {
     "records": 13224,
     "counts": {
-      "not_relevant": 254,
-      "social_population_aging": 178,
-      "age_related_disease": 4677,
-      "ambiguous": 1314,
-      "care": 182,
-      "fundamental_aging": 6533,
-      "intervention": 86
+      "not_relevant": 868,
+      "social_population_aging": 354,
+      "age_related_disease": 4853,
+      "care": 203,
+      "fundamental_aging": 6777,
+      "intervention": 139,
+      "ambiguous": 30
     },
     "eur": {
-      "not_relevant": 199021109.18,
-      "social_population_aging": 102024013.62,
-      "age_related_disease": 2903373780.96,
-      "ambiguous": 795350454.59,
-      "care": 107647155.68,
-      "fundamental_aging": 2953746297.96,
-      "intervention": 37714048.39
+      "not_relevant": 595695216.38,
+      "social_population_aging": 180598479.25,
+      "age_related_disease": 2981282774.64,
+      "care": 113627303.25,
+      "fundamental_aging": 3136286015.94,
+      "intervention": 81581734.23,
+      "ambiguous": 9805336.69
     },
-    "numerator_eur": 2991460346.35,
-    "denominator_eur": 6104505296.61,
-    "ratio": 0.49,
-    "ambiguous_share": 0.1153,
+    "numerator_eur": 3217867750.17,
+    "denominator_eur": 6493376307.31,
+    "ratio": 0.4956,
+    "ambiguous_share": 0.0015,
     "eur_missing_records": 329
   },
   "regions": {
@@ -58,79 +61,81 @@
       "name": "European Union",
       "records": 239,
       "counts": {
-        "ambiguous": 72,
-        "fundamental_aging": 95,
+        "not_relevant": 98,
+        "fundamental_aging": 97,
         "age_related_disease": 23,
-        "not_relevant": 38,
+        "intervention": 5,
         "care": 6,
-        "social_population_aging": 5
+        "social_population_aging": 9,
+        "ambiguous": 1
       },
       "eur": {
-        "ambiguous": 216617033.98,
-        "fundamental_aging": 124588727.87,
+        "not_relevant": 238246551.5,
+        "fundamental_aging": 138471207.87,
         "age_related_disease": 45554574.25,
-        "not_relevant": 65444703.3,
+        "intervention": 22715816.75,
         "care": 18080398.15,
-        "social_population_aging": 4064009.4
+        "social_population_aging": 10781665.68,
+        "ambiguous": 499232.75
       },
-      "numerator_eur": 124588727.87,
-      "denominator_eur": 192287709.67,
-      "ratio": 0.6479,
-      "ambiguous_share": 0.5297,
+      "numerator_eur": 161187024.62,
+      "denominator_eur": 235603662.7,
+      "ratio": 0.6841,
+      "ambiguous_share": 0.0021,
       "eur_missing_records": 0
     },
     "SE": {
       "name": "Sweden",
       "records": 870,
       "counts": {
-        "not_relevant": 166,
-        "social_population_aging": 81,
-        "age_related_disease": 219,
-        "ambiguous": 172,
-        "care": 103,
-        "fundamental_aging": 125,
-        "intervention": 4
+        "not_relevant": 230,
+        "social_population_aging": 139,
+        "age_related_disease": 238,
+        "care": 110,
+        "fundamental_aging": 143,
+        "intervention": 9,
+        "ambiguous": 1
       },
       "eur": {
-        "not_relevant": 118662428.14,
-        "social_population_aging": 46249521.97,
-        "age_related_disease": 75678345.44,
-        "ambiguous": 57524491.19,
-        "care": 57857627.95,
-        "fundamental_aging": 51944373.48,
-        "intervention": 1081220.58
+        "not_relevant": 135434742.38,
+        "social_population_aging": 64041304.59,
+        "age_related_disease": 83088138.01,
+        "care": 60730291.05,
+        "fundamental_aging": 60729295.14,
+        "intervention": 4972724.76,
+        "ambiguous": 1512.82
       },
-      "numerator_eur": 53025594.06,
-      "denominator_eur": 232811089.42,
-      "ratio": 0.2278,
-      "ambiguous_share": 0.1981,
+      "numerator_eur": 65702019.9,
+      "denominator_eur": 273561753.55,
+      "ratio": 0.2402,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 2
     },
     "US": {
       "name": "United States",
       "records": 12115,
       "counts": {
-        "social_population_aging": 92,
-        "fundamental_aging": 6313,
-        "ambiguous": 1070,
-        "age_related_disease": 4435,
-        "not_relevant": 50,
-        "intervention": 82,
-        "care": 73
+        "social_population_aging": 206,
+        "fundamental_aging": 6537,
+        "age_related_disease": 4592,
+        "not_relevant": 540,
+        "intervention": 125,
+        "care": 87,
+        "ambiguous": 28
       },
       "eur": {
-        "social_population_aging": 51710482.25,
-        "fundamental_aging": 2777213196.61,
-        "ambiguous": 521208929.42,
-        "age_related_disease": 2782140861.27,
-        "not_relevant": 14913977.74,
-        "intervention": 36632827.81,
-        "care": 31709129.58
+        "social_population_aging": 105775508.98,
+        "fundamental_aging": 2937085512.93,
+        "age_related_disease": 2852640062.38,
+        "not_relevant": 222013922.5,
+        "intervention": 53893192.72,
+        "care": 34816614.05,
+        "ambiguous": 9304591.12
       },
-      "numerator_eur": 2813846024.42,
-      "denominator_eur": 5679406497.52,
-      "ratio": 0.4954,
-      "ambiguous_share": 0.0841,
+      "numerator_eur": 2990978705.65,
+      "denominator_eur": 5984210891.06,
+      "ratio": 0.4998,
+      "ambiguous_share": 0.0016,
       "eur_missing_records": 327
     }
   },
@@ -140,27 +145,27 @@
       "funder": "National Institute on Aging",
       "records": 6499,
       "counts": {
-        "fundamental_aging": 3400,
-        "age_related_disease": 2341,
-        "ambiguous": 534,
-        "intervention": 82,
-        "care": 53,
-        "social_population_aging": 79,
-        "not_relevant": 10
+        "fundamental_aging": 3568,
+        "age_related_disease": 2400,
+        "not_relevant": 138,
+        "intervention": 113,
+        "social_population_aging": 190,
+        "care": 63,
+        "ambiguous": 27
       },
       "eur": {
-        "fundamental_aging": 1568245807.35,
-        "age_related_disease": 1812871458.56,
-        "ambiguous": 261660225.22,
-        "intervention": 36632827.81,
-        "care": 20712308.5,
-        "social_population_aging": 39869570.41,
-        "not_relevant": 3632317.12
+        "fundamental_aging": 1690903833.63,
+        "age_related_disease": 1834657276.35,
+        "not_relevant": 40385780.74,
+        "intervention": 51408229.81,
+        "social_population_aging": 93306626.12,
+        "care": 23819792.97,
+        "ambiguous": 9142975.35
       },
-      "numerator_eur": 1604878635.16,
-      "denominator_eur": 3478331972.63,
-      "ratio": 0.4614,
-      "ambiguous_share": 0.07,
+      "numerator_eur": 1742312063.44,
+      "denominator_eur": 3694095758.88,
+      "ratio": 0.4716,
+      "ambiguous_share": 0.0025,
       "eur_missing_records": 0
     },
     {
@@ -168,25 +173,27 @@
       "funder": "European Commission",
       "records": 239,
       "counts": {
-        "ambiguous": 72,
-        "fundamental_aging": 95,
+        "not_relevant": 98,
+        "fundamental_aging": 97,
         "age_related_disease": 23,
-        "not_relevant": 38,
+        "intervention": 5,
         "care": 6,
-        "social_population_aging": 5
+        "social_population_aging": 9,
+        "ambiguous": 1
       },
       "eur": {
-        "ambiguous": 216617033.98,
-        "fundamental_aging": 124588727.87,
+        "not_relevant": 238246551.5,
+        "fundamental_aging": 138471207.87,
         "age_related_disease": 45554574.25,
-        "not_relevant": 65444703.3,
+        "intervention": 22715816.75,
         "care": 18080398.15,
-        "social_population_aging": 4064009.4
+        "social_population_aging": 10781665.68,
+        "ambiguous": 499232.75
       },
-      "numerator_eur": 124588727.87,
-      "denominator_eur": 192287709.67,
-      "ratio": 0.6479,
-      "ambiguous_share": 0.5297,
+      "numerator_eur": 161187024.62,
+      "denominator_eur": 235603662.7,
+      "ratio": 0.6841,
+      "ambiguous_share": 0.0021,
       "eur_missing_records": 0
     },
     {
@@ -214,21 +221,19 @@
       "funder": "National Institute of General Medical Sciences",
       "records": 827,
       "counts": {
-        "fundamental_aging": 445,
+        "fundamental_aging": 460,
         "age_related_disease": 275,
-        "ambiguous": 106,
-        "not_relevant": 1
+        "not_relevant": 92
       },
       "eur": {
-        "fundamental_aging": 164155835.86,
+        "fundamental_aging": 180873039.12,
         "age_related_disease": 122524400.3,
-        "ambiguous": 51095235.54,
-        "not_relevant": 69013.11
+        "not_relevant": 34447045.39
       },
-      "numerator_eur": 164155835.86,
-      "denominator_eur": 286680236.16,
-      "ratio": 0.5726,
-      "ambiguous_share": 0.1513,
+      "numerator_eur": 180873039.12,
+      "denominator_eur": 303397439.42,
+      "ratio": 0.5962,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 1
     },
     {
@@ -236,21 +241,23 @@
       "funder": "National Heart Lung and Blood Institute",
       "records": 638,
       "counts": {
-        "age_related_disease": 224,
-        "fundamental_aging": 362,
-        "ambiguous": 49,
+        "age_related_disease": 237,
+        "fundamental_aging": 372,
+        "intervention": 3,
+        "not_relevant": 23,
         "social_population_aging": 3
       },
       "eur": {
-        "age_related_disease": 157689148.38,
-        "fundamental_aging": 143385519.22,
-        "ambiguous": 20735011.17,
+        "age_related_disease": 162995965.16,
+        "fundamental_aging": 148021120.49,
+        "intervention": 98927.71,
+        "not_relevant": 10693665.41,
         "social_population_aging": 1000009.49
       },
-      "numerator_eur": 143385519.22,
-      "denominator_eur": 302074677.09,
-      "ratio": 0.4747,
-      "ambiguous_share": 0.0642,
+      "numerator_eur": 148120048.2,
+      "denominator_eur": 312116022.85,
+      "ratio": 0.4746,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -258,27 +265,25 @@
       "funder": "Swedish Research Council",
       "records": 414,
       "counts": {
-        "not_relevant": 68,
-        "age_related_disease": 153,
-        "ambiguous": 69,
-        "care": 10,
-        "fundamental_aging": 95,
-        "social_population_aging": 16,
-        "intervention": 3
+        "not_relevant": 92,
+        "age_related_disease": 164,
+        "care": 12,
+        "fundamental_aging": 109,
+        "social_population_aging": 32,
+        "intervention": 5
       },
       "eur": {
-        "not_relevant": 80214364.99,
-        "age_related_disease": 61022047.94,
-        "ambiguous": 26931583.26,
-        "care": 27960476.8,
-        "fundamental_aging": 41478924.1,
-        "social_population_aging": 17484321.95,
-        "intervention": 1067872.18
+        "not_relevant": 88380221.39,
+        "age_related_disease": 65324382.86,
+        "care": 28555815.54,
+        "fundamental_aging": 49888239.52,
+        "social_population_aging": 21866822.56,
+        "intervention": 2144109.35
       },
-      "numerator_eur": 42546796.28,
-      "denominator_eur": 149013642.97,
-      "ratio": 0.2855,
-      "ambiguous_share": 0.1531,
+      "numerator_eur": 52032348.87,
+      "denominator_eur": 167779369.83,
+      "ratio": 0.3101,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 2
     },
     {
@@ -286,23 +291,23 @@
       "funder": "National Institute of Allergy and Infectious Diseases",
       "records": 240,
       "counts": {
-        "fundamental_aging": 169,
-        "age_related_disease": 38,
-        "ambiguous": 27,
-        "not_relevant": 2,
+        "fundamental_aging": 170,
+        "age_related_disease": 40,
+        "not_relevant": 19,
+        "intervention": 7,
         "care": 4
       },
       "eur": {
-        "fundamental_aging": 140589455.7,
-        "age_related_disease": 15984250.35,
-        "ambiguous": 11848035.73,
-        "not_relevant": 364152.0,
+        "fundamental_aging": 140897351.66,
+        "age_related_disease": 16299604.05,
+        "not_relevant": 9600464.12,
+        "intervention": 1988473.95,
         "care": 2154824.87
       },
-      "numerator_eur": 140589455.7,
-      "denominator_eur": 158728530.92,
-      "ratio": 0.8857,
-      "ambiguous_share": 0.0695,
+      "numerator_eur": 142885825.61,
+      "denominator_eur": 161340254.53,
+      "ratio": 0.8856,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -310,21 +315,21 @@
       "funder": "National Institute of Neurological Disorders and Stroke",
       "records": 377,
       "counts": {
-        "ambiguous": 27,
-        "age_related_disease": 209,
-        "fundamental_aging": 139,
+        "fundamental_aging": 145,
+        "age_related_disease": 213,
+        "not_relevant": 17,
         "social_population_aging": 2
       },
       "eur": {
-        "ambiguous": 10277935.65,
-        "age_related_disease": 101896513.11,
-        "fundamental_aging": 53759324.53,
+        "fundamental_aging": 58916760.69,
+        "age_related_disease": 102256571.77,
+        "not_relevant": 4760440.83,
         "social_population_aging": 534042.44
       },
-      "numerator_eur": 53759324.53,
-      "denominator_eur": 156189880.08,
-      "ratio": 0.3442,
-      "ambiguous_share": 0.0617,
+      "numerator_eur": 58916760.69,
+      "denominator_eur": 161707374.9,
+      "ratio": 0.3643,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -332,25 +337,25 @@
       "funder": "National Institute of Mental Health",
       "records": 236,
       "counts": {
-        "fundamental_aging": 139,
-        "ambiguous": 35,
-        "age_related_disease": 43,
-        "not_relevant": 13,
+        "fundamental_aging": 145,
+        "not_relevant": 38,
+        "age_related_disease": 46,
         "social_population_aging": 5,
+        "ambiguous": 1,
         "care": 1
       },
       "eur": {
-        "fundamental_aging": 82767147.08,
-        "ambiguous": 25915132.01,
-        "age_related_disease": 20636607.12,
-        "not_relevant": 4326632.16,
+        "fundamental_aging": 85451758.89,
+        "not_relevant": 24594057.12,
+        "age_related_disease": 23438086.59,
         "social_population_aging": 3055041.41,
+        "ambiguous": 161615.77,
         "care": 1331243.96
       },
-      "numerator_eur": 82767147.08,
-      "denominator_eur": 107790039.57,
-      "ratio": 0.7679,
-      "ambiguous_share": 0.1938,
+      "numerator_eur": 85451758.89,
+      "denominator_eur": 113276130.85,
+      "ratio": 0.7544,
+      "ambiguous_share": 0.0014,
       "eur_missing_records": 0
     },
     {
@@ -358,19 +363,19 @@
       "funder": "National Institute of Diabetes and Digestive and Kidney Diseases",
       "records": 330,
       "counts": {
-        "fundamental_aging": 205,
-        "age_related_disease": 95,
-        "ambiguous": 30
+        "fundamental_aging": 210,
+        "age_related_disease": 104,
+        "not_relevant": 16
       },
       "eur": {
-        "fundamental_aging": 73612366.23,
-        "age_related_disease": 50999865.43,
-        "ambiguous": 10728738.77
+        "fundamental_aging": 74631145.56,
+        "age_related_disease": 54168046.07,
+        "not_relevant": 6541778.8
       },
-      "numerator_eur": 73612366.23,
-      "denominator_eur": 124612231.66,
-      "ratio": 0.5907,
-      "ambiguous_share": 0.0793,
+      "numerator_eur": 74631145.56,
+      "denominator_eur": 128799191.63,
+      "ratio": 0.5794,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -378,19 +383,19 @@
       "funder": "National Institute of Environmental Health Sciences",
       "records": 253,
       "counts": {
-        "age_related_disease": 112,
-        "fundamental_aging": 113,
-        "ambiguous": 28
+        "age_related_disease": 126,
+        "fundamental_aging": 115,
+        "not_relevant": 12
       },
       "eur": {
-        "age_related_disease": 55495633.12,
-        "fundamental_aging": 48959045.91,
-        "ambiguous": 17115738.45
+        "age_related_disease": 65740514.08,
+        "fundamental_aging": 50807125.62,
+        "not_relevant": 5022777.78
       },
-      "numerator_eur": 48959045.91,
-      "denominator_eur": 104454679.03,
-      "ratio": 0.4687,
-      "ambiguous_share": 0.1408,
+      "numerator_eur": 50807125.62,
+      "denominator_eur": 116547639.7,
+      "ratio": 0.4359,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -398,25 +403,23 @@
       "funder": "NIH Office of the Director",
       "records": 126,
       "counts": {
-        "social_population_aging": 1,
+        "social_population_aging": 3,
         "fundamental_aging": 29,
         "age_related_disease": 70,
-        "ambiguous": 22,
-        "not_relevant": 3,
+        "not_relevant": 23,
         "care": 1
       },
       "eur": {
-        "social_population_aging": 6901311.25,
+        "social_population_aging": 7114903.39,
         "fundamental_aging": 9964577.28,
         "age_related_disease": 81426629.55,
-        "ambiguous": 13644746.38,
-        "not_relevant": 1212746.72,
+        "not_relevant": 14643900.96,
         "care": 517598.34
       },
       "numerator_eur": 9964577.28,
-      "denominator_eur": 98810116.42,
-      "ratio": 0.1008,
-      "ambiguous_share": 0.1213,
+      "denominator_eur": 99023708.56,
+      "ratio": 0.1006,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -424,23 +427,21 @@
       "funder": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
       "records": 209,
       "counts": {
-        "not_relevant": 11,
+        "not_relevant": 42,
         "fundamental_aging": 130,
         "age_related_disease": 32,
-        "ambiguous": 31,
         "care": 5
       },
       "eur": {
-        "not_relevant": 3377362.83,
+        "not_relevant": 16215908.37,
         "fundamental_aging": 61025813.49,
         "age_related_disease": 19764803.28,
-        "ambiguous": 12838545.54,
         "care": 2393404.08
       },
       "numerator_eur": 61025813.49,
       "denominator_eur": 83184020.85,
       "ratio": 0.7336,
-      "ambiguous_share": 0.1337,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -449,18 +450,18 @@
       "records": 161,
       "counts": {
         "fundamental_aging": 64,
-        "age_related_disease": 77,
-        "ambiguous": 20
+        "age_related_disease": 96,
+        "not_relevant": 1
       },
       "eur": {
         "fundamental_aging": 33073354.02,
-        "age_related_disease": 44022015.98,
-        "ambiguous": 15209373.68
+        "age_related_disease": 59015303.57,
+        "not_relevant": 216086.09
       },
       "numerator_eur": 33073354.02,
-      "denominator_eur": 77095370.0,
-      "ratio": 0.429,
-      "ambiguous_share": 0.1648,
+      "denominator_eur": 92088657.59,
+      "ratio": 0.3591,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -468,27 +469,25 @@
       "funder": "Forte",
       "records": 206,
       "counts": {
-        "social_population_aging": 54,
-        "age_related_disease": 20,
-        "ambiguous": 41,
-        "care": 81,
+        "social_population_aging": 73,
+        "age_related_disease": 24,
+        "care": 84,
+        "not_relevant": 16,
         "fundamental_aging": 5,
-        "intervention": 1,
-        "not_relevant": 4
+        "intervention": 4
       },
       "eur": {
-        "social_population_aging": 25759112.25,
-        "age_related_disease": 7023395.3,
-        "ambiguous": 16507542.9,
-        "care": 26812241.26,
+        "social_population_aging": 33049182.99,
+        "age_related_disease": 9597501.17,
+        "care": 27814261.32,
+        "not_relevant": 5731136.48,
         "fundamental_aging": 7178041.0,
-        "intervention": 13348.4,
-        "not_relevant": 2905057.26
+        "intervention": 2828615.41
       },
-      "numerator_eur": 7191389.4,
-      "denominator_eur": 66786138.21,
-      "ratio": 0.1077,
-      "ambiguous_share": 0.1982,
+      "numerator_eur": 10006656.41,
+      "denominator_eur": 80467601.89,
+      "ratio": 0.1244,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -496,21 +495,21 @@
       "funder": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
       "records": 239,
       "counts": {
-        "fundamental_aging": 110,
-        "ambiguous": 46,
-        "age_related_disease": 75,
+        "fundamental_aging": 115,
+        "age_related_disease": 91,
+        "not_relevant": 25,
         "care": 8
       },
       "eur": {
-        "fundamental_aging": 36462129.91,
-        "ambiguous": 12592024.61,
-        "age_related_disease": 21874673.02,
+        "fundamental_aging": 37786835.75,
+        "age_related_disease": 26719459.9,
+        "not_relevant": 6422531.89,
         "care": 2530761.73
       },
-      "numerator_eur": 36462129.91,
-      "denominator_eur": 60867564.66,
-      "ratio": 0.599,
-      "ambiguous_share": 0.1714,
+      "numerator_eur": 37786835.75,
+      "denominator_eur": 67037057.38,
+      "ratio": 0.5637,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -518,19 +517,17 @@
       "funder": "National Institute on Minority Health and Health Disparities",
       "records": 75,
       "counts": {
-        "age_related_disease": 23,
-        "fundamental_aging": 46,
-        "ambiguous": 6
+        "age_related_disease": 29,
+        "fundamental_aging": 46
       },
       "eur": {
-        "age_related_disease": 11262066.07,
-        "fundamental_aging": 21490071.6,
-        "ambiguous": 3335313.13
+        "age_related_disease": 14597379.2,
+        "fundamental_aging": 21490071.6
       },
       "numerator_eur": 21490071.6,
-      "denominator_eur": 32752137.67,
-      "ratio": 0.6561,
-      "ambiguous_share": 0.0924,
+      "denominator_eur": 36087450.8,
+      "ratio": 0.5955,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -540,19 +537,19 @@
       "counts": {
         "fundamental_aging": 32,
         "age_related_disease": 21,
-        "ambiguous": 12,
+        "not_relevant": 12,
         "social_population_aging": 2
       },
       "eur": {
         "fundamental_aging": 25148531.73,
         "age_related_disease": 6886833.16,
-        "ambiguous": 2125243.28,
+        "not_relevant": 2125243.28,
         "social_population_aging": 350507.25
       },
       "numerator_eur": 25148531.73,
       "denominator_eur": 32385872.14,
       "ratio": 0.7765,
-      "ambiguous_share": 0.0616,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -561,24 +558,22 @@
       "records": 87,
       "counts": {
         "age_related_disease": 6,
-        "ambiguous": 25,
-        "not_relevant": 45,
-        "social_population_aging": 5,
-        "care": 3,
+        "care": 4,
+        "not_relevant": 60,
+        "social_population_aging": 14,
         "fundamental_aging": 3
       },
       "eur": {
         "age_related_disease": 1475713.64,
-        "ambiguous": 7699901.19,
-        "not_relevant": 17664504.05,
-        "social_population_aging": 1365456.74,
-        "care": 874711.98,
+        "care": 1983875.21,
+        "not_relevant": 21172821.69,
+        "social_population_aging": 4447877.06,
         "fundamental_aging": 705925.53
       },
       "numerator_eur": 705925.53,
-      "denominator_eur": 4421807.89,
-      "ratio": 0.1596,
-      "ambiguous_share": 0.6352,
+      "denominator_eur": 8613391.44,
+      "ratio": 0.082,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -588,17 +583,17 @@
       "counts": {
         "fundamental_aging": 14,
         "age_related_disease": 3,
-        "ambiguous": 14
+        "not_relevant": 14
       },
       "eur": {
         "fundamental_aging": 11099190.82,
         "age_related_disease": 2283932.01,
-        "ambiguous": 15822865.75
+        "not_relevant": 15822865.75
       },
       "numerator_eur": 11099190.82,
       "denominator_eur": 13383122.83,
       "ratio": 0.8293,
-      "ambiguous_share": 0.5418,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -606,21 +601,21 @@
       "funder": "National Institute on Drug Abuse",
       "records": 59,
       "counts": {
-        "fundamental_aging": 24,
-        "not_relevant": 5,
-        "ambiguous": 16,
-        "age_related_disease": 14
+        "fundamental_aging": 25,
+        "not_relevant": 19,
+        "age_related_disease": 14,
+        "social_population_aging": 1
       },
       "eur": {
-        "fundamental_aging": 12126859.9,
-        "not_relevant": 849886.13,
-        "ambiguous": 9564942.21,
-        "age_related_disease": 6391961.7
+        "fundamental_aging": 14580620.25,
+        "not_relevant": 7546689.11,
+        "age_related_disease": 6391961.7,
+        "social_population_aging": 414378.88
       },
-      "numerator_eur": 12126859.9,
-      "denominator_eur": 18518821.6,
-      "ratio": 0.6548,
-      "ambiguous_share": 0.3406,
+      "numerator_eur": 14580620.25,
+      "denominator_eur": 21386960.83,
+      "ratio": 0.6818,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -628,19 +623,19 @@
       "funder": "National Institute on Deafness and Other Communication Disorders",
       "records": 71,
       "counts": {
-        "age_related_disease": 21,
-        "fundamental_aging": 29,
-        "ambiguous": 21
+        "age_related_disease": 29,
+        "fundamental_aging": 32,
+        "not_relevant": 10
       },
       "eur": {
-        "age_related_disease": 8304330.58,
-        "fundamental_aging": 8875093.18,
-        "ambiguous": 11182506.9
+        "age_related_disease": 11647556.09,
+        "fundamental_aging": 9941309.53,
+        "not_relevant": 6773065.04
       },
-      "numerator_eur": 8875093.18,
-      "denominator_eur": 17179423.76,
-      "ratio": 0.5166,
-      "ambiguous_share": 0.3943,
+      "numerator_eur": 9941309.53,
+      "denominator_eur": 21588865.62,
+      "ratio": 0.4605,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -649,18 +644,18 @@
       "records": 77,
       "counts": {
         "fundamental_aging": 53,
-        "ambiguous": 4,
+        "not_relevant": 4,
         "age_related_disease": 20
       },
       "eur": {
         "fundamental_aging": 17020343.33,
-        "ambiguous": 179257.25,
+        "not_relevant": 179257.25,
         "age_related_disease": 4961120.58
       },
       "numerator_eur": 17020343.33,
       "denominator_eur": 21981463.91,
       "ratio": 0.7743,
-      "ambiguous_share": 0.0081,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -670,17 +665,17 @@
       "counts": {
         "age_related_disease": 24,
         "fundamental_aging": 17,
-        "ambiguous": 12
+        "not_relevant": 12
       },
       "eur": {
         "age_related_disease": 5809957.76,
         "fundamental_aging": 6606491.56,
-        "ambiguous": 4292964.1
+        "not_relevant": 4292964.1
       },
       "numerator_eur": 6606491.56,
       "denominator_eur": 12416449.32,
       "ratio": 0.5321,
-      "ambiguous_share": 0.2569,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -688,23 +683,21 @@
       "funder": "Swedish Energy Agency",
       "records": 43,
       "counts": {
-        "not_relevant": 30,
+        "not_relevant": 34,
         "care": 3,
         "fundamental_aging": 4,
-        "ambiguous": 5,
-        "social_population_aging": 1
+        "social_population_aging": 2
       },
       "eur": {
-        "not_relevant": 13110037.1,
+        "not_relevant": 13815525.52,
         "care": 841049.28,
         "fundamental_aging": 491033.88,
-        "ambiguous": 1198328.96,
-        "social_population_aging": 36040.69
+        "social_population_aging": 528881.23
       },
       "numerator_eur": 491033.88,
-      "denominator_eur": 1368123.85,
-      "ratio": 0.3589,
-      "ambiguous_share": 0.4669,
+      "denominator_eur": 1860964.39,
+      "ratio": 0.2639,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -712,23 +705,21 @@
       "funder": "National Center for Advancing Translational Sciences",
       "records": 23,
       "counts": {
-        "ambiguous": 4,
+        "not_relevant": 6,
         "fundamental_aging": 11,
         "age_related_disease": 5,
-        "not_relevant": 2,
         "care": 1
       },
       "eur": {
-        "ambiguous": 9030480.51,
+        "not_relevant": 9104200.32,
         "fundamental_aging": 2683863.87,
         "age_related_disease": 1657506.04,
-        "not_relevant": 73719.81,
         "care": 2068988.1
       },
       "numerator_eur": 2683863.87,
       "denominator_eur": 6410358.01,
       "ratio": 0.4187,
-      "ambiguous_share": 0.5848,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -738,17 +729,17 @@
       "counts": {
         "fundamental_aging": 29,
         "age_related_disease": 3,
-        "ambiguous": 1
+        "not_relevant": 1
       },
       "eur": {
         "fundamental_aging": 8812153.21,
         "age_related_disease": 2588420.46,
-        "ambiguous": 230013.8
+        "not_relevant": 230013.8
       },
       "numerator_eur": 8812153.21,
       "denominator_eur": 11400573.67,
       "ratio": 0.773,
-      "ambiguous_share": 0.0198,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -758,17 +749,19 @@
       "counts": {
         "age_related_disease": 14,
         "fundamental_aging": 4,
-        "ambiguous": 6
+        "not_relevant": 4,
+        "intervention": 2
       },
       "eur": {
         "age_related_disease": 6225273.46,
         "fundamental_aging": 392608.69,
-        "ambiguous": 1698215.16
+        "not_relevant": 1300653.91,
+        "intervention": 397561.25
       },
-      "numerator_eur": 392608.69,
-      "denominator_eur": 6617882.15,
-      "ratio": 0.0593,
-      "ambiguous_share": 0.2042,
+      "numerator_eur": 790169.94,
+      "denominator_eur": 7015443.4,
+      "ratio": 0.1126,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -776,23 +769,23 @@
       "funder": "Vinnova",
       "records": 46,
       "counts": {
-        "ambiguous": 19,
-        "not_relevant": 16,
-        "age_related_disease": 6,
-        "fundamental_aging": 1,
-        "care": 4
+        "not_relevant": 25,
+        "care": 5,
+        "age_related_disease": 8,
+        "social_population_aging": 7,
+        "fundamental_aging": 1
       },
       "eur": {
-        "ambiguous": 2493098.23,
-        "not_relevant": 3965513.85,
-        "age_related_disease": 1118433.61,
-        "fundamental_aging": 177978.7,
-        "care": 470445.3
+        "not_relevant": 5532086.41,
+        "care": 636586.37,
+        "age_related_disease": 1242434.39,
+        "social_population_aging": 636383.82,
+        "fundamental_aging": 177978.7
       },
       "numerator_eur": 177978.7,
-      "denominator_eur": 1766857.61,
-      "ratio": 0.1007,
-      "ambiguous_share": 0.5852,
+      "denominator_eur": 2693383.28,
+      "ratio": 0.0661,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -801,24 +794,22 @@
       "records": 19,
       "counts": {
         "age_related_disease": 4,
-        "ambiguous": 5,
+        "social_population_aging": 8,
         "care": 2,
-        "social_population_aging": 4,
-        "fundamental_aging": 3,
+        "fundamental_aging": 4,
         "not_relevant": 1
       },
       "eur": {
         "age_related_disease": 1941480.69,
-        "ambiguous": 1876181.74,
+        "social_population_aging": 2592302.43,
         "care": 898703.33,
-        "social_population_aging": 1072523.03,
-        "fundamental_aging": 833029.47,
+        "fundamental_aging": 1189431.81,
         "not_relevant": 223986.19
       },
-      "numerator_eur": 833029.47,
-      "denominator_eur": 4745736.52,
-      "ratio": 0.1755,
-      "ambiguous_share": 0.2833,
+      "numerator_eur": 1189431.81,
+      "denominator_eur": 6621918.26,
+      "ratio": 0.1796,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -842,19 +833,17 @@
       "funder": "Swedish Heart-Lung Foundation",
       "records": 35,
       "counts": {
-        "age_related_disease": 23,
-        "ambiguous": 2,
+        "age_related_disease": 25,
         "fundamental_aging": 10
       },
       "eur": {
-        "age_related_disease": 2978028.54,
-        "ambiguous": 409351.0,
+        "age_related_disease": 3387379.54,
         "fundamental_aging": 1023377.52
       },
       "numerator_eur": 1023377.52,
-      "denominator_eur": 4001406.06,
-      "ratio": 0.2558,
-      "ambiguous_share": 0.0928,
+      "denominator_eur": 4410757.06,
+      "ratio": 0.232,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -864,17 +853,17 @@
       "counts": {
         "age_related_disease": 5,
         "fundamental_aging": 5,
-        "ambiguous": 1
+        "not_relevant": 1
       },
       "eur": {
         "age_related_disease": 3088107.32,
         "fundamental_aging": 107725.15,
-        "ambiguous": 8605.94
+        "not_relevant": 8605.94
       },
       "numerator_eur": 107725.15,
       "denominator_eur": 3195832.47,
       "ratio": 0.0337,
-      "ambiguous_share": 0.0027,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -882,17 +871,17 @@
       "funder": "National Library of Medicine",
       "records": 9,
       "counts": {
-        "ambiguous": 2,
+        "not_relevant": 2,
         "age_related_disease": 7
       },
       "eur": {
-        "ambiguous": 77778.64,
+        "not_relevant": 77778.64,
         "age_related_disease": 2591784.85
       },
       "numerator_eur": 0.0,
       "denominator_eur": 2591784.85,
       "ratio": 0.0,
-      "ambiguous_share": 0.0291,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -934,17 +923,15 @@
       "funder": "Foundation for Baltic and East European Studies",
       "records": 2,
       "counts": {
-        "social_population_aging": 1,
-        "ambiguous": 1
+        "social_population_aging": 2
       },
       "eur": {
-        "social_population_aging": 532067.31,
-        "ambiguous": 4271.49
+        "social_population_aging": 536338.8
       },
       "numerator_eur": 0.0,
-      "denominator_eur": 532067.31,
+      "denominator_eur": 536338.8,
       "ratio": 0.0,
-      "ambiguous_share": 0.008,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -952,15 +939,15 @@
       "funder": "The Knowledge Foundation",
       "records": 1,
       "counts": {
-        "ambiguous": 1
+        "social_population_aging": 1
       },
       "eur": {
-        "ambiguous": 383515.7
+        "social_population_aging": 383515.7
       },
       "numerator_eur": 0.0,
-      "denominator_eur": 0.0,
-      "ratio": null,
-      "ambiguous_share": 1.0,
+      "denominator_eur": 383515.7,
+      "ratio": 0.0,
+      "ambiguous_share": 0.0,
       "eur_missing_records": 0
     },
     {
@@ -1000,19 +987,19 @@
       "funder": "Karolinska Institutet",
       "records": 15,
       "counts": {
-        "ambiguous": 4,
+        "fundamental_aging": 7,
         "age_related_disease": 7,
-        "fundamental_aging": 4
+        "ambiguous": 1
       },
       "eur": {
-        "ambiguous": 20716.72,
+        "fundamental_aging": 75267.18,
         "age_related_disease": 119245.72,
-        "fundamental_aging": 56063.28
+        "ambiguous": 1512.82
       },
-      "numerator_eur": 56063.28,
-      "denominator_eur": 175309.0,
-      "ratio": 0.3198,
-      "ambiguous_share": 0.1057,
+      "numerator_eur": 75267.18,
+      "denominator_eur": 194512.9,
+      "ratio": 0.387,
+      "ambiguous_share": 0.0077,
       "eur_missing_records": 0
     },
     {
@@ -1036,9 +1023,10 @@
       "funder": "Veterans Affairs",
       "records": 320,
       "counts": {
-        "age_related_disease": 151,
-        "fundamental_aging": 153,
-        "ambiguous": 16
+        "age_related_disease": 155,
+        "fundamental_aging": 155,
+        "not_relevant": 6,
+        "care": 4
       },
       "eur": {},
       "numerator_eur": 0.0,

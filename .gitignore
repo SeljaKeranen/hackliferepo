@@ -21,5 +21,9 @@ secrets/
 !ratio/data/
 !ratio/data/**
 
+# Regenerable caches inside the committed ratio/data tree
+ratio/data/llm_cache/
+ratio/data/__pycache__/
+
 # Local agent-system state
 .agent-system/

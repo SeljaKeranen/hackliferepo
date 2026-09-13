@@ -683,6 +683,116 @@
           },
           "precision": 1.0,
           "low_evidence": true
+        },
+        {
+          "term": "stress resistance",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 5,
+          "by_category": {
+            "fundamental_aging": 5
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "mtdna",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 10,
+          "by_category": {
+            "fundamental_aging": 9,
+            "ambiguous": 1
+          },
+          "precision": 0.9
+        },
+        {
+          "term": "foxo",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 3,
+          "by_category": {
+            "fundamental_aging": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "hematopoietic stem cells",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 6
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "reproduction",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 6,
+          "by_category": {
+            "fundamental_aging": 4,
+            "ambiguous": 2
+          },
+          "precision": 0.667
+        },
+        {
+          "term": "mirnas",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 7,
+          "by_category": {
+            "fundamental_aging": 7
+          },
+          "precision": 1.0
+        },
+        {
+          "term": "underlying mechanisms",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 8,
+          "by_category": {
+            "fundamental_aging": 6,
+            "age_related_disease": 1,
+            "ambiguous": 1
+          },
+          "precision": 0.75
+        },
+        {
+          "term": "stem cells",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 23,
+          "by_category": {
+            "fundamental_aging": 19,
+            "age_related_disease": 4
+          },
+          "precision": 0.826
+        },
+        {
+          "term": "evolutionarily conserved",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 4,
+          "by_category": {
+            "fundamental_aging": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
+        },
+        {
+          "term": "germline",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 3,
+          "by_category": {
+            "fundamental_aging": 2,
+            "ambiguous": 1
+          },
+          "precision": 0.667,
+          "low_evidence": true
+        },
+        {
+          "term": "hypothalamic",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 4,
+          "by_category": {
+            "fundamental_aging": 4
+          },
+          "precision": 1.0,
+          "low_evidence": true
         }
       ],
       "sv": [
@@ -1158,7 +1268,7 @@
           ]
         }
       ],
-      "coverage": 0.562
+      "coverage": 0.61
     },
     "intervention": {
       "en": [
@@ -1436,7 +1546,16 @@
           ]
         }
       ],
-      "coverage": 0.414
+      "coverage": 0.414,
+      "conditional_voters": [
+        {
+          "term": "senolytic*",
+          "requires": "dev_cues",
+          "weight": 0.421,
+          "evidence": "expert precision 0.421 on 19 atlas records",
+          "source": "ambiguous-mining-conditional-2026-09-12"
+        }
+      ]
     },
     "age_related_disease": {
       "en": [
@@ -1999,6 +2118,28 @@
           },
           "precision": 0.667,
           "low_evidence": true
+        },
+        {
+          "term": "retinal",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 8,
+          "by_category": {
+            "age_related_disease": 5,
+            "ambiguous": 1,
+            "intervention": 1,
+            "fundamental_aging": 1
+          },
+          "precision": 0.625
+        },
+        {
+          "term": "fractures",
+          "source": "ambiguous-mining-2026-09-12",
+          "hits": 9,
+          "by_category": {
+            "age_related_disease": 8,
+            "ambiguous": 1
+          },
+          "precision": 0.889
         }
       ],
       "sv": [
@@ -2246,7 +2387,7 @@
           ]
         }
       ],
-      "coverage": 0.77
+      "coverage": 0.777
     },
     "care": {
       "en": [
@@ -3019,7 +3160,51 @@
           ]
         }
       ],
-      "coverage": 0.048
+      "coverage": 0.048,
+      "conditional_voters": [
+        {
+          "term": "loneliness",
+          "requires": "anchor",
+          "weight": 0.5,
+          "evidence": "expert precision 0.500 on 8 atlas records",
+          "source": "ambiguous-mining-conditional-2026-09-12"
+        },
+        {
+          "term": "participation",
+          "requires": "anchor",
+          "weight": 0.444,
+          "evidence": "expert precision 0.444 on 9 atlas records",
+          "source": "ambiguous-mining-conditional-2026-09-12"
+        },
+        {
+          "term": "social isolation",
+          "requires": "anchor",
+          "weight": 0.4,
+          "evidence": "expert precision 0.400 on 5 atlas records",
+          "source": "ambiguous-mining-conditional-2026-09-12"
+        },
+        {
+          "term": "older age",
+          "requires": "anchor",
+          "weight": 0.4,
+          "evidence": "expert precision 0.400 on 5 atlas records",
+          "source": "ambiguous-mining-conditional-2026-09-12"
+        },
+        {
+          "term": "housing",
+          "requires": "anchor",
+          "weight": 0.842,
+          "evidence": "expert precision 0.842 on 19 atlas records; fails the stale social proxy but clears the expert gate",
+          "source": "ambiguous-mining-conditional-2026-09-12"
+        },
+        {
+          "term": "social inequalities",
+          "requires": "anchor",
+          "weight": 1.0,
+          "evidence": "expert precision 1.000 on 4 atlas records; fails the stale social proxy but clears the expert gate",
+          "source": "ambiguous-mining-conditional-2026-09-12"
+        }
+      ]
     }
   }
 }

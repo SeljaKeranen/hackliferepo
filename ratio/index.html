@@ -33,6 +33,13 @@ header h1 { margin: 0; font: 600 42px/1.08 var(--display); letter-spacing: -0.01
 header .tagline { margin: 14px 0 0; color: var(--muted); max-width: 62ch; font-size: 16px; }
 header .tagline b { color: var(--ink); font-weight: 600; }
 .method-link { margin-top: 10px; font-size: 13px; color: var(--faint); }
+.scenario { margin-top: 16px; display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.scenario a { padding: 6px 13px; font-size: 12.5px; color: var(--muted); background: var(--bg-raised); }
+.scenario a + a { border-left: 1px solid var(--line); }
+.scenario a:hover { color: var(--ink); text-decoration: none; }
+.scenario a.active { background: var(--bg-hover); color: var(--ink); font-weight: 600; }
+.bench-link { margin-top: 10px; font-size: 12.5px; color: var(--faint); }
+.bench-link a { color: var(--gold); }
 
 .legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 30px 0 8px; font-size: 12.5px; color: var(--muted); }
 .legend .chip { display: inline-flex; align-items: center; gap: 7px; }
@@ -121,6 +128,12 @@ table.funders .mini-track { display: inline-block; width: 90px; height: 9px; bor
     <p class="method-link">Rule-based estimate over a 13,224-grant census of
       the ageing search nets; every number traces to a dated grant record —
       click any bar. <a href="README.md">Method &amp; caveats</a></p>
+    <div class="scenario" role="group" aria-label="Label scenario">
+      <a id="sc-rules" href="?">Rules (v2)</a>
+      <a id="sc-adj" href="?scenario=adjudicated">Adjudicated (AI)</a>
+    </div>
+    <p class="bench-link">Human benchmark (30 grants, team reviewers):
+      <a href="benchmark/sheet.html" target="_blank" rel="noopener">annotate the blind sheet &rarr;</a></p>
   </header>
 
   <div class="legend">
@@ -133,7 +146,7 @@ table.funders .mini-track { display: inline-block; width: 90px; height: 9px; bor
 
   <section class="honesty">
     <h2>Read this before quoting a number</h2>
-    <ul id="caveats"></ul>
+    <ul id="caveats"><li id="bench-status"></li></ul>
   </section>
 
   <div id="error"></div>
@@ -342,10 +355,19 @@ function closeInspector() {
 document.getElementById("close").addEventListener("click", closeInspector);
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeInspector(); });
 
+const SCENARIO = new URLSearchParams(location.search).get("scenario")
+  === "adjudicated";
+
 async function boot() {
+  document.getElementById(SCENARIO ? "sc-adj" : "sc-rules")
+    .classList.add("active");
+  const aggFile = SCENARIO ? "output/aggregates_adjudicated.json"
+                           : "output/aggregates.json";
+  const labFile = SCENARIO ? "output/labels_adjudicated.jsonl"
+                           : "output/labels.jsonl";
   try {
     const [aggRes, labRes] = await Promise.all([
-      fetch("output/aggregates.json"), fetch("output/labels.jsonl")]);
+      fetch(aggFile), fetch(labFile)]);
     if (!aggRes.ok || !labRes.ok) throw new Error("HTTP " + aggRes.status + "/" + labRes.status);
     window.AGG = await aggRes.json();
     LABELS = (await labRes.text()).trim().split("\n").map(l => JSON.parse(l));
@@ -354,7 +376,8 @@ async function boot() {
     e.style.display = "block";
     e.textContent = "Could not load ratio/output/*.json — serve this page over "
       + "HTTP (python3 -m http.server from the repo root, then open /ratio/) "
-      + "and run python3 ratio/build.py if the outputs are missing. (" + err + ")";
+      + "and run python3 ratio/build.py (and build_adjudicated.py for the "
+      + "adjudicated scenario) if the outputs are missing. (" + err + ")";
     return;
   }
   const box = document.getElementById("regions");
@@ -362,6 +385,25 @@ async function boot() {
     if (window.AGG.regions[code]) box.appendChild(regionCard(code, window.AGG.regions[code]));
   }
   const cv = document.getElementById("caveats");
+  const bench = document.getElementById("bench-status");
+  try {
+    const bres = await fetch("benchmark/report.json", { cache: "no-store" });
+    if (!bres.ok) throw new Error("no report");
+    const rep = await bres.json();
+    const agree = rep.adjudicated_vs_human && rep.adjudicated_vs_human.agreement;
+    bench.innerHTML = "Human benchmark: " + rep.annotated + "/30 grants annotated, "
+      + "adjudicated-vs-human agreement "
+      + (agree == null ? "n/a" : agree.toFixed(2)) + " - "
+      + (rep.pass_085 ? "PASS" : "FAIL") + " against the 0.85 bar.";
+  } catch (err) {
+    bench.innerHTML = "Human benchmark: the 30-record blind set is ready and "
+      + "unlabelled - team reviewers can "
+      + '<a href="benchmark/sheet.html" target="_blank" rel="noopener">annotate it here</a>.';
+  }
+  if (SCENARIO) cv.appendChild(el("li", null,
+    "Adjudicated scenario: every ambiguous record was re-labelled by "
+    + "deepseek-flash (API) with one machine-verified quote per record; "
+    + "model labels, not human ground truth."));
   for (const c of window.AGG.method.caveats) cv.appendChild(el("li", null, c));
   cv.appendChild(el("li", null,
     "Regions are funding jurisdictions: SweCRIS funders (SE), the European "

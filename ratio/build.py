@@ -276,6 +276,8 @@ def main():
             "numerator": sorted(clf.NUMERATOR),
             "denominator": list(clf.CATEGORIES),
             "tie_margin": clf.TIE_MARGIN,
+            "evidence_floor": clf.EVIDENCE_FLOOR,
+            "rel_margin": clf.REL_MARGIN,
             "inputs_hash": inputs_hash(),
             "built_at_commit": git_head,
             "caveats": [

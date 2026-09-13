@@ -71,6 +71,26 @@ CATEGORIES = tuple(_vk.CATEGORIES)
 # always clears it, two near-equal keyword sets never do.
 TIE_MARGIN = 0.3
 
+# v2 decision parameters (ratio/V2_PLAN.md Track B). A near-tie (margin below
+# TIE_MARGIN) is decided only when the winner leads by at least REL_MARGIN of
+# its own score AND carries evidence above the floor: one term at or above
+# EVIDENCE_FLOOR, two terms with at least one unconditional keyword, or - for
+# fundamental_aging - explicit mechanism language. Otherwise ambiguous.
+EVIDENCE_FLOOR = 0.60
+REL_MARGIN = 0.10
+
+# Boundary cues for close calls between categories (V2_PLAN.md B3).
+SERVICE_CUES = re.compile(
+    r"\b(caregiv\w*|nursing homes?|home care|long.term care|elder care|"
+    r"elderly care|social care|social services|äldreomsorg\w*|hemtjänst\w*)\b")
+SOCIAL_CUES = re.compile(
+    r"\b(loneliness|social isolation|participation|age-friendly|ageism|"
+    r"life course|later life|social inequalities|wellbeing|social relations|"
+    r"social network\w*)\b")
+DISEASE_TX = re.compile(
+    r"\b(vaccin\w*|immunotherap\w*|treatment|therap\w*)\b")
+
+
 # NONBIO-style exclusions for the step-0 relevance gate. The first three are
 # meta.exclusion_markers from the lexicon (95-100% of their corpus hits are
 # the engineering pool); the rest extend them with Jan's NONBIO vocabulary
@@ -89,12 +109,40 @@ NONBIO_TERMS = [
     # corpus trap classes from KEYWORDS.md
     "voltage", "electrolyte*", "corrosion", "accelerated aging test*",
     "accelerated ageing", "livestock", "breeding", "dairy",
+    # census pilot additions (2026-09-12): infrastructure and energy-system
+    # ageing that reached ambiguous in the SE top-50 model adjudication
+    "nuclear power", "nuclear technology", "reactor*", "bridges", "pipes",
+    "district heating", "spacecraft", "space instrument*", "space systems",
+    "space research", "supercapacitor*", "sodium-ion", "cast iron",
+    "facade*", "hardware", "driveline*", "combustion", "nanofabrication",
+    "cleanroom*", "antifouling", "biocide*", "ecotoxicolog*",
+    "marine environment",
+    # batch-2 adjudication additions: materials, infrastructure, atmospheric
+    # and computing ageing that reached ambiguous
+    "pipe network*", "inverter*", "slag*", "thermoplastic*", "elastomer*",
+    "aerosol*", "soot", "honeypot*", "federated learning", "plastics",
+    "prehistoric", "archaeolog*",
 ]
 
+# Battery and energy-storage contexts use "cell" for the electrochemical
+# cell, which otherwise trips the biomedical-context guard (BIO_CONTEXT).
+# When the only biomedical signal is cell/cells and this pattern matches,
+# the engineering exclusion stands.
+BATTERY_CONTEXT = re.compile(
+    r"\b(batter(?:y|ies)|li-ion|sodium-ion|supercapacitor\w*|electrolyte\w*|"
+    r"electrode\w*|cathode\w*|anode\w*|cell chemistry|cell design|cell life|"
+    r"cell ageing|cell aging|cell format)\b")
+
 # Jan's biomedical-context guard, extended with a few unambiguous tokens.
+# "mouse" alone is excluded because laboratory instruments and devices are
+# occasionally named a "mouse" (e.g. a portable NMR mouse in a nuclear-materials
+# grant); the animal models stay covered via mice/murine/mouse model.
+# "cohort" is narrowed to cohort studies: a "cohort of specialists" is people,
+# not a biomedical cohort.
 BIO_CONTEXT = re.compile(
-    r"\b(cell|cells|cellular|human|patient|patients|mouse|mice|clinical|"
-    r"cohort|gene|genes|protein|proteins)\b")
+    r"\b(cell|cells|cellular|human|patient|patients|mice|murine|"
+    r"mouse models?|clinical|cohort stud\w*|birth cohort|gene|genes|"
+    r"protein|proteins)\b")
 
 # Plant / agriculture / ecology contexts in which senescence, lifespan and
 # longevity are everyday non-ageing vocabulary (leaf senescence, productive
@@ -121,8 +169,8 @@ PLANTECO_TERMS = [
 # this list is human subjects, clinical settings, and the established
 # animal models of ageing biology. OLDER_REF is checked alongside it.
 HUMAN_BIOMED = re.compile(
-    r"\b(humans?|patients?|clinical|cohorts?|participants?|volunteers?|"
-    r"mouse|mice|murine|rats?|primates?|monkeys?|elderly|hospital\w*|"
+    r"\b(humans?|patients?|clinical|cohort stud\w*|participants?|volunteers?|"
+    r"mice|murine|mouse models?|rats?|primates?|monkeys?|elderly|hospital\w*|"
     r"nursing|dementia|alzheimer\w*|geriatric\w*|"
     r"healthy ag(?:e)?ing|active ag(?:e)?ing|diet\w*|nutrition\w*|"
     r"supplement\w*|"
@@ -183,8 +231,15 @@ def load_ruleset(keywords_path=KEYWORDS_JSON) -> dict:
         keywords[cat] = entries
     nonbio = [(t, compile_term(t)) for t in NONBIO_TERMS]
     planteco = [(t, compile_term(t)) for t in PLANTECO_TERMS]
+    conditional = {}
+    for cat, block in lex["categories"].items():
+        entries = [{"term": e["term"], "precision": e["weight"],
+                    "requires": e["requires"], "pattern": compile_term(e["term"])}
+                   for e in block.get("conditional_voters", [])]
+        if entries:
+            conditional[cat] = entries
     return {"anchors": anchors, "keywords": keywords, "nonbio": nonbio,
-            "planteco": planteco}
+            "planteco": planteco, "conditional": conditional}
 
 
 def classify(title: str, quote: str, ruleset: dict) -> dict:
@@ -234,7 +289,11 @@ def classify(title: str, quote: str, ruleset: dict) -> dict:
 
     if not matched:
         nonbio_hits = [t for t, p in ruleset["nonbio"] if p.search(text)]
-        if nonbio_hits and not BIO_CONTEXT.search(text):
+        bio_hit = BIO_CONTEXT.search(text)
+        if (bio_hit and bio_hit.group(0) in ("cell", "cells")
+                and BATTERY_CONTEXT.search(text)):
+            bio_hit = None
+        if nonbio_hits and not bio_hit:
             return result(
                 "not_relevant",
                 "The text concerns materials, engineering or agriculture "
@@ -249,6 +308,23 @@ def classify(title: str, quote: str, ruleset: dict) -> dict:
             "An ageing anchor is present but no category keyword matches, "
             "so the text does not support any substantive category.")
 
+    # conditional voters (V2_PLAN.md Track A3): trap terms whose measured
+    # weight counts only under a stated condition - an ageing anchor for the
+    # social vocabulary, explicit developing/testing language for the
+    # intervention vocabulary. Evaluated after the relevance gates so they
+    # can never keep an off-topic record alive; marked in matched_keywords.
+    for cat, entries in ruleset.get("conditional", {}).items():
+        hits = [e for e in entries if e["pattern"].search(text)
+                and ((e["requires"] == "anchor" and has_anchor)
+                     or (e["requires"] == "dev_cues"
+                         and DEV_CUES.search(text)))]
+        if hits:
+            matched.setdefault(cat, []).extend(hits)
+    matched_terms = {cat: [e["term"] + (" (conditional)" if "requires" in e
+                                        else "")
+                           for e in hits]
+                     for cat, hits in matched.items()}
+
     # step 1: precision-weighted voting
     scores = {cat: round(sum(e["precision"] for e in hits), 3)
               for cat, hits in matched.items()}
@@ -256,6 +332,19 @@ def classify(title: str, quote: str, ruleset: dict) -> dict:
     top_cat, top = ranked[0]
     second_cat, second = ranked[1] if len(ranked) > 1 else (None, 0.0)
     margin = round(top - second, 3)
+
+    def floor_ok(cat):
+        """V2_PLAN.md B2 evidence floor: a winner needs one term at or above
+        EVIDENCE_FLOOR, or two matching terms of which at least one is an
+        unconditional keyword; fundamental_aging also qualifies with explicit
+        mechanism language (the superlongevous worked example)."""
+        hits = matched.get(cat, [])
+        if any(e["precision"] >= EVIDENCE_FLOOR for e in hits):
+            return True
+        kept = [e for e in hits if "requires" not in e]
+        if len(hits) >= 2 and kept:
+            return True
+        return cat == "fundamental_aging" and bool(MECH_CUES.search(text))
 
     # step 2: mechanism-versus-intervention rubric rule. It decides ONLY the
     # fundamental_aging/intervention boundary - entered when those two are
@@ -294,13 +383,66 @@ def classify(title: str, quote: str, ruleset: dict) -> dict:
             "language or mechanism evidence, so no rule is confident.",
             margin)
 
-    # step 3: ambiguity floor for every other contested boundary
-    if second_cat is not None and margin < TIE_MARGIN:
+    # step 3: near-tie boundaries and the v2 relative-margin + evidence floor
+    if second_cat is None:
+        if floor_ok(top_cat):
+            return result(
+                top_cat,
+                f"Lexicon keywords for {top_cat} decide the record (matched: "
+                f"{', '.join(matched_terms[top_cat])}).",
+                None)
+        return result(
+            "ambiguous",
+            f"Only weak single-keyword evidence for {top_cat} matched "
+            f"({', '.join(matched_terms[top_cat])}), below the "
+            f"{EVIDENCE_FLOOR} evidence floor, so no category is asserted.",
+            None)
+
+    if margin < TIE_MARGIN:
+        pair = {top_cat, second_cat}
+        if (pair == {"fundamental_aging", "age_related_disease"}
+                and MECH_CUES.search(text)):
+            return result(
+                "fundamental_aging",
+                "Mechanism language decides the fundamental_aging / "
+                "age_related_disease boundary (mechanism cue: "
+                f"{MECH_CUES.search(text).group(0)}).",
+                margin)
+        if pair == {"care", "social_population_aging"}:
+            service, social = SERVICE_CUES.search(text), SOCIAL_CUES.search(text)
+            if service and not social:
+                return result(
+                    "care",
+                    "Service-delivery evidence decides the care / "
+                    f"social_population_aging boundary ({service.group(0)}).",
+                    margin)
+            if social and not service:
+                return result(
+                    "social_population_aging",
+                    "Age-and-society evidence decides the care / "
+                    f"social_population_aging boundary ({social.group(0)}).",
+                    margin)
+        if ("age_related_disease" in pair and DISEASE_TX.search(text)
+                and (older_ref or has_anchor)):
+            return result(
+                "age_related_disease",
+                "A disease-targeted vaccine or therapy in an older "
+                "population is age_related_disease under the rubric.",
+                margin)
+        relative = margin / top if top else 0.0
+        if relative >= REL_MARGIN and floor_ok(top_cat):
+            return result(
+                top_cat,
+                f"Keyword evidence for {top_cat} ({top}) leads {second_cat} "
+                f"({second}) by {margin}, at least {REL_MARGIN} of the "
+                "winner's score, and clears the evidence floor.",
+                margin)
         return result(
             "ambiguous",
             f"Keyword evidence for {top_cat} ({top}) and {second_cat} "
             f"({second}) is too close to call (margin {margin} < "
-            f"{TIE_MARGIN}).",
+            f"{TIE_MARGIN}; relative margin {relative:.3f} < {REL_MARGIN} or "
+            "evidence floor not met).",
             margin)
 
     return result(
@@ -424,6 +566,15 @@ def self_test():
         # the vote; the rubric rule governs only the fundamental boundary
         ("Geroprotectors and senotherapies for residents of nursing homes",
          "", "intervention"),
+        # v2 conditional voters: social traps without a kept social keyword
+        # are weak evidence and stay ambiguous
+        ("Loneliness in later life",
+         "loneliness and social isolation among older adults", "ambiguous"),
+        # conditional social voters boost a category that already has kept
+        # evidence (retirement)
+        ("Retirement and loneliness in older adults",
+         "a study of retirement, loneliness and participation among older "
+         "adults", "social_population_aging"),
     ]
     failed = 0
     for title, quote, want in cases:

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study dashboard</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#EFEBE4;color:#1A1A1C;font:15px/1.55 "Instrument Sans",-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 32px 80px}
+h1{margin:0 0 8px;font:600 30px/1.18 "Instrument Sans",sans-serif;letter-spacing:-.025em}
+h2{margin:0 0 4px;font:600 20px/1.24 "Instrument Sans",sans-serif;letter-spacing:-.02em}
+.sub{color:#57575C;font-size:14.5px;max-width:78ch;text-wrap:pretty}
+.card{background:#FBFAF8;border:1px solid #DFDAD2;border-radius:12px;padding:22px 24px;margin-bottom:22px}
+.stats{display:flex;flex-wrap:wrap;gap:34px;margin:18px 0 4px}
+.stat b{display:block;font:600 27px/1.1 "Instrument Sans",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat span{display:block;font-size:13.5px;color:#70707A;margin-top:3px}
+.row{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-top:1px solid #EFEBE4;cursor:pointer}
+.row:hover{background:#F7F6F4}
+.rank{flex:none;width:30px;font-variant-numeric:tabular-nums;color:#70707A;font-size:13.5px;padding-top:2px}
+.rmain{flex:1;min-width:0}
+.rtitle{font-size:16px;font-weight:500;letter-spacing:-.01em;margin-bottom:3px;text-wrap:pretty}
+.rmeta{font-size:13px;color:#70707A}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.chip{flex:none;height:23px;padding:0 8px;border-radius:6px;color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center}
+.chip.flagged{box-shadow:0 0 0 2px #FBFAF8,0 0 0 3.5px #B4472F}
+.tag{font-size:12.5px;color:#70707A;padding:0 4px}
+.score{flex:none;text-align:right;min-width:96px}
+.score b{font:600 19px/1 "Instrument Sans",sans-serif;font-variant-numeric:tabular-nums}
+.score span{display:block;font-size:12px;color:#70707A;margin-top:4px}
+.thin{font-size:12px;color:#B4472F}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #EFEBE4}
+th{font-weight:600;font-size:13px;color:#57575C}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.mx{display:grid;grid-template-columns:130px repeat(3,1fr);gap:6px;align-items:center;max-width:620px}
+.mxcell{height:52px;border-radius:7px;text-align:center;line-height:52px;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.btn{background:none;border:1px solid #DFDAD2;border-radius:8px;color:#1A1A1C;padding:8px 14px;cursor:pointer;font-size:13.5px;text-decoration:none;display:inline-block}
+.btn:hover{border-color:#14375F;background:#F4F6FA}
+.detail{position:fixed;inset:0;background:rgba(26,26,28,.34);display:flex;justify-content:center;align-items:flex-start;padding:40px 20px;overflow-y:auto;z-index:9}
+.panel{background:#FBFAF8;border-radius:14px;max-width:940px;width:100%;padding:28px 30px 34px}
+.judg{border-top:1px solid #EFEBE4;padding:16px 0}
+.jhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.jname{font-size:15px;font-weight:600}
+.jaffil{font-size:13px;color:#70707A}
+.jchip{flex:none;font-size:14px;font-weight:600;border:1px solid #E7E3DD;border-radius:7px;padding:5px 11px;background:#fff}
+.jreason{margin:9px 0 0;font:400 15.5px/1.6 "Source Serif 4",Georgia,serif;color:#34343A;max-width:76ch}
+.empty{text-align:center;padding:70px 20px;color:#57575C}
+.note{font-size:13px;color:#70707A;margin-top:10px;max-width:76ch}
+</style>
+</head>
+<body>
+<div id="app" class="wrap"></div>
+
+<script>
+const QS = new URLSearchParams(location.search);
+const BATCH = QS.get("batch") || "batch_001";
+const COL = { yes: "#1B5E8C", no: "#8A8A8F", borderline: "#8B5A9E" };
+const LABEL = { yes: "Yes", no: "No", borderline: "Borderline" };
+const ANSWERS = ["yes", "no", "borderline"];
+let D = null, OPEN = null, ERR = "";
+const app = document.getElementById("app");
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const money = v => v ? "€" + Math.round(v).toLocaleString("en-GB") : "";
+const pct = v => (typeof v === "number") ? Math.round(v * 100) + "%" : "—";
+
+async function boot() {
+  try {
+    const res = await fetch(`/api/summary?batch=${encodeURIComponent(BATCH)}`);
+    D = await res.json();
+    if (D.error) { ERR = D.error; }
+  } catch (e) { ERR = "Could not reach the server."; }
+  render();
+}
+
+async function open(id) {
+  const res = await fetch(`/api/record?batch=${encodeURIComponent(BATCH)}&record_id=${encodeURIComponent(id)}`);
+  OPEN = await res.json();
+  render();
+}
+
+function header() {
+  const c = D.coverage;
+  return `<h1>Dashboard on the new cut</h1>
+  <p class="sub">Geroscience against cancer as the comparator. Every researcher sees every grant, so where they disagree with <i>each other</i> is measurable — that is a reading of the definition, not of them.</p>
+  <div class="stats">
+    <div class="stat"><b>${c.n_labellers}</b><span>researchers</span></div>
+    <div class="stat"><b>${c.total_judgments}</b><span>judgments</span></div>
+    <div class="stat"><b>${c.records_with_any} / ${c.records}</b><span>grants seen</span></div>
+    <div class="stat"><b>${c.records_with_two_or_more}</b><span>with 2+ judgments</span></div>
+  </div>`;
+}
+
+function humanVsHuman() {
+  const h = D.human_vs_human;
+  const obs = typeof h.observed_agreement === "number" ? pct(h.observed_agreement) : "not yet";
+  const kap = typeof h.fleiss_kappa === "number" ? h.fleiss_kappa.toFixed(2) : "not yet";
+  return `<div class="card">
+    <h2>Do the researchers agree with each other?</h2>
+    <p class="sub">High disagreement means the definition needs work, not that a labeller does.</p>
+    <div class="stats">
+      <div class="stat"><b>${obs}</b><span>pairs that matched</span></div>
+      <div class="stat"><b>${kap}</b><span>Fleiss κ (chance-corrected)</span></div>
+      <div class="stat"><b>${h.cancer_ticks}</b><span>cancer ticks</span></div>
+      <div class="stat"><b>${h.text_flags}</b><span>“couldn't tell” flags</span></div>
+    </div>
+    ${typeof h.fleiss_kappa !== "number" ? `<p class="note">${esc(h.kappa_note)}</p>` : ""}
+  </div>`;
+}
+
+function contested() {
+  const rows = D.contested.filter(r => r.n_judgments > 0);
+  if (!rows.length) return "";
+  return `<div class="card">
+    <h2>Most contested grants</h2>
+    <p class="sub">Ranked by how far apart the answers are — a yes/no split counts double a borderline split — then by money, because a contested €15M grant moves the ratio more than a contested €200k one. This list is the scientific product: it shows exactly where the rule fails.</p>
+    <div style="margin-top:14px">
+    ${rows.map(r => `<div class="row" onclick="open('${esc(r.record_id)}')">
+      <div class="rank">${r.contention > 0 ? "" : "·"}</div>
+      <div class="rmain">
+        <div class="rtitle">${esc(r.title)}</div>
+        <div class="rmeta">${esc(r.funder)}${r.year ? " · " + r.year : ""}${r.amount_eur ? " · " + money(r.amount_eur) : ""}</div>
+        <div class="chips">
+          ${r.answers.map(a => `<span class="chip" style="background:${COL[a]}">${LABEL[a]}</span>`).join("")}
+          ${r.cancer_ticks ? `<span class="tag" style="color:#2F7A4F">cancer ${r.cancer_ticks}/${r.n_judgments}</span>` : `<span class="tag" style="color:#C4BFB6">cancer —</span>`}
+          ${r.flags ? `<span class="tag" style="color:#B4472F">flag ${r.flags}</span>` : `<span class="tag" style="color:#C4BFB6">flag —</span>`}
+          ${r.classifier_answer ? `<span class="tag">classifier: <b style="color:${COL[r.classifier_answer]}">${LABEL[r.classifier_answer]}</b>${r.classifier_agrees === false ? " · disagrees" : r.classifier_agrees === null ? " · no human majority" : ""}</span>` : ""}
+        </div>
+      </div>
+      <div class="score">
+        <b style="color:${r.contention >= 1.5 ? "#B4472F" : r.contention > 0 ? "#1A1A1C" : "#C4BFB6"}">${r.contention.toFixed(2)}</b>
+        <span>${r.n_judgments} judgment${r.n_judgments === 1 ? "" : "s"}</span>
+        ${r.thin ? `<span class="thin">too few to rank</span>` : ""}
+      </div>
+    </div>`).join("")}
+    </div>
+  </div>`;
+}
+
+function vsClassifier() {
+  const k = D.human_vs_classifier;
+  if (!k.n_scored) {
+    return `<div class="card"><h2>Does the classifier reproduce the human consensus?</h2>
+      <p class="sub">Nothing to compare yet: a grant needs a human majority before the classifier can be right or wrong about it.</p></div>`;
+  }
+  const max = Math.max(...ANSWERS.map(h => Math.max(...ANSWERS.map(c => k.matrix[h][c]))));
+  return `<div class="card">
+    <h2>Does the classifier reproduce the human consensus?</h2>
+    <p class="sub">Rows are what the researchers concluded, columns what <code>ratio/classify.py</code> said. Only the ${k.n_scored} grants with a human majority count${k.n_no_consensus ? `; ${k.n_no_consensus} tied and are excluded rather than broken in the classifier's favour` : ""}.</p>
+    <div class="stats"><div class="stat"><b>${pct(k.overall_agreement)}</b><span>classifier matches consensus</span></div></div>
+    <div class="mx" style="margin-top:18px">
+      <div></div>${ANSWERS.map(a => `<div style="text-align:center;font-size:13px;color:#57575C">classifier: ${LABEL[a]}</div>`).join("")}
+      ${ANSWERS.map(h => `<div style="font-size:13.5px;color:#1A1A1C">human: <b style="color:${COL[h]}">${LABEL[h]}</b></div>` +
+        ANSWERS.map(c => {
+          const n = k.matrix[h][c], diag = h === c;
+          const a = n === 0 ? 0 : Math.min(.92, .12 + (n / Math.max(1, max)) * .8);
+          return `<div class="mxcell" style="background:${n === 0 ? "#F4F1EC" : diag ? `rgba(20,55,95,${a})` : `rgba(180,71,47,${a})`};color:${n === 0 ? "#C4BFB6" : a > .52 ? "#fff" : "#1A1A1C"};border:1px solid ${diag ? "rgba(20,55,95,.25)" : "#EFEBE4"}">${n || "·"}</div>`;
+        }).join("")).join("")}
+    </div>
+    <table style="margin-top:22px;max-width:620px">
+      <tr><th>Answer</th><th class="num">n human</th><th class="num">recall</th><th class="num">precision</th></tr>
+      ${ANSWERS.map(a => { const p = k.per_answer[a]; return `<tr>
+        <td><b style="color:${COL[a]}">${LABEL[a]}</b></td>
+        <td class="num">${p.n_human}</td>
+        <td class="num" style="color:${p.thin ? "#B4472F" : "#111113"}">${p.thin ? "n too small" : pct(p.recall)}</td>
+        <td class="num" style="color:${p.thin ? "#C4BFB6" : "#111113"}">${p.thin ? "—" : pct(p.precision)}</td></tr>`; }).join("")}
+    </table>
+    <p class="note">${esc(k.cancer_note)}</p>
+  </div>`;
+}
+
+function detail() {
+  if (!OPEN || !OPEN.record) return "";
+  const r = OPEN.record, hidden = r._hidden || {}, js = OPEN.judgments || [];
+  return `<div class="detail" onclick="if(event.target===this){OPEN=null;render()}"><div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:6px">
+      <h2 style="max-width:64ch">${esc(r.title)}</h2>
+      <button class="btn" onclick="OPEN=null;render()">Close</button>
+    </div>
+    <div class="rmeta" style="margin-bottom:18px">${esc(r.funder)}${r.year ? " · " + r.year : ""}${r.amount_eur ? " · " + money(r.amount_eur) : ""}${r.url ? ` · <a href="${esc(r.url)}" target="_blank" rel="noopener">source</a>` : ""}</div>
+    <p style="font:400 16px/1.68 'Source Serif 4',Georgia,serif;color:#34343A;max-width:80ch;white-space:pre-wrap">${esc((r.abstract || "").slice(0, 1400))}${(r.abstract || "").length > 1400 ? "…" : ""}</p>
+    <h2 style="margin:26px 0 2px">Every judgment, unaveraged</h2>
+    <p class="sub">The individual reads are the evidence. Nothing here is collapsed into a single verdict.</p>
+    ${js.length ? js.map(j => `<div class="judg">
+      <div class="jhead">
+        <span class="jname">${esc(j.labeller_id)}</span>
+        <span class="jchip" style="color:${COL[j.geroscience] || "#70707A"}">${LABEL[j.geroscience] || "no answer"}</span>
+        ${j.cancer ? `<span class="jchip" style="color:#2F7A4F">cancer</span>` : ""}
+        ${j.cant_tell ? `<span class="jchip" style="color:#B4472F">couldn't tell</span>` : ""}
+        <div style="flex:1"></div>
+        <span class="jaffil">${esc(j.labelled_at)}</span>
+      </div>
+      ${j.reason ? `<p class="jreason">${esc(j.reason)}</p>` : `<p class="jreason" style="color:#A5A5AB">no reason given</p>`}
+    </div>`).join("") : `<p class="sub" style="padding:16px 0">Nobody has labelled this grant yet.</p>`}
+    <div class="judg" style="border-top:1px solid #DFDAD2">
+      <div style="font-size:13.5px;color:#70707A;margin-bottom:6px">Withheld from labellers during the blind pass</div>
+      <div style="font-size:14.5px">classifier: <b style="color:${COL[hidden.classifier_label] || "#1A1A1C"}">${esc(hidden.classifier_label || "—")}</b> &nbsp;·&nbsp; expert pass: <b>${esc(hidden.expert_label || "—")}</b> &nbsp;·&nbsp; sampled from: ${esc(hidden.stratum || "—")}</div>
+      ${hidden.classifier_reason ? `<p class="jreason" style="font-size:14.5px;color:#57575C">${esc(hidden.classifier_reason)}</p>` : ""}
+    </div>
+  </div></div>`;
+}
+
+function render() {
+  if (ERR) { app.innerHTML = `<div class="empty">${esc(ERR)}</div>`; return; }
+  if (!D) { app.innerHTML = `<div class="empty">Loading…</div>`; return; }
+  const c = D.coverage;
+  if (!c.total_judgments) {
+    app.innerHTML = header() + `<div class="card empty">
+      <h2>Everything is loaded and waiting on the first researcher.</h2>
+      <p class="sub" style="margin:10px auto 0">${c.records} grants are staged with full abstracts. Send each researcher their own link — the name in it is how their judgments stay separate:</p>
+      <p style="margin:18px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#14375F">${esc(location.origin)}/?batch=${esc(BATCH)}&amp;who=<b>their-name</b></p>
+      <p class="note" style="margin:20px auto 0">Numbers appear here as judgments arrive. Agreement statistics need at least two people on the same grant, which is why everyone gets all ${c.records}.</p>
+    </div>` + detail();
+    return;
+  }
+  app.innerHTML = header() +
+    `<div style="margin:0 0 22px"><a class="btn" href="/api/export.csv?batch=${encodeURIComponent(BATCH)}">Export everything as CSV</a></div>` +
+    humanVsHuman() + contested() + vsClassifier() + detail();
+}
+
+boot();
+</script>
+</body>
+</html>

@@ -99,9 +99,46 @@
 </section>
 
 <section class="slide"><!-- 8 results -->
-  <h2>Our results. <span class="navy">How much of each place's ageing research is proactive</span></h2>
-  <img src="results-bars.svg" alt="Stacked funding bars per region" style="width:100%;max-height:56vh;object-fit:contain">
-  <p class="cap">UK reference from independent human coding: prevention 15.7% of mapped funding. <span class="flagc">EU: 239 grants, small n.</span></p>
+  <h2>Our results<span class="navy" id="rs-sub"> · total ageing-research funding captured</span></h2>
+  <div id="rchart" style="cursor:pointer;max-width:60rem">
+    <!-- rows injected -->
+  </div>
+  <p class="cap" id="rs-hint">click the chart: total → proactive share → focus areas</p>
+  <script>
+  (function(){
+    const DATA = {
+      US:{total:5035,cats:[["fundamental ageing",2135.5,"#1B5E8C"],["intervention",21.6,"#14375F"],["age-related disease",2831.8,"#8A8A8F"],["care",25.7,"#B7B7BC"],["social / population",20.5,"#D3CDC3"]],grants:"12,115 grants"},
+      SE:{total:211,cats:[["fundamental ageing",38.6,"#1B5E8C"],["intervention",0.6,"#14375F"],["age-related disease",74.8,"#8A8A8F"],["care",61.4,"#B7B7BC"],["social / population",35.8,"#D3CDC3"]],grants:"870 grants"},
+      EU:{total:164,cats:[["fundamental ageing",104.6,"#1B5E8C"],["intervention",0.0,"#14375F"],["age-related disease",43.3,"#8A8A8F"],["care",13.8,"#B7B7BC"],["social / population",1.8,"#D3CDC3"]],grants:"239 grants · small n"}
+    };
+    const MAX = 5035; let stage = 0;
+    const box = document.getElementById('rchart'), sub = document.getElementById('rs-sub'), hint=document.getElementById('rs-hint');
+    const SUBS = [' · total ageing-research funding captured',' · the proactive share, highlighted',' · divided into focus areas'];
+    function render(){
+      sub.textContent = SUBS[stage];
+      let h='';
+      for (const [r,d] of Object.entries(DATA)){
+        const w = t=>Math.max(t/MAX*100,0.15);
+        let segs='';
+        if(stage===0) segs = `<div style="width:${w(d.total)}%;background:#57575C" class="seg"></div>`;
+        else if(stage===1){
+          const pro=d.cats[0][1]+d.cats[1][1];
+          segs = `<div style="width:${w(pro)}%;background:#1B5E8C" class="seg"></div><div style="width:${w(d.total-pro)}%;background:#DFDAD2" class="seg"></div>`;
+        } else segs = d.cats.map(c=>`<div style="width:${w(c[1])}%;background:${c[2]}" class="seg"></div>`).join('');
+        const pro=d.cats[0][1]+d.cats[1][1];
+        const lbl = stage===0? `${d.total.toLocaleString()} M€ · ${d.grants}` : stage===1? `<b style="color:#1B5E8C">${(pro/d.total*100).toFixed(1)}% proactive</b> · ${d.total.toLocaleString()} M€` : `${(pro/d.total*100).toFixed(1)}% proactive of ${d.total.toLocaleString()} M€`;
+        h += `<div style="display:grid;grid-template-columns:3rem 1fr;gap:1rem;align-items:center;margin:.9rem 0">
+          <b>${r}</b><div><div style="display:flex;height:34px;border-radius:8px;overflow:hidden;background:#F4F1EC">${segs}</div>
+          <div class="cap" style="margin-top:.25rem">${lbl}</div></div></div>`;
+      }
+      if(stage===2) h += `<div class="cap" style="margin-top:.6rem"><span style="color:#1B5E8C">■</span> fundamental ageing <span style="color:#14375F">■</span> intervention <span style="color:#8A8A8F">■</span> age-related disease <span style="color:#B7B7BC">■</span> care <span style="color:#D3CDC3">■</span> social / population</div>`;
+      box.innerHTML = h;
+      hint.textContent = stage<2 ? 'click the chart to reveal the next layer' : 'bar length = money · US scale dwarfs Europe';
+    }
+    box.addEventListener('click', e=>{ e.stopPropagation(); stage=(stage+1)%3; render(); });
+    render();
+  })();
+  </script>
 </section>
 
 <section class="slide"><!-- 6 -->

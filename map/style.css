@@ -47,8 +47,15 @@ html, body {
 
 /* ---- floating chrome ---- */
 
+#unvalidated-banner {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 20;
+  padding: 7px 16px; text-align: center;
+  background: var(--gold); color: #101623;
+  font: 600 13px/1.4 var(--ui); letter-spacing: 0.02em;
+}
+
 #masthead {
-  position: absolute; top: 28px; left: 32px; max-width: 430px;
+  position: absolute; top: 60px; left: 32px; max-width: 430px;
   pointer-events: none;
 }
 #masthead > * { pointer-events: auto; }

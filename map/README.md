@@ -1,16 +1,16 @@
 # Longevity Politics Index map
 
-> **Scope.** This map is a presentation-layer prototype with a placeholder v0
-> activity index. After the team's pivot, the headline metric will become the
-> funding-gap ratio: money going to slowing ageing versus money going to
-> managing its consequences. This map does not replace, modify, or compete
-> with the Longview app on branch `codex/longview-demo`, which remains
-> untouched.
+> **Unvalidated pipeline output — method demonstration, not findings.** This
+> map demonstrates the pipeline and the drill-down-to-source mechanics; the
+> scores it shows are development artifacts, not validated results. It is a
+> presentation-layer prototype with a placeholder v0 activity index. This map
+> does not replace, modify, or compete with the Longview app on branch
+> `codex/longview-demo`, which remains untouched.
 
 Interactive world map for the [map-the-politics-of-longevity
-challenge](../docs/challenge.md): one headline index per country in the style
-of the World Happiness Index, composed client-side from the verified findings
-in `eval/findings/` and the human verdicts in `eval/verdicts/`. Countries
+challenge](../docs/challenge.md): a demonstration of composing one index per
+country client-side from the findings in `eval/findings/` and the human
+verdicts in `eval/verdicts/`, with every score traceable to its sources. Countries
 without findings render as "not yet covered"; countries searched without
 result render with an explicit "nothing reliable found" hatch. The map never
 fabricates data for uncovered countries.

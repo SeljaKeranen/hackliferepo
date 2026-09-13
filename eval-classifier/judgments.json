@@ -1,0 +1,1393 @@
+{
+  "cordis:101077555": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "A framework for identifying end-of-life trajectories of older people is research about illness courses in later life, not clearly service delivery/organisation; text underdetermines between care and social_population_aging.",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "Both care keywords ('older people', 'end-of-life') and the anchor occur in the text; reason matches.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "End-of-life trajectories of older people with serious chronic illness is squarely about ageing/older humans; the on-topic stance (care) is correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "9a4d4587e3f9d7f8",
+    "record_id": "cordis:101077555"
+  },
+  "cordis:645648": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Secondary myopathies in stress states with ageing named only as one risk factor among several; on-topic-adjacent but the text supports no substantive category, so ambiguous is defensible.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "Anchor 'ageing' occurs in the quote; no category keywords claimed; reason consistent with text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Quote names ageing as a major risk factor for chronic muscle force loss; human ageing is part of the work, so the on-topic stance (ambiguous) is defensible.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "a87b91a55cab40f4",
+    "record_id": "cordis:645648"
+  },
+  "cordis:655623": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "fundamental_aging",
+        "reason": "Title and quote describe investigating ncRNA roles in translation, proteostasis and longevity during aging - a direct study of ageing mechanisms; the text does place the record.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Anchors 'aging' (title) and 'longevity' (quote) occur; no category keywords claimed; reason consistent.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "ncRNAs in protein homeostasis during aging, investigating translation and longevity — clearly ageing biology; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "d6276f95ef26e09c",
+    "record_id": "cordis:655623"
+  },
+  "cordis:656787": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Ethical analysis of the challenge posed by population aging is research about ageing societies with an explicit ageing anchor; fits social_population_aging.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'population aging' occurs in the quote; anchors 'aging'/'ageing' occur in quote/title; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "\"Ethics and Ageing\" analysing the ethical challenge of population aging is human population ageing; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "a02c783b299d41cc",
+    "record_id": "cordis:656787"
+  },
+  "cordis:658085": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Avian model probing ageing-rate mechanisms (mitochondria, oxidative stress, telomere erosion); comparative model-organism ageing biology is fundamental_aging per the bats/superlongevous worked examples.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'telomere*' matches 'telomere erosion', 'oxidative stress' occurs verbatim, anchor 'ageing' present; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Avian model studying ageing rate via telomere erosion and oxidative stress is ageing-biology research in a model organism, not material ageing; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "fc952e9d5dc5866d",
+    "record_id": "cordis:658085"
+  },
+  "cordis:702784": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "'Addressing neural declines to promote healthy ageing' could be mechanism study or intervention development; the quote only describes declines, so the text genuinely underdetermines and ambiguous is valid.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "Anchors 'ageing' and 'healthy ageing' occur in title and quote; no category keywords claimed; reason consistent.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Cognitive and movement decline in healthy ageing, promoting healthy ageing — human ageing; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "d21a5c9afa1ae4d6",
+    "record_id": "cordis:702784"
+  },
+  "cordis:741966": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "fundamental_aging",
+        "reason": "Quote states the project targets the basic mechanisms of stem cell malfunction during aging - textbook ageing-mechanism research, not unplaceable.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Anchor 'aging' occurs in title and quote; no category keywords claimed; reason consistent.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Stem cell malfunction during aging and tissue regeneration is ageing biology; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "1aa782c5e7aa6846",
+    "record_id": "cordis:741966"
+  },
+  "cordis:856960": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "care",
+        "reason": "Digital solutions supporting a continuum of care for old adults is welfare-technology/service delivery (care), not research on a specific disease; frailty appears only as the prevention target of the care solution.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'frailty' occurs in title and quote; reason accurate; no anchor claimed.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Frailty prevention in old adults via continuum-of-care digital solutions concerns older humans; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "1ec25601b6852f8a",
+    "record_id": "cordis:856960"
+  },
+  "cordis:874456": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Exosome therapeutic against chronic inflammation with no ageing anchor in title or quote; ageing relevance not established, not_relevant is correct under step 0.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "No terms claimed; text ('exosome-based therapeutic approach against chronic inflammation') indeed contains no ageing anchor; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Title and quote mention only an exosome therapy for chronic inflammation, with no ageing anchor or older-adult framing; asserting not_relevant on this text is defensible.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "3a1ceda39d86f5b5",
+    "record_id": "cordis:874456"
+  },
+  "cordis:895984": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Investigates cellular ageing and cell decline through RNA modifications - mechanism of ageing biology; obesity is a lens, not the disease target.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'cellular ageing' (title), 'obesity' (quote), and anchor 'ageing' all occur; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Cell decline linked to obesity and ageing via RNA modifications — cellular ageing biology; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "a66461420e4d28ff",
+    "record_id": "cordis:895984"
+  },
+  "cordis:945153": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "not_relevant",
+        "reason": "Exercise intervention for children and adolescents in anti-cancer treatment is pediatric oncology, not human ageing; step 0 relevance fails, so no substantive category applies.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Terms 'exercise intervention*' and 'cancer' do occur, but the reason overreaches: it claims an intervention 'against ageing' while the text is an exercise intervention for children/adolescents in anti-cancer treatment with no ageing anchor (anchor_terms empty).",
+        "verdict": "fail"
+      },
+      "relevance": {
+        "reason": "Exercise intervention for children and adolescents undergoing anti-cancer treatment — pediatric oncology, nothing about ageing; the 'intervention' label wrongly asserts this is an anti-ageing intervention. Should be not_relevant.",
+        "verdict": "fail"
+      }
+    },
+    "record_fingerprint": "418daa6efd36adeb",
+    "record_id": "cordis:945153"
+  },
+  "cordis:949667": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "intervention",
+        "reason": "The quote says the project develops senolytic CAR T cells targeting senescent cells for senescence-associated diseases - developing an ageing-targeting therapeutic, the intervention side of the mechanism-vs-intervention rule; the text does place it.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'cancer', 'tumor*' (tumors), 'senescen*', 'senescent cell*' (senescent cells), and anchor 'senescence' (senescence-associated) all occur; tie-margin reason is consistent.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "CAR T cells targeting senescent cells for senescence-associated diseases engages cellular senescence, core ageing biology; on-topic stance (ambiguous) is correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "c42849efb1e3df66",
+    "record_id": "cordis:949667"
+  },
+  "reporter:1F31AG062112-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "fundamental_aging",
+        "reason": "Studying the conserved role of uric acid and purine metabolites in longevity and healthspan is ageing-mechanism biology; the title alone supports fundamental_aging.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Anchors 'longevity' and 'healthspan' occur in the title; no category keywords claimed; reason consistent.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Uric acid and purine metabolites in longevity and healthspan is organismal ageing biology (NIA-funded); on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "1002569522406018",
+    "record_id": "reporter:1F31AG062112-01"
+  },
+  "reporter:1F31AG066311-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Dissects which components of calorie restriction (calories, fasting, mTOR) drive its effects - a mechanistic probe into ageing biology; correct application of the mechanism rule.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'lifespan', 'calorie restriction', and anchors occur; the quote describes CR's known effects without developing/testing language, matching the mechanism-rule reason.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Calorie restriction improving lifespan and healthspan in model organisms is ageing biology; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "8affbc8240047fcc",
+    "record_id": "reporter:1F31AG066311-01"
+  },
+  "reporter:1IS1BX006337-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Equipment request for a plate reader; no ageing content in the text, not_relevant is correct.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "No terms claimed; a plate-reader equipment request contains no ageing anchor or keyword; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "A ShEEP equipment request for a multimodal plate reader shows no ageing content in title or quote; not_relevant is the correct stance on this text.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "fdb34e1d85745822",
+    "record_id": "reporter:1IS1BX006337-01"
+  },
+  "reporter:1R01AA032764-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Aims to validate efficacious geroprotective therapies for precocious aging - testing interventions against ageing; intervention is right.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'geroprotect*' matches 'Geroprotective', anchor 'aging' occurs; quote's 'validate efficacious therapies for precocious aging' supports the developing/testing-an-intervention reason.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Geroprotective therapies for precocious aging in people with HIV who use alcohol targets human ageing directly; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "2625f015a1f122bf",
+    "record_id": "reporter:1R01AA032764-01"
+  },
+  "reporter:1R01AG057739-01A1": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Studies social-network dynamics within the etiology and progression of MCI and Alzheimer's - a disease study; social factors inside a disease study stay age_related_disease.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'alzheimer*', 'mild cognitive impairment', and 'alzheimer disease' all occur in the quote; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Alzheimer's disease and mild cognitive impairment etiology/progression is an age-related disease of older humans; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "8af85a18a9139e48",
+    "record_id": "reporter:1R01AG057739-01A1"
+  },
+  "reporter:1R01AG079913-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Studies how adipose inflammaging (age-related inflammation) contributes to sepsis risk - mechanism of ageing biology; sepsis is the readout, not a classic age-related disease target.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'inflammaging' occurs in the title, anchor 'age-related' in the quote; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Adipose tissue inflammaging and age-related inflammation driving sepsis risk is ageing biology; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "bb67517ace0083f0",
+    "record_id": "reporter:1R01AG079913-01"
+  },
+  "reporter:1R01DK115403-01A1": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Pure CKD mechanism study with no ageing framing in the text; not_relevant is defensible, but chronic kidney disease is arguably an age-related disease, so the text underdetermines not_relevant vs age_related_disease.",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "No terms claimed; mechanical scan of the full kept lexicon plus broad net confirms no keyword or anchor occurs in title+quote ('dna damage' and 'disease' hit only trap_terms, which are excluded).",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Title/quote only mention DNA damage response in chronic kidney disease with no ageing framing or anchor; CKD is age-associated but the text gives no ageing angle, so not_relevant is defensible.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "913e2d3368c398ed",
+    "record_id": "reporter:1R01DK115403-01A1"
+  },
+  "reporter:1R01HG013679-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Genomics-method grant with 'aging' only in a passing list of cell states; on-topic anchor present but no basis to place it substantively. Ambiguous matches the rubric's 'on-topic but unplaceable' case.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "Anchor 'aging' occurs in the quote; scan confirms no kept category keyword matches, so the ambiguous reason is accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Quote explicitly lists 'aging' among the cell-state contexts the epigenomics method addresses; on-topic-but-unplaceable (ambiguous) is a correct stance for a tool grant touching ageing.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "15911da58231e70a",
+    "record_id": "reporter:1R01HG013679-01"
+  },
+  "reporter:1R03AG056938-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "intervention",
+        "reason": "Title says the grant screens/tests drugs for lifespan and healthspan effects, and the quote states the goal is to discover interventions that prolong lifespan. This is developing/testing an intervention (like the CITP nematode record), not studying mechanism.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'lifespan' and anchors 'aging', 'lifespan', 'healthspan' all occur; reason matches the text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Quote states 'main goals of aging research... prolong lifespan and healthspan'; clearly about ageing biology, so an on-topic label is correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "3e41aa770f3cc012",
+    "record_id": "reporter:1R03AG056938-01"
+  },
+  "reporter:1R13AG055294-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Conference/program grant in the biology of aging: clearly on-topic but the text funds a meeting, not placeable research. Matches the rubric's journal example: ambiguous, not a substantive category.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "Anchors 'aging' and 'gerontolog*' (Gerontological) occur; scan confirms no kept category keyword matches.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Gerontological Society meeting on 'the biology of aging' is on-topic; ambiguous (on-topic, unplaceable conference grant) is a correct relevance stance.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "aa013a885ca3be27",
+    "record_id": "reporter:1R13AG055294-01"
+  },
+  "reporter:1R15AG074538-01A1": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Genetic mechanisms of circadian-clock-mediated dietary restriction: textbook mechanism-of-an-intervention study, which the rubric assigns to fundamental_aging (mirrors the DR worked example).",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'lifespan', 'malnutrition', and anchors occur; text is descriptive mechanism language with no developing/testing wording, matching the stated mechanism-rule reason.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Dietary restriction 'extends lifespan and healthspan in model organisms' is core ageing biology; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "646a7decd8ce1cb3",
+    "record_id": "reporter:1R15AG074538-01A1"
+  },
+  "reporter:1R21AG085140-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "fundamental_aging",
+        "reason": "Title and quote say the grant studies molecular mechanisms of pathological tissue aging in brain and adipose. That is studying ageing biology itself; keyword-miss does not make on-topic mechanistic text ambiguous.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Anchor 'aging' occurs; scan confirms no kept category keyword matches, consistent with the ambiguous reason.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "'Pathological aging of human brain and adipose' is explicitly human tissue ageing; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "57248c59c37da78f",
+    "record_id": "reporter:1R21AG085140-01"
+  },
+  "reporter:1R21AG086805-01A1": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "fundamental_aging",
+        "reason": "Measures serum markers of glucagon sensitivity in already calorie-restricted humans, i.e. studies how CR works metabolically. Under the mechanism-versus-intervention rule this is fundamental_aging; the grant does not develop or test CR itself.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'calorie restriction', 'delay aging', 'malnutrition', anchors 'aging' and 'longevity' all occur; text explicitly frames CR as an intervention to promote longevity and the title is a human CR study, supporting the intervention reason.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Calorie restriction 'to promote longevity... delay aging' in humans is squarely on-topic; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "eaca306d27ec01a8",
+    "record_id": "reporter:1R21AG086805-01A1"
+  },
+  "reporter:1R21AI193785-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "not_relevant",
+        "reason": "A radiation-injury countermeasure therapeutic; 'cellular senescence markers' appears only as a radiation-damage readout. Step 0 fails: this is not about human ageing or ageing biology, so the senescence keyword is a false hit.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'senescen*', 'cellular senescence', and anchor 'senescence' occur in 'limit cellular senescence markers'; reason claims only the keyword match, which is accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Radiation-injury therapeutic, but the quote targets 'cellular senescence markers' - senescence biology counts as ageing biology and partial ageing relevance suffices, so an on-topic label is defensible.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "4cb37e61de7dc17d",
+    "record_id": "reporter:1R21AI193785-01"
+  },
+  "reporter:1R24OD033730-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Animal-facility modernization proposal with no ageing content; not_relevant is correct.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "No terms claimed; full-lexicon scan confirms no keyword or anchor occurs (facility caging is not matched by any term).",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Animal-facility modernization (ventilated caging) has nothing to do with human ageing; not_relevant correct - infrastructure, not ageing.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "7e251756fd3d9417",
+    "record_id": "reporter:1R24OD033730-01"
+  },
+  "reporter:1R41CA224497-01A1": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Therapy development for taxotere-resistant prostate cancer: research on a specific age-related disease. hTERT appears only inside the disease study, which the rubric says does not make it fundamental_aging.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'cancer' and 'prostate cancer' occur in the title; no anchor claimed; reason matches the text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Prostate cancer therapy via hTERT transcription control; prostate cancer is a canonical age-related disease (and hTERT/telomere biology borders ageing biology), so on-topic stance is defensible.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "93f9a1184a70aa2c",
+    "record_id": "reporter:1R41CA224497-01A1"
+  },
+  "reporter:1R56AG069689-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "fundamental_aging",
+        "reason": "Title says the grant studies the host-microbe-metformin interplay in the aged gut, i.e. the mechanism by which metformin acts; the quote merely notes metformin's anti-aging reputation. Mechanism rule assigns fundamental_aging despite the drug name.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'metformin' and anchor 'aging' (in 'anti-aging') occur; the quote explicitly says metformin is 'tested in clinical trials' as an anti-aging drug, supporting the testing claim.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Metformin in the aged gut, framed by the quote as an 'anti-aging drug' candidate; clearly on-topic.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "ccaa67e3aac9b86a",
+    "record_id": "reporter:1R56AG069689-01"
+  },
+  "reporter:1RF1AG088009-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Prognosis and risk factors for MCI and Alzheimer's/related dementias: research on specific age-related diseases; epidemiology of a disease stays age_related_disease.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'alzheimer*', 'dementia*', and 'mild cognitive impairment' all occur in the title; reason matches the text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "MCI and Alzheimer's/related dementias prognosis and risk factors are prototypical age-related disease research; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "f357011c3e04821b",
+    "record_id": "reporter:1RF1AG088009-01"
+  },
+  "reporter:1ZIAAG000594-01": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "intervention",
+        "reason": "The quote explicitly says the project will 'test the beneficial effects' of photobiomodulation therapy on lifespan, healthspan, frailty and senescence: testing an intervention aimed at slowing ageing. The keyword-margin tie should not override the clear intervention-testing language.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'frailty', 'senescen*', anchors 'aging' and 'senescence' all occur; the stated margin (0.145) is consistent with the record's confidence and the too-close-to-call reason.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Tests PBM therapy effects on healthspan, lifespan, frailty, and senescence in mice; unquestionably on-topic, and ambiguous still asserts on-topic, so the step-0 stance is correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "e86651504c9279c7",
+    "record_id": "reporter:1ZIAAG000594-01"
+  },
+  "reporter:1ZIANS003106-17": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Cdk5 in neurodevelopment and neurodegeneration: no ageing anchor and no specific disease named, but neurodegeneration is strongly age-linked, so the text underdetermines not_relevant versus age_related_disease/ambiguous.",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "No terms claimed; 'neurodegenerat*' is a rejected trap_term, and scan confirms no kept keyword or anchor occurs in title+quote.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Title-only text: 'Cdk5 in neurodevelopment and neurodegeneration'. Neurodegeneration is usually age-associated (cf. dementia records passed as on-topic), but no disease or ageing framing is given and the grant may be development-centric; text insufficient to grade not_relevant confidently.",
+        "verdict": "uncertain"
+      }
+    },
+    "record_fingerprint": "838b2d4ae38281eb",
+    "record_id": "reporter:1ZIANS003106-17"
+  },
+  "reporter:2R13AG071313-04": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Centered on AD/ADRD and its effects; the rubric keeps disease-targeted work in older populations in age_related_disease even with life-course/societal framing.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'alzheimer*', 'adrd' (in 'AD/ADRD'), 'dementia*', and anchor 'aging' all occur; reason matches the text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Brain health and aging plus AD/ADRD effects on families and society; clearly on-topic human ageing / age-related disease.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "518218816304f5ef",
+    "record_id": "reporter:2R13AG071313-04"
+  },
+  "reporter:3R00HD101653-05S1": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Pregnancy-loss immunology with no ageing content; not_relevant is correct.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "No terms claimed; full-lexicon scan confirms no keyword or anchor occurs in the pregnancy-loss text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Endometrial immune responses and spontaneous pregnancy loss - obstetrics, no ageing content; not_relevant correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "484034836edec6e6",
+    "record_id": "reporter:3R00HD101653-05S1"
+  },
+  "reporter:3U01AG045844-08S1": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "CITP compound testing: explicitly tests pharmacological interventions to extend healthy aging and longevity in nematodes; intervention is the right side of the mechanism/intervention boundary.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'pharmacological intervention*' and anchors 'aging', 'longevity', 'healthy aging' occur; the quote explicitly says 'test pharmacological interventions', supporting the testing claim.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Testing pharmacological interventions 'to extend healthy aging and promote longevity in nematodes'; core longevity research, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "c4a0f7ec7ee523fb",
+    "record_id": "reporter:3U01AG045844-08S1"
+  },
+  "reporter:3U24CA268108-02S1": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Training supplement embedded in cellular-senescence research (SenNet); the text places the subject squarely in senescence biology, so fundamental_aging is defensible even though it funds internships rather than experiments.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'senescen*', 'cellular senescence', and anchor 'senescence' occur; reason claims only the keyword match, which is accurate to the text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "SenNet internship program in cellular senescence; senescence is ageing biology, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "c92be08da3421ad6",
+    "record_id": "reporter:3U24CA268108-02S1"
+  },
+  "reporter:4UH3AG064704-03": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "fundamental_aging",
+        "reason": "Text is placeable: centenarian omics profiles as models of slow aging that 'inform us about biological mechanisms' is a study of ageing biology, so ambiguous is wrong. The translation-to-strategies phrase in the title does not outweigh the explicitly mechanistic quote.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Anchors 'aging' and 'centenarians' occur in text. Verified against the lexicon: only broad-net anchor and trap_terms ('slow aging' is an intervention trap term, not a keyword) hit, so 'no category keyword matches' is accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Centenarian omics and 'models of slow aging and resistance to aging related diseases' is squarely human ageing; on-topic stance (ambiguous) is correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "0b9c27de19b8b648",
+    "record_id": "reporter:4UH3AG064704-03"
+  },
+  "reporter:5I01CX002161-03": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "A trial of lifestyle plus metformin to treat frailty in older veterans targets a specific age-related condition (frailty/obesity), not slowing ageing itself; age_related_disease is the defensible call.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'frailty', 'obesity', and 'metformin' all occur in the title. Reason names only lexicon terms that actually match; no text claims beyond that.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Treating frailty in older veterans is human-ageing work; the on-topic stance is correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "60c76c6ed425f954",
+    "record_id": "reporter:5I01CX002161-03"
+  },
+  "reporter:5K01AG081566-03": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "care",
+        "reason": "The research object is dementia family caregivers' own sleep, activities and cognitive health, not the disease. ADRD is only the caregiving context; the rubric files caregiving research under care.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "alzheimer* matches 'Alzheimer's' and dementia* matches 'dementias' in the quote. Reason is a plain keyword statement, supported.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Alzheimer's/dementia family caregiving is human-ageing territory; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "5068e4e7a56850ba",
+    "record_id": "reporter:5K01AG081566-03"
+  },
+  "reporter:5P30AG083196-02": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "A center for behavioral research and interventions for minority older adults with ADRD is disease-targeted dementia research; age_related_disease is defensible.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "alzheimer*, 'adrd' (quote '(ADRD)'), dementia* (title 'dEmeNtia', case-insensitive), and anchors 'aging'/'older adults' all occur. Reason supported.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "ADRD behavioral interventions for minority older adults; explicitly about ageing humans, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "cbe63eec1a9b7246",
+    "record_id": "reporter:5P30AG083196-02"
+  },
+  "reporter:5R00CA256356-05": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Title-only text underdetermines: aging-related biomarkers of neurocognition in lymphoma survivors could be cancer-survivorship disease research (age_related_disease) or a study using survivors as a model of accelerated ageing (fundamental_aging).",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "'lymphoma' and anchor 'aging' ('Aging-Related', hyphen is a boundary) occur in the title. Reason supported.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Title is 'Aging-Related Biomarkers of Neurocognitive Function' in lymphoma survivors; ageing biology is part of the work, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "5422c1fb6d7ed549",
+    "record_id": "reporter:5R00CA256356-05"
+  },
+  "reporter:5R01AG017644-24": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "ELSA on population aging and public policy, with explicit ageing anchors, is squarely social_population_aging.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'population aging' occurs in the quote; anchors 'aging' and 'ageing' (title) occur. Reason supported.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "English Longitudinal Study of Ageing, 'population aging and public policy'; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "56ee1bc7da16ad14",
+    "record_id": "reporter:5R01AG017644-24"
+  },
+  "reporter:5R01AG052495-03": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "care",
+        "reason": "MBSR delivered to family caregivers is a caregiver-support intervention, not research on dementia itself; the rubric places caregiving under care, and dementia here is only the caregiving context.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "dementia* matches 'dementia' in the title/quote. Reason supported.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Caregivers of dementia patients; dementia care is human-ageing territory, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "e72a8a4baf19eb11",
+    "record_id": "reporter:5R01AG052495-03"
+  },
+  "reporter:5R01AG067326-02": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "intervention",
+        "reason": "'Targeting Aging to prevent Alzheimer's' makes ageing itself the intervention target with AD prevention as endpoint; the disease name alone should not decide. Intervention fits the 'targeting aging to prevent' framing best (fundamental_aging the runner-up), age_related_disease is the weakest of the three.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "alzheimer* and anchors 'aging'/'geroscience' occur in the title. Reason supported.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "'Targeting Aging to prevent Alzheimer's Disease: the Geroscience Approach' is explicitly ageing-focused; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "76d9cde406cd83ab",
+    "record_id": "reporter:5R01AG067326-02"
+  },
+  "reporter:5R01AG067331-05": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Quote explicitly says 'To develop geroprotectors, drugs that target aging' via a discovery platform - developing an anti-ageing intervention; intervention is right.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "geroprotect* matches 'geroprotectors'; alzheimer*, 'aging', 'geroscience' all occur. Developing language is genuinely present ('To develop geroprotectors, drugs that target aging'), so the intervention reason is supported.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Geroprotectors that 'target aging' to treat ADRDs; clearly ageing biology, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "c787ced24d896944",
+    "record_id": "reporter:5R01AG067331-05"
+  },
+  "reporter:5R01AG067782-05": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "intervention",
+        "reason": "Systematic identification of longevity interventions in mammals IS testing candidate interventions (ITP-style screening), which the rubric assigns to intervention; the classifier's 'no developing/testing language' reading is wrong - identification/screening is testing.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'lifespan', 'extend lifespan', 'longevity' all occur. The text says 'identification of interventions', not developing/testing language, so the mechanism-rule reason accurately describes the text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "'Unbiased identification of longevity interventions in mammals' aimed at extending lifespan; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "203ffcb73250fe8b",
+    "record_id": "reporter:5R01AG067782-05"
+  },
+  "reporter:5R01AG069917-05": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "intervention",
+        "reason": "'Strengthening gut barrier integrity with beneficial microbes to increase lifespan and healthspan' states an interventional aim - developing/applying a probiotic intervention to extend lifespan - not a mechanism study.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'lifespan' and anchor 'healthspan' occur in the title. Reason is a plain keyword statement with no unsupported text claim.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Increasing lifespan and healthspan via gut microbes; ageing biology, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "d05e25dcd68ff0d8",
+    "record_id": "reporter:5R01AG069917-05"
+  },
+  "reporter:5R01AG072736-02": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Circadian rhythm and lifespan with CR cited as background is a mechanism study of ageing biology; the mechanism-versus-intervention rule keeps it fundamental_aging.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'lifespan', 'caloric restriction', 'aging' all occur. The quote describes CR as an existing intervention rather than developing/testing one, so the 'without developing/testing language' claim holds.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Circadian rhythm and lifespan; caloric restriction and 'aging-related deterioration' — ageing biology, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "ac7f4a4c78fb89a5",
+    "record_id": "reporter:5R01AG072736-02"
+  },
+  "reporter:5R01AG074502-04": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Determining context specificity of metformin's effects on muscle mitochondria reads as studying how/when the intervention works (fundamental_aging under the mechanism rule), but could equally be preclinical efficacy testing (intervention as assigned); text underdetermines.",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "'metformin', 'lifespan', 'healthspan' all occur. The text is a study of metformin treatment effects on healthspan/lifespan, which supports the 'testing an intervention against ageing' claim.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Metformin's effects on healthspan and lifespan; ageing intervention research, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "470593c52673cb50",
+    "record_id": "reporter:5R01AG074502-04"
+  },
+  "reporter:5R01AG080599-03": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Longitudinal study of family caregivers moving into later life, aimed at supporting caregiver resilience; caregiving with a later-life anchor sits in care per the rubric.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "caregiv* matches 'caregivers' and anchor 'later life' occurs in title and quote. Reason supported.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Caregivers 'moving into later life' — ageing of the caregivers is part of the study; on-topic stance defensible.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "19f1df843f86111c",
+    "record_id": "reporter:5R01AG080599-03"
+  },
+  "reporter:5R01CA217788-02": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "KSHV tumor virology in AIDS patients using neonatal cells; senescence bypass is an oncogenesis mechanism here, so not_relevant is arguable, but senescence biology keeps a toehold on ageing relevance - underdetermined between ambiguous and not_relevant.",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "tumor* matches 'tumor', senescen* matches 'senescence', anchor 'senescence' occurs. Reason is a margin statement over terms that genuinely match.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "KSHV viral oncogenesis in neonatal lymphatic endothelial cells; 'bypass of senescence' is the tumor-immortalization use of the term, not human ageing — a non-ageing use of a matched term, should be not_relevant rather than ambiguous.",
+        "verdict": "fail"
+      }
+    },
+    "record_fingerprint": "c7854e803ac0bfa8",
+    "record_id": "reporter:5R01CA217788-02"
+  },
+  "reporter:5R01EY033765-02": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "age_related_disease",
+        "reason": "AMD is age-related macular degeneration - a canonical age-related disease - and RPE epigenetics in early AMD is research on it; the classifier missed the acronym, not_relevant is wrong.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Verified against classifier/keywords.json: no lexicon keyword and no broad-net anchor matches the text ('AMD' is not a lexicon term), so the not_relevant reason is accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "AMD with RPE from the National Eye Institute is age-related macular degeneration, a canonical age-related disease; not_relevant is the wrong stance.",
+        "verdict": "fail"
+      }
+    },
+    "record_fingerprint": "360720326e98cfcd",
+    "record_id": "reporter:5R01EY033765-02"
+  },
+  "reporter:5R01HL119476-04": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "age_related_disease",
+        "reason": "The stated goal is 'new understanding of disease mechanisms and novel targets for treatment' of emphysema; per the edge rule, aging mechanisms mentioned inside a disease study do not make it fundamental_aging.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "'aging mechanisms' occurs in the quote, telomere* matches 'Telomere' in the title, 'emphysema' and anchor 'aging' occur. Reason supported.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Telomere-induced emphysema studied 'in the context of aging mechanisms'; ageing biology, on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "47229f2237189366",
+    "record_id": "reporter:5R01HL119476-04"
+  },
+  "reporter:5R01HL125957-02": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "VWF molecular genetics of thrombotic disease with aging as one covariate: could be age_related_disease (aging's influence on CVD development) or barely ageing-relevant at all; ambiguous is arguable but the text underdetermines.",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "Anchor 'aging' occurs. Verified against the lexicon: only the broad-net anchor and trap_terms hit, no category keyword matches, so the ambiguous reason is accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Asks how 'ethnicity and aging influence' VWF variants and thrombotic disease; ageing is studied as part of the work, so the on-topic (ambiguous) stance is defensible.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "5fa40fd24a6c6c9b",
+    "record_id": "reporter:5R01HL125957-02"
+  },
+  "reporter:5T32AG023482-14": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Training grant in health services research 'with applications in aging' arguably places it in care (health services research is the study of service delivery), but as a methods-training award the text also supports ambiguous. Underdetermined between care and ambiguous.",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "Anchor 'aging' occurs in title/quote; reason accurately states anchor present with no category keyword claimed.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Health services research training 'with applications in aging' is squarely about human ageing; the ambiguous label correctly asserts on-topic.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "4852383a9f373e41",
+    "record_id": "reporter:5T32AG023482-14"
+  },
+  "reporter:9R44AG055320-03A1": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Device development for chronic-wound monitoring; 'aging population' is framing. Not intervention (not aimed at slowing ageing), no clear disease category, not service-delivery research. Ambiguous is a defensible landing for on-topic-but-unplaceable text.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "Anchor 'aging' occurs ('aging population'); reason matches the text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Chronic wound care framed as 'a burden in today's aging population' (NIA-funded skin imaging) is human-ageing-related; on-topic stance is defensible.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "cfa900bf0bd7edcf",
+    "record_id": "reporter:9R44AG055320-03A1"
+  },
+  "swecris:2014-08008_Forte": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Malnutrition knowledge implemented 'in elderly care situations' - an intervention delivered through care services is care per the rubric edge rule.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'elderly care' (quote) and 'malnutrition' (title) both occur; anchors 'ageing', 'elderly', 'healthy ageing' all present; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Malnutrition among the elderly and elderly care ('Healthy Ageing... TIMBALE') is clearly human ageing; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "605d50f1e1652aad",
+    "record_id": "swecris:2014-08008_Forte"
+  },
+  "swecris:2015-01383_Forte": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Working-life study of ageing workers with explicit ageing anchor ('study ageing and work') - textbook social_population_aging.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'working life' in title and anchor 'ageing' in quote both occur; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "'Extending working life' studying 'ageing and work' is population-ageing research on humans; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "cebce4c865607f1f",
+    "record_id": "swecris:2015-01383_Forte"
+  },
+  "swecris:2016-00025_Forte": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Study of unpaid caregiving supply under demographic ageing and extended working lives. Caregiving points to care, but the design (gender, time allocation, labour-market context) reads like research about ageing societies, i.e. social_population_aging. Text underdetermines between the two.",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "'caregiv*' matches 'caregiving' in title; anchor 'ageing' occurs ('demographic ageing'); reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Unpaid care 'in the context of demographic ageing' and extended working lives is human population ageing; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "b5127ec998590eb0",
+    "record_id": "swecris:2016-00025_Forte"
+  },
+  "swecris:2016-04391_VR": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Immunoecology with 'fitness-related factors' suggests evolutionary ecology in animals, not ageing biology per se; telomere shortening as long-term cost could still be comparative ageing-mechanism work (cf. the bats example). Underdetermined between fundamental_aging and not_relevant.",
+        "verdict": "uncertain"
+      },
+      "evidence": {
+        "reason": "'telomere*' matches 'telomere shortening' in quote; no anchor claimed; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "'Long-term effects on telomere shortening and physiology' is ageing biology (telomere attrition), even in an immunoecology setting; on-topic stance defensible.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "f9e3ef67b8a8428b",
+    "record_id": "swecris:2016-04391_VR"
+  },
+  "swecris:2017-01431_Forte": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Integrated care for older people and its effect on health-care utilization - service delivery/organisation, squarely care.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'older people' occurs in title/quote as both keyword and anchor; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Integrated care for older people with complex health problems is human ageing/care; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "d33a20ba704c4f72",
+    "record_id": "swecris:2017-01431_Forte"
+  },
+  "swecris:2017-01759_VR": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Predictors of olfactory memory decline in the normal elderly population: on-topic normal-ageing research, but the text does not settle mechanism study (fundamental_aging) versus descriptive epidemiology; ambiguous is a defensible, non-forced call.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "Anchor 'elderly' occurs in quote; reason accurately states anchor-only with no category keyword claimed.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Old-age olfactory memory decline in 'the normal elderly population' is human ageing research; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "49894e97efc13ec0",
+    "record_id": "swecris:2017-01759_VR"
+  },
+  "swecris:2018-00384_Forte": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Epidemiology of cardiovascular disease (with longevity as an outcome) - the rubric keeps disease epidemiology in age_related_disease.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'cardiovascular disease' and anchor 'longevity' both occur; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Fitness, cardiovascular disease and 'longevity over 30 years' in the Swedish working population is human health/longevity; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "1eb60f83d6aff51f",
+    "record_id": "swecris:2018-00384_Forte"
+  },
+  "swecris:2018-05196_VR": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "social_population_aging",
+        "reason": "Poverty and disablement in older age, equitable healthy ageing in Myanmar - socioeconomic conditions in later life with an explicit ageing anchor is exactly the social_population_aging definition; the text does place it, so ambiguous is wrong.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Anchors 'ageing' and 'healthy ageing' occur in title; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Poverty and disablement 'in older age' and 'equitable healthy ageing in Myanmar' is human ageing; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "010f350693cc4d07",
+    "record_id": "swecris:2018-05196_VR"
+  },
+  "swecris:2019-01667_Formas": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Sorption behaviour of coated wood - material durability, nothing to do with human ageing. not_relevant is correct.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "No terms claimed; text (coated wood sorption) contains no ageing anchor, consistent with the stated reason.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Sorption behaviour of coated wood for outdoor durability is material science with no human-ageing content; not_relevant is correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "85147dda0ebce576",
+    "record_id": "swecris:2019-01667_Formas"
+  },
+  "swecris:2022-06319_VR": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Primary-care reform graduate school with no ageing anchor in title or quote; relevance to ageing is not established, so not_relevant holds.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "No terms claimed; text (health care educator graduate school) contains no ageing anchor, consistent with the stated reason.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "A graduate school for health care educators under the Nara vard reform mentions no ageing or older populations in title/quote; not_relevant is defensible on the visible text.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "fc182bede6e57f6b",
+    "record_id": "swecris:2022-06319_VR"
+  },
+  "swecris:2023-01125_Forte": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "intervention",
+        "reason": "Adapting and implementing the FINGER multidomain lifestyle intervention for healthy aging is developing/testing an intervention aimed at slowing age-related decline - the text supports a substantive label, so ambiguous is wrong. (Alternative reading: healthy-ageing policy/implementation as social_population_aging, but the intervention itself is the object of the grant.)",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Anchors 'aging' and 'healthy aging' occur in title and quote; reason accurately states anchor present, no category keyword claimed.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "FINGER-Pro health promotion 'to achieve healthy aging' is human ageing; the ambiguous label's on-topic stance is correct (category choice is not the relevance question).",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "fcc8e81c53b3bc5a",
+    "record_id": "swecris:2023-01125_Forte"
+  },
+  "swecris:2023-01749_Forte": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Co-created homecare services for older people from debut to end of life - service development/delivery, correctly care.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'older people' and 'end of life' both occur in title; anchor 'older people' present; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Homecare co-created with older people 'from debut to end of life' is human ageing/care; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "34fd6b6e06feceab",
+    "record_id": "swecris:2023-01749_Forte"
+  },
+  "swecris:2024-00018_Forte": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Post-retirement work and senior staffing with 'active aging' anchor - retirement/working-life research about older people's lives, correctly social_population_aging.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "'retirement' (as whole word in 'post-retirement'), 'working life', and anchor 'aging' ('active aging') all occur; reason accurate.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Post-retirement work and 'active aging and a longer working life' is human population ageing; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "2daddbf61bc9aa9d",
+    "record_id": "swecris:2024-00018_Forte"
+  },
+  "swecris:2025-01839_Forte": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Digital self-management in primary care; no ageing anchor or older-adult reference in title or quote, so ageing relevance is unestablished and not_relevant is correct.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "No terms claimed; text contains no ageing anchor, consistent with the stated reason.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "Digital self-management in European primary care shows no ageing or older-adult focus in title/quote; not_relevant is defensible on the visible text.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "8094fd5089d8911f",
+    "record_id": "swecris:2025-01839_Forte"
+  },
+  "swecris:2025-02364_VR": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "reason": "Testing whether metformin slows brain ageing - the rubric's own worked contrast example for intervention; the mechanism clause is subordinate to testing the drug.",
+        "verdict": "pass"
+      },
+      "evidence": {
+        "reason": "Overreach: reason claims the text 'describes developing or testing an intervention against ageing', but the text studies metformin's role and 'explor[es] its mechanisms in brain aging' — mechanism-study language, with no developing/testing language present. Terms metformin, dementia*, and anchor 'aging' do occur.",
+        "verdict": "fail"
+      },
+      "relevance": {
+        "reason": "Metformin's role in cognitive/brain aging and dementia is human ageing; on-topic stance correct.",
+        "verdict": "pass"
+      }
+    },
+    "record_fingerprint": "01c5a1b91776ba60",
+    "record_id": "swecris:2025-02364_VR"
+  },
+  "swecris:P2024-01005_Energi": {
+    "judged_at": "2026-09-12T12:00:00Z",
+    "judges": {
+      "category": {
+        "proposed_label": "not_relevant",
+        "reason": "Ageing mechanisms of ultrahigh-Ni battery cathodes - material/component ageing, the exact false-hit class in the step-0 worked examples (Li-Ion battery ageing). Must be not_relevant, never ambiguous.",
+        "verdict": "fail"
+      },
+      "evidence": {
+        "reason": "Anchor 'ageing' occurs ('ageing mechanisms' of battery cathodes); reason accurately states anchor-only with no substantive category, which matches the text.",
+        "verdict": "pass"
+      },
+      "relevance": {
+        "reason": "'Ageing mechanisms of ultrahigh-Ni NMC cathodes' is battery-material ageing, the rubric's canonical false hit; the ambiguous label wrongly asserts on-topic instead of not_relevant.",
+        "verdict": "fail"
+      }
+    },
+    "record_fingerprint": "e50ec11dd91bebc3",
+    "record_id": "swecris:P2024-01005_Energi"
+  }
+}

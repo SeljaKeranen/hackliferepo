@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classifier label review</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #1b2430; --muted: #5b6675;
+    --line: #dde2e9; --accent: #14532d; --pass: #157f3c; --fail: #b42318;
+    --pending: #8a94a3; --stale: #b45309;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  header {
+    position: sticky; top: 0; z-index: 5; background: var(--card);
+    border-bottom: 1px solid var(--line); padding: 12px 20px;
+    display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+  }
+  header h1 { font-size: 17px; margin: 0; }
+  header select {
+    border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px;
+    font: inherit; background: #fff;
+  }
+  .whoami { font-size: 12px; color: var(--muted); }
+  .whoami b { color: var(--accent); }
+  .stats { display: flex; gap: 16px; margin-left: auto; align-items: center; }
+  .stat { text-align: center; }
+  .stat b { display: block; font-size: 19px; }
+  .stat span { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .stat .ok { color: var(--pass); }
+  .stat .bad { color: var(--fail); }
+  .stat small { display: block; font-size: 10px; color: var(--muted); }
+  main { max-width: 940px; margin: 0 auto; padding: 20px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 14px;
+  }
+  .card.agree { border-left: 4px solid var(--pass); }
+  .card.disagree { border-left: 4px solid var(--fail); }
+  .card.stale { border-left: 4px solid var(--stale); }
+  .top { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .id { font-family: ui-monospace, monospace; color: var(--muted); font-size: 13px; }
+  .badge {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+    padding: 2px 8px; border-radius: 999px; background: #e8f0eb; color: var(--accent);
+  }
+  .badge.src { background: #eef1f5; color: var(--muted); }
+  .badge.bench { background: #fdf1e2; color: var(--stale); }
+  .badge.flag { background: #fbeaea; color: var(--fail); }
+  .conf { font-size: 12px; color: var(--muted); }
+  .verdict-label { margin-left: auto; font-size: 12px; font-weight: 600; }
+  .verdict-label.agree { color: var(--pass); }
+  .verdict-label.disagree { color: var(--fail); }
+  .verdict-label.stale { color: var(--stale); }
+  .verdict-label.pending { color: var(--pending); font-weight: 400; }
+  .title { margin: 10px 0 4px; font-weight: 600; }
+  .title a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--muted); }
+  .srcline { font-size: 13px; color: var(--muted); }
+  .reason { margin: 8px 0 0; font-size: 14px; }
+  .kw { margin-top: 6px; font-size: 12px; color: var(--muted); display: flex; gap: 6px; flex-wrap: wrap; align-items: baseline; }
+  .kw code {
+    background: #eef1f5; border-radius: 5px; padding: 1px 6px;
+    font-size: 12px; font-family: ui-monospace, monospace;
+  }
+  details { margin-top: 8px; font-size: 13px; color: var(--muted); }
+  details summary { cursor: pointer; user-select: none; }
+  blockquote { margin: 6px 0 0; padding-left: 10px; border-left: 3px solid var(--line); white-space: pre-wrap; }
+  .judges {
+    margin-top: 10px; border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 10px; background: #fafbfc; display: grid; gap: 6px;
+  }
+  .judge { display: flex; gap: 8px; align-items: baseline; font-size: 13px; }
+  .jbadge {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+    padding: 1px 8px; border-radius: 999px; color: #fff; flex: none;
+  }
+  .jbadge.pass { background: var(--pass); }
+  .jbadge.fail { background: var(--fail); }
+  .jbadge.uncertain { background: var(--stale); }
+  .jdim { font-weight: 600; flex: none; width: 82px; }
+  .jreason { color: var(--muted); }
+  .jstale { color: var(--stale); font-size: 12px; font-weight: 600; }
+  .jnote { margin-top: 10px; font-size: 12px; color: var(--pending); }
+  .others { margin-top: 8px; font-size: 12px; color: var(--muted); }
+  .others b.mismatch { color: var(--fail); }
+  .quick { margin-top: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .quick button {
+    border: 1px solid var(--line); background: #fff; border-radius: 6px;
+    padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer;
+  }
+  .quick button.agree-btn { color: var(--pass); border-color: var(--pass); }
+  .quick button.disagree-btn { color: var(--fail); border-color: var(--fail); }
+  .quick button.undo-btn { color: var(--muted); }
+  .pick { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+  .pick[hidden] { display: none; }
+  .pick button { color: var(--fail); }
+  .noteline { margin-top: 10px; display: flex; gap: 8px; }
+  .noteline input { flex: 1; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font: inherit; font-size: 13px; }
+  .saved { font-size: 12px; color: var(--pass); align-self: center; min-width: 46px; }
+  .saved.err { color: var(--fail); font-weight: 600; }
+  .rubric { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+  .conflicts {
+    border: 1px solid var(--stale); border-radius: 10px; background: #fdf6ec;
+    padding: 10px 14px; margin-bottom: 18px; font-size: 13px;
+  }
+  .conflicts h2 { font-size: 14px; margin: 0 0 6px; color: var(--stale); }
+  .conflicts code { font-family: ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Classifier label review</h1>
+  <select id="f-label"><option value="">all labels</option></select>
+  <select id="f-source"><option value="">all sources</option></select>
+  <span class="whoami">reviewing as <b id="whoami">…</b><span id="assign"></span></span>
+  <div class="stats">
+    <div class="stat"><b id="s-flagged">–</b><span>judge-flagged</span></div>
+    <div class="stat"><b id="s-total">–</b><span>records</span></div>
+    <div class="stat"><b id="s-reviewed">–</b><span>reviewed</span></div>
+    <div class="stat"><b id="s-agreement">–</b><span>pipeline agreement<br>with human judgment</span><small id="s-ci"></small></div>
+    <div class="stat"><b id="s-tuning">–</b><span>tuning half</span></div>
+    <div class="stat"><b id="s-holdout">–</b><span>sealed holdout</span></div>
+    <div class="stat"><b id="s-conflicts">–</b><span>reviewer conflicts</span></div>
+    <div class="stat"><b id="s-ambig">–</b><span>ambiguous ok</span></div>
+  </div>
+</header>
+<main>
+  <p class="rubric">The deliverable is the <b>measured agreement between the
+  pipeline and human judgment</b> — the target band is ≥ 85%, but an honest
+  low number beats a lenient high one: <b>disagreements are the product</b>,
+  they quantify classifier reliability, so judge each label strictly on the
+  rubric. Read the title and quote (the exact text the classifier saw), then
+  <b>Agree</b> if the label is right or <b>Disagree</b> and pick the correct
+  label — <code>ambiguous</code> (on-topic but unplaceable) and
+  <code>not_relevant</code> (not about human ageing at all) are first-class
+  answers, never force a category. Rubric:
+  <code>eval-classifier/README.md</code> and <code>classifier/KEYWORDS.md</code>
+  (relevance gate first, then mechanism-vs-intervention). Where AI judge
+  pre-marks (relevance, category, evidence) exist, flagged records sort first —
+  the AI verdicts are advice only: <b>your</b> click is the verdict. Verdicts
+  save to <code>eval-classifier/verdicts/&lt;you&gt;.verdicts.json</code>;
+  several reviewers can work at once and the numbers merge. Add
+  <code>?assign=1of2</code> / <code>?assign=2of2</code> to the URL to split
+  the records deterministically between two reviewers.</p>
+  <p id="error" class="rubric" style="color: var(--fail)" hidden></p>
+  <div id="conflicts" class="conflicts" hidden></div>
+  <div id="list"></div>
+</main>
+<script>
+const JUDGES = [
+  ["relevance", "Relevance"],
+  ["category", "Category"],
+  ["evidence", "Evidence"],
+];
+let records = [], verdictsByReviewer = {}, judgments = {}, labels = [];
+let me = null;
+
+// ?assign=KofN: deterministic split so two reviewers can divide the sample
+// without coordination. djb2 over the record id, stable across sessions.
+function hashId(s) {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0;
+  return h;
+}
+const assignRaw = new URLSearchParams(location.search).get("assign") || "";
+const assignMatch = /^([0-9]+)of([0-9]+)$/.exec(assignRaw);
+// K must be 1..N: an out-of-range slice (0of2, 3of2, 1of0) would silently
+// show ZERO records, indistinguishable from "review done"
+const assign = assignMatch
+  && +assignMatch[2] >= 1 && +assignMatch[1] >= 1
+  && +assignMatch[1] <= +assignMatch[2]
+  ? { k: +assignMatch[1] - 1, n: +assignMatch[2] } : null;
+const assignInvalid = assignRaw && !assign;
+
+function myVerdicts() { return verdictsByReviewer[me] || {}; }
+
+async function boot() {
+  const res = await fetch("/api/data").then(r => r.json());
+  if (res.error) {
+    // shown in a banner render() never clears: a corrupt evidence file must
+    // not masquerade as "no pre-marks" or "not reviewed"
+    const err = document.getElementById("error");
+    err.textContent = "Server error: " + res.error;
+    err.hidden = false;
+    if (!res.records || !res.records.length) return;
+  }
+  records = res.records || [];
+  verdictsByReviewer = res.verdicts || {};
+  judgments = res.judgments || {};
+  labels = res.labels || [];
+  me = res.reviewer;
+  document.getElementById("whoami").textContent = me || "unknown";
+  if (assignInvalid) {
+    const err = document.getElementById("error");
+    err.textContent = `Invalid ?assign=${assignRaw} (use 1of2 … NofN; ` +
+      "slices are 1-based). Showing ALL records instead.";
+    err.hidden = false;
+  }
+  if (assign) {
+    const mine = records.filter(r =>
+      hashId(r.record_id) % assign.n === assign.k).length;
+    document.getElementById("assign").textContent =
+      ` · slice ${assign.k + 1} of ${assign.n} (${mine} of ${records.length} records)`;
+  }
+  for (const [id, key] of [["f-label", "label"], ["f-source", "source"]]) {
+    const sel = document.getElementById(id);
+    const values = [...new Set(records.map(r => r[key]))].sort();
+    sel.innerHTML = sel.firstElementChild.outerHTML +
+      values.map(v => `<option value="${esc(v)}">${esc(v)}</option>`).join("");
+    sel.addEventListener("change", render);
+  }
+  render();
+  renderStats(res.summary);
+}
+
+// 0 = a judge flagged fail/uncertain (or the judgment is stale/missing):
+// human attention goes here first. 1 = judges all pass.
+function judgePriority(r) {
+  const j = judgments[r.record_id];
+  if (!j || !j.judges || j.stale) return 0;
+  return JUDGES.every(([key]) => (j.judges[key] || {}).verdict === "pass") ? 1 : 0;
+}
+
+function verdictState(v) {
+  if (!v) return "pending";
+  if (v.stale) return "stale";
+  return v.verdict === "agree" ? "agree" : "disagree";
+}
+
+function verdictLabel(state, v) {
+  return state === "agree" ? "✓ label confirmed"
+    : state === "disagree" ? `✗ corrected → ${esc(v.label)}`
+    : state === "stale" ? "⚠ stale — record changed, re-review"
+    : "not reviewed";
+}
+
+function othersLine(r) {
+  const rows = [];
+  for (const [rev, verdicts] of Object.entries(verdictsByReviewer)) {
+    if (rev === me) continue;
+    const v = verdicts[r.record_id];
+    if (!v || v.stale || !v.label) continue;
+    const mine = myVerdicts()[r.record_id];
+    const mismatch = mine && !mine.stale && mine.label !== v.label;
+    rows.push(`<b class="${mismatch ? "mismatch" : ""}">${esc(rev)}</b>: ${
+      v.verdict === "agree" ? "confirmed" : "corrected to"} ${esc(v.label)}`);
+  }
+  return rows.length
+    ? `<div class="others">also reviewed by ${rows.join(" · ")}</div>` : "";
+}
+
+function render() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  const fLabel = document.getElementById("f-label").value;
+  const fSource = document.getElementById("f-source").value;
+  const shown = records.filter(r =>
+    (!fLabel || r.label === fLabel) && (!fSource || r.source === fSource)
+    && (!assign || hashId(r.record_id) % assign.n === assign.k));
+  // Judge-flagged records first (human attention where it matters); stable
+  // sort keeps sample order within groups.
+  const ordered = shown.slice().sort((a, b) => judgePriority(a) - judgePriority(b));
+  for (const r of ordered) {
+    const v = myVerdicts()[r.record_id];
+    const state = verdictState(v);
+    const s = r.sampling || {};
+    const card = document.createElement("div");
+    card.className = "card " + (state !== "pending" ? state : "");
+    const kws = Object.entries(r.matched_keywords || {})
+      .flatMap(([cat, terms]) => terms.map(t => `${esc(t)} <i>(${esc(cat)})</i>`));
+    card.innerHTML = `
+      <div class="top">
+        <span class="id">${esc(r.record_id)}</span>
+        <span class="badge">${esc(r.label)}</span>
+        <span class="badge src">${esc(r.source)}</span>
+        ${s.split ? `<span class="badge src">${esc(s.split)}</span>` : ""}
+        ${s.benchmark_id ? `<span class="badge bench">benchmark ${esc(s.benchmark_id)}</span>` : ""}
+        ${(s.boundary_flags || []).map(f => `<span class="badge flag">${esc(f)}</span>`).join("")}
+        ${r.confidence != null ? `<span class="conf">margin: ${esc(r.confidence)}</span>` : ""}
+        <span class="verdict-label ${state}">${verdictLabel(state, v)}</span>
+      </div>
+      <p class="title">${/^https:\/\//.test(r.url || "")
+        ? `<a href="${encodeURI(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a>`
+        : esc(r.title)}</p>
+      <div class="srcline">${esc(r.funder || "unknown funder")}
+        ${r.amount_eur != null ? ` · €${Math.round(r.amount_eur).toLocaleString("en")}` : ""}
+        ${r.year ? ` · ${esc(r.year)}` : ""}${r.region ? ` · ${esc(r.region)}` : ""}
+        ${r.llm_category ? ` · old LLM label: ${esc(r.llm_category)}` : ""}</div>
+      <p class="reason">${esc(r.reason)}</p>
+      <div class="kw">${kws.length
+        ? "matched: " + kws.map(k => `<code>${k}</code>`).join(" ")
+        : "no category keywords matched"}
+        ${(r.anchor_terms || []).length
+          ? `&nbsp;· anchors: ${r.anchor_terms.map(a => `<code>${esc(a)}</code>`).join(" ")}` : ""}</div>
+      ${r.quote ? `<details><summary>quote — the abstract excerpt the classifier saw</summary>
+        <blockquote>${esc(r.quote)}</blockquote></details>` : ""}
+      ${judgePanel(r)}
+      ${othersLine(r)}
+      <div class="quick">
+        <button class="agree-btn">✓ Agree — label is right</button>
+        <button class="disagree-btn">✗ Disagree</button>
+        ${state !== "pending" && state !== "stale" ? `<button class="undo-btn">undo</button>` : ""}
+        <span class="pick" hidden>correct label: ${labels
+          .filter(l => l !== r.label)
+          .map(l => `<button data-label="${esc(l)}">${esc(l)}</button>`).join("")}</span>
+      </div>
+      <div class="noteline">
+        <input class="note" placeholder="note (optional, e.g. why the label is wrong)"
+               value="${v ? esc(v.note) : ""}">
+        <span class="saved"></span>
+      </div>`;
+    card.querySelector(".agree-btn").addEventListener("click", () => {
+      card.querySelector(".pick").hidden = true;
+      save(r, card, { verdict: "agree" });
+    });
+    card.querySelector(".disagree-btn").addEventListener("click", () => {
+      const pick = card.querySelector(".pick");
+      pick.hidden = !pick.hidden;
+    });
+    const undo = card.querySelector(".undo-btn");
+    if (undo) undo.addEventListener("click", () =>
+      save(r, card, { verdict: null }));
+    card.querySelectorAll(".pick button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        card.querySelector(".pick").hidden = true;
+        save(r, card, { verdict: "disagree", correct_label: btn.dataset.label });
+      });
+    });
+    const note = card.querySelector(".note");
+    // notes only piggyback on an existing verdict; a bare note is not a review
+    let noteTimer;
+    const noteSave = () => {
+      const cur = myVerdicts()[r.record_id];
+      if (!cur || cur.stale) return;
+      save(r, card, cur.verdict === "agree"
+        ? { verdict: "agree" }
+        : { verdict: "disagree", correct_label: cur.label });
+    };
+    note.addEventListener("change", noteSave);
+    note.addEventListener("input", () => {
+      clearTimeout(noteTimer);
+      noteTimer = setTimeout(noteSave, 800);
+    });
+    card.dataset.id = r.record_id;
+    list.appendChild(card);
+  }
+}
+
+function judgePanel(r) {
+  const j = judgments[r.record_id];
+  if (!j || !j.judges) return `<div class="jnote">No AI judge pre-marks — review from scratch.</div>`;
+  const rows = JUDGES.map(([key, label]) => {
+    const g = j.judges[key];
+    if (!g) return `<div class="judge"><span class="jbadge uncertain">missing</span>
+      <span class="jdim">${label}</span><span class="jreason">no judgment recorded</span></div>`;
+    const verdict = ["pass", "fail", "uncertain"].includes(g.verdict) ? g.verdict : "uncertain";
+    return `<div class="judge">
+      <span class="jbadge ${verdict}">${verdict}</span>
+      <span class="jdim">${label}</span>
+      <span class="jreason">${esc(g.reason || "")}${
+        g.proposed_label ? ` — proposed: <b>${esc(g.proposed_label)}</b>` : ""}</span>
+    </div>`;
+  }).join("");
+  return `<div class="judges">
+    ${j.stale ? `<div class="jstale">⚠ AI judgments are stale — the record changed since judging</div>` : ""}
+    ${rows}
+    ${j.judged_at ? `<div class="jnote">AI judged ${esc(String(j.judged_at).slice(0, 10))}</div>` : ""}
+  </div>`;
+}
+
+async function save(rec, card, body) {
+  const id = rec.record_id;
+  body = Object.assign({
+    record_id: id,
+    // echo the fingerprint of the version this card rendered; the server
+    // rejects the save (409) if the record changed since the page loaded
+    record_fingerprint: rec.fingerprint,
+    note: card.querySelector(".note").value,
+    reviewed_at: new Date().toISOString(),
+  }, body);
+  const saved = card.querySelector(".saved");
+  let res, status;
+  try {
+    const r = await fetch("/api/verdict", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    status = r.status;
+    res = await r.json();
+    if (!r.ok || !res.ok) throw new Error(res.error || "HTTP " + r.status);
+  } catch (e) {
+    saved.textContent = status === 409 ? "RECORD CHANGED — RELOAD" : "SAVE FAILED";
+    saved.classList.add("err");
+    return;
+  }
+  saved.classList.remove("err");
+  if (!verdictsByReviewer[me]) verdictsByReviewer[me] = {};
+  if (res.verdict) verdictsByReviewer[me][id] = res.verdict;
+  else delete verdictsByReviewer[me][id];
+  const state = verdictState(res.verdict);
+  card.classList.remove("agree", "disagree", "stale");
+  if (state !== "pending") card.classList.add(state);
+  const label = card.querySelector(".verdict-label");
+  label.className = "verdict-label " + state;
+  label.innerHTML = verdictLabel(state, res.verdict);
+  saved.textContent = "saved";
+  setTimeout(() => { if (saved.textContent === "saved") saved.textContent = ""; }, 1200);
+  renderStats(res.summary);
+}
+
+function renderStats(s) {
+  if (!s) return;
+  document.getElementById("s-flagged").textContent = s.judge_flagged;
+  document.getElementById("s-total").textContent = s.total;
+  document.getElementById("s-reviewed").textContent = s.reviewed;
+  const el = document.getElementById("s-agreement");
+  el.textContent = s.agreement == null
+    ? "–" : `${Math.round(100 * s.agreement)}% (n=${s.consensus_reviewed})`;
+  el.className = s.agreement == null ? "" : (s.agreement >= s.target ? "ok" : "bad");
+  document.getElementById("s-ci").textContent = s.agreement_ci95
+    ? `95% CI ${Math.round(100 * s.agreement_ci95[0])}–${Math.round(100 * s.agreement_ci95[1])}%`
+    : "";
+  for (const split of ["tuning", "holdout"]) {
+    const b = (s.splits || {})[split];
+    const tile = document.getElementById("s-" + split);
+    tile.textContent = b && b.agreement != null
+      ? `${Math.round(100 * b.agreement)}% (n=${b.consensus_reviewed})`
+      : `– (0/${b ? b.total : "?"})`;
+    tile.className = b && b.agreement != null
+      ? (b.agreement >= s.target ? "ok" : "bad") : "";
+  }
+  const conflicts = s.inter_reviewer_disagreements || [];
+  document.getElementById("s-conflicts").textContent = conflicts.length;
+  document.getElementById("s-ambig").textContent =
+    s.ambiguous_reviewed ? `${s.ambiguous_confirmed}/${s.ambiguous_reviewed}` : "–";
+  const box = document.getElementById("conflicts");
+  if (!conflicts.length) { box.hidden = true; }
+  else {
+    box.hidden = false;
+    box.innerHTML = `<h2>Inter-reviewer disagreements — calibration data, discuss and re-review</h2>` +
+      conflicts.map(c => `<div><code>${esc(c.record_id)}</code>: ${
+        Object.entries(c.labels).map(([rev, l]) => `${esc(rev)} → <b>${esc(l)}</b>`).join(", ")
+      } <span style="color:var(--muted)">(excluded from the agreement number until resolved)</span></div>`).join("");
+  }
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+boot();
+</script>
+</body>
+</html>

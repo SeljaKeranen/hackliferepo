@@ -71,15 +71,56 @@ function scoreCountry(entry, now) {
   };
 }
 
+/* ---------- Funding-gap layer ---------- */
+
+// The 27 EU member states. Sweden is a member but has its own national
+// SweCRIS corpus, so the funding-gap layer shows SE's own ratio rather than
+// the European Commission's; the other 26 carry the EU colour.
+const EU27 = [
+  "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR",
+  "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK",
+  "SI", "ES", "SE",
+];
+
+const JURISDICTIONS = {
+  SE: { name: "Sweden", source: "SweCRIS", blurb: "Swedish national funders, SweCRIS" },
+  EU: { name: "European Commission", source: "CORDIS",
+        blurb: "European Commission grants, CORDIS \u2014 shown for all 26 other EU members" },
+  US: { name: "United States", source: "NIH RePORTER", blurb: "US federal NIH grants, RePORTER" },
+};
+
+// Which funding jurisdiction a map feature draws its number from. Sweden and
+// the US have their own national corpus; every other EU member state is
+// coloured with the European Commission's ratio, which is the only EU-wide
+// number the census carries. Everything else has no ratio data yet.
+function jurisdictionFor(iso) {
+  if (iso === "SE") return "SE";
+  if (iso === "US") return "US";
+  if (EU27.includes(iso)) return "EU";
+  return null;
+}
+
+// The headline 0–100 index is the funding-gap ratio itself: the share of
+// classified ageing-research money that targets slowing ageing, ambiguous
+// grants excluded from both sides. Same number as ratio/index.html.
+function ratioIndex(ratio) {
+  if (typeof ratio !== "number" || !isFinite(ratio)) return null;
+  return Math.round(100 * ratio);
+}
+
 const Scoring = {
   CLASS_WEIGHT,
   CONF_MULT,
   VERIF_MULT,
   HALFWAY,
+  EU27,
+  JURISDICTIONS,
   recencyMult,
   verifState,
   scoreFinding,
   scoreCountry,
+  jurisdictionFor,
+  ratioIndex,
 };
 
 if (typeof module !== "undefined" && module.exports) {

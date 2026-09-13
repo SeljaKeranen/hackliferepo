@@ -50,16 +50,23 @@ funding-gap ratio (money going to slowing ageing versus money going to
 managing its consequences). It does not replace, modify, or compete with the
 Longview app on branch `codex/longview-demo`, which remains untouched.
 
-Built 11 September 2026: an interactive Longevity Politics Index map under
-[`map/`](../map/README.md): one 0–100 score per covered country, World
-Happiness Index style, computed client-side from `eval/findings/` and
-`eval/verdicts/` with the full composition visible per finding. Run
-`python3 -m http.server 8010` from the repo root and open `/map/`.
+Built 11 September 2026 and redesigned 13 September 2026: an interactive
+Longevity Politics Index map under [`map/`](../map/README.md). The default
+layer shows the funding-gap ratio as a 0-100 index - Sweden from its national
+SweCRIS census, the other 26 EU members from European Commission (CORDIS)
+funding, the US from NIH RePORTER - with a Rules/Adjudicated toggle and
+grant-level drill-down from the same built outputs as `ratio/`. The original
+politics-findings layer (one 0-100 score per covered country, World Happiness
+Index style, computed client-side from `eval/findings/` and `eval/verdicts/`
+with the full composition visible per finding) is retained in the code and
+reachable by URL (`?layer=politics`) but hidden from the header for the demo.
+Run `python3 -m http.server 8010` from the repo root and open `/map/`.
 
-The scoring weights are a transparent v0 chosen by hand, documented in
-[`map/README.md`](../map/README.md). Calibrating them is future work, as is
-the gold-set builder that produces the benchmark to calibrate against. Expect
-both the weights and the index formula to be tuned once the gold set exists.
+The politics-layer scoring weights are a transparent v0 chosen by hand,
+documented in [`map/README.md`](../map/README.md). Calibrating them is future
+work, as is the gold-set builder that produces the benchmark to calibrate
+against. Expect both the weights and the index formula to be tuned once the
+gold set exists.
 
 ## Search-keyword lexicon
 

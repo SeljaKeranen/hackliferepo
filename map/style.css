@@ -37,12 +37,13 @@ html, body {
 .graticule { fill: none; stroke: #1a2436; stroke-width: 0.5; }
 
 .country { stroke: #0e1420; stroke-width: 0.6; }
-.country.scored { cursor: pointer; }
-.country.scored:hover { stroke: var(--ink); stroke-width: 1.2; }
-.country.scored:focus-visible { stroke: var(--gold); stroke-width: 2; outline: none; }
+.country.active { cursor: pointer; }
+.country.active:hover { stroke: var(--ink); stroke-width: 1.2; }
+.country.active:focus-visible { stroke: var(--gold); stroke-width: 2; outline: none; }
 .country.selected { stroke: var(--gold); stroke-width: 1.6; }
 
 .marker { cursor: pointer; stroke: #0e1420; stroke-width: 1; }
+.marker.ec { stroke: var(--gold); stroke-width: 1.4; stroke-dasharray: 2 1.6; }
 .marker.selected, .marker:hover { stroke: var(--gold); stroke-width: 1.6; }
 
 /* ---- floating chrome ---- */
@@ -58,6 +59,19 @@ html, body {
   letter-spacing: -0.01em;
 }
 .tagline { margin: 10px 0 0; color: var(--muted); max-width: 46ch; }
+
+.switcher {
+  display: inline-flex; margin: 14px 10px 0 0;
+  border: 1px solid var(--line); border-radius: 9px; overflow: hidden;
+  background: var(--bg-raised); backdrop-filter: blur(6px);
+}
+.switcher button {
+  background: none; border: 0; color: var(--muted);
+  font: inherit; font-size: 12.5px; padding: 7px 13px; cursor: pointer;
+}
+.switcher button + button { border-left: 1px solid var(--line); }
+.switcher button:hover { color: var(--ink); }
+.switcher button.active { background: rgba(242, 193, 78, 0.14); color: var(--ink); font-weight: 600; }
 
 .counters { display: flex; gap: 26px; margin-top: 16px; }
 .counter b { display: block; font: 500 26px/1 var(--display); }
@@ -192,6 +206,53 @@ html, body {
   background: repeating-linear-gradient(45deg, rgba(34, 48, 70, 0.35) 0 4px, transparent 4px 9px);
 }
 .nothing-card b { color: var(--ink); font-weight: 500; }
+
+/* funding-gap panel */
+.caveats { margin: 16px 0 0; padding-left: 18px; color: var(--muted); font-size: 12px; }
+.caveats li { margin-top: 5px; }
+.caveats a { color: var(--gold); }
+
+.signal.cat {
+  display: block; width: 100%; text-align: left; background: none; border: 0;
+  padding: 0; margin: 0 0 8px; color: inherit; font: inherit; cursor: pointer;
+}
+.signal.cat:hover .signal-label b { color: var(--gold); }
+.num-tag { font-size: 11px; color: var(--gold); font-weight: 400; }
+
+.grants-heading { margin: 20px 0 8px; font: 500 16px/1.2 var(--display); }
+
+.grant {
+  border: 1px solid var(--line); border-radius: 10px;
+  padding: 11px 13px; margin-bottom: 9px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.grant-title { font-size: 13.5px; }
+.grant-title a { color: var(--ink); text-decoration: none; }
+.grant-title a:hover { color: var(--gold); text-decoration: underline; }
+.grant-meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.grant-meta .amt { color: var(--ink); font-variant-numeric: tabular-nums; }
+.grant-label { color: var(--gold); }
+.grant-why { margin: 5px 0 0; font-size: 12px; color: var(--faint); }
+.grant-why .kw { color: var(--gold); font-family: ui-monospace, Menlo, monospace; font-size: 11px; }
+
+.more-btn {
+  width: 100%; padding: 8px; margin: 4px 0 8px;
+  background: none; border: 1px solid var(--line); border-radius: 8px;
+  color: var(--muted); font: inherit; font-size: 12.5px; cursor: pointer;
+}
+.more-btn:hover { color: var(--ink); border-color: var(--muted); }
+
+table.funders { width: 100%; border-collapse: collapse; font-size: 12px; }
+table.funders th {
+  text-align: left; color: var(--faint); font-weight: 500;
+  padding: 6px 4px; border-bottom: 1px solid var(--line);
+}
+table.funders td {
+  padding: 6px 4px; border-bottom: 1px solid rgba(39, 51, 73, 0.5); color: var(--ink);
+}
+table.funders .r { text-align: right; font-variant-numeric: tabular-nums; }
+
+.legend-note { color: var(--gold); }
 
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
